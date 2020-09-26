@@ -111,221 +111,59 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][My first React project - a personal site.](https://www.reddit.com/r/reactjs/comments/izghl9/my_first_react_project_a_personal_site/)
+## [3][I applied for 100+ jobs but no interview](https://www.reddit.com/r/reactjs/comments/j013yg/i_applied_for_100_jobs_but_no_interview/)
+- url: https://www.reddit.com/r/reactjs/comments/j013yg/i_applied_for_100_jobs_but_no_interview/
+---
+Hey guys, so I've been applying for jobs for a month and all I get is "Thank you but we don't need you" and I'm really getting demotivated I tried to improve my resume and my portfolio but still no interview, so what's wrong guys? is it because I'm applying for remote jobs and remote jobs are harder to get or what? and what should I do?
+
+and here's My [Portfolio](https://ahmedeid.netlify.app/) and My [Resume](https://drive.google.com/file/d/1FgqB5RtutmHzYG1VYXbArig2YzY7q6WY/view)
+## [4][I made some unofficial JSX and TSX logos if you're like logos like me](https://www.reddit.com/r/reactjs/comments/izqxuf/i_made_some_unofficial_jsx_and_tsx_logos_if_youre/)
+- url: https://github.com/Protectator/jsx-tsx-logos
+---
+
+## [5][Check out my project! I’m a high school senior who spent 300 hours making a doc editor to help my robotics team produce vibrant documentation without the headache of formatting text.](https://www.reddit.com/r/reactjs/comments/j04cfv/check_out_my_project_im_a_high_school_senior_who/)
+- url: https://www.reddit.com/r/reactjs/comments/j04cfv/check_out_my_project_im_a_high_school_senior_who/
+---
+ Check it out: [https://www.kilodoc.com/](https://www.kilodoc.com/)
+
+My hope is that there’s enough people who like this because I really want to invest more time into making this site even better. I’m already using my editor to take notes in school and organize my college applications. Let me know what you all think!
+
+If anyone’s interested in my stack, I’m using React for the frontend and a GraphQL API on Azure Functions that talks to a PostgreSQL database for the backend.
+## [6][Happy 3rd Birthday React 16 🎂](https://www.reddit.com/r/reactjs/comments/j05ltw/happy_3rd_birthday_react_16/)
+- url: https://twitter.com/swyx/status/1309839955187834881?s=20
+---
+
+## [7][Opinion on using outdated tutorials?](https://www.reddit.com/r/reactjs/comments/j02rsv/opinion_on_using_outdated_tutorials/)
+- url: https://www.reddit.com/r/reactjs/comments/j02rsv/opinion_on_using_outdated_tutorials/
+---
+I noticed the use of classes v. functions in ReactJS. 2020 tutorials seem to use functions rather than classes. Is the use of classes in any way outdated? Even tutorials from 2019 use this method.
+
+I don't know if this is a trivial or stupid question? However, it's really bugging me out that following two different tutorials using different methods make my code not compile. I feel that I'm missing something obvious.
+
+This is my first time posting programming-related. I usually just lurk in programming subreddit and can usually find the answers in Reddit or Stack Overflow. But not this question.
+
+Also, can anyone recommend me a good ReactJS course for a beginner that's updated? Thank you so much!
+## [8][I made my portfolio in react. Let me know what you think please (link in comments)](https://www.reddit.com/r/reactjs/comments/izwsl4/i_made_my_portfolio_in_react_let_me_know_what_you/)
+- url: https://www.reddit.com/r/reactjs/comments/izwsl4/i_made_my_portfolio_in_react_let_me_know_what_you/
+---
+Portfolio made with reactJs, Sass, Firebase and more
+
+Link to website: [https://www.salimregragui.me/](https://www.salimregragui.me/)
+
+Gif : [https://imgur.com/a/vXZGal0](https://imgur.com/a/vXZGal0)
+## [9][My first React project - a personal site.](https://www.reddit.com/r/reactjs/comments/izghl9/my_first_react_project_a_personal_site/)
 - url: https://v.redd.it/40o2j93kj9p51
 ---
 
-## [4][Any good reasons to not be using TypeScript for a React app now? (with Create React App)](https://www.reddit.com/r/reactjs/comments/iz9vgt/any_good_reasons_to_not_be_using_typescript_for_a/)
-- url: https://www.reddit.com/r/reactjs/comments/iz9vgt/any_good_reasons_to_not_be_using_typescript_for_a/
+## [10][Need some help with testing in React while using Hooks.](https://www.reddit.com/r/reactjs/comments/j0101l/need_some_help_with_testing_in_react_while_using/)
+- url: https://www.reddit.com/r/reactjs/comments/j0101l/need_some_help_with_testing_in_react_while_using/
 ---
-I just recently started looking into TypeScript out of curiosity. I started a test project, and everything seemed to work the same using Create React App (automatic recompilation, etc.).
-
-Given that I don't have to manually compile anything, is there any disadvantage to using TypeScript with React? Even if I just write straight JavaScript without explicitly declaring types or using other features, it still does type checking on inferred types.
-
-It's just that I haven't seen a lot of people using it, and I was wondering if there's a reason I might not want to. I've only played around with it a little bit. Is there maybe a noticeable increase in compilation time as a project grows or something else I should be aware of that might bite me in the ass later?
-## [5][Material UI Dashboard with React](https://www.reddit.com/r/reactjs/comments/iyyrel/material_ui_dashboard_with_react/)
-- url: https://material-ui-dashboard.cube.dev/
+Hey guys, I was wondering what is the best way to test an useEffect api call? Is it by using Jest/Enzyme or are there better alternatives? Any help is appreciated!
+## [11][Best react course in your opinion in terms of Code quality and folder structure?](https://www.reddit.com/r/reactjs/comments/j0141i/best_react_course_in_your_opinion_in_terms_of/)
+- url: https://www.reddit.com/r/reactjs/comments/j0141i/best_react_course_in_your_opinion_in_terms_of/
 ---
-
-## [6][I built this - what do you think?](https://www.reddit.com/r/reactjs/comments/izh5t5/i_built_this_what_do_you_think/)
-- url: https://www.reddit.com/r/reactjs/comments/izh5t5/i_built_this_what_do_you_think/
+I have completed 80% of the traversy media's MERN stack course on udemy. Project is good, but code quality is not up to the mark. Is there any course available which is project based and code quality and folder structure is very good?
+## [12][Why do we need server side template engines like handlebar,pug in nodejs if we use react on the client side?](https://www.reddit.com/r/reactjs/comments/izz0my/why_do_we_need_server_side_template_engines_like/)
+- url: https://www.reddit.com/r/reactjs/comments/izz0my/why_do_we_need_server_side_template_engines_like/
 ---
-When COVID-19 hit, I decided to quit my day job and found a startup. Pretty daunting, but you never know what you can do until you actually start.
-
-[ViTeach](https://www.viteach.de/?ac_src=reddit) is an app that sets out to make math tutoring much more financially accessible to all students (especially students from weaker socio-economic backgrounds) and thus making sure that no student is left behind! The idea is to replace traditional math tutoring with a machine learning-based intelligent virtual tutor (we call her VI). Long way to go, but small steps!
-
-[Student Demo](https://reddit.com/link/izh5t5/video/y8hc1patu9p51/player)
-
-The app was initially built with "create-react-app", but we have since transitioned to "next.js". The app is entirely free at this point and will stay so for the foreseeable future.
-
-**The stack involves:**
-
-\- MongoDb
-
-\- Node.js/Express.js
-
-\- Passport.js (for authentication)
-
-\- Google Pub/Sub
-
-\- [Socket.io](https://socket.io/) (for realtime chat)
-
-\- **react.js** for the entire frontend
-
-\- Python (leveraging the serverless framework) **auto-response generation**, custom tracking, data collection
-
-More than happy to discuss any of the components and lend a helping hand where I can.
-
-**First successes:**
-
-\- we are already working with a few schools (very happy about that)
-
-\- first online marketing and SEO successes.
-
-\- amazing student feedback
-
-Check it out and let me know what you think!
-
-Cheers
-## [7][@HeadlessUI/react from Tailwind Labs](https://www.reddit.com/r/reactjs/comments/izc7ac/headlessuireact_from_tailwind_labs/)
-- url: https://github.com/tailwindlabs/headlessui/blob/develop/packages/%40headlessui-react/README.md
----
-
-## [8][Since we're a Netflix-clone sub now, here's my space-themed Netflix clone I finished in July that helped me land my first engineering job](https://www.reddit.com/r/reactjs/comments/iz3zwz/since_were_a_netflixclone_sub_now_heres_my/)
-- url: http://spaceflix.herokuapp.com/
----
-
-## [9][Building and using custom React hooks in our application - CodeSource.io](https://www.reddit.com/r/reactjs/comments/izg1p4/building_and_using_custom_react_hooks_in_our/)
-- url: https://codesource.io/building-and-using-custom-react-hooks-in-our-application/
----
-
-## [10][Hook error in Route Container component using useParams](https://www.reddit.com/r/reactjs/comments/izj6so/hook_error_in_route_container_component_using/)
-- url: https://www.reddit.com/r/reactjs/comments/izj6so/hook_error_in_route_container_component_using/
----
-EDIT: Posted on stackoverflow if you want some points there [https://stackoverflow.com/questions/64064811/hook-error-in-route-container-component-using-useparams](https://stackoverflow.com/questions/64064811/hook-error-in-route-container-component-using-useparams)
-
-I am using a route like this:
-
-`&lt;Route path={"/:userType/banks/:bank"} component={&lt;BankContainer/&gt;}/&gt;`
-
-The Bank component is a redux container component. Inside I have a conditional render based off the user type.
-
-`const BankContainer = (props) =&gt; {`
-
-`const { userType } = useParams();`
-
-`return (`
-
-`userType === "admin" ? &lt;Bank/&gt; : &lt;CustomerBank/&gt;`
-
-`)`
-
-`}`
-
-&amp;#x200B;
-
-I get a react warning and then a react error
-
-Warning I got:
-
-`Warning: React has detected a change in the order of Hooks called by ConnectFunction. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks`
-
-`Previous render Next render`
-
-`------------------------------------------------------`
-
-`1. useMemo useMemo`
-
-`2. useMemo useMemo`
-
-`3. useContext useContext`
-
-`4. useMemo useMemo`
-
-`5. useMemo useMemo`
-
-`6. useMemo useMemo`
-
-`7. useReducer useReducer`
-
-`8. useRef useRef`
-
-`9. useRef useRef`
-
-`10. useRef useRef`
-
-`11. useRef useRef`
-
-`12. useMemo useMemo`
-
-`13. useContext useLayoutEffect`
-
-`^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^`
-
-&amp;#x200B;
-
-`in ConnectFunction (at Admin.js:68)`
-
-`in Route (at Admin.js:68)`
-
-`in Switch (at Admin.js:63)`
-
-`in div (at Admin.js:59)`
-
-`in Admin (created by ConnectFunction)`
-
-`in ConnectFunction (at ProtectedRoute.js:13)`
-
-`in Route (at ProtectedRoute.js:29)`
-
-`in ProtectedRoute (at ProtectedRoute.js:46)`
-
-`in ProtectedAdminRoute (created by ConnectFunction)`
-
-`in ConnectFunction (at Main.js:46)`
-
-`in Switch (at Main.js:45)`
-
-`in Router (created by BrowserRouter)`
-
-`in BrowserRouter (at Main.js:44)`
-
-`in Main (created by ConnectFunction)`
-
-`in ConnectFunction (at src/index.js:63)`
-
-`in App (at src/index.js:69)`
-
-`in Provider (at src/index.js:68)`
-
-&amp;#x200B;
-
-Error I got:
-
-`Error: Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:`
-
-`1. You might have mismatching versions of React and the renderer (such as React DOM)`
-
-`2. You might be breaking the Rules of Hooks`
-
-`3. You might have more than one copy of React in the same app`
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-my package.json versions:
-
-`"react-redux": "^7.2.0",`
-
-`"react-router-dom": "5.2.0",`
-
-`"react": "16.13.1",`
-
-`"react-dom": "16.13.1",`
-
-&amp;#x200B;
-
-Thing's I've tried:
-
-1. Checked for react bundler issues
-2. Switched to view rather than just a react container
-3. Tried other hooks, still same issue
-
-&amp;#x200B;
-## [11][New very easy to use Form library for React](https://www.reddit.com/r/reactjs/comments/izhxsj/new_very_easy_to_use_form_library_for_react/)
-- url: https://www.reddit.com/r/reactjs/comments/izhxsj/new_very_easy_to_use_form_library_for_react/
----
-I'm trying to promote my new form library for ReactJs [https://github.com/joegasewicz/react-bare-forms](https://github.com/joegasewicz/react-bare-forms)
-
-It's developed to be the easiest Form library for React. If you just need a simple form &amp; don't want to learn a complex API, then this library is for you!
-
-Any code contributions, feedback etc is more than welcome!
-
-&amp;#x200B;
-
-Thanks
-## [12][💥 How to deploy React.js with no downtime 🚀](https://www.reddit.com/r/reactjs/comments/izhhdo/how_to_deploy_reactjs_with_no_downtime/)
-- url: https://youtu.be/mmexLa-o6E8?t=85
----
-
+I first learned react and now focusing on nodejs. After diving into express i just got overwhelmed with tons of template engines out there. I am still confused why on earth i have to run after those if i already use react on the  client side.

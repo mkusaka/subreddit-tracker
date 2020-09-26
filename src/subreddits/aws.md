@@ -3,7 +3,100 @@
 - url: https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/
 ---
 
-## [2][Cross region Cloudformation. Now you can do it with a single file!](https://www.reddit.com/r/aws/comments/izihe8/cross_region_cloudformation_now_you_can_do_it/)
+## [2][Transitioning from SysOps to DevOps](https://www.reddit.com/r/aws/comments/j041h6/transitioning_from_sysops_to_devops/)
+- url: https://www.reddit.com/r/aws/comments/j041h6/transitioning_from_sysops_to_devops/
+---
+I am currently employed as a Systems Engineer for a consulting company which serves many clients here in Italy.
+I'm mainly a Windows Admin, due to exposure, and have no formal training. I work with all the usual hassle (vmWare, networking, WS, some Linux machines, security, AD,....) but due to personal reasons I would like to relocate to a different country. 
+I see many job offers as DevOps and after having a look around, I got interested in moving my focus into cloud based infrastructures, mainly AWS.
+I grasp OOP concepts and have some personal experience in programming or scripting tools for my job (VBA and Powershell).
+If you were in my position, how would you move ahead in order to improve your knowledge of DevOps and show a future employer that you have the skills he requires in order to work in this field?
+Would you go with certs such as (AWS SysOps engineer)?
+Which (paid if necessary) training would you undergo?
+
+Thanks.
+## [3][Where would you store a secret shared key?](https://www.reddit.com/r/aws/comments/izsd21/where_would_you_store_a_secret_shared_key/)
+- url: https://www.reddit.com/r/aws/comments/izsd21/where_would_you_store_a_secret_shared_key/
+---
+If I want to break my app up using Lambdas, and I want to share a secret key to authenticate jwt tokens, I'm assuming I'm better off keeping it in one location rather than having it stored in each app on Lambda.  Does AWS have a built in tool for this?  I've heard others talk about something I think was called Zookeeper, but I believe that is a third party program.  I'm wondering if AWS has a simple solution for this, where when the Lambda awakens, it can fetch the secret key and authenticate the jwt.
+## [4][Is it possible to reset AWS?](https://www.reddit.com/r/aws/comments/j04atj/is_it_possible_to_reset_aws/)
+- url: https://www.reddit.com/r/aws/comments/j04atj/is_it_possible_to_reset_aws/
+---
+I used my personal email to kickstart my company a few years ago, before moving it to its own account. Now I want to use the account for a few personal projects and, although I removed all I could see related to my previous company, I just want to make sure that I'm starting with a clean AWS account.
+
+I thought of deleting the account and creating a new one, but apparently you cannot open new accounts with email addresses that are associated with closed accounts.
+
+Is there a way of resetting all of AWS to defaults, or to open a new account with my personal email?
+## [5][S3 pattern for web &amp; mobile application.](https://www.reddit.com/r/aws/comments/j014hj/s3_pattern_for_web_mobile_application/)
+- url: https://www.reddit.com/r/aws/comments/j014hj/s3_pattern_for_web_mobile_application/
+---
+The pattern I've come up with is:
+
+
+(1) Send user a presigned url to post/get - assuming database reads/writes are not public
+
+
+
+(2) When user uploads to s3, trigger lambda which posts to our own server, and then creates a database reference for its path.
+
+
+My problem with this is an edge case where the presigned url hasn't expired, our server went down, and the lambda either kept running or stopped trying to contact our server - which means our database isn't in sync.
+
+
+
+How do you guys use s3 :)
+## [6][What is the largest AWS environment you have worked with? How do you manage it!???](https://www.reddit.com/r/aws/comments/j03qek/what_is_the_largest_aws_environment_you_have/)
+- url: https://www.reddit.com/r/aws/comments/j03qek/what_is_the_largest_aws_environment_you_have/
+---
+Hello,
+
+  
+I work for a SaaS company and our infrastructure is hosted in AWS. For most part until now we have been managing our cloud with homegrown scripts, terraform, and AWS dashboards.
+
+However, we are rapidly increasing our cloud infrastructure both in EC2 as well as server less side.   
+I'm looking for the pointers from the community about when to start looking for third party solutions for management, if at all. 
+
+Also, I'm looking for some general information about AWS environment that you have personally worked with. How many resources (EC2 Instances, Lambda instances, RDS, ECS cluster sizes - number of containers) etc? How many accounts? Did you use any third party solution,? If yes, could you please mention those too. Idea is I want to compare it with our environment and see what fits to us.
+
+We recently started experimenting with Cloud Custodian - but at times we are facing API throttling issues. This worries me as it may impact our workloads too.
+
+Thanks in advance.
+## [7][AWS Service Catalog | Feedback and Experiences Using?](https://www.reddit.com/r/aws/comments/j05huf/aws_service_catalog_feedback_and_experiences_using/)
+- url: https://www.reddit.com/r/aws/comments/j05huf/aws_service_catalog_feedback_and_experiences_using/
+---
+Looking into using AWS Service Catalog for a large enterprise.  Wanted to hear feedback, experiences, pros/cons, challenges, gotchas, missing features, use cases?
+
+Thanks in advance for any help!
+## [8][Best practise for deployments](https://www.reddit.com/r/aws/comments/j04cpc/best_practise_for_deployments/)
+- url: https://www.reddit.com/r/aws/comments/j04cpc/best_practise_for_deployments/
+---
+Hey all 👋
+
+I’ve been asked with getting various applications up and running in our new AWS Environment.  I’m looking to build Jenkins, Vault etc (I know, why not use Codepipeljne/KMS etc, it’s a migration at the moment, well be swapping to these in the future).
+
+I’m looking to build this up via CDK, but unsure on the best way to approach, which of these would you suggest?
+
+1. Building the instances and configuring with Ansible (either tower, or Systems Manager - playbooks / roles will be stored in GitHub)
+2. Build the AMI with Jenkins Master/Slave baked into the image? 
+
+Ideally I’d like this to be immutable, slaves with be in a ASG to auto scale when needed. 
+
+Many thanks,
+## [9][Question on S3 lifecycle policies](https://www.reddit.com/r/aws/comments/j0462w/question_on_s3_lifecycle_policies/)
+- url: https://www.reddit.com/r/aws/comments/j0462w/question_on_s3_lifecycle_policies/
+---
+I have a small collection of stuff (few hundred GB) that I keep on a Synology in my house, and I want to keep an offline copy in AWS. I don't expect to access it unless the Synology goes kablooey, so Glacier Deep Archive is fine with me.  I'm confused about lifecycle policies, though.
+
+I have an S3 bucket and upload music to it via Cloud Sync.  I want to transition stuff out of this bucket and into glacier, so I have a policy which transitions everything in the bucket into deep archive after 7 days.  I know this might be a (relatively) expensive way to do it, but even the expensive way is like $3 so I don't care.  But after I've moved everything to deep archive, I want to delete all versions in the S3 bucket so I'm not storing stuff there permanently. 
+
+If I create a lifecycle policy to transition to deep archive, do I also need to expire current and previous versions from the S3 bucket, or does the transition to deep archive remove things from the bucket as part of the policy?  I assume "transition" means "remove from one place and put into another" but ass-u-me and all that.
+
+Thanks!
+## [10][Can we make EC2 instances in the web tier as Private?](https://www.reddit.com/r/aws/comments/j04134/can_we_make_ec2_instances_in_the_web_tier_as/)
+- url: https://www.reddit.com/r/aws/comments/j04134/can_we_make_ec2_instances_in_the_web_tier_as/
+---
+We have Typical 3 tier architecture having Web, App and DB. Can we make EC2 instances in the web tier as Private? and allow incoming traffic only through ALB? AFAIK we can apply an SG only allowing connections from the SG of the ALB. But What if our Private EC2 instance has to return response back to the client? How it'll be routed through ALB as ALB is mostly used for managing incoming traffic. Also for outgoing traffic can we configure something like Private EC2 instance -&gt; ALB -&gt; Internet? If yes then how? So, is there any way for private EC2 instances to communicate to internet without assigning them public IP?
+## [11][Cross region Cloudformation. Now you can do it with a single file!](https://www.reddit.com/r/aws/comments/izihe8/cross_region_cloudformation_now_you_can_do_it/)
 - url: https://www.reddit.com/r/aws/comments/izihe8/cross_region_cloudformation_now_you_can_do_it/
 ---
 A few days ago I wanted to use a single file (ie a single thing for people to update in a single place) to create some resources in different regions. I started down a few dead end ideas like SSM parameters and the like. They're all region locked.
@@ -20,96 +113,3 @@ If you want more detail I made a blog post with a simple example and a run down 
 
 
 [https://surevine.com/creating-cloudformation-stacks-in-multiple-aws-regions-with-common-resources/](https://surevine.com/creating-cloudformation-stacks-in-multiple-aws-regions-with-common-resources/)
-## [3][Amazon Elasticsearch Service now offers T3 Instances](https://www.reddit.com/r/aws/comments/iz48gt/amazon_elasticsearch_service_now_offers_t3/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/09/amazon-elasticsearch-service-offers-t3-instances/
----
-
-## [4][Someone uses the AWS App?](https://www.reddit.com/r/aws/comments/izfiiq/someone_uses_the_aws_app/)
-- url: https://www.reddit.com/r/aws/comments/izfiiq/someone_uses_the_aws_app/
----
-Every time I use the AWS App I see it really useless, you can hardly do anything.
-
-you feel the same?
-## [5][New EC2 Experience - need New Permission to control resources?](https://www.reddit.com/r/aws/comments/izg0v0/new_ec2_experience_need_new_permission_to_control/)
-- url: https://www.reddit.com/r/aws/comments/izg0v0/new_ec2_experience_need_new_permission_to_control/
----
-Hello,
-
-One of our IAM user has permissions only for starting and stopping tagged EC2 instances.
-
-(based on this document : [https://docs.aws.amazon.com/IAM/latest/UserGuide/reference\_policies\_examples\_ec2\_tag-owner.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_examples_ec2_tag-owner.html))
-
-I found out that in new ec2 experience, the error  occured while changing instance state saying that I need describe vpcs permission and others.
-
-It doesn't give me any error when I switched back to old console and instance is started successfully
-
-I had to put those action in the user's policy if I want to use new console.
-
-Is there any API changes when it's operating on new console?
-
-I couldn't find any documents about this.
-
-Thank you.
-## [6][What's your CICD process for API Gateway backed by Lambdas using Versions &amp; Aliases?](https://www.reddit.com/r/aws/comments/iz8nq2/whats_your_cicd_process_for_api_gateway_backed_by/)
-- url: https://www.reddit.com/r/aws/comments/iz8nq2/whats_your_cicd_process_for_api_gateway_backed_by/
----
-
-## [7][Using AWS cognito to deal with user authentication and api key token creation](https://www.reddit.com/r/aws/comments/izicyu/using_aws_cognito_to_deal_with_user/)
-- url: https://www.reddit.com/r/aws/comments/izicyu/using_aws_cognito_to_deal_with_user/
----
-Hello all,
-
-We have the following use case. We have an application running on AWS where we do the authentication of users manually^[1]. We are looking to migrate to using AWS Cognito to handle the user authentication and authorization. So far this all seems pretty easy and doable. The only roadblock is the generation of api_keys. When users login into our application they have the option to generate api_keys so that they can use our developer API from their own application. Picture something like [stripe](https://stripe.com/en-gb-nl) where you can make an account and login and within the application lets you generate api keys.
-
-Is it possible to leverage Cognito to do handle the creation of api keys (or something similar like client credentials in Oauth2) as well? The thing we tried are User Pool App Clients for every user but there is a limit of 1000 clients per user pool so it doesn't seem like this is meant to be used for every single user.
-
-Another thing we looked at is the client credentials flow on a single app client. So we create a single app client for our application and turn on client credentials and let users login using that. However a cursory glance makes it seem like client credentials are for our own machines and not so much third party developers?
-
-[1] With manually I mean that we have an endpoint where people sign up with a username and password, save those in an RDS and when people login we simply check if the user exists and give them a JWT token
-## [8][AWS instance shortage in US-EAST-1](https://www.reddit.com/r/aws/comments/iz2mmf/aws_instance_shortage_in_useast1/)
-- url: https://www.reddit.com/r/aws/comments/iz2mmf/aws_instance_shortage_in_useast1/
----
-Recently we ran into big difficulties to obtain some type of instances in us-east-1 (whatever the az).
-
-m5.xlarge, r5.4xlarge etc.. very basic one. 
-
-Are we alone in this situation ? are all customers already reserved all instances for holidays seasons ?
-## [9][Dedicated hosts Vs dedicated instances](https://www.reddit.com/r/aws/comments/izcp0w/dedicated_hosts_vs_dedicated_instances/)
-- url: https://www.reddit.com/r/aws/comments/izcp0w/dedicated_hosts_vs_dedicated_instances/
----
-Hi guys are dedicated hosts basically an entire physical server rack that customers can select and can choose which individual physical server in rack that the instances can be deployed on ? Is dedicated instances basically instances that are running on the same physical server on a shared rack ? Each time a dedicated instance is stopped started , it goes onto a new physical server which only the company can spin up new vms ?
-## [10][Using lamba to replace bash scripts in theory.](https://www.reddit.com/r/aws/comments/izgcay/using_lamba_to_replace_bash_scripts_in_theory/)
-- url: https://www.reddit.com/r/aws/comments/izgcay/using_lamba_to_replace_bash_scripts_in_theory/
----
-Looking at the possibility on moving a legacy solution up to the cloud
-
-Current situation:
-Multiple times a day a dmz linux vm rsyncs some files from a third party ftp share. It then does some remote renaming operations to tag the files previously downloaded and unzips downloaded files and stores them locally. 
-
-At different multiple times a different linux vm inside our main network running an oracle database then downloads and processes these files from the first vm to oracle readable files, injests the updates then deletes the files from the first vm
-
-Lock files are used to stop the two processes conflicting. Honestly yes it's as bad as it sounds. 
-
-This is all triggered by cron using bash scripts. 
-
-I was considering the benefits of migrating the oracle database to oracle rds but would then need something to replace the function of said bash scripts. 
-
-Very new to aws, but was thinking in theory could this be achieved with a couple of lambda functions. 
-
-The logic would need some reworking and I am guessing it would need to be written in python and attach some s3 storage to hold the files but in theory is it possible and a good idea?
-## [11][Code that refuses to let the AWS SDK initialize itself and breaks if I don't feed it access keys](https://www.reddit.com/r/aws/comments/iz51lk/code_that_refuses_to_let_the_aws_sdk_initialize/)
-- url: https://www.reddit.com/r/aws/comments/iz51lk/code_that_refuses_to_let_the_aws_sdk_initialize/
----
-I keep running into code written by devs who just assume that I'm going to be feeding in a key/secret pair to a library that wants to talk to AWS. I set `AWS_PROFILE` to test locally and the whole library just throws a fit and tells me to go RTFM.
-
-Right now, I'm dealing with Ruby code that does:
-
-     AWS::EC2.new(
-        access_key_id: fetch(:ec2_access_key_id),
-        secret_access_key: fetch(:ec2_secret_access_key),
-        region: region
-      )
-
-And when those are `nil`, the whole thing dies trying to talk to the metadata service. On my home network.
-
-Am I doing something wrong that I keep seeing this out in the wild, or am I doomed to keep forking source and fixing it by removing code?

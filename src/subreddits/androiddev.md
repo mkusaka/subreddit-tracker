@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/izipbu/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/izipbu/weekly_anything_goes_thread/
+## [1][App Feedback Thread - September 26, 2020](https://www.reddit.com/r/androiddev/comments/j056re/app_feedback_thread_september_26_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/j056re/app_feedback_thread_september_26_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - September 21, 2020](https://www.reddit.com/r/androiddev/comments/iwy6cm/weekly_questions_thread_september_21_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/iwy6cm/weekly_questions_thread_september_21_2020/
 ---
@@ -25,57 +40,15 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Why use Room for offline caching when Retrofit/ OkHttp provide a better alternative?](https://www.reddit.com/r/androiddev/comments/izeone/why_use_room_for_offline_caching_when_retrofit/)
-- url: https://www.reddit.com/r/androiddev/comments/izeone/why_use_room_for_offline_caching_when_retrofit/
+## [3][Is flutter really the future?](https://www.reddit.com/r/androiddev/comments/j024of/is_flutter_really_the_future/)
+- url: https://www.reddit.com/r/androiddev/comments/j024of/is_flutter_really_the_future/
 ---
-I have been going through multiple tutorials and it seems the common/ accepted practice is to use Room to save data for offline caching. 
-
-The first problem I faced with Room as the single source of truth was that I had to manually delete data from the app that has been removed from the backend. This made the process like this -
-
-1. Make API call to get data
-2. If API call is a success, delete old entries and add new ones from the API response and then display the data from the DB (Room with LiveData makes this easy)
-3. If API call fails, fetch data from the app's database directly
-
-Now, this seems unnecessary complex - inserting/ deleting entries from db after every API request.
-
-I came across [this article](https://krtkush.com/2016/06/01/caching-using-okhttp-part-1.html) which explains that we can use an okHttp interceptor to store response for a defined time period and fetch it only if the API fails. 
-    
-    /**
-     * Interceptor to cache data and maintain it for four weeks.
-     *
-     * If the device is offline, stale (at most four weeks old)
-     * response is fetched from the cache.
-     */
-    private static class OfflineResponseCacheInterceptor implements Interceptor {
-        @Override
-        public okhttp3.Response intercept(Chain chain) throws IOException {
-            Request request = chain.request();
-            if (!UtilityMethods.isNetworkAvailable()) {
-                request = request.newBuilder()
-                        .header("Cache-Control",
-                          "public, only-if-cached, max-stale=" + 2419200)
-                        .build();
-            }
-            return chain.proceed(request);
-        }
-    }
-
-I found this a better approach and less complex. 
-
-Thoghts?
-## [4][Jetpack Compose image loading library for requesting and displaying images using Fresco.](https://www.reddit.com/r/androiddev/comments/izgukk/jetpack_compose_image_loading_library_for/)
-- url: https://github.com/skydoves/Frescomposable
+I am new android dev, and started working at my first job as android dev around 8 months back. I've been working with MVP/MVVM at this job and using Kotlin. Honestly I've started to love Kotlin, since during my undergraduate days, I did a lot of sports programming in Java and Kotlin seems way more easier and elegant to use. Recently I was planning to look into **Jetpack** and **KMM,** when I stumbled upon Flutter and a lot of articles how flutter is the future. I don't understand how can writing in native be the future? Also I agree cross platform is an advantage but with KMM coming out, I guess Kotlin can be used too. Since I'm pretty new, all the experienced devs out there, should I really learn Flutter to be employable in future or continue with Jetpack and KMM?
+## [4][Floating Windows on Android 1: Jetpack Compose &amp; Room](https://www.reddit.com/r/androiddev/comments/j03g09/floating_windows_on_android_1_jetpack_compose_room/)
+- url: https://localazy.com/blog/floating-windows-on-android-1-jetpack-compose-and-room
 ---
 
-## [5][Announcing a painless Kotlin/Multiplatform NoSQL embedded database](https://www.reddit.com/r/androiddev/comments/iziuf1/announcing_a_painless_kotlinmultiplatform_nosql/)
-- url: https://medium.com/kodein-koders/announcing-a-painless-kotlin-multiplatform-nosql-embedded-database-30fed677549c
----
-
-## [6][All developers will get the new Google Play Console on November 2, 2020](https://www.reddit.com/r/androiddev/comments/iz2avj/all_developers_will_get_the_new_google_play/)
-- url: https://android-developers.googleblog.com/2020/09/all-developers-will-get-new-google-play.html
----
-
-## [7][Rant: Surprised how uncomfortable/bad Room DB is for developers](https://www.reddit.com/r/androiddev/comments/izjbhq/rant_surprised_how_uncomfortablebad_room_db_is/)
+## [5][Rant: Surprised how uncomfortable/bad Room DB is for developers](https://www.reddit.com/r/androiddev/comments/izjbhq/rant_surprised_how_uncomfortablebad_room_db_is/)
 - url: https://www.reddit.com/r/androiddev/comments/izjbhq/rant_surprised_how_uncomfortablebad_room_db_is/
 ---
 After developing backend applications with Spring Boot for a while, I recently joined a mobile dev team again. They use Room as DB.    
@@ -95,37 +68,76 @@ Maybe i miss something but based on the [official documentation](https://develop
 
 
 Honestly, in 2020 i would have expected way better tooling for RDBMS even on mobile platforms.
-## [8][I want to create PixelArt icon packs](https://www.reddit.com/r/androiddev/comments/izjb7z/i_want_to_create_pixelart_icon_packs/)
-- url: https://www.reddit.com/r/androiddev/comments/izjb7z/i_want_to_create_pixelart_icon_packs/
----
-Hello.
-
-&amp;#x200B;
-
-First of all, let me be clear: i'm a noob and have 0 programming experience. Still, i have an Android publisher licence because i used app builders for things. I'm a PixelArtist and i want to create icon packs for Android (and possibly iOS if that's possible). Is there any understandable tutorial that might help me? If not, any developer that might want to collaborate in RevShare?
-## [9][COVID related apps](https://www.reddit.com/r/androiddev/comments/izikfk/covid_related_apps/)
-- url: https://www.reddit.com/r/androiddev/comments/izikfk/covid_related_apps/
----
-Was reading an android games website, and it informed that google has a policy regarding COVID related apps (it was about a virus fighting game, but they couldn't add a COVID name in the game, even though the virus is round):
-
-[https://support.google.com/googleplay/android-developer/answer/9889712?hl=en](https://support.google.com/googleplay/android-developer/answer/9889712?hl=en)
-
-During quarantine, I practiced my app developing skills making an app that got COVID-19 related data from an API, and shows in a human comprehensible form, no judgement on data or info on what should be done with it, in local language (brazilian portuguese). So I guess that due to that policy I wouldn't be able to publish that app, is that right?
-## [10][Migrating SharedPreferences to Jetpack DataStore](https://www.reddit.com/r/androiddev/comments/izijtq/migrating_sharedpreferences_to_jetpack_datastore/)
-- url: https://medium.com/@jurajkunier/migrating-sharedpreferences-to-jetpack-datastore-9deb8259063
+## [6][Analyzing the Source Code - How Glide Image Loading Library works Internally - Article](https://www.reddit.com/r/androiddev/comments/izofxs/analyzing_the_source_code_how_glide_image_loading/)
+- url: https://codingwithmitch.com/blog/image-loading-with-glide-how-it-works/
 ---
 
-## [11][PSA: Android Studio's 'Local history' has all your changes if you need to revert something](https://www.reddit.com/r/androiddev/comments/iyvtdu/psa_android_studios_local_history_has_all_your/)
-- url: https://www.reddit.com/r/androiddev/comments/iyvtdu/psa_android_studios_local_history_has_all_your/
+## [7][Floating Windows on Android 1: Jetpack Compose &amp; Room](https://www.reddit.com/r/androiddev/comments/j03j5d/floating_windows_on_android_1_jetpack_compose_room/)
+- url: https://www.reddit.com/r/androiddev/comments/j03j5d/floating_windows_on_android_1_jetpack_compose_room/
 ---
-I didn't even know what was Local history until now. 
+Hi, Guys,
 
-I thought i was done with the current feature, so i made my "final commit". But i forgot something, so i reseted the commit, did my change...  Then all the sudden i had a brain fart, instead of making a commit again, i reseted my files. So seeming i lost the past few hours work. 
+I published a series of articles about how to make floating windows (such as Facebook Heads and similar) on Android. 
 
-Turns out, AS / IJ keeps track of your changes. So i was able to reset the last 'External change' (git), reverting my changes (restoring the commit).
+For 7 years, I work on Floating Apps ([https://floatingapps.net](https://floatingapps.net)) and now I'm sharing all tips I learned along the way. 
 
-I have no affiliation with Coding in Flow, but he has a 5min tutorial on [Local History](https://www.youtube.com/watch?v=2A5F34TofMY)
-## [12][An Android transformation library providing a variety of image transformations for Coil, Glide, Picasso, and Fresco.](https://www.reddit.com/r/androiddev/comments/izgpqz/an_android_transformation_library_providing_a/)
-- url: https://github.com/wasabeef/transformers
+**The first lesson: Jetpack Compose &amp; Room**
+
+[https://localazy.com/blog/floating-windows-on-android-1-jetpack-compose-and-room](https://localazy.com/blog/floating-windows-on-android-1-jetpack-compose-and-room)
+
+Do you like it? Feel free to get in touch!
+## [8][Any good libraries/tutorials for working with the android file system?](https://www.reddit.com/r/androiddev/comments/j03hr2/any_good_librariestutorials_for_working_with_the/)
+- url: https://www.reddit.com/r/androiddev/comments/j03hr2/any_good_librariestutorials_for_working_with_the/
+---
+Working with "internal" files is fine for me but anything outside of that I find myself crawling through out of date answers on stackoverflow, confusing documentation from Google and running into constant issues trying to understand how all the various concepts work together. Anyone know any good tutorials or libraries that can help me out? Thanks!
+## [9][DataStore: Security - Styling Android](https://www.reddit.com/r/androiddev/comments/izk0bb/datastore_security_styling_android/)
+- url: https://blog.stylingandroid.com/datastore-security/
 ---
 
+## [10][Android Modularization: Make a reusable C++ module.( Intermediate )](https://www.reddit.com/r/androiddev/comments/izym0v/android_modularization_make_a_reusable_c_module/)
+- url: https://medium.com/@shalommathews05/android-modularization-make-a-reusable-c-module-intermediate-45c921f2608e
+---
+
+## [11][Google Play Billing Library v2/v3: How to stop someone maliciously preventing an acknowledgement and therefore get their purchase refunded?](https://www.reddit.com/r/androiddev/comments/izo6kg/google_play_billing_library_v2v3_how_to_stop/)
+- url: https://www.reddit.com/r/androiddev/comments/izo6kg/google_play_billing_library_v2v3_how_to_stop/
+---
+I've been implementing Google Play Billing Library v3, and noticed that starting v2 we must [acknowledge a purchase after granting entitlement to the purchased feature][1], otherwise the user is refunded within 3 days. So essentially the lifecycle is something like:
+
+1) User purchases something, e.g. subscription to a premium account. 
+
+2) The client app sends the purchase and signature to the backend so the user is entitled to the purchase, e.g. premium account.
+
+3) The backend responds with a success, we then acknowledge with Google Play the purchase was entitled (otherwise a refund is given). 
+
+However, that got me thinking, what is stopping a malicious user from modifying the APK (or even blocking the network call) so that the acknowledgment call is _not_ made, therefore the user is refunded within 3 days, but entitlement (step 2 above) is still given. What can I do the stop this within my app? How can I make sure the acknowledgment definitely goes through if the entitlement is given?
+
+  [1]: https://developer.android.com/google/play/billing/integrate#process
+## [12][Is it a bad practice to read from LiveData inside ViewModel functions?](https://www.reddit.com/r/androiddev/comments/izmccf/is_it_a_bad_practice_to_read_from_livedata_inside/)
+- url: https://www.reddit.com/r/androiddev/comments/izmccf/is_it_a_bad_practice_to_read_from_livedata_inside/
+---
+Let's say I have a list of fetched comments: `val comments = MutableLiveData&lt;Comment&gt;()`. When a comment is clicked a ViewModel function `fun onCommentClicked(commentIndex: Int)` is invoked, inside which I have to acquire clicked comment in order to do something. I would have to write `val comment = comments.value!!.filter {` [`it.id`](https://it.id) `== commentIndex }`. 
+
+Generally speaking I found that very often I read from LiveData variables inside ViewModel code. My SignInViewModel has two live datas `val username = MutableLiveData&lt;String&gt;(); val password = MutableLiveData&lt;String&gt;()` so when *sign in button* is pressed I would invoke a method like this one:
+
+    fun signIn() {
+        val params = SignInParams(username.value!!, password.value!!)
+        signInUseCase(params)
+        ...
+    }
+
+For some reason it seems a bad practice to me that I so often explicitly read from LiveData. Source code seems to be polluted with `.value!!` statements. 
+
+ I thought about keeping some data in additional backing lateinit properties so whenever I fetch list of comments  I would have to set two variables, and later in code I could just easily read from `_comments` variable without a need to get content from livedata and assert it's not null:
+
+    private lateinit var _comments: List&lt;Comments&gt;
+    val comments = MutableLiveData&lt;List&lt;Comments&gt;()
+    fun onCommentsFetched(fetchedComments: List&lt;Comments&gt;) {
+      _comments = fetchedComments
+      comments.value = _comments
+    }
+    
+    fun someFun(){
+      val comment = _comments.filter { ....
+    }
+
+So is it a bad practice to read from LiveData inside ViewModel functions? Should their content be only exposed to view? How to solve this problem?

@@ -1,11 +1,5 @@
 # javascript
-## [1][Showoff Saturday (September 19, 2020)](https://www.reddit.com/r/javascript/comments/ivr3xo/showoff_saturday_september_19_2020/)
-- url: https://www.reddit.com/r/javascript/comments/ivr3xo/showoff_saturday_september_19_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][WTF Wednesday (September 23, 2020)](https://www.reddit.com/r/javascript/comments/iycz15/wtf_wednesday_september_23_2020/)
+## [1][WTF Wednesday (September 23, 2020)](https://www.reddit.com/r/javascript/comments/iycz15/wtf_wednesday_september_23_2020/)
 - url: https://www.reddit.com/r/javascript/comments/iycz15/wtf_wednesday_september_23_2020/
 ---
 Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
@@ -13,43 +7,55 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][fflate - the fastest JavaScript compression/decompression library, 8kB](https://www.reddit.com/r/javascript/comments/izb5p9/fflate_the_fastest_javascript/)
+## [2][Showoff Saturday (September 26, 2020)](https://www.reddit.com/r/javascript/comments/j04nwe/showoff_saturday_september_26_2020/)
+- url: https://www.reddit.com/r/javascript/comments/j04nwe/showoff_saturday_september_26_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][Scopes in any JetBrains IDE](https://www.reddit.com/r/javascript/comments/j02j10/scopes_in_any_jetbrains_ide/)
+- url: https://stitcher.io/blog/phpstorm-scopes
+---
+
+## [4][Elder.js: A Svelte Framework and Static Site Generator - V1 released! 18000 pages in under 8 minutes](https://www.reddit.com/r/javascript/comments/j02xf3/elderjs_a_svelte_framework_and_static_site/)
+- url: https://elderguide.com/tech/elderjs/
+---
+
+## [5][I made some unofficial JSX and TSX logos if you like logos like me](https://www.reddit.com/r/javascript/comments/j027nu/i_made_some_unofficial_jsx_and_tsx_logos_if_you/)
+- url: https://github.com/Protectator/jsx-tsx-logos
+---
+
+## [6][Smolpxl - a JavaScript library for writing little retro pixelated games](https://www.reddit.com/r/javascript/comments/iznl3e/smolpxl_a_javascript_library_for_writing_little/)
+- url: https://gitlab.com/andybalaam/smolpxl
+---
+
+## [7][Bringing the Mona Lisa Effect to Life with TensorFlow.js](https://www.reddit.com/r/javascript/comments/izni3q/bringing_the_mona_lisa_effect_to_life_with/)
+- url: https://blog.tensorflow.org/2020/09/bringing-mona-lisa-effect-to-life-tensorflow-js.html
+---
+
+## [8][TypeScript — Excess Property Checks](https://www.reddit.com/r/javascript/comments/j020vk/typescript_excess_property_checks/)
+- url: https://medium.com/@tal.ohana.x/typescript-excess-property-checks-6ffe5584f450
+---
+
+## [9][Check out my project! I’m a high school senior who spent 300 hours making a doc editor to help my robotics team produce vibrant documentation without the headache of formatting text.](https://www.reddit.com/r/javascript/comments/j04ahz/check_out_my_project_im_a_high_school_senior_who/)
+- url: https://www.kilodoc.com/
+---
+
+## [10][[AskJS] If you install the latest VSCode for doing WebDev on Linux and you disable the telemetry in it will you still have somekind of telemetry inside your linux system à la Windows 10 ?](https://www.reddit.com/r/javascript/comments/j02tjb/askjs_if_you_install_the_latest_vscode_for_doing/)
+- url: https://www.reddit.com/r/javascript/comments/j02tjb/askjs_if_you_install_the_latest_vscode_for_doing/
+---
+*excuse my english french man from Quebec
+
+**A)** If you install the latest VSCode for doing WebDev on Linux and you disable the telemetry in it will you still have somekind of telemetry inside your linux system à la Windows 10 ?
+
+**B)** What's your opinion about being a 100% remote JS dev today in 2020 is it feasible to have a solid well paid career being remote also I am trying to go back to programming after 20 years.. ( did some C++ etc not starting from 0 ) some ppl told me I could be junior-intermediate inside 2 years if I study 10 hrs a day what I want to know is should I aim to be fullstack cause some programmer told me to specialize frontend or backend and not try to be fullstack in 2020 is this true ?
+
+**C)** What's the IDE or text editor after VScode to do solid webdev ? like the 2nd best is it close to VSCode or it's the best now with the greatest extensions and workflow ? (sublime atom another etc)
+## [11][Can WebAssembly run under FreeDOS?](https://www.reddit.com/r/javascript/comments/j0278g/can_webassembly_run_under_freedos/)
+- url: /r/WebAssembly/comments/j016p6/can_webassembly_run_under_freedos/
+---
+
+## [12][fflate - the fastest JavaScript compression/decompression library, 8kB](https://www.reddit.com/r/javascript/comments/izb5p9/fflate_the_fastest_javascript/)
 - url: https://github.com/101arrowz/fflate
----
-
-## [4][Material UI Dashboard with React](https://www.reddit.com/r/javascript/comments/iyymar/material_ui_dashboard_with_react/)
-- url: https://material-ui-dashboard.cube.dev/
----
-
-## [5][What’s Structural Typing And How Typescript Uses It To Its Benefit?](https://www.reddit.com/r/javascript/comments/iywtou/whats_structural_typing_and_how_typescript_uses/)
-- url: https://medium.com/@mahdighajary/whats-structural-typing-and-how-typescript-use-it-to-its-benefit-6cf491f1564?source=friends_link&amp;sk=e0265b7bf135cc7e5d912d9e74d57afb
----
-
-## [6][billboard.js 2.1.0 release: Another big step for performance improvement &amp; more!](https://www.reddit.com/r/javascript/comments/izeuw9/billboardjs_210_release_another_big_step_for/)
-- url: https://medium.com/@alberto.park/billboard-js-2-1-0-release-another-big-step-for-performance-improvement-more-9f0b9357d9d5
----
-
-## [7][Best way to show Active Links in the navigation using Gatsby](https://www.reddit.com/r/javascript/comments/izepkf/best_way_to_show_active_links_in_the_navigation/)
-- url: https://medium.com/@mohammedmodi/best-way-to-show-active-links-in-the-navigation-using-gatsby-544145b37e78
----
-
-## [8][I made an "all in one" validator if anyone else needs one.](https://www.reddit.com/r/javascript/comments/izaejn/i_made_an_all_in_one_validator_if_anyone_else/)
-- url: https://github.com/oslllo/validator
----
-
-## [9][esbuild. An alternative builder to webpack, rollup, parcel, 100X faster for Javascript/Typescript webapp](https://www.reddit.com/r/javascript/comments/izi34s/esbuild_an_alternative_builder_to_webpack_rollup/)
-- url: https://github.com/evanw/esbuild
----
-
-## [10][LinkedIn's new UI greatly improved speed with underdog technology](https://www.reddit.com/r/javascript/comments/izh0wh/linkedins_new_ui_greatly_improved_speed_with/)
-- url: https://emberjs.com?0
----
-
-## [11][Run android emulator on CircleCI](https://www.reddit.com/r/javascript/comments/izgnx6/run_android_emulator_on_circleci/)
-- url: https://resolvedpromise.hashnode.dev/run-android-emulator-on-circleci
----
-
-## [12][Updates from 78th meeting of TC39](https://www.reddit.com/r/javascript/comments/iyyb2v/updates_from_78th_meeting_of_tc39/)
-- url: https://dev.to/hemanth/updates-from-78th-meeting-of-tc39-2cbm
 ---
 

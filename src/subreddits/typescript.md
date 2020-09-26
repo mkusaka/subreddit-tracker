@@ -22,111 +22,157 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Can anyone show me why react-typescript is good?](https://www.reddit.com/r/typescript/comments/izixhl/can_anyone_show_me_why_reacttypescript_is_good/)
-- url: https://www.reddit.com/r/typescript/comments/izixhl/can_anyone_show_me_why_reacttypescript_is_good/
----
-There is this company I am interested in working for. But they insist on using react in combination with typescript. 
-
-I followed some tutorials about the combination of the two but I honestly feel like typescript is bloating the syntaxes more than it should. Some comments could also do the trick in my opinion. That is because react already offers 'a form' of structure to its code. 
-
-This said, I am stil pretty inexperienced when it comes to developing bigger projects. That is why I would like to ask some people woth experience to show me some code examples where typoscript obviously make react code better. And/Or draw me a situation where it would obviously help. 
-
-Thanks in advance!
-## [3][Not quite what I was looking for](https://www.reddit.com/r/typescript/comments/iyur8c/not_quite_what_i_was_looking_for/)
-- url: https://twitter.com/FarPixel/status/1309077814117904389
+## [2][A SQL database implemented purely in TypeScript type annotations.](https://www.reddit.com/r/typescript/comments/izymbn/a_sql_database_implemented_purely_in_typescript/)
+- url: https://i.redd.it/8yy97gfqyep51.png
 ---
 
-## [4][Passing a union to an overloaded function](https://www.reddit.com/r/typescript/comments/izgrsx/passing_a_union_to_an_overloaded_function/)
-- url: https://www.reddit.com/r/typescript/comments/izgrsx/passing_a_union_to_an_overloaded_function/
+## [3][VS Code generate explicit type annotation from inferred type](https://www.reddit.com/r/typescript/comments/izyayk/vs_code_generate_explicit_type_annotation_from/)
+- url: https://www.reddit.com/r/typescript/comments/izyayk/vs_code_generate_explicit_type_annotation_from/
 ---
-The following code doesn't type-check unless the third function declaration is uncommented. I feel like I'm missing something here; shouldn't it be rather simple for the compiler to figure out the return type when the union is provided without me having to explicitly define it?
-
-    type Foo = {type: "foo"};
-    type Bar = {type: "bar"};
-
-    declare function f(x: Foo): 1;
-    declare function f(x: Bar): 2;
-    // declare function f(x: Foo | Bar): 1 | 2;
-
-    declare const input: Foo | Bar;
-    f(input);
-
-[Relevant TypeScript Playground](https://www.typescriptlang.org/play?#code/C4TwDgpgBAYg9nKBeKBvUkBcUBEAzBHAXwG4AoDaAIQEMAnZNS7HAI3uPLIBMIBjADb1oeAK4A7PsACWccVDwAKAB7Z4cAJTYAjOV6DhCiVNnylqqLTpaoAJnIB6B1H1C6I4zLkKVahFAAfS3obbUC7LldDPjkAZ2AoaXEwUWA-RCCrciUklOANEiA)
-## [5][The first thing I do on any Typescript/Angular project](https://www.reddit.com/r/typescript/comments/izghe1/the_first_thing_i_do_on_any_typescriptangular/)
-- url: https://medium.com/@ciesielskico/the-first-thing-i-do-on-any-typescript-angular-project-628d26ffd2a7?source=friends_link&amp;sk=5eed949a2c5e30c48709fbcafad1d00c
+Hey everyone! I've been missing this feature for a long time and there was no solution, so yesterday I made an extension for VS Code that generates explicit types. Give it a go if you want :)  
+[https://marketplace.visualstudio.com/items?itemName=nick-lvov-dev.typescript-explicit-types](https://marketplace.visualstudio.com/items?itemName=nick-lvov-dev.typescript-explicit-types)
+## [4][Genetic Algorithm applied to the Infinite Monkey Theorem](https://www.reddit.com/r/typescript/comments/izpcrt/genetic_algorithm_applied_to_the_infinite_monkey/)
+- url: https://github.com/f0lg0/geneticAlgorithm-TS
 ---
 
-## [6][tsPEG: 2.0.0 now available! The TypeScript parser generator](https://www.reddit.com/r/typescript/comments/iz55ud/tspeg_200_now_available_the_typescript_parser/)
-- url: https://www.npmjs.com/package/tspeg
+## [5][Union with never: Worth it?](https://www.reddit.com/r/typescript/comments/j02y64/union_with_never_worth_it/)
+- url: https://www.reddit.com/r/typescript/comments/j02y64/union_with_never_worth_it/
+---
+Say I have a function that *can* (but does not always) error:
+
+    const fn = (code:number): string | never =&gt; {
+        if (code &gt;= 400) {
+            throw Error(Error code: ${code});
+        }
+        return Code: ${code}; 
+    }
+
+&amp;#x200B;
+
+Is it considered good style/helpful/accurate to include "never" in the return type? Or is never reserved for functions that by design-never return.
+## [6][TypeScript — Excess Property Checks](https://www.reddit.com/r/typescript/comments/j028h2/typescript_excess_property_checks/)
+- url: https://medium.com/@tal.ohana.x/typescript-excess-property-checks-6ffe5584f450
 ---
 
-## [7][types vs. interfaces](https://www.reddit.com/r/typescript/comments/iylqrr/types_vs_interfaces/)
-- url: https://www.youtube.com/watch?v=IXAT3If0pGI
+## [7][I made some unofficial TSX and JSX logos if you like logos like me](https://www.reddit.com/r/typescript/comments/j028bn/i_made_some_unofficial_tsx_and_jsx_logos_if_you/)
+- url: https://github.com/Protectator/jsx-tsx-logos
 ---
 
-## [8][TS4.1: Is there a way to define this property path type that isn't excessively deep?](https://www.reddit.com/r/typescript/comments/iywewf/ts41_is_there_a_way_to_define_this_property_path/)
-- url: https://www.reddit.com/r/typescript/comments/iywewf/ts41_is_there_a_way_to_define_this_property_path/
----
-Experimenting with the upcoming TypeScript 4.1's template literal types, I tried to define a generic type that can check property paths.
-
-Until TS 4.1, there was no possible way to type an expression such as `'foo.bar.baz'`, and you would have to settle for `string`. Now, with template literal types, I want to be able to type these property paths, and use them for things such as MongoDB queries and projection objects. For example:
-
-`db.someCollection.find({ 'foo.bar.baz': { $exists: true } });`
-
-This is the type that I came up with:
-
-```ts
-type PropsPath&lt;T&gt; =
-    T extends object
-        ? T extends any[]
-            ? number
-            : {
-                [P in keyof T]: P | `${P}.${PropsPath&lt;T[P]&gt;}`
-            }[keyof T]
-        : '';
-```
-
-[Full example in TS Playground](https://www.typescriptlang.org/play?ts=4.1.0-dev.20200921#code/C4TwDgpgBACgTgezAZxgQ2ACwDwBUB8UAvAFBTlS5QQAewEAdgCbJQIBGAVhAMbBkVBAfkrU6jFlDQMQAbQC6AwcqgiGAVwC27CHCUqKALigBvfQeWyYUAJYMoAawggEAM0rzj1gD5QABgAkJjAAvgB0QfBIqBg4uFby+CF+5gYhsk4u7riKFsYA5PkA3CQkdvRwrmg80ADKCJoQuODQZoKuCAjGbQbsaHDGGtq6JYIh+n0AXsbsnQA2ENIl4yQ8CAzIwFBgXogo6FjY9Y3NkIREUPkdCMWlaxtbYIjcfDbrXv3ANmhz2ABKvAQcCY2Ci+1iRwaTRa+AANFAhjo4PhzqZ9FdOmE+nB8sYAIwkEJFIA)
-
-Sadly, this type is considered "excessively deep or possibly infinite" by TS compiler. Is there any way to redefine it in a way that doesn't throw an error?
-## [9][What’s Structural Typing And How Typescript Uses It To Its Benefit?](https://www.reddit.com/r/typescript/comments/iywrt5/whats_structural_typing_and_how_typescript_uses/)
-- url: https://medium.com/@mahdighajary/whats-structural-typing-and-how-typescript-use-it-to-its-benefit-6cf491f1564?source=friends_link&amp;sk=e0265b7bf135cc7e5d912d9e74d57afb
+## [8][Types of Apps that can be built with Angular Framework](https://www.reddit.com/r/typescript/comments/j03f9m/types_of_apps_that_can_be_built_with_angular/)
+- url: https://tekkiwebsolutions.com/blog/angular-framework-apps/
 ---
 
-## [10][Need some help with index signature and OR](https://www.reddit.com/r/typescript/comments/iyh08i/need_some_help_with_index_signature_and_or/)
-- url: https://www.reddit.com/r/typescript/comments/iyh08i/need_some_help_with_index_signature_and_or/
+## [9][Confusing situation with typing multiple recursive union types](https://www.reddit.com/r/typescript/comments/izwd5j/confusing_situation_with_typing_multiple/)
+- url: https://www.reddit.com/r/typescript/comments/izwd5j/confusing_situation_with_typing_multiple/
 ---
-Spent a lot of time trying to find an explanation of the following behavior:
+I'm working on a lambda calculus interpreter out of *The Implementation of Functional Programming Languages* and I'm running into some trouble getting the type safety I'm looking for.
 
-    const stringKey = 'thisKeyDoesNotExist'
-    const hashMap: {
-        [key: string]: {
-          valueNumber: number; 
-          valueString: string;
-        };
-      } = {};
-    
-    
-    // TS does not complain
-    hashMap[stringKey] = hashMap[stringKey] || {
-              valueString: stringKey,
-              valueNumber: 'string!!!!!!!!!!!',
-            };
-    // TS does not complain
-    hashMap[stringKey] = hashMap[stringKey] || "string";
-    
-    // Only with this syntax TS complains that there is an issue with `valueNumber`
-    hashMap[stringKey] = hashMap[stringKey] ? hashMap[stringKey] : {
-              valueString: stringKey,
-              valueNumber: 'string!!!!!!!!!!!',
-            };
+In the basic lambda calculus, an expression can be one of three things:
 
-Can somebody explain why the first 2 assignments are passing the TS checks?
-## [11][Why does setting 'as const' allow a string to match a string union type?](https://www.reddit.com/r/typescript/comments/iy8b7t/why_does_setting_as_const_allow_a_string_to_match/)
-- url: https://www.reddit.com/r/typescript/comments/iy8b7t/why_does_setting_as_const_allow_a_string_to_match/
+    type Expression =
+      | Variable
+      | Abstraction&lt;Expression&gt;
+      | Application&lt;Expression&gt;
+
+    interface Variable {
+      nodeType: "var";
+      id: string;
+    }
+
+    interface Abstraction&lt;E&gt; {
+      nodeType: "abs";
+      argument: Variable;
+      body: E;
+    }
+
+    interface Application&lt;E&gt; {
+      nodeType: "app";
+      left: E;
+      right: E;
+    }
+
+This works fairly well like you'd expect. Sometimes the lambda calculus AST is extended with the notion of variable definition, called a Let binding, and I'll call that "language" AugmentedExpression
+
+    type AugmentedExpression =
+      | Variable
+      | Abstraction&lt;AugmentedExpression&gt;
+      | Application&lt;AugmentedExpression&gt;
+      | Let&lt;AugmentedExpression&gt;
+
+    interface Let&lt;E&gt; {
+      nodeType: "let";
+      varName: Variable;
+      equals: E;
+      inExpr: E;
+    }
+
+This works as well, on its own. The issue is, I want to be able to write a function that can take either an `Expression` or an `AugmentedExpression` and return that same type. For instance, if I write a function that takes two Expressions and returns an Application of one to the other, I know that the return is also of type Expression. 
+
+    function app(left: Expression, right: Expression): Expression {
+      return { nodeType: 'app', left, right };
+    }
+
+That's fine. I could also write exactly the same code and substitute AugmentedExpression for Expression, and it would work just fine. If I try to write the types such that it guarantees that if you pass in an Expression you get an Expression back, and if you pass in an AugmentedExpression you get an AugmentedExpression back, it gets more difficult.
+
+Initially I tried:
+
+    type Language = Expression | AugmentedExpression
+    function app&lt;L extends Language&gt;(left: L, right: R): L 
+
+That doesn't work, you have to either cast the result to unknown and then back to L, or you have to specify the return type as Application&lt;L&gt;, which kind of makes sense, and works for that situation.
+
+But sometimes the return is more complicated, consider repeated application:
+
+    function appN(...args: Expression): Expression {
+      if(args.length == 2)
+        return app(...args);
+      else
+        return appN(app(args[0], args[1]), ...args.slice(2))
+     }
+
+Here the same thing is true: if you pass in Expressions, you get an Expression, if you sub it for AugmentedExpression it works exactly the same way, returns AugmentedExpression. But I can't make this type check. I want to be able to write it as something like `appN&lt;L extends Language&gt;(...args: L[]) : L`, but the type checker does not like it one bit. 
+
+Any ideas on how I can express this in Typescript types? Without getting super unwieldy, which all of the solutions I've come up with so far have been. I'm guessing that the issue comes down to the fact that what I'm trying to do is somewhere between nominal and structural typing.
+## [10][Can someone help me out](https://www.reddit.com/r/typescript/comments/iztqsw/can_someone_help_me_out/)
+- url: https://www.reddit.com/r/typescript/comments/iztqsw/can_someone_help_me_out/
 ---
-I had to use this inside a fetch request, I consider it hacky but it works:
+Hi,
 
-        mode: 'cors' as const, // allows string to match a string union type
+I'm having the following 'problem': [https://stackoverflow.com/questions/64059374/why-isnt-the-argument-assignable-only-when-we-dont-know-exactly-what-type-from/64059656#64059656](https://stackoverflow.com/questions/64059374/why-isnt-the-argument-assignable-only-when-we-dont-know-exactly-what-type-from/64059656#64059656)
 
-I learned this here but never found an explanation for it. why does asserting the string as a const variable suddenly let it match a string union type (which I saw in the error popup)?
+Can someone explain this behaviour to me?
+
+Thanks
+## [11][Exporting third-party type for consumption](https://www.reddit.com/r/typescript/comments/izqfax/exporting_thirdparty_type_for_consumption/)
+- url: https://www.reddit.com/r/typescript/comments/izqfax/exporting_thirdparty_type_for_consumption/
+---
+Not sure how best to ask this question, so please bear with me :)  
+
+
+I've got an npm package that I'm building/publishing which derives a type from a third-party package:
+
+&amp;#x200B;
+
+`import { GridChildComponentProps } from 'react-window'`
+
+`interface OwnCellProps {`
+
+  `pageSize: number;`
+
+`}`
+
+`export type CellProps = OwnCellProps &amp; GridChildComponentProps;`
+
+&amp;#x200B;
+
+Now when my consuming project uses this npm package it gets \`CellProps\` as type \`any\`. When I click through the references, I see that my declaration file has a similar line:
+
+`export declare type CellProps = OwnCellProps &amp; GridChildComponentProps;`
+
+OwnCellProps has the correct type, because it's defined above, but GridChildComponentProps has no type.  Likely because it is not defined.  There is the same import line at the top of the file, but \`@types/react-window\` is not installed in the consuming project.
+
+So my question is: how can the consuming project get the types from an npm package's third-party type dependency?
+
+I have \`@types/react-window\` listed as a devDependency, but the consuming project does not install it.  I'm wondering if there's a way to include the third-party type in the declaration file created in my npm package.  
+
+Any help is appreciated!

@@ -27,7 +27,11 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Chat App](https://www.reddit.com/r/rails/comments/j05vx9/chat_app/)
+## [3][Freelancing Web Development using Rails](https://www.reddit.com/r/rails/comments/j0nhbb/freelancing_web_development_using_rails/)
+- url: https://www.reddit.com/r/rails/comments/j0nhbb/freelancing_web_development_using_rails/
+---
+Hey guys, Im currently searching for freelancing opportunities using Rails. Opportunities are pretty less frequent than other frameworks on big stations like UpWork. Is there any websites, subreddits, etc..that concentrates on Rails freelancing opportunities?
+## [4][Chat App](https://www.reddit.com/r/rails/comments/j05vx9/chat_app/)
 - url: https://www.reddit.com/r/rails/comments/j05vx9/chat_app/
 ---
 Hi everyone,
@@ -45,17 +49,17 @@ The challenge also asks me to keep logs of login and invalid login.
 Any advice is appreciated.
 
  Have a great weekend guys.
-## [4][Hiding password in database.yml file?](https://www.reddit.com/r/rails/comments/izucjd/hiding_password_in_databaseyml_file/)
+## [5][Hiding password in database.yml file?](https://www.reddit.com/r/rails/comments/izucjd/hiding_password_in_databaseyml_file/)
 - url: https://www.reddit.com/r/rails/comments/izucjd/hiding_password_in_databaseyml_file/
 ---
 Hi there. I'm wondering if there's a way to either hide the file on github, or stop it from being pushed or what the best way to hide that would be? Since it just shows the password under "default: &amp;default" after adding the username and password, anyone an see it. Is it necessary to hide this password in the first place? I'd greatly appreciate the help!
-## [5][Will AWS CloudHSM work with this digital signature script?](https://www.reddit.com/r/rails/comments/izoidm/will_aws_cloudhsm_work_with_this_digital/)
+## [6][Will AWS CloudHSM work with this digital signature script?](https://www.reddit.com/r/rails/comments/izoidm/will_aws_cloudhsm_work_with_this_digital/)
 - url: https://www.reddit.com/r/rails/comments/izoidm/will_aws_cloudhsm_work_with_this_digital/
 ---
 [https://gist.github.com/matiaskorhonen/223bd527279cf49bed1e](https://gist.github.com/matiaskorhonen/223bd527279cf49bed1e)
 
 I'm not 100% on how CloudHSM works, can I pull the necessary keys to use with this script using the aws SDK?
-## [6][Sending partials over javascript](https://www.reddit.com/r/rails/comments/izbmit/sending_partials_over_javascript/)
+## [7][Sending partials over javascript](https://www.reddit.com/r/rails/comments/izbmit/sending_partials_over_javascript/)
 - url: https://www.reddit.com/r/rails/comments/izbmit/sending_partials_over_javascript/
 ---
 I'm trying to customize a rails scaffold so it doesnt go to a new page every time I want to edit or create a new resource. 
@@ -63,7 +67,7 @@ I'm trying to customize a rails scaffold so it doesnt go to a new page every tim
 Right now what I'm doing is using stimulus to prevent default behavior of links, then fetch `e. target.href` to display the form partial within a bootstrap modal. I then use `remote: true` to send the forms w/ javascript and respond with the resource partial like `format.js { render partial: "partial", locals: { resource: @resource }, content_type: "text" } `. I respond with the resource partial because it gets added to the DOM with `insertAdjacentHTML`.
 
 Now that works and all but it feels kinda hacked together and dirty. Is there a better way to do this?
-## [7][uploading multiple images to s3 with presign endpoint using shrine and uppy](https://www.reddit.com/r/rails/comments/iz9ux5/uploading_multiple_images_to_s3_with_presign/)
+## [8][uploading multiple images to s3 with presign endpoint using shrine and uppy](https://www.reddit.com/r/rails/comments/iz9ux5/uploading_multiple_images_to_s3_with_presign/)
 - url: https://www.reddit.com/r/rails/comments/iz9ux5/uploading_multiple_images_to_s3_with_presign/
 ---
 Sorry in advance for the overly broad question, but this isn't about bugs so much as it is about architecture and confusion brought on by trying to twist two docs into one objective. My hope is that someone could help untangle my brain.
@@ -282,20 +286,20 @@ Some questions.
 2. If uppy and shrine upload the files to an s3 cache, how do I get that information into my controller? Presumably I would get a JSON response. The doc has this to say, but I'm confused by what it means:
 
 &gt;Once files are uploaded asynchronously, you can dynamically insert photo attachment fields for the `image` attachment attribute into the form, where the hidden field is filled with uploaded file data in JSON format, just like when doing single direct uploads. The attachment field names should be namespaced according to the convention that the nested attributes feature expects. In this case it should be `album[photos_attributes][&lt;uid&gt;]`, where `&lt;uid&gt;` is any unique string.
-## [8][Relational DB tutorial?](https://www.reddit.com/r/rails/comments/iz6o8m/relational_db_tutorial/)
+## [9][Relational DB tutorial?](https://www.reddit.com/r/rails/comments/iz6o8m/relational_db_tutorial/)
 - url: https://www.reddit.com/r/rails/comments/iz6o8m/relational_db_tutorial/
 ---
 Anyone have a good resource to understand Relational DB linking in rails? 
 
 I’ve read the docs, handheld a few tutorials and just cannot wrap my brain around how to properly understand it.
-## [9][Auto-save the current form without refresh](https://www.reddit.com/r/rails/comments/iyyhzh/autosave_the_current_form_without_refresh/)
+## [10][Auto-save the current form without refresh](https://www.reddit.com/r/rails/comments/iyyhzh/autosave_the_current_form_without_refresh/)
 - url: https://www.reddit.com/r/rails/comments/iyyhzh/autosave_the_current_form_without_refresh/
 ---
 Is it possible to use AJAX to auto-save the form that's currently in view, but leave the default submit button active?  
 
 
 I'm using wicked, and I have a fairly large form that needed to be sliced into pieces. Now, I want to save each individual form step with autosave using a timed function. Is it possible?
-## [10][How to improve my tests?](https://www.reddit.com/r/rails/comments/iyz9e7/how_to_improve_my_tests/)
+## [11][How to improve my tests?](https://www.reddit.com/r/rails/comments/iyz9e7/how_to_improve_my_tests/)
 - url: https://www.reddit.com/r/rails/comments/iyz9e7/how_to_improve_my_tests/
 ---
 Hi! I'm in the process of writing tests for a new Rails app.
@@ -303,16 +307,8 @@ Hi! I'm in the process of writing tests for a new Rails app.
 This is one my controller tests: [Gist](https://gist.github.com/ImMaax/6bd4802cb283e1cf4fe69bcd0a1f3eaf)
 
 Even though this test works perfectly fine, it just feels pretty wrong, as I repeat myself a lot and I'm unsure whether that's "the right way" to write a controller test. I've also seen integration tests, but I'm not quite sure where to put which tests now. Can someone help me? How would you optimize those tests?
-## [11][Indie Hacker : a possible meaning](https://www.reddit.com/r/rails/comments/iyyv2q/indie_hacker_a_possible_meaning/)
+## [12][Indie Hacker : a possible meaning](https://www.reddit.com/r/rails/comments/iyyv2q/indie_hacker_a_possible_meaning/)
 - url: https://www.reddit.com/r/rails/comments/iyyv2q/indie_hacker_a_possible_meaning/
 ---
 I just wrote an article about what it means to be an Indie Hacker, in a dev point of view.  
 Spoiler : I use Rails for this kind of project :) All thought are based on experience, which means very subjective and open to criticism :) [http://bdavidxyz.com/blog/indie-hacker-meaning/](http://bdavidxyz.com/blog/indie-hacker-meaning/)
-## [12][automatically getting more inputs and how to handle them in the backend](https://www.reddit.com/r/rails/comments/iynsdf/automatically_getting_more_inputs_and_how_to/)
-- url: https://www.reddit.com/r/rails/comments/iynsdf/automatically_getting_more_inputs_and_how_to/
----
-I know this might be more of a frontend issue, but I have the habit of having anything in one place (I think this might be a harmful thought, but I do most of my projects alone, so I keep them the way I can handle!). So, I'm a musician and when I was uploading an album on bandcamp, I noticed something. 
-
-When you use "album", the damn thing automatically gives you a field of new song. I thing that be a really good feature to have, but I don't know what that's called and how I can have on that a rails project. If you guys have any experiences, I'd love to know. 
-
-Thanks!

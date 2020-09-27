@@ -40,104 +40,97 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Is flutter really the future?](https://www.reddit.com/r/androiddev/comments/j024of/is_flutter_really_the_future/)
-- url: https://www.reddit.com/r/androiddev/comments/j024of/is_flutter_really_the_future/
+## [3][Hi guys, I am 16 and I created an open-source app that reminds you to wear a mask when you leave home (or any chosen location)!](https://www.reddit.com/r/androiddev/comments/j0poce/hi_guys_i_am_16_and_i_created_an_opensource_app/)
+- url: https://www.reddit.com/r/androiddev/comments/j0poce/hi_guys_i_am_16_and_i_created_an_opensource_app/
 ---
-I am new android dev, and started working at my first job as android dev around 8 months back. I've been working with MVP/MVVM at this job and using Kotlin. Honestly I've started to love Kotlin, since during my undergraduate days, I did a lot of sports programming in Java and Kotlin seems way more easier and elegant to use. Recently I was planning to look into **Jetpack** and **KMM,** when I stumbled upon Flutter and a lot of articles how flutter is the future. I don't understand how can writing in native be the future? Also I agree cross platform is an advantage but with KMM coming out, I guess Kotlin can be used too. Since I'm pretty new, all the experienced devs out there, should I really learn Flutter to be employable in future or continue with Jetpack and KMM?
-## [4][Floating Windows on Android 1: Jetpack Compose &amp; Room](https://www.reddit.com/r/androiddev/comments/j03g09/floating_windows_on_android_1_jetpack_compose_room/)
-- url: https://localazy.com/blog/floating-windows-on-android-1-jetpack-compose-and-room
----
+ As the title says, I am a 16 year old high-school student that has been developing for android for the past year. I've created an app called wearAmask for android that reminds you to take your mask whenever you leave your home, work or any other location.
 
-## [5][Rant: Surprised how uncomfortable/bad Room DB is for developers](https://www.reddit.com/r/androiddev/comments/izjbhq/rant_surprised_how_uncomfortablebad_room_db_is/)
-- url: https://www.reddit.com/r/androiddev/comments/izjbhq/rant_surprised_how_uncomfortablebad_room_db_is/
----
-After developing backend applications with Spring Boot for a while, I recently joined a mobile dev team again. They use Room as DB.    
-I can see the pros: like being developed by Google, optimised for mobile and so on....   
+wearAmask works by allowing users to add a location (address) on a map by holding down on the map or typing an address. Once you choose a location, you can select the radius of the region, choose a color and enter a location name.
 
+Once you enter a location, or even many locations if you'd like, wearAmask will automatically run in the background and will remind you to take your mask whenever you leave that location! (and also reminds you to take necessary precautions).
 
-But i was shocked how complicated such a trivial task as one-to-many relationships are with Room.  
+The app is currently open to public testing and is 100% free, no ads, completely open source and no BS whatsoever :)
 
+[wearAmask on Google Play](https://play.google.com/store/apps/details?id=com.hudzah.wearamask) and also for anyone that wants to check out the code, it's on [GitHub here](https://github.com/HudZah/wearAmask)
 
-You can't just have a list of items inside an entity. No, you need to manually persist all items in their own table and manually set the foreign keys. But if you let Room generate the ID of the "One" for you, it's pretty complicated to get this generated ID back, because room will only tell you the row number as result of the insert, but not the ID of the inserted item.   
+Oh and I also posted this on [r/androidapps](https://www.reddit.com/r/androidapps/) but wanted more technical advice and suggestions based of the code itself. 
 
+Would really love to hear feedback from you guys! Any code improvements, suggestions and bugs would be really helpful!
 
-Fortunately Room has at least some sort of support for reading one-to-many relationships. So you can define a class with the relation and room will at least create a join query.   
-
-
-Maybe i miss something but based on the [official documentation](https://developer.android.com/training/data-storage/room/relationships) and some research i did that's how it needs to be done :(  
-
-
-Honestly, in 2020 i would have expected way better tooling for RDBMS even on mobile platforms.
-## [6][Analyzing the Source Code - How Glide Image Loading Library works Internally - Article](https://www.reddit.com/r/androiddev/comments/izofxs/analyzing_the_source_code_how_glide_image_loading/)
-- url: https://codingwithmitch.com/blog/image-loading-with-glide-how-it-works/
+Also [here's](https://www.youtube.com/watch?v=tM2rMe_WCas) a cool promo video I made for the app if you'd like to have a look!
+## [4][Introducing Android Studio on the cloud, Request for early access - https://yaoe.io/android](https://www.reddit.com/r/androiddev/comments/j0o51v/introducing_android_studio_on_the_cloud_request/)
+- url: https://i.redd.it/x52bpuf6qnp51.png
 ---
 
-## [7][Floating Windows on Android 1: Jetpack Compose &amp; Room](https://www.reddit.com/r/androiddev/comments/j03j5d/floating_windows_on_android_1_jetpack_compose_room/)
-- url: https://www.reddit.com/r/androiddev/comments/j03j5d/floating_windows_on_android_1_jetpack_compose_room/
----
-Hi, Guys,
-
-I published a series of articles about how to make floating windows (such as Facebook Heads and similar) on Android. 
-
-For 7 years, I work on Floating Apps ([https://floatingapps.net](https://floatingapps.net)) and now I'm sharing all tips I learned along the way. 
-
-**The first lesson: Jetpack Compose &amp; Room**
-
-[https://localazy.com/blog/floating-windows-on-android-1-jetpack-compose-and-room](https://localazy.com/blog/floating-windows-on-android-1-jetpack-compose-and-room)
-
-Do you like it? Feel free to get in touch!
-## [8][Any good libraries/tutorials for working with the android file system?](https://www.reddit.com/r/androiddev/comments/j03hr2/any_good_librariestutorials_for_working_with_the/)
-- url: https://www.reddit.com/r/androiddev/comments/j03hr2/any_good_librariestutorials_for_working_with_the/
----
-Working with "internal" files is fine for me but anything outside of that I find myself crawling through out of date answers on stackoverflow, confusing documentation from Google and running into constant issues trying to understand how all the various concepts work together. Anyone know any good tutorials or libraries that can help me out? Thanks!
-## [9][DataStore: Security - Styling Android](https://www.reddit.com/r/androiddev/comments/izk0bb/datastore_security_styling_android/)
-- url: https://blog.stylingandroid.com/datastore-security/
+## [5][I made a game, now I need a name!](https://www.reddit.com/r/androiddev/comments/j0d54h/i_made_a_game_now_i_need_a_name/)
+- url: https://v.redd.it/zje3mxlhwjp51
 ---
 
-## [10][Android Modularization: Make a reusable C++ module.( Intermediate )](https://www.reddit.com/r/androiddev/comments/izym0v/android_modularization_make_a_reusable_c_module/)
-- url: https://medium.com/@shalommathews05/android-modularization-make-a-reusable-c-module-intermediate-45c921f2608e
+## [6][Best practices with compose](https://www.reddit.com/r/androiddev/comments/j0jzt2/best_practices_with_compose/)
+- url: https://www.reddit.com/r/androiddev/comments/j0jzt2/best_practices_with_compose/
 ---
+Just published medium article about some best practices/techniques to follow when working with compose
 
-## [11][Google Play Billing Library v2/v3: How to stop someone maliciously preventing an acknowledgement and therefore get their purchase refunded?](https://www.reddit.com/r/androiddev/comments/izo6kg/google_play_billing_library_v2v3_how_to_stop/)
-- url: https://www.reddit.com/r/androiddev/comments/izo6kg/google_play_billing_library_v2v3_how_to_stop/
+[Use compose correctly](https://medium.com/@abdonasr379/use-jetpack-compose-correctly-86b3f53e5975?sk=c5d73df7741bb9e314528a5520fc3062)
+
+ hope it helps
+## [7][20 — 26 September Android Newsletter](https://www.reddit.com/r/androiddev/comments/j0oibp/20_26_september_android_newsletter/)
+- url: https://www.reddit.com/r/androiddev/comments/j0oibp/20_26_september_android_newsletter/
 ---
-I've been implementing Google Play Billing Library v3, and noticed that starting v2 we must [acknowledge a purchase after granting entitlement to the purchased feature][1], otherwise the user is refunded within 3 days. So essentially the lifecycle is something like:
+Stay up to date with Android development, in this week's edition:  
+🐦 Rare birds: Sticky and Pending Intents  
+🤐 DataStore Security  
+📱 Build a Kotlin Multiplatform App  
+👻 Play with Jetpack Compose  
+and much more!
 
-1) User purchases something, e.g. subscription to a premium account. 
+💚 Enjoy [https://vladsonkin.com/android-newsletter-13/](https://vladsonkin.com/android-newsletter-13/)
 
-2) The client app sends the purchase and signature to the backend so the user is entitled to the purchase, e.g. premium account.
+Featuring [@github\_skydoves](https://twitter.com/github_skydoves) [@MarkIAllison](https://twitter.com/MarkIAllison) [@martinbonnin](https://twitter.com/martinbonnin) [@JurajKusnier](https://twitter.com/JurajKusnier) [@Piwai](https://twitter.com/Piwai) [@androiddevnotes](https://twitter.com/androiddevnotes) [@Ch8n2](https://twitter.com/Ch8n2) [@mohammed\_hemaid](https://twitter.com/mohammed_hemaid)
 
-3) The backend responds with a success, we then acknowledge with Google Play the purchase was entitled (otherwise a refund is given). 
-
-However, that got me thinking, what is stopping a malicious user from modifying the APK (or even blocking the network call) so that the acknowledgment call is _not_ made, therefore the user is refunded within 3 days, but entitlement (step 2 above) is still given. What can I do the stop this within my app? How can I make sure the acknowledgment definitely goes through if the entitlement is given?
-
-  [1]: https://developer.android.com/google/play/billing/integrate#process
-## [12][Is it a bad practice to read from LiveData inside ViewModel functions?](https://www.reddit.com/r/androiddev/comments/izmccf/is_it_a_bad_practice_to_read_from_livedata_inside/)
-- url: https://www.reddit.com/r/androiddev/comments/izmccf/is_it_a_bad_practice_to_read_from_livedata_inside/
+Subscribe and receive new editions directly to your email. Weekly, no spam, unsub anytime.  
+Here is an example: [https://mailchi.mp/1ac985114128/android-newsletter-13](https://mailchi.mp/1ac985114128/android-newsletter-13)
+## [8][Fragment blink](https://www.reddit.com/r/androiddev/comments/j0pfk7/fragment_blink/)
+- url: https://www.reddit.com/r/androiddev/comments/j0pfk7/fragment_blink/
 ---
-Let's say I have a list of fetched comments: `val comments = MutableLiveData&lt;Comment&gt;()`. When a comment is clicked a ViewModel function `fun onCommentClicked(commentIndex: Int)` is invoked, inside which I have to acquire clicked comment in order to do something. I would have to write `val comment = comments.value!!.filter {` [`it.id`](https://it.id) `== commentIndex }`. 
+I'm having a problem when I try to show a fragment from an activity. The fragment is showing well, but with a blink effect. I could see the blink effect is because it's showing the fragment and then it's showing it with the transition I set it up before on the activity, it's too fast but I can appreciate it. Is there a way to fix this problem?
+## [9][How controversial would it be to have a mobile game that has a person as app icon, but the race of this person being localized for different languages? (i.e. white person = English, Asian person = Korean)](https://www.reddit.com/r/androiddev/comments/j0r0b3/how_controversial_would_it_be_to_have_a_mobile/)
+- url: https://www.reddit.com/r/androiddev/comments/j0r0b3/how_controversial_would_it_be_to_have_a_mobile/
+---
+Google allows you to localize app icon based on language - what if you localized the race of the person in the app icon based on the majority race that speaks that language?
 
-Generally speaking I found that very often I read from LiveData variables inside ViewModel code. My SignInViewModel has two live datas `val username = MutableLiveData&lt;String&gt;(); val password = MutableLiveData&lt;String&gt;()` so when *sign in button* is pressed I would invoke a method like this one:
+Would this be controversial? If data confirms that Asian market would click more on the app icon if it showed a person of their race, as opposed to a race that doesn't speak their language, would there be anything wrong with moving forward with such localization?
+## [10][Is it normal for Android Studio to create so many processes?](https://www.reddit.com/r/androiddev/comments/j0pxrw/is_it_normal_for_android_studio_to_create_so_many/)
+- url: https://www.reddit.com/r/androiddev/comments/j0pxrw/is_it_normal_for_android_studio_to_create_so_many/
+---
+Android studio quickly becomes unusable for me. I don't even have many things in my simple project, it was just started and only has about 3 very simple fragments working now. 
+I built and ran the project three times now on a physical device and as you can see the whole ram has been filled.
 
-    fun signIn() {
-        val params = SignInParams(username.value!!, password.value!!)
-        signInUseCase(params)
-        ...
-    }
+I even switched over to a jdk that uses open j9 thinking it would reduce memory consumption but nope.
 
-For some reason it seems a bad practice to me that I so often explicitly read from LiveData. Source code seems to be polluted with `.value!!` statements. 
+Attaching images since I have no idea how to get a text from this:
 
- I thought about keeping some data in additional backing lateinit properties so whenever I fetch list of comments  I would have to set two variables, and later in code I could just easily read from `_comments` variable without a need to get content from livedata and assert it's not null:
+[Htop1](https://i.imgur.com/CtNu3Uu.jpg)
 
-    private lateinit var _comments: List&lt;Comments&gt;
-    val comments = MutableLiveData&lt;List&lt;Comments&gt;()
-    fun onCommentsFetched(fetchedComments: List&lt;Comments&gt;) {
-      _comments = fetchedComments
-      comments.value = _comments
-    }
-    
-    fun someFun(){
-      val comment = _comments.filter { ....
-    }
+[Htop2](https://i.imgur.com/WWMKwfz.jpg)
 
-So is it a bad practice to read from LiveData inside ViewModel functions? Should their content be only exposed to view? How to solve this problem?
+[Htop3](https://i.imgur.com/fcr1r3t.jpg)
+
+(No other apps were running on the system, it was just Android Studio)
+
+ [u/vzzz1, has noticed that there are too many Gradle and kotlin compiler processes](https://www.reddit.com/r/android_devs/comments/j0mgn6/_/g6tmhf5)
+## [11][Redmi 6A Android 9 help needed](https://www.reddit.com/r/androiddev/comments/j0ose0/redmi_6a_android_9_help_needed/)
+- url: https://www.reddit.com/r/androiddev/comments/j0ose0/redmi_6a_android_9_help_needed/
+---
+Hi,
+
+I had formatted sd card as internal/adoptable storage (ext4 file system format I guess) about a week ago. It was working fine except sometimes it got stuck and I had to reboot the phone and the card storage would work fine again.
+
+Now the sd card has stopped showing in storage settings and phone's internal storage is also not showing in file mangager. all of my apps are stuck and I am unable to recover data from sd card or access my phone's internal storage. I have tried restarting phones and put the card into other phones but it just won't show up in storage or anywhere else. Even using list-disks and list-volumes commands in adb shell won't show any result. Please help as I have very important data in that card.
+Regards
+## [12][Removing your name from google searches](https://www.reddit.com/r/androiddev/comments/j078v5/removing_your_name_from_google_searches/)
+- url: https://www.reddit.com/r/androiddev/comments/j078v5/removing_your_name_from_google_searches/
+---
+I've just realized that googling my name, even in part, shows my apps on g-play which shows my current residence. After contacting support they refused to remove my address from search results (I'm a solo developer and don't have a studio/postal boxes are not accepted in the terms and conditions (to the best of my knowledge)). 
+
+Has anyone managed to successfully remove their private info from search results?

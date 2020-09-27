@@ -57,131 +57,121 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][Amazon has the most Job Descriptions for Rust](https://www.reddit.com/r/rust/comments/izzyb5/amazon_has_the_most_job_descriptions_for_rust/)
-- url: https://news.efinancialcareers.com/us-en/3004512/rust-vs-c-hedge-fund-jobs
+## [3][[Discussion] From C++ to Rust: everything's just better (to me)](https://www.reddit.com/r/rust/comments/j0jlob/discussion_from_c_to_rust_everythings_just_better/)
+- url: https://www.reddit.com/r/rust/comments/j0jlob/discussion_from_c_to_rust_everythings_just_better/
+---
+# Some background
+
+Until 3 months ago, C++ had always been my main language both for work and personal projects. I was told by my friends countless times to give Rust a try but I always thought Rust was nothing but a fancy flavour of  C++. (Which is a VERY wrong thought, shame on myself). Also I stuck with OOP for most of my life, switching to Rust may be painful at the beginning. Besides, my personal projects are mostly games, and I have already familiar with some mainstream frameworks in C++. However most of them haven't got support on Rust yet.
+
+# What's changed?
+
+Coding in C++ can be very painful in some situations (actually in many situations), especially when doing memory management for a fairly large project. Some unintentional bad design may lead to horrible memory related errors. For me, most common one is sharing raw pointers. It doesn't happen often, smart pointers should be used in most cases, but sometimes it's just unavoidable. (E.g. a deep clone is needed for the pointer which is pointing to a super class). Yeah I can implement "Clone" class for it but it's a heavy work when the inheritance tree goes crazy. 
+
+Apparently OOP has a lot of downside in game programming besides inheritance hell, and it becomes worse and worse, and finally it drives me crazy one day. (I know OOP isn't the only way to use C++, but come on, using Data oriented programming in C++ is as hard as coding in C, I think.)
+
+Now, I have pretty many other choices to make my life easier, C# can be one of them, but languages with GC are just not my dishes, (Except PFP languages. Love you Haskell.) even though the language efficiency isn't a big problem in current days for game development. What I want is a language with high efficiency like C/C++ as well as human friendly syntax and memory management system.
+
+# Rust? Rust!
+
+Pattern match, which is the one thing I always want in C++ (I think there isn't a official way to do pattern match in C++? Correct me if I'm wrong), is the first thing that got my attention. In most FP languages pattern match is a must-have, e.g. Haskell, Scala, etc., it makes code much readable and clean. So I decided to give Rust a try just for pattern match. Then I spent a whole weekend going through the tutorial, and man, that's impressive! I can't summarize my surprise how this language is well designed in a few words.
+
+# The syntax is way more comforting than C++'s (to me)
+
+I love pattern match, I love Option, I love using Result to handle errors (Exception is just a nightmare) and I love macros, especially derive! They are too good I don't even know why other languages don't have all of them.
+
+Ok this section is just my opinion, but I really love how beautiful my code can be.
+
+# The compiler is way more smarter than C++'s
+
+C++ compiler is like, raw pointers? Read write a reference at the same time? No problem go ahead I don't care. Then you need to prepare for several hours debugging on multithread code to find out you shouldn't have written the code that way from the beginning.
+
+Rust compiler is like, WHAT ARE YOU DOING? STOP! NO YOU SHOULDN'T DO THAT! YOU WILL REGRET IT! It seems too sensitive about what you are writing at the beginning, but it is  truely reasonable and force you to use a better design on your code. After a while, you will find out how beautiful your code has been.
+
+It's like taking care of your teeth. If you have a very good habit of brushing your teeth and using proper medical goods, you won't need to meet dentist for almost whole life. But it's difficult and most people don't do well. Rust is like a personal dentist and monitor you everyday, force you to follow all steps cleaning teeth. It may be annoying but it just works.
+
+# What now?
+
+I am still getting familiar with Rust since there are still a lot of gimmicks I haven't touched. I'm also making a game with Amethyst. It feels really good how I don't need to worry about , well, a lot of things anymore. Data oriented programming is also fairly new to me but I found it not bad at all while coding in Rust.
+
+I haven't been so excited about a programming language before even when I was learning Haskell, which is a pretty fun experience. I now think I may recommend more people to try Rust at least once. It may not be suitable for everyone but it must be fun for anyone who like a good programming language.
+
+# At Last
+
+I wonder how people in this sub got into Rust? How was your experience while learning it? Am I the only one being so excited about a programming language?
+## [4][So you want to live-reload Rust](https://www.reddit.com/r/rust/comments/j0ajdy/so_you_want_to_livereload_rust/)
+- url: https://fasterthanli.me/articles/so-you-want-to-live-reload-rust
 ---
 
-## [4][Rust in 2021: We've done a lot, more to de done](https://www.reddit.com/r/rust/comments/j01n3v/rust_in_2021_weve_done_a_lot_more_to_de_done/)
-- url: https://popzxc.github.io/rust-2021
+## [5][`#[non_exhaustive]` got me worried about the direction of rust](https://www.reddit.com/r/rust/comments/j0ldal/non_exhaustive_got_me_worried_about_the_direction/)
+- url: https://www.reddit.com/r/rust/comments/j0ldal/non_exhaustive_got_me_worried_about_the_direction/
+---
+First of all, very very glad to see a "practical" language with a Hashell-ish type system and immutable by default (yes, yes, Haskell is practical too :). I think it is one of the "good" languages (others are elm, erlang, haskell, python for what it good at, ocaml?), and I choose to use it in production.
+
+I was reading the RFC of \`#\[non\_exhaustive\]\`, it seems that the main rational behind it is to avoid "breaking" changes when a new variant is added to the enum (in the enum case).
+
+It seems to me that, the "breaking" mentioned in the RFC has a very naive meaning: still compiles after the variant is added, which is far unimportant compared to the other meaning of "breaking": the domain logic is still correct after the new variant is added.
+
+A major role the exhaustive checked plays is that, when a new variant is added, it forces you to go to each use site and check that your implementation (regarding to domain logic and semantics) is still correct. In Elm and Haskell, the wildcard pattern (which you have to use if \`#\[non\_exhaustive\]\`) is discouraged, for it practically disables exhaustive check, which is a valuable tool for large projects and for maintaining projects not written by you (also for projects you wrote long time ago)
+
+If a breaking change is introduced on a library function, you don't want the compiler omits the call to the breaking function, you want the compilation to fail, so that you can handle the change manually. In a ideal world, the compiler will detect semantic changes of a function, (compared to function signature changes), when the semantic of a function changed, your compilation will fail, how awesome would that be? I think, to a certain degree, change-on-enum reflects change-on-semantics.
+
+I think that the compilation error the \`#\[non\_exhaustive\]\` tries to avoid, helps to introduce the worst type of error: error that is hidden (because the wildcard pattern handles the newly added variant, and the newly added variant requires special domain logic to handle and shouldn't be wildcarded, resulting the domain logic is not audited after the new variant is added)
+
+You can argue that we are all grown ups here, and you should be careful when use \`#\[non\_exhaustive\]\`, that is not the point (and you can say the same thing about c++, and not everyone is a grown up), the point is that such an RFC shouldn't be passed, for it introduces bad practice, and de-sound the compiled program. I think one big reason that people like languages such as elm and haskell is for the confidence they have on their programs, if you finish a program, you finish a program, you can go to sleep knowing that your program will behave the way you wanted
+## [6][A tale of two libcs](https://www.reddit.com/r/rust/comments/j0puje/a_tale_of_two_libcs/)
+- url: https://drewdevault.com/2020/09/25/A-story-of-two-libcs.html
 ---
 
-## [5][A high performance code minimap render](https://www.reddit.com/r/rust/comments/j03qew/a_high_performance_code_minimap_render/)
-- url: https://www.reddit.com/r/rust/comments/j03qew/a_high_performance_code_minimap_render/
+## [7][Dicetest, an alternative to proptest and quickcheck](https://www.reddit.com/r/rust/comments/j0pjdo/dicetest_an_alternative_to_proptest_and_quickcheck/)
+- url: https://www.reddit.com/r/rust/comments/j0pjdo/dicetest_an_alternative_to_proptest_and_quickcheck/
 ---
-I wrote a tool [`code-minimap`](https://github.com/wfxr/code-minimap) for generating text minimaps for code files.
+[https://github.com/jakoschiko/dicetest](https://github.com/jakoschiko/dicetest)
 
-It is streaming rendering, consumes very little fixed memory, and supports arbitrary scaling. You can use it to implement IDE-like minimap for the terminal text editor with high speed. All the [rust source code](https://github.com/rust-lang/rust/tree/1.46.0) (latest stable version 1.46, over 1,000,000 lines) as input only takes 323ms in my PC (detailed benchmark can be found in the repository).
+I'm using ScalaCheck at work and don't quite like it. It's nice for testing functional code, but that's not enough. Scala is both, functional and imperative. Many of my tests look like this: Mutate some state, make assertions, mutate some state, make assertions... In these cases I just want to write simple unit tests with random test data instead of inventing elegant properties. It just feels clumsy to use ScalaCheck for this.
 
-I used it to create a vim plugin [`minimap.vim`](https://github.com/wfxr/minimap.vim):
+Then I started to learn Rust and more of my code became stateful. I was curious if I could implement a less functional property testing library that I would enjoy to use. I think I succeeded. Writing the library was fun, too, and it helped me to understand Rust. E.g. it was very enlightening to realize that I need two generator traits, similar to Fn and FnOnce, if I don't want to clone or reference count everything.
 
-[minimap.vim](https://i.redd.it/rk0099mxygp51.gif)
+There are obvious similarities to proptest and quickcheck. They have shrinking, but I never liked shrinking in ScalaCheck. Instead, I'm not forcing the user to generate all test data at the beginning, which I prefer.
 
-**Project link**:
-
-code-minimap: [https://github.com/wfxr/code-minimap](https://github.com/wfxr/code-minimap)
-
-minimap.vim: [https://github.com/wfxr/minimap.vim](https://github.com/wfxr/minimap.vim)
-
-Issues and feedbacks are welcomed!
-
-&amp;#x200B;
-
-**EDIT:**
-
-This tool is for **text files**, not for games.
-## [6][FOSDEM 2021 - Online only](https://www.reddit.com/r/rust/comments/j03i80/fosdem_2021_online_only/)
-- url: https://www.reddit.com/r/rust/comments/j03i80/fosdem_2021_online_only/
----
-[FOSDEM 2021 will be online only](https://fosdem.org/2021/). The organizers of the previous RUST devroom (2018, 2019, 2020) decided that we won't be organizing it this year as a huge part of FOSDEM is getting people in the same room and being able to create face to face discussions on the back of the talks. After all, DEM = DEveloper Meeting. There are plenty of great online conferences and recorded talks devoted to Rust so it seems superfluous to us.
-
-We thought it would be polite to inform the community in case someone else would like to submit a devroom proposal and would have otherwise assumed @lucab, @itkovian, and myself would be submitting the proposal this year.  
-
-If you're interested, we can provide you with previous proposal templates, talk review google sheets, and other material we use to manage the devroom.
-
-Stay safe!
-
-NB: [This is a cross post](https://users.rust-lang.org/t/rust-2021-online-only/49333)
-## [7][Rust 2021: Continue](https://www.reddit.com/r/rust/comments/izk75l/rust_2021_continue/)
-- url: https://www.reddit.com/r/rust/comments/izk75l/rust_2021_continue/
----
-I only have a little thought on Rust 2021, not worth a separate blog post I guess. There are 'only' 3 things I'm waiting for:
-
-* specialization
-* const generics
-* generators
-
-These are the only things that I ever missed. Other features (tbh - including async) were, for me, just nice to have additions.
-
-As far as I remember, there were plans to close pending features in 2020. We could see some really nice progress but in my opinion, there are still too many things open. So 2021 needs, again in my opinion, only to continue ideas from 2020.
-## [8][has anyone compiled a gtk-rs program for Windows lately?](https://www.reddit.com/r/rust/comments/j04t2y/has_anyone_compiled_a_gtkrs_program_for_windows/)
-- url: https://www.reddit.com/r/rust/comments/j04t2y/has_anyone_compiled_a_gtkrs_program_for_windows/
----
-I've built a few simple GTK programs for Linux recently and I've been trying to build Windows versions. I'm following the [tutorial](https://gtk-rs.org/docs-src/tutorial/cross) and I've got as far as installing MinGW and setting up the `x86_64-pc-windows-gnu` target, but the build process fails at the linking stage.
-
-I'm not sure if the version of MinGW packaged for my OS (Solus) is missing anything - I tried in an Ubuntu VM and didn't get any further. The tutorial basically points at Arch being the best-supported platform so I'm trying to get that set up in a VM now. am I better off just building MinGW from source?
-
-I'm also a bit confused about the `PKG_CONFIG_PATH` environment variable - it points to `/usr/i686-w64-mingw32/lib/pkgconfig` in the example. on my system MinGW is installed at /usr/share/mingw-w64 (fine, I can change the path) but how come it points to i686 instead of x86\_64? is this for backwards compatibility? Also, I understand that pkg-config is a tool for managing libraries for compilation purposes, but there's no `pkgconfig` file/folder inside my MinGW installation. Am I missing something here?
-
-The tutorial mentions a precompiled GTK .dll but the link is broken, which makes me wonder if the tutorial is out of date. Does anyone know where I can find the .dll?
-
-Is building *on* Windows an option? I still have Windows 8.1 on a laptop and could build on there if needs be, but I'd rather cross-compile.
-
-Obviously, no hard feelings toward the developers of gtk-rs - I like it a lot so far. I'd be interested to hear your experiences in cross-compiling GTK programs or GUI programs in general!
-## [9][I just released the first version of Audiobench, a free/open-source modular synthesizer written almost entirely in Rust.](https://www.reddit.com/r/rust/comments/izkey2/i_just_released_the_first_version_of_audiobench_a/)
-- url: https://www.reddit.com/r/rust/comments/izkey2/i_just_released_the_first_version_of_audiobench_a/
----
-Downloads and a getting started guide [can be found here](https://bit.ly/audio_bench). The GitHub repository [can be found here](https://github.com/joshua-maros/audiobench).
-
-[A screenshot of the main interface.](https://preview.redd.it/6r4l0fdi0bp51.png?width=1356&amp;format=png&amp;auto=webp&amp;s=b6bfc6f610c1875ef733c152f4cf3e696d26bbbc)
-## [10][Knurling-rs changelog #2](https://www.reddit.com/r/rust/comments/izlqet/knurlingrs_changelog_2/)
-- url: https://ferrous-systems.com/blog/knurling-changelog-2/
+What do you think?
+## [8][Towards principled reactive UI](https://www.reddit.com/r/rust/comments/j0840q/towards_principled_reactive_ui/)
+- url: https://raphlinus.github.io/rust/druid/2020/09/25/principled-reactive-ui.html
 ---
 
-## [11][Rust API Challenges](https://www.reddit.com/r/rust/comments/izoxn4/rust_api_challenges/)
-- url: https://www.reddit.com/r/rust/comments/izoxn4/rust_api_challenges/
----
-Here are two challenges.
-
-They may look similar, but the first is much easier than the second. Both are solvable.
-
-If you're a beginning Rustacean, treat the first as the challenge, and ignore the second. If you're an advanced Rustacean, treat the first as a warmup, and the second as the challenge.
-
-Good luck!
-
-# Challenge 1
-
-Implement this API:
-
-    pub type Challenge1&lt;A, B&gt;;
-    
-    impl&lt;A, B&gt; Challenge1&lt;A, B&gt; {
-        pub fn left(a: A) -&gt; Self;
-        pub fn right(b: B) -&gt; Self;
-        pub fn consume&lt;T&gt;(self, f: impl FnOnce(A) -&gt; T, g: impl FnOnce(B) -&gt; T) -&gt; T;
-    }
-
-Your implementation should satisfy these rules:
-
-    Challenge1::left(a).consume(f, g) = f(a)
-    Challenge1::right(b).consume(f, g) = g(b)
-
-# Challenge 2
-
-Implement this API:
-
-    pub type Challenge2&lt;'r, A, B&gt;;
-    
-    impl&lt;'r, A, B&gt; Challenge2&lt;'r, A, B&gt; {
-        pub fn left(self) -&gt; A;
-        pub fn right(self) -&gt; B;
-        pub fn new&lt;T: 'r&gt;(t: T, f: impl 'r + FnOnce(T) -&gt; A, g: impl 'r + FnOnce(T) -&gt; B) -&gt; Self;
-    }
-
-Your implementation should satisfy these rules:
-
-    Challenge2::new(t, f, g).left() = f(t)
-    Challenge2::new(t, f, g).right() = g(t)
-## [12][Custom user defined literals using proc_macro](https://www.reddit.com/r/rust/comments/izt63q/custom_user_defined_literals_using_proc_macro/)
-- url: https://www.5snb.club/posts/2020/09/25/custom-literals-in-rust.html
+## [9][[Academic] Open Source Development Survey (Software Developers using GitHub)](https://www.reddit.com/r/rust/comments/j0q584/academic_open_source_development_survey_software/)
+- url: /r/SampleSize/comments/iybrqr/academic_open_source_development_survey_software/
 ---
 
+## [10][SublimeText rust-enhanced: Is it possible to show the filename where the error occurs?](https://www.reddit.com/r/rust/comments/j0ozb4/sublimetext_rustenhanced_is_it_possible_to_show/)
+- url: https://www.reddit.com/r/rust/comments/j0ozb4/sublimetext_rustenhanced_is_it_possible_to_show/
+---
+Hello,  
+Rust Enhanced works very well, but on larger projects I've some trouble to find the file where an error occurs. In my bottom bar, Rust Enhanced only shows me that there is an error, but not the filename. I've to say I'm relying on the "check on save" function.
+
+https://preview.redd.it/ix2wlyr04op51.png?width=348&amp;format=png&amp;auto=webp&amp;s=bc352410ab1b0adfb8cbde971ee975e86e55070a
+
+Is it possible to highlight the file in the sidebar, similar to the git-plugin which will draw (in my case) a simple dot to on the files I've modified. Or at least show the file names where the error occurs in the bottom bar.
+
+Maybe it's a setting I've missed?
+
+Thanks for help!
+
+PS: I posted my question on Github without any luck to reach someone
+
+x-post: [https://github.com/rust-lang/rust-enhanced/issues/446](https://github.com/rust-lang/rust-enhanced/issues/446)
+## [11][Unimpressed with lolcat's startup performance, I've rewritten it in Rust - Introducing dotacat!](https://www.reddit.com/r/rust/comments/j0aaus/unimpressed_with_lolcats_startup_performance_ive/)
+- url: https://crates.io/crates/dotacat
+---
+
+## [12][Type checking process.exit()](https://www.reddit.com/r/rust/comments/j0qyvp/type_checking_processexit/)
+- url: https://www.reddit.com/r/rust/comments/j0qyvp/type_checking_processexit/
+---
+I am working through the introductory rust book, and got to the following example.
+
+    let config = Config::new(&amp;args).unwrap_or_else(|err| {
+        println!("Problem parsing arguments: {}", err);
+        process::exit(1);
+    });
+
+unwrap_or_else expects a closure of type `&amp;str -&gt; Config`, but our closure is of type  `&amp;str -&gt; ()`, so how does the compiler handle this edge case?

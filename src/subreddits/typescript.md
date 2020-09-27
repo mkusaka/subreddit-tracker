@@ -22,157 +22,66 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][A SQL database implemented purely in TypeScript type annotations.](https://www.reddit.com/r/typescript/comments/izymbn/a_sql_database_implemented_purely_in_typescript/)
+## [2][a7ul/esbuild-node-tsc Build your Typescript Node.js projects using blazing fast esbuild.](https://www.reddit.com/r/typescript/comments/j0myuc/a7ulesbuildnodetsc_build_your_typescript_nodejs/)
+- url: https://github.com/a7ul/esbuild-node-tsc
+---
+
+## [3][memoized-node-fetch: A wrapper around node-fetch (or any other fetch-like function) that returns a single promise until it resolves.](https://www.reddit.com/r/typescript/comments/j0ovcx/memoizednodefetch_a_wrapper_around_nodefetch_or/)
+- url: https://github.com/chrispanag/memoized-node-fetch
+---
+
+## [4][Handle dates](https://www.reddit.com/r/typescript/comments/j0ncaq/handle_dates/)
+- url: https://www.reddit.com/r/typescript/comments/j0ncaq/handle_dates/
+---
+Handle dates 
+
+Does anyone have a good helper function to handle dates in JavaScript/typescript?
+
+For example if the date is 2020-09-27 and you want to add 7 days to the date it updates correctly. Should be 2020-09-04 after adding 7 days .
+
+Thank you for the help
+## [5][A SQL database implemented purely in TypeScript type annotations.](https://www.reddit.com/r/typescript/comments/izymbn/a_sql_database_implemented_purely_in_typescript/)
 - url: https://i.redd.it/8yy97gfqyep51.png
 ---
 
-## [3][VS Code generate explicit type annotation from inferred type](https://www.reddit.com/r/typescript/comments/izyayk/vs_code_generate_explicit_type_annotation_from/)
+## [6][Specifying type a promise rejects in defintions (d.ts)?](https://www.reddit.com/r/typescript/comments/j0b3tn/specifying_type_a_promise_rejects_in_defintions/)
+- url: https://www.reddit.com/r/typescript/comments/j0b3tn/specifying_type_a_promise_rejects_in_defintions/
+---
+In a TypeScript definition file is it possible to specify what type of error the Promise rejects with?
+
+Right now I've been helping myself with comments. It would be great to get help of the compiler with this.
+
+    /** rejects with CustomErrorType */
+    someMethodInAClass(): Promise&lt;void&gt;
+
+I’ve sorta been able to do this in regular TypeScript (not defintions) by defining an async function and simply specifying what it returns.
+
+Is there a way to actually embed the typing information of what you reject into TypeScript? If it matters I'm pretty sure I'll almost always consume this API using async/await stuff.
+## [7][Typescript-specific exercises](https://www.reddit.com/r/typescript/comments/j08xcx/typescriptspecific_exercises/)
+- url: https://www.reddit.com/r/typescript/comments/j08xcx/typescriptspecific_exercises/
+---
+Hi. I'm looking for exercises aimed at specifics of Typescript. Most of the websites I have looked in, including Codewars, offered me general-type tasks on algorithms, not about Typescript, while I need ones that would require using Typescript-specific (not JS) features, like declaration merging, union types, etc. The only material which I found by this time is mdevils' Typescript Exercises, but I would like to find something with a broader range of topics.  
+Can someone provide such exercises?
+## [8][TypeScript 2.7 and ES5 strangeness.](https://www.reddit.com/r/typescript/comments/j0c41k/typescript_27_and_es5_strangeness/)
+- url: https://www.reddit.com/r/typescript/comments/j0c41k/typescript_27_and_es5_strangeness/
+---
+ES6 is what brings support for things like: 
+
+arrow functions
+
+classes/interfaces
+
+Yet I'm using TS 2.7 with ES5 and I have access to arrow functions, class and interface. What's this sorcery?
+## [9][VS Code generate explicit type annotation from inferred type](https://www.reddit.com/r/typescript/comments/izyayk/vs_code_generate_explicit_type_annotation_from/)
 - url: https://www.reddit.com/r/typescript/comments/izyayk/vs_code_generate_explicit_type_annotation_from/
 ---
 Hey everyone! I've been missing this feature for a long time and there was no solution, so yesterday I made an extension for VS Code that generates explicit types. Give it a go if you want :)  
 [https://marketplace.visualstudio.com/items?itemName=nick-lvov-dev.typescript-explicit-types](https://marketplace.visualstudio.com/items?itemName=nick-lvov-dev.typescript-explicit-types)
-## [4][Genetic Algorithm applied to the Infinite Monkey Theorem](https://www.reddit.com/r/typescript/comments/izpcrt/genetic_algorithm_applied_to_the_infinite_monkey/)
-- url: https://github.com/f0lg0/geneticAlgorithm-TS
----
-
-## [5][Union with never: Worth it?](https://www.reddit.com/r/typescript/comments/j02y64/union_with_never_worth_it/)
-- url: https://www.reddit.com/r/typescript/comments/j02y64/union_with_never_worth_it/
----
-Say I have a function that *can* (but does not always) error:
-
-    const fn = (code:number): string | never =&gt; {
-        if (code &gt;= 400) {
-            throw Error(Error code: ${code});
-        }
-        return Code: ${code}; 
-    }
-
-&amp;#x200B;
-
-Is it considered good style/helpful/accurate to include "never" in the return type? Or is never reserved for functions that by design-never return.
-## [6][TypeScript — Excess Property Checks](https://www.reddit.com/r/typescript/comments/j028h2/typescript_excess_property_checks/)
+## [10][TypeScript — Excess Property Checks](https://www.reddit.com/r/typescript/comments/j028h2/typescript_excess_property_checks/)
 - url: https://medium.com/@tal.ohana.x/typescript-excess-property-checks-6ffe5584f450
 ---
 
-## [7][I made some unofficial TSX and JSX logos if you like logos like me](https://www.reddit.com/r/typescript/comments/j028bn/i_made_some_unofficial_tsx_and_jsx_logos_if_you/)
-- url: https://github.com/Protectator/jsx-tsx-logos
+## [11][Genetic Algorithm applied to the Infinite Monkey Theorem](https://www.reddit.com/r/typescript/comments/izpcrt/genetic_algorithm_applied_to_the_infinite_monkey/)
+- url: https://github.com/f0lg0/geneticAlgorithm-TS
 ---
 
-## [8][Types of Apps that can be built with Angular Framework](https://www.reddit.com/r/typescript/comments/j03f9m/types_of_apps_that_can_be_built_with_angular/)
-- url: https://tekkiwebsolutions.com/blog/angular-framework-apps/
----
-
-## [9][Confusing situation with typing multiple recursive union types](https://www.reddit.com/r/typescript/comments/izwd5j/confusing_situation_with_typing_multiple/)
-- url: https://www.reddit.com/r/typescript/comments/izwd5j/confusing_situation_with_typing_multiple/
----
-I'm working on a lambda calculus interpreter out of *The Implementation of Functional Programming Languages* and I'm running into some trouble getting the type safety I'm looking for.
-
-In the basic lambda calculus, an expression can be one of three things:
-
-    type Expression =
-      | Variable
-      | Abstraction&lt;Expression&gt;
-      | Application&lt;Expression&gt;
-
-    interface Variable {
-      nodeType: "var";
-      id: string;
-    }
-
-    interface Abstraction&lt;E&gt; {
-      nodeType: "abs";
-      argument: Variable;
-      body: E;
-    }
-
-    interface Application&lt;E&gt; {
-      nodeType: "app";
-      left: E;
-      right: E;
-    }
-
-This works fairly well like you'd expect. Sometimes the lambda calculus AST is extended with the notion of variable definition, called a Let binding, and I'll call that "language" AugmentedExpression
-
-    type AugmentedExpression =
-      | Variable
-      | Abstraction&lt;AugmentedExpression&gt;
-      | Application&lt;AugmentedExpression&gt;
-      | Let&lt;AugmentedExpression&gt;
-
-    interface Let&lt;E&gt; {
-      nodeType: "let";
-      varName: Variable;
-      equals: E;
-      inExpr: E;
-    }
-
-This works as well, on its own. The issue is, I want to be able to write a function that can take either an `Expression` or an `AugmentedExpression` and return that same type. For instance, if I write a function that takes two Expressions and returns an Application of one to the other, I know that the return is also of type Expression. 
-
-    function app(left: Expression, right: Expression): Expression {
-      return { nodeType: 'app', left, right };
-    }
-
-That's fine. I could also write exactly the same code and substitute AugmentedExpression for Expression, and it would work just fine. If I try to write the types such that it guarantees that if you pass in an Expression you get an Expression back, and if you pass in an AugmentedExpression you get an AugmentedExpression back, it gets more difficult.
-
-Initially I tried:
-
-    type Language = Expression | AugmentedExpression
-    function app&lt;L extends Language&gt;(left: L, right: R): L 
-
-That doesn't work, you have to either cast the result to unknown and then back to L, or you have to specify the return type as Application&lt;L&gt;, which kind of makes sense, and works for that situation.
-
-But sometimes the return is more complicated, consider repeated application:
-
-    function appN(...args: Expression): Expression {
-      if(args.length == 2)
-        return app(...args);
-      else
-        return appN(app(args[0], args[1]), ...args.slice(2))
-     }
-
-Here the same thing is true: if you pass in Expressions, you get an Expression, if you sub it for AugmentedExpression it works exactly the same way, returns AugmentedExpression. But I can't make this type check. I want to be able to write it as something like `appN&lt;L extends Language&gt;(...args: L[]) : L`, but the type checker does not like it one bit. 
-
-Any ideas on how I can express this in Typescript types? Without getting super unwieldy, which all of the solutions I've come up with so far have been. I'm guessing that the issue comes down to the fact that what I'm trying to do is somewhere between nominal and structural typing.
-## [10][Can someone help me out](https://www.reddit.com/r/typescript/comments/iztqsw/can_someone_help_me_out/)
-- url: https://www.reddit.com/r/typescript/comments/iztqsw/can_someone_help_me_out/
----
-Hi,
-
-I'm having the following 'problem': [https://stackoverflow.com/questions/64059374/why-isnt-the-argument-assignable-only-when-we-dont-know-exactly-what-type-from/64059656#64059656](https://stackoverflow.com/questions/64059374/why-isnt-the-argument-assignable-only-when-we-dont-know-exactly-what-type-from/64059656#64059656)
-
-Can someone explain this behaviour to me?
-
-Thanks
-## [11][Exporting third-party type for consumption](https://www.reddit.com/r/typescript/comments/izqfax/exporting_thirdparty_type_for_consumption/)
-- url: https://www.reddit.com/r/typescript/comments/izqfax/exporting_thirdparty_type_for_consumption/
----
-Not sure how best to ask this question, so please bear with me :)  
-
-
-I've got an npm package that I'm building/publishing which derives a type from a third-party package:
-
-&amp;#x200B;
-
-`import { GridChildComponentProps } from 'react-window'`
-
-`interface OwnCellProps {`
-
-  `pageSize: number;`
-
-`}`
-
-`export type CellProps = OwnCellProps &amp; GridChildComponentProps;`
-
-&amp;#x200B;
-
-Now when my consuming project uses this npm package it gets \`CellProps\` as type \`any\`. When I click through the references, I see that my declaration file has a similar line:
-
-`export declare type CellProps = OwnCellProps &amp; GridChildComponentProps;`
-
-OwnCellProps has the correct type, because it's defined above, but GridChildComponentProps has no type.  Likely because it is not defined.  There is the same import line at the top of the file, but \`@types/react-window\` is not installed in the consuming project.
-
-So my question is: how can the consuming project get the types from an npm package's third-party type dependency?
-
-I have \`@types/react-window\` listed as a devDependency, but the consuming project does not install it.  I'm wondering if there's a way to include the third-party type in the declaration file created in my npm package.  
-
-Any help is appreciated!

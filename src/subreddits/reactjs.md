@@ -111,59 +111,150 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][I applied for 100+ jobs but no interview](https://www.reddit.com/r/reactjs/comments/j013yg/i_applied_for_100_jobs_but_no_interview/)
-- url: https://www.reddit.com/r/reactjs/comments/j013yg/i_applied_for_100_jobs_but_no_interview/
----
-Hey guys, so I've been applying for jobs for a month and all I get is "Thank you but we don't need you" and I'm really getting demotivated I tried to improve my resume and my portfolio but still no interview, so what's wrong guys? is it because I'm applying for remote jobs and remote jobs are harder to get or what? and what should I do?
-
-and here's My [Portfolio](https://ahmedeid.netlify.app/) and My [Resume](https://drive.google.com/file/d/1FgqB5RtutmHzYG1VYXbArig2YzY7q6WY/view)
-## [4][I made some unofficial JSX and TSX logos if you're like logos like me](https://www.reddit.com/r/reactjs/comments/izqxuf/i_made_some_unofficial_jsx_and_tsx_logos_if_youre/)
-- url: https://github.com/Protectator/jsx-tsx-logos
+## [3][The React Cheatsheet for 2020 📄‬ (+ real-world examples)](https://www.reddit.com/r/reactjs/comments/j0oewq/the_react_cheatsheet_for_2020_realworld_examples/)
+- url: https://dev.to/codeartistryio/the-react-cheatsheet-for-2020-real-world-examples-4hgg
 ---
 
-## [5][Check out my project! I’m a high school senior who spent 300 hours making a doc editor to help my robotics team produce vibrant documentation without the headache of formatting text.](https://www.reddit.com/r/reactjs/comments/j04cfv/check_out_my_project_im_a_high_school_senior_who/)
-- url: https://www.reddit.com/r/reactjs/comments/j04cfv/check_out_my_project_im_a_high_school_senior_who/
+## [4][Completed my portfolio website with react and react-spring for animations (link in the comments)](https://www.reddit.com/r/reactjs/comments/j0qeau/completed_my_portfolio_website_with_react_and/)
+- url: https://v.redd.it/ulixcsgbmop51
 ---
- Check it out: [https://www.kilodoc.com/](https://www.kilodoc.com/)
 
-My hope is that there’s enough people who like this because I really want to invest more time into making this site even better. I’m already using my editor to take notes in school and organize my college applications. Let me know what you all think!
-
-If anyone’s interested in my stack, I’m using React for the frontend and a GraphQL API on Azure Functions that talks to a PostgreSQL database for the backend.
-## [6][Happy 3rd Birthday React 16 🎂](https://www.reddit.com/r/reactjs/comments/j05ltw/happy_3rd_birthday_react_16/)
+## [5][Happy 3rd Birthday React 16 🎂](https://www.reddit.com/r/reactjs/comments/j05ltw/happy_3rd_birthday_react_16/)
 - url: https://twitter.com/swyx/status/1309839955187834881?s=20
 ---
 
-## [7][Opinion on using outdated tutorials?](https://www.reddit.com/r/reactjs/comments/j02rsv/opinion_on_using_outdated_tutorials/)
-- url: https://www.reddit.com/r/reactjs/comments/j02rsv/opinion_on_using_outdated_tutorials/
+## [6][In React-Router, Is there any benefit of using &lt;Redirect&gt; over useHistory() Hook?](https://www.reddit.com/r/reactjs/comments/j0lpq2/in_reactrouter_is_there_any_benefit_of_using/)
+- url: https://www.reddit.com/r/reactjs/comments/j0lpq2/in_reactrouter_is_there_any_benefit_of_using/
 ---
-I noticed the use of classes v. functions in ReactJS. 2020 tutorials seem to use functions rather than classes. Is the use of classes in any way outdated? Even tutorials from 2019 use this method.
+Hey guys, So I have been wondering the difference in &lt;Redirect&gt; or useHistory hook. I read somewhere in stackoverflow that Redirect uses History hook under the hood. So I want to know what make them of different and which one should be preferred. 
 
-I don't know if this is a trivial or stupid question? However, it's really bugging me out that following two different tutorials using different methods make my code not compile. I feel that I'm missing something obvious.
-
-This is my first time posting programming-related. I usually just lurk in programming subreddit and can usually find the answers in Reddit or Stack Overflow. But not this question.
-
-Also, can anyone recommend me a good ReactJS course for a beginner that's updated? Thank you so much!
-## [8][I made my portfolio in react. Let me know what you think please (link in comments)](https://www.reddit.com/r/reactjs/comments/izwsl4/i_made_my_portfolio_in_react_let_me_know_what_you/)
-- url: https://www.reddit.com/r/reactjs/comments/izwsl4/i_made_my_portfolio_in_react_let_me_know_what_you/
----
-Portfolio made with reactJs, Sass, Firebase and more
-
-Link to website: [https://www.salimregragui.me/](https://www.salimregragui.me/)
-
-Gif : [https://imgur.com/a/vXZGal0](https://imgur.com/a/vXZGal0)
-## [9][My first React project - a personal site.](https://www.reddit.com/r/reactjs/comments/izghl9/my_first_react_project_a_personal_site/)
-- url: https://v.redd.it/40o2j93kj9p51
+Thanks
+## [7][Advanced Express JS REST API [#6] JWT Token Generation | Node JS Tutorial - Please subscribe](https://www.reddit.com/r/reactjs/comments/j0pw1n/advanced_express_js_rest_api_6_jwt_token/)
+- url: https://m.youtube.com/watch?v=HsgZ28p6E68&amp;list=PLs1waz0ZKTGO7agN0cntpe6ro6TIka0ow&amp;index=6#dialog
 ---
 
-## [10][Need some help with testing in React while using Hooks.](https://www.reddit.com/r/reactjs/comments/j0101l/need_some_help_with_testing_in_react_while_using/)
-- url: https://www.reddit.com/r/reactjs/comments/j0101l/need_some_help_with_testing_in_react_while_using/
+## [8][CRA to Next.js](https://www.reddit.com/r/reactjs/comments/j0n28j/cra_to_nextjs/)
+- url: https://www.reddit.com/r/reactjs/comments/j0n28j/cra_to_nextjs/
 ---
-Hey guys, I was wondering what is the best way to test an useEffect api call? Is it by using Jest/Enzyme or are there better alternatives? Any help is appreciated!
-## [11][Best react course in your opinion in terms of Code quality and folder structure?](https://www.reddit.com/r/reactjs/comments/j0141i/best_react_course_in_your_opinion_in_terms_of/)
-- url: https://www.reddit.com/r/reactjs/comments/j0141i/best_react_course_in_your_opinion_in_terms_of/
+Hello guys. I created MERN forums app with CRA and Redux and now I want to add static pages for website blog/articles with Cms. Should I have to redo everything in Next.js for SEO or is there any other solution?
+Thanks
+## [9][Div made canvas](https://www.reddit.com/r/reactjs/comments/j0qrkz/div_made_canvas/)
+- url: https://www.reddit.com/r/reactjs/comments/j0qrkz/div_made_canvas/
 ---
-I have completed 80% of the traversy media's MERN stack course on udemy. Project is good, but code quality is not up to the mark. Is there any course available which is project based and code quality and folder structure is very good?
-## [12][Why do we need server side template engines like handlebar,pug in nodejs if we use react on the client side?](https://www.reddit.com/r/reactjs/comments/izz0my/why_do_we_need_server_side_template_engines_like/)
-- url: https://www.reddit.com/r/reactjs/comments/izz0my/why_do_we_need_server_side_template_engines_like/
+Hey all, 
+
+I want to do a personal project in react. It would be more of a proof of concept than anything else. The idea is a figma like web app that doesn't use the canvas tag. 
+
+You essentially would land on a page that would let you define the width of the viewport. Once defined, you can drag and drop elements on to created a webpage.
+
+I want to circumvent the canvas tag so the "canvas" or design could be exported as react components. I'm not against the canvas tag if that's possible but from my reading, canvas cannot be serialized to HTML. 
+
+That's why I want to take a div made  approach. I have no plans for complex objects, transformations, etc. I am hoping the performance wouldn't be too bad but ehh, let's find out. 
+
+My question is do you know of any libraries or readings that can help out? I am only finding libs like konva or react-canvas (hasn't been touched in 4 years). The articles I find are about react with the canvas tag, nothing about div made approaches (understandable).
+
+Furthermore, any tips, tricks and recommendations would be awesome. I have made a few websites with react/next but never something this complex. I do however have a pretty solid understanding of JS.
+
+Thanks everyone!
+## [10][Can I create a custom hook for a Firestore snapshot listener?](https://www.reddit.com/r/reactjs/comments/j0qiuy/can_i_create_a_custom_hook_for_a_firestore/)
+- url: https://www.reddit.com/r/reactjs/comments/j0qiuy/can_i_create_a_custom_hook_for_a_firestore/
 ---
-I first learned react and now focusing on nodejs. After diving into express i just got overwhelmed with tons of template engines out there. I am still confused why on earth i have to run after those if i already use react on the  client side.
+I currently have two snapshot realtime update listeners set up in a single react component. One to manage movies, and another to manage a movies watchlist. I was wondering if this would be a good use case for creating my own custom hook to handle this? My only concern is that a new listener will be set up every single time the custom hook is used and will not release or cleanup with the component is no longer using the hook. So I have two questions really:
+
+&amp;nbsp;
+
+1. Is this is a good use case for a custom hook to manage this state?
+2. Will hook be destroyed/cleaned up when a component using it is destroyed or unmounted?
+
+&amp;nbsp;
+
+Here's my component:
+
+    const MoviesPage = () =&gt; {
+      const [movies, setMovies] = useState&lt;Media[]&gt;([]);
+      const [watchList, setWatchList] = useState&lt;Media[]&gt;([]);
+      const [isLoading, setIsLoading] = useState&lt;boolean&gt;(true);
+    
+      // Subscribe to any changes to the movies collection
+      useEffect(() =&gt; {
+        const unsubscribe = firebase
+          .firestore()
+          .collection('movies')
+          .onSnapshot(
+            function (querySnapshot: QuerySnapshot) {
+              const movies: Movie[] = [];
+    
+              querySnapshot.forEach(function (movieDoc: DocumentData) {
+                movies.push(movieDoc.data());
+              });
+    
+              setMovies(movies);
+              setIsLoading(false);
+            },
+          );
+        return () =&gt; {
+          // Cleanup subscriptions
+          unsubscribe();
+        };
+     }, []);
+
+      // Subscribe to any changes to the movies watchlist collection
+      useEffect(() =&gt; {
+        const unsubscribe = firebase
+          .firestore()
+          .collection('moviesWatchlist')
+          .onSnapshot(
+            function (querySnapshot: QuerySnapshot) {
+              const watchList: Movie[] = [];
+    
+              querySnapshot.forEach(function (movieDoc: DocumentData) {
+                watchList.push(movieDoc.data());
+              });
+    
+              setWatchList(movies);
+              setIsLoading(false);
+            },
+          );
+        return () =&gt; {
+          // Cleanup subscriptions
+          unsubscribe();
+        };
+      }, []);
+    
+      return (
+        &lt;div&gt;
+          {isLoading &amp;&amp; &lt;span&gt;Loading...&lt;/span&gt;}
+    
+          {!isLoading &amp;&amp; (
+            &lt;div&gt;
+              &lt;MoviesList movies={movies} /&gt;
+              &lt;WatchList movies={watchList} /&gt;
+            &lt;/div&gt;
+          )}
+        &lt;/div&gt;
+      );
+    };
+    
+    export default MoviesPage;
+## [11][Why React is so Hard?](https://www.reddit.com/r/reactjs/comments/j0qdt5/why_react_is_so_hard/)
+- url: https://youtu.be/KLT8IlkAto4
+---
+
+## [12][I finally finished my first React app: a Spotify playlist generator!](https://www.reddit.com/r/reactjs/comments/j0q6kg/i_finally_finished_my_first_react_app_a_spotify/)
+- url: https://www.reddit.com/r/reactjs/comments/j0q6kg/i_finally_finished_my_first_react_app_a_spotify/
+---
+I have been a long time Spotify user and regularly make playlists for different moods, activities or situations. So, I desperately wanted a feature to help me discover new music based on these playlists as well as generate customized ones, so I decided to build one!
+
+Using remixr, you can generate new playlists based on your existing Spotify playlists as well as based on different artists and tracks. You can also fine tune various attributes such as popularity, mood, energy, danceability, etc. to generate the perfect playlist for you!
+
+I hope you enjoy the app and please feel free to leave any feedback or suggestions you might have. The project is also open source and great for first time developers looking to contribute!
+
+&amp;#x200B;
+
+Please check out remixr on ProductHunt and upvote if you enjoyed it: [https://www.producthunt.com/posts/remixr](https://www.producthunt.com/posts/remixr)
+
+Remixr: [https://www.remixr.xyz](https://www.remixr.xyz/)
+
+Github: [https://www.github.com/rtkg12/remixr](https://www.github.com/rtkg12/remixr)
+
+https://reddit.com/link/j0q6kg/video/e51glj87nop51/player

@@ -56,11 +56,35 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][concurrencpp v.0.0.6 - modern concurrency for C++](https://www.reddit.com/r/cpp/comments/j04one/concurrencpp_v006_modern_concurrency_for_c/)
+## [2][controlling template argument deduction via dont_deduce&lt;T&gt;](https://www.reddit.com/r/cpp/comments/j0pgxh/controlling_template_argument_deduction_via_dont/)
+- url: https://artificial-mind.net/blog/2020/09/26/dont-deduce
+---
+
+## [3][lunasvg v1.3.0 released. Text element is now supported.](https://www.reddit.com/r/cpp/comments/j0j2qg/lunasvg_v130_released_text_element_is_now/)
+- url: https://github.com/sammycage/lunasvg/releases/tag/v1.3.0
+---
+
+## [4][Macro-free reflection in C++14](https://www.reddit.com/r/cpp/comments/j09q7u/macrofree_reflection_in_c14/)
+- url: https://lordsof.tech/programming/reflection-in-c14/
+---
+
+## [5][concurrencpp v.0.0.6 - modern concurrency for C++](https://www.reddit.com/r/cpp/comments/j04one/concurrencpp_v006_modern_concurrency_for_c/)
 - url: https://github.com/David-Haim/concurrencpp
 ---
 
-## [3][Simple C++ Socket Programming Base / Library: Works for Windows and Linux](https://www.reddit.com/r/cpp/comments/izvy9i/simple_c_socket_programming_base_library_works/)
+## [6][Updated my "structure of array" wrapper library](https://www.reddit.com/r/cpp/comments/j0aw61/updated_my_structure_of_array_wrapper_library/)
+- url: https://www.reddit.com/r/cpp/comments/j0aw61/updated_my_structure_of_array_wrapper_library/
+---
+I "recently" created a library that allows you to create an SoA-style vector wrapper around any PoD type: 
+
+[https://github.com/Yamahari/struct\_array](https://github.com/Yamahari/struct_array)
+
+[https://www.reddit.com/r/cpp/comments/hoabrd/structure\_of\_arrays\_wrapper\_for\_podtypes/](https://www.reddit.com/r/cpp/comments/hoabrd/structure_of_arrays_wrapper_for_podtypes/)
+
+Now I've updated the lib and added the possibility to customize the maximum "size" of PoDs supported ( the amount of members ) by using horrible macro-magic and adding a "-DSOA\_MAX\_BINDINGS=X" compile definition x). 
+
+Should be ready to use, but I might replace my iterator with one that extends Boost.STLInterface's iterator\_interface in the future.
+## [7][Simple C++ Socket Programming Base / Library: Works for Windows and Linux](https://www.reddit.com/r/cpp/comments/izvy9i/simple_c_socket_programming_base_library_works/)
 - url: https://www.reddit.com/r/cpp/comments/izvy9i/simple_c_socket_programming_base_library_works/
 ---
  Thought this might be useful for everyone doing entry-level socket programming in C++. Currently C++ does not have a unified way to write socket programming for both Windows and Linux. I tried to bridge that gap and write a simple server/client library that can be extended to do more.
@@ -70,58 +94,19 @@ The alternatives out there tend to use or depend on external libraries/runtime s
 &amp;#x200B;
 
 [https://github.com/masesk/easy-socket](https://github.com/masesk/easy-socket)
-## [4][std::exchange Patterns: Fast, Safe, Expressive, and Probably Underused](https://www.reddit.com/r/cpp/comments/izjgdw/stdexchange_patterns_fast_safe_expressive_and/)
+## [8][std::exchange Patterns: Fast, Safe, Expressive, and Probably Underused](https://www.reddit.com/r/cpp/comments/izjgdw/stdexchange_patterns_fast_safe_expressive_and/)
 - url: https://www.fluentcpp.com/2020/09/25/stdexchange-patterns-fast-safe-expressive-and-probably-underused/
 ---
 
-## [5][Structured binding may be the new hotness, but we'll always have std::tie](https://www.reddit.com/r/cpp/comments/izr5pf/structured_binding_may_be_the_new_hotness_but/)
+## [9][Structured binding may be the new hotness, but we'll always have std::tie](https://www.reddit.com/r/cpp/comments/izr5pf/structured_binding_may_be_the_new_hotness_but/)
 - url: https://devblogs.microsoft.com/oldnewthing/20200925-00/?p=104297
 ---
 
-## [6][Free hands-on online Conan C++ package manager training](https://www.reddit.com/r/cpp/comments/iznhw6/free_handson_online_conan_c_package_manager/)
+## [10][Free hands-on online Conan C++ package manager training](https://www.reddit.com/r/cpp/comments/iznhw6/free_handson_online_conan_c_package_manager/)
 - url: https://blog.conan.io/2020/09/24/New-conan-training-series.html
 ---
 
-## [7][Meeting C++ online - Basit Ayantunde - Functional Error and Optional value Handling with STX](https://www.reddit.com/r/cpp/comments/izfknm/meeting_c_online_basit_ayantunde_functional_error/)
+## [11][Meeting C++ online - Basit Ayantunde - Functional Error and Optional value Handling with STX](https://www.reddit.com/r/cpp/comments/izfknm/meeting_c_online_basit_ayantunde_functional_error/)
 - url: https://www.youtube.com/watch?v=8CZhJa8UJk0
 ---
 
-## [8][Plenary: The Beauty and Power of "Primitive" C++ - Bjarne Stroustrup - CppCon 2020](https://www.reddit.com/r/cpp/comments/iziw57/plenary_the_beauty_and_power_of_primitive_c/)
-- url: https://youtu.be/ERzENfQ51Ck
----
-
-## [9][Tests dont make code higher quality.](https://www.reddit.com/r/cpp/comments/j04ws9/tests_dont_make_code_higher_quality/)
-- url: https://www.reddit.com/r/cpp/comments/j04ws9/tests_dont_make_code_higher_quality/
----
-The code is what it is, writing a seperate test that mocks bad input that you already took in account and handled, achieves absolutely nothing, passing a bunch of tests is nothing more than an illusion. So if you break something by accident, the tests will tell you exactly where it is, provided you have 100% coverage, saving you at most 1 minute in a debugger, is it really worth it to increase your codebase by 75% to maybe save a minute later? You cant test for what you don't know, so code will still break for edge cases you are not yet aware of, instead of just fixing it when they arise, you need to fix it then fix a test or write a new test, if you decide to change something in the code you have to change the tests. Its insanity, seems like it was invented by programmers to get extra milage out of jobs and to trick management into a false sense of security.
-## [10][Do you have a preferred library for constexpr data structures?](https://www.reddit.com/r/cpp/comments/izhmre/do_you_have_a_preferred_library_for_constexpr/)
-- url: https://www.reddit.com/r/cpp/comments/izhmre/do_you_have_a_preferred_library_for_constexpr/
----
-Do y'all have a preferred library of constexpr data structures? I'm trying to find something like the embedded STL [https://www.etlcpp.com/](https://www.etlcpp.com/)  but with constexpr support. I was wondering if there were any  alternatives. I've found quite a few header only implementation of  single data structures, but not a solid colllection. This also isn't  strictly embedded, but I assume the people likely to use this are people  working in embedded. 
-
-I'm working on designing a real time system, and so I'm trying to put as much of the work at compile time. Not necessarily embedded, but doing any unnecessary work at runtime is not preferred. 
-
-Also while I'm here, given that information, should I implement a threadpool, scheduler, and event system myself? I wasn't able to find a thread pool with considerations like this (liberal use of shared\_ptr on a few implmentations), so I'm curious to see if anyone could point me in the right direction.
-## [11][The Sneaky base class constructor trick](https://www.reddit.com/r/cpp/comments/izqm9r/the_sneaky_base_class_constructor_trick/)
-- url: https://www.reddit.com/r/cpp/comments/izqm9r/the_sneaky_base_class_constructor_trick/
----
-Hello good people of r/cpp,
-
-I'd like to share a simple trick for sneakily initializing a base class before the derived ctor, and without the derived class knowing anything about it.
-
-Consider : you're writing an API for an interface class that a lot of people are going to use to build their derived objects.   
-\[EDIT 2\] : These derived objects will be registered in a Factory which will create them at runtime in the environment you are developing. 
-
-Obviously, the cleanest way to initialize it is to encapsulate the ctor arguments of your base class into a struct, that way you can silently adapt it without breaking client code. But ! The size of the client codebase might be pretty big, hundreds, perhaps thousands of derived objects will be written, that's a lot of "Derived() : Base( BaseCtorArgs )" to be copy pasted everywhere.  A minor issue, but why do your users should remember the name of your struct + type it ?
-
-A common alternative is two steps initialization : tell the users of your API to write their construction in a virtual setup() function where the state of the base object is guaranteed to be correct. That's not great : errors will certainly happen, and perhaps the member of their derived classes do not have a default ctor, which would force them to write both a ctor and a setup function. Eurgh.
-
-A less common alternative is what i call "the sneaky base constructor", add whatever data you need  to perform base initialization as a static member somewhere (e.g. in your Factory or Base class), have your factory set it up, and use it from your Base class constructor. [See demo on coliru.](http://coliru.stacked-crooked.com/a/c9f45931e1495814)
-
-The pros : no one has to type anything to construct the Base class, and correct state is guaranteed.The cons : no serious cons that i can see of... except for the fringe case where you have a lot of factories in separate threads trying to create at the same time at a great rate, and the sync mechanism + indirection might hit performance, but even that can be taken care of by having an "active factory" variable for each thread.
-
-What do you think ?
-
-(ps : i previously tried to do this by allocating raw bytes, call static\_cast&lt;Base\*&gt; and initialize, then call a placement new Derived() on the address i had setup, which didn't worked)
-
-EDIT : Here is the second version : no static member, but raw allocation + static\_cast + placement new. As expected, some type will be rewritten by the constructor, some won't (hence why i used void\* instead of std::string). This looks tricky and dangerous, but i don't understand why that would be undefined behavior, it's simply interpreting bytes and doing assignment.[http://coliru.stacked-crooked.com/a/66c416f1da4a32bc](http://coliru.stacked-crooked.com/a/66c416f1da4a32bc)

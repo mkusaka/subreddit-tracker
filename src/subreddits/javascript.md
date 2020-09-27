@@ -13,49 +13,45 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][Scopes in any JetBrains IDE](https://www.reddit.com/r/javascript/comments/j02j10/scopes_in_any_jetbrains_ide/)
-- url: https://stitcher.io/blog/phpstorm-scopes
+## [3][Chord Solver - My first website, solves for music chords if you give it notes. If you all have tips for making it more mobile friendly, I’d love to hear it! Thank you!](https://www.reddit.com/r/javascript/comments/j0h568/chord_solver_my_first_website_solves_for_music/)
+- url: https://chordsolver.com
 ---
 
-## [4][Elder.js: A Svelte Framework and Static Site Generator - V1 released! 18000 pages in under 8 minutes](https://www.reddit.com/r/javascript/comments/j02xf3/elderjs_a_svelte_framework_and_static_site/)
+## [4][Split View - an image comparison web component in vanilla JS](https://www.reddit.com/r/javascript/comments/j0nuwn/split_view_an_image_comparison_web_component_in/)
+- url: https://codepen.io/onion2k/pen/dyMaBKO
+---
+
+## [5][[AskJS] Are there any active projects similar to TogetherJS?](https://www.reddit.com/r/javascript/comments/j0pi3i/askjs_are_there_any_active_projects_similar_to/)
+- url: https://www.reddit.com/r/javascript/comments/j0pi3i/askjs_are_there_any_active_projects_similar_to/
+---
+An active fork would be fine.
+## [6][[P] Hi! I'm happy to announce that I posted my first Towards Data Science post! In this case about virtual gamming using Tensorflow.js](https://www.reddit.com/r/javascript/comments/j0q5im/p_hi_im_happy_to_announce_that_i_posted_my_first/)
+- url: https://towardsdatascience.com/virtual-steering-wheel-with-javascript-and-posenet-12439712a68
+---
+
+## [7][Web platform's hidden gems - Device Orientation API](https://www.reddit.com/r/javascript/comments/j0akye/web_platforms_hidden_gems_device_orientation_api/)
+- url: https://arunmichaeldsouza.com/blog/web-platform's-hidden-gems---device-orientation-api
+---
+
+## [8][Elder.js: A Svelte Framework and Static Site Generator - V1 released! 18000 pages in under 8 minutes](https://www.reddit.com/r/javascript/comments/j02xf3/elderjs_a_svelte_framework_and_static_site/)
 - url: https://elderguide.com/tech/elderjs/
 ---
 
-## [5][I made some unofficial JSX and TSX logos if you like logos like me](https://www.reddit.com/r/javascript/comments/j027nu/i_made_some_unofficial_jsx_and_tsx_logos_if_you/)
-- url: https://github.com/Protectator/jsx-tsx-logos
+## [9][Can you guys help me with Stylelint and Styletron?](https://www.reddit.com/r/javascript/comments/j0mpy7/can_you_guys_help_me_with_stylelint_and_styletron/)
+- url: /r/learnjavascript/comments/j0ir6v/how_to_use_stylelint_with_styletron/
 ---
 
-## [6][Smolpxl - a JavaScript library for writing little retro pixelated games](https://www.reddit.com/r/javascript/comments/iznl3e/smolpxl_a_javascript_library_for_writing_little/)
-- url: https://gitlab.com/andybalaam/smolpxl
+## [10][[AskJS] window.orientation deprecated?](https://www.reddit.com/r/javascript/comments/j0kx1i/askjs_windoworientation_deprecated/)
+- url: https://www.reddit.com/r/javascript/comments/j0kx1i/askjs_windoworientation_deprecated/
+---
+I don't understand the deprecation of window.orientation and what we are supposed to use instead to detect how a device is rotated.
+
+The only other orentation API I can find is Screen.orientation, but iOS does not support that so you'd be left with less than 50% browser support: [https://caniuse.com/screen-orientation](https://caniuse.com/screen-orientation)
+## [11][Scopes in any JetBrains IDE](https://www.reddit.com/r/javascript/comments/j02j10/scopes_in_any_jetbrains_ide/)
+- url: https://stitcher.io/blog/phpstorm-scopes
 ---
 
-## [7][Bringing the Mona Lisa Effect to Life with TensorFlow.js](https://www.reddit.com/r/javascript/comments/izni3q/bringing_the_mona_lisa_effect_to_life_with/)
-- url: https://blog.tensorflow.org/2020/09/bringing-mona-lisa-effect-to-life-tensorflow-js.html
----
-
-## [8][TypeScript — Excess Property Checks](https://www.reddit.com/r/javascript/comments/j020vk/typescript_excess_property_checks/)
-- url: https://medium.com/@tal.ohana.x/typescript-excess-property-checks-6ffe5584f450
----
-
-## [9][Check out my project! I’m a high school senior who spent 300 hours making a doc editor to help my robotics team produce vibrant documentation without the headache of formatting text.](https://www.reddit.com/r/javascript/comments/j04ahz/check_out_my_project_im_a_high_school_senior_who/)
-- url: https://www.kilodoc.com/
----
-
-## [10][[AskJS] If you install the latest VSCode for doing WebDev on Linux and you disable the telemetry in it will you still have somekind of telemetry inside your linux system à la Windows 10 ?](https://www.reddit.com/r/javascript/comments/j02tjb/askjs_if_you_install_the_latest_vscode_for_doing/)
-- url: https://www.reddit.com/r/javascript/comments/j02tjb/askjs_if_you_install_the_latest_vscode_for_doing/
----
-*excuse my english french man from Quebec
-
-**A)** If you install the latest VSCode for doing WebDev on Linux and you disable the telemetry in it will you still have somekind of telemetry inside your linux system à la Windows 10 ?
-
-**B)** What's your opinion about being a 100% remote JS dev today in 2020 is it feasible to have a solid well paid career being remote also I am trying to go back to programming after 20 years.. ( did some C++ etc not starting from 0 ) some ppl told me I could be junior-intermediate inside 2 years if I study 10 hrs a day what I want to know is should I aim to be fullstack cause some programmer told me to specialize frontend or backend and not try to be fullstack in 2020 is this true ?
-
-**C)** What's the IDE or text editor after VScode to do solid webdev ? like the 2nd best is it close to VSCode or it's the best now with the greatest extensions and workflow ? (sublime atom another etc)
-## [11][Can WebAssembly run under FreeDOS?](https://www.reddit.com/r/javascript/comments/j0278g/can_webassembly_run_under_freedos/)
-- url: /r/WebAssembly/comments/j016p6/can_webassembly_run_under_freedos/
----
-
-## [12][fflate - the fastest JavaScript compression/decompression library, 8kB](https://www.reddit.com/r/javascript/comments/izb5p9/fflate_the_fastest_javascript/)
-- url: https://github.com/101arrowz/fflate
+## [12][Projects · Andy Balaam / smolpxl - Smolpxl is a JavaScript library for writing little retro pixelated games, and lots of games made with the library.](https://www.reddit.com/r/javascript/comments/j0mwmu/projects_andy_balaam_smolpxl_smolpxl_is_a/)
+- url: https://gitlab.com/andybalaam/smolpxl#smolpxl
 ---
 

@@ -111,150 +111,111 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][The React Cheatsheet for 2020 📄‬ (+ real-world examples)](https://www.reddit.com/r/reactjs/comments/j0oewq/the_react_cheatsheet_for_2020_realworld_examples/)
-- url: https://dev.to/codeartistryio/the-react-cheatsheet-for-2020-real-world-examples-4hgg
+## [3][Is Firebase better than Express + MongoDB](https://www.reddit.com/r/reactjs/comments/j1adu9/is_firebase_better_than_express_mongodb/)
+- url: https://www.reddit.com/r/reactjs/comments/j1adu9/is_firebase_better_than_express_mongodb/
 ---
-
-## [4][Completed my portfolio website with react and react-spring for animations (link in the comments)](https://www.reddit.com/r/reactjs/comments/j0qeau/completed_my_portfolio_website_with_react_and/)
-- url: https://v.redd.it/ulixcsgbmop51
+I mainly do MERN work but recently for my personal projects realized I got tired of repeating redundant code for a simple rest api. I researched Firebase and it seems to be a really good alternative, with built in authentication and real-time database. I’ve also heard people disliking it, if so why? Is it a good alternative after all?
+## [4][Best Beginners React.js Projects](https://www.reddit.com/r/reactjs/comments/j186hy/best_beginners_reactjs_projects/)
+- url: https://www.reddit.com/r/reactjs/comments/j186hy/best_beginners_reactjs_projects/
 ---
+ 
 
-## [5][Happy 3rd Birthday React 16 🎂](https://www.reddit.com/r/reactjs/comments/j05ltw/happy_3rd_birthday_react_16/)
-- url: https://twitter.com/swyx/status/1309839955187834881?s=20
----
+Building [React.js projects for beginners](https://codersera.com/blog/reactjs-projects-for-beginners/) will not only allow you to strengthen up React skills but also will help you explore your creative sides as a developer. Also, it will make you familiar with **React developer tools** and react ecosystem for each project as per the need for that project.
 
-## [6][In React-Router, Is there any benefit of using &lt;Redirect&gt; over useHistory() Hook?](https://www.reddit.com/r/reactjs/comments/j0lpq2/in_reactrouter_is_there_any_benefit_of_using/)
-- url: https://www.reddit.com/r/reactjs/comments/j0lpq2/in_reactrouter_is_there_any_benefit_of_using/
----
-Hey guys, So I have been wondering the difference in &lt;Redirect&gt; or useHistory hook. I read somewhere in stackoverflow that Redirect uses History hook under the hood. So I want to know what make them of different and which one should be preferred. 
+React project development is a self-directed process. You’ll have to learn on a trial and error basis. Unlike the basics of React via online learning materials, there’ll not be much to guide you on building React projects.
 
-Thanks
-## [7][Advanced Express JS REST API [#6] JWT Token Generation | Node JS Tutorial - Please subscribe](https://www.reddit.com/r/reactjs/comments/j0pw1n/advanced_express_js_rest_api_6_jwt_token/)
-- url: https://m.youtube.com/watch?v=HsgZ28p6E68&amp;list=PLs1waz0ZKTGO7agN0cntpe6ro6TIka0ow&amp;index=6#dialog
----
+But still, there is numerous content online that teaches the basic core steps of app development, along with the source code. 
 
-## [8][CRA to Next.js](https://www.reddit.com/r/reactjs/comments/j0n28j/cra_to_nextjs/)
-- url: https://www.reddit.com/r/reactjs/comments/j0n28j/cra_to_nextjs/
----
-Hello guys. I created MERN forums app with CRA and Redux and now I want to add static pages for website blog/articles with Cms. Should I have to redo everything in Next.js for SEO or is there any other solution?
-Thanks
-## [9][Div made canvas](https://www.reddit.com/r/reactjs/comments/j0qrkz/div_made_canvas/)
-- url: https://www.reddit.com/r/reactjs/comments/j0qrkz/div_made_canvas/
----
-Hey all, 
+As a beginner, React.js project development may seem challenging, but one can simplify the whole process by breaking down an application into smaller components. Try to focus on building one feature at a time, and keep connecting the dots as you move forward into the intricacies of development.
 
-I want to do a personal project in react. It would be more of a proof of concept than anything else. The idea is a figma like web app that doesn't use the canvas tag. 
+As you continue to practice with different React tools and ecosystems, you will understand the common patterns of app development and start identifying which tools work best for developing specific features of a React app. 
 
-You essentially would land on a page that would let you define the width of the viewport. Once defined, you can drag and drop elements on to created a webpage.
+ By now you must be clear on requirements for building React apps. Let’s start learning about a few of the best **React.JS projects for beginners** list- 
 
-I want to circumvent the canvas tag so the "canvas" or design could be exported as react components. I'm not against the canvas tag if that's possible but from my reading, canvas cannot be serialized to HTML. 
+ 
 
-That's why I want to take a div made  approach. I have no plans for complex objects, transformations, etc. I am hoping the performance wouldn't be too bad but ehh, let's find out. 
-
-My question is do you know of any libraries or readings that can help out? I am only finding libs like konva or react-canvas (hasn't been touched in 4 years). The articles I find are about react with the canvas tag, nothing about div made approaches (understandable).
-
-Furthermore, any tips, tricks and recommendations would be awesome. I have made a few websites with react/next but never something this complex. I do however have a pretty solid understanding of JS.
-
-Thanks everyone!
-## [10][Can I create a custom hook for a Firestore snapshot listener?](https://www.reddit.com/r/reactjs/comments/j0qiuy/can_i_create_a_custom_hook_for_a_firestore/)
-- url: https://www.reddit.com/r/reactjs/comments/j0qiuy/can_i_create_a_custom_hook_for_a_firestore/
----
-I currently have two snapshot realtime update listeners set up in a single react component. One to manage movies, and another to manage a movies watchlist. I was wondering if this would be a good use case for creating my own custom hook to handle this? My only concern is that a new listener will be set up every single time the custom hook is used and will not release or cleanup with the component is no longer using the hook. So I have two questions really:
-
-&amp;nbsp;
-
-1. Is this is a good use case for a custom hook to manage this state?
-2. Will hook be destroyed/cleaned up when a component using it is destroyed or unmounted?
-
-&amp;nbsp;
-
-Here's my component:
-
-    const MoviesPage = () =&gt; {
-      const [movies, setMovies] = useState&lt;Media[]&gt;([]);
-      const [watchList, setWatchList] = useState&lt;Media[]&gt;([]);
-      const [isLoading, setIsLoading] = useState&lt;boolean&gt;(true);
-    
-      // Subscribe to any changes to the movies collection
-      useEffect(() =&gt; {
-        const unsubscribe = firebase
-          .firestore()
-          .collection('movies')
-          .onSnapshot(
-            function (querySnapshot: QuerySnapshot) {
-              const movies: Movie[] = [];
-    
-              querySnapshot.forEach(function (movieDoc: DocumentData) {
-                movies.push(movieDoc.data());
-              });
-    
-              setMovies(movies);
-              setIsLoading(false);
-            },
-          );
-        return () =&gt; {
-          // Cleanup subscriptions
-          unsubscribe();
-        };
-     }, []);
-
-      // Subscribe to any changes to the movies watchlist collection
-      useEffect(() =&gt; {
-        const unsubscribe = firebase
-          .firestore()
-          .collection('moviesWatchlist')
-          .onSnapshot(
-            function (querySnapshot: QuerySnapshot) {
-              const watchList: Movie[] = [];
-    
-              querySnapshot.forEach(function (movieDoc: DocumentData) {
-                watchList.push(movieDoc.data());
-              });
-    
-              setWatchList(movies);
-              setIsLoading(false);
-            },
-          );
-        return () =&gt; {
-          // Cleanup subscriptions
-          unsubscribe();
-        };
-      }, []);
-    
-      return (
-        &lt;div&gt;
-          {isLoading &amp;&amp; &lt;span&gt;Loading...&lt;/span&gt;}
-    
-          {!isLoading &amp;&amp; (
-            &lt;div&gt;
-              &lt;MoviesList movies={movies} /&gt;
-              &lt;WatchList movies={watchList} /&gt;
-            &lt;/div&gt;
-          )}
-        &lt;/div&gt;
-      );
-    };
-    
-    export default MoviesPage;
-## [11][Why React is so Hard?](https://www.reddit.com/r/reactjs/comments/j0qdt5/why_react_is_so_hard/)
-- url: https://youtu.be/KLT8IlkAto4
----
-
-## [12][I finally finished my first React app: a Spotify playlist generator!](https://www.reddit.com/r/reactjs/comments/j0q6kg/i_finally_finished_my_first_react_app_a_spotify/)
-- url: https://www.reddit.com/r/reactjs/comments/j0q6kg/i_finally_finished_my_first_react_app_a_spotify/
----
-I have been a long time Spotify user and regularly make playlists for different moods, activities or situations. So, I desperately wanted a feature to help me discover new music based on these playlists as well as generate customized ones, so I decided to build one!
-
-Using remixr, you can generate new playlists based on your existing Spotify playlists as well as based on different artists and tracks. You can also fine tune various attributes such as popularity, mood, energy, danceability, etc. to generate the perfect playlist for you!
-
-I hope you enjoy the app and please feel free to leave any feedback or suggestions you might have. The project is also open source and great for first time developers looking to contribute!
+# React.js Projects for Beginners
 
 &amp;#x200B;
 
-Please check out remixr on ProductHunt and upvote if you enjoyed it: [https://www.producthunt.com/posts/remixr](https://www.producthunt.com/posts/remixr)
+* E-Commerce Apps 
+* Calculator
+*  Weather App
+*  Messaging App
+* Simple CRM
+* Social Media App
+* To Do App
+* Search &amp; Filtering
+* Blog
+* Productivity App
+## [5][Completed my portfolio website with react and react-spring for animations (link in the comments)](https://www.reddit.com/r/reactjs/comments/j0qeau/completed_my_portfolio_website_with_react_and/)
+- url: https://v.redd.it/ulixcsgbmop51
+---
 
-Remixr: [https://www.remixr.xyz](https://www.remixr.xyz/)
+## [6][I built a library for creating animated layers](https://www.reddit.com/r/reactjs/comments/j1agc1/i_built_a_library_for_creating_animated_layers/)
+- url: https://v.redd.it/x8nvmcjllvp51
+---
 
-Github: [https://www.github.com/rtkg12/remixr](https://www.github.com/rtkg12/remixr)
+## [7][MaterialUI introduces DataGrid... and a "paid" model?!](https://www.reddit.com/r/reactjs/comments/j19faf/materialui_introduces_datagrid_and_a_paid_model/)
+- url: https://www.reddit.com/r/reactjs/comments/j19faf/materialui_introduces_datagrid_and_a_paid_model/
+---
+Just reading through the changelog for the latest alpha release of Material UI;
 
-https://reddit.com/link/j0q6kg/video/e51glj87nop51/player
+[https://github.com/mui-org/material-ui/releases/tag/v5.0.0-alpha.11](https://github.com/mui-org/material-ui/releases/tag/v5.0.0-alpha.11)
+
+&amp;#x200B;
+
+&gt;"It has taken 6 months of development since the initial commit (March 15th, 2020) to make the first alpha release of the grid. The component comes in two versions:  
+material-ui/data-grid is licensed under MIT, while material-ui/x-grid is licensed under a commercial license."
+
+The docs for the new component are here;
+
+[https://material-ui.com/components/data-grid/](https://material-ui.com/components/data-grid/)
+
+This is obviously great news seeing as one of the criticisms often levelled at MaterialUI is that it isn't always easy to build data heavy UIs... but I am a little concerned about the new "paid" model for the X-range of components/component features;
+
+[https://material-ui.com/store/items/material-ui-x/](https://material-ui.com/store/items/material-ui-x/)
+
+Some of the features locked behind the paywall are pretty fundamental - I don't know how other people feel about this and I know that these guys have to make their money somehow, but with so many great alternative data grids out there (react-virtualized for example) I don't see how anyone would entertain paying this much money just to use the material UI native version :/
+## [8][The React Cheatsheet for 2020 📄‬ (+ real-world examples)](https://www.reddit.com/r/reactjs/comments/j0oewq/the_react_cheatsheet_for_2020_realworld_examples/)
+- url: https://dev.to/codeartistryio/the-react-cheatsheet-for-2020-real-world-examples-4hgg
+---
+
+## [9][First steps with Next.js -- Delightful React (Tutorial)](https://www.reddit.com/r/reactjs/comments/j176pr/first_steps_with_nextjs_delightful_react_tutorial/)
+- url: https://blog.imbhargav5.com/chapter-2-first-steps-with-nextjs-or-delightful-react
+---
+
+## [10][Animated SPA using React.js](https://www.reddit.com/r/reactjs/comments/j1bqzq/animated_spa_using_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/j1bqzq/animated_spa_using_reactjs/
+---
+Hey guys. Recently, I started making SPA with hard animation for me. It's not completed yet, check this out! Links in comments.
+
+https://reddit.com/link/j1bqzq/video/nrib27zf1wp51/player
+## [11][How does react render images ?](https://www.reddit.com/r/reactjs/comments/j1blip/how_does_react_render_images/)
+- url: https://www.reddit.com/r/reactjs/comments/j1blip/how_does_react_render_images/
+---
+Let's say I have two components with different routes, which both have images in them from url source. 
+
+My question is, when loading of the image happens? At the moment when I'm going to a specific route/component which has the image, or at first render of the app everywhere?
+
+Are there some ways to prevent defaults or some best practices, lazy loading maybe? 
+
+I'm having some problem with an image from non-home page route, which sometimes is not loading(and sometimes it loads) and can't figure out why.
+
+Thanks
+## [12][Best practice for back button handling, URL changing, etc. in React?](https://www.reddit.com/r/reactjs/comments/j1bkvg/best_practice_for_back_button_handling_url/)
+- url: https://www.reddit.com/r/reactjs/comments/j1bkvg/best_practice_for_back_button_handling_url/
+---
+Feel free to point me to an article or tutorial, but none of the tutorials I've used seem to cover this really.
+
+I never quite know how to handle 'going back', or really even the best way to go forward in a React app.
+
+Right now I'm working on kind of a questionnaire. There's a question on each screen. You choose your answer and click "next". Or you just click 'next' if it's just a screen with some info.
+
+In the past, I've just stored the answer in global state and done window.setLocation, which seems wrong since that will reload the page. Otherwise I've done conditional rendering based on which questions they've answered, but that really screws with the back button. 
+
+What is the proper way to do this? Make the 'next' button a Link to="/pagetwo" or something? and deactivate the button until they give an answer?
+
+I've seen things like history.push, but it never got mentioned in the things I learned. Is that what people do/what I should look into?
+
+Thanks

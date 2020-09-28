@@ -1,134 +1,150 @@
 # golang
-## [1][[Academic] Open Source Development Survey (Software Developers using GitHub)](https://www.reddit.com/r/golang/comments/j0ovtc/academic_open_source_development_survey_software/)
-- url: /r/SampleSize/comments/iybrqr/academic_open_source_development_survey_software/
+## [1][If you want to learn Data structures in Go](https://www.reddit.com/r/golang/comments/j121fo/if_you_want_to_learn_data_structures_in_go/)
+- url: https://www.reddit.com/r/golang/comments/j121fo/if_you_want_to_learn_data_structures_in_go/
+---
+If there is anybody who is looking for beginner friendly data structure videos in Go, here's a link.  
+I think there needs to be a larger variety of Go content out there.
+
+[Data structures in Go playlist](https://www.youtube.com/playlist?list=PL0q7mDmXPZm7s7weikYLpNZBKk5dCoWm6)
+## [2][rqlite, the distributed database written in Go and built on SQLite, v5.5.0 supports Parameterized SQL statements](https://www.reddit.com/r/golang/comments/j10u6b/rqlite_the_distributed_database_written_in_go_and/)
+- url: https://github.com/rqlite/rqlite/releases/tag/v5.5.0
 ---
 
-## [2][How to Structure the code?](https://www.reddit.com/r/golang/comments/j0m4ew/how_to_structure_the_code/)
-- url: https://www.reddit.com/r/golang/comments/j0m4ew/how_to_structure_the_code/
+## [3][Question about io.Reader](https://www.reddit.com/r/golang/comments/j18xer/question_about_ioreader/)
+- url: https://www.reddit.com/r/golang/comments/j18xer/question_about_ioreader/
 ---
-Hello guys,
+Hi everyone,
 
-* I've written a small program to benchmark the query timing for an open source tool called [Apache Druid](https://druid.apache.org/).
-* Apache Druid is a high performance real-time analytics database.
-* Here is the code I wrote - [https://play.golang.org/p/5naCxt2NzoB](https://play.golang.org/p/5naCxt2NzoB)
+I got a `[]byte` buffer, which contains valid base64 data up to a certain spot, which is undetermined. If I try to pass it to a `bytes.NewReader` it works, but then the `base64.NewDecoder` sometimes fails due to the garbage at the end of the buffer.
 
-&amp;#x200B;
+Therefore I wrote this thing, and I'm curious if it has any corner case I haven't considered. It seems to work fine but I'm not totally sure if I'm returning the right values.
 
-What does the code do?
+```
+type base64BufferReader struct {
+	buffer   []byte
+	position int
+}
 
-* Read a JSON file (Druid's query will  be in JSON format)
-* Create `Transport`, `Client` and a `NewRequest`
-* Execute the request.
-* The purpose of the code is to execute the request and collect the elapsed time (for benchmarking purpose)
+var _ io.Reader = &amp;base64BufferReader{}
 
-&amp;#x200B;
+func (b *base64BufferReader) Read(out []byte) (int, error) {
+	var i int
 
-I'm relatively new to Go, and would like some feedback on code style, the way I execute requests (good or bad), how to separate the functions in their respective folders, also I've not created any custom `type` is this fine for this code?
+	for i = 0; i &lt; len(out); i++ {
+		pos := b.position
 
-&amp;#x200B;
+                // if buffer is terminated or byte at position pos is not valid
+                // returns io.EOF
+		if pos &gt;= len(b.buffer) || !b.validByte(b.buffer[pos]) {
+			return i, io.EOF
+		}
 
-End Goal
+                // copies the byte to the output buffer
+		out[i] = b.buffer[pos]
 
-* I've 40 JSON files (each JSON file is a query which will be executed to Broker endpoint)
-* Make all 40 queries run concurrently
-* Aggregate and average out the timing for each query which runs several times
+                // increments the reader position
+		b.position++
+	}
 
-&amp;#x200B;
+	return i, nil
+}
 
-Any feedback would be much appreciated.
+func (b base64BufferReader) validByte(c byte) bool {
+	return c == 0x2b || c == 0x3d || (c &gt;= 0x2f &amp;&amp; c &lt;= 0x39) || (c &gt;= 0x41 &amp;&amp; c &lt;= 0x5A) || (c &gt;= 0x61 &amp;&amp; c &lt;= 0x7a) || c == 10 || c == 13
+}
+```
 
-&amp;#x200B;
-
-Thank you,
-
-Jeet
-## [3][What is var _ type = &amp;type{} used for?](https://www.reddit.com/r/golang/comments/j0b73d/what_is_var_type_type_used_for/)
-- url: https://www.reddit.com/r/golang/comments/j0b73d/what_is_var_type_type_used_for/
+Thanks in advance for any insight!
+## [4][I created an ugly gopher sticker](https://www.reddit.com/r/golang/comments/j0rbos/i_created_an_ugly_gopher_sticker/)
+- url: https://www.reddit.com/r/golang/comments/j0rbos/i_created_an_ugly_gopher_sticker/
 ---
-I have seen this in a test file:
+Hi everyone, I'm new here but not new to Golang. I've developed  libraries and worked in Go extensively over the years. But I'm here to show my work from the other side - I'm also an artist.
 
-    import (
+My friend wanted me to design an original version of the Gopher sticker that nobody will have. I told her my style isn't cute and in fact I like to draw "ugly" manga faces and she said she'd go for it so I went on to design one and only Gopher for her.
+
+I'm not sure if she'll love it or be shocked by it, but I'm sure it will put all the other laptop gophers to shame... or the other way round. We'll see.
+
+https://preview.redd.it/8alkwab32pp51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=8393288c9cf5abbe7090e94d14e236c99e5b39a9
+## [5][Is there a microcontroller-like OS for Go binaries on e.g. Raspberry Pi Zero? (excluding tinyGo)](https://www.reddit.com/r/golang/comments/j16yws/is_there_a_microcontrollerlike_os_for_go_binaries/)
+- url: https://www.reddit.com/r/golang/comments/j16yws/is_there_a_microcontrollerlike_os_for_go_binaries/
+---
+Hi, I am looking into writing some Go drivers for a couple of things at my home (e.g. control HVAC over serial) and connecting them to HomeKit using [https://github.com/brutella/hc](https://github.com/brutella/hc) .
+
+I've looked into tinyGo but it seems that they strip away a -lot- of prerequisites such as net/http, making it almost impossible to utilize hc.
+
+So i'm back at using the Pi Zero, but I want to minimize the attack surface/maintenance of the OS.Is there a kind of 'wrapper' OS for e.g. Go binaries? Thanks.
+
+&amp;#x200B;
+
+Edit: seems [https://github.com/f-secure-foundry/tamago](https://github.com/f-secure-foundry/tamago) is the thing I need
+## [6][How should I unit test function like this?](https://www.reddit.com/r/golang/comments/j19u50/how_should_i_unit_test_function_like_this/)
+- url: https://www.reddit.com/r/golang/comments/j19u50/how_should_i_unit_test_function_like_this/
+---
+Hi all,
+
+The below function uses AWS SDK go fetch a parameter value from the Parameter Store.
+
+How should I unit test function like this? example will be appreciated.
+
+Obviously I can actually call the function and assert the return value, but that would be insecure (somewhat, depends on the sensitivity of the data asserted) and probably slow.
+
+Thank you!!
+
+    func GetSsmParamValue() string {
+    	sess, err := session.NewSessionWithOptions(session.Options{
+    		Config:            aws.Config{Region: aws.String("us-east-1")},
+    		SharedConfigState: session.SharedConfigEnable,
+    	})
+    	if err != nil {
+    		panic(err)
+    	}
     
-    "image"
+    	ssmsvc := ssm.New(sess, aws.NewConfig().WithRegion("us-west-2"))
+    	param, err := ssmsvc.GetParameter(&amp;ssm.GetParameterInput{
+    		Name:           aws.String("some-param"),
+    		WithDecryption: aws.Bool(false),
+    	})
+    	if err != nil {
+    		panic(err)
+    	}
     
-    "image/draw"
-    
-    )
-    
-    var _ Node = &amp;BasicNode{}
-
-What is the purpose of `var _ Node = &amp;BasicNode{}`?
-## [4][Just released a little library, Peek-A-Buf](https://www.reddit.com/r/golang/comments/j0fv77/just_released_a_little_library_peekabuf/)
-- url: https://www.reddit.com/r/golang/comments/j0fv77/just_released_a_little_library_peekabuf/
----
-Hi,
-
-I just released a little library I'd like to share here: Peek-A-Buf
-
-Peek-A-Buf is a buffered reader with side effect free peeking capability.
-
-Quite niche, very tiny, but maybe someone finds this a bit interesting. :)
-
-[https://github.com/philiplb/peekabuf](https://github.com/philiplb/peekabuf)
-## [5][Ideas on how to implement a timetracker](https://www.reddit.com/r/golang/comments/j0qn8z/ideas_on_how_to_implement_a_timetracker/)
-- url: https://www.reddit.com/r/golang/comments/j0qn8z/ideas_on_how_to_implement_a_timetracker/
----
-Hello everyone. Title is a bit messy i know.  
-
-
-In my trip to learn golang i have created a personal tasklist app using react and a backend in go+gORM.
-
-Everything is working well so i decided to try and create a time tracking capability.
-
-This means that i want to go on my task, hit the button "track"/"start working on" or something similar and that will start tracking the time working on a task.
-
-I know that i can track the time in the frontend and send the values on stop but if the browser dies, freezes, if i close the tab and maybe even change it(not sure what would happen then tbh) the time tracked will be lost.
-
-I am guessing it's gonna need sockets to work this out?
-
-Any known examples or some pointers to what to look into for this task?
-
-TYVM.
-## [6][Should I have started with some book other than "Go programming language"?](https://www.reddit.com/r/golang/comments/j0ee0o/should_i_have_started_with_some_book_other_than/)
-- url: https://www.reddit.com/r/golang/comments/j0ee0o/should_i_have_started_with_some_book_other_than/
----
-I started this book yesterday and just now got to point 2.
-
-The book starts off by showcasing gifs, local webservers, and introduces things such as maps right off the bat. The excercises reflect stuff he glosses over earlier in the pages...
-
-Am I missing something? It feels way too verbose for a beginner in a language, and this isn't even my first programming language (Know Python for 1 year)
-
-Should I have went for another resource, or should I continue with this one?
-## [7][Why does comparison between an error created with error.New() and an error assigned to a variable return false?](https://www.reddit.com/r/golang/comments/j0p15i/why_does_comparison_between_an_error_created_with/)
-- url: https://www.reddit.com/r/golang/comments/j0p15i/why_does_comparison_between_an_error_created_with/
----
-So if I have an error defined as
-
-`var MyError = errors.New("my error")`
-
-And then try to do the following 
-
-`MyError == error.New("my error")`
-
-This returns false? What mechanics are used for this comparison and why is it false?
-## [8][ESP32 and ESP8266 support in TinyGo](https://www.reddit.com/r/golang/comments/j027qe/esp32_and_esp8266_support_in_tinygo/)
-- url: https://aykevl.nl/2020/09/tinygo-esp32
+    	value := *param.Parameter.Value
+    	return value
+    }
+## [7][A Birds Eye View into Sliding Windows Algorithm Pattern in Data Structure](https://www.reddit.com/r/golang/comments/j18q53/a_birds_eye_view_into_sliding_windows_algorithm/)
+- url: https://algodaily.com/lessons/a-birds-eye-view-into-sliding-windows/introduction
 ---
 
-## [9][Time.UTC working as intended?](https://www.reddit.com/r/golang/comments/j0gu2g/timeutc_working_as_intended/)
-- url: https://www.reddit.com/r/golang/comments/j0gu2g/timeutc_working_as_intended/
+## [8][Go admin](https://www.reddit.com/r/golang/comments/j18gvh/go_admin/)
+- url: https://www.reddit.com/r/golang/comments/j18gvh/go_admin/
 ---
-I noticed in the example for [Time.Format](https://golang.org/pkg/time/#Time.Format), it outputs the following:
+I am unable to install go admin
 
-    Unix format: Wed Feb 25 11:06:39 PST 2015
-    Same, in UTC: Wed Feb 25 11:06:39 UTC 2015
+I tried to install with:  go install [github.com/GoAdminGroup/go-admin/adm](https://github.com/GoAdminGroup/go-admin/adm)
 
-This was unexpected, why isn't it `19:06:39 UTC`?
-## [10][Up to which struct size is passing by value quicker then passing by pointer?](https://www.reddit.com/r/golang/comments/j05usq/up_to_which_struct_size_is_passing_by_value/)
-- url: https://www.reddit.com/r/golang/comments/j05usq/up_to_which_struct_size_is_passing_by_value/
+i got
+
+can't load package: package [github.com/GoAdminGroup/go-admin/adm:](https://github.com/GoAdminGroup/go-admin/adm:) cannot find package "[github.com/GoAdminGroup/go-admin/adm](https://github.com/GoAdminGroup/go-admin/adm)" in any of:
+
+/usr/lib/go-1.13/src/github.com/GoAdminGroup/go-admin/adm (from $GOROOT)
+
+/home/ib-developer/go/src/github.com/GoAdminGroup/go-admin/adm (from $GOPATH)
+## [9][Example project structures for serverless function deployments](https://www.reddit.com/r/golang/comments/j0ztol/example_project_structures_for_serverless/)
+- url: https://github.com/sbogacz/going-serverless
 ---
-I created some benchmarks which suggest that on my machine a struct consisting of up to 9 int 64 is faster to be passed as value. From 10 fields and more passing by pointer is faster.
 
-[https://github.com/komkom/value-vs-ptr](https://github.com/komkom/value-vs-ptr)
+## [10][Best choice of HTTP Server in 2020](https://www.reddit.com/r/golang/comments/j0tp6n/best_choice_of_http_server_in_2020/)
+- url: https://www.reddit.com/r/golang/comments/j0tp6n/best_choice_of_http_server_in_2020/
+---
+If you were starting a brand new webapp project today, what library/ies would you use for the webserver/router?
 
-Are these tests correct? And if they are correct why would it be that on both of my machines the breaking point is 9 fields?
+In the past I've used various things - Echo, Gin, and Chi being the main ones - but it's always good to keep things fresh and see what new options are around.
+
+My major requirements are:
+* Needs to support WebSockets.
+* Needs to support REST-style routes - though preferably in as less-opinionated a way as possible.
+  * This includes being able to easily obtain values for query and path parameters inside a handler.
+* Needs to support some way to inject requests in and get responses out for testing; (Effectively implementing `ServeHTTP`)
+* Preferably supporting a clean way to consume JSON requests and produce JSON responses.
+
+Cheers

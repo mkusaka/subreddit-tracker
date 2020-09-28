@@ -27,11 +27,43 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Freelancing Web Development using Rails](https://www.reddit.com/r/rails/comments/j0nhbb/freelancing_web_development_using_rails/)
+## [3][I curated all the remote job openings from Hacker News who is hiring - September](https://www.reddit.com/r/rails/comments/j0s1hv/i_curated_all_the_remote_job_openings_from_hacker/)
+- url: https://www.reddit.com/r/rails/comments/j0s1hv/i_curated_all_the_remote_job_openings_from_hacker/
+---
+Here I would like to share all the remote jobs that I've curated from Hacker News Who is hiring thread. All these are 100% remote jobs not just allowed to work from home during COVID-19. These are 100% remote jobs and will continue to follow that after the covid.
+
+https://remoteleaf.com/whoishiring.   
+Note: Please select "Ruby" in the category filter to view Ruby/Rails jobs
+
+✅ 100% remote full-time jobs.    
+✅ Each and every job is manually curated and verified. Spent more than 12 hours for this.
+## [4][Freelancing Web Development using Rails](https://www.reddit.com/r/rails/comments/j0nhbb/freelancing_web_development_using_rails/)
 - url: https://www.reddit.com/r/rails/comments/j0nhbb/freelancing_web_development_using_rails/
 ---
 Hey guys, Im currently searching for freelancing opportunities using Rails. Opportunities are pretty less frequent than other frameworks on big stations like UpWork. Is there any websites, subreddits, etc..that concentrates on Rails freelancing opportunities?
-## [4][Chat App](https://www.reddit.com/r/rails/comments/j05vx9/chat_app/)
+## [5][Add controller actions + discussing updating an attribute in different places? | Sundae Club | Ruby on Rails Livestream](https://www.reddit.com/r/rails/comments/j0uhcp/add_controller_actions_discussing_updating_an/)
+- url: https://www.reddit.com/r/rails/comments/j0uhcp/add_controller_actions_discussing_updating_an/
+---
+Hi everyone,
+
+More Ruby on Rails live-streaming this week, thanks to everyone that's watched over the last few weeks - hopefully this is useful or interesting to learners. I'm afraid I was running behind today, so didn't get a chance to post a link before the stream, so here's the link from earlier:
+
+[https://www.youtube.com/watch?v=MWSngfjNKS0](https://www.youtube.com/watch?v=MWSngfjNKS0)
+
+Here's the YouTube description of what's in the stream, as well as the chapter links (chapter's now appear in the YouTube video scrubber itself, which is neat).  
+
+
+&gt;This week we went down a minor rabbit-hole with Tailwind CSS (totally my fault, I didn't research it enough and it's more different from the UI libraries I'm used to than I realised, I'll try and do some research during the week!).  We also built some initial edit and update controller actions for our Channel model and started looking at how we might allow admins to edit attributes on a Channel that a standard user can't edit. This comes from seeing this question in multiple places, so I was interested to raise it early.  
+&gt;  
+&gt;  
+[02:35](https://www.youtube.com/watch?v=MWSngfjNKS0&amp;t=155s) \- Intro: What I hope to cover  
+[07:34](https://www.youtube.com/watch?v=MWSngfjNKS0&amp;t=454s) \- Quick recap of where we're up to  
+[08:49](https://www.youtube.com/watch?v=MWSngfjNKS0&amp;t=529s) \- A detour into Tailwind which totally didn't work  
+[27:00](https://www.youtube.com/watch?v=MWSngfjNKS0&amp;t=1620s) \- Adding edit action to our Channels controller  
+[53:12](https://www.youtube.com/watch?v=MWSngfjNKS0&amp;t=3192s) \- Adding a form for channels (more Tailwind stuff)  
+[1:10:47](https://www.youtube.com/watch?v=MWSngfjNKS0&amp;t=4247s) \- Add an update action to our Channels controller  
+[1:24:45](https://www.youtube.com/watch?v=MWSngfjNKS0&amp;t=5085s) \- How can we update the new attribute in a different place?
+## [6][Chat App](https://www.reddit.com/r/rails/comments/j05vx9/chat_app/)
 - url: https://www.reddit.com/r/rails/comments/j05vx9/chat_app/
 ---
 Hi everyone,
@@ -49,17 +81,17 @@ The challenge also asks me to keep logs of login and invalid login.
 Any advice is appreciated.
 
  Have a great weekend guys.
-## [5][Hiding password in database.yml file?](https://www.reddit.com/r/rails/comments/izucjd/hiding_password_in_databaseyml_file/)
+## [7][Hiding password in database.yml file?](https://www.reddit.com/r/rails/comments/izucjd/hiding_password_in_databaseyml_file/)
 - url: https://www.reddit.com/r/rails/comments/izucjd/hiding_password_in_databaseyml_file/
 ---
 Hi there. I'm wondering if there's a way to either hide the file on github, or stop it from being pushed or what the best way to hide that would be? Since it just shows the password under "default: &amp;default" after adding the username and password, anyone an see it. Is it necessary to hide this password in the first place? I'd greatly appreciate the help!
-## [6][Will AWS CloudHSM work with this digital signature script?](https://www.reddit.com/r/rails/comments/izoidm/will_aws_cloudhsm_work_with_this_digital/)
+## [8][Will AWS CloudHSM work with this digital signature script?](https://www.reddit.com/r/rails/comments/izoidm/will_aws_cloudhsm_work_with_this_digital/)
 - url: https://www.reddit.com/r/rails/comments/izoidm/will_aws_cloudhsm_work_with_this_digital/
 ---
 [https://gist.github.com/matiaskorhonen/223bd527279cf49bed1e](https://gist.github.com/matiaskorhonen/223bd527279cf49bed1e)
 
 I'm not 100% on how CloudHSM works, can I pull the necessary keys to use with this script using the aws SDK?
-## [7][Sending partials over javascript](https://www.reddit.com/r/rails/comments/izbmit/sending_partials_over_javascript/)
+## [9][Sending partials over javascript](https://www.reddit.com/r/rails/comments/izbmit/sending_partials_over_javascript/)
 - url: https://www.reddit.com/r/rails/comments/izbmit/sending_partials_over_javascript/
 ---
 I'm trying to customize a rails scaffold so it doesnt go to a new page every time I want to edit or create a new resource. 
@@ -67,7 +99,7 @@ I'm trying to customize a rails scaffold so it doesnt go to a new page every tim
 Right now what I'm doing is using stimulus to prevent default behavior of links, then fetch `e. target.href` to display the form partial within a bootstrap modal. I then use `remote: true` to send the forms w/ javascript and respond with the resource partial like `format.js { render partial: "partial", locals: { resource: @resource }, content_type: "text" } `. I respond with the resource partial because it gets added to the DOM with `insertAdjacentHTML`.
 
 Now that works and all but it feels kinda hacked together and dirty. Is there a better way to do this?
-## [8][uploading multiple images to s3 with presign endpoint using shrine and uppy](https://www.reddit.com/r/rails/comments/iz9ux5/uploading_multiple_images_to_s3_with_presign/)
+## [10][uploading multiple images to s3 with presign endpoint using shrine and uppy](https://www.reddit.com/r/rails/comments/iz9ux5/uploading_multiple_images_to_s3_with_presign/)
 - url: https://www.reddit.com/r/rails/comments/iz9ux5/uploading_multiple_images_to_s3_with_presign/
 ---
 Sorry in advance for the overly broad question, but this isn't about bugs so much as it is about architecture and confusion brought on by trying to twist two docs into one objective. My hope is that someone could help untangle my brain.
@@ -286,29 +318,16 @@ Some questions.
 2. If uppy and shrine upload the files to an s3 cache, how do I get that information into my controller? Presumably I would get a JSON response. The doc has this to say, but I'm confused by what it means:
 
 &gt;Once files are uploaded asynchronously, you can dynamically insert photo attachment fields for the `image` attachment attribute into the form, where the hidden field is filled with uploaded file data in JSON format, just like when doing single direct uploads. The attachment field names should be namespaced according to the convention that the nested attributes feature expects. In this case it should be `album[photos_attributes][&lt;uid&gt;]`, where `&lt;uid&gt;` is any unique string.
-## [9][Relational DB tutorial?](https://www.reddit.com/r/rails/comments/iz6o8m/relational_db_tutorial/)
+## [11][Relational DB tutorial?](https://www.reddit.com/r/rails/comments/iz6o8m/relational_db_tutorial/)
 - url: https://www.reddit.com/r/rails/comments/iz6o8m/relational_db_tutorial/
 ---
 Anyone have a good resource to understand Relational DB linking in rails? 
 
 I’ve read the docs, handheld a few tutorials and just cannot wrap my brain around how to properly understand it.
-## [10][Auto-save the current form without refresh](https://www.reddit.com/r/rails/comments/iyyhzh/autosave_the_current_form_without_refresh/)
+## [12][Auto-save the current form without refresh](https://www.reddit.com/r/rails/comments/iyyhzh/autosave_the_current_form_without_refresh/)
 - url: https://www.reddit.com/r/rails/comments/iyyhzh/autosave_the_current_form_without_refresh/
 ---
 Is it possible to use AJAX to auto-save the form that's currently in view, but leave the default submit button active?  
 
 
 I'm using wicked, and I have a fairly large form that needed to be sliced into pieces. Now, I want to save each individual form step with autosave using a timed function. Is it possible?
-## [11][How to improve my tests?](https://www.reddit.com/r/rails/comments/iyz9e7/how_to_improve_my_tests/)
-- url: https://www.reddit.com/r/rails/comments/iyz9e7/how_to_improve_my_tests/
----
-Hi! I'm in the process of writing tests for a new Rails app.
-
-This is one my controller tests: [Gist](https://gist.github.com/ImMaax/6bd4802cb283e1cf4fe69bcd0a1f3eaf)
-
-Even though this test works perfectly fine, it just feels pretty wrong, as I repeat myself a lot and I'm unsure whether that's "the right way" to write a controller test. I've also seen integration tests, but I'm not quite sure where to put which tests now. Can someone help me? How would you optimize those tests?
-## [12][Indie Hacker : a possible meaning](https://www.reddit.com/r/rails/comments/iyyv2q/indie_hacker_a_possible_meaning/)
-- url: https://www.reddit.com/r/rails/comments/iyyv2q/indie_hacker_a_possible_meaning/
----
-I just wrote an article about what it means to be an Indie Hacker, in a dev point of view.  
-Spoiler : I use Rails for this kind of project :) All thought are based on experience, which means very subjective and open to criticism :) [http://bdavidxyz.com/blog/indie-hacker-meaning/](http://bdavidxyz.com/blog/indie-hacker-meaning/)

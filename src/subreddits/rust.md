@@ -57,121 +57,60 @@ REMOTE: *[Do you offer the option of working remotely? If so, do you require emp
 VISA: *[Does your company sponsor visas?]*
 
 CONTACT: *[How can someone get in touch with you?]*
-## [3][[Discussion] From C++ to Rust: everything's just better (to me)](https://www.reddit.com/r/rust/comments/j0jlob/discussion_from_c_to_rust_everythings_just_better/)
-- url: https://www.reddit.com/r/rust/comments/j0jlob/discussion_from_c_to_rust_everythings_just_better/
----
-# Some background
-
-Until 3 months ago, C++ had always been my main language both for work and personal projects. I was told by my friends countless times to give Rust a try but I always thought Rust was nothing but a fancy flavour of  C++. (Which is a VERY wrong thought, shame on myself). Also I stuck with OOP for most of my life, switching to Rust may be painful at the beginning. Besides, my personal projects are mostly games, and I have already familiar with some mainstream frameworks in C++. However most of them haven't got support on Rust yet.
-
-# What's changed?
-
-Coding in C++ can be very painful in some situations (actually in many situations), especially when doing memory management for a fairly large project. Some unintentional bad design may lead to horrible memory related errors. For me, most common one is sharing raw pointers. It doesn't happen often, smart pointers should be used in most cases, but sometimes it's just unavoidable. (E.g. a deep clone is needed for the pointer which is pointing to a super class). Yeah I can implement "Clone" class for it but it's a heavy work when the inheritance tree goes crazy. 
-
-Apparently OOP has a lot of downside in game programming besides inheritance hell, and it becomes worse and worse, and finally it drives me crazy one day. (I know OOP isn't the only way to use C++, but come on, using Data oriented programming in C++ is as hard as coding in C, I think.)
-
-Now, I have pretty many other choices to make my life easier, C# can be one of them, but languages with GC are just not my dishes, (Except PFP languages. Love you Haskell.) even though the language efficiency isn't a big problem in current days for game development. What I want is a language with high efficiency like C/C++ as well as human friendly syntax and memory management system.
-
-# Rust? Rust!
-
-Pattern match, which is the one thing I always want in C++ (I think there isn't a official way to do pattern match in C++? Correct me if I'm wrong), is the first thing that got my attention. In most FP languages pattern match is a must-have, e.g. Haskell, Scala, etc., it makes code much readable and clean. So I decided to give Rust a try just for pattern match. Then I spent a whole weekend going through the tutorial, and man, that's impressive! I can't summarize my surprise how this language is well designed in a few words.
-
-# The syntax is way more comforting than C++'s (to me)
-
-I love pattern match, I love Option, I love using Result to handle errors (Exception is just a nightmare) and I love macros, especially derive! They are too good I don't even know why other languages don't have all of them.
-
-Ok this section is just my opinion, but I really love how beautiful my code can be.
-
-# The compiler is way more smarter than C++'s
-
-C++ compiler is like, raw pointers? Read write a reference at the same time? No problem go ahead I don't care. Then you need to prepare for several hours debugging on multithread code to find out you shouldn't have written the code that way from the beginning.
-
-Rust compiler is like, WHAT ARE YOU DOING? STOP! NO YOU SHOULDN'T DO THAT! YOU WILL REGRET IT! It seems too sensitive about what you are writing at the beginning, but it is  truely reasonable and force you to use a better design on your code. After a while, you will find out how beautiful your code has been.
-
-It's like taking care of your teeth. If you have a very good habit of brushing your teeth and using proper medical goods, you won't need to meet dentist for almost whole life. But it's difficult and most people don't do well. Rust is like a personal dentist and monitor you everyday, force you to follow all steps cleaning teeth. It may be annoying but it just works.
-
-# What now?
-
-I am still getting familiar with Rust since there are still a lot of gimmicks I haven't touched. I'm also making a game with Amethyst. It feels really good how I don't need to worry about , well, a lot of things anymore. Data oriented programming is also fairly new to me but I found it not bad at all while coding in Rust.
-
-I haven't been so excited about a programming language before even when I was learning Haskell, which is a pretty fun experience. I now think I may recommend more people to try Rust at least once. It may not be suitable for everyone but it must be fun for anyone who like a good programming language.
-
-# At Last
-
-I wonder how people in this sub got into Rust? How was your experience while learning it? Am I the only one being so excited about a programming language?
-## [4][So you want to live-reload Rust](https://www.reddit.com/r/rust/comments/j0ajdy/so_you_want_to_livereload_rust/)
-- url: https://fasterthanli.me/articles/so-you-want-to-live-reload-rust
+## [3][Rust on the ESP32 &amp; ESP8266 - Building an ecosystem](https://www.reddit.com/r/rust/comments/j18vop/rust_on_the_esp32_esp8266_building_an_ecosystem/)
+- url: https://mabez.dev/blog/posts/esp-rust-ecosystem/
 ---
 
-## [5][`#[non_exhaustive]` got me worried about the direction of rust](https://www.reddit.com/r/rust/comments/j0ldal/non_exhaustive_got_me_worried_about_the_direction/)
-- url: https://www.reddit.com/r/rust/comments/j0ldal/non_exhaustive_got_me_worried_about_the_direction/
----
-First of all, very very glad to see a "practical" language with a Hashell-ish type system and immutable by default (yes, yes, Haskell is practical too :). I think it is one of the "good" languages (others are elm, erlang, haskell, python for what it good at, ocaml?), and I choose to use it in production.
-
-I was reading the RFC of \`#\[non\_exhaustive\]\`, it seems that the main rational behind it is to avoid "breaking" changes when a new variant is added to the enum (in the enum case).
-
-It seems to me that, the "breaking" mentioned in the RFC has a very naive meaning: still compiles after the variant is added, which is far unimportant compared to the other meaning of "breaking": the domain logic is still correct after the new variant is added.
-
-A major role the exhaustive checked plays is that, when a new variant is added, it forces you to go to each use site and check that your implementation (regarding to domain logic and semantics) is still correct. In Elm and Haskell, the wildcard pattern (which you have to use if \`#\[non\_exhaustive\]\`) is discouraged, for it practically disables exhaustive check, which is a valuable tool for large projects and for maintaining projects not written by you (also for projects you wrote long time ago)
-
-If a breaking change is introduced on a library function, you don't want the compiler omits the call to the breaking function, you want the compilation to fail, so that you can handle the change manually. In a ideal world, the compiler will detect semantic changes of a function, (compared to function signature changes), when the semantic of a function changed, your compilation will fail, how awesome would that be? I think, to a certain degree, change-on-enum reflects change-on-semantics.
-
-I think that the compilation error the \`#\[non\_exhaustive\]\` tries to avoid, helps to introduce the worst type of error: error that is hidden (because the wildcard pattern handles the newly added variant, and the newly added variant requires special domain logic to handle and shouldn't be wildcarded, resulting the domain logic is not audited after the new variant is added)
-
-You can argue that we are all grown ups here, and you should be careful when use \`#\[non\_exhaustive\]\`, that is not the point (and you can say the same thing about c++, and not everyone is a grown up), the point is that such an RFC shouldn't be passed, for it introduces bad practice, and de-sound the compiled program. I think one big reason that people like languages such as elm and haskell is for the confidence they have on their programs, if you finish a program, you finish a program, you can go to sleep knowing that your program will behave the way you wanted
-## [6][A tale of two libcs](https://www.reddit.com/r/rust/comments/j0puje/a_tale_of_two_libcs/)
-- url: https://drewdevault.com/2020/09/25/A-story-of-two-libcs.html
+## [4][Threading WGPU Resource Loading with Rayon](https://www.reddit.com/r/rust/comments/j16a0w/threading_wgpu_resource_loading_with_rayon/)
+- url: https://sotrh.github.io/learn-wgpu/intermediate/tutorial13-threading/
 ---
 
-## [7][Dicetest, an alternative to proptest and quickcheck](https://www.reddit.com/r/rust/comments/j0pjdo/dicetest_an_alternative_to_proptest_and_quickcheck/)
-- url: https://www.reddit.com/r/rust/comments/j0pjdo/dicetest_an_alternative_to_proptest_and_quickcheck/
----
-[https://github.com/jakoschiko/dicetest](https://github.com/jakoschiko/dicetest)
-
-I'm using ScalaCheck at work and don't quite like it. It's nice for testing functional code, but that's not enough. Scala is both, functional and imperative. Many of my tests look like this: Mutate some state, make assertions, mutate some state, make assertions... In these cases I just want to write simple unit tests with random test data instead of inventing elegant properties. It just feels clumsy to use ScalaCheck for this.
-
-Then I started to learn Rust and more of my code became stateful. I was curious if I could implement a less functional property testing library that I would enjoy to use. I think I succeeded. Writing the library was fun, too, and it helped me to understand Rust. E.g. it was very enlightening to realize that I need two generator traits, similar to Fn and FnOnce, if I don't want to clone or reference count everything.
-
-There are obvious similarities to proptest and quickcheck. They have shrinking, but I never liked shrinking in ScalaCheck. Instead, I'm not forcing the user to generate all test data at the beginning, which I prefer.
-
-What do you think?
-## [8][Towards principled reactive UI](https://www.reddit.com/r/rust/comments/j0840q/towards_principled_reactive_ui/)
-- url: https://raphlinus.github.io/rust/druid/2020/09/25/principled-reactive-ui.html
+## [5][Jetbrains is looking for Kotlin + Rust engineers to develop "next-generation IDE platform"](https://www.reddit.com/r/rust/comments/j0rrei/jetbrains_is_looking_for_kotlin_rust_engineers_to/)
+- url: https://www.linkedin.com/jobs/view/2151145919
 ---
 
-## [9][[Academic] Open Source Development Survey (Software Developers using GitHub)](https://www.reddit.com/r/rust/comments/j0q584/academic_open_source_development_survey_software/)
-- url: /r/SampleSize/comments/iybrqr/academic_open_source_development_survey_software/
+## [6][Is there a callback-based IO event library (like LibUV) for Rust (not Mio)?](https://www.reddit.com/r/rust/comments/j17sqs/is_there_a_callbackbased_io_event_library_like/)
+- url: https://www.reddit.com/r/rust/comments/j17sqs/is_there_a_callbackbased_io_event_library_like/
+---
+I'm working on an embedded Linux project which I've started in C, using LibUV for an event-driven design. There are a lot of different varieties of I/O (I2C, USB, flash-based files, serial comms, network, IPC), which is why I went with LibUV. **Not** because of scalability or performance, but because I can write a simple callback for a particular event, register it with the loop, and LibUV takes care of the boilerplate and edge cases. There's also some ZeroMQ in there for IPC. It all fits together quite nicely, especially because anything that doesn't already integrate with LibUV usually has a file descriptor interface I can write a LibUV wrapper around.
+
+I'm starting on some parts that I think would really benefit from being written in Rust, and I'm casting about for how to architect them. All the different areas of responsibility are written as separate processes, so as long as a language has ZeroMQ bindings (Rust does) I'm happy. But I'm struggling to find a Rust crate that does I/O the way I like. (Maybe that's my C brain in action? I'm also very familiar with Python 3.5+'s asyncio if that gives you an idea of how I think.)
+
+I looked at Mio (any Google search for "rust" + "event" or "io" or "async" or just about anything turns it up), but two things suggest it's not what I want:
+
+- It's very much an `epoll()` like interface ie. write your own loop, handle events within it; I strongly prefer writing callbacks against a simple, constrained interface and having the library run the loop and dispatch things for me.
+- It explicitly excludes timers, file activity and threading from its concerns. I use timers a lot, I occasionally need to work with file-like things in an event driven way, and if I'm really desperate, I might use threads to wrap up a blocking library to get the job done. (It's a single threaded CPU, so I try not to.)
+
+To put it another way, I struggle to know whether "this Rust crate doesn't do things the way I like" or "this Rust crate does things that are idiomatic in Rust but not in C so it looks strange and confusing to me". Is there a crate that does callback-based event-driven I/O? And if there's not, is it simply because no-one's written one, or because it's not really needed/wise for Rust? If there is, can someone please help me find it?
+## [7][Rust 2021 - Don't change!](https://www.reddit.com/r/rust/comments/j1aihh/rust_2021_dont_change/)
+- url: https://beyermatthias.de/blog/2020/09/28/rust-2021/
 ---
 
-## [10][SublimeText rust-enhanced: Is it possible to show the filename where the error occurs?](https://www.reddit.com/r/rust/comments/j0ozb4/sublimetext_rustenhanced_is_it_possible_to_show/)
-- url: https://www.reddit.com/r/rust/comments/j0ozb4/sublimetext_rustenhanced_is_it_possible_to_show/
+## [8][Pandas Dataframe like crate in Rust](https://www.reddit.com/r/rust/comments/j15do8/pandas_dataframe_like_crate_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/j15do8/pandas_dataframe_like_crate_in_rust/
 ---
-Hello,  
-Rust Enhanced works very well, but on larger projects I've some trouble to find the file where an error occurs. In my bottom bar, Rust Enhanced only shows me that there is an error, but not the filename. I've to say I'm relying on the "check on save" function.
+Hi,
+      I was exploring pandas dataframe like lib in Rust and looked at hors, polars but issue is they work with nightly rust. Anything I maybe missing. The goal is to convert json to in memory table for querying.
+## [9][frawk: an Awk-like language implemented in Rust](https://www.reddit.com/r/rust/comments/j0y3bh/frawk_an_awklike_language_implemented_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/j0y3bh/frawk_an_awklike_language_implemented_in_rust/
+---
+[repo link](https://github.com/ezrosent/frawk)
 
-https://preview.redd.it/ix2wlyr04op51.png?width=348&amp;format=png&amp;auto=webp&amp;s=bc352410ab1b0adfb8cbde971ee975e86e55070a
+The primary goal of this project was to close some gaps in my own usage of Awk, and for me to get some practice in string parsing and compilation. There are still plenty of rough edges, but I figured some folks on here might be interested, or might be able to provide some feedback. Some highlights:
 
-Is it possible to highlight the file in the sidebar, similar to the git-plugin which will draw (in my case) a simple dot to on the files I've modified. Or at least show the file names where the error occurs in the bottom bar.
-
-Maybe it's a setting I've missed?
-
-Thanks for help!
-
-PS: I posted my question on Github without any luck to reach someone
-
-x-post: [https://github.com/rust-lang/rust-enhanced/issues/446](https://github.com/rust-lang/rust-enhanced/issues/446)
-## [11][Unimpressed with lolcat's startup performance, I've rewritten it in Rust - Introducing dotacat!](https://www.reddit.com/r/rust/comments/j0aaus/unimpressed_with_lolcats_startup_performance_ive/)
-- url: https://crates.io/crates/dotacat
+* Both a bytecode interpreter and an LLVM-based JIT.
+* Support for CSV and TSV parsing.
+* Scripts have [competitive performance](https://github.com/ezrosent/frawk/blob/master/info/performance.md) with purpose-built tools written in Rust and D, even when ignoring compilation time.
+* Support for [parallelism](https://github.com/ezrosent/frawk/blob/master/info/parallelism.md), with simple scripts processing CSV at [\&gt;2GB/s](https://github.com/ezrosent/frawk/blob/master/info/performance.md#sum-two-columns) on a laptop.
+## [10][Zig's New Relationship with LLVM (creating a new zig-based backend)](https://www.reddit.com/r/rust/comments/j1bvjm/zigs_new_relationship_with_llvm_creating_a_new/)
+- url: https://kristoff.it/blog/zig-new-relationship-llvm/
 ---
 
-## [12][Type checking process.exit()](https://www.reddit.com/r/rust/comments/j0qyvp/type_checking_processexit/)
-- url: https://www.reddit.com/r/rust/comments/j0qyvp/type_checking_processexit/
+## [11][Are we observable yet? An introduction to Rust telemetry (log, tracing)](https://www.reddit.com/r/rust/comments/j0uo0t/are_we_observable_yet_an_introduction_to_rust/)
+- url: https://www.lpalmieri.com/posts/2020-09-27-zero-to-production-4-are-we-observable-yet/
 ---
-I am working through the introductory rust book, and got to the following example.
 
-    let config = Config::new(&amp;args).unwrap_or_else(|err| {
-        println!("Problem parsing arguments: {}", err);
-        process::exit(1);
-    });
+## [12][Rust Crates that do What the Go Standard library Does](https://www.reddit.com/r/rust/comments/j0ugae/rust_crates_that_do_what_the_go_standard_library/)
+- url: https://christine.website/blog/rust-crates-go-stdlib-2020-09-27
+---
 
-unwrap_or_else expects a closure of type `&amp;str -&gt; Config`, but our closure is of type  `&amp;str -&gt; ()`, so how does the compiler handle this edge case?

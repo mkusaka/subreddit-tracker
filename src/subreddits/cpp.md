@@ -56,57 +56,55 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][controlling template argument deduction via dont_deduce&lt;T&gt;](https://www.reddit.com/r/cpp/comments/j0pgxh/controlling_template_argument_deduction_via_dont/)
+## [2][C++ Standards Committee Fireside Chat Hosted by Herb Sutter - CppCon 2020](https://www.reddit.com/r/cpp/comments/j15bn9/c_standards_committee_fireside_chat_hosted_by/)
+- url: https://youtu.be/lil4xfpmnF4
+---
+
+## [3][I made a tutorial on how to use the Eigen C++ library for ML!](https://www.reddit.com/r/cpp/comments/j16m4n/i_made_a_tutorial_on_how_to_use_the_eigen_c/)
+- url: https://www.reddit.com/r/cpp/comments/j16m4n/i_made_a_tutorial_on_how_to_use_the_eigen_c/
+---
+I am making a series of videos about ML with C++ and I just launched the first one which shows how to use Eigen to build and ETL and Linear Regression model, it compares at the end with the performance of the Scikit-Learn python module for Linear Regression.
+
+let me know what you think: [https://youtu.be/jKtbNvCT8Dc](https://youtu.be/jKtbNvCT8Dc)
+## [4][How to Pass a Variadic Pack as the First Argument of a Function in C++](https://www.reddit.com/r/cpp/comments/j17or9/how_to_pass_a_variadic_pack_as_the_first_argument/)
+- url: https://www.bfilipek.com/2020/09/variadic-pack-first.html
+---
+
+## [5][Kris van Rens will talk about "Understanding value categories in C++" next Monday, October 5th](https://www.reddit.com/r/cpp/comments/j19pqw/kris_van_rens_will_talk_about_understanding_value/)
+- url: https://www.reddit.com/r/cpp/comments/j19pqw/kris_van_rens_will_talk_about_understanding_value/
+---
+Hi Everyone,
+
+CPPDUG, the Dublin C/C++ Meetup Group, will organise an online talk on "Understanding value categories in C++" by Kris van Rens next Monday, October 5th.
+
+If the topic is of interest to you, please RSVP here: [https://www.meetup.com/cppdug/events/273427973/](https://www.meetup.com/cppdug/events/273427973/)
+
+Note: A link to the Zoom meeting will be posted on the meetup page before the event date.
+## [6][The fickle aggregate: how the definition of what is an aggregate class has changed through various standard versions (C++11 through C++20), and how these rules can have somewhat surprising consequences.](https://www.reddit.com/r/cpp/comments/j1bhgg/the_fickle_aggregate_how_the_definition_of_what/)
+- url: https://dfrib.github.io/the-fickle-aggregate/
+---
+
+## [7][controlling template argument deduction via dont_deduce&lt;T&gt;](https://www.reddit.com/r/cpp/comments/j0pgxh/controlling_template_argument_deduction_via_dont/)
 - url: https://artificial-mind.net/blog/2020/09/26/dont-deduce
 ---
 
-## [3][lunasvg v1.3.0 released. Text element is now supported.](https://www.reddit.com/r/cpp/comments/j0j2qg/lunasvg_v130_released_text_element_is_now/)
+## [8][TorchRayLib++: A RayLib based UI for the Libtorch C++ Deep Learning Library.](https://www.reddit.com/r/cpp/comments/j0uvv6/torchraylib_a_raylib_based_ui_for_the_libtorch_c/)
+- url: /r/pytorch/comments/j0at3h/torchraylib_a_raylib_based_ui_for_the_libtorch_c/
+---
+
+## [9][Add fuzzing to existing C++ Google Tests](https://www.reddit.com/r/cpp/comments/j0v7y6/add_fuzzing_to_existing_c_google_tests/)
+- url: https://www.reddit.com/r/cpp/comments/j0v7y6/add_fuzzing_to_existing_c_google_tests/
+---
+I  have a set of C++ tests written using GoogleTest. Is it possible to add fuzzing (e.g. libfuzzer) to that set of existing google-tests? 
+
+Thank you,
+
+jas
+## [10][Check out my performance on Corehard C++ at Minsk (eng. subs)](https://www.reddit.com/r/cpp/comments/j0u70m/check_out_my_performance_on_corehard_c_at_minsk/)
+- url: https://www.reddit.com/r/cpp/comments/j0u70m/check_out_my_performance_on_corehard_c_at_minsk/
+---
+[https://www.youtube.com/watch?v=ngsilquWgpo](https://www.youtube.com/watch?v=ngsilquWgpo)
+## [11][lunasvg v1.3.0 released. Text element is now supported.](https://www.reddit.com/r/cpp/comments/j0j2qg/lunasvg_v130_released_text_element_is_now/)
 - url: https://github.com/sammycage/lunasvg/releases/tag/v1.3.0
----
-
-## [4][Macro-free reflection in C++14](https://www.reddit.com/r/cpp/comments/j09q7u/macrofree_reflection_in_c14/)
-- url: https://lordsof.tech/programming/reflection-in-c14/
----
-
-## [5][concurrencpp v.0.0.6 - modern concurrency for C++](https://www.reddit.com/r/cpp/comments/j04one/concurrencpp_v006_modern_concurrency_for_c/)
-- url: https://github.com/David-Haim/concurrencpp
----
-
-## [6][Updated my "structure of array" wrapper library](https://www.reddit.com/r/cpp/comments/j0aw61/updated_my_structure_of_array_wrapper_library/)
-- url: https://www.reddit.com/r/cpp/comments/j0aw61/updated_my_structure_of_array_wrapper_library/
----
-I "recently" created a library that allows you to create an SoA-style vector wrapper around any PoD type: 
-
-[https://github.com/Yamahari/struct\_array](https://github.com/Yamahari/struct_array)
-
-[https://www.reddit.com/r/cpp/comments/hoabrd/structure\_of\_arrays\_wrapper\_for\_podtypes/](https://www.reddit.com/r/cpp/comments/hoabrd/structure_of_arrays_wrapper_for_podtypes/)
-
-Now I've updated the lib and added the possibility to customize the maximum "size" of PoDs supported ( the amount of members ) by using horrible macro-magic and adding a "-DSOA\_MAX\_BINDINGS=X" compile definition x). 
-
-Should be ready to use, but I might replace my iterator with one that extends Boost.STLInterface's iterator\_interface in the future.
-## [7][Simple C++ Socket Programming Base / Library: Works for Windows and Linux](https://www.reddit.com/r/cpp/comments/izvy9i/simple_c_socket_programming_base_library_works/)
-- url: https://www.reddit.com/r/cpp/comments/izvy9i/simple_c_socket_programming_base_library_works/
----
- Thought this might be useful for everyone doing entry-level socket programming in C++. Currently C++ does not have a unified way to write socket programming for both Windows and Linux. I tried to bridge that gap and write a simple server/client library that can be extended to do more.
-
-The alternatives out there tend to use or depend on external libraries/runtime software which I did not want in my project. Here is what I came up with; feel free to leave feedback and contribute to it:
-
-&amp;#x200B;
-
-[https://github.com/masesk/easy-socket](https://github.com/masesk/easy-socket)
-## [8][std::exchange Patterns: Fast, Safe, Expressive, and Probably Underused](https://www.reddit.com/r/cpp/comments/izjgdw/stdexchange_patterns_fast_safe_expressive_and/)
-- url: https://www.fluentcpp.com/2020/09/25/stdexchange-patterns-fast-safe-expressive-and-probably-underused/
----
-
-## [9][Structured binding may be the new hotness, but we'll always have std::tie](https://www.reddit.com/r/cpp/comments/izr5pf/structured_binding_may_be_the_new_hotness_but/)
-- url: https://devblogs.microsoft.com/oldnewthing/20200925-00/?p=104297
----
-
-## [10][Free hands-on online Conan C++ package manager training](https://www.reddit.com/r/cpp/comments/iznhw6/free_handson_online_conan_c_package_manager/)
-- url: https://blog.conan.io/2020/09/24/New-conan-training-series.html
----
-
-## [11][Meeting C++ online - Basit Ayantunde - Functional Error and Optional value Handling with STX](https://www.reddit.com/r/cpp/comments/izfknm/meeting_c_online_basit_ayantunde_functional_error/)
-- url: https://www.youtube.com/watch?v=8CZhJa8UJk0
 ---
 

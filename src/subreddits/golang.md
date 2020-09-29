@@ -1,150 +1,192 @@
 # golang
-## [1][If you want to learn Data structures in Go](https://www.reddit.com/r/golang/comments/j121fo/if_you_want_to_learn_data_structures_in_go/)
-- url: https://www.reddit.com/r/golang/comments/j121fo/if_you_want_to_learn_data_structures_in_go/
----
-If there is anybody who is looking for beginner friendly data structure videos in Go, here's a link.  
-I think there needs to be a larger variety of Go content out there.
-
-[Data structures in Go playlist](https://www.youtube.com/playlist?list=PL0q7mDmXPZm7s7weikYLpNZBKk5dCoWm6)
-## [2][rqlite, the distributed database written in Go and built on SQLite, v5.5.0 supports Parameterized SQL statements](https://www.reddit.com/r/golang/comments/j10u6b/rqlite_the_distributed_database_written_in_go_and/)
-- url: https://github.com/rqlite/rqlite/releases/tag/v5.5.0
+## [1][Wrote an article/tutorial on Concurrency. Beginner Friendly!](https://www.reddit.com/r/golang/comments/j1xij2/wrote_an_articletutorial_on_concurrency_beginner/)
+- url: https://medium.com/@yashaswi_nayak/go-a-tale-of-concurrency-a-beginners-guide-b8976b26feb
 ---
 
-## [3][Question about io.Reader](https://www.reddit.com/r/golang/comments/j18xer/question_about_ioreader/)
-- url: https://www.reddit.com/r/golang/comments/j18xer/question_about_ioreader/
+## [2][A simple and lightweight Static Site Generator written in Go](https://www.reddit.com/r/golang/comments/j1y78h/a_simple_and_lightweight_static_site_generator/)
+- url: https://www.reddit.com/r/golang/comments/j1y78h/a_simple_and_lightweight_static_site_generator/
 ---
-Hi everyone,
+Hi all, I'm happy to announce my new Static Site Generator! It is designed for Markdown-based content with focus on simplicity and performance. Some key features are:  
+ 
 
-I got a `[]byte` buffer, which contains valid base64 data up to a certain spot, which is undetermined. If I try to pass it to a `bytes.NewReader` it works, but then the `base64.NewDecoder` sometimes fails due to the garbage at the end of the buffer.
+* Flexible templating through an own theming system.
+* Interchangeable themes due to pre-defined template variables.
+* Local development without a third-party webserver.
+* Creating projects &amp; themes within a single command.
+* High performance, parallelized site builds.
+* Optional RSS feeds and overview pages for tags.
+* Auto-generated, overwritable overview pages for all directories.
+* Pre-build hooks for generating assets.
+* Simple configuration via YAML, TOML or JSON in a central file.
 
-Therefore I wrote this thing, and I'm curious if it has any corner case I haven't considered. It seems to work fine but I'm not totally sure if I'm returning the right values.
+Check it out: [https://github.com/verless/verless](https://github.com/verless/verless)
+
+verless is in active development and pre-build hooks specifically for themes are coming soon, but the public API already is stable.
+## [3][A not so simple TCP socket implementation of TCP server/client ?](https://www.reddit.com/r/golang/comments/j1wry6/a_not_so_simple_tcp_socket_implementation_of_tcp/)
+- url: https://www.reddit.com/r/golang/comments/j1wry6/a_not_so_simple_tcp_socket_implementation_of_tcp/
+---
+Im planning to build a TCP server &amp; client in Go where the focus is on speed, efficiency, stable connections ( recognize drops, reconnects, error handling ) and a proper concurrency model that can be scaled well, my plan is to try to get protocol implementation done via streaming protobuf messages. 
+
+I know some have jumped into big products with Go, and theres NatsIO etc out there and that we normally say Go is perfect for networking and concurrency.
+
+But in my search trying to see 'how others done it" its always 'a simple server' implementation - i remember from my CPP days that there was alot of practices that needed to be followed to achieve fast and stable performance and best practice.
+
+Anyone have some directions to finding some information on some proper practices and some more complete approaches to handling all levels of socket communication in Go - ex the proper reconnect/connection dropped/connection disconnected ? the proper model of for ex handling reads/write on sockets ? 
+
+Any books, totourials, projects, approaches you know of you could help me point into the right direction or would it be smarter just to stick to CPP ?
+## [4][Data structures and algorithms in go](https://www.reddit.com/r/golang/comments/j1t0ob/data_structures_and_algorithms_in_go/)
+- url: https://www.reddit.com/r/golang/comments/j1t0ob/data_structures_and_algorithms_in_go/
+---
+Hi guys.
+
+I want to learn data structures and algorithms and implement all of them in Go. Any good youtube playlist or book you can refer for the same
+
+I just have been procrastinating all my life for wanting to learn Data structures and algorithms.started off with java and now have moved to golang. I just want to stop this procrastination and finally start working on it.
+
+Thanks
+Demo
+## [5][Do you use gccgo?](https://www.reddit.com/r/golang/comments/j1g1z6/do_you_use_gccgo/)
+- url: https://www.reddit.com/r/golang/comments/j1g1z6/do_you_use_gccgo/
+---
+Hi,
+
+I recently tried gccgo on a small project and I am surprised how small the executables can become. Standard Go compiler: almost 7 MiB, gccgo: 220 KiB. And it runs out of the box, no hassle. So why and when should you use the standard Go compiler at all?
+## [6][A way to fetch human-readable string from binary file in Golang?](https://www.reddit.com/r/golang/comments/j1xpad/a_way_to_fetch_humanreadable_string_from_binary/)
+- url: https://www.reddit.com/r/golang/comments/j1xpad/a_way_to_fetch_humanreadable_string_from_binary/
+---
+Hi all! I'm working on a small program that at some point needs to read a binary file and fetch all the human-readable text from it, basically the equivalent of the \`stings\` bash command. Is there any built in function / way to do so that I'm missing? All the solutions I found so far include reading the file, but I couldn't find a way to distinguish binary data to human readable string. 
+
+Any help would be appreciated.
+## [7][AppEngine with Go issue deploying](https://www.reddit.com/r/golang/comments/j1ydle/appengine_with_go_issue_deploying/)
+- url: https://stackoverflow.com/questions/64119757/appengine-deploy-cannot-find-go-packages
+---
+
+## [8][Optimize your development workflow on Kubernetes](https://www.reddit.com/r/golang/comments/j1xrod/optimize_your_development_workflow_on_kubernetes/)
+- url: https://www.reddit.com/r/golang/comments/j1xrod/optimize_your_development_workflow_on_kubernetes/
+---
+This blog post explains how to optimize your development workflow when building Go applications on Kubernetes with okteto:
+
+[https://okteto.com/blog/how-to-develop-go-apps-in-kubernetes/](https://okteto.com/blog/how-to-develop-go-apps-in-kubernetes/)
+## [9][Different ways to use environment variables in Golang](https://www.reddit.com/r/golang/comments/j1cxw4/different_ways_to_use_environment_variables_in/)
+- url: https://www.loginradius.com/engineering/blog/environment-variables-in-golang/
+---
+
+## [10][Gio Simple GUI](https://www.reddit.com/r/golang/comments/j1utsd/gio_simple_gui/)
+- url: https://www.reddit.com/r/golang/comments/j1utsd/gio_simple_gui/
+---
+Hello,
+
+I'm trying to create a simple GUI with Gio, but I have one issue.
+
+I want a label with a text field next to it (not below it), but for some reason the text field only has the width of the hint. Below is the code. How can I use the entire window width for the text field?
 
 ```
-type base64BufferReader struct {
-	buffer   []byte
-	position int
-}
+// SPDX-License-Identifier: Unlicense OR MIT
 
-var _ io.Reader = &amp;base64BufferReader{}
+package main
 
-func (b *base64BufferReader) Read(out []byte) (int, error) {
-	var i int
+// A simple Gio program. See https://gioui.org for more information.
 
-	for i = 0; i &lt; len(out); i++ {
-		pos := b.position
+import (
+	"log"
+	"os"
+	"image/color"
 
-                // if buffer is terminated or byte at position pos is not valid
-                // returns io.EOF
-		if pos &gt;= len(b.buffer) || !b.validByte(b.buffer[pos]) {
-			return i, io.EOF
-		}
+	"gioui.org/app"
+	"gioui.org/io/system"
+	"gioui.org/layout"
+	"gioui.org/op"
+	"gioui.org/widget"
+	"gioui.org/widget/material"
+	"gioui.org/unit"
+	"gioui.org/text"
 
-                // copies the byte to the output buffer
-		out[i] = b.buffer[pos]
+	"gioui.org/font/gofont"
+)
 
-                // increments the reader position
-		b.position++
+var(
+	labelInvoer = "Input:"
+	labelField1 = "Field 1:"
+	lineEditor = &amp;widget.Editor{
+		SingleLine: true,
+		Submit:     true,
 	}
+	button = new(widget.Clickable)
+	list = &amp;layout.List{
+		Axis: layout.Vertical,
+	}
+)
 
-	return i, nil
+func main() {
+	go func() {
+		minSize := app.MinSize(unit.Dp(300),unit.Dp(300))
+		maxSize := app.MaxSize(unit.Dp(600),unit.Dp(600))
+		size := app.Size(unit.Dp(400),unit.Dp(400))
+		title := app.Title("Test123")
+		
+		w := app.NewWindow(size,minSize, maxSize, title)
+		if err := loop(w); err != nil {
+			log.Fatal(err)
+		}
+		os.Exit(0)
+	}()
+	app.Main()
 }
 
-func (b base64BufferReader) validByte(c byte) bool {
-	return c == 0x2b || c == 0x3d || (c &gt;= 0x2f &amp;&amp; c &lt;= 0x39) || (c &gt;= 0x41 &amp;&amp; c &lt;= 0x5A) || (c &gt;= 0x61 &amp;&amp; c &lt;= 0x7a) || c == 10 || c == 13
+func loop(w *app.Window) error {
+	th := material.NewTheme(gofont.Collection())
+	var ops op.Ops
+	for {
+		e := &lt;-w.Events()
+		switch e := e.(type) {
+		case system.DestroyEvent:
+			return e.Err
+		case system.FrameEvent:
+			gtx := layout.NewContext(&amp;ops, e)
+			
+			widgets := []layout.Widget{
+				func(gtx layout.Context) layout.Dimensions {
+					return layout.Flex{Alignment: layout.Start}.Layout(gtx,
+						layout.Rigid(
+							material.H4(th, labelInvoer).Layout,
+						),
+					)
+				},
+				func(gtx layout.Context) layout.Dimensions {					
+					return layout.Flex{Alignment: layout.Start}.Layout(gtx,
+						layout.Rigid(
+							material.H6(th, labelField1).Layout,
+						),
+						layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+							return layout.Inset{Left: unit.Dp(18), Top: unit.Dp(0)}.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
+								e := material.Editor(th, lineEditor, "Hint")
+								e.Font.Style = text.Italic
+								border := widget.Border{Color: color.RGBA{A: 0xff}, CornerRadius: unit.Dp(8), Width: unit.Px(2)}
+					
+								return border.Layout(gtx, func(gtx layout.Context) layout.Dimensions {
+									return layout.UniformInset(unit.Dp(8)).Layout(gtx, e.Layout)
+								})
+							})
+						}),		
+					)
+				},
+				func(gtx layout.Context) layout.Dimensions {
+					return layout.Flex{Alignment: layout.Start}.Layout(gtx,
+						layout.Rigid(func(gtx layout.Context) layout.Dimensions {
+							return material.Button(th, button, "Click me!").Layout(gtx)
+						}),
+					)
+				},
+			}
+			
+			list.Layout(gtx, len(widgets), func(gtx layout.Context, i int) layout.Dimensions {
+				return layout.UniformInset(unit.Dp(16)).Layout(gtx, widgets[i])
+			})
+			
+			e.Frame(gtx.Ops)
+		}
+	}
 }
 ```
 
-Thanks in advance for any insight!
-## [4][I created an ugly gopher sticker](https://www.reddit.com/r/golang/comments/j0rbos/i_created_an_ugly_gopher_sticker/)
-- url: https://www.reddit.com/r/golang/comments/j0rbos/i_created_an_ugly_gopher_sticker/
----
-Hi everyone, I'm new here but not new to Golang. I've developed  libraries and worked in Go extensively over the years. But I'm here to show my work from the other side - I'm also an artist.
-
-My friend wanted me to design an original version of the Gopher sticker that nobody will have. I told her my style isn't cute and in fact I like to draw "ugly" manga faces and she said she'd go for it so I went on to design one and only Gopher for her.
-
-I'm not sure if she'll love it or be shocked by it, but I'm sure it will put all the other laptop gophers to shame... or the other way round. We'll see.
-
-https://preview.redd.it/8alkwab32pp51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=8393288c9cf5abbe7090e94d14e236c99e5b39a9
-## [5][Is there a microcontroller-like OS for Go binaries on e.g. Raspberry Pi Zero? (excluding tinyGo)](https://www.reddit.com/r/golang/comments/j16yws/is_there_a_microcontrollerlike_os_for_go_binaries/)
-- url: https://www.reddit.com/r/golang/comments/j16yws/is_there_a_microcontrollerlike_os_for_go_binaries/
----
-Hi, I am looking into writing some Go drivers for a couple of things at my home (e.g. control HVAC over serial) and connecting them to HomeKit using [https://github.com/brutella/hc](https://github.com/brutella/hc) .
-
-I've looked into tinyGo but it seems that they strip away a -lot- of prerequisites such as net/http, making it almost impossible to utilize hc.
-
-So i'm back at using the Pi Zero, but I want to minimize the attack surface/maintenance of the OS.Is there a kind of 'wrapper' OS for e.g. Go binaries? Thanks.
-
-&amp;#x200B;
-
-Edit: seems [https://github.com/f-secure-foundry/tamago](https://github.com/f-secure-foundry/tamago) is the thing I need
-## [6][How should I unit test function like this?](https://www.reddit.com/r/golang/comments/j19u50/how_should_i_unit_test_function_like_this/)
-- url: https://www.reddit.com/r/golang/comments/j19u50/how_should_i_unit_test_function_like_this/
----
-Hi all,
-
-The below function uses AWS SDK go fetch a parameter value from the Parameter Store.
-
-How should I unit test function like this? example will be appreciated.
-
-Obviously I can actually call the function and assert the return value, but that would be insecure (somewhat, depends on the sensitivity of the data asserted) and probably slow.
-
-Thank you!!
-
-    func GetSsmParamValue() string {
-    	sess, err := session.NewSessionWithOptions(session.Options{
-    		Config:            aws.Config{Region: aws.String("us-east-1")},
-    		SharedConfigState: session.SharedConfigEnable,
-    	})
-    	if err != nil {
-    		panic(err)
-    	}
-    
-    	ssmsvc := ssm.New(sess, aws.NewConfig().WithRegion("us-west-2"))
-    	param, err := ssmsvc.GetParameter(&amp;ssm.GetParameterInput{
-    		Name:           aws.String("some-param"),
-    		WithDecryption: aws.Bool(false),
-    	})
-    	if err != nil {
-    		panic(err)
-    	}
-    
-    	value := *param.Parameter.Value
-    	return value
-    }
-## [7][A Birds Eye View into Sliding Windows Algorithm Pattern in Data Structure](https://www.reddit.com/r/golang/comments/j18q53/a_birds_eye_view_into_sliding_windows_algorithm/)
-- url: https://algodaily.com/lessons/a-birds-eye-view-into-sliding-windows/introduction
----
-
-## [8][Go admin](https://www.reddit.com/r/golang/comments/j18gvh/go_admin/)
-- url: https://www.reddit.com/r/golang/comments/j18gvh/go_admin/
----
-I am unable to install go admin
-
-I tried to install with:  go install [github.com/GoAdminGroup/go-admin/adm](https://github.com/GoAdminGroup/go-admin/adm)
-
-i got
-
-can't load package: package [github.com/GoAdminGroup/go-admin/adm:](https://github.com/GoAdminGroup/go-admin/adm:) cannot find package "[github.com/GoAdminGroup/go-admin/adm](https://github.com/GoAdminGroup/go-admin/adm)" in any of:
-
-/usr/lib/go-1.13/src/github.com/GoAdminGroup/go-admin/adm (from $GOROOT)
-
-/home/ib-developer/go/src/github.com/GoAdminGroup/go-admin/adm (from $GOPATH)
-## [9][Example project structures for serverless function deployments](https://www.reddit.com/r/golang/comments/j0ztol/example_project_structures_for_serverless/)
-- url: https://github.com/sbogacz/going-serverless
----
-
-## [10][Best choice of HTTP Server in 2020](https://www.reddit.com/r/golang/comments/j0tp6n/best_choice_of_http_server_in_2020/)
-- url: https://www.reddit.com/r/golang/comments/j0tp6n/best_choice_of_http_server_in_2020/
----
-If you were starting a brand new webapp project today, what library/ies would you use for the webserver/router?
-
-In the past I've used various things - Echo, Gin, and Chi being the main ones - but it's always good to keep things fresh and see what new options are around.
-
-My major requirements are:
-* Needs to support WebSockets.
-* Needs to support REST-style routes - though preferably in as less-opinionated a way as possible.
-  * This includes being able to easily obtain values for query and path parameters inside a handler.
-* Needs to support some way to inject requests in and get responses out for testing; (Effectively implementing `ServeHTTP`)
-* Preferably supporting a clean way to consume JSON requests and produce JSON responses.
-
-Cheers
+Any tips are welcome, thx!

@@ -27,7 +27,166 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][I curated all the remote job openings from Hacker News who is hiring - September](https://www.reddit.com/r/rails/comments/j0s1hv/i_curated_all_the_remote_job_openings_from_hacker/)
+## [3][Rails and Solidus](https://www.reddit.com/r/rails/comments/j1na6n/rails_and_solidus/)
+- url: https://www.reddit.com/r/rails/comments/j1na6n/rails_and_solidus/
+---
+Hi guys,
+
+coming more or less form python and starting recently with ruby. I am looking for a multi-vendor platform and from what I could see and read - Solidus might be the solution. Generally, I am looking for a multi-vendor platform. Does anyone from you have any experiences with it? Does it work good or bad? Any recommendations?  
+
+
+Thanks
+## [4][Which React/Rails setup should I use?](https://www.reddit.com/r/rails/comments/j1ig5o/which_reactrails_setup_should_i_use/)
+- url: https://www.reddit.com/r/rails/comments/j1ig5o/which_reactrails_setup_should_i_use/
+---
+There is an enormous amount of advice on using React with Rails, so much that I'm struggling to decide on a setup to learn.
+
+What I have managed to decide on is that I want to use Rails as an API, serving JSON to a separate React front end. What I haven't decided on is:
+
+1. Whether to use Redux
+2. Whether to store the React app in the same repo as the Rails app
+3. Whether to use Rails' asset pipeline to serve the React app
+4. Whether the app should be a SPA
+5. Whether I should use React Hooks
+
+From what I know about state and mutability it seems as though Redux is a smart option. That being said, I've read that it adds a lot of complexity and dev time to simple tasks, and considering I'm going to be working on something alone, which is just an idea, I wonder whether Redux might be overkill and have a negative effect on my motivation.
+
+I know this is quite a wide question but really any pros/cons/successes/failures that anyone has would be really useful in helping me make a decision. And if you do have a recommended setup, and also know a good tutorial for that setup, then that would also be incredibly helpful.
+
+Thanks
+## [5][MySQL vs PostgreSQL - rare chance at an easy upgrade](https://www.reddit.com/r/rails/comments/j1gawq/mysql_vs_postgresql_rare_chance_at_an_easy_upgrade/)
+- url: https://www.reddit.com/r/rails/comments/j1gawq/mysql_vs_postgresql_rare_chance_at_an_easy_upgrade/
+---
+I just got a new job for a very small company that had a Rails 4 app that was so poorly made that they had a brand new Rails 5.2/6 app built to replace it.
+
+The old outsource company also made a migration task to transform a large part of the data in the db because the original was a total cluster fuck. And this migration task works perfectly. Other aspects of the new app do not, and hence why they decided on hiring someone in house to take over.
+
+This is rare opportunity to migrate from the old MySQL db to a Postgres db. I like Postgres, but I have to wonder... is it worth it?
+
+I know Postgres and MySQL mostly have differences at the massive scale level, and right now this app is no where near that level and probably will never get there. It’s got 7-10 daily users who could be using the app at the same time, and db size is currently under 1gb with 9 years of data. Chances are it will not grow to 10x or even come close to needing any of the enterprise/large scale features that differentiate MySQL and Postgres.
+
+So, is it worth it? Feels to me like it is, but I’m biased.
+## [6][what causes the file_field to be invisible?](https://www.reddit.com/r/rails/comments/j1l1m2/what_causes_the_file_field_to_be_invisible/)
+- url: https://www.reddit.com/r/rails/comments/j1l1m2/what_causes_the_file_field_to_be_invisible/
+---
+I would like to make my app upload multiple files with Shrine, but [one doc](https://shrinerb.com/docs/multiple-files#3-create-the-view) suggests two `file_field`s whereas the [other](https://github.com/shrinerb/shrine/wiki/Adding-Direct-App-Uploads#5-form) suggests only one. After posting a question to their discourse forum, it was suggested that I hide the one named `files[]`. Whether I do this or not, the first `file_field` always fails to render. Why does this field not display?
+
+    &lt;%= form_for @item, html: { enctype: "multipart/form-data" } do |f| %&gt;
+     &lt;%= f.fields_for :photos do |i| %&gt;
+      &lt;%= i.label :image %&gt;
+      &lt;%= i.hidden_field :image, value: i.object.cached_photos_data, class: "upload-data" %&gt;
+      &lt;%= i.file_field :image, class: "upload-file" %&gt; /// why is this not rendering?😢
+     &lt;% end %&gt;
+     &lt;%= file_field_tag "files[]", multiple: true %&gt; // what purpose does this one serve?
+     
+     &lt;%= f.text_field :title %&gt;
+          
+     &lt;%= f.submit "Submit" %&gt;    
+    &lt;% end %&gt;
+
+Models:
+
+    class Item &lt; ApplicationRecord
+     has_many :photos, as: :imageable, dependent: :destroy
+    end
+    
+    class Photo &lt; ApplicationRecord
+     include ImagesUploader::Attachment(:image)
+     belongs_to :imageable, polymorphic: true
+     validates_presence_of :image
+    end
+
+Controller:
+
+    class ItemsController &lt; ApplicationController
+    
+     def new
+      @item = current_user.items.new
+     end
+    
+     def create
+      @item = current_user.items.create(item_params)
+      @item.save
+     end
+    
+     private
+     def item_params
+      params.require(:item).permit(:title, photos_attributes: { image: [] })
+     end
+    end
+## [7][Best Way to Do Form Within a Form (not nested)?](https://www.reddit.com/r/rails/comments/j1nrsc/best_way_to_do_form_within_a_form_not_nested/)
+- url: https://www.reddit.com/r/rails/comments/j1nrsc/best_way_to_do_form_within_a_form_not_nested/
+---
+Hi, I’m learning Rails by building an invoicing app, and I’m trying to figure out how to open a form for one model (Invoice, which belongs to Client) but within that form, open a new form to create an instance of another model (Client) that, once created, will become available to choose in the original form. 
+
+Each invoice is tied to a Client, of course, and right now, I have to create a new Client in a separate New Client form, and then the New Invoice form uses a drop-down select to show all the clients that you can tie the invoice to before saving the invoice. 
+
+But what I really want is to be able to create a new client from WITHIN the new Invoice form. So, within the New Invoice form, I have a “Add New Client” link and it opens a Tailwind modal, with a “client name” input field and “a href” styled as a Save button for the modal. That fake button links to a StimulusJS controller action, which simply saves the client name input field to a Javascript variable, and also I use “event.preventDefault()” and “event.stopImmediatePropagation” to prevent the modal’s Save ‘button’ from submitting the host Invoice form. That all works so far. 
+
+**So my first question is:** Now that I have the new client’s name in my Javascript Stimulus controller, how can I pass that back to a Rails Client controller action, so I can create the new client? I can’t find any information about how to pass a value OUT of Stimulus back INTO a Rails controller. The most I can come up with is the vague idea that I could use Ajax to create a URL in my Stimulus controller, and insert the client name into the URL, and then use a custom Rails Create action to grab the name as a param. But I’m still really sketchy on how to, again, move that or any data from a Stimulus controller back to a Rails controller. 
+
+**And my second question is:** if I get this working, once I close the New Client modal and return to its open Invoice form, will the Invoice form still not show the newly created Client in its drop-down select? If Rails loads those existing Client names into the drop-down when the new Invoice form is opened, then it seems like the drop-down would not display the new client from the modal. Any ideas for how to deal with this? I’ve thought of switching from a drop-down select to a autocomplete text field using Stimulus, which might be more dynamic, but haven’t tried that out yet…
+
+Thanks for reading this, and any guidance/advice is much appreciated!
+## [8][redirect_to the previous page but changing the language](https://www.reddit.com/r/rails/comments/j1fwh5/redirect_to_the_previous_page_but_changing_the/)
+- url: https://www.reddit.com/r/rails/comments/j1fwh5/redirect_to_the_previous_page_but_changing_the/
+---
+ What am I trying to do? To redirect the user **in the previous page** with the website translated in new language selected
+
+My previous script was (language\_controller):
+
+    class LanguagesController &lt; ApplicationController
+     def edit
+         @language = Language.find_by(locale: I18n.locale)
+         render layout: false
+     end
+    
+     def update
+         @language = Language.find(update_params[:id])
+         if user_signed_in?
+           setting = current_user.setting || current_user.build_setting
+       setting.language = @language.id
+           setting.save
+         end
+         redirect_to root_path(locale: @language.locale)
+       end
+    
+        private
+        def update_params
+         params.require(:language).permit(:id)
+       end
+     end 
+
+As you can see, there is **redirect\_to root\_path** that redirect the user in the home page. Even if he is changing the language in an article-page
+
+So I edit it and I added in **edit** `session[:return_to] ||= request.referer`
+
+and in my **update** action I replaced `redirect_to root_path(locale: @language.locale)`  
+ with `redirect_to session.delete(:return_to)`
+
+What is happening? If the user is logged, **it works very good** and it redirects the user in the previous page.
+
+If the user is **not logged** he is redirected in previous page **BUT now** the language is the same. **Probably because I removed** `(locale: @language.locale)`**, right?**
+
+I also try to edit redirect\_to in this way: `redirect_to session.delete(:return_to, locale: @language.locale)`  
+ but it said that I can not add two elements there.
+
+How to solve?
+## [9][&lt;%- if and &lt;% end -%&gt;](https://www.reddit.com/r/rails/comments/j1g3xp/if_and_end/)
+- url: https://www.reddit.com/r/rails/comments/j1g3xp/if_and_end/
+---
+What is it? `&lt;%- if and &lt;% end -%&gt;`
+
+Why `-` ?!
+
+Where I can see documentations about how does it work?
+## [10][Migrating users to Amazon Cognito; keep everything the same and just change the current_user method?](https://www.reddit.com/r/rails/comments/j1h7xh/migrating_users_to_amazon_cognito_keep_everything/)
+- url: https://www.reddit.com/r/rails/comments/j1h7xh/migrating_users_to_amazon_cognito_keep_everything/
+---
+I'm currently trying to decouple our User model in our original Rails app from the application authentication.  We're starting to branch out to a couple different applications and I'd like to use Amazon Cognito to manage user identities. 
+
+We currently use JWTs for authentication, with the Rails server generating them and a React SPA sending them with each request so that current_user can be set in the application controller.  Am I missing anything or could this be as simple as importing the existing users into Cognito, and then just using the current_user method to find the `User` instance based on the JWT user_id as usual?  I imagine there'd be a little extra logic around keeping the Cognito users in sync, but I'm wondering if I'm missing anything major here.
+## [11][I curated all the remote job openings from Hacker News who is hiring - September](https://www.reddit.com/r/rails/comments/j0s1hv/i_curated_all_the_remote_job_openings_from_hacker/)
 - url: https://www.reddit.com/r/rails/comments/j0s1hv/i_curated_all_the_remote_job_openings_from_hacker/
 ---
 Here I would like to share all the remote jobs that I've curated from Hacker News Who is hiring thread. All these are 100% remote jobs not just allowed to work from home during COVID-19. These are 100% remote jobs and will continue to follow that after the covid.
@@ -37,11 +196,7 @@ Note: Please select "Ruby" in the category filter to view Ruby/Rails jobs
 
 ✅ 100% remote full-time jobs.    
 ✅ Each and every job is manually curated and verified. Spent more than 12 hours for this.
-## [4][Freelancing Web Development using Rails](https://www.reddit.com/r/rails/comments/j0nhbb/freelancing_web_development_using_rails/)
-- url: https://www.reddit.com/r/rails/comments/j0nhbb/freelancing_web_development_using_rails/
----
-Hey guys, Im currently searching for freelancing opportunities using Rails. Opportunities are pretty less frequent than other frameworks on big stations like UpWork. Is there any websites, subreddits, etc..that concentrates on Rails freelancing opportunities?
-## [5][Add controller actions + discussing updating an attribute in different places? | Sundae Club | Ruby on Rails Livestream](https://www.reddit.com/r/rails/comments/j0uhcp/add_controller_actions_discussing_updating_an/)
+## [12][Add controller actions + discussing updating an attribute in different places? | Sundae Club | Ruby on Rails Livestream](https://www.reddit.com/r/rails/comments/j0uhcp/add_controller_actions_discussing_updating_an/)
 - url: https://www.reddit.com/r/rails/comments/j0uhcp/add_controller_actions_discussing_updating_an/
 ---
 Hi everyone,
@@ -63,271 +218,3 @@ Here's the YouTube description of what's in the stream, as well as the chapter l
 [53:12](https://www.youtube.com/watch?v=MWSngfjNKS0&amp;t=3192s) \- Adding a form for channels (more Tailwind stuff)  
 [1:10:47](https://www.youtube.com/watch?v=MWSngfjNKS0&amp;t=4247s) \- Add an update action to our Channels controller  
 [1:24:45](https://www.youtube.com/watch?v=MWSngfjNKS0&amp;t=5085s) \- How can we update the new attribute in a different place?
-## [6][Chat App](https://www.reddit.com/r/rails/comments/j05vx9/chat_app/)
-- url: https://www.reddit.com/r/rails/comments/j05vx9/chat_app/
----
-Hi everyone,
-
-What is the best approach to create a user to user chat app using action cable? 
-
-There are tons of guides out there using chat rooms instead of usernames to create chats. 
-
-I want to create this chat app so users can message each other as long as they know each other's usernames. Wickr like but without encryption lol.
-
-I also need to add a feature to block users. Is it ideal to use devise authentication to achieve this?
-
-The challenge also asks me to keep logs of login and invalid login.
-
-Any advice is appreciated.
-
- Have a great weekend guys.
-## [7][Hiding password in database.yml file?](https://www.reddit.com/r/rails/comments/izucjd/hiding_password_in_databaseyml_file/)
-- url: https://www.reddit.com/r/rails/comments/izucjd/hiding_password_in_databaseyml_file/
----
-Hi there. I'm wondering if there's a way to either hide the file on github, or stop it from being pushed or what the best way to hide that would be? Since it just shows the password under "default: &amp;default" after adding the username and password, anyone an see it. Is it necessary to hide this password in the first place? I'd greatly appreciate the help!
-## [8][Will AWS CloudHSM work with this digital signature script?](https://www.reddit.com/r/rails/comments/izoidm/will_aws_cloudhsm_work_with_this_digital/)
-- url: https://www.reddit.com/r/rails/comments/izoidm/will_aws_cloudhsm_work_with_this_digital/
----
-[https://gist.github.com/matiaskorhonen/223bd527279cf49bed1e](https://gist.github.com/matiaskorhonen/223bd527279cf49bed1e)
-
-I'm not 100% on how CloudHSM works, can I pull the necessary keys to use with this script using the aws SDK?
-## [9][Sending partials over javascript](https://www.reddit.com/r/rails/comments/izbmit/sending_partials_over_javascript/)
-- url: https://www.reddit.com/r/rails/comments/izbmit/sending_partials_over_javascript/
----
-I'm trying to customize a rails scaffold so it doesnt go to a new page every time I want to edit or create a new resource. 
-
-Right now what I'm doing is using stimulus to prevent default behavior of links, then fetch `e. target.href` to display the form partial within a bootstrap modal. I then use `remote: true` to send the forms w/ javascript and respond with the resource partial like `format.js { render partial: "partial", locals: { resource: @resource }, content_type: "text" } `. I respond with the resource partial because it gets added to the DOM with `insertAdjacentHTML`.
-
-Now that works and all but it feels kinda hacked together and dirty. Is there a better way to do this?
-## [10][uploading multiple images to s3 with presign endpoint using shrine and uppy](https://www.reddit.com/r/rails/comments/iz9ux5/uploading_multiple_images_to_s3_with_presign/)
-- url: https://www.reddit.com/r/rails/comments/iz9ux5/uploading_multiple_images_to_s3_with_presign/
----
-Sorry in advance for the overly broad question, but this isn't about bugs so much as it is about architecture and confusion brought on by trying to twist two docs into one objective. My hope is that someone could help untangle my brain.
-
-I would like to: upload (to s3) and process multiple images using Shrine and Uppy with a nested form in Rails.
-
-However, what I am getting is a POST request that only creates a parent. The child `photos` are neither uploaded to s3 nor saved to the database.
-
-`Processing by ItemsController#create as HTML`
-
-`Parameters: {"utf8"=&gt;"✓", "authenticity_token"=&gt;"[FILTERED]", "files"=&gt;[#&lt;ActionDispatch::Http::UploadedFile:0x00007f9cbc59a050 u/tempfile=#&lt;Tempfile:/var/folders/hj/g_90jx_n7s58m73qlf9h0c4w0000gn/T/RackMultipart20200924-5853-1pb0sdf.jpg&gt;, u/original_filename="in.jpg", u/content_type="image/jpeg", u/headers="Content-Disposition: form-data; name=\"files[]\"; filename=\"in.jpg\"\r\nContent-Type: image/jpeg\r\n"&gt;], "item"=&gt;{"title"=&gt;"dip", "price"=&gt;"900"}, "commit"=&gt;"Submit"}`
-
-`Item Create (10.1ms) INSERT INTO "items" ("created_at", "updated_at", "title", "price", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id" [["created_at", "2020-09-24 22:04:41.333195"], ["updated_at", "2020-09-24 22:04:41.333195"], ["title", "dip"], ["price", 900], ["user_id", 1]]`
-
-The Shrine docs for [multiple uploads](https://shrinerb.com/docs/multiple-files#4b-direct-upload) suggest a model, controller, and view structure that looks like this:
-
-**Models**
-
-    class Photo &lt; ApplicationRecord
-     include ImagesUploader::Attachment(:image)
-     belongs_to :item
-     validates_presence_of :image
-    end
-    
-    class Item &lt; ApplicationRecord
-     has_many :photos, dependent: :destroy
-     accepts_nested_attributes_for :photos, allow_destroy: true
-    end
-
-**Controller**
-
-    class ItemsController &lt; ApplicationController
-     def create
-      @item = Item.create(item_params)
-      @item.save
-     end
-    
-     private
-     def item_params
-      params.require(:item).permit(:title, photos_attributes: { image: [] })
-     end
-    end
-
-**View**
-
-    &lt;%= form_for @item, html: { enctype: "multipart/form-data" } do |f| %&gt;
-     &lt;%= f.text_field :title %&gt;
-     &lt;%= f.fields_for :photos do |i| %&gt;
-      &lt;%= i.label :image %&gt;
-      &lt;%= i.hidden_field :image, value: i.object.cached_photos_data, class: "upload-data" %&gt;
-      &lt;%= i.file_field :image, class: "upload-file" %&gt;
-     &lt;% end %&gt;
-     &lt;%= file_field_tag "files[]", multiple: true %&gt;
-     &lt;%= f.submit "Submit" %&gt;
-    &lt;% end %&gt;
-
-Ignoring my confusion over how this double `file_field/file_field_tag` works (and why I only see the latter), I go to [this github wiki](https://github.com/shrinerb/shrine/wiki/Adding-Direct-S3-Uploads) to set up the presign endpoint with an initializer and a route:
-
-**shrine.rb**
-
-    require "shrine"
-    require "shrine/storage/file_system"
-    require "shrine/storage/s3"
-    
-    Shrine.plugin :presign_endpoint, presign_options: -&gt; (request) {
-      filename = request.params["filename"]
-      type     = request.params["type"]
-    
-      {
-        content_disposition:    ContentDisposition.inline(filename), 
-        content_type:           type,                                
-        content_length_range:   0..(5*1024*1024),                  
-      }
-    }
-    
-    Shrine.plugin :activerecord
-    Shrine.plugin :cached_attachment_data
-    Shrine.plugin :restore_cached_data
-    Shrine.plugin :validation
-    Shrine.plugin :validation_helpers
-    Shrine.plugin :determine_mime_type, analyzer: :marcel
-    Shrine.plugin :remove_invalid
-
-**routes.rb**
-
-    get 'presign/s3/params', to: 'presigns#image'
-
-Moved response to a controller for authorization:
-
-    class PresignsController &lt; InheritedResources::Base
-     before_action :authenticate_user!
-    
-     def image
-      set_rack_response ImagesUploader.presign_response(:cache, request.env)
-     end
-    
-     private
-     def set_rack_response((status, headers, body))
-      self.status = status
-      self.headers.merge!(headers)
-      self.response_body = body
-     end
-    end
-
-To confirm that this is set up correctly, I visit `/presign/s3/params?filename=test&amp;type=jpg` and see JSON and my AWS credentials in the browser. Although the browser tab says `ActionController: Exception caught`, it seems to work as expected.
-
-Thinking I'm good, I add the uploader and the javascript for handling direct uploads:
-
-**uploader**
-
-    class ImagesUploader &lt; Shrine
-      require "image_processing/mini_magick"
-      plugin :pretty_location
-      plugin :derivatives
-    
-      s3 = { 
-       bucket: ENV['S3_BUCKET_NAME'],
-       region: ENV['AWS_REGION'],
-       access_key_id: ENV['AWS_ACCESS_KEY_ID'],
-       secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
-      }
-      Shrine.storages = { 
-       cache: Shrine::Storage::S3.new(prefix: "cache", **s3), 
-       store: Shrine::Storage::S3.new(prefix: "store", **s3)
-      }
-    
-      Attacher.validate do
-       validate_min_size	10.kilobytes	
-       validate_max_size	5.megabytes, message: 'must be smaller than 5MB'
-       validate_mime_type 	%w[image/jpeg image/png]
-       validate_extension 	%w[jpg jpeg png]
-      end
-    
-      Attacher.derivatives do |original|
-       magick = ImageProcessing::MiniMagick.source(original)
-       {
-    	large: magick.resize_to_limit!(1000, 1000),
-    	small: magick.resize_and_pad!(225, 220)
-       }
-      end
-    end
-
-**app/javascript/fileUpload.js**
-
-    import 'uppy/dist/uppy.min.css'
-    
-    import {
-      Core,
-      FileInput,
-      Informer,
-      ProgressBar,
-      ThumbnailGenerator,
-      AwsS3,
-    } from 'uppy'
-    
-    function fileUpload(fileInput) {
-      const hiddenInput = document.querySelector('.upload-data'),
-            imagePreview = document.querySelector('.upload-preview img'),
-            formGroup = fileInput.parentNode
-    
-      formGroup.removeChild(fileInput)
-    
-      const uppy = Core({
-          autoProceed: true,
-        })
-        .use(FileInput, {
-          target: formGroup,
-        })
-        .use(Informer, {
-          target: formGroup,
-        })
-        .use(ProgressBar, {
-          target: imagePreview.parentNode,
-        })
-        .use(ThumbnailGenerator, {
-          thumbnailWidth: 600,
-        })
-        .use(AwsS3, {
-          companionUrl: '/presign/s3/params', // i set this to my presign endpoint, which I checked by visting site.com/presign/s3/params?filename=test&amp;type=jpg
-        })
-    
-      uppy.on('thumbnail:generated', (file, preview) =&gt; {
-        imagePreview.src = preview
-      })
-    
-      uppy.on('upload-success', (file, response) =&gt; {
-        const uploadedFileData = {
-          id: file.meta['key'].match(/^cache\/(.+)/)[1],
-          storage: 'cache',
-          metadata: {
-            size: file.size,
-            filename: file.name,
-            mime_type: file.type,
-          }
-        }
-    
-        hiddenInput.value = JSON.stringify(uploadedFileData)
-      })
-    }
-    
-    export default fileUpload
-
-**javascript/packs/application.js**
-
-    import fileUpload from 'fileUpload'
-    
-    document.addEventListener('turbolinks:load', () =&gt; {
-      document.querySelectorAll('.upload-file').forEach(fileInput =&gt; {
-        fileUpload(fileInput)
-      })
-    })
-
-Some questions.
-
-1. How does that double `file_field` work and why is it that the stray `file_field_tag` is the one that submits the files? I do not intuitively grasp how the two are connected. If the tag is named `files[]`, shouldn't my whitelisted params be something like `photos_attributes: { files: [] }`?
-2. If uppy and shrine upload the files to an s3 cache, how do I get that information into my controller? Presumably I would get a JSON response. The doc has this to say, but I'm confused by what it means:
-
-&gt;Once files are uploaded asynchronously, you can dynamically insert photo attachment fields for the `image` attachment attribute into the form, where the hidden field is filled with uploaded file data in JSON format, just like when doing single direct uploads. The attachment field names should be namespaced according to the convention that the nested attributes feature expects. In this case it should be `album[photos_attributes][&lt;uid&gt;]`, where `&lt;uid&gt;` is any unique string.
-## [11][Relational DB tutorial?](https://www.reddit.com/r/rails/comments/iz6o8m/relational_db_tutorial/)
-- url: https://www.reddit.com/r/rails/comments/iz6o8m/relational_db_tutorial/
----
-Anyone have a good resource to understand Relational DB linking in rails? 
-
-I’ve read the docs, handheld a few tutorials and just cannot wrap my brain around how to properly understand it.
-## [12][Auto-save the current form without refresh](https://www.reddit.com/r/rails/comments/iyyhzh/autosave_the_current_form_without_refresh/)
-- url: https://www.reddit.com/r/rails/comments/iyyhzh/autosave_the_current_form_without_refresh/
----
-Is it possible to use AJAX to auto-save the form that's currently in view, but leave the default submit button active?  
-
-
-I'm using wicked, and I have a fairly large form that needed to be sliced into pieces. Now, I want to save each individual form step with autosave using a timed function. Is it possible?

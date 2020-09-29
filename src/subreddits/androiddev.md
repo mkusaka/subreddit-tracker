@@ -31,71 +31,67 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][The Dark Secrets of Fast Compilation for Kotlin – Kotlin Blog](https://www.reddit.com/r/androiddev/comments/j192y9/the_dark_secrets_of_fast_compilation_for_kotlin/)
-- url: https://blog.jetbrains.com/kotlin/2020/09/the-dark-secrets-of-fast-compilation-for-kotlin/
+## [3][Android Starter Template (hilt, coroutines, flow, edge-to-edge, MVVM, tests, github CI)](https://www.reddit.com/r/androiddev/comments/j1wz3v/android_starter_template_hilt_coroutines_flow/)
+- url: https://www.bloco.io/blog/2020/android-app-starter-update
 ---
 
-## [4][How to distinguish Android 11 Location permission "while in use" from "Only this time" programatically?](https://www.reddit.com/r/androiddev/comments/j15rst/how_to_distinguish_android_11_location_permission/)
-- url: https://www.reddit.com/r/androiddev/comments/j15rst/how_to_distinguish_android_11_location_permission/
----
-Is there a way to distinguish the Android 11 - Location permission for "While in use" from "Only this time". I want to understand if there is a way to check if the latter was selected by the user programatically.
-## [5][What the hell is wrong with Android Emulator Recorder](https://www.reddit.com/r/androiddev/comments/j194zq/what_the_hell_is_wrong_with_android_emulator/)
-- url: https://www.reddit.com/r/androiddev/comments/j194zq/what_the_hell_is_wrong_with_android_emulator/
----
-&amp;#x200B;
-
-https://reddit.com/link/j194zq/video/srnzuavw1vp51/player
-## [6][When a thief calls you a thief, what is the best thing to do?](https://www.reddit.com/r/androiddev/comments/j19l1m/when_a_thief_calls_you_a_thief_what_is_the_best/)
-- url: https://www.reddit.com/r/androiddev/comments/j19l1m/when_a_thief_calls_you_a_thief_what_is_the_best/
----
-[In yesterday's post](https://www.reddit.com/r/androiddev/comments/j0ul7q/my_app_was_stolen_and_thief_sent_me_ddca/) on this group, I was called a thief with my real name. The truth may be different, but this is not the place for such proof. As a well-mannered man, a professor, I don't want to bring these things out in public.
-
-What is the best thing to do?
-
-Will the moderators delete this or will I have to start some other procedure.
-
-Thank You
-## [7][Hi guys, I am 16 and I created an open-source app that reminds you to wear a mask when you leave home (or any chosen location)!](https://www.reddit.com/r/androiddev/comments/j0poce/hi_guys_i_am_16_and_i_created_an_opensource_app/)
-- url: https://www.reddit.com/r/androiddev/comments/j0poce/hi_guys_i_am_16_and_i_created_an_opensource_app/
----
- As the title says, I am a 16 year old high-school student that has been developing for android for the past year. I've created an app called wearAmask for android that reminds you to take your mask whenever you leave your home, work or any other location.
-
-wearAmask works by allowing users to add a location (address) on a map by holding down on the map or typing an address. Once you choose a location, you can select the radius of the region, choose a color and enter a location name.
-
-Once you enter a location, or even many locations if you'd like, wearAmask will automatically run in the background and will remind you to take your mask whenever you leave that location! (and also reminds you to take necessary precautions).
-
-The app is currently open to public testing and is 100% free, no ads, completely open source and no BS whatsoever :)
-
-[wearAmask on Google Play](https://play.google.com/store/apps/details?id=com.hudzah.wearamask) and also for anyone that wants to check out the code, it's on [GitHub here](https://github.com/HudZah/wearAmask)
-
-Oh and I also posted this on [r/androidapps](https://www.reddit.com/r/androidapps/) but wanted more technical advice and suggestions based of the code itself. 
-
-Would really love to hear feedback from you guys! Any code improvements, suggestions and bugs would be really helpful!
-
-Also [here's](https://www.youtube.com/watch?v=tM2rMe_WCas) a cool promo video I made for the app if you'd like to have a look!
-## [8][Java Vs Dart (Flutter) for developing an app connected to cloud Database?](https://www.reddit.com/r/androiddev/comments/j1aeoy/java_vs_dart_flutter_for_developing_an_app/)
-- url: https://www.reddit.com/r/androiddev/comments/j1aeoy/java_vs_dart_flutter_for_developing_an_app/
----
-So I would like opinions of people who have been working with app development for years. 
-For starters, I have been learning Android app development with Java for about 4 months now. And now I want to build a proper app for PlayStore. While I cannot go into details, the app will have a host a client side interface allowing users to view data from the database. Select users (moderators?) will be allowed to edit the database in terms of adding and removing data.
-But before I started developing, I came across the suggestion of using Dart for portability. What are the pros and cons in your opinion for both languages? All the opinions I found on the web range from 1 to 2 years old.
-## [9][gcc/ llvm on system shell](https://www.reddit.com/r/androiddev/comments/j1ajiv/gcc_llvm_on_system_shell/)
-- url: https://www.reddit.com/r/androiddev/comments/j1ajiv/gcc_llvm_on_system_shell/
----
-Hey I'm looking for a version of gcc or clang running on the android system shell. I want to be able to compile c code on the device. Is there an existing way of doing or do I have to build it myself? I know that this is possible using tmux but is there a way of doing it directly from the system shell? I want this just for playing around :)
-## [10][How Google Admob Destroy My Life + Pandemic](https://www.reddit.com/r/androiddev/comments/j18q8h/how_google_admob_destroy_my_life_pandemic/)
-- url: https://www.reddit.com/r/androiddev/comments/j18q8h/how_google_admob_destroy_my_life_pandemic/
----
-Hi,  
-I am an indie developer make apps for a living so I made a video sharing(not like TikTok) application and I published it on play store on May End and I have published more than 8 Apps in Playstore most of them hit 100k in Playstore so I using Admob has my primary ad network and I implement FAN Separately (not on mediation) just in case. On July 18, 2020, My ad serving has been limited so I thought it just disappears with 2 weeks I got this before so I thought it's regular check from AdMob site but it didn't that's all its started   
-I connect all my apps to the single AdMob account so all apps ads have been limited and I am making 0.1 every day and I m paying 100$ for servers every month I can't sleep for days because the stress level and I am thinking how can I pay for freelancers(i hire freelancers for some projects) and the month passed So I manage the expense with my salary and borrow some money from friends. I don't have enough money to pay rent so I move on to my mother's house and living with my mother Its been Four Month Now still ad serving has been limited I try to contact google may ways the stress level I am in I never had that before and I am thinking of selling all my apps to another developer and take a break from this hell. 
-
-Why there is no contact option in Admob but in Google ads 24\*7 support so google doesn't care about the indie developer or they just want multi-million company only not indie like us?
-## [11][#2 Floating Windows on Android: Foreground Service](https://www.reddit.com/r/androiddev/comments/j18mwo/2_floating_windows_on_android_foreground_service/)
-- url: https://localazy.com/blog/floating-windows-on-android-2-foreground-service
+## [4][Each time a new version out](https://www.reddit.com/r/androiddev/comments/j1xouy/each_time_a_new_version_out/)
+- url: https://i.redd.it/5pel71jsr2q51.jpg
 ---
 
-## [12][Introducing Android Studio on the cloud, Request for early access - https://yaoe.io/android](https://www.reddit.com/r/androiddev/comments/j0o51v/introducing_android_studio_on_the_cloud_request/)
-- url: https://i.redd.it/x52bpuf6qnp51.png
+## [5][Google says Android 12 will make using third-party app stores easier](https://www.reddit.com/r/androiddev/comments/j1pa8z/google_says_android_12_will_make_using_thirdparty/)
+- url: https://www.theverge.com/2020/9/28/21472139/google-android-12-app-store-installation-payment-fees
 ---
 
+## [6][Meet Code With Me (EAP) – a tool for collaborative development by JetBrains – JetBrains Blog](https://www.reddit.com/r/androiddev/comments/j1sxaq/meet_code_with_me_eap_a_tool_for_collaborative/)
+- url: https://blog.jetbrains.com/blog/2020/09/28/code-with-me-eap/
+---
+
+## [7][Developed an android library for easily adding spans. Finally used Compiler Design knowledge in Android. [https://github.com/hitanshu-dhawan/SpannableStringParser]](https://www.reddit.com/r/androiddev/comments/j1ejzz/developed_an_android_library_for_easily_adding/)
+- url: https://i.redd.it/8vucu4jbtwp51.png
+---
+
+## [8][What's the best/reliable way today to poll for location for every x minutes in the background?](https://www.reddit.com/r/androiddev/comments/j1xpgu/whats_the_bestreliable_way_today_to_poll_for/)
+- url: https://www.reddit.com/r/androiddev/comments/j1xpgu/whats_the_bestreliable_way_today_to_poll_for/
+---
+
+## [9][Promote from beta to production with timed release impossible? Or am I doing smth wrong?](https://www.reddit.com/r/androiddev/comments/j1wfaj/promote_from_beta_to_production_with_timed/)
+- url: https://www.reddit.com/r/androiddev/comments/j1wfaj/promote_from_beta_to_production_with_timed/
+---
+Hey all,
+
+We have an app that has a production version and a version in the beta-channel.
+
+Our production entry at store-listing clearly states: "Timed release".
+
+Whenever I promote the beta version to production it removes the timed release and immediately releases which causes us a lot of problems because the backend hasn't been released yet.
+
+Is there no way to promote from beta to production and retain the timed release :-(? Or am I missing something?
+
+Cheers
+## [10][What technologies are essential to know for a professional Android Dev?](https://www.reddit.com/r/androiddev/comments/j1tfxu/what_technologies_are_essential_to_know_for_a/)
+- url: https://www.reddit.com/r/androiddev/comments/j1tfxu/what_technologies_are_essential_to_know_for_a/
+---
+Hello noob here, final year CS, I've been doing Android for the last few months if the Quarantine and I'm enjoying it so much that I may just decide to specialise in it for my career, so what do I need to know to work in the industry as a professional?
+
+I know that one needs to know, Java/Kotlin, XML, how Android studio works, SQL for DB and Android architecture what else am I missing? I see a lot of buzzwords when I browse this sub. 
+
+Note that I'm not asking about all the things in Android dev i know it will impossible for a single person to know everything, just asking for the essential must-know stuff.
+## [11][Exclude certain Android versions](https://www.reddit.com/r/androiddev/comments/j1yx5g/exclude_certain_android_versions/)
+- url: https://www.reddit.com/r/androiddev/comments/j1yx5g/exclude_certain_android_versions/
+---
+My app targets Android 11, just because I don't want Google Play to stop me from updating my app. But at the moment, the core function of my app is not working on Android 11.
+
+Is it possible to hide my app listing from Android 11 users so that they don't end up downloading my app and reviewing "it's not working". ?
+## [12][Restore dynamically added view state on orientation change](https://www.reddit.com/r/androiddev/comments/j1t9np/restore_dynamically_added_view_state_on/)
+- url: https://www.reddit.com/r/androiddev/comments/j1t9np/restore_dynamically_added_view_state_on/
+---
+Im currently working with custom views which will be added to a layout dynamically. I understand how view states are safed and restored.
+
+According to the documentation, only views with an id will be persisted by the system. So the suggested solution is to use \`\`\`View.getViewId()\`\`\` in order to set an id to each dynamically added view.
+
+The problem is, that on orientation change, each view which gets an id via this method, will get a different id than before the orientation change happened. This prevents the view state from being restored since the ids don't match up.
+
+    Easiest setup to try this: Add an EditText programmatically to an activity, give it an id with ```View.generateViewId()``` then enter some text and rotate.
+
+Am I missing something? Is there no way to give ids to dynamically added views so that they restore themselves on orientation changes?

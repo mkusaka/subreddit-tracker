@@ -36,7 +36,13 @@ This client is taking full advantage of modern TypeScript capabilites!
 Check it out 👇
 
 [https://github.com/Silind/twitter-api-client](https://github.com/Silind/twitter-api-client)
-## [3][Trying to wrap my head around type inference failing](https://www.reddit.com/r/typescript/comments/j1bcj4/trying_to_wrap_my_head_around_type_inference/)
+## [3][Is it standard to use the not null operator everywhere Env variables are used?](https://www.reddit.com/r/typescript/comments/j1iuc4/is_it_standard_to_use_the_not_null_operator/)
+- url: https://www.reddit.com/r/typescript/comments/j1iuc4/is_it_standard_to_use_the_not_null_operator/
+---
+It's by far my most common use of !. In strict mode all Env variables have an implicit type of `string | undefined`.
+
+Just curious if you guys also use ! with them. Or if you do something else such as asserting `process.env` as `any`
+## [4][Trying to wrap my head around type inference failing](https://www.reddit.com/r/typescript/comments/j1bcj4/trying_to_wrap_my_head_around_type_inference/)
 - url: https://www.reddit.com/r/typescript/comments/j1bcj4/trying_to_wrap_my_head_around_type_inference/
 ---
 Hi, I've run into Typescript failing to infer something and I'm trying to understand why. This simple example works:
@@ -92,7 +98,7 @@ const example = doSomething({
 I'm trying to figure out why this is. I assume now that `B` is used as a parameter, that stops Typescript from being able to infer `B` as being the result of `createA`, and since there's no type on `logB: (value)`, it gives up and calls it unknown.
 
 I can get around this by `logB: (value: string) =&gt; console.log(value)`, but is there a way to tell Typescript to always infer `B` from the return type of `createA`, even if it's used as a parameter elsewhere?
-## [4][Looking for collaborators for open source project.](https://www.reddit.com/r/typescript/comments/j0vzdn/looking_for_collaborators_for_open_source_project/)
+## [5][Looking for collaborators for open source project.](https://www.reddit.com/r/typescript/comments/j0vzdn/looking_for_collaborators_for_open_source_project/)
 - url: https://www.reddit.com/r/typescript/comments/j0vzdn/looking_for_collaborators_for_open_source_project/
 ---
 Hi, good evening!
@@ -115,7 +121,7 @@ https://github.com/photion/web-admin
 
 For anyone interested into joining, here is a slack invite:
 https://join.slack.com/t/photion/shared_invite/zt-hnqy02xy-wB0vJqZv_lhrB~7qWv6~VA
-## [5][Typesafe, future proof way to get from "unknown" to "SomeInterfaceType" without "any"?](https://www.reddit.com/r/typescript/comments/j17c1h/typesafe_future_proof_way_to_get_from_unknown_to/)
+## [6][Typesafe, future proof way to get from "unknown" to "SomeInterfaceType" without "any"?](https://www.reddit.com/r/typescript/comments/j17c1h/typesafe_future_proof_way_to_get_from_unknown_to/)
 - url: https://www.reddit.com/r/typescript/comments/j17c1h/typesafe_future_proof_way_to_get_from_unknown_to/
 ---
 Is there a way to build functions with the signature of either `isSomeInterface(x:unknown):x is SomeInterface` or `assertSomeInterface(x:unknown):asserts x is SomeInterface` in a way that doesn't use `any`, and will break if I add a property to `SomeInterface` without changing the type guard?
@@ -123,7 +129,7 @@ Is there a way to build functions with the signature of either `isSomeInterface(
 I want a series of refinements, by the end of which the compiler knows that `x is SomeInterface` and it can therefore let me know if a change happens to `SomeInterface` and that's no-longer knowable.
 
 Thoughts?
-## [6][Type for an instance of a class specifically?](https://www.reddit.com/r/typescript/comments/j1405d/type_for_an_instance_of_a_class_specifically/)
+## [7][Type for an instance of a class specifically?](https://www.reddit.com/r/typescript/comments/j1405d/type_for_an_instance_of_a_class_specifically/)
 - url: https://www.reddit.com/r/typescript/comments/j1405d/type_for_an_instance_of_a_class_specifically/
 ---
 In this example, is it possible to have \`printName\` only accept an instance of a Cat? Currently it also accepts objects matching the interface defined by Cat, which may lead to bugs down the road
@@ -153,11 +159,11 @@ This workaround enforces that usage
     }
 
 However, can this be checked at compile-time through a type instead?
-## [7][a7ul/esbuild-node-tsc Build your Typescript Node.js projects using blazing fast esbuild.](https://www.reddit.com/r/typescript/comments/j0myuc/a7ulesbuildnodetsc_build_your_typescript_nodejs/)
+## [8][a7ul/esbuild-node-tsc Build your Typescript Node.js projects using blazing fast esbuild.](https://www.reddit.com/r/typescript/comments/j0myuc/a7ulesbuildnodetsc_build_your_typescript_nodejs/)
 - url: https://github.com/a7ul/esbuild-node-tsc
 ---
 
-## [8][How to extend this inferred type?](https://www.reddit.com/r/typescript/comments/j0v4et/how_to_extend_this_inferred_type/)
+## [9][How to extend this inferred type?](https://www.reddit.com/r/typescript/comments/j0v4et/how_to_extend_this_inferred_type/)
 - url: https://www.reddit.com/r/typescript/comments/j0v4et/how_to_extend_this_inferred_type/
 ---
 Inside the if statement towards the bottom, I notice i am getting a lint on a type that seems to be inferred:
@@ -181,7 +187,7 @@ Inside the if statement towards the bottom, I notice i am getting a lint on a ty
     */
 
 I tried various syntaxes for annotating and asserting an extended type that includes the `body` key but came up short. Can someone tell me how to properly type this to allow the new key `body`?
-## [9][Optional property input into an optional parameter](https://www.reddit.com/r/typescript/comments/j0z2c7/optional_property_input_into_an_optional_parameter/)
+## [10][Optional property input into an optional parameter](https://www.reddit.com/r/typescript/comments/j0z2c7/optional_property_input_into_an_optional_parameter/)
 - url: https://www.reddit.com/r/typescript/comments/j0z2c7/optional_property_input_into_an_optional_parameter/
 ---
 The method buildEndpointUrl has an optional 2nd argument for queryParams. 
@@ -198,11 +204,7 @@ So is a property always assumed optional if the parameter is defined as optional
     private buildEndpointUrl
       &lt;QueryParamsShape extends { [idx: string]: string | string[] }&gt;(
         urlPath: string, queryParams?: QueryParamsShape
-## [10][memoized-node-fetch: A wrapper around node-fetch (or any other fetch-like function) that returns a single promise until it resolves.](https://www.reddit.com/r/typescript/comments/j0ovcx/memoizednodefetch_a_wrapper_around_nodefetch_or/)
+## [11][memoized-node-fetch: A wrapper around node-fetch (or any other fetch-like function) that returns a single promise until it resolves.](https://www.reddit.com/r/typescript/comments/j0ovcx/memoizednodefetch_a_wrapper_around_nodefetch_or/)
 - url: https://github.com/chrispanag/memoized-node-fetch
----
-
-## [11][Accessing Available Devices in Browser via getUserMedia()](https://www.reddit.com/r/typescript/comments/j0u25u/accessing_available_devices_in_browser_via/)
-- url: https://hashnode.blainegarrett.com/accessing-available-devices-in-browser-via-getusermedia-ckfk1bwx800d96cs1fhtcdwee
 ---
 

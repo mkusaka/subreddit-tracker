@@ -56,55 +56,117 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q2 2020](https://www.reddit.com/r/cpp/comments/ft77lv/c_jobs_q2_2020/)
-## [2][C++ Standards Committee Fireside Chat Hosted by Herb Sutter - CppCon 2020](https://www.reddit.com/r/cpp/comments/j15bn9/c_standards_committee_fireside_chat_hosted_by/)
-- url: https://youtu.be/lil4xfpmnF4
+## [2][Bjarne Stroustrup: The Beauty and Power of "Primitive" C++](https://www.reddit.com/r/cpp/comments/j1x14e/bjarne_stroustrup_the_beauty_and_power_of/)
+- url: https://www.youtube.com/watch?v=ERzENfQ51Ck
 ---
 
-## [3][I made a tutorial on how to use the Eigen C++ library for ML!](https://www.reddit.com/r/cpp/comments/j16m4n/i_made_a_tutorial_on_how_to_use_the_eigen_c/)
-- url: https://www.reddit.com/r/cpp/comments/j16m4n/i_made_a_tutorial_on_how_to_use_the_eigen_c/
+## [3][c++20 coroutines, opinions?](https://www.reddit.com/r/cpp/comments/j1xhgv/c20_coroutines_opinions/)
+- url: https://www.reddit.com/r/cpp/comments/j1xhgv/c20_coroutines_opinions/
 ---
-I am making a series of videos about ML with C++ and I just launched the first one which shows how to use Eigen to build and ETL and Linear Regression model, it compares at the end with the performance of the Scikit-Learn python module for Linear Regression.
+Fundamentally this post is asking peoples opinion about the new C++ coroutines. Especially when it comes to application on embedded systems. 
+And, when compared to the alternatives, such as Rusts async / await.
 
-let me know what you think: [https://youtu.be/jKtbNvCT8Dc](https://youtu.be/jKtbNvCT8Dc)
-## [4][How to Pass a Variadic Pack as the First Argument of a Function in C++](https://www.reddit.com/r/cpp/comments/j17or9/how_to_pass_a_variadic_pack_as_the_first_argument/)
-- url: https://www.bfilipek.com/2020/09/variadic-pack-first.html
+---
+Please respond with your opinion and experiences before reading on.
+
+---
+The potential of these things conceptually is enormous. When I heard about the proposal I was extremely excited. My first tests also indicated really good things for embedded systems. The size of various coroutine handles was light enough to push into a queue from within a hardware interrupt!!! (where resume could be called). This could truly be game changing for embedded systems.
+
+My experience started with real optimism! Imagine being able to handle DMA memory loading just like this:
+```CPP
+auto page = co_await memory.LoadPage(address);  
+```  
+Or to be able to wait on a button press like this:
+```CPP
+co_await button.ShortPress();
+```
+Or with mqtt connections:
+```CPP
+co_await mqtt.Subscribe(...);
+```
+
+This could lead to really easy to analyze code and virtually branch-less logic(sort of) in many cases. 
+
+But when using them I came across dark sides. Allocation of the frames with sizes of hundreds of bytes meant that it was no longer feasible to use them for interrupt handling. This is on an embedded system where allocations are often simply intolerable. 
+
+Interrupts occur when anything completes. There are a lot of these things though. If there were one co-routine frame for each (worst case), the cumulative allocated frame size is totally and utterly unacceptable.
+
+I contacted Gor, who did the co-routine proposal. He kindly got back to me with a detailed example that showed HALO occurring, it occurred on all nested calls coroutines but there was always at least 1 allocation for first coroutine frame.
+
+It seems like there is a disconnect between the communities excitement for this feature and my experiences. It feels unending, each day I try to figure this out, but each day I come up short. I'm hoping enough people agree with me that they are intolerable and we can get some improvements in the standard. Or someone can tell me why I'm wrong.
+## [4][Draft proposal for compilation using C++ as build language](https://www.reddit.com/r/cpp/comments/j1ebld/draft_proposal_for_compilation_using_c_as_build/)
+- url: https://www.reddit.com/r/cpp/comments/j1ebld/draft_proposal_for_compilation_using_c_as_build/
+---
+Hello,  
+
+
+There are multiple tools to compile a C++ project: CMake, premake, autoconf, build2, etc.  
+Each  of these tools require the learning of a new syntax, and interacting  between projects compiled with differents tools might be challenging.
+
+Package managers face also this problem, because they must support all the tools that exist to support all libraries.  
+Moreover, integrating package managers in the build tools is often difficult, or at least hacky.
+
+My suggestion is to use C++ as the base language for building C++ projects.  
+Motivations are:
+
+\- A C++ compiler is all you need to compile projects.
+
+\- Build tools would become C++ libraries.
+
+\- C++ developers already now its syntax.  
+I have made an informal draft which describes a basic API which would make this possible.  
+Here is a link: [https://gist.github.com/J-Vernay/bd8ec49374987c628d02601ef85cd9a7](https://gist.github.com/J-Vernay/bd8ec49374987c628d02601ef85cd9a7)  
+
+
+Let me know what you think :)
+## [5][Adding Ask me Anything to Meeting C++ 2020](https://www.reddit.com/r/cpp/comments/j1weqh/adding_ask_me_anything_to_meeting_c_2020/)
+- url: https://meetingcpp.com/meetingcpp/news/items/Adding-Ask-me-Anything-to-Meeting-Cpp-2020.html
 ---
 
-## [5][Kris van Rens will talk about "Understanding value categories in C++" next Monday, October 5th](https://www.reddit.com/r/cpp/comments/j19pqw/kris_van_rens_will_talk_about_understanding_value/)
-- url: https://www.reddit.com/r/cpp/comments/j19pqw/kris_van_rens_will_talk_about_understanding_value/
+## [6][cmake rants, anyone?](https://www.reddit.com/r/cpp/comments/j1yxwf/cmake_rants_anyone/)
+- url: https://www.reddit.com/r/cpp/comments/j1yxwf/cmake_rants_anyone/
 ---
-Hi Everyone,
+CMake is definitely the best tool available for building on different platforms. However, I think it has a lot of shortcomings and we need something better. I am trying to gather a list of problems with cmake so that they can be kept in mind when creating an alternative. I have worked on cmake for 2 years only, so I'm looking to hear from more experienced folks on the sort of problems they face.
 
-CPPDUG, the Dublin C/C++ Meetup Group, will organise an online talk on "Understanding value categories in C++" by Kris van Rens next Monday, October 5th.
+I'll start by enlisting my complaints :
 
-If the topic is of interest to you, please RSVP here: [https://www.meetup.com/cppdug/events/273427973/](https://www.meetup.com/cppdug/events/273427973/)
+  - Inconsistencies/ too much overloading in the syntax. Functions can have a mind boggling number of arguments which makes it dificult to understand.
 
-Note: A link to the Zoom meeting will be posted on the meetup page before the event date.
-## [6][The fickle aggregate: how the definition of what is an aggregate class has changed through various standard versions (C++11 through C++20), and how these rules can have somewhat surprising consequences.](https://www.reddit.com/r/cpp/comments/j1bhgg/the_fickle_aggregate_how_the_definition_of_what/)
+  - Does not enforce much structure, which means cmake files of different projects can be written in very different ways, which makes difficult to understand quickly.
+
+  - Hard to debug
+
+Anything else?
+## [7][Do you have any side projects made with C++? Do any of them earn you income?](https://www.reddit.com/r/cpp/comments/j1q36h/do_you_have_any_side_projects_made_with_c_do_any/)
+- url: https://www.reddit.com/r/cpp/comments/j1q36h/do_you_have_any_side_projects_made_with_c_do_any/
+---
+Do any of you C++ devs have any side projects that bring you any income? Yes, yes, a job is the main way most make income. I thoght it might be a little more interesting to ask this question here. Please feel free to share. Thanks.
+## [8][Guide: "A modern, open source C++ dev environment with Visual Studio Code, vcpkg, and CMake"](https://www.reddit.com/r/cpp/comments/j1dh9w/guide_a_modern_open_source_c_dev_environment_with/)
+- url: https://www.reddit.com/r/cpp/comments/j1dh9w/guide_a_modern_open_source_c_dev_environment_with/
+---
+Hi there,
+
+Almost exactly one week ago [this post](https://www.reddit.com/r/cpp/comments/ix9n1u/why_is_it_such_an_abysmal_pain_to_use_libraries/) has been posted on /r/cpp by someone who was asking why it is such a pain to use libraries in C++ compared to other languages. From there started a number of enthusiastic discussions in the comments regarding existing solutions to deal with libraries, people sharing their personal opinions and feeling, their experience, etc.
+
+Reading the previous post and discussion motivated me to spend some time with both `vcpkg` and `CMake`, try to integrate as much as I could in Visual Studio Code (because that's my editor and general dev environment), and write down my notes during that process (for my future self and potentially others).
+
+The result is a guide "A modern, open source C++ dev environment with Visual Studio Code, vcpkg, and CMake" that I published just a few minutes ago on my personal blog: https://sam.elborai.me/blog/vscode-cpp-dev-environment-2020.
+
+I am neither a CMake, nor vcpkg, nor C++ expert but I think that can help some people navigate in the vast sea of C++ tooling. And because folks here are actually experts in these domains, I would be interested to get your feedback ✨.
+
+In any case I had some fun and learned new things :)
+## [9][The fickle aggregate: how the definition of what is an aggregate class has changed through various standard versions (C++11 through C++20), and how these rules can have somewhat surprising consequences.](https://www.reddit.com/r/cpp/comments/j1bhgg/the_fickle_aggregate_how_the_definition_of_what/)
 - url: https://dfrib.github.io/the-fickle-aggregate/
 ---
 
-## [7][controlling template argument deduction via dont_deduce&lt;T&gt;](https://www.reddit.com/r/cpp/comments/j0pgxh/controlling_template_argument_deduction_via_dont/)
-- url: https://artificial-mind.net/blog/2020/09/26/dont-deduce
+## [10][Snippet for Pattern Support in Switch Statements](https://www.reddit.com/r/cpp/comments/j1pa4i/snippet_for_pattern_support_in_switch_statements/)
+- url: https://www.reddit.com/r/cpp/comments/j1pa4i/snippet_for_pattern_support_in_switch_statements/
 ---
+This is a pretty trivial 5 minute example of a switch case with regex support.  
+[https://godbolt.org/z/6exWWT](https://godbolt.org/z/6exWWT)
 
-## [8][TorchRayLib++: A RayLib based UI for the Libtorch C++ Deep Learning Library.](https://www.reddit.com/r/cpp/comments/j0uvv6/torchraylib_a_raylib_based_ui_for_the_libtorch_c/)
-- url: /r/pytorch/comments/j0at3h/torchraylib_a_raylib_based_ui_for_the_libtorch_c/
----
-
-## [9][Add fuzzing to existing C++ Google Tests](https://www.reddit.com/r/cpp/comments/j0v7y6/add_fuzzing_to_existing_c_google_tests/)
-- url: https://www.reddit.com/r/cpp/comments/j0v7y6/add_fuzzing_to_existing_c_google_tests/
----
-I  have a set of C++ tests written using GoogleTest. Is it possible to add fuzzing (e.g. libfuzzer) to that set of existing google-tests? 
-
-Thank you,
-
-jas
-## [10][Check out my performance on Corehard C++ at Minsk (eng. subs)](https://www.reddit.com/r/cpp/comments/j0u70m/check_out_my_performance_on_corehard_c_at_minsk/)
-- url: https://www.reddit.com/r/cpp/comments/j0u70m/check_out_my_performance_on_corehard_c_at_minsk/
----
-[https://www.youtube.com/watch?v=ngsilquWgpo](https://www.youtube.com/watch?v=ngsilquWgpo)
-## [11][lunasvg v1.3.0 released. Text element is now supported.](https://www.reddit.com/r/cpp/comments/j0j2qg/lunasvg_v130_released_text_element_is_now/)
-- url: https://github.com/sammycage/lunasvg/releases/tag/v1.3.0
+Hope people can use this to neaten up code a little. Its only fractionally neater than raw regexes and isn't as neat as rust enums (what I'm looking to reproduce).
+## [11][What is the standard Library?](https://www.reddit.com/r/cpp/comments/j1e8i5/what_is_the_standard_library/)
+- url: https://cor3ntin.github.io/posts/std/
 ---
 

@@ -85,85 +85,47 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][[AskJS] NextJs and SSR, should you bother?](https://www.reddit.com/r/javascript/comments/j19cep/askjs_nextjs_and_ssr_should_you_bother/)
+## [3][How to use Socket.IO and build your first multiplayer game!](https://www.reddit.com/r/javascript/comments/j1ucn0/how_to_use_socketio_and_build_your_first/)
+- url: https://dev.to/denislav__/how-to-use-socket-io-not-the-chat-3l21
+---
+
+## [4][Elsa is a minimal, fast and secure runtime for Javascript and Typescript written in Go.](https://www.reddit.com/r/javascript/comments/j1k0qc/elsa_is_a_minimal_fast_and_secure_runtime_for/)
+- url: https://github.com/elsaland/elsa
+---
+
+## [5][Who needs Javascript symbols?](https://www.reddit.com/r/javascript/comments/j1tgh0/who_needs_javascript_symbols/)
+- url: https://dev.to/shadowwarior5/who-needs-javascript-symbols-4g6l
+---
+
+## [6][How to create a musical instrument using Computer Vision in JavaScript](https://www.reddit.com/r/javascript/comments/j1va53/how_to_create_a_musical_instrument_using_computer/)
+- url: https://medium.com/jit-team/how-to-create-a-musical-instrument-with-no-notes-using-javascript-ec6a83333aa4
+---
+
+## [7][I'm not sure what I thought when I started this project. So far, 18 modules and counting...](https://www.reddit.com/r/javascript/comments/j1glnc/im_not_sure_what_i_thought_when_i_started_this/)
+- url: https://github.com/fonoster/fonos
+---
+
+## [8][Automating email verification for online accounts using JavaScript](https://www.reddit.com/r/javascript/comments/j1ymfl/automating_email_verification_for_online_accounts/)
+- url: https://dev.to/markwitt_me/automating-email-verification-for-online-accounts-using-javascript-bhp
+---
+
+## [9][[AskJS] Beginners repo](https://www.reddit.com/r/javascript/comments/j1xicm/askjs_beginners_repo/)
+- url: https://www.reddit.com/r/javascript/comments/j1xicm/askjs_beginners_repo/
+---
+Hey, I want to contribute to open-source but I'm not sure where to start, does anyone know a good repo for beginners that uses either React or Node?
+
+I've found some but most of them either have very few issues or some issues that require a really big knowledge on their codebase.
+
+Thanks in advance :)
+## [10][ReactJs Animation: Create login/register form with react-spring animation](https://www.reddit.com/r/javascript/comments/j1cd2d/reactjs_animation_create_loginregister_form_with/)
+- url: https://dev.to/keefdrive/reactjs-animation-create-login-register-form-with-react-spring-animation-3ekh
+---
+
+## [11][[AskJS] NextJs and SSR, should you bother?](https://www.reddit.com/r/javascript/comments/j19cep/askjs_nextjs_and_ssr_should_you_bother/)
 - url: https://www.reddit.com/r/javascript/comments/j19cep/askjs_nextjs_and_ssr_should_you_bother/
 ---
 So I see a lot of hype for ssr and nextjs these days, and I was thinking of learning it, but after some research I actually think it is not worth it. It is such a small element of oridinary web development life, I think just learning plain React SSR will be more beneficial. Also google updated chromium last year to latest version to support latest JS indexing, so SEO is not that big of a deal. So, unless you are creating a blog or bad network app, should you bother to invest time in NextJS and SSR?
-## [4][Stripe checkout setup and integration](https://www.reddit.com/r/javascript/comments/j17wvz/stripe_checkout_setup_and_integration/)
-- url: https://dev.to/antho1404/stripe-checkout-setup-and-integration-33ic
+## [12][[AskJS] Help with a script for a mobile game!](https://www.reddit.com/r/javascript/comments/j1trj5/askjs_help_with_a_script_for_a_mobile_game/)
+- url: https://www.reddit.com/r/javascript/comments/j1trj5/askjs_help_with_a_script_for_a_mobile_game/
 ---
-
-## [5][5 TILs about Node.js Fundamentals from the Node.js Design Patterns Book](https://www.reddit.com/r/javascript/comments/j0rps1/5_tils_about_nodejs_fundamentals_from_the_nodejs/)
-- url: https://dev.to/swyx/5-tils-about-node-js-fundamentals-from-the-node-js-design-patterns-book-4dh2
----
-
-## [6][I've turned the old "Hey Jude" flowchart to interactive. There's 3 modes: Free Mode, Game Mode, and Record Mode. You can use keyboard shortcuts.](https://www.reddit.com/r/javascript/comments/j0z7uk/ive_turned_the_old_hey_jude_flowchart_to/)
-- url: http://nooapodcast.co.il/heyjude/
----
-
-## [7][[AskJS] Detecting if user or robot to send PWA or SSR content](https://www.reddit.com/r/javascript/comments/j1bb66/askjs_detecting_if_user_or_robot_to_send_pwa_or/)
-- url: https://www.reddit.com/r/javascript/comments/j1bb66/askjs_detecting_if_user_or_robot_to_send_pwa_or/
----
-Hi,
-
-Someone asked a question on google adsense where he wrote that he would detect if a user or a robot is making a request to his server and would respond with ssr or the pwa accordingly, which would allow him to benefit from both good SEO, monetization and more while also giving the users the advantages of a PWA.
-
-I was wondering how is it possible to detect user or robot, and also about the down sides and other upsides of doing this.
-
-Would love to hear your thoughts
-## [8][[AskJS] Why does adding a list of files to an array using fs.readdir in Node returns an empty array?](https://www.reddit.com/r/javascript/comments/j19k6n/askjs_why_does_adding_a_list_of_files_to_an_array/)
-- url: https://www.reddit.com/r/javascript/comments/j19k6n/askjs_why_does_adding_a_list_of_files_to_an_array/
----
-I'm trying to scan a directory for images and return the image names in an array using the following code. Unfortunately, all I get back is an empty array. I've also tried the readdirSync method but it gives back the same result.
-
-    module.exports.getImageFiles = function () {
-    const path = require("path");
-    const fs = require("fs");
-    const directoryPath = path.join(__dirname, "/../assets/");
-    console.log("this has run!");
-
-    var images = [];
-
-    fs.readdir(directoryPath, function (err, files) {
-        if (err) {
-            return console.log("Unable to scan directory: " + err);
-        }
-        for (let i = 0; i &lt; files.length; i++) {
-            images.push(files[
-        }
-    });
-
-    return images;
-    };
-
-
-Edit: Nevermind, I realised I was using readdirSync incorrectly. Here is what worked for me:
-
-`
-    const path = require("path");
-    const fs = require("fs");
-    const directoryPath = path.join(__dirname, "/../assets/");
-    const images = fs.readdirSync(directoryPath);
-    var imgArray = [];
-    for (let i in images) {
-        imgArray.push(images[i]);
-        // console.log(images[i]);
-    }
-    return imgArray;
-`
-## [9][next-page-tester - The missing DOM integration testing tool for Next.js](https://www.reddit.com/r/javascript/comments/j0ybal/nextpagetester_the_missing_dom_integration/)
-- url: https://dev.to/toomuchdesign/dom-testing-next-js-applications-46ke
----
-
-## [10][Split View - an image comparison web component in vanilla JS](https://www.reddit.com/r/javascript/comments/j0nuwn/split_view_an_image_comparison_web_component_in/)
-- url: https://codepen.io/onion2k/pen/dyMaBKO
----
-
-## [11][Web Push: how it looks - how to use it - why we want it, and what you want to know @dev.to](https://www.reddit.com/r/javascript/comments/j12c8r/web_push_how_it_looks_how_to_use_it_why_we_want/)
-- url: https://dev.to/tobiasnickel/what-you-want-to-know-about-web-push-1c0h
----
-
-## [12][Chord Solver - My first website, solves for music chords if you give it notes. If you all have tips for making it more mobile friendly, I’d love to hear it! Thank you!](https://www.reddit.com/r/javascript/comments/j0h568/chord_solver_my_first_website_solves_for_music/)
-- url: https://chordsolver.com
----
-
+So i’ve been looking all over Reddit, Google and even Fiverr to pay someone to do this for me. Basically, I want to write a script for a mobile game called “King of Thieves” which is centered around stealing gems from peoples bases which you find in matchmaking. These gems come in different tiers the highest being a golden color. I’m trying to make a script that will skip  bases repeatedly if the specific gold gem isn’t found on screen and if it is, it will alert me. So far i’ve only got my script to press the skip button once :(

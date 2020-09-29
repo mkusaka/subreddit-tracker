@@ -111,111 +111,88 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][Is Firebase better than Express + MongoDB](https://www.reddit.com/r/reactjs/comments/j1adu9/is_firebase_better_than_express_mongodb/)
+## [3][First React project -- COVID-19 Testing Location Finder](https://www.reddit.com/r/reactjs/comments/j1m0gc/first_react_project_covid19_testing_location/)
+- url: https://v.redd.it/9vtr1qaynyp51
+---
+
+## [4][ByteDance open-sourced IconPark on GitHub - Transform an SVG icon into multiple themes, and generate React icons, Vue icons, SVG icons. IconPark gives access to more than 1,200 high-quality icons and introduces an interface for customizing your icons.](https://www.reddit.com/r/reactjs/comments/j1kgk3/bytedance_opensourced_iconpark_on_github/)
+- url: https://github.com/bytedance/IconPark
+---
+
+## [5][Is Firebase better than Express + MongoDB](https://www.reddit.com/r/reactjs/comments/j1adu9/is_firebase_better_than_express_mongodb/)
 - url: https://www.reddit.com/r/reactjs/comments/j1adu9/is_firebase_better_than_express_mongodb/
 ---
 I mainly do MERN work but recently for my personal projects realized I got tired of repeating redundant code for a simple rest api. I researched Firebase and it seems to be a really good alternative, with built in authentication and real-time database. I’ve also heard people disliking it, if so why? Is it a good alternative after all?
-## [4][Best Beginners React.js Projects](https://www.reddit.com/r/reactjs/comments/j186hy/best_beginners_reactjs_projects/)
-- url: https://www.reddit.com/r/reactjs/comments/j186hy/best_beginners_reactjs_projects/
+## [6][New open-sourced Firestore CMS](https://www.reddit.com/r/reactjs/comments/j1z7uj/new_opensourced_firestore_cms/)
+- url: https://www.reddit.com/r/reactjs/comments/j1z7uj/new_opensourced_firestore_cms/
 ---
- 
+Hi everyone,
 
-Building [React.js projects for beginners](https://codersera.com/blog/reactjs-projects-for-beginners/) will not only allow you to strengthen up React skills but also will help you explore your creative sides as a developer. Also, it will make you familiar with **React developer tools** and react ecosystem for each project as per the need for that project.
-
-React project development is a self-directed process. You’ll have to learn on a trial and error basis. Unlike the basics of React via online learning materials, there’ll not be much to guide you on building React projects.
-
-But still, there is numerous content online that teaches the basic core steps of app development, along with the source code. 
-
-As a beginner, React.js project development may seem challenging, but one can simplify the whole process by breaking down an application into smaller components. Try to focus on building one feature at a time, and keep connecting the dots as you move forward into the intricacies of development.
-
-As you continue to practice with different React tools and ecosystems, you will understand the common patterns of app development and start identifying which tools work best for developing specific features of a React app. 
-
- By now you must be clear on requirements for building React apps. Let’s start learning about a few of the best **React.JS projects for beginners** list- 
-
- 
-
-# React.js Projects for Beginners
+We’ve created a new headless CMS for Firestore using React and Express. We call it Prometheus!
 
 &amp;#x200B;
 
-* E-Commerce Apps 
-* Calculator
-*  Weather App
-*  Messaging App
-* Simple CRM
-* Social Media App
-* To Do App
-* Search &amp; Filtering
-* Blog
-* Productivity App
-## [5][Completed my portfolio website with react and react-spring for animations (link in the comments)](https://www.reddit.com/r/reactjs/comments/j0qeau/completed_my_portfolio_website_with_react_and/)
-- url: https://v.redd.it/ulixcsgbmop51
+https://reddit.com/link/j1z7uj/video/ttmxarjc93q51/player
+
+This was originally created to be our template CMS for the Firestore database, but we have decided that we will gradually add more database support as our needs increase. We would greatly appreciate it if you gave it a try for your next Firestore project!
+
+website: [https://prometheuscms.com/](https://prometheuscms.com/)
+
+demo: [https://demo.prometheuscms.com/](https://demo.prometheuscms.com/)
+
+github: [https://github.com/aeon-software/prometheus](https://github.com/aeon-software/prometheus)
+## [7][[HIRING] Any senior Ruby + React Full-Stack Engineers around Bangalore / okay to relocate to Bangalore?](https://www.reddit.com/r/reactjs/comments/j1y6cz/hiring_any_senior_ruby_react_fullstack_engineers/)
+- url: https://www.reddit.com/r/reactjs/comments/j1y6cz/hiring_any_senior_ruby_react_fullstack_engineers/
+---
+Would love to have a chat. DM.  
+CTC is good at around 40 LPA.
+## [8][You folks upvoted my comment so much I expanded on it and turned it into a full blog post – “The Red Flags on Your Resume”](https://www.reddit.com/r/reactjs/comments/j1d9px/you_folks_upvoted_my_comment_so_much_i_expanded/)
+- url: https://danicfilip.com/2020/red-flags-on-your-resume/
 ---
 
-## [6][I built a library for creating animated layers](https://www.reddit.com/r/reactjs/comments/j1agc1/i_built_a_library_for_creating_animated_layers/)
-- url: https://v.redd.it/x8nvmcjllvp51
+## [9][The Definitive Guide to Commonly Used Words in React](https://www.reddit.com/r/reactjs/comments/j1y5rp/the_definitive_guide_to_commonly_used_words_in/)
+- url: https://maxrozen.com/definitive-glossary-guide-commonly-used-words-react/
 ---
 
-## [7][MaterialUI introduces DataGrid... and a "paid" model?!](https://www.reddit.com/r/reactjs/comments/j19faf/materialui_introduces_datagrid_and_a_paid_model/)
-- url: https://www.reddit.com/r/reactjs/comments/j19faf/materialui_introduces_datagrid_and_a_paid_model/
+## [10][Looking for OS projects to contribute](https://www.reddit.com/r/reactjs/comments/j1y0o0/looking_for_os_projects_to_contribute/)
+- url: https://www.reddit.com/r/reactjs/comments/j1y0o0/looking_for_os_projects_to_contribute/
 ---
-Just reading through the changelog for the latest alpha release of Material UI;
+Hi.
 
-[https://github.com/mui-org/material-ui/releases/tag/v5.0.0-alpha.11](https://github.com/mui-org/material-ui/releases/tag/v5.0.0-alpha.11)
+I've been mostly freelancing so far. I'm looking for open source projects to contribute to. I heard it's a decent way to experience working in a team before I move to a regular job.
 
 &amp;#x200B;
 
-&gt;"It has taken 6 months of development since the initial commit (March 15th, 2020) to make the first alpha release of the grid. The component comes in two versions:  
-material-ui/data-grid is licensed under MIT, while material-ui/x-grid is licensed under a commercial license."
-
-The docs for the new component are here;
-
-[https://material-ui.com/components/data-grid/](https://material-ui.com/components/data-grid/)
-
-This is obviously great news seeing as one of the criticisms often levelled at MaterialUI is that it isn't always easy to build data heavy UIs... but I am a little concerned about the new "paid" model for the X-range of components/component features;
-
-[https://material-ui.com/store/items/material-ui-x/](https://material-ui.com/store/items/material-ui-x/)
-
-Some of the features locked behind the paywall are pretty fundamental - I don't know how other people feel about this and I know that these guys have to make their money somehow, but with so many great alternative data grids out there (react-virtualized for example) I don't see how anyone would entertain paying this much money just to use the material UI native version :/
-## [8][The React Cheatsheet for 2020 📄‬ (+ real-world examples)](https://www.reddit.com/r/reactjs/comments/j0oewq/the_react_cheatsheet_for_2020_realworld_examples/)
-- url: https://dev.to/codeartistryio/the-react-cheatsheet-for-2020-real-world-examples-4hgg
+Is there anything you could suggest me? Ideally, I'd like to work on the website itself, rather than some React-related libraries.
+## [11][How to update refresh token after it expires](https://www.reddit.com/r/reactjs/comments/j1xn9d/how_to_update_refresh_token_after_it_expires/)
+- url: https://www.reddit.com/r/reactjs/comments/j1xn9d/how_to_update_refresh_token_after_it_expires/
 ---
+I'm using Cognito for my user authentication and Apollo for fetching the user information from the server.
 
-## [9][First steps with Next.js -- Delightful React (Tutorial)](https://www.reddit.com/r/reactjs/comments/j176pr/first_steps_with_nextjs_delightful_react_tutorial/)
-- url: https://blog.imbhargav5.com/chapter-2-first-steps-with-nextjs-or-delightful-react
+The problem is I set the Apollo client header at App.js on ComponentDidMount and after one hour token expires when any query or mutation request sends from the client, the server throws token expires.
+
+How to update the token?
+
+Thanks in advance
+## [12][Having an issue with making an image respond.......](https://www.reddit.com/r/reactjs/comments/j1xikf/having_an_issue_with_making_an_image_respond/)
+- url: https://www.reddit.com/r/reactjs/comments/j1xikf/having_an_issue_with_making_an_image_respond/
 ---
+I am trying to build the Airbnb website to get experience.  I am having an issue with pictures stacking on top of each other.  I am trying to figure out how to directly access them. I have 2 files I imported to the Home file. This is my layout:
 
-## [10][Animated SPA using React.js](https://www.reddit.com/r/reactjs/comments/j1bqzq/animated_spa_using_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/j1bqzq/animated_spa_using_reactjs/
----
-Hey guys. Recently, I started making SPA with hard animation for me. It's not completed yet, check this out! Links in comments.
+function Home() {
 
-https://reddit.com/link/j1bqzq/video/nrib27zf1wp51/player
-## [11][How does react render images ?](https://www.reddit.com/r/reactjs/comments/j1blip/how_does_react_render_images/)
-- url: https://www.reddit.com/r/reactjs/comments/j1blip/how_does_react_render_images/
----
-Let's say I have two components with different routes, which both have images in them from url source. 
+&lt;div className="home"&gt;
 
-My question is, when loading of the image happens? At the moment when I'm going to a specific route/component which has the image, or at first render of the app everywhere?
+  &lt;Banner /&gt;  // imported file
 
-Are there some ways to prevent defaults or some best practices, lazy loading maybe? 
+   &lt;div className="home\_\_section"&gt;
 
-I'm having some problem with an image from non-home page route, which sometimes is not loading(and sometimes it loads) and can't figure out why.
+&lt;Card      // 2nd imported file
 
-Thanks
-## [12][Best practice for back button handling, URL changing, etc. in React?](https://www.reddit.com/r/reactjs/comments/j1bkvg/best_practice_for_back_button_handling_url/)
-- url: https://www.reddit.com/r/reactjs/comments/j1bkvg/best_practice_for_back_button_handling_url/
----
-Feel free to point me to an article or tutorial, but none of the tutorials I've used seem to cover this really.
+src=
 
-I never quite know how to handle 'going back', or really even the best way to go forward in a React app.
+title=
 
-Right now I'm working on kind of a questionnaire. There's a question on each screen. You choose your answer and click "next". Or you just click 'next' if it's just a screen with some info.
+&amp;#x200B;
 
-In the past, I've just stored the answer in global state and done window.setLocation, which seems wrong since that will reload the page. Otherwise I've done conditional rendering based on which questions they've answered, but that really screws with the back button. 
-
-What is the proper way to do this? Make the 'next' button a Link to="/pagetwo" or something? and deactivate the button until they give an answer?
-
-I've seen things like history.push, but it never got mentioned in the things I learned. Is that what people do/what I should look into?
-
-Thanks
+I have a Header/Banner/Body/Footer along with 20 other files.  The Banner should be below the header and the Cards should display below the Banner, but they are stacking on top of each other. How do I directly access the Cards to force them to fall below the banner?

@@ -85,47 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][How to use Socket.IO and build your first multiplayer game!](https://www.reddit.com/r/javascript/comments/j1ucn0/how_to_use_socketio_and_build_your_first/)
+## [3][React 17 delegates events to root instead of document](https://www.reddit.com/r/javascript/comments/j2bi3w/react_17_delegates_events_to_root_instead_of/)
+- url: https://blog.bigbinary.com/2020/09/29/react-17-delegates-events-to-root-instead-of-document.html
+---
+
+## [4][Setting up a React.js project using Vite instead of Create React App](https://www.reddit.com/r/javascript/comments/j2kjq0/setting_up_a_reactjs_project_using_vite_instead/)
+- url: https://zaiste.net/posts/modern-lightweight-reactjs-setup-graphql-vite-urql/
+---
+
+## [5][Object Immutability In JavaScript](https://www.reddit.com/r/javascript/comments/j2knk3/object_immutability_in_javascript/)
+- url: https://dev.to/abdul_haseeb_/object-immutability-in-javascript-3ci2
+---
+
+## [6][code-executor: An npm library to run arbitrary code in isolated Docker containers](https://www.reddit.com/r/javascript/comments/j2kwp2/codeexecutor_an_npm_library_to_run_arbitrary_code/)
+- url: https://github.com/csivitu/code-executor
+---
+
+## [7][How to use Socket.IO and build your first multiplayer game!](https://www.reddit.com/r/javascript/comments/j1ucn0/how_to_use_socketio_and_build_your_first/)
 - url: https://dev.to/denislav__/how-to-use-socket-io-not-the-chat-3l21
 ---
 
-## [4][Elsa is a minimal, fast and secure runtime for Javascript and Typescript written in Go.](https://www.reddit.com/r/javascript/comments/j1k0qc/elsa_is_a_minimal_fast_and_secure_runtime_for/)
-- url: https://github.com/elsaland/elsa
+## [8][Headless Recorder - now supports Playwright next to Puppeteer](https://www.reddit.com/r/javascript/comments/j21spu/headless_recorder_now_supports_playwright_next_to/)
+- url: https://github.com/checkly/headless-recorder
 ---
 
-## [5][Who needs Javascript symbols?](https://www.reddit.com/r/javascript/comments/j1tgh0/who_needs_javascript_symbols/)
-- url: https://dev.to/shadowwarior5/who-needs-javascript-symbols-4g6l
+## [9][Javascript animation:Step by step guide on creating an animated login register form with javascript](https://www.reddit.com/r/javascript/comments/j2jgpr/javascript_animationstep_by_step_guide_on/)
+- url: https://dev.to/keefdrive/how-to-create-an-animated-login-register-web-page-with-html-css-and-javascript-1nc3
 ---
 
-## [6][How to create a musical instrument using Computer Vision in JavaScript](https://www.reddit.com/r/javascript/comments/j1va53/how_to_create_a_musical_instrument_using_computer/)
-- url: https://medium.com/jit-team/how-to-create-a-musical-instrument-with-no-notes-using-javascript-ec6a83333aa4
+## [10][ByteDance open-sourced IconPark on GitHub – Transform an SVG icon into multiple themes, and generate React icons, Vue icons, SVG icons. IconPark gives access to more than 1,200 high-quality icons and introduces an interface for customizing your icons.](https://www.reddit.com/r/javascript/comments/j216mr/bytedance_opensourced_iconpark_on_github/)
+- url: https://github.com/bytedance/IconPark
 ---
 
-## [7][I'm not sure what I thought when I started this project. So far, 18 modules and counting...](https://www.reddit.com/r/javascript/comments/j1glnc/im_not_sure_what_i_thought_when_i_started_this/)
-- url: https://github.com/fonoster/fonos
+## [11][You might not need date-fns](https://www.reddit.com/r/javascript/comments/j2hk5q/you_might_not_need_datefns/)
+- url: https://dev.to/dmtrkovalenko/you-might-not-need-date-fns-23f7
 ---
 
-## [8][Automating email verification for online accounts using JavaScript](https://www.reddit.com/r/javascript/comments/j1ymfl/automating_email_verification_for_online_accounts/)
-- url: https://dev.to/markwitt_me/automating-email-verification-for-online-accounts-using-javascript-bhp
+## [12][I created a Sound Cloud Terminal app! lmk what you guys think!](https://www.reddit.com/r/javascript/comments/j23d0t/i_created_a_sound_cloud_terminal_app_lmk_what_you/)
+- url: https://github.com/ethans333/soundcloudTerminal
 ---
 
-## [9][[AskJS] Beginners repo](https://www.reddit.com/r/javascript/comments/j1xicm/askjs_beginners_repo/)
-- url: https://www.reddit.com/r/javascript/comments/j1xicm/askjs_beginners_repo/
----
-Hey, I want to contribute to open-source but I'm not sure where to start, does anyone know a good repo for beginners that uses either React or Node?
-
-I've found some but most of them either have very few issues or some issues that require a really big knowledge on their codebase.
-
-Thanks in advance :)
-## [10][ReactJs Animation: Create login/register form with react-spring animation](https://www.reddit.com/r/javascript/comments/j1cd2d/reactjs_animation_create_loginregister_form_with/)
-- url: https://dev.to/keefdrive/reactjs-animation-create-login-register-form-with-react-spring-animation-3ekh
----
-
-## [11][[AskJS] NextJs and SSR, should you bother?](https://www.reddit.com/r/javascript/comments/j19cep/askjs_nextjs_and_ssr_should_you_bother/)
-- url: https://www.reddit.com/r/javascript/comments/j19cep/askjs_nextjs_and_ssr_should_you_bother/
----
-So I see a lot of hype for ssr and nextjs these days, and I was thinking of learning it, but after some research I actually think it is not worth it. It is such a small element of oridinary web development life, I think just learning plain React SSR will be more beneficial. Also google updated chromium last year to latest version to support latest JS indexing, so SEO is not that big of a deal. So, unless you are creating a blog or bad network app, should you bother to invest time in NextJS and SSR?
-## [12][[AskJS] Help with a script for a mobile game!](https://www.reddit.com/r/javascript/comments/j1trj5/askjs_help_with_a_script_for_a_mobile_game/)
-- url: https://www.reddit.com/r/javascript/comments/j1trj5/askjs_help_with_a_script_for_a_mobile_game/
----
-So i’ve been looking all over Reddit, Google and even Fiverr to pay someone to do this for me. Basically, I want to write a script for a mobile game called “King of Thieves” which is centered around stealing gems from peoples bases which you find in matchmaking. These gems come in different tiers the highest being a golden color. I’m trying to make a script that will skip  bases repeatedly if the specific gold gem isn’t found on screen and if it is, it will alert me. So far i’ve only got my script to press the skip button once :(

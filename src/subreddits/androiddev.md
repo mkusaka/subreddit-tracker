@@ -31,67 +31,65 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Android Starter Template (hilt, coroutines, flow, edge-to-edge, MVVM, tests, github CI)](https://www.reddit.com/r/androiddev/comments/j1wz3v/android_starter_template_hilt_coroutines_flow/)
+## [3][A categorized list of all Java and JVM features since JDK 8 to 15 (aka what Android is missing out)](https://www.reddit.com/r/androiddev/comments/j2gtmo/a_categorized_list_of_all_java_and_jvm_features/)
+- url: https://advancedweb.hu/a-categorized-list-of-all-java-and-jvm-features-since-jdk-8-to-15/
+---
+
+## [4][Face ID vs Fingerprint](https://www.reddit.com/r/androiddev/comments/j2j9eg/face_id_vs_fingerprint/)
+- url: https://www.reddit.com/r/androiddev/comments/j2j9eg/face_id_vs_fingerprint/
+---
+I'm using biometric prompt to authenticate users, the app is always using fingerprint, but I would like my users can choose between Face ID or Fingerprint. How can I get this if it's possible?
+## [5][Busting Android Performance Myths](https://www.reddit.com/r/androiddev/comments/j245b8/busting_android_performance_myths/)
+- url: https://medium.com/androiddevelopers/busting-android-performance-myths-d85ae1d87f22
+---
+
+## [6][Android Starter Template (hilt, coroutines, flow, edge-to-edge, MVVM, tests, github CI)](https://www.reddit.com/r/androiddev/comments/j1wz3v/android_starter_template_hilt_coroutines_flow/)
 - url: https://www.bloco.io/blog/2020/android-app-starter-update
 ---
 
-## [4][Each time a new version out](https://www.reddit.com/r/androiddev/comments/j1xouy/each_time_a_new_version_out/)
-- url: https://i.redd.it/5pel71jsr2q51.jpg
+## [7][What do you think of Jetpack Compose?](https://www.reddit.com/r/androiddev/comments/j2ip1l/what_do_you_think_of_jetpack_compose/)
+- url: https://www.reddit.com/r/androiddev/comments/j2ip1l/what_do_you_think_of_jetpack_compose/
+---
+I'm just starting to learn Jetpack Compose, so I'm quite inexperienced.  It's a completely different paradigm than the view system, so I guess you need some time to get used to it. But at first glance it seems pretty counterintuitive to me. I mean, to understand what's going on you have to trace all the flow of several composable functions, each one calling another one, sometimes all the way up to the ViewModel, with parameters (state and events) that are not immediately clear.
+
+It seems a big mess, but, as I said, I'm still quite inexperienced.
+
+What do you think?
+## [8][#3 Floating Windows on Android: Permissions](https://www.reddit.com/r/androiddev/comments/j2kb94/3_floating_windows_on_android_permissions/)
+- url: https://dev.to/localazy/3-floating-windows-on-android-permissions-256g
 ---
 
-## [5][Google says Android 12 will make using third-party app stores easier](https://www.reddit.com/r/androiddev/comments/j1pa8z/google_says_android_12_will_make_using_thirdparty/)
-- url: https://www.theverge.com/2020/9/28/21472139/google-android-12-app-store-installation-payment-fees
+## [9][Something I created in a uni course -- Spectrum - An easy to use frequency and amplitude spectrum analyzer with room frequency response capabilities!](https://www.reddit.com/r/androiddev/comments/j2g64b/something_i_created_in_a_uni_course_spectrum_an/)
+- url: https://github.com/berkiyo/spectrum
 ---
 
-## [6][Meet Code With Me (EAP) – a tool for collaborative development by JetBrains – JetBrains Blog](https://www.reddit.com/r/androiddev/comments/j1sxaq/meet_code_with_me_eap_a_tool_for_collaborative/)
-- url: https://blog.jetbrains.com/blog/2020/09/28/code-with-me-eap/
+## [10][Please give an example of Composition over Inheritance in regards to Android Development.](https://www.reddit.com/r/androiddev/comments/j23rad/please_give_an_example_of_composition_over/)
+- url: https://www.reddit.com/r/androiddev/comments/j23rad/please_give_an_example_of_composition_over/
 ---
 
-## [7][Developed an android library for easily adding spans. Finally used Compiler Design knowledge in Android. [https://github.com/hitanshu-dhawan/SpannableStringParser]](https://www.reddit.com/r/androiddev/comments/j1ejzz/developed_an_android_library_for_easily_adding/)
-- url: https://i.redd.it/8vucu4jbtwp51.png
+## [11][Super easy way to track competitor Play Store reviews - using Slack](https://www.reddit.com/r/androiddev/comments/j27rp4/super_easy_way_to_track_competitor_play_store/)
+- url: https://www.reddit.com/r/androiddev/comments/j27rp4/super_easy_way_to_track_competitor_play_store/
 ---
+Hey! I made a bot to track my app reviews in Slack, it has been really handy. Mostly it reminders me to reply to new play store reviews when they come in. but I also set up a slack channel that only populates with my competitors reviews and it has really helped me get a better picture of what my users want, mainly due to the fact I'm getting a high volume of reviews coming in. Even tho the reviews aren't for my app specifically, it helps paint a fuller picture of what my users are looking for, what they hate, and what they love. 
 
-## [8][What's the best/reliable way today to poll for location for every x minutes in the background?](https://www.reddit.com/r/androiddev/comments/j1xpgu/whats_the_bestreliable_way_today_to_poll_for/)
-- url: https://www.reddit.com/r/androiddev/comments/j1xpgu/whats_the_bestreliable_way_today_to_poll_for/
+I wrote a longer post on medium if you're interested. 
+
+https://medium.com/@info_84400/get-more-user-feedback-from-your-mobile-app-with-competitor-analysis-using-slack-3de35734c787
+## [12][OS UI language English but Different language voice input? Possible?](https://www.reddit.com/r/androiddev/comments/j2j4xs/os_ui_language_english_but_different_language/)
+- url: https://www.reddit.com/r/androiddev/comments/j2j4xs/os_ui_language_english_but_different_language/
 ---
+&amp;#x200B;
 
-## [9][Promote from beta to production with timed release impossible? Or am I doing smth wrong?](https://www.reddit.com/r/androiddev/comments/j1wfaj/promote_from_beta_to_production_with_timed/)
-- url: https://www.reddit.com/r/androiddev/comments/j1wfaj/promote_from_beta_to_production_with_timed/
----
-Hey all,
+There is a bug in android 10
 
-We have an app that has a production version and a version in the beta-channel.
+I want OS to be in English
 
-Our production entry at store-listing clearly states: "Timed release".
+but Voice Input in other language
 
-Whenever I promote the beta version to production it removes the timed release and immediately releases which causes us a lot of problems because the backend hasn't been released yet.
+but android os only recognizes voice input that matches os language
 
-Is there no way to promote from beta to production and retain the timed release :-(? Or am I missing something?
+for example when I launch google maps and press microphone
 
-Cheers
-## [10][What technologies are essential to know for a professional Android Dev?](https://www.reddit.com/r/androiddev/comments/j1tfxu/what_technologies_are_essential_to_know_for_a/)
-- url: https://www.reddit.com/r/androiddev/comments/j1tfxu/what_technologies_are_essential_to_know_for_a/
----
-Hello noob here, final year CS, I've been doing Android for the last few months if the Quarantine and I'm enjoying it so much that I may just decide to specialise in it for my career, so what do I need to know to work in the industry as a professional?
+I have to select OS Language to Russian in order to use microphone input in russian
 
-I know that one needs to know, Java/Kotlin, XML, how Android studio works, SQL for DB and Android architecture what else am I missing? I see a lot of buzzwords when I browse this sub. 
-
-Note that I'm not asking about all the things in Android dev i know it will impossible for a single person to know everything, just asking for the essential must-know stuff.
-## [11][Exclude certain Android versions](https://www.reddit.com/r/androiddev/comments/j1yx5g/exclude_certain_android_versions/)
-- url: https://www.reddit.com/r/androiddev/comments/j1yx5g/exclude_certain_android_versions/
----
-My app targets Android 11, just because I don't want Google Play to stop me from updating my app. But at the moment, the core function of my app is not working on Android 11.
-
-Is it possible to hide my app listing from Android 11 users so that they don't end up downloading my app and reviewing "it's not working". ?
-## [12][Restore dynamically added view state on orientation change](https://www.reddit.com/r/androiddev/comments/j1t9np/restore_dynamically_added_view_state_on/)
-- url: https://www.reddit.com/r/androiddev/comments/j1t9np/restore_dynamically_added_view_state_on/
----
-Im currently working with custom views which will be added to a layout dynamically. I understand how view states are safed and restored.
-
-According to the documentation, only views with an id will be persisted by the system. So the suggested solution is to use \`\`\`View.getViewId()\`\`\` in order to set an id to each dynamically added view.
-
-The problem is, that on orientation change, each view which gets an id via this method, will get a different id than before the orientation change happened. This prevents the view state from being restored since the ids don't match up.
-
-    Easiest setup to try this: Add an EditText programmatically to an activity, give it an id with ```View.generateViewId()``` then enter some text and rotate.
-
-Am I missing something? Is there no way to give ids to dynamically added views so that they restore themselves on orientation changes?
+how to fix?

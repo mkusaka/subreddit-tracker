@@ -111,88 +111,104 @@ Good luck! #WriteOnceApplyEverywhere
 [available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
 [hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
 [message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
-## [3][First React project -- COVID-19 Testing Location Finder](https://www.reddit.com/r/reactjs/comments/j1m0gc/first_react_project_covid19_testing_location/)
-- url: https://v.redd.it/9vtr1qaynyp51
+## [3][Here is how to access Kent Dodds' $359 Epic React course repositories](https://www.reddit.com/r/reactjs/comments/j2la5p/here_is_how_to_access_kent_dodds_359_epic_react/)
+- url: https://www.reddit.com/r/reactjs/comments/j2la5p/here_is_how_to_access_kent_dodds_359_epic_react/
+---
+For those looking, these are the repositories that are used for the EpicReact course (all the content is **OPEN SOURCE** 🚀)  
+\- https://github.com/kentcdodds/react-fundamentals
+
+\- https://github.com/kentcdodds/react-hooks
+
+\- https://github.com/kentcdodds/advanced-react-hooks
+
+\- https://github.com/kentcdodds/advanced-react-patterns
+
+\- https://github.com/kentcdodds/react-performance
+
+\- https://github.com/kentcdodds/testing-react-apps
+
+\- https://github.com/kentcdodds/react-suspense
+
+\- https://github.com/kentcdodds/bookshelf
+
+You can also watch the course tour here : https://www.youtube.com/watch?v=SDWxeGKX7Fs&amp;t=75s
+## [4][What's the difference between Kent Dodds' $359 Epic React course and $10 Udemy react course by popular instructors?](https://www.reddit.com/r/reactjs/comments/j2268y/whats_the_difference_between_kent_dodds_359_epic/)
+- url: https://www.reddit.com/r/reactjs/comments/j2268y/whats_the_difference_between_kent_dodds_359_epic/
+---
+I know Kent Dodds gained fame through javascript testing course, but even after 40% off $359 seems insanely expensive for 19 hours of video instructions compare to 30 hours of popular Udemy react course that you can get for $10 on sale. Has anybody taken his course before? What's your opinion of him? Anybody considering buying this course at current price?
+## [5][Learn Django+React by building real SaaS products from scratch](https://www.reddit.com/r/reactjs/comments/j2in8m/learn_djangoreact_by_building_real_saas_products/)
+- url: https://www.reddit.com/r/reactjs/comments/j2in8m/learn_djangoreact_by_building_real_saas_products/
+---
+I would like to start a series of tutorials that will show how to build SaaS (software as a service) products from the scratch with Django and React. I would like to ask a community what they need from such tutorials? Are they needed? 
+
+An example tutorial will look like:
+
+- I will build a web service for scheduling posts on social media. What will the service do? You enter the link and a title in the web service and web service will post it on selected social media channels (automated posting).
+- The service will be open-source. It will be deployed and ready for use.
+- I will write a detailed step-by-step tutorial on how the service was created. So you can recreate it from scratch. Or you can modify it and create your own SaaS.
+
+My experience:
+
+- Tutorial on how to deploy machine learning models with Django: https://www.deploymachinelearning.com/ - it is very detailed and I got a lot of positive feedback
+- Automated Machine Learning SaaS: https://mljar.com
+- AutoML Python package: https://github.com/mljar/mljar-supervised
+
+The stack that I'm using: Javascript + React + Redux in the front-end. For backend I'm using Python + Django + Django REST Framework + PostgreSQL + Celery. Deploy with Docker on AWS.
+
+The website with information: https://saasitive.com
+
+I'm waiting for your feedback. What would you like to see in such tutorials?
+## [6][🎂 Learning React? Here are My Thoughts as a New React Developer!](https://www.reddit.com/r/reactjs/comments/j2eqvn/learning_react_here_are_my_thoughts_as_a_new/)
+- url: https://dev.to/fahadimran1805/learning-react-here-are-my-thoughts-as-a-new-react-developer-5hbg
 ---
 
-## [4][ByteDance open-sourced IconPark on GitHub - Transform an SVG icon into multiple themes, and generate React icons, Vue icons, SVG icons. IconPark gives access to more than 1,200 high-quality icons and introduces an interface for customizing your icons.](https://www.reddit.com/r/reactjs/comments/j1kgk3/bytedance_opensourced_iconpark_on_github/)
-- url: https://github.com/bytedance/IconPark
+## [7][Is there a tool which shows a visualised tree structure for the components along with the their local and global states?](https://www.reddit.com/r/reactjs/comments/j2kljl/is_there_a_tool_which_shows_a_visualised_tree/)
+- url: https://www.reddit.com/r/reactjs/comments/j2kljl/is_there_a_tool_which_shows_a_visualised_tree/
+---
+I don't know if such tool exists or not, I tried to find it but I wasn't sure how to exactly search for that.
+
+Wouldn't it be really helpful if we could have a tool which makes a tree of our project code. It will be even better if you can see the state values in it , this way we can tell which component has stale state when we're using global state.
+## [8][🆕React menu components](https://www.reddit.com/r/reactjs/comments/j2gbxo/react_menu_components/)
+- url: https://www.reddit.com/r/reactjs/comments/j2gbxo/react_menu_components/
+---
+Hello everyone, 
+
+I've built a group of menu components with React.
+
+It has some great functionalities that are not offered in many popular React libraries.
+
+Welcome to try it out from my GitHub page at: [https://szhsin.github.io/react-menu/](https://szhsin.github.io/react-menu/)
+
+Feel free to submit GitHub issues if you find bugs or have feature requests.
+
+Happy coding!
+## [9][useEffect hook cleaning function](https://www.reddit.com/r/reactjs/comments/j2lmz4/useeffect_hook_cleaning_function/)
+- url: https://www.reddit.com/r/reactjs/comments/j2lmz4/useeffect_hook_cleaning_function/
+---
+Hey Guys,
+
+I have a question regarding the cleaning phase of an effect (useEffect function's return function).
+
+From what I understand at each render, the effect function is re-evaluated and is scheduled for execution once the render is complete. How about the return function which is used for cleaning? If at each run, we return a new cleaning function which one is going to get executed once the component is detached? Is it the last one? Or is it going to be all of those functions?
+## [10][Blogged: Yet another OOP/C# person (me) trying to understand mechanics behind React Hooks](https://www.reddit.com/r/reactjs/comments/j2l4ap/blogged_yet_another_oopc_person_me_trying_to/)
+- url: https://dev.to/noseratio/yet-another-oop-c-person-me-trying-to-understand-react-hooks-4aik
 ---
 
-## [5][Is Firebase better than Express + MongoDB](https://www.reddit.com/r/reactjs/comments/j1adu9/is_firebase_better_than_express_mongodb/)
-- url: https://www.reddit.com/r/reactjs/comments/j1adu9/is_firebase_better_than_express_mongodb/
+## [11][React HotKeys not working as expected.](https://www.reddit.com/r/reactjs/comments/j2j3nj/react_hotkeys_not_working_as_expected/)
+- url: https://www.reddit.com/r/reactjs/comments/j2j3nj/react_hotkeys_not_working_as_expected/
 ---
-I mainly do MERN work but recently for my personal projects realized I got tired of repeating redundant code for a simple rest api. I researched Firebase and it seems to be a really good alternative, with built in authentication and real-time database. I’ve also heard people disliking it, if so why? Is it a good alternative after all?
-## [6][New open-sourced Firestore CMS](https://www.reddit.com/r/reactjs/comments/j1z7uj/new_opensourced_firestore_cms/)
-- url: https://www.reddit.com/r/reactjs/comments/j1z7uj/new_opensourced_firestore_cms/
+Can someone please answer this question?
+
+[https://stackoverflow.com/questions/64133324/react-hotkeys-cannot-access-updated-state/64133561#64133561](https://stackoverflow.com/questions/64133324/react-hotkeys-cannot-access-updated-state/64133561#64133561)
+## [12][I just finished a React-Native mobile app and want to make a web version of it. Is it okay to stick to RN with RN-web or should I really switch to ReactJS](https://www.reddit.com/r/reactjs/comments/j2irqg/i_just_finished_a_reactnative_mobile_app_and_want/)
+- url: https://www.reddit.com/r/reactjs/comments/j2irqg/i_just_finished_a_reactnative_mobile_app_and_want/
 ---
-Hi everyone,
+I have built several pages with ReactJS, as well as mobile apps with React Native. However, I never used React Native for the web.
 
-We’ve created a new headless CMS for Firestore using React and Express. We call it Prometheus!
+I am about to release a React Native mobile app and I want to create a web version of it. The UI will be quite different, but the core functionalities will be the same.
 
-&amp;#x200B;
+To make it easier to reuse my code and maintain both versions, I am considering using React Native web. 
 
-https://reddit.com/link/j1z7uj/video/ttmxarjc93q51/player
+Considering that it is a quite complex app, is it a good move, or should I prefer ReactJS when it comes to webdev?
 
-This was originally created to be our template CMS for the Firestore database, but we have decided that we will gradually add more database support as our needs increase. We would greatly appreciate it if you gave it a try for your next Firestore project!
-
-website: [https://prometheuscms.com/](https://prometheuscms.com/)
-
-demo: [https://demo.prometheuscms.com/](https://demo.prometheuscms.com/)
-
-github: [https://github.com/aeon-software/prometheus](https://github.com/aeon-software/prometheus)
-## [7][[HIRING] Any senior Ruby + React Full-Stack Engineers around Bangalore / okay to relocate to Bangalore?](https://www.reddit.com/r/reactjs/comments/j1y6cz/hiring_any_senior_ruby_react_fullstack_engineers/)
-- url: https://www.reddit.com/r/reactjs/comments/j1y6cz/hiring_any_senior_ruby_react_fullstack_engineers/
----
-Would love to have a chat. DM.  
-CTC is good at around 40 LPA.
-## [8][You folks upvoted my comment so much I expanded on it and turned it into a full blog post – “The Red Flags on Your Resume”](https://www.reddit.com/r/reactjs/comments/j1d9px/you_folks_upvoted_my_comment_so_much_i_expanded/)
-- url: https://danicfilip.com/2020/red-flags-on-your-resume/
----
-
-## [9][The Definitive Guide to Commonly Used Words in React](https://www.reddit.com/r/reactjs/comments/j1y5rp/the_definitive_guide_to_commonly_used_words_in/)
-- url: https://maxrozen.com/definitive-glossary-guide-commonly-used-words-react/
----
-
-## [10][Looking for OS projects to contribute](https://www.reddit.com/r/reactjs/comments/j1y0o0/looking_for_os_projects_to_contribute/)
-- url: https://www.reddit.com/r/reactjs/comments/j1y0o0/looking_for_os_projects_to_contribute/
----
-Hi.
-
-I've been mostly freelancing so far. I'm looking for open source projects to contribute to. I heard it's a decent way to experience working in a team before I move to a regular job.
-
-&amp;#x200B;
-
-Is there anything you could suggest me? Ideally, I'd like to work on the website itself, rather than some React-related libraries.
-## [11][How to update refresh token after it expires](https://www.reddit.com/r/reactjs/comments/j1xn9d/how_to_update_refresh_token_after_it_expires/)
-- url: https://www.reddit.com/r/reactjs/comments/j1xn9d/how_to_update_refresh_token_after_it_expires/
----
-I'm using Cognito for my user authentication and Apollo for fetching the user information from the server.
-
-The problem is I set the Apollo client header at App.js on ComponentDidMount and after one hour token expires when any query or mutation request sends from the client, the server throws token expires.
-
-How to update the token?
-
-Thanks in advance
-## [12][Having an issue with making an image respond.......](https://www.reddit.com/r/reactjs/comments/j1xikf/having_an_issue_with_making_an_image_respond/)
-- url: https://www.reddit.com/r/reactjs/comments/j1xikf/having_an_issue_with_making_an_image_respond/
----
-I am trying to build the Airbnb website to get experience.  I am having an issue with pictures stacking on top of each other.  I am trying to figure out how to directly access them. I have 2 files I imported to the Home file. This is my layout:
-
-function Home() {
-
-&lt;div className="home"&gt;
-
-  &lt;Banner /&gt;  // imported file
-
-   &lt;div className="home\_\_section"&gt;
-
-&lt;Card      // 2nd imported file
-
-src=
-
-title=
-
-&amp;#x200B;
-
-I have a Header/Banner/Body/Footer along with 20 other files.  The Banner should be below the header and the Cards should display below the Banner, but they are stacking on top of each other. How do I directly access the Cards to force them to fall below the banner?
+I am mostly worried about finding out late in the process that RN limits what I can do on the web somehow, or affects performances.

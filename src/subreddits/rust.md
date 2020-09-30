@@ -23,57 +23,72 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/j1jime/whats_everyone_working_on_this_week_402020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-40-2020/49429?u=llogiq)!
-## [3][My frist project in Rust generates mazes and solves them. I'm sure I've missed a lot of Rust patterns and would love some comments on my code (MIC)](https://www.reddit.com/r/rust/comments/j1xzvu/my_frist_project_in_rust_generates_mazes_and/)
+## [3][Rust 2021: GUI](https://www.reddit.com/r/rust/comments/j24em4/rust_2021_gui/)
+- url: https://raphlinus.github.io/rust/druid/2020/09/28/rust-2021.html
+---
+
+## [4][Revisiting a 'smaller Rust'](https://www.reddit.com/r/rust/comments/j2l9v9/revisiting_a_smaller_rust/)
+- url: https://without.boats/blog/revisiting-a-smaller-rust/
+---
+
+## [5][Rust program runs faster on Linux than Windows?](https://www.reddit.com/r/rust/comments/j2ilkn/rust_program_runs_faster_on_linux_than_windows/)
+- url: https://www.reddit.com/r/rust/comments/j2ilkn/rust_program_runs_faster_on_linux_than_windows/
+---
+I have written a program in Rust which is a physical simulation of a quantum field. It basically means applying a simple algorithm to the same vector milions of times. [Here](https://pastebin.com/5Y0N1306) is the code: the "meat" of the program is the `metropolis` function which, as you can see, runs a 10^(8) long for loop and keeps modifying the `fields.phi` vector. It also writes the result of some averages to a file every `naccu` times.   
+
+
+Now, here's the questions:
+
+1. Is it normal that this program runs WAY faster on Linux (I'm using [Solus](https://getsol.us/home/)) on a crappy 7+ years old laptop than on Windows 10 on my fairly recent and powerful main PC? On Linux the program halts in about 40 minutes, while on Windows it took 2+ hours. On both OS's I've run the code in release mode and without other flags or optimizations. 
+2. Is there a way to optimize this code to run faster? I'm a newbie Rust programer and I already had this code written in C: I basically tried to port it to Rust and see if it runs any faster. The difference is quite small, but the C version is faster (it takes about 10 minutes less on Linux). But, as far as I know, Rust's performance should be equal or even better than C's. Have I written the code in a bad, unoptimized way? Can you suggest ways to improve the code, even if it doesn't really improve performance? Probably I haven't written a very "Rusty" code.
+## [6][Fast Electron App with rust](https://www.reddit.com/r/rust/comments/j2g6ry/fast_electron_app_with_rust/)
+- url: https://www.reddit.com/r/rust/comments/j2g6ry/fast_electron_app_with_rust/
+---
+[https://blog.logrocket.com/supercharge-your-electron-apps-with-rust/](https://blog.logrocket.com/supercharge-your-electron-apps-with-rust/)
+## [7][Benchmarking vol. 2: Pitting Actix against Rocket v0.4 and v0.5-dev](https://www.reddit.com/r/rust/comments/j2acxl/benchmarking_vol_2_pitting_actix_against_rocket/)
+- url: https://matej.laitl.cz/bench-actix-rocket/
+---
+
+## [8][My frist project in Rust generates mazes and solves them. I'm sure I've missed a lot of Rust patterns and would love some comments on my code (MIC)](https://www.reddit.com/r/rust/comments/j1xzvu/my_frist_project_in_rust_generates_mazes_and/)
 - url: https://i.imgur.com/Y8WPfNk.gifv
 ---
 
-## [4][Rust is a &gt;= $15 unlock for latest Humble Bundle from No Starch Press](https://www.reddit.com/r/rust/comments/j1khe3/rust_is_a_15_unlock_for_latest_humble_bundle_from/)
-- url: https://www.humblebundle.com/books/learn-to-code-the-fun-way-no-starch-press-books
+## [9][The first C++ &amp;Rust LDN *Virtual* Talks tonight](https://www.reddit.com/r/rust/comments/j2hpd4/the_first_c_rust_ldn_virtual_talks_tonight/)
+- url: https://www.meetup.com/Rust-London-User-Group/events/273056379/
 ---
 
-## [5][What (not so) recently happened in Miri](https://www.reddit.com/r/rust/comments/j1fxd3/what_not_so_recently_happened_in_miri/)
-- url: https://www.ralfj.de/blog/2020/09/28/miri.html
+## [10][What would be a good way to have a "plugin" or "extension" system? (more info in body)](https://www.reddit.com/r/rust/comments/j2f549/what_would_be_a_good_way_to_have_a_plugin_or/)
+- url: https://www.reddit.com/r/rust/comments/j2f549/what_would_be_a_good_way_to_have_a_plugin_or/
+---
+Im currently making something similar to nodejs, called [Novel((.)js)](https://github.com/novel-js/runtime) ^(contributions welcome), and one of my ideas is to let packages link with some rust  code to get expanded functionality, for one example, call into an http library, since I haven't implemented that at all yet.
+
+&amp;#x200B;
+
+While sure, they could just push to upstream, but that could be a potentially lengthy process, that might not be very user friendly, So my idea is to have a `config.toml` file, that specifies which plugins to use, and where to fetch them from.
+
+&amp;#x200B;
+
+My current problem, Is that I don't know where to start at all, I don't know whether shared objects is the best way (I heard that they are unreliable when passing complex types on Macos), and other than shared objects, im honestly not sure what other options there are?. Any help on this question, or the project in general are appreciated. (Even if its just a pull request on the Readme to expand plans).
+
+&amp;#x200B;
+
+If you need any new info, comment and ill reply to it.
+## [11][Progress report on rustc_codegen_cranelift (Sep 2020)](https://www.reddit.com/r/rust/comments/j20ml4/progress_report_on_rustc_codegen_cranelift_sep/)
+- url: https://bjorn3.github.io/2020/09/28/progress-report-sep-2020.html
 ---
 
-## [6][which crate provides a similar compression ratio as "deflate 1.2.11" does?](https://www.reddit.com/r/rust/comments/j1syh3/which_crate_provides_a_similar_compression_ratio/)
-- url: https://www.reddit.com/r/rust/comments/j1syh3/which_crate_provides_a_similar_compression_ratio/
+## [12][Panic on unused results](https://www.reddit.com/r/rust/comments/j2i5qy/panic_on_unused_results/)
+- url: https://www.reddit.com/r/rust/comments/j2i5qy/panic_on_unused_results/
 ---
-Which Rust crate provides a similar compression ratio as "deflate 1.2.11" does?
+I found a bug in a project today (and multiple bugs in dependencies) due to  unhandled Result.   
 
-A C-based application is using  " deflate 1.2.11 Copyright 1995-2017 Jean-loup Gailly and Mark Adler "; I want to use Rust to replace the application entirely but I can't find a proper crate which can replace deflate 1.2.11.
 
-sample input 1: **01400000000300000f4c150bc06c0000ff**
+The way I found it was by modifying \`libcore\` such that when a \`Result\` is dropped, the program \`panic!\`s if the result contains an error (which means the error is unhandled).
 
-sample output 1: **6204093023090000**
+&amp;#x200B;
 
-sample input 2: **01400000000200000f4c150bc06c0000ff**
+Why doesn't this happen by default? I'm starting to go through the library, and there are other cases where similar things don't happen (e.g. when a File descriptor is dropped without calling \`close\`), etc.
 
-sample output 2: **6274606060606260e0f711e53e90c3c0f01f00**
+&amp;#x200B;
 
-I have tried all methods in crate flate2 but most of them only have similar results when the stream is small like above. Once the stream has data more than 500 bytes, the output has a very big gap.
-## [7][Put a lifetime in my Error type (anti-pattern?)](https://www.reddit.com/r/rust/comments/j1x5p5/put_a_lifetime_in_my_error_type_antipattern/)
-- url: https://www.reddit.com/r/rust/comments/j1x5p5/put_a_lifetime_in_my_error_type_antipattern/
----
-I'm writing a parser that tries to allocate as little memory as possible and I want to have an error type that has a string slice indicating the error within the input string.
-
-Is having lifetimes in error types an anti-pattern?
-## [8][I was wrong. CRDTs are the future](https://www.reddit.com/r/rust/comments/j1hb3a/i_was_wrong_crdts_are_the_future/)
-- url: https://josephg.com/blog/crdts-are-the-future/
----
-
-## [9][Blog Post: How to Make a 💡?](https://www.reddit.com/r/rust/comments/j1gov0/blog_post_how_to_make_a/)
-- url: https://rust-analyzer.github.io/blog/2020/09/28/how-to-make-a-light-bulb.html
----
-
-## [10][rust-analyzer changelog #44](https://www.reddit.com/r/rust/comments/j1e7g2/rustanalyzer_changelog_44/)
-- url: https://rust-analyzer.github.io/thisweek/2020/09/28/changelog-44.html
----
-
-## [11][Do we have a .rs subdomain for Rust projects ?](https://www.reddit.com/r/rust/comments/j1sio1/do_we_have_a_rs_subdomain_for_rust_projects/)
-- url: https://www.reddit.com/r/rust/comments/j1sio1/do_we_have_a_rs_subdomain_for_rust_projects/
----
-Similar to [js.org](https://js.org) do we have anything for Rust developer to get subdomain from [xyz.lib.rs](https://xyz.lib.rs) ? or similar !
-## [12][inline-proc: write procedural macros directly in your code, instead of having to use another crate](https://www.reddit.com/r/rust/comments/j1j38x/inlineproc_write_procedural_macros_directly_in/)
-- url: https://github.com/KaiJewson/inline-proc
----
-
+I'll maintain my own patched library version, but I wonder why this doesn't happen at least in debug builds or behind some flag.

@@ -22,7 +22,32 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][I created a FULLY TYPED Twitter API Client for Node.js](https://www.reddit.com/r/typescript/comments/j1bidy/i_created_a_fully_typed_twitter_api_client_for/)
+## [2][I tried to write clean architecture based back-end application in TypeScript](https://www.reddit.com/r/typescript/comments/j27rqe/i_tried_to_write_clean_architecture_based_backend/)
+- url: https://github.com/pvarentsov/typescript-clean-architecture
+---
+
+## [3][Excluding the keys of a base type](https://www.reddit.com/r/typescript/comments/j2bggl/excluding_the_keys_of_a_base_type/)
+- url: https://www.reddit.com/r/typescript/comments/j2bggl/excluding_the_keys_of_a_base_type/
+---
+I have a base type (ex: Record&lt;string, any&gt;) that I want to ensure is true for all sub-type instances. For each sub-type, I have a set of specific keys which will be valid which return a specific set of values.
+
+For example: type MyType extends Record&lt;string, any&gt; = { a: string, b: number }
+
+I am looking for a way to get the type "a" | "b" from MyType. However, using "keyof MyType" == "string | number".
+
+What is the right way to extract only ("a" | "b") into a type of its own, given MyType as the input?
+
+Playground:
+https://www.typescriptlang.org/play?#code/C4TwDgpgBAksEFsDOUC8UBKEDGB7ATgCYA8Sw+AlgHYDmANFAIZUgB8A3FAPRdQCyEZsCjBcUMPlwA3CoWiMoAI0ZJooSFDL4ArtmDb8EBlVzCkjEFABEzS1uo0oFFLgDWFqwChq8fADNGbGg+EDhEFAgAD3gqQhQw5CgAb25eASERMQlpWXkqKCiwABsKbAphErIoXD8oKUYSwihXCBAUZibgAAsICnxNSDK-UqhDfXx89QgkTyg5pgAuTXIHOln5xSWqbQRFCHxPAF9PTymoAGlWpABBPW0GtGbWmv5Q+GROHjR0e1ooAB8oNtdvtTuBoJc2gARaZ9CBNdA2KwA6yKKyfXhyJBwwgnPzaKh6Ci4fI0CDABLEAAqBWiEFiKEhNzuDVYAApUlAAMJdZhkkRdZxQEpUNRiJkw7GGTpiQKCiBSaBYnFKCC8mQEAB06zm5XCSxCCSQDB1TkISypAEpPAa3uEANpUgC6yVNYwM+T1yHtsid7COJzwVCqXqQtqNjySpsYSyshEYwEYVjW8yUSwArAHPEGqvUitoINdHmSKe82aGGEjLRjlpRaJqoAB1AiuBzanPCPMFgBCxfJCXL72NqKs1c5wL2+Abzfwrfr2ZJuYaBa5fdLiEH4Ur2FHNdsUAAhEemxlROJJIRdPIROCCvhJP0eoYoH4CExPVQ87JrDuniBNUAA
+## [4][What am I missing here?](https://www.reddit.com/r/typescript/comments/j27k9e/what_am_i_missing_here/)
+- url: https://www.reddit.com/r/typescript/comments/j27k9e/what_am_i_missing_here/
+---
+[Playground](https://www.typescriptlang.org/play?#code/C4TwDgpgBAKgjFAvFA2gcgM7AE4EsB2A5mgDRQDeAtgQPwBcU+ArpQEYTZmUCGAHvYxbtsAXwC6AbgBQoSLABMSVGm7Zs3EKVgxJUmeGgwYSKVDNQAPrDinzVmPKnSpEXmAD22YFABmTfADGwLju+FAAFtwYUAA8MAB8UAAU3Azc+CBkANYMWRAg7j6wAJRpULjR5CgA+lnlYXkFRToMMDVZYiJS5LZm2BDATNgN9VDcUABkE2MoHVAAhIjI-gAmED4EECvSXVIEwBw+3AHQAFLuBDEAysDcwQEwZABK-sGUEAkUvWMBJ2DASWADBe+DeHzIADcGDc7rgHqUoKx3O4ADYQdI7PQBUJYKBPeAMc6XLB4IhkeCJZA9cw-P4A4CQ4pfGk0-qDYbJWQQQpQCFIJZQTA4AjEJlTb4s8xJeaRDCAlBwMRkNDUfBoJkWKzABViAB0qtiyAhurRRGA4TFEwlkuSMqi8sVyp4vHVli1Ov1fCg8SNJogZot0hpXV22PwuPx8kJF3wMX8WXw7gA7vgUEqFJTmeZjnTASQIUzqTaw7iMExWFylNrFUGbWyhmEkgBBNQaXUVFvqEBJAuW62S40QCEcbtMJCJfFtMsVgwoAAMYj1OYg-yS065ZCYxWKtbMIaxOO8k6URbMQtJxGB8BI3xUrc0V-kN5EQA)
+
+I want to create a simple type validator for some data I get coming in.
+
+This is a sub-example but it already doesn't work. What am I doing wrong?
+## [5][I created a FULLY TYPED Twitter API Client for Node.js](https://www.reddit.com/r/typescript/comments/j1bidy/i_created_a_fully_typed_twitter_api_client_for/)
 - url: https://www.reddit.com/r/typescript/comments/j1bidy/i_created_a_fully_typed_twitter_api_client_for/
 ---
 I created a FULLY TYPED Twitter API Client for Node.js 🔧  
@@ -36,13 +61,13 @@ This client is taking full advantage of modern TypeScript capabilites!
 Check it out 👇
 
 [https://github.com/Silind/twitter-api-client](https://github.com/Silind/twitter-api-client)
-## [3][Is it standard to use the not null operator everywhere Env variables are used?](https://www.reddit.com/r/typescript/comments/j1iuc4/is_it_standard_to_use_the_not_null_operator/)
+## [6][Is it standard to use the not null operator everywhere Env variables are used?](https://www.reddit.com/r/typescript/comments/j1iuc4/is_it_standard_to_use_the_not_null_operator/)
 - url: https://www.reddit.com/r/typescript/comments/j1iuc4/is_it_standard_to_use_the_not_null_operator/
 ---
 It's by far my most common use of !. In strict mode all Env variables have an implicit type of `string | undefined`.
 
 Just curious if you guys also use ! with them. Or if you do something else such as asserting `process.env` as `any`
-## [4][Trying to wrap my head around type inference failing](https://www.reddit.com/r/typescript/comments/j1bcj4/trying_to_wrap_my_head_around_type_inference/)
+## [7][Trying to wrap my head around type inference failing](https://www.reddit.com/r/typescript/comments/j1bcj4/trying_to_wrap_my_head_around_type_inference/)
 - url: https://www.reddit.com/r/typescript/comments/j1bcj4/trying_to_wrap_my_head_around_type_inference/
 ---
 Hi, I've run into Typescript failing to infer something and I'm trying to understand why. This simple example works:
@@ -98,7 +123,7 @@ const example = doSomething({
 I'm trying to figure out why this is. I assume now that `B` is used as a parameter, that stops Typescript from being able to infer `B` as being the result of `createA`, and since there's no type on `logB: (value)`, it gives up and calls it unknown.
 
 I can get around this by `logB: (value: string) =&gt; console.log(value)`, but is there a way to tell Typescript to always infer `B` from the return type of `createA`, even if it's used as a parameter elsewhere?
-## [5][Looking for collaborators for open source project.](https://www.reddit.com/r/typescript/comments/j0vzdn/looking_for_collaborators_for_open_source_project/)
+## [8][Looking for collaborators for open source project.](https://www.reddit.com/r/typescript/comments/j0vzdn/looking_for_collaborators_for_open_source_project/)
 - url: https://www.reddit.com/r/typescript/comments/j0vzdn/looking_for_collaborators_for_open_source_project/
 ---
 Hi, good evening!
@@ -121,7 +146,7 @@ https://github.com/photion/web-admin
 
 For anyone interested into joining, here is a slack invite:
 https://join.slack.com/t/photion/shared_invite/zt-hnqy02xy-wB0vJqZv_lhrB~7qWv6~VA
-## [6][Typesafe, future proof way to get from "unknown" to "SomeInterfaceType" without "any"?](https://www.reddit.com/r/typescript/comments/j17c1h/typesafe_future_proof_way_to_get_from_unknown_to/)
+## [9][Typesafe, future proof way to get from "unknown" to "SomeInterfaceType" without "any"?](https://www.reddit.com/r/typescript/comments/j17c1h/typesafe_future_proof_way_to_get_from_unknown_to/)
 - url: https://www.reddit.com/r/typescript/comments/j17c1h/typesafe_future_proof_way_to_get_from_unknown_to/
 ---
 Is there a way to build functions with the signature of either `isSomeInterface(x:unknown):x is SomeInterface` or `assertSomeInterface(x:unknown):asserts x is SomeInterface` in a way that doesn't use `any`, and will break if I add a property to `SomeInterface` without changing the type guard?
@@ -129,7 +154,7 @@ Is there a way to build functions with the signature of either `isSomeInterface(
 I want a series of refinements, by the end of which the compiler knows that `x is SomeInterface` and it can therefore let me know if a change happens to `SomeInterface` and that's no-longer knowable.
 
 Thoughts?
-## [7][Type for an instance of a class specifically?](https://www.reddit.com/r/typescript/comments/j1405d/type_for_an_instance_of_a_class_specifically/)
+## [10][Type for an instance of a class specifically?](https://www.reddit.com/r/typescript/comments/j1405d/type_for_an_instance_of_a_class_specifically/)
 - url: https://www.reddit.com/r/typescript/comments/j1405d/type_for_an_instance_of_a_class_specifically/
 ---
 In this example, is it possible to have \`printName\` only accept an instance of a Cat? Currently it also accepts objects matching the interface defined by Cat, which may lead to bugs down the road
@@ -159,52 +184,7 @@ This workaround enforces that usage
     }
 
 However, can this be checked at compile-time through a type instead?
-## [8][a7ul/esbuild-node-tsc Build your Typescript Node.js projects using blazing fast esbuild.](https://www.reddit.com/r/typescript/comments/j0myuc/a7ulesbuildnodetsc_build_your_typescript_nodejs/)
+## [11][a7ul/esbuild-node-tsc Build your Typescript Node.js projects using blazing fast esbuild.](https://www.reddit.com/r/typescript/comments/j0myuc/a7ulesbuildnodetsc_build_your_typescript_nodejs/)
 - url: https://github.com/a7ul/esbuild-node-tsc
----
-
-## [9][How to extend this inferred type?](https://www.reddit.com/r/typescript/comments/j0v4et/how_to_extend_this_inferred_type/)
-- url: https://www.reddit.com/r/typescript/comments/j0v4et/how_to_extend_this_inferred_type/
----
-Inside the if statement towards the bottom, I notice i am getting a lint on a type that seems to be inferred:
-
-        const requestOptions = {
-          method,
-          mode: 'cors',
-          headers: {
-            authorization: `Bearer ${this.decryptedAccessToken}`,
-            'content-type': options.contentType || 'application/json',
-            ...options.specialHeaders,
-          },
-        };
-    
-        if (method === 'post') {
-          requestOptions.body = body;
-        }
-    
-    /*
-        Property 'body' does not exist on type '{ method: "post" | "get"; mode: string; headers: any; }'.ts(2339)
-    */
-
-I tried various syntaxes for annotating and asserting an extended type that includes the `body` key but came up short. Can someone tell me how to properly type this to allow the new key `body`?
-## [10][Optional property input into an optional parameter](https://www.reddit.com/r/typescript/comments/j0z2c7/optional_property_input_into_an_optional_parameter/)
-- url: https://www.reddit.com/r/typescript/comments/j0z2c7/optional_property_input_into_an_optional_parameter/
----
-The method buildEndpointUrl has an optional 2nd argument for queryParams. 
-
-My intent below is to say "The options object sometimes isn't passed in. And then, sometimes it doesn't have a key for queryParams" 
-
-I feel like only the first sentence is being implemented on line 3. But I can not put a ? on `.queryParams` there. 
-
-So is a property always assumed optional if the parameter is defined as optional?
-
-      public async get(urlPath: string, options?: GetRequestOptions): Promise&lt;object | void&gt; {
-        const fullEndpointUrl = this.buildEndpointUrl(urlPath, options?.queryParams);
-    
-    private buildEndpointUrl
-      &lt;QueryParamsShape extends { [idx: string]: string | string[] }&gt;(
-        urlPath: string, queryParams?: QueryParamsShape
-## [11][memoized-node-fetch: A wrapper around node-fetch (or any other fetch-like function) that returns a single promise until it resolves.](https://www.reddit.com/r/typescript/comments/j0ovcx/memoizednodefetch_a_wrapper_around_nodefetch_or/)
-- url: https://github.com/chrispanag/memoized-node-fetch
 ---
 

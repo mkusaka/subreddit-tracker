@@ -27,13 +27,45 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Are monoliths becoming cool again?](https://www.reddit.com/r/rails/comments/j2kuxq/are_monoliths_becoming_cool_again/)
+## [3][Does hosting streaming video get pretty expensive?](https://www.reddit.com/r/rails/comments/j2xzir/does_hosting_streaming_video_get_pretty_expensive/)
+- url: https://www.reddit.com/r/rails/comments/j2xzir/does_hosting_streaming_video_get_pretty_expensive/
+---
+I've had an idea for a site that would host instructional videos and possibly integrate with a more traditional web app. I was thinking about doing recurring billing through Stripe and having a mix of free videos on YouTube and subscriber videos on the site.
+
+If I were to host the streaming videos on something like S3, would the costs be pretty significant? I currently host a site using ActiveStorage through S3 and my bandwidth costs are reasonable, but not nothing. I pay more for the database and load balancer. Would I need to encode them in something friendly to streaming and find a player that isn't awful? Am I better off going with a service that facilitates paid access to videos, even if they take their cut?
+## [4][Are monoliths becoming cool again?](https://www.reddit.com/r/rails/comments/j2kuxq/are_monoliths_becoming_cool_again/)
 - url: https://www.reddit.com/r/rails/comments/j2kuxq/are_monoliths_becoming_cool_again/
 ---
 Just a gut feeling, but it seems like micro-service everything for small-medium companies is getting a bit out of flavour, and monoliths start to make more sense again. The hype pendulum keeps swinging.
 
 This together with some JS fatigue and the new Deno project (which might deprecate Node) makes me think choosing boring old monolith tech like Rails may become cool again. Or am I reading too much into this?
-## [4][ApplicationController.render could generate an invalid CSRF token– and you have one more way for a CSRF token to annoy you.](https://www.reddit.com/r/rails/comments/j2hl1o/applicationcontrollerrender_could_generate_an/)
+## [5][Debugging why sometimes response is slow sometimes fast.](https://www.reddit.com/r/rails/comments/j31v72/debugging_why_sometimes_response_is_slow/)
+- url: https://www.reddit.com/r/rails/comments/j31v72/debugging_why_sometimes_response_is_slow/
+---
+I have rails product which exposes certain API. We have a sister application that needs to call certain number of api in sequence. For example
+
+Complete procedure - Sync a user
+
+\- Create a new user  - v1/users
+
+\- Sync his credit cards - v1/cards
+
+\- Generate his bills - v1/bills
+
+Now in have a staging server, with 5 instances, 2 threads each (unicorn). So thats total 10 requests per second. The sister application might need to do the complete sync for maybe 500 users in one go. So its hitting 2 users concurrenctly. Waiting for it to finish then 2 more, and so on. The problem is when the requests start the response times are pretty good. But as the users keep syncing in the response times get incredibly slow. So variations include 300ms, 4 seconds, 16 seconds, back to 4 seconds. Since all of this is test data, almost all users/cards/bills are pretty much the same(API are hit similar params).
+
+How do I find what the bottleneck is? Could it be the db , Im running a \`db.t2.micro\` on aws for it. But even on peak requests the cpu utilization never exceeded 15 %. , 10 DB connections.
+
+Same goes for the EC2 instances, CPU utilisation never seems to exceed 20 percent
+## [6][[help] `invalid_grant` - Google authorization for grabbing GMails from the API.](https://www.reddit.com/r/rails/comments/j2njw9/help_invalid_grant_google_authorization_for/)
+- url: https://www.reddit.com/r/rails/comments/j2njw9/help_invalid_grant_google_authorization_for/
+---
+I am working on a Rails backend, where I'm implementing support for grabbing GMails from a Google service API. When using [google-auth and its guide](https://github.com/googleapis/google-auth-library-ruby#example-web) for the project, I get to the point where I have a token stored in Redis, but when trying to use it I get a BadRequest and \`invalid\_grant\` thrown back.
+
+It is not due to a clock mismatch and the tokens are fresh. Does anyone have experience with this problem?
+
+Optionally; does anyone know of alternative ways of grabbing mails through the Google API?
+## [7][ApplicationController.render could generate an invalid CSRF token– and you have one more way for a CSRF token to annoy you.](https://www.reddit.com/r/rails/comments/j2hl1o/applicationcontrollerrender_could_generate_an/)
 - url: https://www.reddit.com/r/rails/comments/j2hl1o/applicationcontrollerrender_could_generate_an/
 ---
 A recent annoying CSRF problem in our platform. Hope you could find the information useful.
@@ -45,31 +77,33 @@ This was occurring because we were using ApplcationController.render to render o
 Be careful when using ApplicationController.render for rendering forms. 
 
 [https://kmitov.com/posts/applicationcontroller-render-one-more-way-for-a-csrf-token-to-annoy-you/](https://kmitov.com/posts/applicationcontroller-render-one-more-way-for-a-csrf-token-to-annoy-you/)
-## [5][Deploy Ruby on Rails on Google cloud](https://www.reddit.com/r/rails/comments/j26lkz/deploy_ruby_on_rails_on_google_cloud/)
+## [8][Deploy Ruby on Rails on Google cloud](https://www.reddit.com/r/rails/comments/j26lkz/deploy_ruby_on_rails_on_google_cloud/)
 - url: https://www.reddit.com/r/rails/comments/j26lkz/deploy_ruby_on_rails_on_google_cloud/
 ---
 Hi, does anyone know what's the best way to deploy a ruby on rails application on google cloud also using the SQL instance on Google Cloud and a process to use sidekiq.
 
 Do you guys have any pratical experience?
-## [6][Trying to upload the file to rails server from React? I receive permitted: false in parameters of file](https://www.reddit.com/r/rails/comments/j25sdg/trying_to_upload_the_file_to_rails_server_from/)
+## [9][Trying to upload the file to rails server from React? I receive permitted: false in parameters of file](https://www.reddit.com/r/rails/comments/j25sdg/trying_to_upload_the_file_to_rails_server_from/)
 - url: https://www.reddit.com/r/rails/comments/j25sdg/trying_to_upload_the_file_to_rails_server_from/
 ---
 I'm using active\_storage to upload pictures. The file doesn't show on rails. Is the something with rails or Javascript? Where should I be looking
 
 &amp;#x200B;
 
- 
-
 &lt;ActionController::Parameters {} permitted: false&gt;
-## [7][Using Carrierwave, cannot access image_url in view](https://www.reddit.com/r/rails/comments/j2694q/using_carrierwave_cannot_access_image_url_in_view/)
+
+&amp;#x200B;
+
+Update: I was able to send formData and get the file through. What I did differently was I did fetch request separate for formData separately instead of sending it within a hash of other data like {username: username, password: password, file: formData}. I don't know why this is though and would appreciate an answer
+## [10][Using Carrierwave, cannot access image_url in view](https://www.reddit.com/r/rails/comments/j2694q/using_carrierwave_cannot_access_image_url_in_view/)
 - url: https://www.reddit.com/r/rails/comments/j2694q/using_carrierwave_cannot_access_image_url_in_view/
 ---
 Images are saving to the database and are nested within a parent. Parent model is Nitrogen, Child model is Photos. For example, in the view when I try to access the image by  &lt;%=nitrogen.photos.ids%&gt;, the id is displayed.  Attached is a image of what I get in the rails console when I call Nitrogen.last.photos. How can I extract :picture within the ActiveRecord::Associations::CollectionProxy?
-## [8][Trouble Understaning how the Rails framework works...](https://www.reddit.com/r/rails/comments/j1zum4/trouble_understaning_how_the_rails_framework_works/)
+## [11][Trouble Understaning how the Rails framework works...](https://www.reddit.com/r/rails/comments/j1zum4/trouble_understaning_how_the_rails_framework_works/)
 - url: https://www.reddit.com/r/rails/comments/j1zum4/trouble_understaning_how_the_rails_framework_works/
 ---
 Hello there. I have been learing Ruby and Rails through the Odin Project. I am in the Rails section and I have a lot of trouble understaiding how many of the things work. To me they seem like magic and I don't really get it. I think the reason is because I learn better through video tutorials and explanations so I enrolled in the "The complete ruby on rails developer course" on udemy. I helped me a lot but there are a lot of things that the instructor does not go in depth or just will ignore and assume we already know. Are there any video tutorials, courses or lessons on Rails that you would recommend me?
-## [9][Rails and Solidus](https://www.reddit.com/r/rails/comments/j1na6n/rails_and_solidus/)
+## [12][Rails and Solidus](https://www.reddit.com/r/rails/comments/j1na6n/rails_and_solidus/)
 - url: https://www.reddit.com/r/rails/comments/j1na6n/rails_and_solidus/
 ---
 Hi guys,
@@ -78,81 +112,3 @@ coming more or less form python and starting recently with ruby. I am looking fo
 
 
 Thanks
-## [10][Which React/Rails setup should I use?](https://www.reddit.com/r/rails/comments/j1ig5o/which_reactrails_setup_should_i_use/)
-- url: https://www.reddit.com/r/rails/comments/j1ig5o/which_reactrails_setup_should_i_use/
----
-There is an enormous amount of advice on using React with Rails, so much that I'm struggling to decide on a setup to learn.
-
-What I have managed to decide on is that I want to use Rails as an API, serving JSON to a separate React front end. What I haven't decided on is:
-
-1. Whether to use Redux
-2. Whether to store the React app in the same repo as the Rails app
-3. Whether to use Rails' asset pipeline to serve the React app
-4. Whether the app should be a SPA
-5. Whether I should use React Hooks
-
-From what I know about state and mutability it seems as though Redux is a smart option. That being said, I've read that it adds a lot of complexity and dev time to simple tasks, and considering I'm going to be working on something alone, which is just an idea, I wonder whether Redux might be overkill and have a negative effect on my motivation.
-
-I know this is quite a wide question but really any pros/cons/successes/failures that anyone has would be really useful in helping me make a decision. And if you do have a recommended setup, and also know a good tutorial for that setup, then that would also be incredibly helpful.
-
-Thanks
-## [11][MySQL vs PostgreSQL - rare chance at an easy upgrade](https://www.reddit.com/r/rails/comments/j1gawq/mysql_vs_postgresql_rare_chance_at_an_easy_upgrade/)
-- url: https://www.reddit.com/r/rails/comments/j1gawq/mysql_vs_postgresql_rare_chance_at_an_easy_upgrade/
----
-I just got a new job for a very small company that had a Rails 4 app that was so poorly made that they had a brand new Rails 5.2/6 app built to replace it.
-
-The old outsource company also made a migration task to transform a large part of the data in the db because the original was a total cluster fuck. And this migration task works perfectly. Other aspects of the new app do not, and hence why they decided on hiring someone in house to take over.
-
-This is rare opportunity to migrate from the old MySQL db to a Postgres db. I like Postgres, but I have to wonder... is it worth it?
-
-I know Postgres and MySQL mostly have differences at the massive scale level, and right now this app is no where near that level and probably will never get there. It’s got 7-10 daily users who could be using the app at the same time, and db size is currently under 1gb with 9 years of data. Chances are it will not grow to 10x or even come close to needing any of the enterprise/large scale features that differentiate MySQL and Postgres.
-
-So, is it worth it? Feels to me like it is, but I’m biased.
-## [12][what causes the file_field to be invisible?](https://www.reddit.com/r/rails/comments/j1l1m2/what_causes_the_file_field_to_be_invisible/)
-- url: https://www.reddit.com/r/rails/comments/j1l1m2/what_causes_the_file_field_to_be_invisible/
----
-I would like to make my app upload multiple files with Shrine, but [one doc](https://shrinerb.com/docs/multiple-files#3-create-the-view) suggests two `file_field`s whereas the [other](https://github.com/shrinerb/shrine/wiki/Adding-Direct-App-Uploads#5-form) suggests only one. After posting a question to their discourse forum, it was suggested that I hide the one named `files[]`. Whether I do this or not, the first `file_field` always fails to render. Why does this field not display?
-
-    &lt;%= form_for @item, html: { enctype: "multipart/form-data" } do |f| %&gt;
-     &lt;%= f.fields_for :photos do |i| %&gt;
-      &lt;%= i.label :image %&gt;
-      &lt;%= i.hidden_field :image, value: i.object.cached_photos_data, class: "upload-data" %&gt;
-      &lt;%= i.file_field :image, class: "upload-file" %&gt; /// why is this not rendering?😢
-     &lt;% end %&gt;
-     &lt;%= file_field_tag "files[]", multiple: true %&gt; // what purpose does this one serve?
-     
-     &lt;%= f.text_field :title %&gt;
-          
-     &lt;%= f.submit "Submit" %&gt;    
-    &lt;% end %&gt;
-
-Models:
-
-    class Item &lt; ApplicationRecord
-     has_many :photos, as: :imageable, dependent: :destroy
-    end
-    
-    class Photo &lt; ApplicationRecord
-     include ImagesUploader::Attachment(:image)
-     belongs_to :imageable, polymorphic: true
-     validates_presence_of :image
-    end
-
-Controller:
-
-    class ItemsController &lt; ApplicationController
-    
-     def new
-      @item = current_user.items.new
-     end
-    
-     def create
-      @item = current_user.items.create(item_params)
-      @item.save
-     end
-    
-     private
-     def item_params
-      params.require(:item).permit(:title, photos_attributes: { image: [] })
-     end
-    end

@@ -1,11 +1,5 @@
 # javascript
-## [1][Showoff Saturday (September 26, 2020)](https://www.reddit.com/r/javascript/comments/j04nwe/showoff_saturday_september_26_2020/)
-- url: https://www.reddit.com/r/javascript/comments/j04nwe/showoff_saturday_september_26_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][Your /r/javascript recap for the week of September 21 - September 27](https://www.reddit.com/r/javascript/comments/j18lov/your_rjavascript_recap_for_the_week_of_september/)
+## [1][Your /r/javascript recap for the week of September 21 - September 27](https://www.reddit.com/r/javascript/comments/j18lov/your_rjavascript_recap_for_the_week_of_september/)
 - url: https://www.reddit.com/r/javascript/comments/j18lov/your_rjavascript_recap_for_the_week_of_september/
 ---
 **Monday, September 21 - Sunday, September 27**
@@ -85,43 +79,51 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][React 17 delegates events to root instead of document](https://www.reddit.com/r/javascript/comments/j2bi3w/react_17_delegates_events_to_root_instead_of/)
-- url: https://blog.bigbinary.com/2020/09/29/react-17-delegates-events-to-root-instead-of-document.html
+## [2][WTF Wednesday (September 30, 2020)](https://www.reddit.com/r/javascript/comments/j2oysx/wtf_wednesday_september_30_2020/)
+- url: https://www.reddit.com/r/javascript/comments/j2oysx/wtf_wednesday_september_30_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][Someone in r/CSS asked for frameworks to make a DuoLingo like animation. I suggested using a FLIP animation, and then made an example CodePen. Kind of proud of the result so I thought I would share. Let me know your thoughts](https://www.reddit.com/r/javascript/comments/j36rpo/someone_in_rcss_asked_for_frameworks_to_make_a/)
+- url: https://codepen.io/chadd/full/mdPZrbP
 ---
 
-## [4][Setting up a React.js project using Vite instead of Create React App](https://www.reddit.com/r/javascript/comments/j2kjq0/setting_up_a_reactjs_project_using_vite_instead/)
+## [4][WatchCarsLearn - Cars learn to drive using AI implemented in JS](https://www.reddit.com/r/javascript/comments/j34yc4/watchcarslearn_cars_learn_to_drive_using_ai/)
+- url: https://manassarpatwar.github.io/WatchCarsLearn/
+---
+
+## [5][How we built a terminal interface for our conference using React](https://www.reddit.com/r/javascript/comments/j2wnxh/how_we_built_a_terminal_interface_for_our/)
+- url: https://www.twilio.com/blog/building-conference-cli-in-react
+---
+
+## [6][Building a socketio multiplayer game and deployment at scale!](https://www.reddit.com/r/javascript/comments/j34lej/building_a_socketio_multiplayer_game_and/)
+- url: http://dev.to/sauravmh/browser-game-design-using-websockets-and-deployments-on-scale-1iaa
+---
+
+## [7][Setting up a React.js project using Vite instead of Create React App](https://www.reddit.com/r/javascript/comments/j2kjq0/setting_up_a_reactjs_project_using_vite_instead/)
 - url: https://zaiste.net/posts/modern-lightweight-reactjs-setup-graphql-vite-urql/
 ---
 
-## [5][Object Immutability In JavaScript](https://www.reddit.com/r/javascript/comments/j2knk3/object_immutability_in_javascript/)
-- url: https://dev.to/abdul_haseeb_/object-immutability-in-javascript-3ci2
+## [8][Customisable React menu components with accessibility](https://www.reddit.com/r/javascript/comments/j34ixg/customisable_react_menu_components_with/)
+- url: https://szhsin.github.io/react-menu/
 ---
 
-## [6][code-executor: An npm library to run arbitrary code in isolated Docker containers](https://www.reddit.com/r/javascript/comments/j2kwp2/codeexecutor_an_npm_library_to_run_arbitrary_code/)
-- url: https://github.com/csivitu/code-executor
+## [9][Interactive foreign interference tracker for the U.S. elections](https://www.reddit.com/r/javascript/comments/j35bh7/interactive_foreign_interference_tracker_for_the/)
+- url: https://interference2020.org
 ---
 
-## [7][How to use Socket.IO and build your first multiplayer game!](https://www.reddit.com/r/javascript/comments/j1ucn0/how_to_use_socketio_and_build_your_first/)
-- url: https://dev.to/denislav__/how-to-use-socket-io-not-the-chat-3l21
+## [10][Accept all LinkedIn connections at once easily](https://www.reddit.com/r/javascript/comments/j35b4l/accept_all_linkedin_connections_at_once_easily/)
+- url: https://medhatdawoud.net/blog/accept-all-linkedin-connections-at-once-easily
 ---
 
-## [8][Headless Recorder - now supports Playwright next to Puppeteer](https://www.reddit.com/r/javascript/comments/j21spu/headless_recorder_now_supports_playwright_next_to/)
-- url: https://github.com/checkly/headless-recorder
+## [11][Blending In With the Crowd: Implementing CSS and Photoshop blend modes in Javascript](https://www.reddit.com/r/javascript/comments/j37i7a/blending_in_with_the_crowd_implementing_css_and/)
+- url: https://www.srmullen.com/articles/blend-modes
 ---
 
-## [9][Javascript animation:Step by step guide on creating an animated login register form with javascript](https://www.reddit.com/r/javascript/comments/j2jgpr/javascript_animationstep_by_step_guide_on/)
-- url: https://dev.to/keefdrive/how-to-create-an-animated-login-register-web-page-with-html-css-and-javascript-1nc3
----
-
-## [10][ByteDance open-sourced IconPark on GitHub – Transform an SVG icon into multiple themes, and generate React icons, Vue icons, SVG icons. IconPark gives access to more than 1,200 high-quality icons and introduces an interface for customizing your icons.](https://www.reddit.com/r/javascript/comments/j216mr/bytedance_opensourced_iconpark_on_github/)
-- url: https://github.com/bytedance/IconPark
----
-
-## [11][You might not need date-fns](https://www.reddit.com/r/javascript/comments/j2hk5q/you_might_not_need_datefns/)
-- url: https://dev.to/dmtrkovalenko/you-might-not-need-date-fns-23f7
----
-
-## [12][I created a Sound Cloud Terminal app! lmk what you guys think!](https://www.reddit.com/r/javascript/comments/j23d0t/i_created_a_sound_cloud_terminal_app_lmk_what_you/)
-- url: https://github.com/ethans333/soundcloudTerminal
+## [12][Compact Single-File Cesium Distro](https://www.reddit.com/r/javascript/comments/j2x799/compact_singlefile_cesium_distro/)
+- url: https://www.npmjs.com/package/c137.js
 ---
 

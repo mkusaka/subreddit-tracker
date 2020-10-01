@@ -19,76 +19,88 @@ The unofficial Rust community Discord: [https://bit.ly/rust-community](https://b
 Also check out [last weeks' thread](https://reddit.com/r/rust/comments/iwxitt/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][What's everyone working on this week (40/2020)?](https://www.reddit.com/r/rust/comments/j1jime/whats_everyone_working_on_this_week_402020/)
-- url: https://www.reddit.com/r/rust/comments/j1jime/whats_everyone_working_on_this_week_402020/
----
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-40-2020/49429?u=llogiq)!
-## [3][Rust 2021: GUI](https://www.reddit.com/r/rust/comments/j24em4/rust_2021_gui/)
-- url: https://raphlinus.github.io/rust/druid/2020/09/28/rust-2021.html
+## [2][This Week in Rust 358](https://www.reddit.com/r/rust/comments/j2yfcu/this_week_in_rust_358/)
+- url: https://this-week-in-rust.org/blog/2020/09/30/this-week-in-rust-358/
 ---
 
-## [4][Revisiting a 'smaller Rust'](https://www.reddit.com/r/rust/comments/j2l9v9/revisiting_a_smaller_rust/)
+## [3][Introducing binserve - A blazingly fast static web server in a single binary you can set up with zero code](https://www.reddit.com/r/rust/comments/j35c81/introducing_binserve_a_blazingly_fast_static_web/)
+- url: https://www.reddit.com/r/rust/comments/j35c81/introducing_binserve_a_blazingly_fast_static_web/
+---
+Hello, fellow Rustaceans,
+
+I am new to Rust and started reading the Rust Book to learn it. When I lurked through it, I found Rust to have unique principles on how the language is designed and that really got me interested! I decided to choose it as my language of choice from now on and to learn something, you gotta do something so I did! This is it, my first ever project in **Rust**!
+
+Introducing **binserve** ⚡🦀
+
+A blazingly fast static web server in a single binary you can set up with zero code. 🔥
+
+**Features:**
+
+* **Single binary with no dependencies and everything built-in.**
+* **Blazingly Fast!** ⚡ - it's built on top of Actix!
+* **Handlebars** template engine.
+* **Easy Routing**
+* **Secure By Design**
+* **Config &amp; Static File Assistance**
+* **Supports Any Static File** (`Content-Type`)
+* **Custom Error Page Support**
+* And much more...
+
+**Check it out!**
+
+[https://github.com/mufeedvh/binserve](https://github.com/mufeedvh/binserve)
+
+As this is my first project, I might've made some mistakes in semantics or in implementing things the Rust way, if you're free or want to help, please give me feedback/suggestions, I would really appreciate it! ❤️
+
+`Ok(())` Thanks!
+## [4][Colliding galaxies simulation using Rust and WebAssembly 🌌](https://www.reddit.com/r/rust/comments/j2se15/colliding_galaxies_simulation_using_rust_and/)
+- url: https://v.redd.it/sy1p08cr1cq51
+---
+
+## [5][Mobile operating system SailfishOS now supports Rust](https://www.reddit.com/r/rust/comments/j35d01/mobile_operating_system_sailfishos_now_supports/)
+- url: https://forum.sailfishos.org/t/release-notes-pallas-yllastunturi-3-4-0/2258
+---
+
+## [6][Announcing the Portable SIMD Project Group | Inside Rust Blog](https://www.reddit.com/r/rust/comments/j2p44j/announcing_the_portable_simd_project_group_inside/)
+- url: https://blog.rust-lang.org/inside-rust/2020/09/29/Portable-SIMD-PG.html
+---
+
+## [7][Got my first segfault after 18 months of Rust programming](https://www.reddit.com/r/rust/comments/j2qknq/got_my_first_segfault_after_18_months_of_rust/)
+- url: https://i.redd.it/dx06hngzkbq51.png
+---
+
+## [8][Should I learn rust or c++(or any other recommendations) to get a job in the next 5-10 years in the field of robotics?](https://www.reddit.com/r/rust/comments/j37fli/should_i_learn_rust_or_cor_any_other/)
+- url: https://www.reddit.com/r/rust/comments/j37fli/should_i_learn_rust_or_cor_any_other/
+---
+I have seen rust rising in popularity on the stack overflow survey over the past years, however, it seems to be rarely used? I am 16 at the moment and conflicted on which to learn. This will not be my first language so ease of learning, is not an issue.
+
+Edit: and why should I learn said language?
+## [9][Avalog - An experimental logical programming language for higher dimensional mathematical programming](https://www.reddit.com/r/rust/comments/j2zml3/avalog_an_experimental_logical_programming/)
+- url: https://crates.io/crates/avalog
+---
+
+## [10][Revisiting a 'smaller Rust'](https://www.reddit.com/r/rust/comments/j2l9v9/revisiting_a_smaller_rust/)
 - url: https://without.boats/blog/revisiting-a-smaller-rust/
 ---
 
-## [5][Rust program runs faster on Linux than Windows?](https://www.reddit.com/r/rust/comments/j2ilkn/rust_program_runs_faster_on_linux_than_windows/)
-- url: https://www.reddit.com/r/rust/comments/j2ilkn/rust_program_runs_faster_on_linux_than_windows/
+## [11][Unit tests uploaded to crates.io](https://www.reddit.com/r/rust/comments/j35wsu/unit_tests_uploaded_to_cratesio/)
+- url: https://www.reddit.com/r/rust/comments/j35wsu/unit_tests_uploaded_to_cratesio/
 ---
-I have written a program in Rust which is a physical simulation of a quantum field. It basically means applying a simple algorithm to the same vector milions of times. [Here](https://pastebin.com/5Y0N1306) is the code: the "meat" of the program is the `metropolis` function which, as you can see, runs a 10^(8) long for loop and keeps modifying the `fields.phi` vector. It also writes the result of some averages to a file every `naccu` times.   
+Hi  
 
 
-Now, here's the questions:
+One thing that I have been thinking about (and exposed to when packaging rust crates for Debian) is that there is quite a few crates uploaded to [crates.io](https://crates.io) that have tests that depend on resources that are not packaged into the crate.  
 
-1. Is it normal that this program runs WAY faster on Linux (I'm using [Solus](https://getsol.us/home/)) on a crappy 7+ years old laptop than on Windows 10 on my fairly recent and powerful main PC? On Linux the program halts in about 40 minutes, while on Windows it took 2+ hours. On both OS's I've run the code in release mode and without other flags or optimizations. 
-2. Is there a way to optimize this code to run faster? I'm a newbie Rust programer and I already had this code written in C: I basically tried to port it to Rust and see if it runs any faster. The difference is quite small, but the C version is faster (it takes about 10 minutes less on Linux). But, as far as I know, Rust's performance should be equal or even better than C's. Have I written the code in a bad, unoptimized way? Can you suggest ways to improve the code, even if it doesn't really improve performance? Probably I haven't written a very "Rusty" code.
-## [6][Fast Electron App with rust](https://www.reddit.com/r/rust/comments/j2g6ry/fast_electron_app_with_rust/)
-- url: https://www.reddit.com/r/rust/comments/j2g6ry/fast_electron_app_with_rust/
----
-[https://blog.logrocket.com/supercharge-your-electron-apps-with-rust/](https://blog.logrocket.com/supercharge-your-electron-apps-with-rust/)
-## [7][Benchmarking vol. 2: Pitting Actix against Rocket v0.4 and v0.5-dev](https://www.reddit.com/r/rust/comments/j2acxl/benchmarking_vol_2_pitting_actix_against_rocket/)
-- url: https://matej.laitl.cz/bench-actix-rocket/
----
 
-## [8][My frist project in Rust generates mazes and solves them. I'm sure I've missed a lot of Rust patterns and would love some comments on my code (MIC)](https://www.reddit.com/r/rust/comments/j1xzvu/my_frist_project_in_rust_generates_mazes_and/)
-- url: https://i.imgur.com/Y8WPfNk.gifv
----
+This isn't a huge problem, as the developer hopefully runs the tests before uploading.  
 
-## [9][The first C++ &amp;Rust LDN *Virtual* Talks tonight](https://www.reddit.com/r/rust/comments/j2hpd4/the_first_c_rust_ldn_virtual_talks_tonight/)
-- url: https://www.meetup.com/Rust-London-User-Group/events/273056379/
+
+But it's very useful to also run the tests when packaging a crate for different architectures, it's nice to discover [endian problems](https://github.com/elichai/random-rs/issues/3) or that char is [different on arm64](https://github.com/jeaye/ncurses-rs/pull/194) before they reach production. 
+
+I guess that the problem can be fixed by adding `include` sections in the manifest, but it would be nice if cargo tested this automatically before uploading it.
+
+I'm thinking that adding a step to cargo package that unpacks the .crate into a temporary directory and runs the tests there would improve the ecosystem. Do anyone see any problems with that or have any other feedback?
+## [12][Optimization - Making Rust Code Go Brrrr](https://www.reddit.com/r/rust/comments/j2pmd3/optimization_making_rust_code_go_brrrr/)
+- url: https://aspenuwu.me/posts/Optimization%20-%20Making%20Rust%20Code%20Go%20Brrrr.html
 ---
 
-## [10][What would be a good way to have a "plugin" or "extension" system? (more info in body)](https://www.reddit.com/r/rust/comments/j2f549/what_would_be_a_good_way_to_have_a_plugin_or/)
-- url: https://www.reddit.com/r/rust/comments/j2f549/what_would_be_a_good_way_to_have_a_plugin_or/
----
-Im currently making something similar to nodejs, called [Novel((.)js)](https://github.com/novel-js/runtime) ^(contributions welcome), and one of my ideas is to let packages link with some rust  code to get expanded functionality, for one example, call into an http library, since I haven't implemented that at all yet.
-
-&amp;#x200B;
-
-While sure, they could just push to upstream, but that could be a potentially lengthy process, that might not be very user friendly, So my idea is to have a `config.toml` file, that specifies which plugins to use, and where to fetch them from.
-
-&amp;#x200B;
-
-My current problem, Is that I don't know where to start at all, I don't know whether shared objects is the best way (I heard that they are unreliable when passing complex types on Macos), and other than shared objects, im honestly not sure what other options there are?. Any help on this question, or the project in general are appreciated. (Even if its just a pull request on the Readme to expand plans).
-
-&amp;#x200B;
-
-If you need any new info, comment and ill reply to it.
-## [11][Progress report on rustc_codegen_cranelift (Sep 2020)](https://www.reddit.com/r/rust/comments/j20ml4/progress_report_on_rustc_codegen_cranelift_sep/)
-- url: https://bjorn3.github.io/2020/09/28/progress-report-sep-2020.html
----
-
-## [12][Panic on unused results](https://www.reddit.com/r/rust/comments/j2i5qy/panic_on_unused_results/)
-- url: https://www.reddit.com/r/rust/comments/j2i5qy/panic_on_unused_results/
----
-I found a bug in a project today (and multiple bugs in dependencies) due to  unhandled Result.   
-
-
-The way I found it was by modifying \`libcore\` such that when a \`Result\` is dropped, the program \`panic!\`s if the result contains an error (which means the error is unhandled).
-
-&amp;#x200B;
-
-Why doesn't this happen by default? I'm starting to go through the library, and there are other cases where similar things don't happen (e.g. when a File descriptor is dropped without calling \`close\`), etc.
-
-&amp;#x200B;
-
-I'll maintain my own patched library version, but I wonder why this doesn't happen at least in debug builds or behind some flag.

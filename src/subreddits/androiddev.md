@@ -31,65 +31,63 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][A categorized list of all Java and JVM features since JDK 8 to 15 (aka what Android is missing out)](https://www.reddit.com/r/androiddev/comments/j2gtmo/a_categorized_list_of_all_java_and_jvm_features/)
+## [3][What are some coding optimizations you do in your app that new Android dev should be aware of?](https://www.reddit.com/r/androiddev/comments/j35tf2/what_are_some_coding_optimizations_you_do_in_your/)
+- url: https://www.reddit.com/r/androiddev/comments/j35tf2/what_are_some_coding_optimizations_you_do_in_your/
+---
+
+## [4][I couldn't become an android developer on my first job :(](https://www.reddit.com/r/androiddev/comments/j2uzrm/i_couldnt_become_an_android_developer_on_my_first/)
+- url: https://www.reddit.com/r/androiddev/comments/j2uzrm/i_couldnt_become_an_android_developer_on_my_first/
+---
+To give some backstory I'm a new grad who graduated in may of this year who has been looking for an android dev job since then. I've done 3 internships so far in college and in my 2nd one I came to love android dev when that was my given tech stack. I wanted to branch out and try to fullstack in my 3rd internship and came to realize that wasn't for me. When it was time to look for jobs in my senior year covid happened and I legit could barely find anyone hiring let alone interviewing for android jobs. Recently I just got hired at a company that was a generally software engineer position. I told my recruiter that I really was looking for mobile dev and if possible android however after accepting the offer they finally told me what my day to day dev work is and its sadly not mobile dev (its java springwork/microservices). To say I'm not bummed out would be an understatement. I only took this job offer honestly cause I couldn't find anywork for 5 months and I need to make money somehow. Sadly I'm worried how hard it'd be for me to apply for android roles in the future when they start asking for years of android experience. I don't want to be pigeonholed into doing dev work I'm not passionate about.
+## [5][Subscription Deadline 1st November](https://www.reddit.com/r/androiddev/comments/j37dbg/subscription_deadline_1st_november/)
+- url: https://www.reddit.com/r/androiddev/comments/j37dbg/subscription_deadline_1st_november/
+---
+My application currently supports subscriptions via the play-store. However it does not yet support `Account Hold` which is mandatory by November 2020. What will happen to my app if it doesn't support `Account Hold` by 1st November 2020?
+## [6][If you have a budget of $3,500 to market your consumer mobile app (with the goal of driving sign-ups and rankings), how would you use the funds?](https://www.reddit.com/r/androiddev/comments/j352ot/if_you_have_a_budget_of_3500_to_market_your/)
+- url: https://www.reddit.com/r/androiddev/comments/j352ot/if_you_have_a_budget_of_3500_to_market_your/
+---
+If you have a budget of $3,500 to market your consumer mobile app (with the goal of driving sign-ups and rankings), how would you use the funds?
+## [7][Hiding toolbar and bottom nav in certain screens (navigation component)](https://www.reddit.com/r/androiddev/comments/j372j4/hiding_toolbar_and_bottom_nav_in_certain_screens/)
+- url: https://www.reddit.com/r/androiddev/comments/j372j4/hiding_toolbar_and_bottom_nav_in_certain_screens/
+---
+Okay so I've tried these two ways:
+
+1. Hiding toolbar and bottom nav in the onDestinationChanged listener: This causes some flickering and doesn't look good if I'm using transitions like slide.
+2. Creating multiple nav hosts. One for the whole screen and another for the screen between toolbar and bottom nav: This doesn't have any flickering or transition problems but it feels hacky when I want to navigate to a root destination from the inner nav host (like using a view model).
+
+I know this has been asked many times but I can't really find a good answer that eliminates both the problems. How do you guys handle this scenario?
+## [8][Chucker (OkHTTP Debugger for Android) v3.3.0 is out 🎉 - This version comes with minor features, improvement and bugfixes.](https://www.reddit.com/r/androiddev/comments/j37ekz/chucker_okhttp_debugger_for_android_v330_is_out/)
+- url: https://github.com/ChuckerTeam/chucker/releases/tag/3.3.0
+---
+
+## [9][AdContainerView - Android Library](https://www.reddit.com/r/androiddev/comments/j33t4y/adcontainerview_android_library/)
+- url: https://www.reddit.com/r/androiddev/comments/j33t4y/adcontainerview_android_library/
+---
+Why so much boilerplate for a simple BannerAd!? :\\
+
+**AdContainerView** is a simple, lifecycle aware, plug &amp; play wrapper over Google AdMob's AdView (Banner Ad), which handles most of the stuff by itself.
+
+For the simplest use:  
+You just need to add **AdContainerView** in your layout,  
+define 3 parameters: `adUnitId`, `adSize`, `autoLoad` &amp; **that's it!**
+
+**AdContainerView** hooks to your Activity's lifecycle process &amp; handles AdView's lifecycle (Resume, Pause, Destroy Ad).  
+This is most helpful when you just want to add a simple Banner Ad without any boilerplate.
+
+The library is written in Kotlin.  
+More info. on Github: [https://github.com/ItzNotABug/AdContainerView](https://github.com/ItzNotABug/AdContainerView)
+
+Hit the ⭐️ if you find it useful :)  
+Also, reviews and suggestions are more than welcome :)
+## [10][A categorized list of all Java and JVM features since JDK 8 to 15 (aka what Android is missing out)](https://www.reddit.com/r/androiddev/comments/j2gtmo/a_categorized_list_of_all_java_and_jvm_features/)
 - url: https://advancedweb.hu/a-categorized-list-of-all-java-and-jvm-features-since-jdk-8-to-15/
 ---
 
-## [4][Face ID vs Fingerprint](https://www.reddit.com/r/androiddev/comments/j2j9eg/face_id_vs_fingerprint/)
-- url: https://www.reddit.com/r/androiddev/comments/j2j9eg/face_id_vs_fingerprint/
----
-I'm using biometric prompt to authenticate users, the app is always using fingerprint, but I would like my users can choose between Face ID or Fingerprint. How can I get this if it's possible?
-## [5][Busting Android Performance Myths](https://www.reddit.com/r/androiddev/comments/j245b8/busting_android_performance_myths/)
-- url: https://medium.com/androiddevelopers/busting-android-performance-myths-d85ae1d87f22
+## [11][Why is the boolean variable checked required here? Won't the switch case match only that button which has been clicked (which will be contained in the view variable)? What's the purpose of the checked variable here?](https://www.reddit.com/r/androiddev/comments/j33i1s/why_is_the_boolean_variable_checked_required_here/)
+- url: https://i.redd.it/ol41uox0jfq51.png
 ---
 
-## [6][Android Starter Template (hilt, coroutines, flow, edge-to-edge, MVVM, tests, github CI)](https://www.reddit.com/r/androiddev/comments/j1wz3v/android_starter_template_hilt_coroutines_flow/)
-- url: https://www.bloco.io/blog/2020/android-app-starter-update
+## [12][What are the best Open source projects one can start contributing?](https://www.reddit.com/r/androiddev/comments/j35get/what_are_the_best_open_source_projects_one_can/)
+- url: https://www.reddit.com/r/androiddev/comments/j35get/what_are_the_best_open_source_projects_one_can/
 ---
-
-## [7][What do you think of Jetpack Compose?](https://www.reddit.com/r/androiddev/comments/j2ip1l/what_do_you_think_of_jetpack_compose/)
-- url: https://www.reddit.com/r/androiddev/comments/j2ip1l/what_do_you_think_of_jetpack_compose/
----
-I'm just starting to learn Jetpack Compose, so I'm quite inexperienced.  It's a completely different paradigm than the view system, so I guess you need some time to get used to it. But at first glance it seems pretty counterintuitive to me. I mean, to understand what's going on you have to trace all the flow of several composable functions, each one calling another one, sometimes all the way up to the ViewModel, with parameters (state and events) that are not immediately clear.
-
-It seems a big mess, but, as I said, I'm still quite inexperienced.
-
-What do you think?
-## [8][#3 Floating Windows on Android: Permissions](https://www.reddit.com/r/androiddev/comments/j2kb94/3_floating_windows_on_android_permissions/)
-- url: https://dev.to/localazy/3-floating-windows-on-android-permissions-256g
----
-
-## [9][Something I created in a uni course -- Spectrum - An easy to use frequency and amplitude spectrum analyzer with room frequency response capabilities!](https://www.reddit.com/r/androiddev/comments/j2g64b/something_i_created_in_a_uni_course_spectrum_an/)
-- url: https://github.com/berkiyo/spectrum
----
-
-## [10][Please give an example of Composition over Inheritance in regards to Android Development.](https://www.reddit.com/r/androiddev/comments/j23rad/please_give_an_example_of_composition_over/)
-- url: https://www.reddit.com/r/androiddev/comments/j23rad/please_give_an_example_of_composition_over/
----
-
-## [11][Super easy way to track competitor Play Store reviews - using Slack](https://www.reddit.com/r/androiddev/comments/j27rp4/super_easy_way_to_track_competitor_play_store/)
-- url: https://www.reddit.com/r/androiddev/comments/j27rp4/super_easy_way_to_track_competitor_play_store/
----
-Hey! I made a bot to track my app reviews in Slack, it has been really handy. Mostly it reminders me to reply to new play store reviews when they come in. but I also set up a slack channel that only populates with my competitors reviews and it has really helped me get a better picture of what my users want, mainly due to the fact I'm getting a high volume of reviews coming in. Even tho the reviews aren't for my app specifically, it helps paint a fuller picture of what my users are looking for, what they hate, and what they love. 
-
-I wrote a longer post on medium if you're interested. 
-
-https://medium.com/@info_84400/get-more-user-feedback-from-your-mobile-app-with-competitor-analysis-using-slack-3de35734c787
-## [12][OS UI language English but Different language voice input? Possible?](https://www.reddit.com/r/androiddev/comments/j2j4xs/os_ui_language_english_but_different_language/)
-- url: https://www.reddit.com/r/androiddev/comments/j2j4xs/os_ui_language_english_but_different_language/
----
-&amp;#x200B;
-
-There is a bug in android 10
-
-I want OS to be in English
-
-but Voice Input in other language
-
-but android os only recognizes voice input that matches os language
-
-for example when I launch google maps and press microphone
-
-I have to select OS Language to Russian in order to use microphone input in russian
-
-how to fix?
+Also, are there some unspoken rules/etiquette of OS?

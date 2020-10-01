@@ -1,12 +1,13 @@
 # reactjs
-## [1][Beginner's Thread / Easy Questions (September 2020)](https://www.reddit.com/r/reactjs/comments/illwv0/beginners_thread_easy_questions_september_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/illwv0/beginners_thread_easy_questions_september_2020/
+## [1][Beginner's Thread / Easy Questions (October 2020)](https://www.reddit.com/r/reactjs/comments/j31umf/beginners_thread_easy_questions_october_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/j31umf/beginners_thread_easy_questions_october_2020/
 ---
 &gt; Previous Beginner's Threads can be found in the [wiki][wiki previous threads].
 
-Got questions about React or anything else in its ecosystem?  
+Ask about React or anything else in its ecosystem :)
+
 Stuck making progress on your app?  
-Ask away! We’re a friendly bunch.
+Still Ask away! We’re a friendly bunch.
 
 No question is too simple. 🙂
 
@@ -14,9 +15,11 @@ No question is too simple. 🙂
 
 ## Want Help with your Code?
 
-1. **Improve your chances** by adding a minimal example with [JSFiddle][jsfiddle], [CodeSandbox][code sandbox], or [Stackblitz][stackblitz].
-    - Describe what you want it to do, and things you've tried. Don't just post big blocks of code!
-    - **[Formatting Code][wiki formatting code]** wiki shows how to format code in this thread.
+1. **Improve your chances** of reply by
+   1. adding minimal example with [JSFiddle][jsfiddle], [CodeSandbox][code sandbox], or [Stackblitz][stackblitz] links
+   1. describing what you want it to do (ask yourself if it's an [XY problem](https://meta.stackexchange.com/questions/66377/what-is-the-xy-problem))
+   1. things you've tried. (Don't just post big blocks of code!)
+1. **[Formatting Code][wiki formatting code]** wiki shows how to format code in this thread.
 1. **Pay it forward!** Answer questions even if there is already an answer. Other perspectives can be helpful to beginners. Also, there's no quicker way to learn than [being wrong on the Internet][being wrong on the internet].
 
 ---
@@ -34,7 +37,7 @@ No question is too simple. 🙂
 - [FreeCodeCamp's React course][freecodecamp's react course]
 - [Kent Dodd's Egghead.io course][kent dodd's egghead.io course]
 - New to Hooks? Check out [Amelia Wattenberger's Thinking in React Hooks][thinking in react hooks]
-- and these React Hook recipes on [useHooks.com][useHooks.com] by [Gabe Ragland](https://twitter.com/gabe_ragland)
+- and these React Hook recipes on [useHooks.com][usehooks.com] by [Gabe Ragland](https://twitter.com/gabe_ragland)
 - What other updated resources do you suggest?
 
 Any ideas/suggestions to improve this thread - feel free to comment here!
@@ -43,7 +46,7 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 
 ---
 
-[useHooks.com]: https://usehooks.com/
+[usehooks.com]: https://usehooks.com/
 [thinking in react hooks]: https://wattenberger.com/blog/react-hooks
 [freecodecamp's react course]: https://www.freecodecamp.org/news/learn-react-course/
 [microsoft frontend bootcamp]: https://www.reddit.com/r/reactjs/comments/auu02f/microsoft_has_open_sourced_their_frontend/
@@ -63,54 +66,32 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Who's Available? [September 2020]](https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
+## [2][Who's Hiring? and /r/reactjs Moderator Applications! [Oct 2020]](https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/)
+- url: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 ---
-We alternate between hirers (on the 1st of the month) and agencies/freelancers/jobseekers (on the 15th).  
-If you are looking to post or reply to React job postings, please check [this month's Who's Hiring post here.][hiring:this month]
+We alternate between Who's Hiring (on the 1st of the month, [most recent one here](https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/)) and Who's Available (on the 15th, [most recent one here](https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/))
 
----
+## Who's Hiring
 
-If your post or comment is removed wrongly, please [send a message][message:mods] to mods  
-because Automods bot is not perfect :)
+Welcome to the biggest React job board in the world! This is like Hacker News' Who's Hiring but just for React. Top Level comments must be Job Opportunities.
 
----
+⚠️ PLEASE FOLLOW [THE HN Who's Hiring FORMAT](https://news.ycombinator.com/item?id=24342498)
 
-Top Level comments must be Agencies and React Devs available for contract/permanent work.
+Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.
 
-Please include Location or any other Requirements in your comment. You can choose to use this format if it helps:
+examples:
 
-## (Fulltime | Contract | USA | Remote)
+- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
+- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +$80k**
 
-or
+Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
 
-## (Agency | Europe | Remote)
+If you are looking for jobs, send a PM to the poster or post in our Who's Available thread!
 
-Then we recommend adding a 2-3 sentence bio as well.
 
-Not required, but may help:
+## /r/reactjs Moderator Applications
 
-- Link to Github/Portfolio
-- Notable [r/reactjs][r/reactjs] submissions
-- Preferred stack
-- Former companies or clients
-- Design or backend dev experience
-- anything else you consider relevant. Put on your best show!
-- Listing years of experience NOT required, it's a poor metric
-
-If you are looking to hire, you can send a PM, or reply so that others might see your job opening.  
-**Note**: Due to the sensitive nature of availability while currently in a job, users may be using alternate accounts.
-
-For more ideas on what to include, look at the [last Who's Available posts][available:last month].
-
-If you just want some portfolio feedback, check the stickied post below.
-
-Good luck! #WriteOnceApplyEverywhere
-
-[r/reactjs]: https://www.reddit.com/r/reactjs/
-[available:last month]: https://www.reddit.com/r/reactjs/comments/iaggwf/whos_available_august_2020/
-[hiring:this month]: https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/
-[message:mods]: https://www.reddit.com/message/compose?to=%2Fr%2Freactjs
+This month, we are also launching our first application process to moderate this very subreddit! Please see the stickied link below, and post any questions as replies to that post.
 ## [3][Here is how to access Kent Dodds' $359 Epic React course repositories](https://www.reddit.com/r/reactjs/comments/j2la5p/here_is_how_to_access_kent_dodds_359_epic_react/)
 - url: https://www.reddit.com/r/reactjs/comments/j2la5p/here_is_how_to_access_kent_dodds_359_epic_react/
 ---
@@ -132,83 +113,132 @@ For those looking, these are the repositories that are used for the EpicReact co
 \- https://github.com/kentcdodds/bookshelf
 
 You can also watch the course tour here : https://www.youtube.com/watch?v=SDWxeGKX7Fs&amp;t=75s
-## [4][What's the difference between Kent Dodds' $359 Epic React course and $10 Udemy react course by popular instructors?](https://www.reddit.com/r/reactjs/comments/j2268y/whats_the_difference_between_kent_dodds_359_epic/)
-- url: https://www.reddit.com/r/reactjs/comments/j2268y/whats_the_difference_between_kent_dodds_359_epic/
+## [4][What's the scope of "this" in a React class component? (or: why do we need "bind")](https://www.reddit.com/r/reactjs/comments/j37xsk/whats_the_scope_of_this_in_a_react_class/)
+- url: https://www.reddit.com/r/reactjs/comments/j37xsk/whats_the_scope_of_this_in_a_react_class/
 ---
-I know Kent Dodds gained fame through javascript testing course, but even after 40% off $359 seems insanely expensive for 19 hours of video instructions compare to 30 hours of popular Udemy react course that you can get for $10 on sale. Has anybody taken his course before? What's your opinion of him? Anybody considering buying this course at current price?
-## [5][Learn Django+React by building real SaaS products from scratch](https://www.reddit.com/r/reactjs/comments/j2in8m/learn_djangoreact_by_building_real_saas_products/)
-- url: https://www.reddit.com/r/reactjs/comments/j2in8m/learn_djangoreact_by_building_real_saas_products/
----
-I would like to start a series of tutorials that will show how to build SaaS (software as a service) products from the scratch with Django and React. I would like to ask a community what they need from such tutorials? Are they needed? 
+I am learning React and modern Javascript at the same time, and I've stumbled upon the problems with "this" and implicit scoping. I understand now (I think!) how the rules around "this" apply in vanilla Javascript, but I still don't understand how they apply in the context of React.
 
-An example tutorial will look like:
+Let me explain. Let's take this vanilla Javascript code:
 
-- I will build a web service for scheduling posts on social media. What will the service do? You enter the link and a title in the web service and web service will post it on selected social media channels (automated posting).
-- The service will be open-source. It will be deployed and ready for use.
-- I will write a detailed step-by-step tutorial on how the service was created. So you can recreate it from scratch. Or you can modify it and create your own SaaS.
+    class Bla {
+      constructor() {
+        this.valor = 100;
+        }
+    
+      Calcula(a) {
+        console.log(this.valor + a)    
+       }
+    
+      Render() {
+        this.Calcula(66); 
+       }
+    }
+    
+    var blaInstance = new Bla;
+    var a = blaInstance.Render;
+    a();
+    
 
-My experience:
+I understand why this doesn't work: we are calling a() from the global scope, so "this" refers to the global scope, not to the object.
 
-- Tutorial on how to deploy machine learning models with Django: https://www.deploymachinelearning.com/ - it is very detailed and I got a lot of positive feedback
-- Automated Machine Learning SaaS: https://mljar.com
-- AutoML Python package: https://github.com/mljar/mljar-supervised
+Now let's take a React example:
 
-The stack that I'm using: Javascript + React + Redux in the front-end. For backend I'm using Python + Django + Django REST Framework + PostgreSQL + Celery. Deploy with Docker on AWS.
+    class Foo extends React.Component{
+       constructor( props ){
+          super( props ); 
+          }
+       handleClick(event){
+          console.log(this);
+          }
+       render(){
+          return (
+            &lt;button type="button" onClick={this.handleClick}&gt;Click Me&lt;/button&gt; 
+            );
+          }
+        }
+    
+    
 
-The website with information: https://saasitive.com
-
-I'm waiting for your feedback. What would you like to see in such tutorials?
-## [6][🎂 Learning React? Here are My Thoughts as a New React Developer!](https://www.reddit.com/r/reactjs/comments/j2eqvn/learning_react_here_are_my_thoughts_as_a_new/)
-- url: https://dev.to/fahadimran1805/learning-react-here-are-my-thoughts-as-a-new-react-developer-5hbg
----
-
-## [7][Is there a tool which shows a visualised tree structure for the components along with the their local and global states?](https://www.reddit.com/r/reactjs/comments/j2kljl/is_there_a_tool_which_shows_a_visualised_tree/)
-- url: https://www.reddit.com/r/reactjs/comments/j2kljl/is_there_a_tool_which_shows_a_visualised_tree/
----
-I don't know if such tool exists or not, I tried to find it but I wasn't sure how to exactly search for that.
-
-Wouldn't it be really helpful if we could have a tool which makes a tree of our project code. It will be even better if you can see the state values in it , this way we can tell which component has stale state when we're using global state.
-## [8][🆕React menu components](https://www.reddit.com/r/reactjs/comments/j2gbxo/react_menu_components/)
-- url: https://www.reddit.com/r/reactjs/comments/j2gbxo/react_menu_components/
----
-Hello everyone, 
-
-I've built a group of menu components with React.
-
-It has some great functionalities that are not offered in many popular React libraries.
-
-Welcome to try it out from my GitHub page at: [https://szhsin.github.io/react-menu/](https://szhsin.github.io/react-menu/)
-
-Feel free to submit GitHub issues if you find bugs or have feature requests.
-
-Happy coding!
-## [9][useEffect hook cleaning function](https://www.reddit.com/r/reactjs/comments/j2lmz4/useeffect_hook_cleaning_function/)
-- url: https://www.reddit.com/r/reactjs/comments/j2lmz4/useeffect_hook_cleaning_function/
----
-Hey Guys,
-
-I have a question regarding the cleaning phase of an effect (useEffect function's return function).
-
-From what I understand at each render, the effect function is re-evaluated and is scheduled for execution once the render is complete. How about the return function which is used for cleaning? If at each run, we return a new cleaning function which one is going to get executed once the component is detached? Is it the last one? Or is it going to be all of those functions?
-## [10][Blogged: Yet another OOP/C# person (me) trying to understand mechanics behind React Hooks](https://www.reddit.com/r/reactjs/comments/j2l4ap/blogged_yet_another_oopc_person_me_trying_to/)
-- url: https://dev.to/noseratio/yet-another-oop-c-person-me-trying-to-understand-react-hooks-4aik
+In this code, aren't we calling handleClick() within the context of render(), which is inside the class? If that's the case, why doesn't it work? What's the scope from which handleClick() is triggered?
+## [5][I built an interactive UI inside the terminal for a conference using React.](https://www.reddit.com/r/reactjs/comments/j2yjzw/i_built_an_interactive_ui_inside_the_terminal_for/)
+- url: https://www.twilio.com/blog/building-conference-cli-in-react
 ---
 
-## [11][React HotKeys not working as expected.](https://www.reddit.com/r/reactjs/comments/j2j3nj/react_hotkeys_not_working_as_expected/)
-- url: https://www.reddit.com/r/reactjs/comments/j2j3nj/react_hotkeys_not_working_as_expected/
+## [6][React Components Testing](https://www.reddit.com/r/reactjs/comments/j32woz/react_components_testing/)
+- url: https://www.reddit.com/r/reactjs/comments/j32woz/react_components_testing/
 ---
-Can someone please answer this question?
+Hey there, I am very new to testing and want to learn react component testing.
+Can anyone suggest from where should I start..
+I don't know how to write test, what pattern should I follow which will be suitable for me.
 
-[https://stackoverflow.com/questions/64133324/react-hotkeys-cannot-access-updated-state/64133561#64133561](https://stackoverflow.com/questions/64133324/react-hotkeys-cannot-access-updated-state/64133561#64133561)
-## [12][I just finished a React-Native mobile app and want to make a web version of it. Is it okay to stick to RN with RN-web or should I really switch to ReactJS](https://www.reddit.com/r/reactjs/comments/j2irqg/i_just_finished_a_reactnative_mobile_app_and_want/)
-- url: https://www.reddit.com/r/reactjs/comments/j2irqg/i_just_finished_a_reactnative_mobile_app_and_want/
+Thanks in advance ♥️
+## [7][The correct way to handle redux state](https://www.reddit.com/r/reactjs/comments/j353gs/the_correct_way_to_handle_redux_state/)
+- url: https://www.reddit.com/r/reactjs/comments/j353gs/the_correct_way_to_handle_redux_state/
 ---
-I have built several pages with ReactJS, as well as mobile apps with React Native. However, I never used React Native for the web.
+Hello guys, I would like to know if it is the right way to handle the redux state or not. 
 
-I am about to release a React Native mobile app and I want to create a web version of it. The UI will be quite different, but the core functionalities will be the same.
+As you can see in the below codes the `mapLat`, `mapLng` props received through redux and the `lat`, `lng` also handled by `onChange` event. But i am not sure that my if condition is the right way to set state from properties.
 
-To make it easier to reuse my code and maintain both versions, I am considering using React Native web. 
+&amp;#x200B;
 
-Considering that it is a quite complex app, is it a good move, or should I prefer ReactJS when it comes to webdev?
+    const TestWrapper = ({ mapLat, mapLng } ) =&gt; {
+    
+        const [lat, setLat] = useState('')
+        const [lng, setLng] = useState('')
+    
+        if ( lat === "" &amp;&amp; mapLat !== "" ) {
+            setLat(mapLat)
+        }
+        if ( lng === "" &amp;&amp; mapLng !== "" ) {
+            setLng(mapLng)
+        }
+    
+        return (
+            &lt;&gt;
+                &lt;input type="text" name="lat" value={lat} onChange={e =&gt; setLat(e.target.value)} /&gt;
+                &lt;input type="text" name="lat" value={lng} onChange={e =&gt; setLng(e.target.value)} /&gt;
+            &lt;/&gt;
+        )
+    }
+    
+    const mapStateToProps = state =&gt; {
+        const map = state.gmap
+        return {
+            mapLat: map.lat,
+            mapLng: map.lng
+        }
+    }
+    
+    const Test = connect(mapStateToProps)(TestWrapper);
+    
+    export default Test;
+## [8][MobX 6 has been released (decorator free and supports CRA out of the box)](https://www.reddit.com/r/reactjs/comments/j37scq/mobx_6_has_been_released_decorator_free_and/)
+- url: https://michel.codes/blogs/mobx6
+---
 
-I am mostly worried about finding out late in the process that RN limits what I can do on the web somehow, or affects performances.
+## [9][[UPDATE] React-Formik-Ui v5 released. bundle size reduced and converted to TS](https://www.reddit.com/r/reactjs/comments/j36pxe/update_reactformikui_v5_released_bundle_size/)
+- url: https://github.com/KaiHotz/react-formik-ui
+---
+
+## [10][[UPDATE] React-PhoneNr-Input version 2 released - now written in Typescript](https://www.reddit.com/r/reactjs/comments/j36n9t/update_reactphonenrinput_version_2_released_now/)
+- url: https://github.com/KaiHotz/React-PhoneNr-Input
+---
+
+## [11][Should learn react 16.8?](https://www.reddit.com/r/reactjs/comments/j36c18/should_learn_react_168/)
+- url: https://www.reddit.com/r/reactjs/comments/j36c18/should_learn_react_168/
+---
+Hey, I'm almost done with js and I'm planning to learn react to make webpages more pretty. my friend has done this course and is willing to share his account with me, the course on Udemy it has really good reviews but it teaches 16.8, I checked but the latest version is 16.13.
+
+So should I still learn this course or find the lastest one? If you think I should learn the latest version pls tell me where should I learn it from
+
+[link to course I was talking about ](https://www.udemy.com/course/modern-react-front-to-back/)
+
+Any help is appreciated.Thanks
+## [12][Validating Image](https://www.reddit.com/r/reactjs/comments/j367ht/validating_image/)
+- url: https://www.reddit.com/r/reactjs/comments/j367ht/validating_image/
+---
+can someone tell that how to validate image using yup and formik? I tried but it didn't worked
+
+&gt; image: Yup.array().required().label("Image"),  
+&gt;  
+&gt; &lt;Formik         initialValues={{ title: "", des: "", image: \[\] }}

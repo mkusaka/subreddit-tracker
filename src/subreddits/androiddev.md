@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/j1batn/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/j1batn/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/j3tq3s/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/j3tq3s/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - September 28, 2020](https://www.reddit.com/r/androiddev/comments/j19vio/weekly_questions_thread_september_28_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/j19vio/weekly_questions_thread_september_28_2020/
 ---
@@ -31,63 +25,67 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][What are some coding optimizations you do in your app that new Android dev should be aware of?](https://www.reddit.com/r/androiddev/comments/j35tf2/what_are_some_coding_optimizations_you_do_in_your/)
+## [3][Is there any documentation on how to create a Floating Widget?](https://www.reddit.com/r/androiddev/comments/j3lzl9/is_there_any_documentation_on_how_to_create_a/)
+- url: https://www.reddit.com/r/androiddev/comments/j3lzl9/is_there_any_documentation_on_how_to_create_a/
+---
+I'm looking to create something similar to Doordash's [floating widget](https://youtu.be/qERuJqtU8cE?t=40), but can't seem to find any tutorials on this type of widget specifically.
+## [4][Just published - "DevOps-ify Android libraries with GitHub Actions and Package Registry](https://www.reddit.com/r/androiddev/comments/j3s759/just_published_devopsify_android_libraries_with/)
+- url: https://medium.com/scalereal/devops-ify-android-libraries-with-github-actions-and-package-registry-5e7f69a83622
+---
+
+## [5][The new Google Play Console. Whaddya think?](https://www.reddit.com/r/androiddev/comments/j3syg8/the_new_google_play_console_whaddya_think/)
+- url: https://www.reddit.com/r/androiddev/comments/j3syg8/the_new_google_play_console_whaddya_think/
+---
+Spot on? A step in the right direction? Anything you miss? Anything you can't find? I'm curious to hear what r/androiddev think of it :)
+## [6][What are some coding optimizations you do in your app that new Android dev should be aware of?](https://www.reddit.com/r/androiddev/comments/j35tf2/what_are_some_coding_optimizations_you_do_in_your/)
 - url: https://www.reddit.com/r/androiddev/comments/j35tf2/what_are_some_coding_optimizations_you_do_in_your/
 ---
 
-## [4][I couldn't become an android developer on my first job :(](https://www.reddit.com/r/androiddev/comments/j2uzrm/i_couldnt_become_an_android_developer_on_my_first/)
-- url: https://www.reddit.com/r/androiddev/comments/j2uzrm/i_couldnt_become_an_android_developer_on_my_first/
+## [7][App in review on play store for 2+ weeks](https://www.reddit.com/r/androiddev/comments/j3rx0s/app_in_review_on_play_store_for_2_weeks/)
+- url: https://www.reddit.com/r/androiddev/comments/j3rx0s/app_in_review_on_play_store_for_2_weeks/
 ---
-To give some backstory I'm a new grad who graduated in may of this year who has been looking for an android dev job since then. I've done 3 internships so far in college and in my 2nd one I came to love android dev when that was my given tech stack. I wanted to branch out and try to fullstack in my 3rd internship and came to realize that wasn't for me. When it was time to look for jobs in my senior year covid happened and I legit could barely find anyone hiring let alone interviewing for android jobs. Recently I just got hired at a company that was a generally software engineer position. I told my recruiter that I really was looking for mobile dev and if possible android however after accepting the offer they finally told me what my day to day dev work is and its sadly not mobile dev (its java springwork/microservices). To say I'm not bummed out would be an understatement. I only took this job offer honestly cause I couldn't find anywork for 5 months and I need to make money somehow. Sadly I'm worried how hard it'd be for me to apply for android roles in the future when they start asking for years of android experience. I don't want to be pigeonholed into doing dev work I'm not passionate about.
-## [5][Subscription Deadline 1st November](https://www.reddit.com/r/androiddev/comments/j37dbg/subscription_deadline_1st_november/)
-- url: https://www.reddit.com/r/androiddev/comments/j37dbg/subscription_deadline_1st_november/
----
-My application currently supports subscriptions via the play-store. However it does not yet support `Account Hold` which is mandatory by November 2020. What will happen to my app if it doesn't support `Account Hold` by 1st November 2020?
-## [6][If you have a budget of $3,500 to market your consumer mobile app (with the goal of driving sign-ups and rankings), how would you use the funds?](https://www.reddit.com/r/androiddev/comments/j352ot/if_you_have_a_budget_of_3500_to_market_your/)
-- url: https://www.reddit.com/r/androiddev/comments/j352ot/if_you_have_a_budget_of_3500_to_market_your/
----
-If you have a budget of $3,500 to market your consumer mobile app (with the goal of driving sign-ups and rankings), how would you use the funds?
-## [7][Hiding toolbar and bottom nav in certain screens (navigation component)](https://www.reddit.com/r/androiddev/comments/j372j4/hiding_toolbar_and_bottom_nav_in_certain_screens/)
-- url: https://www.reddit.com/r/androiddev/comments/j372j4/hiding_toolbar_and_bottom_nav_in_certain_screens/
----
-Okay so I've tried these two ways:
+Does anyone else have this problem recently?
 
-1. Hiding toolbar and bottom nav in the onDestinationChanged listener: This causes some flickering and doesn't look good if I'm using transitions like slide.
-2. Creating multiple nav hosts. One for the whole screen and another for the screen between toolbar and bottom nav: This doesn't have any flickering or transition problems but it feels hacky when I want to navigate to a root destination from the inner nav host (like using a view model).
+https://imgur.com/IzB5DeS
+## [8][#1 Floating Windows on Android: Jetpack Compose &amp; Room](https://www.reddit.com/r/androiddev/comments/j3rsb8/1_floating_windows_on_android_jetpack_compose_room/)
+- url: https://www.reddit.com/r/androiddev/comments/j3rsb8/1_floating_windows_on_android_jetpack_compose_room/
+---
+Learn how to use floating windows in your Android apps. The first lesson teaches you how to build the main app using Jetpack Compose and Room.
 
-I know this has been asked many times but I can't really find a good answer that eliminates both the problems. How do you guys handle this scenario?
-## [8][Chucker (OkHTTP Debugger for Android) v3.3.0 is out 🎉 - This version comes with minor features, improvement and bugfixes.](https://www.reddit.com/r/androiddev/comments/j37ekz/chucker_okhttp_debugger_for_android_v330_is_out/)
+&amp;#x200B;
+
+https://preview.redd.it/gxlgsbfjmnq51.png?width=850&amp;format=png&amp;auto=webp&amp;s=24c11dd81748f71f91cdbb2fb36d53e1e6a10743
+
+Have you ever wondered how to make those floating windows used by Facebook Heads and other apps? Have you ever wanted to use the same technology in your app? It’s easy, and I will guide you through the whole process.
+
+Author of this article is a developer of [Floating Apps](https://floatingapps.net/); the first app of its kind on Google Play and the most popular one with over 8 million downloads. After 6 years of the development of the app, I know a bit about it. It’s sometimes tricky, and I spent months reading documentation and Android source code and experimenting. I received feedback from tens of thousands of users and see various issues on different phones with different Android versions.
+
+Here’s what I learned along the way.
+
+**In this article, I teach you how to build the simple main app with Jetpack Compose and Room.**
+
+# [\#1 Floating Windows on Android: Jetpack Compose &amp; Room](https://localazy.to/o9yYIR)
+## [9][Chucker (OkHTTP Debugger for Android) v3.3.0 is out 🎉 - This version comes with minor features, improvement and bugfixes.](https://www.reddit.com/r/androiddev/comments/j37ekz/chucker_okhttp_debugger_for_android_v330_is_out/)
 - url: https://github.com/ChuckerTeam/chucker/releases/tag/3.3.0
 ---
 
-## [9][AdContainerView - Android Library](https://www.reddit.com/r/androiddev/comments/j33t4y/adcontainerview_android_library/)
-- url: https://www.reddit.com/r/androiddev/comments/j33t4y/adcontainerview_android_library/
+## [10][New Google Play Console User Review Notifications are gone](https://www.reddit.com/r/androiddev/comments/j3njuk/new_google_play_console_user_review_notifications/)
+- url: https://www.reddit.com/r/androiddev/comments/j3njuk/new_google_play_console_user_review_notifications/
 ---
-Why so much boilerplate for a simple BannerAd!? :\\
+In the older Google Play Console, we had an option to get notifications in the console when a user left a certain star review for any of our apps. In the new console, that option is gone and has been replaced by email notifications.
 
-**AdContainerView** is a simple, lifecycle aware, plug &amp; play wrapper over Google AdMob's AdView (Banner Ad), which handles most of the stuff by itself.
+This here is the problem:
 
-For the simplest use:  
-You just need to add **AdContainerView** in your layout,  
-define 3 parameters: `adUnitId`, `adSize`, `autoLoad` &amp; **that's it!**
+&amp;#x200B;
 
-**AdContainerView** hooks to your Activity's lifecycle process &amp; handles AdView's lifecycle (Resume, Pause, Destroy Ad).  
-This is most helpful when you just want to add a simple Banner Ad without any boilerplate.
+https://preview.redd.it/gq1ass4uslq51.jpg?width=718&amp;format=pjpg&amp;auto=webp&amp;s=df26ca761f481e58a471b404ae6fcd603858ca82
 
-The library is written in Kotlin.  
-More info. on Github: [https://github.com/ItzNotABug/AdContainerView](https://github.com/ItzNotABug/AdContainerView)
-
-Hit the ⭐️ if you find it useful :)  
-Also, reviews and suggestions are more than welcome :)
-## [10][A categorized list of all Java and JVM features since JDK 8 to 15 (aka what Android is missing out)](https://www.reddit.com/r/androiddev/comments/j2gtmo/a_categorized_list_of_all_java_and_jvm_features/)
-- url: https://advancedweb.hu/a-categorized-list-of-all-java-and-jvm-features-since-jdk-8-to-15/
+I have 50+ apps, and these emails start to become spammy and can make you miss other important emails. Is there a way to get the notifications direct in the console?
+## [11][Android Studio 4.2 Canary 13 available](https://www.reddit.com/r/androiddev/comments/j3dt4f/android_studio_42_canary_13_available/)
+- url: https://androidstudio.googleblog.com/2020/10/android-studio-42-canary-13-available.html
 ---
 
-## [11][Why is the boolean variable checked required here? Won't the switch case match only that button which has been clicked (which will be contained in the view variable)? What's the purpose of the checked variable here?](https://www.reddit.com/r/androiddev/comments/j33i1s/why_is_the_boolean_variable_checked_required_here/)
-- url: https://i.redd.it/ol41uox0jfq51.png
+## [12][How can I fix violation "Site Behavior: Navigation" in my app?](https://www.reddit.com/r/androiddev/comments/j3ekpe/how_can_i_fix_violation_site_behavior_navigation/)
+- url: https://www.reddit.com/r/androiddev/comments/j3ekpe/how_can_i_fix_violation_site_behavior_navigation/
 ---
-
-## [12][What are the best Open source projects one can start contributing?](https://www.reddit.com/r/androiddev/comments/j35get/what_are_the_best_open_source_projects_one_can/)
-- url: https://www.reddit.com/r/androiddev/comments/j35get/what_are_the_best_open_source_projects_one_can/
----
-Also, are there some unspoken rules/etiquette of OS?
+Hello. I released my app and after couple months got a mail that it is violating "Site Behavior: Navigation" Policy. I have updated my app ten times and request for rereview but I am keep on getting same violation. This is cause of any librares in app code?

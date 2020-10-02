@@ -71,6 +71,10 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 ---
 We alternate between Who's Hiring (on the 1st of the month, [most recent one here](https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/)) and Who's Available (on the 15th, [most recent one here](https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/))
 
+## Subreddit Moderator Applications
+
+This month, we are also launching our first application process to moderate this very subreddit! Please see the stickied link below, and post any questions as replies to that post.
+
 ## Who's Hiring
 
 Welcome to the biggest React job board in the world! This is like Hacker News' Who's Hiring but just for React. Top Level comments must be Job Opportunities.
@@ -87,158 +91,54 @@ examples:
 Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
 
 If you are looking for jobs, send a PM to the poster or post in our Who's Available thread!
-
-
-## /r/reactjs Moderator Applications
-
-This month, we are also launching our first application process to moderate this very subreddit! Please see the stickied link below, and post any questions as replies to that post.
-## [3][Here is how to access Kent Dodds' $359 Epic React course repositories](https://www.reddit.com/r/reactjs/comments/j2la5p/here_is_how_to_access_kent_dodds_359_epic_react/)
-- url: https://www.reddit.com/r/reactjs/comments/j2la5p/here_is_how_to_access_kent_dodds_359_epic_react/
----
-For those looking, these are the repositories that are used for the EpicReact course (all the content is **OPEN SOURCE** 🚀)  
-\- https://github.com/kentcdodds/react-fundamentals
-
-\- https://github.com/kentcdodds/react-hooks
-
-\- https://github.com/kentcdodds/advanced-react-hooks
-
-\- https://github.com/kentcdodds/advanced-react-patterns
-
-\- https://github.com/kentcdodds/react-performance
-
-\- https://github.com/kentcdodds/testing-react-apps
-
-\- https://github.com/kentcdodds/react-suspense
-
-\- https://github.com/kentcdodds/bookshelf
-
-You can also watch the course tour here : https://www.youtube.com/watch?v=SDWxeGKX7Fs&amp;t=75s
-## [4][What's the scope of "this" in a React class component? (or: why do we need "bind")](https://www.reddit.com/r/reactjs/comments/j37xsk/whats_the_scope_of_this_in_a_react_class/)
-- url: https://www.reddit.com/r/reactjs/comments/j37xsk/whats_the_scope_of_this_in_a_react_class/
----
-I am learning React and modern Javascript at the same time, and I've stumbled upon the problems with "this" and implicit scoping. I understand now (I think!) how the rules around "this" apply in vanilla Javascript, but I still don't understand how they apply in the context of React.
-
-Let me explain. Let's take this vanilla Javascript code:
-
-    class Bla {
-      constructor() {
-        this.valor = 100;
-        }
-    
-      Calcula(a) {
-        console.log(this.valor + a)    
-       }
-    
-      Render() {
-        this.Calcula(66); 
-       }
-    }
-    
-    var blaInstance = new Bla;
-    var a = blaInstance.Render;
-    a();
-    
-
-I understand why this doesn't work: we are calling a() from the global scope, so "this" refers to the global scope, not to the object.
-
-Now let's take a React example:
-
-    class Foo extends React.Component{
-       constructor( props ){
-          super( props ); 
-          }
-       handleClick(event){
-          console.log(this);
-          }
-       render(){
-          return (
-            &lt;button type="button" onClick={this.handleClick}&gt;Click Me&lt;/button&gt; 
-            );
-          }
-        }
-    
-    
-
-In this code, aren't we calling handleClick() within the context of render(), which is inside the class? If that's the case, why doesn't it work? What's the scope from which handleClick() is triggered?
-## [5][I built an interactive UI inside the terminal for a conference using React.](https://www.reddit.com/r/reactjs/comments/j2yjzw/i_built_an_interactive_ui_inside_the_terminal_for/)
-- url: https://www.twilio.com/blog/building-conference-cli-in-react
+## [3][Game developed in ReactJS ⚛, Mr. Square](https://www.reddit.com/r/reactjs/comments/j3btft/game_developed_in_reactjs_mr_square/)
+- url: https://mrsquare.herokuapp.com/
 ---
 
-## [6][React Components Testing](https://www.reddit.com/r/reactjs/comments/j32woz/react_components_testing/)
-- url: https://www.reddit.com/r/reactjs/comments/j32woz/react_components_testing/
+## [4][ReactGrid - React.js component for displaying and entering data in a spreadsheet-like way.](https://www.reddit.com/r/reactjs/comments/j3r0hr/reactgrid_reactjs_component_for_displaying_and/)
+- url: https://github.com/silevis/reactgrid
 ---
-Hey there, I am very new to testing and want to learn react component testing.
-Can anyone suggest from where should I start..
-I don't know how to write test, what pattern should I follow which will be suitable for me.
 
-Thanks in advance ♥️
-## [7][The correct way to handle redux state](https://www.reddit.com/r/reactjs/comments/j353gs/the_correct_way_to_handle_redux_state/)
-- url: https://www.reddit.com/r/reactjs/comments/j353gs/the_correct_way_to_handle_redux_state/
+## [5][Next.js development with instant dev-database provisioning](https://www.reddit.com/r/reactjs/comments/j3r6am/nextjs_development_with_instant_devdatabase/)
+- url: https://medium.com/@chris.john.heppell/e6f9ff4ef2d5
 ---
-Hello guys, I would like to know if it is the right way to handle the redux state or not. 
 
-As you can see in the below codes the `mapLat`, `mapLng` props received through redux and the `lat`, `lng` also handled by `onChange` event. But i am not sure that my if condition is the right way to set state from properties.
+## [6][Yet another TikTok clone for NSFW Reddit videos!](https://www.reddit.com/r/reactjs/comments/j3u6a6/yet_another_tiktok_clone_for_nsfw_reddit_videos/)
+- url: https://porntok.net
+---
 
-&amp;#x200B;
+## [7][Learn REACTJS by Making a Reddit Feed App](https://www.reddit.com/r/reactjs/comments/j3qcrn/learn_reactjs_by_making_a_reddit_feed_app/)
+- url: https://www.youtube.com/watch?v=rP-ZARMGY10&amp;feature=share
+---
 
-    const TestWrapper = ({ mapLat, mapLng } ) =&gt; {
-    
-        const [lat, setLat] = useState('')
-        const [lng, setLng] = useState('')
-    
-        if ( lat === "" &amp;&amp; mapLat !== "" ) {
-            setLat(mapLat)
-        }
-        if ( lng === "" &amp;&amp; mapLng !== "" ) {
-            setLng(mapLng)
-        }
-    
-        return (
-            &lt;&gt;
-                &lt;input type="text" name="lat" value={lat} onChange={e =&gt; setLat(e.target.value)} /&gt;
-                &lt;input type="text" name="lat" value={lng} onChange={e =&gt; setLng(e.target.value)} /&gt;
-            &lt;/&gt;
-        )
-    }
-    
-    const mapStateToProps = state =&gt; {
-        const map = state.gmap
-        return {
-            mapLat: map.lat,
-            mapLng: map.lng
-        }
-    }
-    
-    const Test = connect(mapStateToProps)(TestWrapper);
-    
-    export default Test;
 ## [8][MobX 6 has been released (decorator free and supports CRA out of the box)](https://www.reddit.com/r/reactjs/comments/j37scq/mobx_6_has_been_released_decorator_free_and/)
 - url: https://michel.codes/blogs/mobx6
 ---
 
-## [9][[UPDATE] React-Formik-Ui v5 released. bundle size reduced and converted to TS](https://www.reddit.com/r/reactjs/comments/j36pxe/update_reactformikui_v5_released_bundle_size/)
-- url: https://github.com/KaiHotz/react-formik-ui
+## [9][How does React run in production?](https://www.reddit.com/r/reactjs/comments/j3rzwa/how_does_react_run_in_production/)
+- url: https://www.reddit.com/r/reactjs/comments/j3rzwa/how_does_react_run_in_production/
 ---
+I’m from a .net world where an EC2 would run IIS. I’m not sure how to phrase the question but 
+My question is. 
 
-## [10][[UPDATE] React-PhoneNr-Input version 2 released - now written in Typescript](https://www.reddit.com/r/reactjs/comments/j36n9t/update_reactphonenrinput_version_2_released_now/)
-- url: https://github.com/KaiHotz/React-PhoneNr-Input
+What runs React? My backend node API is on one EC2 and I want React on another EC2. After doing npm run build, what’s next?
+I can deploy to the EC2 but what runs it. Does it need its own node/express web server?
+## [10][idbIndex is not defined ...React-snapshot help!!](https://www.reddit.com/r/reactjs/comments/j3u70w/idbindex_is_not_defined_reactsnapshot_help/)
+- url: https://www.reddit.com/r/reactjs/comments/j3u70w/idbindex_is_not_defined_reactsnapshot_help/
 ---
-
-## [11][Should learn react 16.8?](https://www.reddit.com/r/reactjs/comments/j36c18/should_learn_react_168/)
-- url: https://www.reddit.com/r/reactjs/comments/j36c18/should_learn_react_168/
+I am using the react-snapshot package for pre-rendering for my blog site.  I replaced the build and DOM scripts as per the document. However, whenever I generate build, I get idbIndex is not defined error. How do you fix this? I searched google for the problem, but few people are having this problem and there is no solution. I know Firebase is causing this issue, but I can't fix it. Can anybody help?
+## [11][MUI Overlapping and Styling](https://www.reddit.com/r/reactjs/comments/j3t8bu/mui_overlapping_and_styling/)
+- url: https://www.reddit.com/r/reactjs/comments/j3t8bu/mui_overlapping_and_styling/
 ---
-Hey, I'm almost done with js and I'm planning to learn react to make webpages more pretty. my friend has done this course and is willing to share his account with me, the course on Udemy it has really good reviews but it teaches 16.8, I checked but the latest version is 16.13.
+Hello,
 
-So should I still learn this course or find the lastest one? If you think I should learn the latest version pls tell me where should I learn it from
+I’m trying to overlap a component that has an image with text, I’m also trying to move the NavBar to the bottom of the screen.  
 
-[link to course I was talking about ](https://www.udemy.com/course/modern-react-front-to-back/)
-
-Any help is appreciated.Thanks
-## [12][Validating Image](https://www.reddit.com/r/reactjs/comments/j367ht/validating_image/)
-- url: https://www.reddit.com/r/reactjs/comments/j367ht/validating_image/
+-Unable to post my code atm.
+Any help appreciated, thanks
+## [12][I need to create a project for an interview that “touches” on the frontend and backend. Should I use firebase?](https://www.reddit.com/r/reactjs/comments/j3mr48/i_need_to_create_a_project_for_an_interview_that/)
+- url: https://www.reddit.com/r/reactjs/comments/j3mr48/i_need_to_create_a_project_for_an_interview_that/
 ---
-can someone tell that how to validate image using yup and formik? I tried but it didn't worked
+I saw a post on Firebase and how easy it is to use to take care of a lot of things like authentication and security. However it is touted as “backend as a service” and I am worried that it won’t show my backend skills as well as if I just did the regular mern development. BUT if I go the firebase route and speed up development, I will have a lot more time to add more cool features that might let my project stick out. 
 
-&gt; image: Yup.array().required().label("Image"),  
-&gt;  
-&gt; &lt;Formik         initialValues={{ title: "", des: "", image: \[\] }}
+Would engineers checking my code care about this or am I thinking about it to much? It would definitely impress non technical people that might come across my project

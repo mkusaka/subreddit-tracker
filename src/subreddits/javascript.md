@@ -87,43 +87,43 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][Someone in r/CSS asked for frameworks to make a DuoLingo like animation. I suggested using a FLIP animation, and then made an example CodePen. Kind of proud of the result so I thought I would share. Let me know your thoughts](https://www.reddit.com/r/javascript/comments/j36rpo/someone_in_rcss_asked_for_frameworks_to_make_a/)
+## [3][How to get started with Cypress testing](https://www.reddit.com/r/javascript/comments/j3snyk/how_to_get_started_with_cypress_testing/)
+- url: https://www.perfecto.io/blog/cypress-testing
+---
+
+## [4][What's new in Svelte: October 2020](https://www.reddit.com/r/javascript/comments/j3qnew/whats_new_in_svelte_october_2020/)
+- url: https://svelte.dev/blog/whats-new-in-svelte-october-2020
+---
+
+## [5][Someone in r/CSS asked for frameworks to make a DuoLingo like animation. I suggested using a FLIP animation, and then made an example CodePen. Kind of proud of the result so I thought I would share. Let me know your thoughts](https://www.reddit.com/r/javascript/comments/j36rpo/someone_in_rcss_asked_for_frameworks_to_make_a/)
 - url: https://codepen.io/chadd/full/mdPZrbP
 ---
 
-## [4][WatchCarsLearn - Cars learn to drive using AI implemented in JS](https://www.reddit.com/r/javascript/comments/j34yc4/watchcarslearn_cars_learn_to_drive_using_ai/)
+## [6][Circuit Breaker Pattern: Build better software with Javascript](https://www.reddit.com/r/javascript/comments/j3rbg6/circuit_breaker_pattern_build_better_software/)
+- url: https://dev.to/boxpiperapp/circuit-breaker-pattern-build-better-software-enc
+---
+
+## [7][Modern JavaScript for Ancient Web Developers](https://www.reddit.com/r/javascript/comments/j3tins/modern_javascript_for_ancient_web_developers/)
+- url: https://postlight.com/insights/modern-javascript-for-ancient-web-developers#.2tpky4xfc
+---
+
+## [8][4 Ways of Deploying Web Apps in 2020- Jenkins to Automated Cloud Platforms](https://www.reddit.com/r/javascript/comments/j3nmjh/4_ways_of_deploying_web_apps_in_2020_jenkins_to/)
+- url: https://dev.to/ersauravadhikari/4-ways-of-deploying-web-apps-in-2020-1a55
+---
+
+## [9][To Eleventy and Beyond](https://www.reddit.com/r/javascript/comments/j3drxy/to_eleventy_and_beyond/)
+- url: https://hacks.mozilla.org/2020/10/to-eleventy-and-beyond/
+---
+
+## [10][I can't write a JavaScript for loop, and it does not matter](https://www.reddit.com/r/javascript/comments/j3r08h/i_cant_write_a_javascript_for_loop_and_it_does/)
+- url: https://daily.sebastienlorber.com/i-cant-write-a-javascript-for-loop-and-it-does-not-matter-ckfrzpby8004iv6s19cxq04vj
+---
+
+## [11][WatchCarsLearn - Cars learn to drive using AI implemented in JS](https://www.reddit.com/r/javascript/comments/j34yc4/watchcarslearn_cars_learn_to_drive_using_ai/)
 - url: https://manassarpatwar.github.io/WatchCarsLearn/
 ---
 
-## [5][How we built a terminal interface for our conference using React](https://www.reddit.com/r/javascript/comments/j2wnxh/how_we_built_a_terminal_interface_for_our/)
-- url: https://www.twilio.com/blog/building-conference-cli-in-react
----
-
-## [6][Building a socketio multiplayer game and deployment at scale!](https://www.reddit.com/r/javascript/comments/j34lej/building_a_socketio_multiplayer_game_and/)
-- url: http://dev.to/sauravmh/browser-game-design-using-websockets-and-deployments-on-scale-1iaa
----
-
-## [7][Setting up a React.js project using Vite instead of Create React App](https://www.reddit.com/r/javascript/comments/j2kjq0/setting_up_a_reactjs_project_using_vite_instead/)
-- url: https://zaiste.net/posts/modern-lightweight-reactjs-setup-graphql-vite-urql/
----
-
-## [8][Customisable React menu components with accessibility](https://www.reddit.com/r/javascript/comments/j34ixg/customisable_react_menu_components_with/)
-- url: https://szhsin.github.io/react-menu/
----
-
-## [9][Interactive foreign interference tracker for the U.S. elections](https://www.reddit.com/r/javascript/comments/j35bh7/interactive_foreign_interference_tracker_for_the/)
-- url: https://interference2020.org
----
-
-## [10][Accept all LinkedIn connections at once easily](https://www.reddit.com/r/javascript/comments/j35b4l/accept_all_linkedin_connections_at_once_easily/)
-- url: https://medhatdawoud.net/blog/accept-all-linkedin-connections-at-once-easily
----
-
-## [11][Blending In With the Crowd: Implementing CSS and Photoshop blend modes in Javascript](https://www.reddit.com/r/javascript/comments/j37i7a/blending_in_with_the_crowd_implementing_css_and/)
-- url: https://www.srmullen.com/articles/blend-modes
----
-
-## [12][Compact Single-File Cesium Distro](https://www.reddit.com/r/javascript/comments/j2x799/compact_singlefile_cesium_distro/)
-- url: https://www.npmjs.com/package/c137.js
+## [12][CS:GO Chat with Stats](https://www.reddit.com/r/javascript/comments/j3ey69/csgo_chat_with_stats/)
+- url: https://github.com/dcadarko/CS-GO-chat-
 ---
 

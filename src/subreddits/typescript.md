@@ -22,7 +22,89 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Need ideas for a 30 minutes workshop on Typescript](https://www.reddit.com/r/typescript/comments/j349k2/need_ideas_for_a_30_minutes_workshop_on_typescript/)
+## [2][I could use some help with properly typing an event emitter function](https://www.reddit.com/r/typescript/comments/j3s87i/i_could_use_some_help_with_properly_typing_an/)
+- url: https://www.reddit.com/r/typescript/comments/j3s87i/i_could_use_some_help_with_properly_typing_an/
+---
+I have a use case for an event emitter like API, but I can't seem to properly type one of the functions.
+
+I have this interface
+
+```
+interface EventChannel&lt;API extends {}&gt; {
+  emit: (eventName: keyof API, payload: API[typeof eventName]) =&gt; void
+}
+```
+
+However, that doesn't feel right, because we get into this sort of situation
+
+```
+interface ExampleInterface {
+  onNumber: number;
+  onString: string;
+}
+
+type MyInterface = EventChannel&lt;ExampleInterface&gt;;
+```
+
+And now when you look at `MyInterface.emit`, the `eventName` is correct, but the payload is `number | string`, which isn't entirely correct.
+
+Is there a way to make it so that the type of the payload matches the type expected by `ExampleInterface[eventName]`?
+## [3][Cannot get my head around this typing issue.](https://www.reddit.com/r/typescript/comments/j3ghqt/cannot_get_my_head_around_this_typing_issue/)
+- url: https://www.reddit.com/r/typescript/comments/j3ghqt/cannot_get_my_head_around_this_typing_issue/
+---
+Here's my challenge (I've simplified it a little). I have a class call `TestClient` which I use for writing integration tests. There are two kinds of users who can access my application, web users (standard humans who log in) and service users (machine-to-machine users who access with an API key). These users have different structures
+
+
+    interface WebUserIdentity {
+       userId: string
+       emails: string[]
+       type: 'Web'
+    }
+
+and 
+
+
+    interface ServiceUserIdentity {
+       authorizedOrganization: string
+       createdByUserId: string
+       type: 'Service'
+    }
+
+
+What I want to be able to do is have code in my `TestClient` that can do something depending on what type of user I have.
+
+
+
+	class TestClient&lt;IdentityType&gt; {
+		private identity: IdentityType;
+
+		public addEmailForUser(emailAddress: string, optionationUserId?: string){
+			 let userId;
+
+			 if(this.identity.type === Web){
+				 userId = this.identity.userId;
+			 }else{
+				 // assume there's error checking in here.
+				  userId = optionationUserId;
+			 }
+
+
+			 const newEmail = addTheEmailToTheSystem(emailAddress, userId);
+			 if(this.identity.type === Web){
+				 this.identity.emails.push(newEmail);
+			 }
+		}
+	}
+
+This way when I'm writing a test I can have something like this
+
+
+    const webTestClient: TestClient&lt;WebUserIdentity&gt;
+    webTestClient.addEmail('a@b.com');
+
+
+My problem is in the generic for `TestClient&lt;IdentityType&gt;`. I'm pretty sure I'll need conditional types but I can't get it to work so that once I confirm the type I can access the appropriate properties.
+## [4][Need ideas for a 30 minutes workshop on Typescript](https://www.reddit.com/r/typescript/comments/j349k2/need_ideas_for_a_30_minutes_workshop_on_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/j349k2/need_ideas_for_a_30_minutes_workshop_on_typescript/
 ---
 So, I started convincing my team (all JS devs) to make the switch to Typescript, and the CTO of my company told me to make a 30 minutes workshop to teach them about typescript and SHOW how it could benefit our company. 
@@ -32,7 +114,7 @@ We have a front end in React and React-Native and a back-end in Node, so to me t
 So this workshop needs both to be an introduction to TS as well as a showcase of how powerful it can be, any ideas of how I could/should do it? 
 
 P.S.: I don't have any experience making workshops either, so any tips could help, really.
-## [3][Working Static Type Inference Without Functions as Type Proxies](https://www.reddit.com/r/typescript/comments/j360y4/working_static_type_inference_without_functions/)
+## [5][Working Static Type Inference Without Functions as Type Proxies](https://www.reddit.com/r/typescript/comments/j360y4/working_static_type_inference_without_functions/)
 - url: https://www.reddit.com/r/typescript/comments/j360y4/working_static_type_inference_without_functions/
 ---
 Holy Smokes!
@@ -46,7 +128,7 @@ It was surprisingly challenging to coax the type inference engine to do what I w
 Unfortunately I simply could not avoid using functions to build structures, but for singular types the proxies are just the name of the type!
 
 If there's any interest I will try to roll it into a library.
-## [4][[help] Restricting a mapped type to a list of properties to be used in another type?](https://www.reddit.com/r/typescript/comments/j33067/help_restricting_a_mapped_type_to_a_list_of/)
+## [6][[help] Restricting a mapped type to a list of properties to be used in another type?](https://www.reddit.com/r/typescript/comments/j33067/help_restricting_a_mapped_type_to_a_list_of/)
 - url: https://www.reddit.com/r/typescript/comments/j33067/help_restricting_a_mapped_type_to_a_list_of/
 ---
 so hard to explain here (or to google) exactly what I'm looking for. I want to 
@@ -71,11 +153,11 @@ I want to do something like this (type a type), but it's obviously impossible:
     }
 
 I'm sure I'm spacing out on something I've seen before, but I can't find a good example of this anywhere
-## [5][I tried to write clean architecture based back-end application in TypeScript](https://www.reddit.com/r/typescript/comments/j27rqe/i_tried_to_write_clean_architecture_based_backend/)
+## [7][I tried to write clean architecture based back-end application in TypeScript](https://www.reddit.com/r/typescript/comments/j27rqe/i_tried_to_write_clean_architecture_based_backend/)
 - url: https://github.com/pvarentsov/typescript-clean-architecture
 ---
 
-## [6][Excluding the keys of a base type](https://www.reddit.com/r/typescript/comments/j2bggl/excluding_the_keys_of_a_base_type/)
+## [8][Excluding the keys of a base type](https://www.reddit.com/r/typescript/comments/j2bggl/excluding_the_keys_of_a_base_type/)
 - url: https://www.reddit.com/r/typescript/comments/j2bggl/excluding_the_keys_of_a_base_type/
 ---
 I have a base type (ex: Record&lt;string, any&gt;) that I want to ensure is true for all sub-type instances. For each sub-type, I have a set of specific keys which will be valid which return a specific set of values.
@@ -88,7 +170,7 @@ What is the right way to extract only ("a" | "b") into a type of its own, given 
 
 Playground:
 https://www.typescriptlang.org/play?#code/C4TwDgpgBAksEFsDOUC8UBKEDGB7ATgCYA8Sw+AlgHYDmANFAIZUgB8A3FAPRdQCyEZsCjBcUMPlwA3CoWiMoAI0ZJooSFDL4ArtmDb8EBlVzCkjEFABEzS1uo0oFFLgDWFqwChq8fADNGbGg+EDhEFAgAD3gqQhQw5CgAb25eASERMQlpWXkqKCiwABsKbAphErIoXD8oKUYSwihXCBAUZibgAAsICnxNSDK-UqhDfXx89QgkTyg5pgAuTXIHOln5xSWqbQRFCHxPAF9PTymoAGlWpABBPW0GtGbWmv5Q+GROHjR0e1ooAB8oNtdvtTuBoJc2gARaZ9CBNdA2KwA6yKKyfXhyJBwwgnPzaKh6Ci4fI0CDABLEAAqBWiEFiKEhNzuDVYAApUlAAMJdZhkkRdZxQEpUNRiJkw7GGTpiQKCiBSaBYnFKCC8mQEAB06zm5XCSxCCSQDB1TkISypAEpPAa3uEANpUgC6yVNYwM+T1yHtsid7COJzwVCqXqQtqNjySpsYSyshEYwEYVjW8yUSwArAHPEGqvUitoINdHmSKe82aGGEjLRjlpRaJqoAB1AiuBzanPCPMFgBCxfJCXL72NqKs1c5wL2+Abzfwrfr2ZJuYaBa5fdLiEH4Ur2FHNdsUAAhEemxlROJJIRdPIROCCvhJP0eoYoH4CExPVQ87JrDuniBNUAA
-## [7][What am I missing here?](https://www.reddit.com/r/typescript/comments/j27k9e/what_am_i_missing_here/)
+## [9][What am I missing here?](https://www.reddit.com/r/typescript/comments/j27k9e/what_am_i_missing_here/)
 - url: https://www.reddit.com/r/typescript/comments/j27k9e/what_am_i_missing_here/
 ---
 [Playground](https://www.typescriptlang.org/play?#code/C4TwDgpgBAKgjFAvFA2gcgM7AE4EsB2A5mgDRQDeAtgQPwBcU+ArpQEYTZmUCGAHvYxbtsAXwC6AbgBQoSLABMSVGm7Zs3EKVgxJUmeGgwYSKVDNQAPrDinzVmPKnSpEXmAD22YFABmTfADGwLju+FAAFtwYUAA8MAB8UAAU3Azc+CBkANYMWRAg7j6wAJRpULjR5CgA+lnlYXkFRToMMDVZYiJS5LZm2BDATNgN9VDcUABkE2MoHVAAhIjI-gAmED4EECvSXVIEwBw+3AHQAFLuBDEAysDcwQEwZABK-sGUEAkUvWMBJ2DASWADBe+DeHzIADcGDc7rgHqUoKx3O4ADYQdI7PQBUJYKBPeAMc6XLB4IhkeCJZA9cw-P4A4CQ4pfGk0-qDYbJWQQQpQCFIJZQTA4AjEJlTb4s8xJeaRDCAlBwMRkNDUfBoJkWKzABViAB0qtiyAhurRRGA4TFEwlkuSMqi8sVyp4vHVli1Ov1fCg8SNJogZot0hpXV22PwuPx8kJF3wMX8WXw7gA7vgUEqFJTmeZjnTASQIUzqTaw7iMExWFylNrFUGbWyhmEkgBBNQaXUVFvqEBJAuW62S40QCEcbtMJCJfFtMsVgwoAAMYj1OYg-yS065ZCYxWKtbMIaxOO8k6URbMQtJxGB8BI3xUrc0V-kN5EQA)
@@ -96,7 +178,7 @@ https://www.typescriptlang.org/play?#code/C4TwDgpgBAksEFsDOUC8UBKEDGB7ATgCYA8Sw+
 I want to create a simple type validator for some data I get coming in.
 
 This is a sub-example but it already doesn't work. What am I doing wrong?
-## [8][I created a FULLY TYPED Twitter API Client for Node.js](https://www.reddit.com/r/typescript/comments/j1bidy/i_created_a_fully_typed_twitter_api_client_for/)
+## [10][I created a FULLY TYPED Twitter API Client for Node.js](https://www.reddit.com/r/typescript/comments/j1bidy/i_created_a_fully_typed_twitter_api_client_for/)
 - url: https://www.reddit.com/r/typescript/comments/j1bidy/i_created_a_fully_typed_twitter_api_client_for/
 ---
 I created a FULLY TYPED Twitter API Client for Node.js 🔧  
@@ -110,88 +192,9 @@ This client is taking full advantage of modern TypeScript capabilites!
 Check it out 👇
 
 [https://github.com/Silind/twitter-api-client](https://github.com/Silind/twitter-api-client)
-## [9][Is it standard to use the not null operator everywhere Env variables are used?](https://www.reddit.com/r/typescript/comments/j1iuc4/is_it_standard_to_use_the_not_null_operator/)
+## [11][Is it standard to use the not null operator everywhere Env variables are used?](https://www.reddit.com/r/typescript/comments/j1iuc4/is_it_standard_to_use_the_not_null_operator/)
 - url: https://www.reddit.com/r/typescript/comments/j1iuc4/is_it_standard_to_use_the_not_null_operator/
 ---
 It's by far my most common use of !. In strict mode all Env variables have an implicit type of `string | undefined`.
 
 Just curious if you guys also use ! with them. Or if you do something else such as asserting `process.env` as `any`
-## [10][Trying to wrap my head around type inference failing](https://www.reddit.com/r/typescript/comments/j1bcj4/trying_to_wrap_my_head_around_type_inference/)
-- url: https://www.reddit.com/r/typescript/comments/j1bcj4/trying_to_wrap_my_head_around_type_inference/
----
-Hi, I've run into Typescript failing to infer something and I'm trying to understand why. This simple example works:
-
-```
-type Group&lt;A, B&gt; = {
-    createA: () =&gt; A,
-    aToB: (a: A) =&gt; B,
-};
-
-function doSomething&lt;A, B&gt;(group: Group&lt;A, B&gt;) {
-    const a = group.createA();
-    const b = group.aToB(a);
-
-    return b;
-}
-
-const example = doSomething({
-    createA: () =&gt; 123,
-    aToB: (value) =&gt; value.toString(),
-});
-```
-
-So `example` is inferred as `Group&lt;number, string&gt;`, aToB's value parameter is number, `aToB` returns a string. All makes sense.
-
-But if I add another function to `Group` that takes `B` as a parameter:
-
-```
-type Group&lt;A, B&gt; = {
-    createA: () =&gt; A,
-    aToB: (a: A) =&gt; B,
-    logB: (b: B) =&gt; void
-};
-
-function doSomething&lt;A, B&gt;(group: Group&lt;A, B&gt;) {
-    const a = group.createA();
-    const b = group.aToB(a);
-
-    group.logB(b);
-
-    return b;
-}
-
-const example = doSomething({
-    createA: () =&gt; 123,
-    aToB: (value) =&gt; value.toString(),
-    logB: (value) =&gt; console.log(value)
-});
-```
-
-`A` remains a number, but `B` becomes `unknown`.
-
-I'm trying to figure out why this is. I assume now that `B` is used as a parameter, that stops Typescript from being able to infer `B` as being the result of `createA`, and since there's no type on `logB: (value)`, it gives up and calls it unknown.
-
-I can get around this by `logB: (value: string) =&gt; console.log(value)`, but is there a way to tell Typescript to always infer `B` from the return type of `createA`, even if it's used as a parameter elsewhere?
-## [11][Looking for collaborators for open source project.](https://www.reddit.com/r/typescript/comments/j0vzdn/looking_for_collaborators_for_open_source_project/)
-- url: https://www.reddit.com/r/typescript/comments/j0vzdn/looking_for_collaborators_for_open_source_project/
----
-Hi, good evening!
-
-My name is William and I am a senior engineer based in the UK.
-
-I am looking for a couple of junior developers who would like to work with me on an open source project that aims to help photographers and other media artist with a workflow manager.
-
-If anyone is looking for a project to work on to learn more about Vue and TypeScript, I would be very happy to mentor them.
-​
-Cheers!
-
----
-EDIT
-
-Thanks to everyone who expressed interested in Photion!
-
-This is the main repo we should be working on:
-https://github.com/photion/web-admin
-
-For anyone interested into joining, here is a slack invite:
-https://join.slack.com/t/photion/shared_invite/zt-hnqy02xy-wB0vJqZv_lhrB~7qWv6~VA

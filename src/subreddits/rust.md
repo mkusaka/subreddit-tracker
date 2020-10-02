@@ -23,84 +23,43 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/09/30/this-week-in-rust-358/
 ---
 
-## [3][Introducing binserve - A blazingly fast static web server in a single binary you can set up with zero code](https://www.reddit.com/r/rust/comments/j35c81/introducing_binserve_a_blazingly_fast_static_web/)
-- url: https://www.reddit.com/r/rust/comments/j35c81/introducing_binserve_a_blazingly_fast_static_web/
----
-Hello, fellow Rustaceans,
-
-I am new to Rust and started reading the Rust Book to learn it. When I lurked through it, I found Rust to have unique principles on how the language is designed and that really got me interested! I decided to choose it as my language of choice from now on and to learn something, you gotta do something so I did! This is it, my first ever project in **Rust**!
-
-Introducing **binserve** ⚡🦀
-
-A blazingly fast static web server in a single binary you can set up with zero code. 🔥
-
-**Features:**
-
-* **Single binary with no dependencies and everything built-in.**
-* **Blazingly Fast!** ⚡ - it's built on top of Actix!
-* **Handlebars** template engine.
-* **Easy Routing**
-* **Secure By Design**
-* **Config &amp; Static File Assistance**
-* **Supports Any Static File** (`Content-Type`)
-* **Custom Error Page Support**
-* And much more...
-
-**Check it out!**
-
-[https://github.com/mufeedvh/binserve](https://github.com/mufeedvh/binserve)
-
-As this is my first project, I might've made some mistakes in semantics or in implementing things the Rust way, if you're free or want to help, please give me feedback/suggestions, I would really appreciate it! ❤️
-
-`Ok(())` Thanks!
-## [4][Colliding galaxies simulation using Rust and WebAssembly 🌌](https://www.reddit.com/r/rust/comments/j2se15/colliding_galaxies_simulation_using_rust_and/)
-- url: https://v.redd.it/sy1p08cr1cq51
+## [3][Czkawka - written in Rust and GTK multi-tool to find duplicates, empty folders, big files, etc.](https://www.reddit.com/r/rust/comments/j3r3xx/czkawka_written_in_rust_and_gtk_multitool_to_find/)
+- url: https://v.redd.it/y8fogeykanq51
 ---
 
-## [5][Mobile operating system SailfishOS now supports Rust](https://www.reddit.com/r/rust/comments/j35d01/mobile_operating_system_sailfishos_now_supports/)
-- url: https://forum.sailfishos.org/t/release-notes-pallas-yllastunturi-3-4-0/2258
+## [4][A WIP gcc codegen for Rust](https://www.reddit.com/r/rust/comments/j3l9g3/a_wip_gcc_codegen_for_rust/)
+- url: https://github.com/antoyo/rustc_codegen_gcc
 ---
 
-## [6][Announcing the Portable SIMD Project Group | Inside Rust Blog](https://www.reddit.com/r/rust/comments/j2p44j/announcing_the_portable_simd_project_group_inside/)
-- url: https://blog.rust-lang.org/inside-rust/2020/09/29/Portable-SIMD-PG.html
+## [5][Mesa Developers Discuss The Possibility Of Rust Graphics Driver Code](https://www.reddit.com/r/rust/comments/j3tzvf/mesa_developers_discuss_the_possibility_of_rust/)
+- url: https://www.phoronix.com/scan.php?page=news_item&amp;px=Mesa-Rust-2020-Discussion
 ---
 
-## [7][Got my first segfault after 18 months of Rust programming](https://www.reddit.com/r/rust/comments/j2qknq/got_my_first_segfault_after_18_months_of_rust/)
-- url: https://i.redd.it/dx06hngzkbq51.png
+## [6][Boa release v0.10](https://www.reddit.com/r/rust/comments/j3tbc7/boa_release_v010/)
+- url: https://boa-dev.github.io/2020/10/02/boa-release-10.html
 ---
 
-## [8][Should I learn rust or c++(or any other recommendations) to get a job in the next 5-10 years in the field of robotics?](https://www.reddit.com/r/rust/comments/j37fli/should_i_learn_rust_or_cor_any_other/)
-- url: https://www.reddit.com/r/rust/comments/j37fli/should_i_learn_rust_or_cor_any_other/
----
-I have seen rust rising in popularity on the stack overflow survey over the past years, however, it seems to be rarely used? I am 16 at the moment and conflicted on which to learn. This will not be my first language so ease of learning, is not an issue.
-
-Edit: and why should I learn said language?
-## [9][Avalog - An experimental logical programming language for higher dimensional mathematical programming](https://www.reddit.com/r/rust/comments/j2zml3/avalog_an_experimental_logical_programming/)
-- url: https://crates.io/crates/avalog
+## [7][The Rust Organization in 2021](https://www.reddit.com/r/rust/comments/j3jmu4/the_rust_organization_in_2021/)
+- url: https://tmandry.gitlab.io/blog/posts/rust-2021-organization/
 ---
 
-## [10][Revisiting a 'smaller Rust'](https://www.reddit.com/r/rust/comments/j2l9v9/revisiting_a_smaller_rust/)
-- url: https://without.boats/blog/revisiting-a-smaller-rust/
+## [8][Software Engineer (SRE) job at Let's Encrypt (Go, Rust, Python)](https://www.reddit.com/r/rust/comments/j3a5m7/software_engineer_sre_job_at_lets_encrypt_go_rust/)
+- url: https://www.abetterinternet.org/careers/le-sre-sw2/
 ---
 
-## [11][Unit tests uploaded to crates.io](https://www.reddit.com/r/rust/comments/j35wsu/unit_tests_uploaded_to_cratesio/)
-- url: https://www.reddit.com/r/rust/comments/j35wsu/unit_tests_uploaded_to_cratesio/
+## [9][Difference between [ and [[](https://www.reddit.com/r/rust/comments/j3rk4y/difference_between_and/)
+- url: https://www.reddit.com/r/rust/comments/j3rk4y/difference_between_and/
 ---
-Hi  
+I was beginning to peruse the Cargo reference, and can see that some sections are `[package]` where as some others are `[[examples]]`. What's distinction with the `[[`? Is it Cargo-specific, or does  it come from TOML specification? (Maybe the answer lies further down the manual).
+## [10][I built a Rust REPL](https://www.reddit.com/r/rust/comments/j3h3an/i_built_a_rust_repl/)
+- url: https://git.simulacrum.party/simulacrumparty/rust-repl
+---
 
+## [11][Headcrab: September 2020 progress report](https://www.reddit.com/r/rust/comments/j39t0z/headcrab_september_2020_progress_report/)
+- url: https://headcrab.rs/2020/10/01/september-update.html
+---
 
-One thing that I have been thinking about (and exposed to when packaging rust crates for Debian) is that there is quite a few crates uploaded to [crates.io](https://crates.io) that have tests that depend on resources that are not packaged into the crate.  
-
-
-This isn't a huge problem, as the developer hopefully runs the tests before uploading.  
-
-
-But it's very useful to also run the tests when packaging a crate for different architectures, it's nice to discover [endian problems](https://github.com/elichai/random-rs/issues/3) or that char is [different on arm64](https://github.com/jeaye/ncurses-rs/pull/194) before they reach production. 
-
-I guess that the problem can be fixed by adding `include` sections in the manifest, but it would be nice if cargo tested this automatically before uploading it.
-
-I'm thinking that adding a step to cargo package that unpacks the .crate into a temporary directory and runs the tests there would improve the ecosystem. Do anyone see any problems with that or have any other feedback?
-## [12][Optimization - Making Rust Code Go Brrrr](https://www.reddit.com/r/rust/comments/j2pmd3/optimization_making_rust_code_go_brrrr/)
-- url: https://aspenuwu.me/posts/Optimization%20-%20Making%20Rust%20Code%20Go%20Brrrr.html
+## [12][Ringbahn III: A deeper dive into drivers](https://www.reddit.com/r/rust/comments/j39jsz/ringbahn_iii_a_deeper_dive_into_drivers/)
+- url: https://without.boats/blog/ringbahn-iii/
 ---
 

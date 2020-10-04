@@ -27,119 +27,119 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Graphql Authentication](https://www.reddit.com/r/rails/comments/j3mxrd/graphql_authentication/)
+## [3][Rails Live-streaming: Adding ‘admin’ functionality to a Rails app](https://www.reddit.com/r/rails/comments/j4xhn0/rails_livestreaming_adding_admin_functionality_to/)
+- url: https://www.reddit.com/r/rails/comments/j4xhn0/rails_livestreaming_adding_admin_functionality_to/
+---
+Hi, every week I livestream some Ruby on Rails coding, building an app and looking at different approaches to features from a learners perspective. In recent weeks we [created our initial models and associations](https://youtu.be/vQjw5uUAx5k), last week we [added some forms along with `edit` and `update` actions on a controller](https://youtu.be/MWSngfjNKS0).
+
+This week, I wanted to run through some different approaches for allowing admins (or any other type of user) to edit/update a model. We looked at where this type of behaviour can live inside your Rails app and then implemented one of the options.
+
+Here's the link: https://www.youtube.com/watch?v=TbRw2jHpgg0
+
+I'll add in some chapter markers as soon as I can to make this easier to navigate, I've already done some of the previous videos.
+
+I usually stream 10:30am (UK Time) every Sunday. You can subscribe to [the YouTube channel](http://www.youtube.com/channel/UC6JPQW8LnAZyfC_rUZqDqqA) if you want to be reminded. Thanks!
+## [4][s3 signed urls question](https://www.reddit.com/r/rails/comments/j4qcxj/s3_signed_urls_question/)
+- url: https://www.reddit.com/r/rails/comments/j4qcxj/s3_signed_urls_question/
+---
+After uploading a file to S3 using Shrine and Uppy (which requires a presigned url), and saving its data to my model, I get to call `image_url` in image tags and such. However....something about having all that credential information as part of a url that I want to be a publicly readable file strikes me as sort of...odd? If my understanding is correct, and it's used for signing uploads, is there any reason why all this remains in the url? If I copy the image url from most sites, I do not see S3 credentials. Would this hurt me in any way?
+
+I go to my console and type `model.image_url` (or just copy image url in the browser) and get this:
+
+`https://bucket.s3.region.amazonaws.com/model/1/image/9457719e40fb416e01a153657d7ea4fb.png?X-Amz-Algorithm=###&amp;X-Amz-Credential=accesskey_date_region_s3aws4_request&amp;X-Amz-Date=###&amp;X-Amz-Expires=900&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=###`
+
+Is it ok that X-Amz-Algorithm, X-Amz-Credential, X-Amz-Date, X-Amz-Expires, X-Amz-SignedHeaders, and X-Amz-Signature are public like this?
+
+X-Amz-Credential is just my access key and date and such, so it doesn't seem harmful. But what about X-Amz-Signature?
+
+And X-Amz-Expires...what is it that expires here? According to [this](https://forums.aws.amazon.com/thread.jspa?threadID=284629) a value of 900 is equal to 15 minutes, however I've been able to view this image hours later. Why would I want this?
+## [5][Why not to use Rails on Windows?](https://www.reddit.com/r/rails/comments/j4va9b/why_not_to_use_rails_on_windows/)
+- url: https://www.reddit.com/r/rails/comments/j4va9b/why_not_to_use_rails_on_windows/
+---
+I'm starting to learn rails and heard a lot of recommendations to use it on Linux, but no one tells me exactly why. So, I prepared a setup on Ubuntu but tried to give a chance do Windows and made my first small api, with login system, etc... but couldn't spot any problem using Windows.
+
+So, can anyone give me reason to drop Windows now instead of running into big issues later, or is it just some kind of a programmer tabu?
+
+&amp;#x200B;
+
+EDIT: Also, I found it way easier to setup an developer environment to Rails on Windows than on Ubuntu, so I don't get the "configuration nightmare" that people tells about.
+## [6][Would anyone be interested in a web jam?](https://www.reddit.com/r/rails/comments/j3v10t/would_anyone_be_interested_in_a_web_jam/)
+- url: https://www.reddit.com/r/rails/comments/j3v10t/would_anyone_be_interested_in_a_web_jam/
+---
+For awhile I have been looking for an outlet for competitive web development but haven't found anything. In turn, we are hosting our own competitive web development jam tomorrow!
+
+It will be open up tonight at 12am EST and you will have 24hours(all day Saturday) to complete the website!
+
+Tonight we will be posting the theme we have picked and the criteria you must complete for your submission. It must be submitted by 11:59pm on Saturday Oct 3rd EST.
+
+You are allowed to utilize any web technologies you want to build the website, except drag and drop programs. You do have to build the site from scratch and cannot utilize a template.
+
+There is an optional $2 to get a ticket to compete for the cash prize! Otherwise it's free for anyone wanting to just get some experience or have some fun!
+
+For anyone that's interested in still signing up, here is the link :) Good luck everyone!
+
+[https://discord.gg/5rcKpTk](https://discord.gg/5rcKpTk)
+## [7][anyone ever try to put authenticated views in cdn?](https://www.reddit.com/r/rails/comments/j3ydbr/anyone_ever_try_to_put_authenticated_views_in_cdn/)
+- url: https://www.reddit.com/r/rails/comments/j3ydbr/anyone_ever_try_to_put_authenticated_views_in_cdn/
+---
+wondering how you approached security, which APIs you used (conditions, token).
+## [8][Rails API only application; Native App + Doorkeeper = very confused fellow developer](https://www.reddit.com/r/rails/comments/j3wuu8/rails_api_only_application_native_app_doorkeeper/)
+- url: https://www.reddit.com/r/rails/comments/j3wuu8/rails_api_only_application_native_app_doorkeeper/
+---
+Hey, I promise you I've gone through all the posts on this subreddit I could find on this topic. I have some beginner questions as I've only dived into my first rails project in May (which is running just fine :D)
+
+I now need to add proper authentication to it
+
+I initially used Devise + a custom JWT strategy but that wouldn't work for me in the long run. Long story short, I need an Oauth mechanism for creating an Alexa Skill. 
+
+Anyway, my confusions are :
+
+1. In my app (a flutter one in this case) I would like to start off with a simple sign in with email and later scale to social logins. Can I do this without leaving the app (not going into the browser?)
+
+2. If not, do I need to create a custom view in my API only rails app just for handling the login that I need to send my native app users to, to authenticate?
+
+3. What is the redirect URI in this case for doorkeeper? 
+
+I can figure out the omniauth bit and the specifics as and when it comes, but my fundamentals here in understanding this process keeping rails and doorkeeper in mind aren't clear. 
+
+I will buy you a beer because this has been really stressful figuring out and because I love this community in general haha
+
+Thanks in advance!
+## [9][View helpers - Is this approach "acceptable" or is it horrible?](https://www.reddit.com/r/rails/comments/j3utnl/view_helpers_is_this_approach_acceptable_or_is_it/)
+- url: https://www.reddit.com/r/rails/comments/j3utnl/view_helpers_is_this_approach_acceptable_or_is_it/
+---
+Hi,
+
+I have a few custom UI components in my app, such as a dropdown menu. Writing those up manually every time I need one is not so cool, considering that it's quite a bit of HTML to write and if I need to update the dropdown markup once, I have to do it across many, many views.
+
+Therefore, I wrote those two helpers: [\*click\*](https://gist.github.com/ImMaax/9d9c6ba45eba6664b87a43e0c93fa168)
+
+Do you think this is a good approach or is it completely horrible? Pretty much my first time working with blocks in Ruby. Thanks a lot!
+## [10][Logging rendering time of templates retrieved with s custom template resolver](https://www.reddit.com/r/rails/comments/j3uy0r/logging_rendering_time_of_templates_retrieved/)
+- url: https://www.reddit.com/r/rails/comments/j3uy0r/logging_rendering_time_of_templates_retrieved/
+---
+In my CMS I manage user editable templates that are stored in the database and retrieved with a custom template resolver. For these templates/views Rails' logs don't show rendering time like for the standard views. Is there a way to fix this? For example by hooking into ActionView LogSubscriber? Thanks!
+## [11][Comments problem in my app](https://www.reddit.com/r/rails/comments/j3uzd1/comments_problem_in_my_app/)
+- url: https://www.reddit.com/r/rails/comments/j3uzd1/comments_problem_in_my_app/
+---
+I made this app:
+
+[https://github.com/prp-e/railstagram](https://github.com/prp-e/railstagram)
+
+as a fun project. Each time I need to learn something new, I mess around with this project. The newest thing I wanted to learn was adding comments to the posts. So, I found this tutorial:
+
+[https://guides.railsgirls.com/commenting](https://guides.railsgirls.com/commenting)
+
+and I followed it and did a little bit of change to get it to work in my way. Now, when I want to add a comment I get this :
+
+&amp;#x200B;
+
+https://preview.redd.it/81rso25vtoq51.png?width=614&amp;format=png&amp;auto=webp&amp;s=cb241f2876af487c7ea2eec845761654bc380775
+
+I can solve the "User" problem by adding `current_user.comments.build` to my comments controller. But I don't know what should I do for the post to get it to the work. I'd be thankful if you guys help me for this.
+## [12][Graphql Authentication](https://www.reddit.com/r/rails/comments/j3mxrd/graphql_authentication/)
 - url: https://www.reddit.com/r/rails/comments/j3mxrd/graphql_authentication/
 ---
 Hello everyone,
 
-Basically I know how to do everything with react/Apollo but faulty new with using rails/graphql, especially authentication. Like, I don’t even know where to start and couldn’t find any solid resources. I’m looking to use graphql and devise. The graphq-devise gem confused me. The boilerplate option was nice but I want to know how to build it from the ground up.
-## [4][How to block users from getting messages?](https://www.reddit.com/r/rails/comments/j3eszd/how_to_block_users_from_getting_messages/)
-- url: https://www.reddit.com/r/rails/comments/j3eszd/how_to_block_users_from_getting_messages/
----
-Hey everyone,
-
-I have an internal messaging system in Rails 6.
-
-I was wondering how can I add the logic for a button to block the user in conversation that I'm messaging with.
-
-&amp;#x200B;
-
-[This is my schema](https://preview.redd.it/77mdw4g06jq51.png?width=965&amp;format=png&amp;auto=webp&amp;s=ee978661b4368e764942b42a3524d768fab21387)
-
-&amp;#x200B;
-
-[MessagesController](https://preview.redd.it/xefpdwnicjq51.png?width=828&amp;format=png&amp;auto=webp&amp;s=bc3932ac6a751504eae9c08d478bd2b0b1e20bd8)
-
-&amp;#x200B;
-
-[Messages Index](https://preview.redd.it/6vin53ancjq51.png?width=1108&amp;format=png&amp;auto=webp&amp;s=249910e94cba48f3386cd3981ea1db682b736f08)
-
-&amp;#x200B;
-
-[Conversations Controller](https://preview.redd.it/ddttqjdpcjq51.png?width=828&amp;format=png&amp;auto=webp&amp;s=5efc31c7f8acb40124c4facdd91ecd2021e3b56b)
-
-&amp;#x200B;
-
-[Conversations Index](https://preview.redd.it/hfqqb3ktcjq51.png?width=1331&amp;format=png&amp;auto=webp&amp;s=6dad341ffe8cbc0c0abb52111ea5c58fbeafe8eb)
-
-&amp;#x200B;
-
-Edit: Controllers and views are added per request.
-
-Can I do it with my current setup or do you advice me to create another table like friendships and use that table to log the blocked users?
-
-&amp;#x200B;
-
-Thank you.
-## [5][Does hosting streaming video get pretty expensive?](https://www.reddit.com/r/rails/comments/j2xzir/does_hosting_streaming_video_get_pretty_expensive/)
-- url: https://www.reddit.com/r/rails/comments/j2xzir/does_hosting_streaming_video_get_pretty_expensive/
----
-I've had an idea for a site that would host instructional videos and possibly integrate with a more traditional web app. I was thinking about doing recurring billing through Stripe and having a mix of free videos on YouTube and subscriber videos on the site.
-
-If I were to host the streaming videos on something like S3, would the costs be pretty significant? I currently host a site using ActiveStorage through S3 and my bandwidth costs are reasonable, but not nothing. I pay more for the database and load balancer. Would I need to encode them in something friendly to streaming and find a player that isn't awful? Am I better off going with a service that facilitates paid access to videos, even if they take their cut?
-## [6][Debugging why sometimes response is slow sometimes fast.](https://www.reddit.com/r/rails/comments/j31v72/debugging_why_sometimes_response_is_slow/)
-- url: https://www.reddit.com/r/rails/comments/j31v72/debugging_why_sometimes_response_is_slow/
----
-I have rails product which exposes certain API. We have a sister application that needs to call certain number of api in sequence. For example
-
-Complete procedure - Sync a user
-
-\- Create a new user  - v1/users
-
-\- Sync his credit cards - v1/cards
-
-\- Generate his bills - v1/bills
-
-Now in have a staging server, with 5 instances, 2 threads each (unicorn). So thats total 10 requests per second. The sister application might need to do the complete sync for maybe 500 users in one go. So its hitting 2 users concurrenctly. Waiting for it to finish then 2 more, and so on. The problem is when the requests start the response times are pretty good. But as the users keep syncing in the response times get incredibly slow. So variations include 300ms, 4 seconds, 16 seconds, back to 4 seconds. Since all of this is test data, almost all users/cards/bills are pretty much the same(API are hit similar params).
-
-How do I find what the bottleneck is? Could it be the db , Im running a \`db.t2.micro\` on aws for it. But even on peak requests the cpu utilization never exceeded 15 %. , 10 DB connections.
-
-Same goes for the EC2 instances, CPU utilisation never seems to exceed 20 percent
-## [7][Are monoliths becoming cool again?](https://www.reddit.com/r/rails/comments/j2kuxq/are_monoliths_becoming_cool_again/)
-- url: https://www.reddit.com/r/rails/comments/j2kuxq/are_monoliths_becoming_cool_again/
----
-Just a gut feeling, but it seems like micro-service everything for small-medium companies is getting a bit out of flavour, and monoliths start to make more sense again. The hype pendulum keeps swinging.
-
-This together with some JS fatigue and the new Deno project (which might deprecate Node) makes me think choosing boring old monolith tech like Rails may become cool again. Or am I reading too much into this?
-## [8][[help] `invalid_grant` - Google authorization for grabbing GMails from the API.](https://www.reddit.com/r/rails/comments/j2njw9/help_invalid_grant_google_authorization_for/)
-- url: https://www.reddit.com/r/rails/comments/j2njw9/help_invalid_grant_google_authorization_for/
----
-I am working on a Rails backend, where I'm implementing support for grabbing GMails from a Google service API. When using [google-auth and its guide](https://github.com/googleapis/google-auth-library-ruby#example-web) for the project, I get to the point where I have a token stored in Redis, but when trying to use it I get a BadRequest and \`invalid\_grant\` thrown back.
-
-It is not due to a clock mismatch and the tokens are fresh. Does anyone have experience with this problem?
-
-Optionally; does anyone know of alternative ways of grabbing mails through the Google API?
-## [9][ApplicationController.render could generate an invalid CSRF token– and you have one more way for a CSRF token to annoy you.](https://www.reddit.com/r/rails/comments/j2hl1o/applicationcontrollerrender_could_generate_an/)
-- url: https://www.reddit.com/r/rails/comments/j2hl1o/applicationcontrollerrender_could_generate_an/
----
-A recent annoying CSRF problem in our platform. Hope you could find the information useful.
-
-Basically there was an ActionController::InvalidAuthenticityToken error on deleting a group.
-
-This was occurring because we were using ApplcationController.render to render one of the buttons for a delete request. This was not working. ApplicationController has no information about the session. We should have used 'render'.
-
-Be careful when using ApplicationController.render for rendering forms. 
-
-[https://kmitov.com/posts/applicationcontroller-render-one-more-way-for-a-csrf-token-to-annoy-you/](https://kmitov.com/posts/applicationcontroller-render-one-more-way-for-a-csrf-token-to-annoy-you/)
-## [10][Deploy Ruby on Rails on Google cloud](https://www.reddit.com/r/rails/comments/j26lkz/deploy_ruby_on_rails_on_google_cloud/)
-- url: https://www.reddit.com/r/rails/comments/j26lkz/deploy_ruby_on_rails_on_google_cloud/
----
-Hi, does anyone know what's the best way to deploy a ruby on rails application on google cloud also using the SQL instance on Google Cloud and a process to use sidekiq.
-
-Do you guys have any pratical experience?
-## [11][Trying to upload the file to rails server from React? I receive permitted: false in parameters of file](https://www.reddit.com/r/rails/comments/j25sdg/trying_to_upload_the_file_to_rails_server_from/)
-- url: https://www.reddit.com/r/rails/comments/j25sdg/trying_to_upload_the_file_to_rails_server_from/
----
-I'm using active\_storage to upload pictures. The file doesn't show on rails. Is the something with rails or Javascript? Where should I be looking
-
-&amp;#x200B;
-
-&lt;ActionController::Parameters {} permitted: false&gt;
-
-&amp;#x200B;
-
-Update: I was able to send formData and get the file through. What I did differently was I did fetch request separate for formData separately instead of sending it within a hash of other data like {username: username, password: password, file: formData}. I don't know why this is though and would appreciate an answer
-## [12][Using Carrierwave, cannot access image_url in view](https://www.reddit.com/r/rails/comments/j2694q/using_carrierwave_cannot_access_image_url_in_view/)
-- url: https://www.reddit.com/r/rails/comments/j2694q/using_carrierwave_cannot_access_image_url_in_view/
----
-Images are saving to the database and are nested within a parent. Parent model is Nitrogen, Child model is Photos. For example, in the view when I try to access the image by  &lt;%=nitrogen.photos.ids%&gt;, the id is displayed.  Attached is a image of what I get in the rails console when I call Nitrogen.last.photos. How can I extract :picture within the ActiveRecord::Associations::CollectionProxy?
+Basically I know how to do everything with react/Apollo but fairly new with using rails/graphql, especially authentication. Like, I don’t even know where to start and couldn’t find any solid resources. I’m looking to use graphql and devise. The graphq-devise gem confused me. The boilerplate option was nice but I want to know how to build it from the ground up.

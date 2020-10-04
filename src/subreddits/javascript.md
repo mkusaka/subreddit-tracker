@@ -1,85 +1,5 @@
 # javascript
-## [1][Your /r/javascript recap for the week of September 21 - September 27](https://www.reddit.com/r/javascript/comments/j18lov/your_rjavascript_recap_for_the_week_of_september/)
-- url: https://www.reddit.com/r/javascript/comments/j18lov/your_rjavascript_recap_for_the_week_of_september/
----
-**Monday, September 21 - Sunday, September 27**
-
-###Top Posts
-
-| score | comments | title &amp; link |
-|--|--|--|
-| 454  | [62 comments](https://www.reddit.com/r/javascript/comments/iy8ku7/job_interviews_in_2020/) | [Job Interviews in 2020](/r/webdev/comments/ixoac8/job_interviews_in_2020/)|
-| 340  | [34 comments](https://www.reddit.com/r/javascript/comments/ixt6wx/introducing_the_new_jsx_transform/) | [Introducing the New JSX Transform](https://reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)|
-| 191  | [13 comments](https://www.reddit.com/r/javascript/comments/j02xf3/elderjs_a_svelte_framework_and_static_site/) | [Elder.js: A Svelte Framework and Static Site Generator - V1 released! 18000 pages in under 8 minutes](https://elderguide.com/tech/elderjs/)|
-| 188  | [17 comments](https://www.reddit.com/r/javascript/comments/iznl3e/smolpxl_a_javascript_library_for_writing_little/) | [Smolpxl - a JavaScript library for writing little retro pixelated games](https://gitlab.com/andybalaam/smolpxl)|
-| 178  | [4 comments](https://www.reddit.com/r/javascript/comments/j0rps1/5_tils_about_nodejs_fundamentals_from_the_nodejs/) | [5 TILs about Node.js Fundamentals from the Node.js Design Patterns Book](https://dev.to/swyx/5-tils-about-node-js-fundamentals-from-the-node-js-design-patterns-book-4dh2)|
-| 175  | [42 comments](/r/javascript/comments/izb5p9/fflate_the_fastest_javascript/) | [fflate - the fastest JavaScript compression/decompression library, 8kB](https://github.com/101arrowz/fflate)|
-| 141  | [50 comments](https://www.reddit.com/r/javascript/comments/j0h568/chord_solver_my_first_website_solves_for_music/) | [Chord Solver - My first website, solves for music chords if you give it notes. If you all have tips for making it more mobile friendly, I’d love to hear it! Thank you!](https://chordsolver.com)|
-| 139  | [7 comments](https://www.reddit.com/r/javascript/comments/iyymar/material_ui_dashboard_with_react/) | [Material UI Dashboard with React](https://material-ui-dashboard.cube.dev/)|
-| 128  | [18 comments](https://www.reddit.com/r/javascript/comments/ixdg7k/a_react_offload_ui_thread_research_to_find_a/) | [A React offload UI thread research to find a pragmatic way to code and utilize Web Worker in different mode&amp;#40;singleton, dedicated, worker pool&amp;#41;](https://github.com/gaplo917/react-offload-ui-thread-research)|
-| 112  | [9 comments](https://www.reddit.com/r/javascript/comments/j02j10/scopes_in_any_jetbrains_ide/) | [Scopes in any JetBrains IDE](https://stitcher.io/blog/phpstorm-scopes)|
-
-
-
-
-&amp;nbsp;
-
-###Most Commented Posts
-
-| score | comments | title &amp; link |
-|--|--|--|
-| 111  | [70 comments](https://www.reddit.com/r/javascript/comments/ix5mz4/v8_release_v86/) | [V8 release v8.6](https://v8.dev/blog/v8-release-86)|
-| 85  | [20 comments](https://www.reddit.com/r/javascript/comments/iywtou/whats_structural_typing_and_how_typescript_uses/) | [What’s Structural Typing And How Typescript Uses It To Its Benefit?](https://medium.com/@mahdighajary/whats-structural-typing-and-how-typescript-use-it-to-its-benefit-6cf491f1564?source=friends_link&amp;amp;sk=e0265b7bf135cc7e5d912d9e74d57afb)|
-| 2  | [18 comments](https://www.reddit.com/r/javascript/comments/iy2soj/askjs_javascript_or_server_side_language/) | `[AskJS]` &amp;#91;AskJS&amp;#93; JavaScript? Or Server Side Language|
-| 92  | [16 comments](/r/javascript/comments/ixmfiw/list_your_dependencies_open_issues_from_the/) | [List your dependencies' open issues from the terminal: `npx shoulders`](https://github.com/mjswensen/shoulders)|
-| 0  | [15 comments](https://www.reddit.com/r/javascript/comments/izjowr/how_i_build_basic_web_apps_in_just_a_few_hours_in/) | [How I Build Basic Web Apps in Just a Few Hours in 2020](https://medium.com/@jamesrabels/how-i-build-mvps-in-just-a-few-hours-in-2020-2c3ef17de8b4)|
-
-
-
-
-&amp;nbsp;
-
-###Top Ask JS
-
-| score | comments | title &amp; link |
-|--|--|--|
-| 1  | [5 comments](https://www.reddit.com/r/javascript/comments/ixib0e/askjs_do_we_need_data_models_in_ui/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Do we need data models in UI?|
-| 0  | [11 comments](https://www.reddit.com/r/javascript/comments/iye6ty/askjs_is_this_bad_practice/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Is this bad practice?|
-| 0  | [2 comments](https://www.reddit.com/r/javascript/comments/izyw51/askjs_userscripts_for_safari_on_ios/) | `[AskJS]` &amp;#91;AskJS&amp;#93; userscripts for safari on ios|
-
-
-
-
-&amp;nbsp;
-
-###Top Showoffs
-
-| score  |  comment  |
-|--|--|
-| 2  |  /u/kaliedarik said [I've been developing some lessons on how to use my Javascript library to build scenes and animations with the &lt;canvas&gt; element. &amp;#91;https://scrawl-v8.rikweb.org.uk/learn&amp;#93;&amp;#40;https://scrawl-v8.ri...](/r/javascript/comments/j04nwe/showoff_saturday_september_26_2020/g6ojhj2/?context=5) |
-| 1  |  /u/tacobellscannon said [I created a &amp;#91;Turmite Explorer&amp;#93;&amp;#40;https://observablehq.com/@mattdiamond/turmite-explorer&amp;#41; on Observable. I think "Zippy" is probably my favorite rule, but they're all pretty fun to watch.](/r/javascript/comments/ivr3xo/showoff_saturday_september_19_2020/g69h6cf/?context=5) |
-| 1  |  /u/taskontable said [I've created **declarative style JavaScript PDF generator library**. Works on Node and the browser!!  &amp;#91;https://labelmake.jp/javascript-pdf-generator-library/&amp;#93;&amp;#40;https://labelmake.jp/javascri...](/r/javascript/comments/ivr3xo/showoff_saturday_september_19_2020/g6ao0el/?context=5) |
-
-
-
-
-&amp;nbsp;
-
-###Top Comments
-
-| score  |  comment  |
-|--|--|
-| 70  |  /u/ILikeChangingMyMind said [&gt;With the new transform, you can use JSX without importing React.  Dan Abramov promised this a few months ago in a GitHub issue thread, but I wasn't sure I could really believe him until I saw this.  ...](/r/javascript/comments/ixt6wx/introducing_the_new_jsx_transform/g68u6zv/?context=5) |
-| 60  |  /u/almostFunctionalLead said [I read it as small pox first](/r/javascript/comments/iznl3e/smolpxl_a_javascript_library_for_writing_little/g6kdyl0/?context=5) |
-| 59  |  /u/JimmytheNice said [&gt;	use Svelte and Firebase  unfortunately nothing concrete, just a lot of story and no examples](/r/javascript/comments/izjowr/how_i_build_basic_web_apps_in_just_a_few_hours_in/g6jpj7f/?context=5) |
-| 55  |  /u/vincentdnl said [Happy to see my drawing posted here!  I've got more on my Twitter if anyone is interrested: &amp;#91;https://twitter.com/vincentdnl&amp;#93;&amp;#40;https://twitter.com/vincentdnl&amp;#41;](/r/javascript/comments/iy8ku7/job_interviews_in_2020/g6biy95/?context=5) |
-| 51  |  /u/attic_sardines said [&gt; I have been a fulltime web developer for the last five years, and have survived every era of the web.  Stopped reading after the first line.](/r/javascript/comments/izjowr/how_i_build_basic_web_apps_in_just_a_few_hours_in/g6k290l/?context=5) |
-
-
-
-
-&amp;nbsp;
-## [2][WTF Wednesday (September 30, 2020)](https://www.reddit.com/r/javascript/comments/j2oysx/wtf_wednesday_september_30_2020/)
+## [1][WTF Wednesday (September 30, 2020)](https://www.reddit.com/r/javascript/comments/j2oysx/wtf_wednesday_september_30_2020/)
 - url: https://www.reddit.com/r/javascript/comments/j2oysx/wtf_wednesday_september_30_2020/
 ---
 Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
@@ -87,43 +7,49 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [3][How to get started with Cypress testing](https://www.reddit.com/r/javascript/comments/j3snyk/how_to_get_started_with_cypress_testing/)
-- url: https://www.perfecto.io/blog/cypress-testing
+## [2][Showoff Saturday (October 03, 2020)](https://www.reddit.com/r/javascript/comments/j4eg3o/showoff_saturday_october_03_2020/)
+- url: https://www.reddit.com/r/javascript/comments/j4eg3o/showoff_saturday_october_03_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][Hacktoberfest - If you are participating and you are searching for a web project checkout tsParticles. It's a valid repository with many issues of any difficulty](https://www.reddit.com/r/javascript/comments/j4n96y/hacktoberfest_if_you_are_participating_and_you/)
+- url: https://github.com/matteobruni/tsparticles/issues
 ---
 
-## [4][What's new in Svelte: October 2020](https://www.reddit.com/r/javascript/comments/j3qnew/whats_new_in_svelte_october_2020/)
-- url: https://svelte.dev/blog/whats-new-in-svelte-october-2020
+## [4][An Object is not a Hash](https://www.reddit.com/r/javascript/comments/j4xlmu/an_object_is_not_a_hash/)
+- url: https://www.pixelstech.cn/article/1326986170-An-Object-is-not-a-Hash
 ---
 
-## [5][Someone in r/CSS asked for frameworks to make a DuoLingo like animation. I suggested using a FLIP animation, and then made an example CodePen. Kind of proud of the result so I thought I would share. Let me know your thoughts](https://www.reddit.com/r/javascript/comments/j36rpo/someone_in_rcss_asked_for_frameworks_to_make_a/)
-- url: https://codepen.io/chadd/full/mdPZrbP
+## [5][Electron alternative: Announcing vue-nodegui](https://www.reddit.com/r/javascript/comments/j4iv1r/electron_alternative_announcing_vuenodegui/)
+- url: https://dev.to/shubhamzanwar/electron-alternative-announcing-vue-nodegui-2l3e
 ---
 
-## [6][Circuit Breaker Pattern: Build better software with Javascript](https://www.reddit.com/r/javascript/comments/j3rbg6/circuit_breaker_pattern_build_better_software/)
-- url: https://dev.to/boxpiperapp/circuit-breaker-pattern-build-better-software-enc
+## [6][Simple React / Redux sunday project : Starblast.io server / game list](https://www.reddit.com/r/javascript/comments/j4v3ee/simple_react_redux_sunday_project_starblastio/)
+- url: /r/Starblastio/comments/j4v2oi/server_game_list_including_mods_ala_loveships/
 ---
 
-## [7][Modern JavaScript for Ancient Web Developers](https://www.reddit.com/r/javascript/comments/j3tins/modern_javascript_for_ancient_web_developers/)
-- url: https://postlight.com/insights/modern-javascript-for-ancient-web-developers#.2tpky4xfc
+## [7][End-to-End testing with codecept (mobile &amp; web)](https://www.reddit.com/r/javascript/comments/j4wvha/endtoend_testing_with_codecept_mobile_web/)
+- url: https://medium.com/@lsmod/end-to-end-testing-with-codecept-mobile-web-b839a76a48aa
 ---
 
-## [8][4 Ways of Deploying Web Apps in 2020- Jenkins to Automated Cloud Platforms](https://www.reddit.com/r/javascript/comments/j3nmjh/4_ways_of_deploying_web_apps_in_2020_jenkins_to/)
-- url: https://dev.to/ersauravadhikari/4-ways-of-deploying-web-apps-in-2020-1a55
+## [8][Ace nodejs interviews!](https://www.reddit.com/r/javascript/comments/j4t4ki/ace_nodejs_interviews/)
+- url: https://medium.com/@ishanshukla97/nodejs-event-loop-a-comprehensive-overview-e009afc7f4a7
 ---
 
-## [9][To Eleventy and Beyond](https://www.reddit.com/r/javascript/comments/j3drxy/to_eleventy_and_beyond/)
-- url: https://hacks.mozilla.org/2020/10/to-eleventy-and-beyond/
+## [9][Ego is released: A lightweight JS library for Decision Making &amp; State Machines](https://www.reddit.com/r/javascript/comments/j4ymjk/ego_is_released_a_lightweight_js_library_for/)
+- url: https://github.com/oguzeroglu/Ego
 ---
 
-## [10][I can't write a JavaScript for loop, and it does not matter](https://www.reddit.com/r/javascript/comments/j3r08h/i_cant_write_a_javascript_for_loop_and_it_does/)
-- url: https://daily.sebastienlorber.com/i-cant-write-a-javascript-for-loop-and-it-does-not-matter-ckfrzpby8004iv6s19cxq04vj
+## [10][Detached window memory leaks](https://www.reddit.com/r/javascript/comments/j4dhua/detached_window_memory_leaks/)
+- url: https://web.dev/detached-window-memory-leaks/
 ---
 
-## [11][WatchCarsLearn - Cars learn to drive using AI implemented in JS](https://www.reddit.com/r/javascript/comments/j34yc4/watchcarslearn_cars_learn_to_drive_using_ai/)
-- url: https://manassarpatwar.github.io/WatchCarsLearn/
+## [11][Attributes and Styles with D3.js](https://www.reddit.com/r/javascript/comments/j4xaz8/attributes_and_styles_with_d3js/)
+- url: https://datacrayon.com/posts/visualisation/visualisation-with-d3/attributes-and-styles/
 ---
 
-## [12][CS:GO Chat with Stats](https://www.reddit.com/r/javascript/comments/j3ey69/csgo_chat_with_stats/)
-- url: https://github.com/dcadarko/CS-GO-chat-
+## [12][Rust meets JavaScript - A clash of programming paradigms](https://www.reddit.com/r/javascript/comments/j4ou0g/rust_meets_javascript_a_clash_of_programming/)
+- url: https://www.jakobmeier.ch/blogging/Rust_on_the_Web.html
 ---
 

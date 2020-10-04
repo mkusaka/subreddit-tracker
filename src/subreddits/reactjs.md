@@ -91,54 +91,119 @@ examples:
 Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
 
 If you are looking for jobs, send a PM to the poster or post in our Who's Available thread!
-## [3][Game developed in ReactJS ⚛, Mr. Square](https://www.reddit.com/r/reactjs/comments/j3btft/game_developed_in_reactjs_mr_square/)
-- url: https://mrsquare.herokuapp.com/
+## [3][RedParty: Host YouTube Watch Party with Friends](https://www.reddit.com/r/reactjs/comments/j4mngn/redparty_host_youtube_watch_party_with_friends/)
+- url: https://v.redd.it/zcay6shh1yq51
 ---
 
-## [4][ReactGrid - React.js component for displaying and entering data in a spreadsheet-like way.](https://www.reddit.com/r/reactjs/comments/j3r0hr/reactgrid_reactjs_component_for_displaying_and/)
-- url: https://github.com/silevis/reactgrid
+## [4][NOEXCITE, a crypto social site built with React](https://www.reddit.com/r/reactjs/comments/j4tfch/noexcite_a_crypto_social_site_built_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/j4tfch/noexcite_a_crypto_social_site_built_with_react/
+---
+Hi all, my buddy and I built a crypto focused social media site with React JS. The frontend was done with React JS and our backend was done with Go/MongoDB. Check it out if you'd like and give me any feedback or questions you have.
+
+[https://www.noexcite.com/](https://www.noexcite.com/)
+## [5][A built a mortgage payment calculator with React &amp; Chart JS](https://www.reddit.com/r/reactjs/comments/j4es0h/a_built_a_mortgage_payment_calculator_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/j4es0h/a_built_a_mortgage_payment_calculator_with_react/
+---
+[https://mortgage-payment-calculator.netlify.app/](https://mortgage-payment-calculator.netlify.app/)
+
+[https://github.com/daveidivide/mortgage-payment-calculator](https://github.com/daveidivide/mortgage-payment-calculator)
+
+This is my first project using React.
+
+I'm in the middle of buying and selling a home and wanted an interactive tool to show me the finances over the term of the mortgage.
+
+Something I'm considering adding next is an overpayments calculator to see how much you can save over the term by paying less interest.
+
+I likely won't though as it's just more maths and I'd rather do something which is more React focused.
+
+Any feedback welcome!
+
+**Things I've learned:**
+
+* React class components
+* React component lifecycle methods
+* Functional components
+* React hooks with functional components
+ * useState()
+ * useEffect()
+* Stateful components being updated by their stateless child components
+* Create React App
+* How much money the banks make
+## [6][What state management solutions do you guys use?](https://www.reddit.com/r/reactjs/comments/j4qc5n/what_state_management_solutions_do_you_guys_use/)
+- url: https://www.reddit.com/r/reactjs/comments/j4qc5n/what_state_management_solutions_do_you_guys_use/
+---
+I´m starting a new project in a new company, and we are still debating this. Some people want to use Redux, but I want to use Context (or Contexts) to share only state that´s truly global (user auth, that sort of thing) and then handle everything else locally in whichever component is necessary. What do you guys use currently?
+## [7][Simple React landing page you can set up in minutes!](https://www.reddit.com/r/reactjs/comments/j4td3p/simple_react_landing_page_you_can_set_up_in/)
+- url: https://www.reddit.com/r/reactjs/comments/j4td3p/simple_react_landing_page_you_can_set_up_in/
+---
+I built a generic, reusable landing page in React. The goal was to build something extremely quick and simple to get feedback and validate your next product idea.
+
+Here is a [live demo](http://react-landing-page1.herokuapp.com/) and the [source code with a guide](https://github.com/jonathancai11/react-landing-page) on how to set it up for yourself and deploy on Heroku in less than 5 minutes!
+
+I'd love to hear thoughts :)
+## [8][I wanna take a react course but i dont want to but not able to decide which one to?](https://www.reddit.com/r/reactjs/comments/j4xnpa/i_wanna_take_a_react_course_but_i_dont_want_to/)
+- url: https://www.reddit.com/r/reactjs/comments/j4xnpa/i_wanna_take_a_react_course_but_i_dont_want_to/
+---
+so here's the thing i took a 40+ hour course regarding MEN stack since i wanted to learn backend development first and made a few projects on it, on the other hand my friend is working on react, and we both want to make a project using both the frameworks. Since i dont know react i asked some fellow coders and they adviced me that i should know some react in order to work with it and implement node into the project, when i looked up for some courses on udemy i found a 40+ react course by maxmillian and a brad traversy's mern stack course which was only about 12hours so would it be worth purchasing the 40+ hour course over brad traversy's course since i dont want to waste much time
+## [9][Hello, r/reactjs! Today I've finished a 2048 game clone built using React's functional components and Redux. Check the code (and the demo) out and perhaps even learn a thing or two!](https://www.reddit.com/r/reactjs/comments/j4g5g9/hello_rreactjs_today_ive_finished_a_2048_game/)
+- url: https://github.com/mat-sz/2048
 ---
 
-## [5][Next.js development with instant dev-database provisioning](https://www.reddit.com/r/reactjs/comments/j3r6am/nextjs_development_with_instant_devdatabase/)
-- url: https://medium.com/@chris.john.heppell/e6f9ff4ef2d5
+## [10][Reach technical test help!](https://www.reddit.com/r/reactjs/comments/j4wiek/reach_technical_test_help/)
+- url: https://www.reddit.com/r/reactjs/comments/j4wiek/reach_technical_test_help/
+---
+I have a technical take home test for a React job but I'm struggling to figure out the best solution. 
+
+I have to take an image and be able to drag a rectangle with the mouse to mark the part of the image that should be exported as a detail shot. I have looked into using HTML canvas and I have some other ideas but nothing feels right. Has anyone got any ideas about a good way to solve this.
+## [11][a library to help with your redux/reducer troubles](https://www.reddit.com/r/reactjs/comments/j4tjs0/a_library_to_help_with_your_reduxreducer_troubles/)
+- url: https://github.com/brietsparks/normalized-reducer
 ---
 
-## [6][Yet another TikTok clone for NSFW Reddit videos!](https://www.reddit.com/r/reactjs/comments/j3u6a6/yet_another_tiktok_clone_for_nsfw_reddit_videos/)
-- url: https://porntok.net
+## [12][Brand new to web dev! Practice site with React is not rendering.](https://www.reddit.com/r/reactjs/comments/j4vl9x/brand_new_to_web_dev_practice_site_with_react_is/)
+- url: https://www.reddit.com/r/reactjs/comments/j4vl9x/brand_new_to_web_dev_practice_site_with_react_is/
 ---
+I'm new to Web Development and this is my first time trying to learn React. I am trying to learn from [this](https://youtu.be/DLX62G4lc44) video tutorial, using visual studio code as my ide for this, and the live server plugin to render the website. So far, its been blank and not rendering the contents of my function from index.js.
 
-## [7][Learn REACTJS by Making a Reddit Feed App](https://www.reddit.com/r/reactjs/comments/j3qcrn/learn_reactjs_by_making_a_reddit_feed_app/)
-- url: https://www.youtube.com/watch?v=rP-ZARMGY10&amp;feature=share
----
+index.html -&gt;
 
-## [8][MobX 6 has been released (decorator free and supports CRA out of the box)](https://www.reddit.com/r/reactjs/comments/j37scq/mobx_6_has_been_released_decorator_free_and/)
-- url: https://michel.codes/blogs/mobx6
----
+ &lt;!DOCTYPE html&gt;
 
-## [9][How does React run in production?](https://www.reddit.com/r/reactjs/comments/j3rzwa/how_does_react_run_in_production/)
-- url: https://www.reddit.com/r/reactjs/comments/j3rzwa/how_does_react_run_in_production/
----
-I’m from a .net world where an EC2 would run IIS. I’m not sure how to phrase the question but 
-My question is. 
+&lt;html lang="en"&gt;  
+&lt;head&gt;  
+ &lt;meta charset="UTF-8"&gt;  
+ &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;  
+ &lt;title&gt;React-Js Test&lt;/title&gt;  
+ &lt;link rel="stylesheet" href="style.css"&gt;  
+&lt;/head&gt;  
+&lt;body&gt;  
+ &lt;div id="root"&gt;&lt;/div&gt;  
 
-What runs React? My backend node API is on one EC2 and I want React on another EC2. After doing npm run build, what’s next?
-I can deploy to the EC2 but what runs it. Does it need its own node/express web server?
-## [10][idbIndex is not defined ...React-snapshot help!!](https://www.reddit.com/r/reactjs/comments/j3u70w/idbindex_is_not_defined_reactsnapshot_help/)
-- url: https://www.reddit.com/r/reactjs/comments/j3u70w/idbindex_is_not_defined_reactsnapshot_help/
----
-I am using the react-snapshot package for pre-rendering for my blog site.  I replaced the build and DOM scripts as per the document. However, whenever I generate build, I get idbIndex is not defined error. How do you fix this? I searched google for the problem, but few people are having this problem and there is no solution. I know Firebase is causing this issue, but I can't fix it. Can anybody help?
-## [11][MUI Overlapping and Styling](https://www.reddit.com/r/reactjs/comments/j3t8bu/mui_overlapping_and_styling/)
-- url: https://www.reddit.com/r/reactjs/comments/j3t8bu/mui_overlapping_and_styling/
----
-Hello,
 
-I’m trying to overlap a component that has an image with text, I’m also trying to move the NavBar to the bottom of the screen.  
+ &lt;script src="index.pack.js"&gt;&lt;/script&gt;  
 
--Unable to post my code atm.
-Any help appreciated, thanks
-## [12][I need to create a project for an interview that “touches” on the frontend and backend. Should I use firebase?](https://www.reddit.com/r/reactjs/comments/j3mr48/i_need_to_create_a_project_for_an_interview_that/)
-- url: https://www.reddit.com/r/reactjs/comments/j3mr48/i_need_to_create_a_project_for_an_interview_that/
----
-I saw a post on Firebase and how easy it is to use to take care of a lot of things like authentication and security. However it is touted as “backend as a service” and I am worried that it won’t show my backend skills as well as if I just did the regular mern development. BUT if I go the firebase route and speed up development, I will have a lot more time to add more cool features that might let my project stick out. 
 
-Would engineers checking my code care about this or am I thinking about it to much? It would definitely impress non technical people that might come across my project
+&lt;/body&gt;  
+&lt;/html&gt;  
+
+
+style.css is an empty file.
+
+index.js -&gt;
+
+import React from "react"  
+import ReactDOM from "react-dom"  
+function MyInfo()  
+{  
+ return(  
+ &lt;div&gt;  
+ &lt;h1&gt;Name&lt;/h1&gt;  
+ &lt;p&gt;lorem...&lt;/p&gt;  
+ &lt;ul&gt;  
+ &lt;li&gt;India&lt;/li&gt;  
+ &lt;li&gt;USA&lt;/li&gt;  
+ &lt;li&gt;Canada&lt;/li&gt;  
+ &lt;/ul&gt;  
+ &lt;/div&gt;  
+);  
+}  
+ReactDOM.render(&lt;MyInfo /&gt;, document.getElementById("root"));

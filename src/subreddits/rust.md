@@ -19,47 +19,101 @@ The unofficial Rust community Discord: [https://bit.ly/rust-community](https://b
 Also check out [last weeks' thread](https://reddit.com/r/rust/comments/iwxitt/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 358](https://www.reddit.com/r/rust/comments/j2yfcu/this_week_in_rust_358/)
-- url: https://this-week-in-rust.org/blog/2020/09/30/this-week-in-rust-358/
+## [2][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.46]](https://www.reddit.com/r/rust/comments/iix8vw/official_rrust_whos_hiring_thread_for_jobseekers/)
+- url: https://www.reddit.com/r/rust/comments/iix8vw/official_rrust_whos_hiring_thread_for_jobseekers/
+---
+Welcome once again to the official /r/rust Who's Hiring thread!
+
+Before we begin, job-seekers should also remember to peruse [the prior thread](https://www.reddit.com/r/rust/comments/htnv19/official_rrust_whos_hiring_thread_for_jobseekers/).
+
+This thread will be periodically stickied to the top of /r/rust for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
+
+Please adhere to the following rules when posting:
+# Rules for individuals:
+
+ * Don't create top-level comments; those are for employers.
+ * Feel free to reply to top-level comments with on-topic questions.
+ * Anyone seeking work should reply to my stickied top-level comment.
+ * Meta-discussion should be reserved for the distinguished comment at the very bottom.
+
+# Rules for employers:
+
+ * To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link at the bottom of the top-level comment in order to make these replies visible.
+ * To make a top-level comment you must be hiring directly; no third-party recruiters.
+ * One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
+ * Proofread your comment after posting it and edit it if necessary to correct mistakes.
+ * Please base your comment on the following template:
+
+COMPANY: *[Company name; please link to your company's website or careers page.]*
+
+TYPE: *[Full time, part time, internship, contract, etc.]*
+
+DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
+
+LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
+
+REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
+
+VISA: *[Does your company sponsor visas?]*
+
+CONTACT: *[How can someone get in touch with you?]*
+## [3][Easy beginner Rust projects to contribute to as an experienced C++ engineer](https://www.reddit.com/r/rust/comments/j4wi0m/easy_beginner_rust_projects_to_contribute_to_as/)
+- url: https://www.reddit.com/r/rust/comments/j4wi0m/easy_beginner_rust_projects_to_contribute_to_as/
+---
+Hi there,
+I have been working with C++ for about 5 years and now I would like to learn Rust. What projects can you recommend me to contribute to in order to get in quickly into Rust?
+Thanks
+## [4][This Month in Rust OSDev (September 2020)](https://www.reddit.com/r/rust/comments/j4xujk/this_month_in_rust_osdev_september_2020/)
+- url: https://rust-osdev.com/this-month/2020-09/
 ---
 
-## [3][Czkawka - written in Rust and GTK multi-tool to find duplicates, empty folders, big files, etc.](https://www.reddit.com/r/rust/comments/j3r3xx/czkawka_written_in_rust_and_gtk_multitool_to_find/)
-- url: https://v.redd.it/y8fogeykanq51
+## [5][ox - An independent Rust text editor that runs in your terminal](https://www.reddit.com/r/rust/comments/j4nbwl/ox_an_independent_rust_text_editor_that_runs_in/)
+- url: https://github.com/curlpipe/ox
 ---
 
-## [4][A WIP gcc codegen for Rust](https://www.reddit.com/r/rust/comments/j3l9g3/a_wip_gcc_codegen_for_rust/)
-- url: https://github.com/antoyo/rustc_codegen_gcc
+## [6][What are some concrete libraries missing in Rust's ecosystem?](https://www.reddit.com/r/rust/comments/j4xj37/what_are_some_concrete_libraries_missing_in_rusts/)
+- url: https://www.reddit.com/r/rust/comments/j4xj37/what_are_some_concrete_libraries_missing_in_rusts/
+---
+I've heard that one of the biggest issues with Rust is the library ecosystem, but I've not seen many concrete examples of the libraries that are missing.
+
+What are some libraries that you've found yourself wanting that doesn't exist?
+
+Or do people just mean that there are too many unstable (0.\*.\*) libraries when they say this?
+## [7][Blog Post: Fast Thread Locals In Rust](https://www.reddit.com/r/rust/comments/j4iy50/blog_post_fast_thread_locals_in_rust/)
+- url: https://matklad.github.io/2020/10/03/fast-thread-locals-in-rust.html
 ---
 
-## [5][Mesa Developers Discuss The Possibility Of Rust Graphics Driver Code](https://www.reddit.com/r/rust/comments/j3tzvf/mesa_developers_discuss_the_possibility_of_rust/)
-- url: https://www.phoronix.com/scan.php?page=news_item&amp;px=Mesa-Rust-2020-Discussion
+## [8][Why does the assembly for this code compare a 'char'-value to 0x11_0000?](https://www.reddit.com/r/rust/comments/j4wovc/why_does_the_assembly_for_this_code_compare_a/)
+- url: https://www.reddit.com/r/rust/comments/j4wovc/why_does_the_assembly_for_this_code_compare_a/
+---
+Inspired by one of the replies to an earlier post today, I tried the following code:
+
+[https://play.rust-lang.org/?version=nightly&amp;mode=release&amp;edition=2018&amp;gist=f568fc3563055e460813cddbc8cededf](https://play.rust-lang.org/?version=nightly&amp;mode=release&amp;edition=2018&amp;gist=f568fc3563055e460813cddbc8cededf)
+
+The function convert\_to\_u32 shows how the rust-compiler is smart enough to reuse the memory allocation of a Vec after iterating through it and collecting it to another Vec. In this case, iterating through a Vec&lt;char&gt; and returning a  Vec&lt;u32&gt;.
+
+But the assemly code seemed to contain an unnecessary loop. On inspection, it seemed to compare each element in the Vec&lt;char&gt; to 0x11\_0000, and truncate the Vec at the first such element. The compiled program is still correct, since the value '0x11\_0000' cannot occur in a Vec&lt;char&gt;, and the check thus has no effect. But it is a missed opportunity for optimization, since without it the loop could go away completely.
+
+Note that the code as written is unsound (you're not allowed to use unsafe code to create a 'char' with value 0x11\_0000), so the compiler really is free to do whatever it likes. But the comparison to 0x11\_0000 remains even if the main-function is removed (which makes the code sound again).
+
+Does anyone know why the compiler is comparing to 0x11\_0000?
+## [9][What is the Rust story for a package like Go's context? (i.e.deadlines, timeouts, cancellation signals)](https://www.reddit.com/r/rust/comments/j4xx7i/what_is_the_rust_story_for_a_package_like_gos/)
+- url: https://www.reddit.com/r/rust/comments/j4xx7i/what_is_the_rust_story_for_a_package_like_gos/
+---
+The context package in the Go standard library provides an interface for cancellation signals, timeouts, and deadlines. https://golang.org/pkg/context/. As it's a part of the standard library, external Go package authors make consistent use of the package in code they write, meaning you can consistently rely on third-party packages accepting a Context type for cancellation signals.
+
+What is the Rust equivalent for this? Is there a package or a preferred pattern? What do you personally use?
+## [10][Is it safe to transmute from Vec&lt;char&gt; to Vec&lt;u32&gt;?](https://www.reddit.com/r/rust/comments/j4qk62/is_it_safe_to_transmute_from_vecchar_to_vecu32/)
+- url: https://www.reddit.com/r/rust/comments/j4qk62/is_it_safe_to_transmute_from_vecchar_to_vecu32/
+---
+I believe that char and u32 have the same layout, and char can safely be transmuted to u32. Does this mean that Vec&lt;char&gt; can be transmuted to Vec&lt;u32&gt;? I ask because clippy throws an error saying they have mismatched layouts.
+
+Playground link: [https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=fb04f03e1384c2ae13273b22e55883ac](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=fb04f03e1384c2ae13273b22e55883ac)
+## [11][Rust meets the web - a clash of programming paradigms](https://www.reddit.com/r/rust/comments/j4ot6b/rust_meets_the_web_a_clash_of_programming/)
+- url: https://www.jakobmeier.ch/blogging/Rust_on_the_Web.html
 ---
 
-## [6][Boa release v0.10](https://www.reddit.com/r/rust/comments/j3tbc7/boa_release_v010/)
-- url: https://boa-dev.github.io/2020/10/02/boa-release-10.html
----
-
-## [7][The Rust Organization in 2021](https://www.reddit.com/r/rust/comments/j3jmu4/the_rust_organization_in_2021/)
-- url: https://tmandry.gitlab.io/blog/posts/rust-2021-organization/
----
-
-## [8][Software Engineer (SRE) job at Let's Encrypt (Go, Rust, Python)](https://www.reddit.com/r/rust/comments/j3a5m7/software_engineer_sre_job_at_lets_encrypt_go_rust/)
-- url: https://www.abetterinternet.org/careers/le-sre-sw2/
----
-
-## [9][Difference between [ and [[](https://www.reddit.com/r/rust/comments/j3rk4y/difference_between_and/)
-- url: https://www.reddit.com/r/rust/comments/j3rk4y/difference_between_and/
----
-I was beginning to peruse the Cargo reference, and can see that some sections are `[package]` where as some others are `[[examples]]`. What's distinction with the `[[`? Is it Cargo-specific, or does  it come from TOML specification? (Maybe the answer lies further down the manual).
-## [10][I built a Rust REPL](https://www.reddit.com/r/rust/comments/j3h3an/i_built_a_rust_repl/)
-- url: https://git.simulacrum.party/simulacrumparty/rust-repl
----
-
-## [11][Headcrab: September 2020 progress report](https://www.reddit.com/r/rust/comments/j39t0z/headcrab_september_2020_progress_report/)
-- url: https://headcrab.rs/2020/10/01/september-update.html
----
-
-## [12][Ringbahn III: A deeper dive into drivers](https://www.reddit.com/r/rust/comments/j39jsz/ringbahn_iii_a_deeper_dive_into_drivers/)
-- url: https://without.boats/blog/ringbahn-iii/
+## [12][Rust Starter Kit 2020](https://www.reddit.com/r/rust/comments/j4gnvh/rust_starter_kit_2020/)
+- url: https://wiki.alopex.li/RustStarterKit2020
 ---
 

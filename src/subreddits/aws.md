@@ -1,97 +1,93 @@
 # aws
-## [1][AWS workflows to set up services automatically via GitHub CI/CD: just fork &amp; reuse!](https://www.reddit.com/r/aws/comments/j3ssqy/aws_workflows_to_set_up_services_automatically/)
-- url: https://github.com/didier-durand/aws-workflows-on-github/
+## [1][AWS Lightsail Deep Dive: What is it and when to use it](https://www.reddit.com/r/aws/comments/j4s7y4/aws_lightsail_deep_dive_what_is_it_and_when_to/)
+- url: https://www.learnaws.org/2020/09/24/aws-lightsail-deep-dive/
 ---
 
-## [2][AWS SSO with Just-in-time Privileges](https://www.reddit.com/r/aws/comments/j3nue4/aws_sso_with_justintime_privileges/)
-- url: https://www.reddit.com/r/aws/comments/j3nue4/aws_sso_with_justintime_privileges/
+## [2][AWS CloudFront route traffic through private DNS name](https://www.reddit.com/r/aws/comments/j4whk6/aws_cloudfront_route_traffic_through_private_dns/)
+- url: https://www.reddit.com/r/aws/comments/j4whk6/aws_cloudfront_route_traffic_through_private_dns/
 ---
-Azure has a great concept called PIM or Privileged Identity Management
+About 10 years ago, I setup AWS Cloudfront origin pointed at my EC2 private DNS so that I can close off all outside traffic from the internet to my EC2 instance directly using security groups.  In other words, all traffic had to go through CloudFront.
 
-[https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure](https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure)
+I tried doing the same and it won't let me.
 
-It allows specific users to elevate privileges, with customizable expiration, authorization (currently unfortuntely only email no mobile push), notifications etc.
+Does anybody know how I might able to get this to work?
 
-It's a great way for admins to have only basic permissions for day-to-day admin, but consciously (with authorization, explicit reason, for limited duration) elevate privs when required.
-
-I'm looking at moving our company's AWS account auth to using a single identity account (with AWS SSO &amp;. Azure as IdP) and was wondering if anyone had built similar? Just-in-time privesc.
-
-In terms of the assumable roles - I guess you could update AssumeRole principles, or probably better use ABAC [https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction\_attribute-based-access-control.html](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_attribute-based-access-control.html)
-
-While we could try to leverage Azure PIM, it's limited to Azure Roles ... so you're need e.g. one Azure Role per Assumable AWS Role ... then based on that role membership, add SAML Assertion .... reauth ... kind of yuck.
-
-Probably best would be to deploy a system in the Identity Account to manage it, dynamically add/remove tags on users' Principal roles (the ones they sign in to, from which they'll assume into others), and the target roles could add a Condition based on the principle's tags to the Assume role policy (and require the assuming principal be in the Identity Account(!))
-
-I did find this excellent writeup on the area, by our previous Solutions Architect Louay (legend btw), it's related, but not 100% what I'm after [https://aws.amazon.com/blogs/security/attribute-based-access-control-ad-fs-simplify-iam-permissions-management/](https://aws.amazon.com/blogs/security/attribute-based-access-control-ad-fs-simplify-iam-permissions-management/)
-
-(also now I notice this isn't necessarily about AWS SSO but the more general concept of "just-in-time approved/audited privesc in AWS")
-
-Just spitballing ideas and thought it might be interesting to discuss here, cheers
-## [3][IAM having timeout issues?](https://www.reddit.com/r/aws/comments/j3gync/iam_having_timeout_issues/)
-- url: https://www.reddit.com/r/aws/comments/j3gync/iam_having_timeout_issues/
+Thanks in advance.
+## [3][Aim for recovery from regional failure or zonal failure? TRICKY EXAM QUESTION](https://www.reddit.com/r/aws/comments/j4ohcp/aim_for_recovery_from_regional_failure_or_zonal/)
+- url: https://www.reddit.com/r/aws/comments/j4ohcp/aim_for_recovery_from_regional_failure_or_zonal/
 ---
-Errors from Terraform complaining about the connection being reset, and getting this from the CLI: 
+So since AWS wants us to build while keeping fault and failure tolerance in mind, should we do that on a regional scale or a zonal scale?   
 
-    Connection was closed before we received a valid response from endpoint URL: "https://iam.amazonaws.com/".
 
-Console shows this error:
-&gt; Http request timed out enforced after 999ms
+for example i can duplicate my resources in different zones in the same region right? but then what if a disaster hit the whole region or a regional outage happened? in this case i should have built my infrastructure to rely on regional availability no? so incase of one region outage accord then at least i have a different region serving my users?  
 
-Not happening with all my accounts, strangely enough.
 
-EDIT: Just resolved?
-## [4][AWS Aurora - What issues have you had?](https://www.reddit.com/r/aws/comments/j3opqz/aws_aurora_what_issues_have_you_had/)
-- url: https://www.reddit.com/r/aws/comments/j3opqz/aws_aurora_what_issues_have_you_had/
+The question in this picture is from jon bonsos practice test for CCP
+
+  
+
+
+https://preview.redd.it/nmpwf8n2myq51.png?width=770&amp;format=png&amp;auto=webp&amp;s=6744f06c85f980082377602313d496bc5e08502d
+## [4][Can Transit Gateway ENIs be configured as Traffic Mirror sources?](https://www.reddit.com/r/aws/comments/j4vzw5/can_transit_gateway_enis_be_configured_as_traffic/)
+- url: https://www.reddit.com/r/aws/comments/j4vzw5/can_transit_gateway_enis_be_configured_as_traffic/
 ---
-We're considering moving from RDS Mysql to AWS Aurora. The promise is great - but in reality we've found that the devil is in the details with a lot of AWS services. 
+As per title - there's an archived thread with the same question but no confirmation.
 
-Has anyone migrated from RDS Mysql to AWS Aurora? Are there any gotchas or things to watch out for?
+This seems like a much cleaner approach to traffic monitoring in our VPC than setting up each individual EC2 host/eni.
+## [5][Question: AWS Amplify Graphql S3 Integration](https://www.reddit.com/r/aws/comments/j4r4lh/question_aws_amplify_graphql_s3_integration/)
+- url: https://www.reddit.com/r/aws/comments/j4r4lh/question_aws_amplify_graphql_s3_integration/
+---
+Reading through the documentation I see this line:
 
-If its relevant, our application is using Ruby on Rails v5.0.7 - soon to upgrade to v6 where we can leverage different database connections (ie utilizing read only nodes)
-## [5][We're building 7777, a tool to simplify connecting to RDS databases in VPC, feedback is welcome](https://www.reddit.com/r/aws/comments/j3blej/were_building_7777_a_tool_to_simplify_connecting/)
-- url: https://port7777.com/
+"The GraphQL Transform handles creating the relevant input types and will store pointers to S3 objects in Amazon DynamoDB. The AppSync SDKs and Amplify library handle uploading the files to S3 transparently."
+
+From what I understand, this means by running a graphql request with the described S3Object definition I should be able to do a mutation and by running that mutation upload the data to S3. However, that doesn't happen. I'm curious to know if this functionality exists and how to do it or if I am misinterpreting what's being said, thanks!
+
+[https://docs.amplify.aws/cli/graphql-transformer/storage#basics](https://docs.amplify.aws/cli/graphql-transformer/storage#basics)
+## [6][How Do I Get Graphics Output From My EC2 Instance To My Local Machine?](https://www.reddit.com/r/aws/comments/j4kmnq/how_do_i_get_graphics_output_from_my_ec2_instance/)
+- url: https://www.reddit.com/r/aws/comments/j4kmnq/how_do_i_get_graphics_output_from_my_ec2_instance/
+---
+The EC2 instance is running the Ubuntu 18.04 Deep Learning AMI and my local machine is running Ubuntu 20.04. I have some Python scripts that output Matplotlib graphs and I would like to run the scripts on my EC2 instance and then see the output graphs on my local machine. Is there a good way to do this? Some googling turned up a bunch of things about X11 and Windows machines but I couldn't find a good resource concerning Linux local machines. Any help is appreciated. Thanks in advance.
+## [7][AWS Amplify and scaling](https://www.reddit.com/r/aws/comments/j4tn0f/aws_amplify_and_scaling/)
+- url: https://www.reddit.com/r/aws/comments/j4tn0f/aws_amplify_and_scaling/
+---
+I have deployed various pages in the past with AWS Amplify and enjoy developing with it but I can't for the life of me figure out if AWS Amplify supports some kind of auto scaling (for instance if the site were to skyrocket in usage) 
+
+All my clients to date have had 100 or less users on their page at a given time so we never noticed anything or stress tested it.  What does AWS Amplify do in those cases though?
+## [8][Utterly confused by Cloudwatch custom metrics GUI](https://www.reddit.com/r/aws/comments/j4nua5/utterly_confused_by_cloudwatch_custom_metrics_gui/)
+- url: https://www.reddit.com/r/aws/comments/j4nua5/utterly_confused_by_cloudwatch_custom_metrics_gui/
+---
+Let's say I have an app that simulates a train, I want to collect metrics on the number of passengers, and also their names, I use commands such as this to add metrics:
+
+`aws cloudwatch put-metric-data --namespace MyTrainApp --metric-name passengers --value 2
+--unit Count --dimensions "passengers=abe;bob"`
+
+However, over in the console, when I try to look at a graph of the passengers, the data is sorted up by the passengers list (`abe;bob;carl`, etc), so I need to manually select each unique passengers list in order to have Cloudwatch graph the whole thing.  This is very counter intuitive to me as I'd expect it'd be sorted by metric-name.
+
+Is there something I can do to make it do what I expect?
+## [9][S3 Update – Three New Security &amp; Access Control Features](https://www.reddit.com/r/aws/comments/j422w2/s3_update_three_new_security_access_control/)
+- url: https://aws.amazon.com/blogs/aws/amazon-s3-update-three-new-security-access-control-features/
 ---
 
-## [6][S3 NextContinuationToken question](https://www.reddit.com/r/aws/comments/j3r7o7/s3_nextcontinuationtoken_question/)
-- url: https://www.reddit.com/r/aws/comments/j3r7o7/s3_nextcontinuationtoken_question/
+## [10][Cracking my head over proper routing for multiple API gateways &amp; cloudfronts](https://www.reddit.com/r/aws/comments/j4gezr/cracking_my_head_over_proper_routing_for_multiple/)
+- url: https://www.reddit.com/r/aws/comments/j4gezr/cracking_my_head_over_proper_routing_for_multiple/
 ---
-Hey, guys, i was wondering about how will nextContinuationToken behave in the scenario where i listObjects, say a 1000, get a nextContinuationToken and delete those 1000 objects i got through listObjects call from s3, will the token be invalidated and fail next call to listObjects using the token? Or will it work correctly and list other objects in the bucket?
-## [7][AWS::CertificateManager::Certificate Automatic DNS validation?](https://www.reddit.com/r/aws/comments/j3tonj/awscertificatemanagercertificate_automatic_dns/)
-- url: https://www.reddit.com/r/aws/comments/j3tonj/awscertificatemanagercertificate_automatic_dns/
----
-So, I was thinking about migrating away from the lambda to generate my certificates - and to jump straight in the new Cloudformation feature for the AWS Certificate manager, that looks like this:
-```
-  MyCertificate:
-    Type: AWS::CertificateManager::Certificate
-    Properties:
-      DomainName: "stuff.mydomain.com"
-      SubjectAlternativeNames:
-        - "morestuff.mydomain.com"
-      ValidationMethod: DNS
-      DomainValidationOptions:
-        - HostedZoneId: XXXXXXXXXXXXXXXXXXXXX
-          DomainName: mydomain.com
-```
-I thought that this would put the required entries straight in the Route53 Zone config, but I ended up waiting for about 2hrs.
+I've been struggling all day long how to best do routing for a new (non-technical) client. The project is small enough to use it as a test bench for our standardization.
 
-Is the above example somehow wrong, or is the AWS::CertificateManager::Certificate resource *not* supposed to actually input the records to the supplied Route53 zone?
-## [8][How are you providing access to S3 data in EMR](https://www.reddit.com/r/aws/comments/j3tdvg/how_are_you_providing_access_to_s3_data_in_emr/)
-- url: https://www.reddit.com/r/aws/comments/j3tdvg/how_are_you_providing_access_to_s3_data_in_emr/
----
-Hey everyone I have an AWS account that stores tons of large datasets using parquet on S3.
+They have a main website, hosted by a third part, on [website1.com](https://website.com) \+ a few sub websites also on different domains. They asked us to develop a chatbot for [website1.com](https://website.com) and since the third party could become a bottleneck in terms of DNS and support we decided to register [client.com](https://client.com) in route 53 and let the third party load it through an iframe.
 
-I have a separate account that will leverage EMR and Spark to process this data.
+So now I have [client.com](https://client.com), loaded through an iframe, serving the chatbot and [api.client.com](https://api.client.com) to act as the API gateway with websockets.
 
-I am wondering how people are providing access to their data. S3 bucket policies? Lake Formation (not supported on spark submit or cross account), etc.
+The client has said that they want a dashboard for the chatbot1 + expand into the other websites that they have with new bots. I think the best would be to expand the current API gateway to accommodate the dashboard API calls as well for chatbot1. Before we continue though I want to make sure that we have a proper plan in place for expanding, including DTAP (dev, test, acceptance, prod).
 
-Thanks in advance!
-## [9][How to securely share resources in bulk with other accounts?](https://www.reddit.com/r/aws/comments/j3q3nr/how_to_securely_share_resources_in_bulk_with/)
-- url: https://www.reddit.com/r/aws/comments/j3q3nr/how_to_securely_share_resources_in_bulk_with/
----
-Our AWS resources are organized by tags for different projects. Looking for a secure way to share all resources tagged “ProjectName=Alpha” with another AWS account.
-## [10][Can anyone tell me or send me documentation on how AWS has enough IPv4 addresses for all of the publicly routed instances?](https://www.reddit.com/r/aws/comments/j3luvy/can_anyone_tell_me_or_send_me_documentation_on/)
-- url: https://www.reddit.com/r/aws/comments/j3luvy/can_anyone_tell_me_or_send_me_documentation_on/
----
-I'm assuming they have tens of thousands of instances running at all times(or more) which are publicly routed with IPv4 addresses. 
+Taking the chatbot1 as an example, what would be the best course of action?
 
-I understand that they recycle IPs when not in use, but it seems that they'd run out at some point at the rate they're growing.
+&amp;#x200B;
+
+|frontend|API gateway|
+|:-|:-|
+|client.com/web/chatbot1 |client.com/api/chatbot1 |
+|chatbot1.client.com |chatbot1.client.com/api |
+|client.com/chatbot1 |api.client.com/chatbot1 |
+
+&amp;#x200B;

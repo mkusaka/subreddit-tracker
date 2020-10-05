@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (40/2020)!](https://www.reddit.com/r/rust/comments/j1jgum/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/j1jgum/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (41/2020)!](https://www.reddit.com/r/rust/comments/j57z68/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/j57z68/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,104 +16,130 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last weeks' thread](https://reddit.com/r/rust/comments/iwxitt/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last weeks' thread](https://reddit.com/r/rust/comments/j1jgum/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][Official /r/rust "Who's Hiring" thread for job-seekers and job-offerers [Rust 1.46]](https://www.reddit.com/r/rust/comments/iix8vw/official_rrust_whos_hiring_thread_for_jobseekers/)
-- url: https://www.reddit.com/r/rust/comments/iix8vw/official_rrust_whos_hiring_thread_for_jobseekers/
+## [2][What's everyone working on this week (41/2020)?](https://www.reddit.com/r/rust/comments/j57zzs/whats_everyone_working_on_this_week_412020/)
+- url: https://www.reddit.com/r/rust/comments/j57zzs/whats_everyone_working_on_this_week_412020/
 ---
-Welcome once again to the official /r/rust Who's Hiring thread!
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-41-2020/49684?u=llogiq)!
+## [3][Making APIs more discoverable in Rustdoc](https://www.reddit.com/r/rust/comments/j5edk8/making_apis_more_discoverable_in_rustdoc/)
+- url: https://www.reddit.com/r/rust/comments/j5edk8/making_apis_more_discoverable_in_rustdoc/
+---
+Hi everyone, I'm interested in improvements to Rustdoc that can help make an API more discoverable. Rustdoc is great if you know what you're looking for -- like "what's the return type of Vec::push?" -- but less good for less specific questions like "how do I append an element to a Vec?" More broadly, I'd like to answer two questions:
 
-Before we begin, job-seekers should also remember to peruse [the prior thread](https://www.reddit.com/r/rust/comments/htnv19/official_rrust_whos_hiring_thread_for_jobseekers/).
+1. What kinds of discoverability questions do Rust developers ask about APIs?
+2. How can Rustdoc provide better support for answering those questions?
 
-This thread will be periodically stickied to the top of /r/rust for improved visibility. The thread will be refreshed and posted anew when the next version of Rust releases in six weeks.
+For example, I like to be able to skim the "vocabulary" of an API, i.e. get a sense of the breadth of individual operations. But I find that particularly for large APIs (e.g. Vec which has 100+ methods including trait impls), the docs are hard to skim through even when collapsed. I've been prototyping a more dense visualization of methods, e.g. showing just the name and argument/return types grouped by mutability of self:
 
-Please adhere to the following rules when posting:
-# Rules for individuals:
+https://preview.redd.it/64vt9xapy6r51.png?width=1988&amp;format=png&amp;auto=webp&amp;s=e0fd28d67f95716e12314a57f8b0ea625172f79b
 
- * Don't create top-level comments; those are for employers.
- * Feel free to reply to top-level comments with on-topic questions.
- * Anyone seeking work should reply to my stickied top-level comment.
- * Meta-discussion should be reserved for the distinguished comment at the very bottom.
+My question to you: what sorts of discoverability questions do you have about Rust APIs? Examples of times you struggled with documentation, or ideas for better visualizations of API information.
+## [4][eventually: Event-sourcing in Rust!](https://www.reddit.com/r/rust/comments/j571fr/eventually_eventsourcing_in_rust/)
+- url: https://github.com/ar3s3ru/eventually-rs
+---
 
-# Rules for employers:
+## [5][OS made with Rust](https://www.reddit.com/r/rust/comments/j5c5t2/os_made_with_rust/)
+- url: https://www.reddit.com/r/rust/comments/j5c5t2/os_made_with_rust/
+---
+For the past few months I've been trying to make an operating system. My first attempt at this didn't go well and ended up being a GUI replacement for Linux Ubuntu. For the first half of my second attempt at making an OS I was just copying C code not knowing what it did or how to use it, then I heard about Rust and how it's becoming very popular. 
 
- * To find individuals seeking work, see the replies to the stickied top-level comment; you will need to click the "more comments" link at the bottom of the top-level comment in order to make these replies visible.
- * To make a top-level comment you must be hiring directly; no third-party recruiters.
- * One top-level comment per employer. If you have multiple job openings, please consolidate their descriptions or mention them in replies to your own top-level comment.
- * Proofread your comment after posting it and edit it if necessary to correct mistakes.
- * Please base your comment on the following template:
+I've made a lot of progress since I switched to Rust for this project. Here is the link to the project on github,  [FOMOSv2-CL](https://github.com/NathanMcMillan54/FOMOSv2-CL)
+## [6][Rust 2021: Foundation](https://www.reddit.com/r/rust/comments/j5fny9/rust_2021_foundation/)
+- url: http://gilescope.ninja/rust/2020/10/05/Rust-2021-Foundation.html
+---
 
-COMPANY: *[Company name; please link to your company's website or careers page.]*
+## [7][Make a Language in Rust, Part Five: Binding Usages](https://www.reddit.com/r/rust/comments/j5f5tc/make_a_language_in_rust_part_five_binding_usages/)
+- url: https://arzg.github.io/lang/5/
+---
 
-TYPE: *[Full time, part time, internship, contract, etc.]*
+## [8][RSLint - an extremely fast and user friendly JavaScript linter written from scratch in rust.](https://www.reddit.com/r/rust/comments/j4z1ud/rslint_an_extremely_fast_and_user_friendly/)
+- url: https://www.reddit.com/r/rust/comments/j4z1ud/rslint_an_extremely_fast_and_user_friendly/
+---
+Hello everyone!
 
-DESCRIPTION: *[What does your company do, and what are you using Rust for? How much experience are you seeking and what seniority levels are you hiring for? The more details the better.]*
+I recently released v0.1.0 and v0.1.1 of a project i have been working on for a couple of months. The project is a fully fledged JavaScript linter but written from scratch in rust. I felt existing linters were too limiting and slow and decided to try and make one myself with some key points in mind:
 
-LOCATION: *[Where are your office or offices located? If your workplace language isn't English, please specify it.]*
+# User facing differences
+- Speed: 
+  - File loading is parallelized
+  - File linting is parallelized
+  - Rule running is parallelized
+  - (WIP) Files are incrementally reparsed for file watching
+- Errors are vey rustc-like and friendly, they include labels, notes, etc
+- Config uses TOML (but may eventually support json too)
+- Rules are distinctly grouped (e.g. `errors`, `style`), allowing you to enable all error group rules and individually allow them using the `allowed = []` key
+- Ignore commands (commands for the linter through comments) are either scoped to the entire file or only scoped to the specific statement/declaration they are on
+- No need to worry about source code type (script vs module) and ECMAScript version, linter assumes script for `.js` and module for `.mjs` and assumes latest syntax. No config is needed at all.
+- Error recovery, the parser and linter are 100% error tolerant, any source code can be linted no matter how wrong it is (⚠️ this is however not 100% the case currently since many recoveries still end in infinite recursion, if you find one then please submit a bug report)
+- More powerful directives (commands for the linter through comments), directives are parsed using a distinct parser which reuses the js lexer (rslint_lexer) and can house multiple commands.
+- CLI rule explanations with lexical syntax highlighting with rslint_lexer
+- Further rule examples are autogenerated from tests
 
-REMOTE: *[Do you offer the option of working remotely? If so, do you require employees to live in certain areas or time zones?]*
+## Not yet implemented 
+- Incremental reparsing (see [#16](https://github.com/RDambrosio016/RSLint/pull/16))
+- TypeScript parsing and integration
 
-VISA: *[Does your company sponsor visas?]*
+# Technical differences
+- rslint is a workspace and each crate has distinct jobs, rslint_cli has cli logic and a lot of dependencies for cool stuff, rslint_lexer is the js lexer and highlighter, rslint_parser is the parser, rslint_core is the core linter logic which does not know about the CLI, rslint_syntax is a simple shared crate among rslint_lexer and rslint_parser, and xtask is codegen and docgen glue.
+- rslint uses a very unique syntax tree implementation (if you work on rust analyzer you will be familiar with the concept since its taken from rowan/rust analyzer), the tree is 100% lossless and error tolerant, stores tokens, and AST nodes are a thin wrapper on top of untyped nodes, this enables extremely powerful rule logic, for more reasons why this is significant you should look at my [blog post](https://rdambrosio016.github.io/rust/2020/09/18/pure-ast-based-linting-sucks.html) on the subject
+- rules are grouped, there are not 200+ rules in a single directory.
+- rules use a declare_lint macro which allows for easy declaration of rules, you write documentation as rust doc comments and a docgen tool can then transform it into user facing docs
+- CST rules can check individual nodes without a need for a visitor, or can check individual tokens or even the root node.
+- rules must all be Send + Sync.
+- rule config is done directly through the rule structs using typetag
 
-CONTACT: *[How can someone get in touch with you?]*
-## [3][Easy beginner Rust projects to contribute to as an experienced C++ engineer](https://www.reddit.com/r/rust/comments/j4wi0m/easy_beginner_rust_projects_to_contribute_to_as/)
+## Not yet implemented 
+- Distinct types of rules, CST rules (implemented) run on individual concrete syntax trees/files, and LateRules run on all of the files being linted.
+- (WIP) Rich fixer interfaces for autofixing rules efficiently using incremental reparsing. 
+
+# Currently known big issues
+- Optional chaining is not parsed correctly
+- Non-simple expressions in key value patterns are not parsed correctly
+- Multiline labels are sometimes spammy (this is a codespan-reporting issue which is fixed in the unreleased version of codespan)
+
+If you would like to try the linter you can directly install the latest published version using cargo install:
+```sh
+cargo install rslint_cli
+rslint_cli ./some/glob/pattern
+```
+or you can also clone the project and build it, which will include the most up to date bug fixes and changes. 
+
+⚠️ note however that the linter is still in early development, so there will be bugs
+
+https://github.com/RDambrosio016/RSLint
+
+If you have any feedback i would love to talk about it!
+## [9][Building a Recipe Manager - Part 1](https://www.reddit.com/r/rust/comments/j5j5jv/building_a_recipe_manager_part_1/)
+- url: https://bheisler.github.io/post/recipe-manager-part-1/
+---
+
+## [10][How do I handle bad unicode in Rust?](https://www.reddit.com/r/rust/comments/j5b24l/how_do_i_handle_bad_unicode_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/j5b24l/how_do_i_handle_bad_unicode_in_rust/
+---
+For example, users will provide the text on the left, but the text on the right is actually the proper text. Also these are just examples of the problem in general collected from around the web and not a sample of the user provided data.
+
+    uÌˆnicode -&gt; ünicode
+    Ð¿ÑÐ°Ð²Ð¸Ð»ÑÐ½Ð¾ÐµÐ¿Ð¸ÑÐ°Ð½Ð¸Ðµ -&gt; правильноепитание
+    â¨ââ¤Ãâ¨ââ¨ââ¨ââ¨ââ¤Ã®â¨ââ¨ââ¨â¡â¨ââ¨ââ¤Ã©â¨ââ¨ââ¨ââ¨â¡ -&gt; правильноепитание
+    !Ãƒâ€šÃ‚Â¡!HONDA POW -&gt; !¡!HONDA POW
+
+All of these are valid UTF8, but actually are mojibake from other encodings. I know of [Python's FTFY](https://ftfy.readthedocs.io/en/latest/) 
+module which does all this stuff automatically, but is there anything within the Rust space that covers this use case?
+## [11][Easy beginner Rust projects to contribute to as an experienced C++ engineer](https://www.reddit.com/r/rust/comments/j4wi0m/easy_beginner_rust_projects_to_contribute_to_as/)
 - url: https://www.reddit.com/r/rust/comments/j4wi0m/easy_beginner_rust_projects_to_contribute_to_as/
 ---
 Hi there,
 I have been working with C++ for about 5 years and now I would like to learn Rust. What projects can you recommend me to contribute to in order to get in quickly into Rust?
 Thanks
-## [4][This Month in Rust OSDev (September 2020)](https://www.reddit.com/r/rust/comments/j4xujk/this_month_in_rust_osdev_september_2020/)
-- url: https://rust-osdev.com/this-month/2020-09/
+## [12][Serve only one HTTP request](https://www.reddit.com/r/rust/comments/j5iqjj/serve_only_one_http_request/)
+- url: https://www.reddit.com/r/rust/comments/j5iqjj/serve_only_one_http_request/
 ---
+For a project I need a function that listen on a specific port and serve one and only one HTTP request. I only need to extract a query parameter and make a dummy response.
 
-## [5][ox - An independent Rust text editor that runs in your terminal](https://www.reddit.com/r/rust/comments/j4nbwl/ox_an_independent_rust_text_editor_that_runs_in/)
-- url: https://github.com/curlpipe/ox
----
+I tried several libraries, like Hyper or Warp, but didn't find a nice way to do this simple task (and not end up with a full HTTP server).
 
-## [6][What are some concrete libraries missing in Rust's ecosystem?](https://www.reddit.com/r/rust/comments/j4xj37/what_are_some_concrete_libraries_missing_in_rusts/)
-- url: https://www.reddit.com/r/rust/comments/j4xj37/what_are_some_concrete_libraries_missing_in_rusts/
----
-I've heard that one of the biggest issues with Rust is the library ecosystem, but I've not seen many concrete examples of the libraries that are missing.
+What I did was to do it by myself with Tokio, I listen to a connection, accept it and handle the parsing / response manually.
 
-What are some libraries that you've found yourself wanting that doesn't exist?
-
-Or do people just mean that there are too many unstable (0.\*.\*) libraries when they say this?
-## [7][Blog Post: Fast Thread Locals In Rust](https://www.reddit.com/r/rust/comments/j4iy50/blog_post_fast_thread_locals_in_rust/)
-- url: https://matklad.github.io/2020/10/03/fast-thread-locals-in-rust.html
----
-
-## [8][Why does the assembly for this code compare a 'char'-value to 0x11_0000?](https://www.reddit.com/r/rust/comments/j4wovc/why_does_the_assembly_for_this_code_compare_a/)
-- url: https://www.reddit.com/r/rust/comments/j4wovc/why_does_the_assembly_for_this_code_compare_a/
----
-Inspired by one of the replies to an earlier post today, I tried the following code:
-
-[https://play.rust-lang.org/?version=nightly&amp;mode=release&amp;edition=2018&amp;gist=f568fc3563055e460813cddbc8cededf](https://play.rust-lang.org/?version=nightly&amp;mode=release&amp;edition=2018&amp;gist=f568fc3563055e460813cddbc8cededf)
-
-The function convert\_to\_u32 shows how the rust-compiler is smart enough to reuse the memory allocation of a Vec after iterating through it and collecting it to another Vec. In this case, iterating through a Vec&lt;char&gt; and returning a  Vec&lt;u32&gt;.
-
-But the assemly code seemed to contain an unnecessary loop. On inspection, it seemed to compare each element in the Vec&lt;char&gt; to 0x11\_0000, and truncate the Vec at the first such element. The compiled program is still correct, since the value '0x11\_0000' cannot occur in a Vec&lt;char&gt;, and the check thus has no effect. But it is a missed opportunity for optimization, since without it the loop could go away completely.
-
-Note that the code as written is unsound (you're not allowed to use unsafe code to create a 'char' with value 0x11\_0000), so the compiler really is free to do whatever it likes. But the comparison to 0x11\_0000 remains even if the main-function is removed (which makes the code sound again).
-
-Does anyone know why the compiler is comparing to 0x11\_0000?
-## [9][What is the Rust story for a package like Go's context? (i.e.deadlines, timeouts, cancellation signals)](https://www.reddit.com/r/rust/comments/j4xx7i/what_is_the_rust_story_for_a_package_like_gos/)
-- url: https://www.reddit.com/r/rust/comments/j4xx7i/what_is_the_rust_story_for_a_package_like_gos/
----
-The context package in the Go standard library provides an interface for cancellation signals, timeouts, and deadlines. https://golang.org/pkg/context/. As it's a part of the standard library, external Go package authors make consistent use of the package in code they write, meaning you can consistently rely on third-party packages accepting a Context type for cancellation signals.
-
-What is the Rust equivalent for this? Is there a package or a preferred pattern? What do you personally use?
-## [10][Is it safe to transmute from Vec&lt;char&gt; to Vec&lt;u32&gt;?](https://www.reddit.com/r/rust/comments/j4qk62/is_it_safe_to_transmute_from_vecchar_to_vecu32/)
-- url: https://www.reddit.com/r/rust/comments/j4qk62/is_it_safe_to_transmute_from_vecchar_to_vecu32/
----
-I believe that char and u32 have the same layout, and char can safely be transmuted to u32. Does this mean that Vec&lt;char&gt; can be transmuted to Vec&lt;u32&gt;? I ask because clippy throws an error saying they have mismatched layouts.
-
-Playground link: [https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=fb04f03e1384c2ae13273b22e55883ac](https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2018&amp;gist=fb04f03e1384c2ae13273b22e55883ac)
-## [11][Rust meets the web - a clash of programming paradigms](https://www.reddit.com/r/rust/comments/j4ot6b/rust_meets_the_web_a_clash_of_programming/)
-- url: https://www.jakobmeier.ch/blogging/Rust_on_the_Web.html
----
-
-## [12][Rust Starter Kit 2020](https://www.reddit.com/r/rust/comments/j4gnvh/rust_starter_kit_2020/)
-- url: https://wiki.alopex.li/RustStarterKit2020
----
-
+Is there a nicer way to do it ?

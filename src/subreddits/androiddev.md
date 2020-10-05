@@ -1,14 +1,20 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/j3tq3s/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/j3tq3s/weekly_anything_goes_thread/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/j5ipv0/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/j5ipv0/weekly_whos_hiring_thread/
 ---
-Here's your chance to talk about whatever!
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+Here is a suggested posting template:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
-## [2][Weekly Questions Thread - September 28, 2020](https://www.reddit.com/r/androiddev/comments/j19vio/weekly_questions_thread_september_28_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/j19vio/weekly_questions_thread_september_28_2020/
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
+
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - October 05, 2020](https://www.reddit.com/r/androiddev/comments/j5hb6o/weekly_questions_thread_october_05_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/j5hb6o/weekly_questions_thread_october_05_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -25,102 +31,95 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][App got suspended, meanwhile other copies of my app are still up! Can/Should I take legal action?](https://www.reddit.com/r/androiddev/comments/j4ohpx/app_got_suspended_meanwhile_other_copies_of_my/)
-- url: https://www.reddit.com/r/androiddev/comments/j4ohpx/app_got_suspended_meanwhile_other_copies_of_my/
+## [3][Thoughts on whether to use enums or not](https://www.reddit.com/r/androiddev/comments/j5gxtu/thoughts_on_whether_to_use_enums_or_not/)
+- url: https://www.reddit.com/r/androiddev/comments/j5gxtu/thoughts_on_whether_to_use_enums_or_not/
 ---
-A month ago my app got suspended due to manipulated media policy(which after reading them I think I am complying with), the appeals got rejected. Google is not responding to my emails.
+I have been reading up on enums and their application in android development. specifically kotlin android development.
 
-Meanwhile another app which has 100% similar functionality is up on the Google Play. 
+I have seen thoughts and counter thoughts. But the issue is that most of the arguments i have seen are as far back as 2- 5 years ago. 
 
-Is there anything in the Google's policies that they should treat all apps fairly?
+I would love to hear up to date thoughts on whether to use it. as well as links if possible.
 
-Is there anything I can do?
-## [4][What is the current consensus about Data Binding in the Android Development community?](https://www.reddit.com/r/androiddev/comments/j4x4ok/what_is_the_current_consensus_about_data_binding/)
-- url: https://www.reddit.com/r/androiddev/comments/j4x4ok/what_is_the_current_consensus_about_data_binding/
+Thank you all in advance
+## [4][Signal processing in c++ via JNI](https://www.reddit.com/r/androiddev/comments/j58ks2/signal_processing_in_c_via_jni/)
+- url: https://www.reddit.com/r/androiddev/comments/j58ks2/signal_processing_in_c_via_jni/
 ---
-So I've inherited a two and a half year old codebase which basically implements DataBinding architecture using MVVM architecture almost exactly as laid out in this Youtube video:
+I'm an ML engineer that works with sensor data and I want to make a demo of my company's software in an android app. We export our models to header files in c/c++, where we run feature-extraction + prediction.
 
-[https://www.youtube.com/watch?reload=9&amp;v=TW9dSEgJIa8](https://www.youtube.com/watch?reload=9&amp;v=TW9dSEgJIa8)
+I'm envisioning a pretty simple GUI with the sensor data plotted in one frame and its classification in another. Usually I write these apps in matlab for a laptop/tablet and latency is sometimes an issue due to trying to plot a lot of data points (high sample rate) as well as matlab having a lot of overhead -- but the "SensorsLab" android app plots real-time data from 8 physical sensors so I think what I'm attempting is do-able on a phone.
 
-It doesn't use Android ViewModel classes or LiveData but instead custom ViewModel classes which extend the Databinding Observable interface and LifeCyclerObserver. The Activities and Fragments then observe the ViewModel which basically then propagates changes to the UI Layer or calls methods in the UI layer (all written in xml) using notifyChange() or notifyPropertyChange() methods.
+My entire experience with android/java is one personal project where I passed each camera frame to a c++ function for image processing in opencv via JNI, so I have a few questions:
 
-Now my instinct is to not really like this pattern, as I feel that it makes the code a lot less readable and too abstract, and having all the methods written in the xml layer (and all the recycler view adapters attached in the xml layer) makes the code a lot harder to debug. It also seems to require quite a learning curve for the developer, and if we were to hire some junior developers I would worry that it would take quite a while for them to get used to this way of writing code, which is a time and money overhead for the business.
+* For a data stream coming from either microphone/accelerometer/gyrometer, would the same principle hold? (Passing one frame of data via JNN to a c++ function)
+* What library is preferable for plotting time-series/signal data? 
+* I saw CNLohr build an app entirely in C. I think I'd rather use Android Studio, but I wanted to hear everyone's thoughts on that as well
 
-On the other hand, I do appreciate the beauty of having your UI automatically responding to the state of your model, and making booleans etc. observable cuts down a lot of code and makes it more difficult to introduce logical errors. It also means that activities and fragments are about a third of the size in terms of lines of code (although I'd also argue that although there are less lines of code to write, the mental effort of understanding the observable pattern and ensuring your xml and Viewmodel adheres to the class names automatically generated by the Data Binding library doesn't necessarily make it more efficient)
-
-In short- I'm not sure whether to propose a rewrite of the architecture to make it more readable and understandable for new developers, or whether to propose a partial rewrite to utilise LiveData rather than the Databinding Observable (which seems outdated now), or whether I'm just being ignorant, and not appreciating the advantages and the full beauty of Databinding.
-
-Thoughts?
-## [5][27 September — 3 October Android Newsletter](https://www.reddit.com/r/androiddev/comments/j4wcgz/27_september_3_october_android_newsletter/)
-- url: https://www.reddit.com/r/androiddev/comments/j4wcgz/27_september_3_october_android_newsletter/
+Any feedback is much appreciated - thanks!
+## [5][Binders In Android](https://www.reddit.com/r/androiddev/comments/j5fwuy/binders_in_android/)
+- url: https://www.reddit.com/r/androiddev/comments/j5fwuy/binders_in_android/
 ---
-Stay up to date with Android development, in this week's edition:  
-🏇 Android 11 Package Visibility  
-👻 Busting Android Myths  
-🖼️ Custom Views Performance  
-🧰 ViewModel Testing  
-and much more!
+Ever thought what prevents us from tricking the system into hiding the [soft input keyword](https://developer.android.com/training/keyboard-input/visibility#ShowOnDemand) which is being used by some other application, or releasing a wake lock acquired by another application. This blog tries to cover some of Android's security internals.
 
-💚 Enjoy [https://vladsonkin.com/android-newsletter-14/](https://vladsonkin.com/android-newsletter-14/) 
-
-🔥Featuring [@Zheko\_A](https://twitter.com/Zheko_A) [@elye\_project](https://twitter.com/elye_project) [@revolutinsider](https://twitter.com/RevolutInsider) [@imShreyasPatil](https://twitter.com/imShreyasPatil), and many other great authors! 
-
-Subscribe and receive new editions directly to your email. Weekly, no spam, unsub anytime.  
-Here is an email version of this issue: [https://mailchi.mp/9ab2978bd25f/android-newsletter-14](https://mailchi.mp/9ab2978bd25f/android-newsletter-14)
-## [6][Is it possible to migrate a SQLite database belonging to an Android app from internal storage to external storage or vice versa?](https://www.reddit.com/r/androiddev/comments/j4okjy/is_it_possible_to_migrate_a_sqlite_database/)
-- url: https://www.reddit.com/r/androiddev/comments/j4okjy/is_it_possible_to_migrate_a_sqlite_database/
+[https://proandroiddev.com/binders-in-android-part-1-e875daeb762f](https://proandroiddev.com/binders-in-android-part-1-e875daeb762f)
+## [6][October update??](https://www.reddit.com/r/androiddev/comments/j5jh55/october_update/)
+- url: https://www.reddit.com/r/androiddev/comments/j5jh55/october_update/
 ---
-The app I want to contribute to only supports internal storage. Users want to store their data on an SD card. I’d like to add a setting you can toggle along the lines of “use external storage”. But then if you currently have any data stored it would have to migrate the db from internal to external as it would be too buggy and messy to have two SQLite db’s. Any idea how to do this?
-## [7][App developing as open or closed source?](https://www.reddit.com/r/androiddev/comments/j4uvov/app_developing_as_open_or_closed_source/)
-- url: https://www.reddit.com/r/androiddev/comments/j4uvov/app_developing_as_open_or_closed_source/
----
-Hello everybody,
-
-I started a new android app project. I will develop an application for my university. I have an own gitlab server and all my projects are there stored. But for this project, a fellow student (I hope it's the right word) give me an advice to take the app from the beginning to GitHub and making the project open source.
-
-I do this never before, so, what would me bring this? What do you thing about the idea?
-## [8][Strategy for in-app updates: use Google library or custom solution ?](https://www.reddit.com/r/androiddev/comments/j4fchz/strategy_for_inapp_updates_use_google_library_or/)
-- url: https://www.reddit.com/r/androiddev/comments/j4fchz/strategy_for_inapp_updates_use_google_library_or/
----
-Looking at app version stats lately, it came to my attention that a significant number of users are using older versions of my app.
-
-&amp;nbsp;
-
-Hence the utility to notify users of available updates in app so they can optionally update. I would only do optional updates, not forced ones.
-
-There's the Google [in-app update library](https://developer.android.com/guide/playcore/in-app-updates) for this, but looks rather heavy and complicated and I can see that thing causing unforeseen crashes already.
-
-&amp;nbsp;
-
-I wonder if a simple custom solution detecting if a newer version is published (easy with Firebase config) and if that's the case showing a dialog with some explanation text and a button that goes to the Play Store page app of the app, would not be better. The advantages I can see is:
-
-- straightforward to implement
-- can control the text displayed to the user to incentivize him to 
-update (if only mentioning that updates fixes bugs and add new functionality)
-- way easier to test
-
-&amp;nbsp;
-
-Any thoughts and experience on this ?
-## [9][Have you done any startup-related optimization in your app? Please explain in detail how you optimized the startup process.](https://www.reddit.com/r/androiddev/comments/j4wqjl/have_you_done_any_startuprelated_optimization_in/)
-- url: https://www.reddit.com/r/androiddev/comments/j4wqjl/have_you_done_any_startuprelated_optimization_in/
+So no update on the 5th this month just tried to update my pixel 4 XL no dice... 😏
+## [7][Moving from React Native to Kotlin Multiplatform](https://www.reddit.com/r/androiddev/comments/j5j57o/moving_from_react_native_to_kotlin_multiplatform/)
+- url: https://link.medium.com/D6OPgAZVkab
 ---
 
-## [10][Is this a scam?](https://www.reddit.com/r/androiddev/comments/j4imqo/is_this_a_scam/)
-- url: https://i.redd.it/xtw9nkzdvwq51.png
+## [8][Detect s-pen input on samsung tablet in order to make straight lines?](https://www.reddit.com/r/androiddev/comments/j5j0l8/detect_spen_input_on_samsung_tablet_in_order_to/)
+- url: https://www.reddit.com/r/androiddev/comments/j5j0l8/detect_spen_input_on_samsung_tablet_in_order_to/
+---
+So I hate the fact that Onenote on android is really limited. I have this Samsung tablet on which I take notes in class with the s-pen.
+
+I would like to programm an app that at the end will be a circle over the interface like others apps already do. Simply you press the circle and till is pressed you can draw straight line.
+
+I already looked for a solution but I didn't find any.
+
+So I was thinking that I need to detect the input of the pen and write some code where I define x and y that is the position of the start, etc.(I didn't think about this yet but it's okay It will be the funny part anyway, right?lol). I have experience in coding and I would like to put this project on the cv..
+
+What do you suggest? It is possible or I am understimate everything?
+
+I saw Ionic as a framework that can be a good option but still I don't know how to somehow detect the s-pen input.
+
+Thank you
+## [9][Google defers 30% in-app commission in India to April 2022 after mounting protests](https://www.reddit.com/r/androiddev/comments/j5hxy7/google_defers_30_inapp_commission_in_india_to/)
+- url: https://economictimes.indiatimes.com/tech/internet/google-defers-move-to-levy-30-fee-to-april-2022/articleshow/78484208.cms
 ---
 
-## [11][How to switch to the live build if you were an internal tester?](https://www.reddit.com/r/androiddev/comments/j4nd2z/how_to_switch_to_the_live_build_if_you_were_an/)
-- url: https://www.reddit.com/r/androiddev/comments/j4nd2z/how_to_switch_to_the_live_build_if_you_were_an/
+## [10][Managing Many Android Phones for Development](https://www.reddit.com/r/androiddev/comments/j51o4k/managing_many_android_phones_for_development/)
+- url: https://www.reddit.com/r/androiddev/comments/j51o4k/managing_many_android_phones_for_development/
 ---
-We just released our first game on the play store after utilizing internal testing and betas. When I go to the play store link it shows (Internal Beta) after it and "You're an internal tester." I disabled all testing tracks, I removed all testers from the list, I uploaded an empty release for internal track even but I still show up as internal build instead of release build.
+Hi there,
 
-Any way to fix??
-## [12][Do you pay taxes in the countries where Google does not for your In-App purchases or subscriptions?](https://www.reddit.com/r/androiddev/comments/j4h64c/do_you_pay_taxes_in_the_countries_where_google/)
-- url: https://www.reddit.com/r/androiddev/comments/j4h64c/do_you_pay_taxes_in_the_countries_where_google/
+We are working on an app and so far we have 4 different Android phones for development. I guess the number will grow to 10-20 handsets within the next 6-9 months.
+
+My question is how do you or other companies manage all these Android phones from the very beginning once you get a new phone (and you need to sign in with a GMail account), do you do one GMail account per phone or do you use one GMail account for all development phones?
+
+I came across Google's cloud identity and Microsoft's Intune for "Endpoint Protection" so you can manage all these devices and you pay per device but I don't know if that's a good option. Here is what I want to do exactly:
+
+1. Sign in with one email account
+2. Deploy the same apps on all phones remotely instead of doing it manually on each phone.
+3. Locate all phones (through a dashboard for example) to see which is on/off, where is it each phone located, which network is it connected to, ...
+4. In case one phone is lost or stolen, lock it and then wipe it if I can't have it back.
+5. Other features like disabling the installation of more apps won't be necessary at this stage, but it would be good to have.
+
+I guess the main thing that I'm after would be not creating an account for every phone and having a dashboard to remotely control all the phones.
+
+By the way, we are using Office365
+
+Thanks!
+## [11][How can I let my Android device connected to the Internet by USB-Ethernet module?](https://www.reddit.com/r/androiddev/comments/j5g18y/how_can_i_let_my_android_device_connected_to_the/)
+- url: https://www.reddit.com/r/androiddev/comments/j5g18y/how_can_i_let_my_android_device_connected_to_the/
 ---
-I just added an in-app purchase in one of my apps for the first time of my life.
+I have bought a development board that runs Android 4.4.2. 
+But it have only supports Wi-Fi and no  Ethernet .Now I   want to use it as Miracast Receiver,use WLAN is a bit slow and unstable.
+So I bought a USB to Ethernet module.I can use it on my Windows 10 computer and Android 7.0 tablet without any drivers.
+But when I plug it into the development board,it cannot recognized the module.
+So how can I let the development board connected to Internet  via USB Ethernet module?Do I need some drivers , thank you.
+## [12][Building Reactive UIs with LiveData and SavedStateHandle (or equivalent approaches)](https://www.reddit.com/r/androiddev/comments/j56gst/building_reactive_uis_with_livedata_and/)
+- url: https://medium.com/@Zhuinden/building-reactive-uis-with-livedata-and-savedstatehandle-or-equivalent-approaches-4e934487035f
+---
 
-After reading the [official doc](https://support.google.com/googleplay/android-developer/answer/138000?hl=en) I decided to deploy the app only in those countries where Google does the tax payment for me, just to avoid the overhead of having to pay by myself in each country.
-
-My question is, for those of you that have in-app purchases, how do you manage that? Do you sell in all countries and in that case, how do you manage this tax payments?

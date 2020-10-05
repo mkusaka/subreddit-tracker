@@ -1,62 +1,17 @@
 # ruby
-## [1][Full page caching in Rails with a memcached cluster and middleware](https://www.reddit.com/r/ruby/comments/j4ybw8/full_page_caching_in_rails_with_a_memcached/)
+## [1][Benchmark Ruby Code](https://www.reddit.com/r/ruby/comments/j5ik0n/benchmark_ruby_code/)
+- url: https://www.driftingruby.com/episodes/benchmark-ruby-code?utm_medium=social&amp;utm_campaign=weekly_episode&amp;utm_source=reddit
+---
+
+## [2][Full page caching in Rails with a memcached cluster and middleware](https://www.reddit.com/r/ruby/comments/j4ybw8/full_page_caching_in_rails_with_a_memcached/)
 - url: https://vitobotta.com/2020/10/04/full-page-caching-in-rails-part-2-memcached-and-middleware/
 ---
 
-## [2][How to access class instance var. outside of class? NOOB RUBYIST](https://www.reddit.com/r/ruby/comments/j4sm8s/how_to_access_class_instance_var_outside_of_class/)
-- url: https://www.reddit.com/r/ruby/comments/j4sm8s/how_to_access_class_instance_var_outside_of_class/
+## [3][Why am I getting a truetrue output on the final line. It should be separated like the others](https://www.reddit.com/r/ruby/comments/j5cibh/why_am_i_getting_a_truetrue_output_on_the_final/)
+- url: https://i.redd.it/zglmc86r57r51.jpg
 ---
-I have a class NailPolish and I'm trying to access '@polish\_list' variable in another class (class CLI). Keep getting an error in cli class.
 
-    class NailPolish
-        attr_accessor :brand, :name, :price, :product_colors, :tag_list, :polish_list
-        # the model
-    
-        @@all = []
-    
-        def initialize(brand: nil, name: nil, price: nil, product_colors: nil, tag_list: nil, polish_list: nil)
-            @brand = brand
-            @name = name 
-            @price = price 
-            @product_colors = product_colors
-            @tag_list = tag_list
-            @polish_list = polish_list
-            @@all &lt;&lt; self
-        end 
-    
-    
-        def self.all 
-            @@all 
-        end 
-    
-    
-    
-    LOOK HEREEEEEEEE BELOW
-        def self.find_by_tag(tag)
-            @polish_list = self.all.select {|np| np.tag_list.include?(tag)} 
-            @polish_list.each.with_index(1) do |p, i|
-                puts "#{i}. #{p.name}"
-            end 
-        end 
-
-my cli class
-
-    class CLI
-        def product 
-        ...
-        API.get_polish
-        input = ""
-        polish = titleize(input)
-    
-        until polish == 'Exit' do
-            input = gets.strip
-            polish = titleize(input)
-    NEED INSTANCE VARIABLE IN IF STATEMENT 
-            if polish.to_i &gt; 0 &amp;&amp; polish.to_i &lt;= NailPolish.polish_list.length
-                    get_price(input)
-
-sigh. any help would be appreciated D;
-## [3][Super Bombinhas v0.7.0](https://www.reddit.com/r/ruby/comments/j4hglr/super_bombinhas_v070/)
+## [4][Super Bombinhas v0.7.0](https://www.reddit.com/r/ruby/comments/j4hglr/super_bombinhas_v070/)
 - url: https://www.reddit.com/r/ruby/comments/j4hglr/super_bombinhas_v070/
 ---
 Hi!
@@ -68,7 +23,7 @@ Here's an updated version of my open source platformer game Super Bombinhas:
 This new version features 5 complete worlds.
 
 Thanks!
-## [4][Can someone point to me to the right direction](https://www.reddit.com/r/ruby/comments/j4tjbn/can_someone_point_to_me_to_the_right_direction/)
+## [5][Can someone point to me to the right direction](https://www.reddit.com/r/ruby/comments/j4tjbn/can_someone_point_to_me_to_the_right_direction/)
 - url: https://www.reddit.com/r/ruby/comments/j4tjbn/can_someone_point_to_me_to_the_right_direction/
 ---
 This is a lab hw. So when I run the code in my terminal i am getting the following error: 1) Associations — Song and Artist: Artist #add_song adds the song to the current artist's 'songs' collection Failure/Error: expect(artist.songs).to include(song) expected ["In the Aeroplane Over the Sea"] to include #&lt;Song:0x0000000001496e88 @name="In the Aeroplane Over the Sea", @artist=#&lt;Artist:0x0000000001496f50 @name="Neutral Milk Hotel", @songs=["In the Aeroplane Over the Sea"]&gt;&gt; Diff: @@ -1,2 +1,2 @@ -[#&lt;Song:0x0000000001496e88 @name="In the Aeroplane Over the Sea", @artist=#&lt;Artist:0x0000000001496f50 @name="Neutral Milk Hotel", @songs=["In the Aeroplane Over the Sea"]&gt;&gt;] +["In the Aeroplane Over the Sea"]
@@ -137,7 +92,7 @@ But when I run my code through pry, I can see the song added into the array of t
           self.new(name)
       end
     end
-## [5][Ruby Gem](https://www.reddit.com/r/ruby/comments/j4sxac/ruby_gem/)
+## [6][Ruby Gem](https://www.reddit.com/r/ruby/comments/j4sxac/ruby_gem/)
 - url: https://www.reddit.com/r/ruby/comments/j4sxac/ruby_gem/
 ---
 Hello All, 
@@ -155,7 +110,7 @@ Could not find gem 'ruby  (&lt; 2.6, &gt;= 2.2)', which is required by gem 'noko
 &amp;#x200B;
 
 I'm on a windows...ive spent hours trying to fix this
-## [6][A Little Bit of Automation for your Backups using Ruby](https://www.reddit.com/r/ruby/comments/j4majc/a_little_bit_of_automation_for_your_backups_using/)
+## [7][A Little Bit of Automation for your Backups using Ruby](https://www.reddit.com/r/ruby/comments/j4majc/a_little_bit_of_automation_for_your_backups_using/)
 - url: https://www.reddit.com/r/ruby/comments/j4majc/a_little_bit_of_automation_for_your_backups_using/
 ---
 I have published a few old of my old Ruby articles at Medium.  Here is the "friends link" so you can view the article without a membership.
@@ -165,7 +120,7 @@ I have published a few old of my old Ruby articles at Medium.  Here is the "frie
 There are likely thousands of ways to backup your computers data on Windows. One I like, since it is simple, is using a batch file that calls 7zip to create a zip backup with the current date embedded in the zip file name.
 
 This method can be described as “so 1980's” since it is done with batch or command files calling batch programs with command line parameters.
-## [7][Bundler](https://www.reddit.com/r/ruby/comments/j4m3c3/bundler/)
+## [8][Bundler](https://www.reddit.com/r/ruby/comments/j4m3c3/bundler/)
 - url: https://www.reddit.com/r/ruby/comments/j4m3c3/bundler/
 ---
 Hello all,
@@ -229,7 +184,7 @@ but I have bundler 2.1.4 installed.
 &amp;#x200B;
 
 https://preview.redd.it/ql1ddojivxq51.png?width=498&amp;format=png&amp;auto=webp&amp;s=ed41b058c995116f5a43bcdcf6b99f6523a66126
-## [8][Understanding an example in the new Ractor documentation](https://www.reddit.com/r/ruby/comments/j47oux/understanding_an_example_in_the_new_ractor/)
+## [9][Understanding an example in the new Ractor documentation](https://www.reddit.com/r/ruby/comments/j47oux/understanding_an_example_in_the_new_ractor/)
 - url: https://www.reddit.com/r/ruby/comments/j47oux/understanding_an_example_in_the_new_ractor/
 ---
 In the Ractor documentation (https://github.com/ruby/ruby/blob/master/doc/ractor.md), there is an 'examples' section at the bottom that shows various samples. Looking at the 'traditional ring example in actor-model' it has the following code: 
@@ -258,7 +213,7 @@ In the Ractor documentation (https://github.com/ruby/ruby/blob/master/doc/ractor
 How is this creating a ring? Based on the example name i would expect each ractor to send the message to the next one, but this looks like its creating 1000 Ractors that are all waiting to receive and send something to the first one (r). It then just sends a message only to r. 
 
 Am I misunderstanding this, or is the example incorrect?
-## [9][Ruby Monk down?](https://www.reddit.com/r/ruby/comments/j43r2f/ruby_monk_down/)
+## [10][Ruby Monk down?](https://www.reddit.com/r/ruby/comments/j43r2f/ruby_monk_down/)
 - url: https://www.reddit.com/r/ruby/comments/j43r2f/ruby_monk_down/
 ---
 Hi all,
@@ -266,7 +221,3 @@ Hi all,
 Been learning Ruby and Rails through the Odin Project and was using RubyMonk as a secondary resource but I haven't been able to access it for about a week. Just checking to see if others have been experiencing this and if there's any info out there as to why it might be down?
 
 Thanks!
-## [10][Ruby 2.7.2 Released](https://www.reddit.com/r/ruby/comments/j3t9hg/ruby_272_released/)
-- url: https://www.ruby-lang.org/en/news/2020/10/02/ruby-2-7-2-released/
----
-

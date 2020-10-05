@@ -22,7 +22,54 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Object is possibly null - after null check?](https://www.reddit.com/r/typescript/comments/j4wwx9/object_is_possibly_null_after_null_check/)
+## [2][2020 best practices for refactoring 60k LoC JS project to TS?](https://www.reddit.com/r/typescript/comments/j512sf/2020_best_practices_for_refactoring_60k_loc_js/)
+- url: https://www.reddit.com/r/typescript/comments/j512sf/2020_best_practices_for_refactoring_60k_loc_js/
+---
+I’m currently working on a ~60 LoC React + Express API that I want to enable TypeScript on. From the articles I’ve read, I see mixed opinions on how to do the refactor. The client and server are completely separate apps. I want to make sure all the new TS files are linted with the best rules (airbnb or ts recommended config).
+
+1. Any general advice from people recently who have completed a similar refactor?
+
+2. Anything in particular with ESLint rules for the client + server setup?
+
+3. Is there a way of figuring out where to start based on file dependencies? (Leaf nodes first?)
+
+Thanks!
+## [3][PSA: Using const enum rather than enum will result in much less generated JavaScript](https://www.reddit.com/r/typescript/comments/j52h2h/psa_using_const_enum_rather_than_enum_will_result/)
+- url: https://www.reddit.com/r/typescript/comments/j52h2h/psa_using_const_enum_rather_than_enum_will_result/
+---
+Found this out recently, and was wondering if people know about it. 
+
+    // Original code
+    enum Role { // vs const enum Role
+        guest,
+        user,
+        admin
+    }
+    
+    const x: Role = Role.user
+
+Now compare [This example (enum)](https://www.staging-typescript.org/play?ts=4.1.0-pr-40336-8#code/KYOwrgtgBASg9gG2FA3gKCpqBzMwDOALgDQZZj7ABOpWUAhgCYQCWIaAvmmgMZwhEoADwBcsRMgC84pADoK1IA):
+
+    // Generated JS:
+    "use strict";
+    var Role;
+    (function (Role) {
+        Role[Role["guest"] = 0] = "guest";
+        Role[Role["user"] = 1] = "user";
+        Role[Role["admin"] = 2] = "admin";
+    })(Role || (Role = {}));
+    const x = Role.user;
+
+and:
+
+[This example (const enum)](https://www.staging-typescript.org/play?ts=4.1.0-pr-40336-8#code/MYewdgzgLgBApmArgWxgJRAGzjA3gKBiJgHNE5oAaQ4xCOAJ2uJgEMATZASzHwF98+UJFgAPAFzosOALxTsAOjqMgA)
+
+    // Generated JS
+    "use strict";
+    const x = 1 /* user */;
+
+and see that the latter results in a single line of code instead of 7. Consider using this if none of your enum's members are [computed](https://www.typescriptlang.org/docs/handbook/enums.html#computed-and-constant-members). Hope this helps someone out some day.
+## [4][Object is possibly null - after null check?](https://www.reddit.com/r/typescript/comments/j4wwx9/object_is_possibly_null_after_null_check/)
 - url: https://www.reddit.com/r/typescript/comments/j4wwx9/object_is_possibly_null_after_null_check/
 ---
 Hi, I have following code, and there's something that I don't quite understand:
@@ -64,7 +111,7 @@ in method `setupEvents` as you can see I am check whether `this.drawingContext` 
         });
     }
 }
-## [3][Need to create and object, with nested object only containing an interface type : Button. How?](https://www.reddit.com/r/typescript/comments/j4x1i3/need_to_create_and_object_with_nested_object_only/)
+## [5][Need to create and object, with nested object only containing an interface type : Button. How?](https://www.reddit.com/r/typescript/comments/j4x1i3/need_to_create_and_object_with_nested_object_only/)
 - url: https://www.reddit.com/r/typescript/comments/j4x1i3/need_to_create_and_object_with_nested_object_only/
 ---
 The following syntax doesn't work. How can I do it?
@@ -83,7 +130,7 @@ Const app Data = {
       }
    }
 }
-## [4][explicit module boundaries show up when I export a function](https://www.reddit.com/r/typescript/comments/j4x16g/explicit_module_boundaries_show_up_when_i_export/)
+## [6][explicit module boundaries show up when I export a function](https://www.reddit.com/r/typescript/comments/j4x16g/explicit_module_boundaries_show_up_when_i_export/)
 - url: https://www.reddit.com/r/typescript/comments/j4x16g/explicit_module_boundaries_show_up_when_i_export/
 ---
 So I have a function like this :
@@ -110,7 +157,7 @@ and eslint is happy and does not warn me about explicit module boundaries for `m
     myOtherFactory();
 
 Why ?
-## [5][Why libraries and frameworks should not have a composition root ?](https://www.reddit.com/r/typescript/comments/j4cxnh/why_libraries_and_frameworks_should_not_have_a/)
+## [7][Why libraries and frameworks should not have a composition root ?](https://www.reddit.com/r/typescript/comments/j4cxnh/why_libraries_and_frameworks_should_not_have_a/)
 - url: https://www.reddit.com/r/typescript/comments/j4cxnh/why_libraries_and_frameworks_should_not_have_a/
 ---
 So I am reading [this](https://blog.ploeh.dk/2011/07/28/CompositionRoot/) link and I stumble upon this sentence :
@@ -120,13 +167,13 @@ So I am reading [this](https://blog.ploeh.dk/2011/07/28/CompositionRoot/) link a
 Why libraries and frameworks should not have a composition root ?
 
 I am currently coding from a scratch a mobx like library , and I have created a composition root . That is why I am asking .
-## [6][Why does { [key: string]: string } allow an unlimited number of k/v pairs?](https://www.reddit.com/r/typescript/comments/j3xzm9/why_does_key_string_string_allow_an_unlimited/)
+## [8][Why does { [key: string]: string } allow an unlimited number of k/v pairs?](https://www.reddit.com/r/typescript/comments/j3xzm9/why_does_key_string_string_allow_an_unlimited/)
 - url: https://www.reddit.com/r/typescript/comments/j3xzm9/why_does_key_string_string_allow_an_unlimited/
 ---
 I feel like something about my understanding of that syntax isn't complete. On one hand I understand that the generic key and string name means the key could be anything, as can the value. 
 
 On the other hand I do not see any indication that there can be more than one of those pairs.
-## [7][Should I use enums or "|" strings?](https://www.reddit.com/r/typescript/comments/j3vp9d/should_i_use_enums_or_strings/)
+## [9][Should I use enums or "|" strings?](https://www.reddit.com/r/typescript/comments/j3vp9d/should_i_use_enums_or_strings/)
 - url: https://www.reddit.com/r/typescript/comments/j3vp9d/should_i_use_enums_or_strings/
 ---
 Example using "|":
@@ -237,7 +284,7 @@ So if you're lopping through Meals to make a checkbox form element, you use the 
 ) to show to the user:
 
     for (let index = 0; index &lt; Meals.length; index++) {   const meal: Meal = Meals[index];   console.log(`${index}) ${meal}`) }  [LOG]: "0) breakfast"  [LOG]: "1) lunch"  [LOG]: "2) dinner"
-## [8][Unsure about typecasting functionality.](https://www.reddit.com/r/typescript/comments/j449om/unsure_about_typecasting_functionality/)
+## [10][Unsure about typecasting functionality.](https://www.reddit.com/r/typescript/comments/j449om/unsure_about_typecasting_functionality/)
 - url: https://www.reddit.com/r/typescript/comments/j449om/unsure_about_typecasting_functionality/
 ---
 &amp;#x200B;
@@ -250,7 +297,7 @@ If I input a value of "January", I don't get any errors, and I can output the da
 
 
 Any help would be appreciated.
-## [9][I could use some help with properly typing an event emitter function](https://www.reddit.com/r/typescript/comments/j3s87i/i_could_use_some_help_with_properly_typing_an/)
+## [11][I could use some help with properly typing an event emitter function](https://www.reddit.com/r/typescript/comments/j3s87i/i_could_use_some_help_with_properly_typing_an/)
 - url: https://www.reddit.com/r/typescript/comments/j3s87i/i_could_use_some_help_with_properly_typing_an/
 ---
 **Answered**
@@ -283,20 +330,3 @@ interface ExampleInterface {
 
 type MyInterface = EventChannel&lt;ExampleInterface&gt;;
 ```
-## [10][A library to manipulate Value Objects in Typescript](https://www.reddit.com/r/typescript/comments/j3xg0s/a_library_to_manipulate_value_objects_in/)
-- url: https://www.reddit.com/r/typescript/comments/j3xg0s/a_library_to_manipulate_value_objects_in/
----
-As you all know, Javascript compares two objects (with \`==\` or \`===\`) by reference and not by value.
-
-This is really annoying when you work with Value Objects when you use DDD in your project.
-
-I was wondering how do you make them work your Typescript/Javascript projects? Do you use a library? Or do you create your ValueObject base class and utils each time yourself?
-## [11][Is there an [] equivalent for Array&lt;string | undefined&gt; ?](https://www.reddit.com/r/typescript/comments/j3zyit/is_there_an_equivalent_for_arraystring_undefined/)
-- url: https://www.reddit.com/r/typescript/comments/j3zyit/is_there_an_equivalent_for_arraystring_undefined/
----
-I think the closest thing is either
-
-* string\[\] | undefined\[\]
-* string | undefined\[\]
-
-I don't think either are stipulating that any element can be either, as the title syntax is, though. The 2nd one appears to just be typed to a string or array of undefined

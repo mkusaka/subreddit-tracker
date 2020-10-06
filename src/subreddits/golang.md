@@ -1,72 +1,65 @@
 # golang
-## [1][So, we made MTProto full native implementation on pure go. This is protocol used by Telegram messenger](https://www.reddit.com/r/golang/comments/j5hffz/so_we_made_mtproto_full_native_implementation_on/)
+## [1][bit: an experimental git CLI with a powerful interactive prompt and happy defaults](https://www.reddit.com/r/golang/comments/j5wggn/bit_an_experimental_git_cli_with_a_powerful/)
+- url: https://github.com/chriswalz/bit
+---
+
+## [2][GoReleaser Cheat Sheet: Versions, Publishing to GitHub, Cross-Platform cgo builds, and more](https://www.reddit.com/r/golang/comments/j614ue/goreleaser_cheat_sheet_versions_publishing_to/)
+- url: https://www.reddit.com/r/golang/comments/j614ue/goreleaser_cheat_sheet_versions_publishing_to/
+---
+# GoReleaser Cheat Sheet
+
+&lt;https://webinstall.dev/goreleaser&gt;
+
+- Basic Go Builds &amp; Versioning
+- Publishing Builds to GitHub
+- Publishing to Gitea and Gitlab
+- Building for RPi et al
+- Building from one or more cmd/s
+- Cross-Compiling with cgo
+- Full .goreleaser.yml example
+## [3][Gnomock: batteries included integration and end-to-end testing using ephemeral docker containers. Already supports 10 popular services (databases, queues, caches...), featuring: health checks, schema setup, seed data ingestion, authentication, etc.](https://www.reddit.com/r/golang/comments/j5k9ea/gnomock_batteries_included_integration_and/)
+- url: https://github.com/orlangure/gnomock
+---
+
+## [4][Golang SQL-Libs Benchmark](https://www.reddit.com/r/golang/comments/j61pu9/golang_sqllibs_benchmark/)
+- url: https://github.com/wayjam/go-sql-benchmark
+---
+
+## [5][What do you use to deploy Go applications?](https://www.reddit.com/r/golang/comments/j5xvj1/what_do_you_use_to_deploy_go_applications/)
+- url: https://www.reddit.com/r/golang/comments/j5xvj1/what_do_you_use_to_deploy_go_applications/
+---
+In the past, I used to write Laravel applications and fell in love with Laravel Forge for its ease of use and how it is compatible with the big cloud platforms. Is there something similar for Go? If so, I would love to use it. If not, is it something you would be interested in? It would be Go specific. Because I would also love to build something
+## [6][So, we made MTProto full native implementation on pure go. This is protocol used by Telegram messenger](https://www.reddit.com/r/golang/comments/j5hffz/so_we_made_mtproto_full_native_implementation_on/)
 - url: https://github.com/xelaj/mtproto
 ---
 
-## [2][Hash Server 9000](https://www.reddit.com/r/golang/comments/j5c7eq/hash_server_9000/)
-- url: https://www.reddit.com/r/golang/comments/j5c7eq/hash_server_9000/
+## [7][[GORM] How to make gorm simply work?](https://www.reddit.com/r/golang/comments/j6384q/gorm_how_to_make_gorm_simply_work/)
+- url: https://www.reddit.com/r/golang/comments/j6384q/gorm_how_to_make_gorm_simply_work/
 ---
-I took an internal dev challenge at work a while back because I wanted to learn more Go since I have an OO background and was not familiar with the procedural way of thinking.  The goal was to build a simple [non-persistent password hashing service](https://github.com/JudeQuintana/hash_server) using only the standard library while demonstrating the use of concurrency with the endpoint requirements below. Reading the [blue and white book](https://www.amazon.com/Programming-Language-Addison-Wesley-Professional-Computing/dp/0134190440) was definitely key to gaining deeper insight. It was super challenging and I tested as much as I could. Although, I still need to figure out benchmark tests. There are probably areas for improvement but it was fun and I learned a ton so I thought I'd share. I don't work with Go as much as I'd like to but building this service really helped me get a fundamental understanding and now it's much easier to read Go code. It's amazing how powerful the standard library is so that I can serve them hashes HOT!
+Hi!
 
-## Endpoints
-
-1. `POST /hash` \- Hash and encode a password string. The request must contain a `password` parameter. Returns the `id` of Base64 encoded string of the password that's been hashed with SHA512 with a 5 second delay to simulate asynchronous processing. Example: `curl --data "password=angryMonkey" http://localhost:8080/hash`
-2. `GET /hash/:id` \- Retrieve a generated hash with the `id` (after approximately 5 seconds), otherwise you will receive error `id not found`.  Example: `curl http://localhost:8080/hash/1` will return: `ZEHhWB65gUlzdVwtDQArEyx+KVLzp/aTaRaPlBzYRIFj6vjFdqEb0Q5B8zVKCZ0vKbZPZklJz0Fd7su2A+gf7Q==`.
-3. `GET /stats` \- Statistics endpoint. Returns a JSON object with the `total` count of the number of password hash requests made to the server so far and the `average` time in milliseconds it has taken to process all of the requests.  Example: `curl http://localhost:8080/stats`, will return: `{"total": 1, "average": 123}`
-4. `GET /shutdown` \- Graceful shutdown. When a request is made to `/shutdown` the server will reject new requests and wait for any pending/in-flight work to finish before exiting.
-## [3][Go Regular Expressions](https://www.reddit.com/r/golang/comments/j5hn5o/go_regular_expressions/)
-- url: https://codesalad.dev/blog/go-regular-expressions-5
----
-
-## [4][Go-edlib: Golang edit distance and string comparison library fully compatible with Unicode (Levenshtein, LCS, Hamming, Damerau-Levenshtein, Jaro, Cosine, etc...)](https://www.reddit.com/r/golang/comments/j5hvsw/goedlib_golang_edit_distance_and_string/)
-- url: https://github.com/hbollon/go-edlib
----
-
-## [5][gimmeasearx - Configurable, JavaScript-less Neocities alternative, written in Go](https://www.reddit.com/r/golang/comments/j51x9l/gimmeasearx_configurable_javascriptless_neocities/)
-- url: https://github.com/demostanis/gimmeasearx
----
-
-## [6][All the go help ⛑️ documentation at one place 🔥️](https://www.reddit.com/r/golang/comments/j5ioi9/all_the_go_help_documentation_at_one_place/)
-- url: https://golang.org/src/cmd/go/internal/help/helpdoc.go
----
-
-## [7][Kalbi - Golang SIP Framework](https://www.reddit.com/r/golang/comments/j59jkw/kalbi_golang_sip_framework/)
-- url: https://www.reddit.com/r/golang/comments/j59jkw/kalbi_golang_sip_framework/
----
-Hey Guys
-
-Looking for developers to help contribute to this project !!
-
-its a SIP (Session Initiation Protocol) Framework to help build SIP application in golang 
-
-[https://github.com/KalbiProject/Kalbi](https://github.com/KalbiProject/Kalbi)
+I never got Gorm working correctly. As soon as association are in the game, it just does not.
 
 &amp;#x200B;
 
-EDIT - project has been updated with some issues
-## [8][How to implement concurrency in Go](https://www.reddit.com/r/golang/comments/j5i468/how_to_implement_concurrency_in_go/)
-- url: https://blog.umesh.wtf/how-to-implement-concurrency-in-go
+Let's imagine I have a "Sound" struct and it has a Category. When I AutoMigrate, the field Category is simply ommited. If I add a CategoryID and set it's reference tag to it, it generates the CategoryID and set it to 0 only.
+
+&amp;#x200B;
+
+Is there something I'm missing ? Because that's litterally the example from the "Has One" section from Gorm's documentation...
+
+(By the way, once I get this working, I'd like to have something like a InversedBy in doctrine, is that possible ? It doesn't seem to according to the docs)
+## [8][Generics Part 03: Struct Types and Data Semantics](https://www.reddit.com/r/golang/comments/j5lyc6/generics_part_03_struct_types_and_data_semantics/)
+- url: https://www.ardanlabs.com/blog/2020/09/generics-03-struct-types-and-data-semantics.html
 ---
 
-## [9][Feature-complete framework or libs for rapid web dev with golang?](https://www.reddit.com/r/golang/comments/j54275/featurecomplete_framework_or_libs_for_rapid_web/)
-- url: https://www.reddit.com/r/golang/comments/j54275/featurecomplete_framework_or_libs_for_rapid_web/
+## [9][Is it a good idea to write an in-memory database in go instead of rust?](https://www.reddit.com/r/golang/comments/j6069o/is_it_a_good_idea_to_write_an_inmemory_database/)
+- url: https://www.reddit.com/r/golang/comments/j6069o/is_it_a_good_idea_to_write_an_inmemory_database/
 ---
-I'm a developper, I know a fair share on how to implement sessions, templating and REST APIs in Java, but I have touched Golang for some embedded project and I'd like to code my next (web) project with it.
-
-I'm not quite up to speed on which frameworks to use, or if there are "standard" libraries that are state of the art in Go. What I know though is that I would like to have a maximum of "batteries included" because I'd rather focus on the business aspects of the code, and leave the rest to a trustable framework.
-
-Do you guys know about something that could tie all these:
-
-- session/authentication management  
-- some SQLite abstraction (ideally with schema migrations)  
-- Maybe a combined frontend / backend development experience ?
-- Testable easily?
-
-I've heard of Gin and Revel on the web side, and Gorm on the SQLite side, but I have no idea if I would footgun myself with these.
-
-Anybody has experience with a combo that works?
-Thank you to all people willing to discuss this with me!
-## [10][slack-go/slack v0.7.0 released!](https://www.reddit.com/r/golang/comments/j52aa4/slackgoslack_v070_released/)
-- url: https://www.reddit.com/r/golang/comments/j52aa4/slackgoslack_v070_released/
+So i am working on an in-memory database, I am very familiar with go and I'm learning rust. So far I am not feeling like I would want to work with rust, maybe because I'm still not comfortable with it. So my question is it a good idea to write an in-memory database in Go given that it has a GC?
+## [10][What is magical about worker pool libs?](https://www.reddit.com/r/golang/comments/j5zg4v/what_is_magical_about_worker_pool_libs/)
+- url: https://www.reddit.com/r/golang/comments/j5zg4v/what_is_magical_about_worker_pool_libs/
 ---
-See also: [https://github.com/slack-go/slack/releases/tag/v0.7.0](https://github.com/slack-go/slack/releases/tag/v0.7.0)
+I was using a simple implementation of a worker pool (something along the lines of https://gobyexample.com/worker-pools). Switching to a worker pool lib (like ants, workerpool, pond etc.) made my app faster. 
+
+In simple terms can someone explain whats the trick they use so that we need these kind of libs?

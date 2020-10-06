@@ -56,57 +56,89 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][How To Stay Sane with Modern C++ (revised for 2020 and C++20)](https://www.reddit.com/r/cpp/comments/j5eogv/how_to_stay_sane_with_modern_c_revised_for_2020/)
+## [2][SugarPP: My C++ syntactic sugar collection](https://www.reddit.com/r/cpp/comments/j5sqbw/sugarpp_my_c_syntactic_sugar_collection/)
+- url: https://www.reddit.com/r/cpp/comments/j5sqbw/sugarpp_my_c_syntactic_sugar_collection/
+---
+[https://github.com/HO-COOH/SugarPP](https://github.com/HO-COOH/SugarPP) 
+
+I made the project "SugarPP" as my self-made C++ syntactic sugar collection. As a side project, it aims to port some nice features from other languages to C++ (as intuitive as it can possibly get). And I have great fun doing it XD.
+
+Currently, the undocumented code is the part I am still working on ~~but somehow get committed~~.
+
+I am humbly looking for advices/new ideas/suggestions/bug reviews/contributions. As I only have a little more than 1 year of C++ experience, the code may be extremely buggy. Please be specific about any issues that I have.
+## [3][Resource for learning c++ for an experienced python developer](https://www.reddit.com/r/cpp/comments/j6190j/resource_for_learning_c_for_an_experienced_python/)
+- url: https://www.reddit.com/r/cpp/comments/j6190j/resource_for_learning_c_for_an_experienced_python/
+---
+Hello everyone! I am a master’s student studying Computational Modeling and Simulation. Whenever I start looking at Computer Vision job descriptions I come across C++ as a requirement, so I have decided to learn it. The problem is that I have some experience in Java and python so I need a resource which doesn’t focus more on the barebones (basic oop) and I am facing hard time finding one. This community has a lot of experienced developers, can you suggest a good resource to start with?
+## [4][Managarm: A Fully Asynchronous OS Based on Modern C++ - Alexander van der Grinten - CppCon 2020](https://www.reddit.com/r/cpp/comments/j5m58f/managarm_a_fully_asynchronous_os_based_on_modern/)
+- url: https://www.youtube.com/watch?v=BzwpdOpNFpQ
+---
+
+## [5][An index for C++ conferences](https://www.reddit.com/r/cpp/comments/j5s6lw/an_index_for_c_conferences/)
+- url: https://www.reddit.com/r/cpp/comments/j5s6lw/an_index_for_c_conferences/
+---
+[https://cpptalksindex.xyz](https://cpptalksindex.xyz)
+
+Hi everyone!
+
+It started as a toy project, but I think it might help others, especially C++ learners.
+
+The goal is for it to be an index of conference talks with a community-managed (on [Github](https://github.com/Ethiraric/cpptalksindex)) list of tags for each conference that can be searched for.
+There is one, namely, that I would like to be assigned to introductory talks that could be a great introduction to a particular subject, however difficult it is (one I watched recently was Jody Hagin's [talk on metaprogramming](https://www.youtube.com/watch?v=tiAVWcjIF6o)).
+
+I am watching videos here and there and adding them as I go.
+
+The website is far from finished yet, namely:
+
+  * It needs a bit of design, more than the 10 lines of CSS I wrote.
+
+  * It probably has a lot of UX flaws.
+
+  * I need your help, especially if you watch a lot of talks, to complete the talk list.
+
+  * I'm not good with Unicode, so I probably have butchered some names and talk titles. I offer my sincere apologies to those it affected.
+
+I'm linking this here in order to get some feedback, on whether you think this idea is worth or not.
+
+Stay safe!
+
+P.S.: In order to have some results on the site, since there are just a few talks, you can filter just by speaker or by tag.
+## [6][Question about "Internal Variable "Result""](https://www.reddit.com/r/cpp/comments/j62j2s/question_about_internal_variable_result/)
+- url: https://www.reddit.com/r/cpp/comments/j62j2s/question_about_internal_variable_result/
+---
+Hey folks, 
+
+Kinda stumped by what this question means, here is it:
+
+"Modify stub( ) so that it now takes all three variables as input (arguments) and returns true/false value associated with an internal variable "result" that is initialised as 0" 
+
+I \*think\* it's asking me to declare a variable named "result" inside function "stub", declare as bool false, check it against values of args, if args = bool true, then "result" = bool true   
+
+
+I'm only a couple weeks new to C++ so still getting to grips with the terminology, cheers folks  ✌️
+## [7][Meeting C++ plans an online C++ job fair on October 20th](https://www.reddit.com/r/cpp/comments/j61y8q/meeting_c_plans_an_online_c_job_fair_on_october/)
+- url: https://meetingcpp.com/meetingcpp/news/items/An-online-Cpp-job-fair-on-October-20th.html
+---
+
+## [8][Function pointers as individual types](https://www.reddit.com/r/cpp/comments/j5tkm8/function_pointers_as_individual_types/)
+- url: https://github.com/uyha/fn
+---
+
+## [9][How To Stay Sane with Modern C++ (revised for 2020 and C++20)](https://www.reddit.com/r/cpp/comments/j5eogv/how_to_stay_sane_with_modern_c_revised_for_2020/)
 - url: https://www.bfilipek.com/2017/02/how-to-stay-sane-with-modern-c.html
 ---
 
-## [3][A New Approach to Build-Time Library Configuration](https://www.reddit.com/r/cpp/comments/j5hbtw/a_new_approach_to_buildtime_library_configuration/)
+## [10][A New Approach to Build-Time Library Configuration](https://www.reddit.com/r/cpp/comments/j5hbtw/a_new_approach_to_buildtime_library_configuration/)
 - url: https://vector-of-bool.github.io/2020/10/04/lib-configuration.html
 ---
 
-## [4][Halide: A Language for Fast, Portable Computation on Images and Tensors - Alex Reinking - CppCon 20](https://www.reddit.com/r/cpp/comments/j5fcmd/halide_a_language_for_fast_portable_computation/)
-- url: https://youtu.be/1ir_nEfKQ7A
+## [11][Event Based Programming](https://www.reddit.com/r/cpp/comments/j5rfer/event_based_programming/)
+- url: https://www.reddit.com/r/cpp/comments/j5rfer/event_based_programming/
 ---
+I come from a iOS and C++ background. Always wondered how the dispatching of the events worked under the hood in iOS. I bought myself a Teensy 4.0 so I can start from the very basics implementing the event library.
 
-## [5][What's the status of Ecosystem Technical Report?](https://www.reddit.com/r/cpp/comments/j5fjph/whats_the_status_of_ecosystem_technical_report/)
-- url: https://www.reddit.com/r/cpp/comments/j5fjph/whats_the_status_of_ecosystem_technical_report/
----
-subj. Last year there was a proposition to make it ( http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1688r0.html ). Can't find anything about it now. What's the status? Are there any public drafts?
-## [6][Kevlin Henney - Lambdas to the slaughter - Meeting C++ online](https://www.reddit.com/r/cpp/comments/j4zoe1/kevlin_henney_lambdas_to_the_slaughter_meeting_c/)
-- url: https://www.youtube.com/watch?v=nItSZp6R8tg
----
+This learning journey will involve me writing a framework that will enable taking callbacks on a particular pin on events such as button pressed, button long pressed, etc. 
 
-## [7][C++ Primer (5th Edition) Vs Programming: Principles and Practice Using C++ (2nd Edition) - recommend?](https://www.reddit.com/r/cpp/comments/j59hfp/c_primer_5th_edition_vs_programming_principles/)
-- url: https://www.reddit.com/r/cpp/comments/j59hfp/c_primer_5th_edition_vs_programming_principles/
----
-I'm doing some self-teaching and I was recommended these two books. Does anyone have any experience with either?
-## [8][cpp-lazy release 2.0.0; easy lazy evualuation/iterator library for C++11/14/17/20](https://www.reddit.com/r/cpp/comments/j5096s/cpplazy_release_200_easy_lazy_evualuationiterator/)
-- url: https://github.com/MarcDirven/cpp-lazy/releases/tag/2.0.0
----
+I am not asking how teensy works. I am more interested in the architecture of the framework. And also being able to expand to various events later on.
 
-## [9][Tool for "Go to definition"](https://www.reddit.com/r/cpp/comments/j57se3/tool_for_go_to_definition/)
-- url: https://www.reddit.com/r/cpp/comments/j57se3/tool_for_go_to_definition/
----
-Hello,
-
-as you know many IDE's/Editors feature a "Go to definition" command that finds the definition of whatever the cursor is currently on. If you have a large and complex program, these tools will/can only work if they know the build process.
-
-What tool can you recommend my for "Go to definition". I need one that not only works in most cases, but in all cases(so it needs to know the build process). The build process is a fork of gnu make, but I have a [json compilation database](https://clang.llvm.org/docs/JSONCompilationDatabase.html) that I generated using [bear](https://github.com/rizsotto/Bear).
-
-&amp;#x200B;
-
-I basically need the rust language server, but for c++ instead of rust.
-## [10][Are there any good resources for learning the new things in the recent C++ versions?](https://www.reddit.com/r/cpp/comments/j4vcys/are_there_any_good_resources_for_learning_the_new/)
-- url: https://www.reddit.com/r/cpp/comments/j4vcys/are_there_any_good_resources_for_learning_the_new/
----
-So, basically, I've been learning C++ for a while, and it makes sense, and I understand the concepts up until C++11. That's where I feel that the commitee had added things that are just useless, and I can't find any use for them, and I'm probably wrong because I'm overwhelmed by the amount of new things, so can someone give me resources to learn those new things? Every tutorial that I saw about the topic was showing things like std::move, and move semantics, smart pointers, etc, all of which are prior to or was added in C++11. Any help is appreciated!
-## [11][Audio library for wakeword detection](https://www.reddit.com/r/cpp/comments/j57cxq/audio_library_for_wakeword_detection/)
-- url: https://www.reddit.com/r/cpp/comments/j57cxq/audio_library_for_wakeword_detection/
----
-I have a NN that I've converted to a header using tensorflow-lite -- now I want to build an app that pulls in audio from my laptop's mic so I can predict on it using my model.
-
-Is juce the best API to use for this? 
-
-I'd also like to plot the audio in real-time (or close to it). What library do you recommend for this?
-
-I'm new to cpp but have plenty of experience with matlab/python. Any suggestions are apprecfiated - thanks!
+Will someone guide me through this journey.

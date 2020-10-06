@@ -27,7 +27,48 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Just a big thank you!](https://www.reddit.com/r/rails/comments/j5hz32/just_a_big_thank_you/)
+## [3][Ruby on Rails &amp; Digital Ocean](https://www.reddit.com/r/rails/comments/j63loa/ruby_on_rails_digital_ocean/)
+- url: https://www.reddit.com/r/rails/comments/j63loa/ruby_on_rails_digital_ocean/
+---
+I'm looking to migrate [my Ruby on Rails app](https://www.mugshotbot.com) from Heroku to Digital Ocean. I don't have any dev-ops experience and am very confused on where to start.
+
+Does anyone have any beginner tutorials or links I could work through?
+## [4][Active Storage -- Uploads via an API](https://www.reddit.com/r/rails/comments/j62zs0/active_storage_uploads_via_an_api/)
+- url: https://www.reddit.com/r/rails/comments/j62zs0/active_storage_uploads_via_an_api/
+---
+Hi!
+
+*Short version:* I'm planning on writing an editor with an image uploader. The images have to be uploaded seperately from the rest of the form via AJAX, so that the server can return permanent URLs that can then be used in the editor. How would I go about this? Do I need an extra Image model or can I still attach those images to my original Page/Post/whatever model?
+
+*Long version:*
+
+I want to create an image upload feature for my current project. More specifically, it should accept images via an API. The idea is to have 2 forms on a page:
+
+1. the normal contents form
+2. a form for images, submitted via JavaScript
+
+After the images have been submitted via JavaScript, I need permanent URLs to those images being sent back so I can use them in the first form. Ugh, I hope you understand what I mean.
+## [5][How to Deploy Ruby on Rails with MongoDB to Heroku?](https://www.reddit.com/r/rails/comments/j60455/how_to_deploy_ruby_on_rails_with_mongodb_to_heroku/)
+- url: https://www.reddit.com/r/rails/comments/j60455/how_to_deploy_ruby_on_rails_with_mongodb_to_heroku/
+---
+Hi! I created a project by following this documentation of MongoDB [https://docs.mongodb.com/mongoid/current/tutorials/getting-started-rails/](https://docs.mongodb.com/mongoid/current/tutorials/getting-started-rails/)
+
+&amp;#x200B;
+
+I finished the project, but I don't know how to set it up to Heroku?
+## [6][How to implement CKEditor in Rails API](https://www.reddit.com/r/rails/comments/j61uay/how_to_implement_ckeditor_in_rails_api/)
+- url: https://www.reddit.com/r/rails/comments/j61uay/how_to_implement_ckeditor_in_rails_api/
+---
+Hi! I hope everyone is fine,  
+I have a task in which I have to implement CKEditor in rails, My work is from the backend side so I have to implement this on my API , After searching many tutorials I find each for the monolithic structure but just not for API,    
+Maybe it is easy just for API but I don't know how to do it &amp; how it works with API?    
+Can anyone please guide me?  or show me the path to implement this?
+## [7][Integrating Bootstrap theme in Rails 6](https://www.reddit.com/r/rails/comments/j5v9xt/integrating_bootstrap_theme_in_rails_6/)
+- url: https://www.reddit.com/r/rails/comments/j5v9xt/integrating_bootstrap_theme_in_rails_6/
+---
+So, to save time, I purchased a bootstrap theme online for my project. I am having difficulty integrating it . Confused by webpacker /asset pipeline file system. 
+Could anyone walk me through the process or point me to a tutorial on how to properly integrate my bootstrap theme into rails 6 ?
+## [8][Just a big thank you!](https://www.reddit.com/r/rails/comments/j5hz32/just_a_big_thank_you/)
 - url: https://www.reddit.com/r/rails/comments/j5hz32/just_a_big_thank_you/
 ---
 tl;dr: lost interest in web dev, learnt Rails, have just completed rewriting my old homepage; thanks to the Rails community for helping me get through this.
@@ -59,108 +100,47 @@ Also, the people from Stack Overflow, numerous blogs around the web, YouTubers m
 My site is now live and I'm going to Open Source it very soon. I'd love to post a link, but I don't want my Reddit account to be associated with my homepage/IRL personality.
 
 So, again, thank you to all of you! ;)
-## [4][Any big open source project with good test coverage (minitest)?](https://www.reddit.com/r/rails/comments/j5f8dg/any_big_open_source_project_with_good_test/)
-- url: https://www.reddit.com/r/rails/comments/j5f8dg/any_big_open_source_project_with_good_test/
+## [9][Ruby on Rails and Excel file sheet](https://www.reddit.com/r/rails/comments/j5u5z2/ruby_on_rails_and_excel_file_sheet/)
+- url: https://www.reddit.com/r/rails/comments/j5u5z2/ruby_on_rails_and_excel_file_sheet/
 ---
-Hi!  
+Hello everyone,
 
+I've got a question. Is it possible to create a ruby on rails csv or xls file uploader which will save it on a database and make the data available in the future? The work flow would be something like uploading the file, treating or cleaning the data internally, and then making it visible as on a table (main) with only info of the user that uploaded the file, the date created at and the name of the file and making this data editable (which would take the user to another table where the data of the csv is visible) or deletable (this would also delete the csv table as well). I'm seeing it as a table within a table but I'm not sure what is the correct route for this implementation.
 
-I am (very lately) going to start testing my little applicatin. I have been posponing that since it makes me unconfortable/I don't know well what I am doing.  
+**What I've been thinking:** So, since the main table (the table that has the user info) would share the user that uploaded the csv with the table of the "CSV" upload, then when the user decides to view the data, it would show the data related to the upload. Know this means that everytime the user uploads the file, it would create a database for this file? is this viable? The csv file would have 200 rows by 15 columns where the rows can vary 10 rows.
 
-
-Can you point me out to a project reference in which I can study how it's done?  
-I will use just minitest.
-
-Thanks
-## [5][Rails Live-streaming: Adding ‘admin’ functionality to a Rails app](https://www.reddit.com/r/rails/comments/j4xhn0/rails_livestreaming_adding_admin_functionality_to/)
-- url: https://www.reddit.com/r/rails/comments/j4xhn0/rails_livestreaming_adding_admin_functionality_to/
+Thanks.
+## [10][Different levels of caching for web application?](https://www.reddit.com/r/rails/comments/j5n8km/different_levels_of_caching_for_web_application/)
+- url: https://www.reddit.com/r/rails/comments/j5n8km/different_levels_of_caching_for_web_application/
 ---
-Hi, every week I livestream some Ruby on Rails coding, building an app and looking at different approaches to features from a learners perspective. In recent weeks we [created our initial models and associations](https://youtu.be/vQjw5uUAx5k), last week we [added some forms along with `edit` and `update` actions on a controller](https://youtu.be/MWSngfjNKS0).
+I'm trying to fix the page loading performance of my web application. Right now there is no caching. Here is an example feature that I am trying to optimize: 
 
-This week, I wanted to run through some different approaches for allowing admins (or any other type of user) to edit/update a model. We looked at where this type of behaviour can live inside your Rails app and then implemented one of the options.
+User clicks a page to see all of the versions of a code build across multiple deployments. The code fires API calls to AWS DynamoDB to check tables for version information and renders the information to the page. 
 
-Here's the link: https://www.youtube.com/watch?v=TbRw2jHpgg0
-
-I'll add in some chapter markers as soon as I can to make this easier to navigate, I've already done some of the previous videos.
-
-I usually stream 10:30am (UK Time) every Sunday. You can subscribe to [the YouTube channel](http://www.youtube.com/channel/UC6JPQW8LnAZyfC_rUZqDqqA) if you want to be reminded. Thanks!
-## [6][Why not to use Rails on Windows?](https://www.reddit.com/r/rails/comments/j4va9b/why_not_to_use_rails_on_windows/)
-- url: https://www.reddit.com/r/rails/comments/j4va9b/why_not_to_use_rails_on_windows/
+Problem is that API calls are slow and also cost money. How can I cache the information returned from the database so that when a user loads the page it gets the data from the cache and not fire off API calls?
+## [11][Strange prompt on my rails app on Mobile, advice appreciated!](https://www.reddit.com/r/rails/comments/j5paat/strange_prompt_on_my_rails_app_on_mobile_advice/)
+- url: https://www.reddit.com/r/rails/comments/j5paat/strange_prompt_on_my_rails_app_on_mobile_advice/
 ---
-I'm starting to learn rails and heard a lot of recommendations to use it on Linux, but no one tells me exactly why. So, I prepared a setup on Ubuntu but tried to give a chance do Windows and made my first small api, with login system, etc... but couldn't spot any problem using Windows.
+Hey Rails nerds,
 
-So, can anyone give me reason to drop Windows now instead of running into big issues later, or is it just some kind of a programmer tabu?
+I've been working on my first big rails app for a while. We're just getting around to building out the mobile side and testing it on phones. 
+
+When submitting a form on my iPhone 8, I get this strange message asking me if i want to download createOrderBuy - this, by the way, is the back end target of the form i'm submitting. My form\_with looks like this:
+
+    &lt;%= form_with(url: "/stock/createOrderBuy",remote: true, method: "post", id: "buyForm", html: { class: "needs-validation", novalidate: true }) do %&gt; 
+
+I've included the download prompt I get on mobile. After googling around and trying a few things I haven't had any luck. Any guidance or advice is appreciated. Thank you!
 
 &amp;#x200B;
 
-EDIT: Also, I found it way easier to setup an developer environment to Rails on Windows than on Ubuntu, so I don't get the "configuration nightmare" that people tells about.
-## [7][s3 signed urls question](https://www.reddit.com/r/rails/comments/j4qcxj/s3_signed_urls_question/)
-- url: https://www.reddit.com/r/rails/comments/j4qcxj/s3_signed_urls_question/
+https://preview.redd.it/9jq3i3p3nbr51.png?width=750&amp;format=png&amp;auto=webp&amp;s=97271050ce2d843d6ad3d6df564ebb319d57a664
+## [12][Is there a way to bypass optimistic lock?](https://www.reddit.com/r/rails/comments/j5lvi4/is_there_a_way_to_bypass_optimistic_lock/)
+- url: https://www.reddit.com/r/rails/comments/j5lvi4/is_there_a_way_to_bypass_optimistic_lock/
 ---
-After uploading a file to S3 using Shrine and Uppy (which requires a presigned url), and saving its data to my model, I get to call `image_url` in image tags and such. However....something about having all that credential information as part of a url that I want to be a publicly readable file strikes me as sort of...odd? If my understanding is correct, and it's used for signing uploads, is there any reason why all this remains in the url? If I copy the image url from most sites, I do not see S3 credentials. Would this hurt me in any way?
+Is there a way to bypass optimistic lock? 
 
-I go to my console and type `model.image_url` (or just copy image url in the browser) and get this:
+I have added **lock_version** colummn to my model, and there's a few occasion like in a background job  I want the code to be able to ignore the lock_version check and update the model attributes (so no StaleObjectError will be raised), but still undergo some custom validation I defined in model, hence I can't use save(validation: false)
 
-`https://bucket.s3.region.amazonaws.com/model/1/image/9457719e40fb416e01a153657d7ea4fb.png?X-Amz-Algorithm=###&amp;X-Amz-Credential=accesskey_date_region_s3aws4_request&amp;X-Amz-Date=###&amp;X-Amz-Expires=900&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=###`
+I tried model.reload.update(attribute: value) but sometimes it still throws ActiveRecord::StaleObjectError
 
-Is it ok that X-Amz-Algorithm, X-Amz-Credential, X-Amz-Date, X-Amz-Expires, X-Amz-SignedHeaders, and X-Amz-Signature are public like this?
-
-X-Amz-Credential is just my access key and date and such, so it doesn't seem harmful. But what about X-Amz-Signature?
-
-And X-Amz-Expires...what is it that expires here? According to [this](https://forums.aws.amazon.com/thread.jspa?threadID=284629) a value of 900 is equal to 15 minutes, however I've been able to view this image hours later. Why would I want this?
-## [8][Would anyone be interested in a web jam?](https://www.reddit.com/r/rails/comments/j3v10t/would_anyone_be_interested_in_a_web_jam/)
-- url: https://www.reddit.com/r/rails/comments/j3v10t/would_anyone_be_interested_in_a_web_jam/
----
-For awhile I have been looking for an outlet for competitive web development but haven't found anything. In turn, we are hosting our own competitive web development jam tomorrow!
-
-It will be open up tonight at 12am EST and you will have 24hours(all day Saturday) to complete the website!
-
-Tonight we will be posting the theme we have picked and the criteria you must complete for your submission. It must be submitted by 11:59pm on Saturday Oct 3rd EST.
-
-You are allowed to utilize any web technologies you want to build the website, except drag and drop programs. You do have to build the site from scratch and cannot utilize a template.
-
-There is an optional $2 to get a ticket to compete for the cash prize! Otherwise it's free for anyone wanting to just get some experience or have some fun!
-
-For anyone that's interested in still signing up, here is the link :) Good luck everyone!
-
-[https://discord.gg/5rcKpTk](https://discord.gg/5rcKpTk)
-## [9][anyone ever try to put authenticated views in cdn?](https://www.reddit.com/r/rails/comments/j3ydbr/anyone_ever_try_to_put_authenticated_views_in_cdn/)
-- url: https://www.reddit.com/r/rails/comments/j3ydbr/anyone_ever_try_to_put_authenticated_views_in_cdn/
----
-wondering how you approached security, which APIs you used (conditions, token).
-## [10][Rails API only application; Native App + Doorkeeper = very confused fellow developer](https://www.reddit.com/r/rails/comments/j3wuu8/rails_api_only_application_native_app_doorkeeper/)
-- url: https://www.reddit.com/r/rails/comments/j3wuu8/rails_api_only_application_native_app_doorkeeper/
----
-Hey, I promise you I've gone through all the posts on this subreddit I could find on this topic. I have some beginner questions as I've only dived into my first rails project in May (which is running just fine :D)
-
-I now need to add proper authentication to it
-
-I initially used Devise + a custom JWT strategy but that wouldn't work for me in the long run. Long story short, I need an Oauth mechanism for creating an Alexa Skill. 
-
-Anyway, my confusions are :
-
-1. In my app (a flutter one in this case) I would like to start off with a simple sign in with email and later scale to social logins. Can I do this without leaving the app (not going into the browser?)
-
-2. If not, do I need to create a custom view in my API only rails app just for handling the login that I need to send my native app users to, to authenticate?
-
-3. What is the redirect URI in this case for doorkeeper? 
-
-I can figure out the omniauth bit and the specifics as and when it comes, but my fundamentals here in understanding this process keeping rails and doorkeeper in mind aren't clear. 
-
-I will buy you a beer because this has been really stressful figuring out and because I love this community in general haha
-
-Thanks in advance!
-## [11][View helpers - Is this approach "acceptable" or is it horrible?](https://www.reddit.com/r/rails/comments/j3utnl/view_helpers_is_this_approach_acceptable_or_is_it/)
-- url: https://www.reddit.com/r/rails/comments/j3utnl/view_helpers_is_this_approach_acceptable_or_is_it/
----
-Hi,
-
-I have a few custom UI components in my app, such as a dropdown menu. Writing those up manually every time I need one is not so cool, considering that it's quite a bit of HTML to write and if I need to update the dropdown markup once, I have to do it across many, many views.
-
-Therefore, I wrote those two helpers: [\*click\*](https://gist.github.com/ImMaax/9d9c6ba45eba6664b87a43e0c93fa168)
-
-Do you think this is a good approach or is it completely horrible? Pretty much my first time working with blocks in Ruby. Thanks a lot!
-## [12][Logging rendering time of templates retrieved with s custom template resolver](https://www.reddit.com/r/rails/comments/j3uy0r/logging_rendering_time_of_templates_retrieved/)
-- url: https://www.reddit.com/r/rails/comments/j3uy0r/logging_rendering_time_of_templates_retrieved/
----
-In my CMS I manage user editable templates that are stored in the database and retrieved with a custom template resolver. For these templates/views Rails' logs don't show rendering time like for the standard views. Is there a way to fix this? For example by hooking into ActionView LogSubscriber? Thanks!
+Any Ideas? I have googled for 2 hours but no answer for this

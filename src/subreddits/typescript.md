@@ -22,7 +22,153 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][2020 best practices for refactoring 60k LoC JS project to TS?](https://www.reddit.com/r/typescript/comments/j512sf/2020_best_practices_for_refactoring_60k_loc_js/)
+## [2][Why is my higher-order factory function not throwing a type error, and how can I make it work?](https://www.reddit.com/r/typescript/comments/j64mkf/why_is_my_higherorder_factory_function_not/)
+- url: https://www.reddit.com/r/typescript/comments/j64mkf/why_is_my_higherorder_factory_function_not/
+---
+`heroFactory([10, 10])` works, but I would also like to return many heroes into an array.
+
+`const heros = createMultipleInstantiatedClasses(3, heroFactory);` should not typecheck as it should accept only a function with an argument `factory: (position: Vector2) =&gt; T` but it does, and I get a load of `undefined` positions as a result. What is wrong with my type signature?
+
+If I change to `const heros = createMultipleInstantiatedClasses(3, heroFactory([10, 10]));` then I get ``&lt;Hero&gt;` is not a function`` error.
+
+Can anyone help? Thanks.
+
+https://www.typescriptlang.org/play?#code/KYDwDg9gTgLgBDAnmYcBqwDGNoCY4C8cA2gHYCuAtgEbBQA0cFNdAugNwBQnmANgIYBnQXAASdCHADenOHEiCAljEURSXOZjWCYUctmgAKBctWkAXOiw4ouAJTTZchAAtFggHQmVawvIhKPupOAL6cYZygkLBwAGbkpNhmcJhQwPwwwACy5LwqYLzAAJKkOvykKhnAACYAwgLCwIIAPAAqAHyGTsy0UADysfVCgk2WPXT0TrH8BlCIlsYBpmqWGLP2hO1wrZx2lq3ErI5yaTDkUKRwAIJQUPyIHrFQEJSGUnCFpADmMC5jVL0BkNGiIQoxprNEHYuBEotB4PFEkE4C4JAAxGY2RCLQJmVbWPB7MQSY5wU7nS6kYAAd2Jzxxy1I0PC3C0pXgqOefk5EAxkMMxAAjAAGRgi1jQuAAeilcD6AGkeNoORIRERUulMjk8ooCsV2eVKpk6g0RoJDABmRg8vlY5lK0oQQoeXgQL6GHmSmV0yTvbx4khwEVi4VwI4hQAQBA7BE7gC63R7VV7ZcQfdJ-LiVnAEtVgLFFFTqnAwRHxFy-UsgpYc3mCzVi-RSySK5mLNnSLn84Xi2Go0A
+
+```typescript
+export type Vector2 = [number, number];
+
+class Hero {
+  position;
+  constructor(position: Vector2) {
+    this.position = position;
+  }
+}
+
+export function createMultipleInstantiatedClasses&lt;T&gt;(
+  numberOfClasses: number,
+  factory: (position: Vector2) =&gt; T
+): T[] {
+  return Array.from({ length: numberOfClasses }, factory);
+}
+
+export function heroFactory(position: Vector2): Hero {
+  return new Hero(position);
+}
+
+const hero = heroFactory([10, 10]); // OK
+const heros = createMultipleInstantiatedClasses(3, heroFactory);
+
+console.log(hero); // Hero { position: [ 10, 10 ] } 
+console.log(heros); // [ Hero { position: undefined }, Hero { position: undefined }, Hero { position: undefined } ] 
+```
+## [3][Express REST APIs in TypeScript?](https://www.reddit.com/r/typescript/comments/j5vdz8/express_rest_apis_in_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/j5vdz8/express_rest_apis_in_typescript/
+---
+
+Is there a cleaner way to do this like C# classes and methods?
+
+```csharp
+
+public class RestAPI {
+   [HTTPGet]
+   [Authorize]
+   public static string GetFoo() {
+   	return new string("Welcome to Foo!")
+   }
+}
+```
+
+Express.js routes look like Python req res and its fugly.
+## [4][Change types using TS Compiler API](https://www.reddit.com/r/typescript/comments/j5uodl/change_types_using_ts_compiler_api/)
+- url: https://www.reddit.com/r/typescript/comments/j5uodl/change_types_using_ts_compiler_api/
+---
+Hi everyone,
+
+I am using the TS Compiler in a project and I need to modify the inference of TS a bit. For example, if I have:
+
+    let a = 2
+    a = 'name'
+
+the type nodes of both **a** identifiers are **numbers**. Of course this is expected in TS.
+
+However, is there any way for the compiler to actually say that **a** is **number | string** ? I saw *typescript.d.ts* and it is possible to do some hacks (or maybe do my own separate code analysis), but if there is any TS library or codefix that does that (and other types of inference on top of the inference done by TS) I think it would be better.
+## [5][Creating an express router in TypeScript](https://www.reddit.com/r/typescript/comments/j5kcvc/creating_an_express_router_in_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/j5kcvc/creating_an_express_router_in_typescript/
+---
+Trying to build a clean application for a personal project using SOLID design principles.
+
+I was wondering how do you guys build a router in TypeScript? Do you use classes to initialise a router class?
+## [6][How to get notified about finished recursive http calls with typescript?](https://www.reddit.com/r/typescript/comments/j5ri9g/how_to_get_notified_about_finished_recursive_http/)
+- url: https://www.reddit.com/r/typescript/comments/j5ri9g/how_to_get_notified_about_finished_recursive_http/
+---
+I am trying to recursively fetch Objects from a Server. An Object can have multiple objects as children and it is not known how many children there are and how deep the objects are nested.
+
+I have a function that fetches the data from the sever and creates typescript objects with it and adds the children to the according parent. My problem is, that I'm subscribing to the result in the function, so I never know when I am finished with fetching the objects from the server. Where do I have to subscribe to my result? And how can I still create my Typescript objects from the data when I don't subscribe in my fetch function?
+
+This is what I currently have:
+
+    fetchDataFromServer(token: HttpHeaders, url: string, parent: OwnObject) {
+    
+        let current: OwnObject;
+        return this.http    //subscribe should be done somwhere else but how can I get notified about the subscribe only if the recursion is completely finished
+          .get&lt;any&gt;(url, { headers: token }).subscribe(result =&gt; {
+            if (Array.isArray(result)) {
+              for (const resultChild of result) {
+                if (!this.isOfTypeToShow(resultChild)) continue;
+                else {
+                  current = new OwnObject(resultChild.name, resultChild.type, resultChild.href, resultChild.id, []);
+                  parent.childObject.push(current);
+                  if (!resultChild.type.endsWith('type that has no children')) { //this type cannot have children so no further search is necessary
+                    const urlOfChildren = this.createURLStringOfChildren(resultChild.relations, current);
+                    if (urlOfChildren !== '') {
+                      return this.fetchDataFromServer(token, urlOfChildren, current);
+                    }
+                  }
+                }
+              }
+            } else {
+              if (this.isOfTypeToShow(result)) {
+                current = new OwnObject(result.name, result.type, result.href, result.id, []); 
+                parent !== null ? parent.childObject.push(current) : this.rootObject.next(current);
+                if (!result.type.endsWith('type that has no children')) {
+                  const urlOfChildren = this.createURLStringOfChildren(result.relations, current);
+                  if (urlOfChildren !== '') {
+                    return this.fetchDataFromServer(token, urlOfChildren, current);
+                  }
+                }
+              }
+            }
+          }));
+      }
+
+Sorry for the bad  formatting and maybe noobish question, I am using angular btw and would be very happy if you could help me a little bit
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+The method createURLStringOfChildren just creates a url string according to the children of the current element. With this string I fetch the children from the server.
+
+The method isOfTypeToShow just returns true if the type of the element is interesting in the context (some types can be ignored)
+
+&amp;#x200B;
+
+I have also tried to use expand according to this example ([https://stackoverflow.com/questions/40529232/angular-2-http-observables-and-recursive-requests](https://stackoverflow.com/questions/40529232/angular-2-http-observables-and-recursive-requests)) example but it did not really help me with my problem. I have only limited knowledge about request calls in Typescript/Javascript.
+
+So basically I just need to know how I can do my operations in the function without subscribing to it and how I can get notified when the recursive http-call is completely finished.
+
+The function gets called from another component in the first place.
+## [7][What problem would there be with running an Express API server using ts-node](https://www.reddit.com/r/typescript/comments/j5le0l/what_problem_would_there_be_with_running_an/)
+- url: https://www.reddit.com/r/typescript/comments/j5le0l/what_problem_would_there_be_with_running_an/
+---
+I use ts-node-dev and the server seems to run fine locally. Is there a reason not to just skip compilation and run the server from source code during production?
+## [8][Trying to understand this error message](https://www.reddit.com/r/typescript/comments/j5k6lo/trying_to_understand_this_error_message/)
+- url: https://www.reddit.com/r/typescript/comments/j5k6lo/trying_to_understand_this_error_message/
+---
+I'm trying to assign a function to the onMouseDown property on a [styled component](https://github.com/styled-components/styled-components) but am getting an error message which I'm having an issue understanding the syntax of: `Type '(e: MouseEvent) =&gt; void' is not assignable to type '(event: MouseEvent&lt;HTMLDivElement, MouseEvent&gt;) =&gt; void'`
+Are `&lt;HTMLDivElement, MouseEvent&gt;` two generics in this case?
+## [9][2020 best practices for refactoring 60k LoC JS project to TS?](https://www.reddit.com/r/typescript/comments/j512sf/2020_best_practices_for_refactoring_60k_loc_js/)
 - url: https://www.reddit.com/r/typescript/comments/j512sf/2020_best_practices_for_refactoring_60k_loc_js/
 ---
 I’m currently working on a ~60 LoC React + Express API that I want to enable TypeScript on. From the articles I’ve read, I see mixed opinions on how to do the refactor. The client and server are completely separate apps. I want to make sure all the new TS files are linted with the best rules (airbnb or ts recommended config).
@@ -34,7 +180,7 @@ I’m currently working on a ~60 LoC React + Express API that I want to enable T
 3. Is there a way of figuring out where to start based on file dependencies? (Leaf nodes first?)
 
 Thanks!
-## [3][PSA: Using const enum rather than enum will result in much less generated JavaScript](https://www.reddit.com/r/typescript/comments/j52h2h/psa_using_const_enum_rather_than_enum_will_result/)
+## [10][PSA: Using const enum rather than enum will result in much less generated JavaScript](https://www.reddit.com/r/typescript/comments/j52h2h/psa_using_const_enum_rather_than_enum_will_result/)
 - url: https://www.reddit.com/r/typescript/comments/j52h2h/psa_using_const_enum_rather_than_enum_will_result/
 ---
 Found this out recently, and was wondering if people know about it. 
@@ -69,7 +215,7 @@ and:
     const x = 1 /* user */;
 
 and see that the latter results in a single line of code instead of 7. Consider using this if none of your enum's members are [computed](https://www.typescriptlang.org/docs/handbook/enums.html#computed-and-constant-members). Hope this helps someone out some day.
-## [4][Object is possibly null - after null check?](https://www.reddit.com/r/typescript/comments/j4wwx9/object_is_possibly_null_after_null_check/)
+## [11][Object is possibly null - after null check?](https://www.reddit.com/r/typescript/comments/j4wwx9/object_is_possibly_null_after_null_check/)
 - url: https://www.reddit.com/r/typescript/comments/j4wwx9/object_is_possibly_null_after_null_check/
 ---
 Hi, I have following code, and there's something that I don't quite understand:
@@ -111,222 +257,3 @@ in method `setupEvents` as you can see I am check whether `this.drawingContext` 
         });
     }
 }
-## [5][Need to create and object, with nested object only containing an interface type : Button. How?](https://www.reddit.com/r/typescript/comments/j4x1i3/need_to_create_and_object_with_nested_object_only/)
-- url: https://www.reddit.com/r/typescript/comments/j4x1i3/need_to_create_and_object_with_nested_object_only/
----
-The following syntax doesn't work. How can I do it?
-
-
-
-Const app Data = {
-  buttons: {
-      Button1: Button : {
-
-      }
-
-      Button2 :Button : {
-
-
-      }
-   }
-}
-## [6][explicit module boundaries show up when I export a function](https://www.reddit.com/r/typescript/comments/j4x16g/explicit_module_boundaries_show_up_when_i_export/)
-- url: https://www.reddit.com/r/typescript/comments/j4x16g/explicit_module_boundaries_show_up_when_i_export/
----
-So I have a function like this :
-
-    export function myFactory() {
-    	return function myFn(x : number , y : number):number {
-    		return x+y;
-    	}
-    }
-    myFactory();
-
-and eslint is happy and does not warn me about explicit module boundaries for `myFactory`. If I replace `myFn` with a class definition I get the explicit module boundaries warning which disappears when I remove export :
-
-    export function myOtherFactory() {
-    	return class myClass {
-    		x : number;
-    		y : number;
-    		constructor() {
-    			this.x = 1;
-    			this.y =2;
-    		}
-    	}
-    }
-    myOtherFactory();
-
-Why ?
-## [7][Why libraries and frameworks should not have a composition root ?](https://www.reddit.com/r/typescript/comments/j4cxnh/why_libraries_and_frameworks_should_not_have_a/)
-- url: https://www.reddit.com/r/typescript/comments/j4cxnh/why_libraries_and_frameworks_should_not_have_a/
----
-So I am reading [this](https://blog.ploeh.dk/2011/07/28/CompositionRoot/) link and I stumble upon this sentence :
-
-&gt;Only applications should have Composition Roots. Libraries and frameworks shouldn't.
-
-Why libraries and frameworks should not have a composition root ?
-
-I am currently coding from a scratch a mobx like library , and I have created a composition root . That is why I am asking .
-## [8][Why does { [key: string]: string } allow an unlimited number of k/v pairs?](https://www.reddit.com/r/typescript/comments/j3xzm9/why_does_key_string_string_allow_an_unlimited/)
-- url: https://www.reddit.com/r/typescript/comments/j3xzm9/why_does_key_string_string_allow_an_unlimited/
----
-I feel like something about my understanding of that syntax isn't complete. On one hand I understand that the generic key and string name means the key could be anything, as can the value. 
-
-On the other hand I do not see any indication that there can be more than one of those pairs.
-## [9][Should I use enums or "|" strings?](https://www.reddit.com/r/typescript/comments/j3vp9d/should_i_use_enums_or_strings/)
-- url: https://www.reddit.com/r/typescript/comments/j3vp9d/should_i_use_enums_or_strings/
----
-Example using "|":
-
-    interface Person {
-        name: String,
-        age: Number,
-        favoriteMeal: 'breakfast' | 'lunch' | 'dinner'
-    }
-    
-    const me: Person = {
-        name: "name",
-        age: 1,
-        favoriteMeal: 'breakfast'
-    }
-
-Same example with enums:
-
-    enum Meal {
-        breakfast,
-        lunch,
-        dinner
-    }
-    
-    interface Person {
-        name: String,
-        age: Number,
-        favoriteMeal: Meal
-    }
-    
-    const me: Person = {
-        name: "name",
-        age: 1,
-        favoriteMeal: Meal.breakfast
-    }
-
-1. Is there are a hard and fast rule on which one I should use? If I'm not wrong, VScode will autocomplete both methods.
-2. If I want to prepare the data for a NoSQL database (Firestore, for example), which one would you recommend? With the enum method, by default I will see integers in the database (0 for breakfast, 1 for lunch, ...), but I can easily change this to strings if I want to.
-
-**Edit**
-
-Based on the other answers, I see that looping through enums is a little (not sure how to describe it)
-
-    enum Meal {
-        breakfast, 
-        lunch, 
-        dinner
-    }
-    
-    for (const meal of Object.values(Meal)) {
-        console.log(meal)
-    }
-    
-    [LOG]: "breakfast" 
-    [LOG]: "lunch" 
-    [LOG]: "dinner" 
-    [LOG]: 0 
-    [LOG]: 1 
-    [LOG]: 2 
-    
-    for (const meal of Object.values(Meal)) {
-        if (isNaN(Number(meal))){
-            console.log(meal)
-        }
-    }
-    
-    [LOG]: "breakfast" 
-    [LOG]: "lunch" 
-    [LOG]: "dinner" 
-
-The reason I want to iterate over enums is to create the UI (for checkboxes and radio buttons, for example).
-
-I could use string enums:
-
-    enum Meal {
-        breakfast = "breakfast", 
-        lunch = "lunch", 
-        dinner = "dinner"
-    }
-    
-    for (const meal of Object.values(Meal)) {
-        console.log(meal)
-    }
-    
-    [LOG]: "breakfast" 
-    [LOG]: "lunch" 
-    [LOG]: "dinner"
-
-But I lose some advantages. What if I have to change "dinner" to "supper" across all meals?
-
-While u/nagarian_r's solution looked a little weird at first, I feel it is probably the best solution:
-
-    const Meals = [ 'breakfast', 'lunch', 'dinner'] as const
-    type Meal = typeof Meals[number]
-    
-    console.log(Meals)
-    
-    [LOG]: ["breakfast", "lunch", "dinner"] 
-
-I can loop through, reference them string, or by their numbers:
-
-    const b1: Meal = "breakfast"
-    const b2: Meal = Meals[0]
-    
-    // b1 === b2 = true
-
-So if you're lopping through Meals to make a checkbox form element, you use the index as the value to save in the database, but the value (Meal\[index\]  
-) to show to the user:
-
-    for (let index = 0; index &lt; Meals.length; index++) {   const meal: Meal = Meals[index];   console.log(`${index}) ${meal}`) }  [LOG]: "0) breakfast"  [LOG]: "1) lunch"  [LOG]: "2) dinner"
-## [10][Unsure about typecasting functionality.](https://www.reddit.com/r/typescript/comments/j449om/unsure_about_typecasting_functionality/)
-- url: https://www.reddit.com/r/typescript/comments/j449om/unsure_about_typecasting_functionality/
----
-&amp;#x200B;
-
-    type Day = 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat' | 'sun';
-    let input: string = readlineSync('Enter a day of the week'); // 
-    let day: Day = input as Day;
-
-If I input a value of "January", I don't get any errors, and I can output the day and see that its is "January"? Why is that the case? Shouldn't I get some sort of type error?   
-
-
-Any help would be appreciated.
-## [11][I could use some help with properly typing an event emitter function](https://www.reddit.com/r/typescript/comments/j3s87i/i_could_use_some_help_with_properly_typing_an/)
-- url: https://www.reddit.com/r/typescript/comments/j3s87i/i_could_use_some_help_with_properly_typing_an/
----
-**Answered**
-
-```
-interface EventChannel&lt;API extends {}&gt; {
-  emit: &lt;key extends keyof API&gt;(eventName: key, payload: API[key]) =&gt; void;
-}
-```
-
-----
-
-I have a use case for an event emitter like API, but I can't seem to properly type one of the functions.
-
-I have this interface
-
-```
-interface EventChannel&lt;API extends {}&gt; {
-  emit: (eventName: keyof API, payload: API[typeof eventName]) =&gt; void
-}
-```
-
-However, that doesn't feel right, because we get into this sort of situation
-
-```
-interface ExampleInterface {
-  onNumber: number;
-  onString: string;
-}
-
-type MyInterface = EventChannel&lt;ExampleInterface&gt;;
-```

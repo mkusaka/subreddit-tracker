@@ -1,12 +1,10 @@
 # javascript
-## [1][WTF Wednesday (September 30, 2020)](https://www.reddit.com/r/javascript/comments/j2oysx/wtf_wednesday_september_30_2020/)
-- url: https://www.reddit.com/r/javascript/comments/j2oysx/wtf_wednesday_september_30_2020/
+## [1][Showoff Saturday (October 03, 2020)](https://www.reddit.com/r/javascript/comments/j4eg3o/showoff_saturday_october_03_2020/)
+- url: https://www.reddit.com/r/javascript/comments/j4eg3o/showoff_saturday_october_03_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+Show us here!
 ## [2][Your /r/javascript recap for the week of September 28 - October 04](https://www.reddit.com/r/javascript/comments/j5g2ci/your_rjavascript_recap_for_the_week_of_september/)
 - url: https://www.reddit.com/r/javascript/comments/j5g2ci/your_rjavascript_recap_for_the_week_of_september/
 ---
@@ -87,43 +85,59 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][JavaScript Event Loop And Call Stack Explained](https://www.reddit.com/r/javascript/comments/j5fq5n/javascript_event_loop_and_call_stack_explained/)
+## [3][tsParticles 1.18.0 released - Particles animations for your website - React, Vue 2.x and 3.x, Angular and Svelte components available now](https://www.reddit.com/r/javascript/comments/j60ro0/tsparticles_1180_released_particles_animations/)
+- url: https://dev.to/matteobruni/tsparticles-1-18-0-released-7gk
+---
+
+## [4][I've Been Building a 16-bit VM from Scratch over a Series of Videos, Most Recently Working on the Assembler and Assembly Language. In This One I Added Structures: A "High Level" Feature to Interpret Addresses as More Complex Data Types.](https://www.reddit.com/r/javascript/comments/j64l1s/ive_been_building_a_16bit_vm_from_scratch_over_a/)
+- url: https://www.youtube.com/watch?v=GkipKe0S_5E
+---
+
+## [5][I made a chrome extension that shows the USD$ value of the reddit gold awards of all reddit posts as you browse](https://www.reddit.com/r/javascript/comments/j5mtlp/i_made_a_chrome_extension_that_shows_the_usd/)
+- url: https://chrome.google.com/webstore/detail/reddit-award-price-viewer/hfmbnmndfhcniigklamalgjffddndfcc
+---
+
+## [6][[Boilerplate] React Rollup boilerplate for creating component libraries](https://www.reddit.com/r/javascript/comments/j631sc/boilerplate_react_rollup_boilerplate_for_creating/)
+- url: https://github.com/KaiHotz/react-rollup-boilerplate
+---
+
+## [7][JavaScript Stack for Startup - benefits &amp; applications](https://www.reddit.com/r/javascript/comments/j63wb8/javascript_stack_for_startup_benefits_applications/)
+- url: https://www.byteant.com/blog/javascript-for-startups-a-complete-guide/
+---
+
+## [8][[AskJS] When you know you're a senior Javascript developer ?](https://www.reddit.com/r/javascript/comments/j600x5/askjs_when_you_know_youre_a_senior_javascript/)
+- url: https://www.reddit.com/r/javascript/comments/j600x5/askjs_when_you_know_youre_a_senior_javascript/
+---
+*(excuse my english french guy)
+
+**A)** When you know you're a senior Javascript developer ?
+ 
+ 
+**B)** Is it possible to be "senior" without being Full Stack for example being just Frontend or just Backend or for the old programmer being full stack really mean being senior and understanding the whole picture better ?
+ 
+ 
+**C)** Why many Java and C# programmer dislike and avoid Javascript a lot ? are they stuck with their old mentalities and are afraid to learn new things or ? Keep reading on others thread that WebAssembly will be "the thing" etc
+ 
+ 
+**D)** Does the industry standardized on VSCode or the alternative IDE are just as good ? is it possible today in 2020 to completly disable the Telemetry in VSCode ?
+
+
+**E)** Does anyone have experience here working 100% remote as a JS dev in the USA but living in Canada ? Work permit, currency conversion, taxes etc etc all that jazz
+
+Thank you very much for your time
+## [9][Create Stripe Coupons and Promo Codes in Slack With Autocode and Node.js (x-post r/node)](https://www.reddit.com/r/javascript/comments/j60btm/create_stripe_coupons_and_promo_codes_in_slack/)
+- url: https://autocode.com/app/stripe/stripe-coupon-slack-app/
+---
+
+## [10][Turn off the lights with angular-dark-mode](https://www.reddit.com/r/javascript/comments/j63mrv/turn_off_the_lights_with_angulardarkmode/)
+- url: https://medium.com/@tal.ohana.x/turn-off-the-lights-with-angular-dark-mode-194241f491ae
+---
+
+## [11][JavaScript Event Loop And Call Stack Explained](https://www.reddit.com/r/javascript/comments/j5fq5n/javascript_event_loop_and_call_stack_explained/)
 - url: https://felixgerschau.com/javascript-event-loop-call-stack/
 ---
 
-## [4][Refactoring JQuery to ES6](https://www.reddit.com/r/javascript/comments/j5i5ho/refactoring_jquery_to_es6/)
-- url: https://jcsh.dev/refactoring-jquery-to-es6
----
-
-## [5][React 17 delegates events to root instead of document](https://www.reddit.com/r/javascript/comments/j5hek5/react_17_delegates_events_to_root_instead_of/)
-- url: https://blog.bigbinary.com/2020/09/29/react-17-delegates-events-to-root-instead-of-document.html
----
-
-## [6][RSLint - An extremely fast JavaScript linter written from scratch in Rust](https://www.reddit.com/r/javascript/comments/j4zj3c/rslint_an_extremely_fast_javascript_linter/)
-- url: https://github.com/RDambrosio016/RSLint
----
-
-## [7][A same-origin storage(IndexedDB/WebSQL/localStorage) for cross-domain access](https://www.reddit.com/r/javascript/comments/j5g6z6/a_sameorigin_storageindexeddbwebsqllocalstorage/)
-- url: https://github.com/unadlib/origin-storage
----
-
-## [8][Go Beyond JS Console: Make Debugging Super With Console API](https://www.reddit.com/r/javascript/comments/j5i4i8/go_beyond_js_console_make_debugging_super_with/)
-- url: https://axay.hashnode.dev/go-beyond-js-console-make-debugging-super-with-console-api-ckfv78qyc08l5v6s16fii5ke6
----
-
-## [9][mapbox navigation in ionic 5 sample project with capacitor custom native plugin](https://www.reddit.com/r/javascript/comments/j5fem5/mapbox_navigation_in_ionic_5_sample_project_with/)
-- url: https://github.com/shadowhijackers/ionic-mapbox-navigation
----
-
-## [10][Automate Chrome extension publish using an automated script](https://www.reddit.com/r/javascript/comments/j5j01w/automate_chrome_extension_publish_using_an/)
-- url: https://blog.ganeshjaiwal.dev/automate-chrome-extension-publish-using-an-automated-script
----
-
-## [11][React Router for Beginner](https://www.reddit.com/r/javascript/comments/j5iki9/react_router_for_beginner/)
-- url: https://dev.to/bipon68/react-router-for-beginner-4mh9
----
-
-## [12][Across The Universe - A three minute web experience across the universe](https://www.reddit.com/r/javascript/comments/j5i4eb/across_the_universe_a_three_minute_web_experience/)
-- url: https://www.across-universe.com/
+## [12][request-animation-helpers - small package for firing callbacks after future repaints](https://www.reddit.com/r/javascript/comments/j5ymk3/requestanimationhelpers_small_package_for_firing/)
+- url: https://github.com/alexmacarthur/request-animation-helpers
 ---
 

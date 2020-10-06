@@ -66,339 +66,93 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Who's Hiring? and /r/reactjs Moderator Applications! [Oct 2020]](https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/)
-- url: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
----
-We alternate between Who's Hiring (on the 1st of the month, [most recent one here](https://www.reddit.com/r/reactjs/comments/ikn3vo/whos_hiring_september_2020/)) and Who's Available (on the 15th, [most recent one here](https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/))
-
-## Subreddit Moderator Applications
-
-This month, we are also launching our first application process to moderate this very subreddit! **Please see the stickied link below** 👇, and post any questions as replies to that post.
-
-## Who's Hiring
-
-Welcome to the biggest React job board in the world! This is like Hacker News' Who's Hiring but just for React. Top Level comments must be Job Opportunities.
-
-⚠️ PLEASE FOLLOW [THE HN Who's Hiring FORMAT](https://news.ycombinator.com/item?id=24342498)
-
-Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.
-
-examples:
-
-- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
-- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +$80k**
-
-Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
-
-If you are looking for jobs, send a PM to the poster or post in our Who's Available thread!
-## [3][React Router or Reach Router? &amp; why?](https://www.reddit.com/r/reactjs/comments/j5gvmi/react_router_or_reach_router_why/)
-- url: https://www.reddit.com/r/reactjs/comments/j5gvmi/react_router_or_reach_router_why/
----
-I'm trying to learn react for the second time! I hope I actually learn it this time. 
-Well I'm building a tiny project and need to implement routing, which of these routers should I use? And why?
-## [4][A guide to building non-trivial React components](https://www.reddit.com/r/reactjs/comments/j5hkux/a_guide_to_building_nontrivial_react_components/)
-- url: https://blog.whereisthemouse.com/a-guide-to-building-non-trivial-react-components
+## [2][Help the React team write new docs—take the 2020 React Community Survey](https://www.reddit.com/r/reactjs/comments/j5iqj3/help_the_react_team_write_new_docstake_the_2020/)
+- url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [5][What type of application to build to showcase when applying to jobs?](https://www.reddit.com/r/reactjs/comments/j50qsk/what_type_of_application_to_build_to_showcase/)
-- url: https://www.reddit.com/r/reactjs/comments/j50qsk/what_type_of_application_to_build_to_showcase/
+## [3][Which format should I ask from designer if I want such GIF graphics and display them in React Native?](https://www.reddit.com/r/reactjs/comments/j6489r/which_format_should_i_ask_from_designer_if_i_want/)
+- url: https://v.redd.it/tb9m9evyxgr51
 ---
-Hi
 
-I'm a full stack dev with 2.5 years experience, I've picked up React in the last 6 months and have built loads of small applications, however these were all for learning purposes and not enough to showcase.
-
-What sort of application should I built to show in interview when I'm trying to get a React job.
-
-Any ideas?
-## [6][TypeError: Cannot read property 'map' of undefined](https://www.reddit.com/r/reactjs/comments/j5fz3c/typeerror_cannot_read_property_map_of_undefined/)
-- url: https://www.reddit.com/r/reactjs/comments/j5fz3c/typeerror_cannot_read_property_map_of_undefined/
+## [4][React Testing Library downloads surpasses Enzyme](https://www.reddit.com/r/reactjs/comments/j5jri7/react_testing_library_downloads_surpasses_enzyme/)
+- url: https://npmcharts.com/compare/@testing-library/react,enzyme
 ---
- hi all, I am new in React js. I am creating a project using react js with redux. I hit a rest call in action.js file, and then reducer will update the state of store. In itemDetailsPage.js component i will use the store values and it will works fine, but when i use the map() method to render each image in itemImages array which is in the store state it show error that "Cannot read property 'map' of undefined". itemImages is an array , when i iterate this array in another component it will work fine, but in this component it shows error. 
 
- 
+## [5][Getting Started With Framer Motion](https://www.reddit.com/r/reactjs/comments/j5wire/getting_started_with_framer_motion/)
+- url: https://www.reddit.com/r/reactjs/comments/j5wire/getting_started_with_framer_motion/
+---
+[https://letsbuildui.dev/articles/getting-started-with-framer-motion](https://letsbuildui.dev/articles/getting-started-with-framer-motion)
+## [6][Caple Design System - React UI Library](https://www.reddit.com/r/reactjs/comments/j5zh5b/caple_design_system_react_ui_library/)
+- url: https://github.com/cobaltinc/caple-design-system
+---
 
-## This is my action code:-
+## [7][Onclick to push to a new route React Material UI](https://www.reddit.com/r/reactjs/comments/j654a8/onclick_to_push_to_a_new_route_react_material_ui/)
+- url: https://www.reddit.com/r/reactjs/comments/j654a8/onclick_to_push_to_a_new_route_react_material_ui/
+---
+Hi everyone,
 
- `export const getItem = (id) =&gt; async dispatch =&gt; {`  
-`try{`  
-`const res = await axios.get(`
+How do I push to a new page with an Onclick from from a div, using a key value.
 
-    http://localhost:8086/api/item/getItem/${id}
+Basically I have multiple cards and each one has a button that I want to take me into a page , I need a unique key/value for each card
 
-`);`  
-`console.log(`
 
-    success message ${res.data}
+I can’t paste my code right now.
 
-`)`  
-`dispatch({`  
-`type: GET_ITEM,`  
-`payload: res.data.data`  
-`});`  
-`}catch(error){`  
-`console.log(`
+Thanks!!
+## [8][[Help] How to update props based on prompt response?](https://www.reddit.com/r/reactjs/comments/j60w0y/help_how_to_update_props_based_on_prompt_response/)
+- url: https://www.reddit.com/r/reactjs/comments/j60w0y/help_how_to_update_props_based_on_prompt_response/
+---
+I'd love some help here!
 
-    error message ${error}
+I'm a beginner, so thank you for your advice and patience! I currently have a button that, on click, calls a function called "seriesPopup" that looks like this:
 
-`)`  
-`}`  
-`};` 
+`seriesPopup() {`
 
- 
+`var seriesLabel = prompt("Please enter the series name and choose a dataset:", "Series");`
 
-## This is my reducer code:-
+  `}`
 
- 
+I want an object type prop in the current component that updates itself with the result of seriesLabel when the prompt is submitted. 
 
-`import { act } from 'react-dom/test-utils';`  
-`import { GET_ITEM, GET_ITEMS } from './../actions/Type';`  
-`const initialState={`  
-`items:[],`  
-`item:{}`
+Right now, the defaultProps contains an object that looks like this:
 
-`};`  
-`export default function (state=initialState,action){`  
-`switch(action.type){`  
-`case GET_ITEMS:`  
-`return{`  
-`...state,`  
-`items:action.payload`  
-`}`  
-`case GET_ITEM:`  
-`return{`  
-`...state,`  
-`item:action.payload`  
-`}`  
-`default:`  
-`return state;`  
-`}`  
+`UsersOverview.defaultProps = {`  
+`chartData: {`
+
+`datasets: [`
+
+`{`
+
+`label: "Test"`
+
 `}`
+
+`]}}`
+
+How would I update the "label" value in this object? I realize that this is in a defaultProps, which is not the ideal situation, so how would I update the prop outside of that? How can I make this.props.chartData.datasets\[0\]\[0\] equal seriesLabel?
 
 &amp;#x200B;
 
- 
+Thanks!
+## [9][I am looking for code basses with react and styled components](https://www.reddit.com/r/reactjs/comments/j64xm2/i_am_looking_for_code_basses_with_react_and/)
+- url: https://www.reddit.com/r/reactjs/comments/j64xm2/i_am_looking_for_code_basses_with_react_and/
+---
+I have only been learning React for 2 weeks so far I have learnt react router and styled components.  
 
-## This is my ItemDetailsPage.js (where exactly i got error):-
+And I  want to see how others people structure there code base and use react with styled components.  
 
-    import React, { Component } from 'react'
-    import { connect } from 'react-redux';
-    
-    import { Link } from 'react-router-dom';
-    import { successAlert } from '../layout/SweetAlert';
-    import { getItem } from './../../actions/ItemActions';
-    class ItemDetailsPage extends Component {
-        constructor(props){
-            super(props);
-            this.onAddToCartClick=this.onAddToCartClick.bind(this)
-        }
-        onAddToCartClick(){
-            successAlert("Cart","Item added to the cart successfully");
-        }
-        componentDidMount(){
-            const { id } = this.props.match.params;
-            this.props.getItem(id);
-        }
-        render() {
-            const item=this.props.item
-            return (
-                &lt;div&gt;
-                &lt;section className="mb-5"&gt;
-                
-                  &lt;div className="row"&gt;
-                    &lt;div className="col-md-6 mb-4 mb-md-0"&gt;
-                
-                      &lt;div id="mdb-lightbox-ui"&gt;&lt;/div&gt;
-                
-                      &lt;div className="mdb-lightbox"&gt;
-                
-                        &lt;div className="row product-gallery mx-1"&gt;
-                
-                          &lt;div className="col-18 mb-0"&gt;
-                            
-                              
-                            &lt;div class="container my-4"&gt;
-                            &lt;div id="carouselExample1" class="carousel slide z-depth-1-half" data-ride="carousel"&gt;
-                                  &lt;div class="carousel-inner"&gt;
-                                    &lt;div class="carousel-item active"&gt;
-                                      &lt;img height="500px" class="d-block w-100 " src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg" alt="First slide"/&gt;
-                                    &lt;/div&gt;
-                                    &lt;div class="carousel-item"&gt;
-                                      &lt;img height="500px" class="d-block w-100 " src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg" alt="Second slide"/&gt;
-                                    &lt;/div&gt;
-                                    &lt;div class="carousel-item"&gt;
-                                      &lt;img height="500px" class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg" alt="Third slide"/&gt;
-                                    &lt;/div&gt;
-                                  &lt;/div&gt;
-                                  &lt;a class="carousel-control-prev" href="#carouselExample1" role="button" data-slide="prev"&gt;
-                                    &lt;span class="carousel-control-prev-icon" aria-hidden="true"&gt;&lt;/span&gt;
-                                    &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
-                                  &lt;/a&gt;
-                                  &lt;a class="carousel-control-next" href="#carouselExample1" role="button" data-slide="next"&gt;
-                                    &lt;span class="carousel-control-next-icon" aria-hidden="true"&gt;&lt;/span&gt;
-                                    &lt;span class="sr-only"&gt;Next&lt;/span&gt;
-                                  &lt;/a&gt;
-                                &lt;/div&gt;
-                            
-                                
-                              &lt;/div&gt;
-                              
-                           
-                            
-                          &lt;/div&gt;
-                          &lt;div className="col-12"&gt;
-                            &lt;div className="row"&gt;
-    
-                  {item.itemImages.map(itemImage=&gt;(
-                               console.log("inside itemimages array")
-    ))} 
-    
-                              &lt;div className="col-3"&gt;
-                                &lt;div className="view overlay rounded z-depth-1 gallery-item"&gt;
-                                  &lt;img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12a.jpg"
-                                    className="img-fluid"/&gt;
-                                  &lt;div className="mask rgba-white-slight"&gt;&lt;/div&gt;
-                                &lt;/div&gt;
-                              &lt;/div&gt;
-                              &lt;div className="col-3"&gt;
-                                &lt;div className="view overlay rounded z-depth-1 gallery-item"&gt;
-                                  &lt;img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/13a.jpg"
-                                    className="img-fluid"/&gt;
-                                  &lt;div className="mask rgba-white-slight"&gt;&lt;/div&gt;
-                                &lt;/div&gt;
-                              &lt;/div&gt;
-                              &lt;div className="col-3"&gt;
-                                &lt;div className="view overlay rounded z-depth-1 gallery-item"&gt;
-                                  &lt;img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/14a.jpg"
-                                    className="img-fluid"/&gt;
-                                  &lt;div className="mask rgba-white-slight"&gt;&lt;/div&gt;
-                                &lt;/div&gt;
-                              &lt;/div&gt;
-                              &lt;div className="col-3"&gt;
-                                &lt;div className="view overlay rounded z-depth-1 gallery-item"&gt;
-                                  &lt;img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/15a.jpg"
-                                    className="img-fluid"/&gt;
-                                  &lt;div className="mask rgba-white-slight"&gt;&lt;/div&gt;
-                                &lt;/div&gt;
-                              &lt;/div&gt;
-                              
-                            &lt;/div&gt;
-                          &lt;/div&gt;
-                        &lt;/div&gt;
-                
-                      &lt;/div&gt;
-                
-                    &lt;/div&gt;
-                    &lt;div className="col-md-6"&gt;
-                
-                      &lt;h5&gt;{item.name}&lt;/h5&gt;
-                      &lt;p className="mb-2 text-muted text-uppercase small"&gt;{item.subCategory}&lt;/p&gt;
-                      &lt;ul className="rating"&gt;
-                       
-                          &lt;i className="fas fa-star fa-sm text-primary"&gt;&lt;/i&gt;
-                        
-                       
-                          &lt;i className="fas fa-star fa-sm text-primary"&gt;&lt;/i&gt;
-                        
-                       
-                          &lt;i className="fas fa-star fa-sm text-primary"&gt;&lt;/i&gt;
-                        
-                       
-                          &lt;i className="fas fa-star fa-sm text-primary"&gt;&lt;/i&gt;
-                        
-                       
-                          &lt;i className="far fa-star fa-sm text-primary"&gt;&lt;/i&gt;
-                        
-                      &lt;/ul&gt;
-                      &lt;p&gt;&lt;span className="mr-1"&gt;&lt;strong&gt;₹ {item.price}&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-                      &lt;p className="pt-1"&gt;{item.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, sapiente illo. Sit
-                        error voluptas repellat rerum quidem, soluta enim perferendis voluptates laboriosam. Distinctio,
-                        officia quis dolore quos sapiente tempore alias.&lt;/p&gt;
-                      &lt;div className="table-responsive"&gt;
-                        &lt;table className="table table-sm table-borderless mb-0"&gt;
-                          &lt;tbody&gt;
-                            &lt;tr&gt;
-                              &lt;th className="pl-0 w-25" scope="row"&gt;&lt;strong&gt;Color&lt;/strong&gt;&lt;/th&gt;
-                              &lt;td&gt;Red &lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;th className="pl-0 w-25" scope="row"&gt;&lt;strong&gt;Category&lt;/strong&gt;&lt;/th&gt;
-                              &lt;td&gt;{item.category}&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;th className="pl-0 w-25" scope="row"&gt;&lt;strong&gt;Sub-Category&lt;/strong&gt;&lt;/th&gt;
-                              &lt;td&gt;{item.subCategory}&lt;/td&gt;
-                            &lt;/tr&gt;
-                          &lt;/tbody&gt;
-                        &lt;/table&gt;
-                      &lt;/div&gt;
-                      &lt;hr/&gt;
-                      &lt;div className="table-responsive mb-2"&gt;
-                        &lt;table className="table table-sm table-borderless"&gt;
-                          &lt;tbody&gt;
-                            &lt;tr&gt;
-                              &lt;td className="pl-0 pb-0 w-25"&gt;Quantity&lt;/td&gt;
-                            &lt;/tr&gt;
-                            &lt;tr&gt;
-                              &lt;td className="pl-0"&gt;
-                              {/*
-                                &lt;div className="def-number-input number-input safari_only mb-0"&gt;
-                                  &lt;button onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
-                                    className="minus"&gt;&lt;/button&gt;
-                                  &lt;input className="quantity" min="0" name="quantity" value="1" type="number"/&gt;
-                                  &lt;button onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
-                                    className="plus"&gt;&lt;/button&gt;
-                              &lt;/div&gt;*/}
-                              &lt;/td&gt;
-                              Y&lt;/tr&gt;
-                          &lt;/tbody&gt;
-                        &lt;/table&gt;
-                      &lt;/div&gt;
-                      &lt;button type="button" className="btn btn-primary btn-md mr-1 mb-2"&gt;Buy now&lt;/button&gt;
-                      &lt;button type="button" className="btn btn-light btn-md mr-1 mb-2" onClick={this.onAddToCartClick}&gt;&lt;i
-                          className="fas fa-shopping-cart pr-2"&gt;&lt;/i&gt;Add to cart&lt;/button&gt;
-                    &lt;/div&gt;
-                  &lt;/div&gt;
-         
-                &lt;/section&gt;
-                &lt;/div&gt;
-            )
-        }
-    }
-    const mapStateToProps=state=&gt;({
-        item:state.itemReducer.item
-    })
-    export default connect(mapStateToProps,{getItem})(ItemDetailsPage);
-## [7][my first "serious" React project. it's an online multiplayer game inspired by GeoGuessr, where you “hide” somewhere in the world, and the other players have to guess where you are based on street view images. great time waster for these boring times (only desktop is supported atm)](https://www.reddit.com/r/reactjs/comments/j57rcw/my_first_serious_react_project_its_an_online/)
-- url: https://hideandseek.world
+And  I want to see how other people are using react in a real applications.  
+
+At the moment I am trying to get better at css but I want to see how other people use react with styled components.
+## [10][React hooks best practices](https://www.reddit.com/r/reactjs/comments/j6376r/react_hooks_best_practices/)
+- url: https://tsh.io/blog/react-hooks-best-practices/
 ---
 
-## [8][React Native Shared Element Transition React Navigation V5 - Episode 5](https://www.reddit.com/r/reactjs/comments/j5jaiy/react_native_shared_element_transition_react/)
-- url: https://youtu.be/nEntsYyCbLM
+## [11][[Boilerplate] React Rollup boilerplate for creating component libraries](https://www.reddit.com/r/reactjs/comments/j62xj0/boilerplate_react_rollup_boilerplate_for_creating/)
+- url: https://github.com/KaiHotz/react-rollup-boilerplate
 ---
 
-## [9][React 2020 Community Survey](https://www.reddit.com/r/reactjs/comments/j5j96o/react_2020_community_survey/)
-- url: https://www.surveymonkey.co.uk/r/FRFQWPH
+## [12][How should I automatically renew a JWT to keep a user authenticated?](https://www.reddit.com/r/reactjs/comments/j5zqre/how_should_i_automatically_renew_a_jwt_to_keep_a/)
+- url: https://www.reddit.com/r/reactjs/comments/j5zqre/how_should_i_automatically_renew_a_jwt_to_keep_a/
 ---
-
-## [10][My first React project is now live!](https://www.reddit.com/r/reactjs/comments/j5ize0/my_first_react_project_is_now_live/)
-- url: https://www.reddit.com/r/reactjs/comments/j5ize0/my_first_react_project_is_now_live/
----
-Hey everyone,
-
-I learned JS, Node &amp; React from scratch over the summer so I could build an app I've been thinking about for a while, and I have the first version finished! 
-
-The basic idea is an online learning platform on which you earn a virtual currency as you complete content, and then can use this virtual currency to buy things in a marketplace.
-
-At the moment it's really basic and simple (refliecting my n00b programming abilities), and only has a couple of courses on it.
-
-Would love to get some thoughts and feedback nevertheless - especially if it's buggy! The app is here: [https://app.pyxium.co](https://app.pyxium.co)
-
-**DISCLAIMER:** To take the courses you'll have to create an account (it's free) - if you don't want to sign up I'd still love your thoughts on the platform as a whole!
-## [11][Is there any way to implement word break for svg text without tspan?](https://www.reddit.com/r/reactjs/comments/j5iyzq/is_there_any_way_to_implement_word_break_for_svg/)
-- url: https://www.reddit.com/r/reactjs/comments/j5iyzq/is_there_any_way_to_implement_word_break_for_svg/
----
-I am working with a react app, there is an svg component and the name of the component is set by the user, now if the name is a long text than complete text does not render and it clips of at the end, how can i wrap the text and render remaining part on next line in case of long text?
-## [12][A Film PLATFORM that i've made with reactJS](https://www.reddit.com/r/reactjs/comments/j5iw7f/a_film_platform_that_ive_made_with_reactjs/)
-- url: https://youtu.be/q_zbkzb75VY
----
-
+There's just a single token which is issued upon login and is used to authorize requests. The token has a life of two weeks and to renew it I have to send a request to an endpoint with this current token before it expires. How can I write code to automate this?

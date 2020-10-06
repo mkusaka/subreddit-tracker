@@ -1,143 +1,122 @@
 # aws
-## [1][Reasons to use EKS over ECS (2020 Oct) ?](https://www.reddit.com/r/aws/comments/j5daf2/reasons_to_use_eks_over_ecs_2020_oct/)
-- url: https://www.reddit.com/r/aws/comments/j5daf2/reasons_to_use_eks_over_ecs_2020_oct/
+## [1][Week of Oct 5th - What AWS questions do you have? (but were always afraid to ask :-) )](https://www.reddit.com/r/aws/comments/j5jsap/week_of_oct_5th_what_aws_questions_do_you_have/)
+- url: https://www.reddit.com/r/aws/comments/j5jsap/week_of_oct_5th_what_aws_questions_do_you_have/
 ---
-Is there any reason to use EKS over ECS if:
-
-1. We are not planning to manage EC2; means we only want to use Fargate
-2. We are fully invested on AWS. No plans to migrate to other cloud or on premise
-3. We have enough AWS skilled people in general (not specifically ECS), but have fewer K8s skilled people (but possible to hire or train)
-4. The applications we are planning to deploy are regional. Will only be used by users in the region. We will only deploy in one AWS region. The peak usage could be around 10k concurrent sessions. Will go down to few hundred users in non peak periods.
-5. We need to have full control on the VPC and networking in general.
-
-6. We will be using terraform exclusively for the deployment.
-
-7. Our CICD pipeline will be using gitlab.
-## [2][AWS EventBridge Rule complains that target is not a valid JSON format](https://www.reddit.com/r/aws/comments/j5g80w/aws_eventbridge_rule_complains_that_target_is_not/)
-- url: https://www.reddit.com/r/aws/comments/j5g80w/aws_eventbridge_rule_complains_that_target_is_not/
+Ask your AWS questions here and help others - Also don't forget that there are almost 2500 members in the /r/aws chatroom!
+## [2][Welcome to new mod u/_abhayshah!](https://www.reddit.com/r/aws/comments/j5trs4/welcome_to_new_mod_u_abhayshah/)
+- url: https://www.reddit.com/r/aws/comments/j5trs4/welcome_to_new_mod_u_abhayshah/
 ---
-hello, I am following AWS tutorial &amp; trying out input transformation on rule.  
-[https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-input-transformer-tutorial.html](https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-input-transformer-tutorial.html)
+Thrilled to expand the mod team in order better serve the community. As /r/aws grows, u/_abhayshah will be able to assist with AMAs, post flair, mod queue/mail, building out the Wiki, and more!   
 
-I am not changing anything &amp; copying straight from the tutorial but when I click on create to create the rule, I get `Input for target Idbda77dd1-bec3-4408-9e1f-9d154933b733 is not a valid JSON text.` 
 
-Am I missing something? Is there a working example out there that I can use, maybe console or IaC?
-
-&amp;#x200B;
-
-https://preview.redd.it/363gw5dst8r51.png?width=774&amp;format=png&amp;auto=webp&amp;s=18dc3b49b66bfc2db62598df195361c88dcb20a2
-## [3][How to properly use security group to manage accesses ?](https://www.reddit.com/r/aws/comments/j5ghkc/how_to_properly_use_security_group_to_manage/)
-- url: https://www.reddit.com/r/aws/comments/j5ghkc/how_to_properly_use_security_group_to_manage/
+Please give him a nice /r/aws welcome and let us know how we can improve things together going forward.
+## [3][IaC comparison for event-driven architecture](https://www.reddit.com/r/aws/comments/j5uch5/iac_comparison_for_eventdriven_architecture/)
+- url: https://www.reddit.com/r/aws/comments/j5uch5/iac_comparison_for_eventdriven_architecture/
 ---
-Hi there
+Hey everyone!  I've been running production workloads on AWS for a long time (started when S3 was announced in 2006) and have been silently lurking on r/aws for over a year.  After many discussions with colleagues debating the future of cloud architectures, I decided to start [my own blog](https://blog.outwiththeold.info/) where I will explore new ways to solve old tasks.
 
-TL;DR : I've been pondering a change in the way I use security groups. From "SG allow this subnet here" to "allow this (ASG A) SG to this (other ASG B) SG". Good idea, bad idea, how do you do it ? 
+[In my first post](https://blog.outwiththeold.info/posts/event-driven-iac/) I compare two architectures, both built with the AWS CDK, that process a file dropped into an S3 bucket. One architecture uses ECS/Fargate and the other Lambda.
 
-Currently I've VPCs with a bunch of subnets : for each AZ I've "public", "private", "database".
+I'd really like to hear what you think about this post and get suggestions for additional topics you would like to see covered.
 
-I don't want to discuss that specific point which could be improved, but for clarity's sake : there's one VPC by environment (production, staging, dev...), in production's VPC you've both IT stuff like the wiki, mattermost, etc. And our apps for our clients. 
+You can read my first post here:
 
-I'm managing accesses for my different services through ingress security group stating "from this subnet, you can access this port on the ASG's instances the SG is attached to". A real life example being "rabbitmq-from-vpc-private", meaning anything in the VPC's private subnets can access the rabbitmq ports on the rabbitmq ASG's instances. 
-
-It's been good enough to begin with, but I feel it's lacking, for example to allow access from the SSH bastion in public subnet, I need a rule "allow SSH from VPC public" everywhere, which isn't exactly secure if one of my HAProxy get compromised for example.
-
-So I'm thinking about switching to a "allow this access from this security group". The terraform module I'm using refer it as "Access from source security groups", I don't know if that's the word for it. I can see the gain, I'm even wondering if keeping subnets is useful once properly set up. But I've no idea of the downside except for the time spent.
-
-Hence here I am asking for your opinions, experiences in the matter, any interesting article or piece of doc is welcome too.
-
-Thanks guys &amp; gals, take care !
-## [4][Best way to store logs for analysis](https://www.reddit.com/r/aws/comments/j54mo6/best_way_to_store_logs_for_analysis/)
-- url: https://www.reddit.com/r/aws/comments/j54mo6/best_way_to_store_logs_for_analysis/
+* [https://blog.outwiththeold.info/posts/event-driven-iac/](https://blog.outwiththeold.info/posts/event-driven-iac/)
+## [4][How to change a variable in a JavaScript file, depending on the build project used in CodeBuild?](https://www.reddit.com/r/aws/comments/j63sbr/how_to_change_a_variable_in_a_javascript_file/)
+- url: https://www.reddit.com/r/aws/comments/j63sbr/how_to_change_a_variable_in_a_javascript_file/
 ---
-Slightly silly question, maybe, but doing silly projects is how I teach myself stuff.
+I am building a serverless website using HTML, CSS and JavaScirpt that is hosted on an S3 bucket.
 
-I run an IRC bouncer in AWS that saves logs in JSON format. I want to archive said logs somewhere that will make for easy searching/analysis.
+I have a CodeCommit repository, with two branches: develop and master. I do all my development work in develop, and when I'm happy with the changes I merge into master, which is my production environment.
 
-My original thought was Elasticsearch, but a managed cluster seems like overkill. Standing up an ES container in my Nomad cluster is problematic because EBS doesn't play well with ephemeral EC2 hosts (that may not always be in the same AZ) and EFS has too much latency to host ES.
+I have two CodeBuild projects, one for the development environment and one for the production environment. I have a build spec file, which tells CodeBuild to sync the CodeCommit files with the S3 bucket that is hosting the website.
 
-Thoughts?
-## [5][CI/CD for Elastic Beanstalk](https://www.reddit.com/r/aws/comments/j5ikem/cicd_for_elastic_beanstalk/)
-- url: https://www.reddit.com/r/aws/comments/j5ikem/cicd_for_elastic_beanstalk/
+There is a variable inside the JavaScript file, that contains the URL for a HTTP endpoint. I need to dynamically change this variable, depending on which environment I am deploying to - development or production. For example, if I deploy to develop, I want this variable to automatically be "[http://develop](http://develop)". Alternatively, if I deploy to master, I want it to be "[http://production](http://production)".
+
+How can I do this? I know there is something about environment variables, but I am not sure on how to tie this in with everything else.
+## [5][I've deleted my account but Amazon keeps billing me for Route 53 charges.](https://www.reddit.com/r/aws/comments/j5nh4w/ive_deleted_my_account_but_amazon_keeps_billing/)
+- url: https://www.reddit.com/r/aws/comments/j5nh4w/ive_deleted_my_account_but_amazon_keeps_billing/
 ---
-I will be creating a beanstalk app and need guidance on best practices for CI/CD.
+I deleted my AWS account because I wasn't using it and apparently I forgot to terminate the Route 53 service.
 
-I am well versed with the AWS CLI, and Cloud Formation, and have a bit of experience with the EB CLI. The last project I worked on that used beanstalk had an environment that was set up manually then updated via pre-written scripts that used the EB CLI. Unfortunately this made it difficult to stand up clones of the environment due to the manual step.
+Now Amazon won't let me access the account proper to finish it and their "customer support" form is utter garbage so, what should I do? Is there a direct e-mail address? Am I just screwed?
 
-The environment will consist of a multi-instance java app and will be using RDS. Standard public web app stuff like CNAME, redirect HTTP to HTTPS, putting the ec2 instances in a private subnet while having the load balancer public, etc.
+Update that should have been qrittrn yrsterday but forgot to: I put a case in for the recovery of the account and I'm now waiting a response/update on it
 
-What is the best way to do this? In my serverless environments i'm able to stand up a new env front/backend, s3, api gateway, dynamo, route53, etc. in about an hour using cloud formation/SAM. I'm looking for something similar with beanstalk. I haven't found any great docs on how to do this for more advanced setups other than using the console. Or is the best way to stand up new beanstalk environments actually to use the console, then make modifications with the CLI/config files as I was doing in my other project?
-## [6][Scheduling/Autoscaling Pet instances on AWS EC2](https://www.reddit.com/r/aws/comments/j5ii8m/schedulingautoscaling_pet_instances_on_aws_ec2/)
-- url: https://www.reddit.com/r/aws/comments/j5ii8m/schedulingautoscaling_pet_instances_on_aws_ec2/
+Update 2: They've gotten back to me, they're reopenning the account to let me fix it. Thanks for the help, everyone! Once it's done I'll officially mark this as closed.
+## [6][AWS development environment/workflows for large teams](https://www.reddit.com/r/aws/comments/j5xkqv/aws_development_environmentworkflows_for_large/)
+- url: https://www.reddit.com/r/aws/comments/j5xkqv/aws_development_environmentworkflows_for_large/
 ---
-Hi all,
+Just curious how different development teams working with aws design their development environment when needing to test changes against real aws resources.
 
-I’m on a Move-to-Cloud project for one of our costumer. It is a very big migration that needs to be executed fast to go out their existing DC  ASAP (both for deadline DC closure reason and avoid double run costs  Cloud/On-Prem). So, refactoring all the applications is not an option due to the short  timeline. Currently, they are sized to the peak and migrating as is, could be  inefficient from a cost perspective. They can’t use AWS AutoScaling groups  yet due to their existing ‘Pet’ model on OnPrem VMware.
-
-I’m looking for a solution that will do some kind of autoscaling on AWS EC2 instances  but orchestrating ‘Pet’ ones (so start/stop instances only and not create/terminate ones) based  on some custom metrics or CPU...
-
-Thanks for any advice!
-## [7][Is it correct to use Serverless Lambda functions to render templates?](https://www.reddit.com/r/aws/comments/j5ifbr/is_it_correct_to_use_serverless_lambda_functions/)
-- url: https://www.reddit.com/r/aws/comments/j5ifbr/is_it_correct_to_use_serverless_lambda_functions/
+For example, does each developer on your team create their own version of resources to test their changes against (ex: using cloudformation)? Does software like localstack usually work as an alternative?
+## [7][Most efficient way to connect to RDS without an own instance](https://www.reddit.com/r/aws/comments/j64g2i/most_efficient_way_to_connect_to_rds_without_an/)
+- url: https://www.reddit.com/r/aws/comments/j64g2i/most_efficient_way_to_connect_to_rds_without_an/
 ---
-I was transitioned to project using Serverless/Lambdas and needed to create a PDF generator.  It's a node project, using tsoa (TypeScript api), so I went with Puppeteer and Handlebar.js.
+Hi everybody!
 
-I'm running into an issue where locally the template directory exists and resolves but on the Lambda server it doesn't exist.
+We are starting to use AWS in our company, but we are still newbies, so I hope I don't bother if any question is too obvious, I have tried to document as much as possible as with the rest of the things we have already done.
 
-Our set up is, we have a parent directory in the root and every child directory to it is a service.  In a child service, I'm trying to access and read template files into memory to build a template in Handlebars.  Locally, the it finds the paths - but upon deploy - it cannot find the templates directory.  First templates was a sibling to `/proj_root/api`, but then I moved it to a shared folder under `api`.  Again, works locally but on server I get an error saying " `/var/task/api/shared/templates` could not be found."
+We have a Datalake in S3 made up of 3 buckets (in a dev account):
 
-I followed [this guide](https://www.serverless.com/framework/docs/providers/aws/guide/packaging/#examples) to try to include the directory with:
+* In the first bucket, we have the raw data, which we filter and normalize through Glue, to save it in the second bucket.
+* In the second bucket, we have the filtered data that is sent to EMR to perform several actions (data merge, variable creation and transformation)... and later saved in the third bucket.
+* In the third bucket, we have the final data that is consulted through Athena and sent to Quicksight.
 
-    package:
-      include: api/shared/templates/**
+We need to incorporate data that is stored in an Oracle RDS instance into another AWS account. To incorporate it into our datalake, the data needs to be stored in S3 in the first cube. 
 
-Still to no avail.
+I have seen that is possible to export RDS snapshots to S3 from another account, but this RDS database will be updated frequently. You can automate the daily creation of snapshots in S3, but only in the same account in which the RDS instance is placed. To send them to another account, I think it must be done manually.
 
-Is this a misuse of serverless to include static files with a function?
+Therefore, I thought of creating an RDS instance in our account and connect that instance to the instance in the other account, and automate the generation of snapshots from our account. However, the creation of the RDS instance in our account has a very high cost in relation to the rest of services.
 
-Is it "best practice" to use an S3 bucket and make an api call for every static template file?
+Do you know if this task could be done in an efficient way without having to export the snapshots manually or without having to create an RDS instance in our account?
 
-Is there a serverless way to include static files with a function? (AWS Layers?)
-## [8][Slow AWS Client VPN Performance](https://www.reddit.com/r/aws/comments/j5hpyb/slow_aws_client_vpn_performance/)
-- url: https://www.reddit.com/r/aws/comments/j5hpyb/slow_aws_client_vpn_performance/
+Thanks a lot for your time!
+## [8][AWS S3 Browser-Based Uploads Question](https://www.reddit.com/r/aws/comments/j63ior/aws_s3_browserbased_uploads_question/)
+- url: https://www.reddit.com/r/aws/comments/j63ior/aws_s3_browserbased_uploads_question/
 ---
-We are testing AWS Client VPN before we completely migrate from using Windows Server as our VPN server. We're using certificates generated from easyRSA as authentication and  everything seems to be working as expected. I tried using the ovpn config through AWS' own VPN app and OpenVPN client.  
+Hi Everyone,
 
+I'm relatively new with very little experience in using AWS. I was wondering if it was possible to allow public users to upload files to a bucket I've setup using just a public URL? 
 
-However, I  noticed VPN clients are getting significantly lower speeds compared to our old setup. I'm talking about around 6Mbps where it should be 50Mbps.  
+What I am currently doing is extracting the files people upload to a dropbox then manually uploading the file to the s3 and setting up folders within the bucket.
 
-
-To  troubleshoot, I ran the speedtest on a Windows Server EC2 instance on  the same region as the Client VPN endpoint (Tokyo). The speeds are upwards 100Mbps as expected.  
-
-
-I've read about disabling "Hardware Checksum  Offloading Hardware TCP Segmentation Offloading" but I can't find a way  to configure this on AWS Client VPN. I checked laptop's NIC and I can't  find that option in 'advanced' tab either. Help?
-## [9][Configuring a white label name server using Route 53 - help](https://www.reddit.com/r/aws/comments/j59we9/configuring_a_white_label_name_server_using_route/)
-- url: https://www.reddit.com/r/aws/comments/j59we9/configuring_a_white_label_name_server_using_route/
+Thanks in advance!
+## [9][How should I deploy my AWS for a simple app?](https://www.reddit.com/r/aws/comments/j62rue/how_should_i_deploy_my_aws_for_a_simple_app/)
+- url: https://www.reddit.com/r/aws/comments/j62rue/how_should_i_deploy_my_aws_for_a_simple_app/
 ---
-Hello there
+Hello,
 
-First of all, forgive me for m poor knowledge about this subject, but I have a few questions:
+I am going to make a simple web app + Android app that contains a MySQL (Or MariaDB) database with not too many records. The app does not have registration, but it stores information provided by users. Both the web and the Android interface should send the data from the app to the database.
 
-I successfully followed this tutorial ([https://www.youtube.com/watch?v=ahnhoFgd5K4&amp;ab\_channel=AmazonWebServices](https://www.youtube.com/watch?v=ahnhoFgd5K4&amp;ab_channel=AmazonWebServices)) on how to configure a white label name server using Route 53 (I wasn't able to confirm the changes on WHOIS because there wasn't enough time for the DNS changer to propagate probably). However, after doing that I got some questions that I hope someone can help me out:
+I'm not expecting too much traffic, so I want to know how and what should I deploy, and make it scalable, if some miracle happens and the traffic grows. And also how can I secure my deployment?
 
-1. Since I created a new hosted zone with a new set of name servers for the domain, should I also update the old name servers on the domain information page Route 53 panel &gt; Domains &gt; Registered domains &gt; mydomain &gt; name servers? I did that by the way
-2. After the changes have propagated and I see them on WHOIS, if I click on the IP addresses of my name servers, I can check they are from Amazon. That would confirm to me that I have set all the IP addresses correctly right? (i'm concerned that I used a wrong Ip address during the process or something like that, maybe I have OCD hahah)
-3. I have two domains, a primary one to actually use it and secondary one just to keep. I created this white label name server on my secondary domain since it was my first time just to try. Now I'm thinking about using this secondary domain white label name servers for my primary domain, just because it's done and easier to configure. Is that a bad practice or maybe not recommended for some reason? (besides the fact that I'll have to pay for a second hosted zone)
+I was thinking about a single EC2 instance and a single RDS. But there are many instances, and my budget is not too big right now, so I was thinking which is the best machine to deploy?
 
-Thanks, any help is appreciated
-## [10][Redshift/Quicksight: Most performant way to handle querying arrays within json?](https://www.reddit.com/r/aws/comments/j5525n/redshiftquicksight_most_performant_way_to_handle/)
-- url: https://www.reddit.com/r/aws/comments/j5525n/redshiftquicksight_most_performant_way_to_handle/
+Also, in order to save costs should I install the database on the EC2 itself and get a larger SSD space, or it's will be more expensive and less secured?
+
+Thanks
+## [10][Hosting thousands of static websites?](https://www.reddit.com/r/aws/comments/j60ze6/hosting_thousands_of_static_websites/)
+- url: https://www.reddit.com/r/aws/comments/j60ze6/hosting_thousands_of_static_websites/
 ---
-Hi all,
+What would be the best way to host a lot (thousands) static websites with different domains using AWS? Ideally with instant updates when content changes and without having to handle scaling ourselves. 
 
-I currently have a large set of json data that I'd like to import into Amazon Athena for visualization in Amazon Quicksight. each json contains two fields: one is a comma separated string of ids (orderlist), and the other field is an array of strings(locations). What is the best way to handle/store this data to produce the most performant queries when generating dashboards on Quicksight?
+I’ve looked into just using S3 and CloudFront via API, but that would mean thousands of CloudFront distributions, as I understand it, since one distribution only can be associated with one certificate. This approach feels a bit hard to manage in the long run, but maybe it’s the way to go?
+## [11][Limiting the S3 PUT file size using pre-signed URLs](https://www.reddit.com/r/aws/comments/j5lhhn/limiting_the_s3_put_file_size_using_presigned_urls/)
+- url: https://www.reddit.com/r/aws/comments/j5lhhn/limiting_the_s3_put_file_size_using_presigned_urls/
+---
+I am generating S3 pre signed URLs so that the client(mobile app) can PUT an image directly to S3 instead of going through a service. For my use case the expiry time of the pre signed URL needs to be configured for a longer window (10-20 mins). I want to limit the size of file upload to S3 so that any malicious attacker can not upload large files to the S3 bucket. The client will get the URL from a service which has access to the S3 bucket. I am using AWS Java SDK.
 
- Because Quicksight doesn't support array searching, I'm currently resorting to creating a view where I generate crossjoins across the two string arrays:
+I found that this can be done using POST forms for browser uploads but how can I do this using just signed S3 URL PUTs? I have found conflicting answers for this on different platforms.
+## [12][Lightsail data transfer (egress) - what's the catch?](https://www.reddit.com/r/aws/comments/j5wgfi/lightsail_data_transfer_egress_whats_the_catch/)
+- url: https://www.reddit.com/r/aws/comments/j5wgfi/lightsail_data_transfer_egress_whats_the_catch/
+---
+If I wanted to download 2TB from S3, I could proxy it through a lightsail instance for $5.
 
-    select id,
-     try_CAST(orderid AS bigint) orderid_targeting,
-     location
-    from advertising_json 
-    CROSS JOIN UNNEST(split(orderlist, ',')) as x(orderid)
-    CROSS JOIN UNNEST(locations) t (location)
+Downloading it directly would cost $180. That's 36x more expensive.
 
-I've also considered flattening out the data beforehand, would that make a difference in query performance? Considering that I have two crossjoins currently, that could 30x my storage space if I explode out the two arrays, I'm hesitant to go down this route if it doesn't make a significant difference in performance.
+Is this true? What's the catch? Why does this exist?
+
+I was reading https://forums.aws.amazon.com/thread.jspa?threadID=253162 to find out, and it appears that the data transfer is prorated to the month - so if you have a lightsail instance for 15 days (half a month), you only get half of the month's data transfer limit (quite reasonable!). So it isn't even more ridiculous than that, you need the full month's $5.
+
+Even if this is technically possible, is this the sort of thing that will cause AWS to terminate me for abusing their pricing model / services? I'm considering spinning up about two dozen of these $5 instances to download about 25 terabytes from S3.

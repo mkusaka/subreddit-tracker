@@ -31,67 +31,53 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][HOWTO: Running Java programs directly on Android (without creating an app)](https://www.reddit.com/r/androiddev/comments/j5psla/howto_running_java_programs_directly_on_android/)
-- url: https://raccoon.onyxbits.de/blog/run-java-app-android/
+## [3][The Supreme Court is taking on Google and Oracle one last time - The Verge](https://www.reddit.com/r/androiddev/comments/j6gygn/the_supreme_court_is_taking_on_google_and_oracle/)
+- url: https://www.theverge.com/2020/10/6/21504715/google-v-oracle-supreme-court-hearings-android-java
 ---
 
-## [4][Kotlin Public Roadmap Through Spring 2021 – Kotlin Blog](https://www.reddit.com/r/androiddev/comments/j5ojiq/kotlin_public_roadmap_through_spring_2021_kotlin/)
-- url: https://blog.jetbrains.com/kotlin/2020/10/kotlin-public-roadmap-through-spring-2021/
+## [4][Doks: Search for your distributed documentation in one place (written in kotlin)](https://www.reddit.com/r/androiddev/comments/j6m3wr/doks_search_for_your_distributed_documentation_in/)
+- url: https://github.com/wlezzar/doks
 ---
 
-## [5][ViewPager2 example I did.](https://www.reddit.com/r/androiddev/comments/j62bpu/viewpager2_example_i_did/)
-- url: https://www.reddit.com/r/androiddev/comments/j62bpu/viewpager2_example_i_did/
----
-Hi!
-
-I made this simple application to show some basic concepts like a smooth change of background in a ViewPager and a very simple API I made. I thought it may help some people working with some of these.The idea is that everyday the app shows you a Leaf thats like a interesting quote.
-
-Everyone can publish and It shows a new Leaf every day.
-
-Right now its showing a quote from a book I love called "The way of kings - Brandon Sanderson" .
-
-[Here is the Github](https://mssnapplications.com/github/leaves)
-
-[PlayStore](https://play.google.com/store/apps/details?id=com.missnalgas.phr2&amp;hl=es)
-## [6][Best Flutter Courses, Books, and Free Resources to Master Flutter framework in 2020 | thecodingpie](https://www.reddit.com/r/androiddev/comments/j654fj/best_flutter_courses_books_and_free_resources_to/)
-- url: https://www.reddit.com/r/androiddev/comments/j654fj/best_flutter_courses_books_and_free_resources_to/
----
-Hey friends, I have curated a list of the best available **online courses**, **books**, and **free resources** to learn Flutter in 2020.
-
-Whether you are getting started or already an intermediate flutter developer, whether you prefer books or online courses, there is something for everyone.
-
-You can find the list here on my blog - [https://thecodingpie.com/post/top-5-best-courses-to-learn-flutter-in-2020-beginners-intermediates/](https://thecodingpie.com/post/top-5-best-courses-to-learn-flutter-in-2020-beginners-intermediates/)
-
-[banner](https://preview.redd.it/i5c96bow8hr51.png?width=800&amp;format=png&amp;auto=webp&amp;s=5b08cd46e42b206e4ca6e0c36183d9c134db57ed)
-
-This list contains both free and paid resources and courses. **You will find every single useful flutter resources out there**! If you are interested in Flutter then feel free to check this out.
-
-I am damn sure these courses will help you to learn the ins and outs of the Flutter framework in no time!
-
-If you have any doubts or If you think I had missed any course names then feel free to comment on my blog. Thank you ;)
-## [7][RecyclerView doesn't update UI (background color) using DiffUtil.ItemCallback with DataBinding](https://www.reddit.com/r/androiddev/comments/j627ag/recyclerview_doesnt_update_ui_background_color/)
-- url: https://www.reddit.com/r/androiddev/comments/j627ag/recyclerview_doesnt_update_ui_background_color/
----
-could anyone please help me with this, I'm new to DiffUtil and Kotlin .. here is the question I posted on StackOverflow : 
-
-[https://stackoverflow.com/questions/64193591/diffutil-itemcallback-with-databinding-recyclerview-doesnt-update-ui-backgrou](https://stackoverflow.com/questions/64193591/diffutil-itemcallback-with-databinding-recyclerview-doesnt-update-ui-backgrou)
-## [8][Jetpack Compose Screenshot Testing with Shot](https://www.reddit.com/r/androiddev/comments/j5l4eq/jetpack_compose_screenshot_testing_with_shot/)
-- url: https://blog.karumi.com/jetpack-compose-screenshot-testing-with-shot/
+## [5][ConstraintLayout 2.0.2](https://www.reddit.com/r/androiddev/comments/j6jdjw/constraintlayout_202/)
+- url: https://androidstudio.googleblog.com/2020/10/constraintlayout-202.html
 ---
 
-## [9][Google Play Policy - Declared permissions and in-app disclosures](https://www.reddit.com/r/androiddev/comments/j5y50m/google_play_policy_declared_permissions_and_inapp/)
-- url: https://www.youtube.com/watch?v=b0I1Xq_iSK4
+## [6][Wireless debugging in Android 11 off automatically when the device disconnects from the wifi and has to enable it from the setting manually.](https://www.reddit.com/r/androiddev/comments/j6p8q4/wireless_debugging_in_android_11_off/)
+- url: https://www.reddit.com/r/androiddev/comments/j6p8q4/wireless_debugging_in_android_11_off/
+---
+I have been using wireless debugging.
+
+Is there any way to turn on wireless debugging automatically when the device connects to a trusted network again?
+
+I have also look for the developer options API to turn the wireless debugging on automatically. So I can make quick tile. However, API is not available for the wireless debugging. In addition, setting search history deleted after some time (1 or 2 days.) and no shortcut available for the wireless debugging. :(
+## [7][Android Studio 4.0.2 is now available](https://www.reddit.com/r/androiddev/comments/j69spi/android_studio_402_is_now_available/)
+- url: https://www.reddit.com/r/androiddev/comments/j69spi/android_studio_402_is_now_available/
+---
+[https://androidstudio.googleblog.com/2020/10/android-studio-402-available.html](https://androidstudio.googleblog.com/2020/10/android-studio-402-available.html)
+## [8][What About Jetpack? Is it commonly used in business right now?](https://www.reddit.com/r/androiddev/comments/j6jmps/what_about_jetpack_is_it_commonly_used_in/)
+- url: https://www.reddit.com/r/androiddev/comments/j6jmps/what_about_jetpack_is_it_commonly_used_in/
+---
+I'm in the process of learning Android Development and I love it. A lot to learn, for sure, but who cares when Android Studio has drag-and-drop and Kotlin is a genuinely fun language. But I keep hearing and reading stuff about Jetpack.
+
+Out of everything I've read, which is mainly from the Android Developer website, Jetpack makes Android Development a lot easier and more concise. Well, except for one guy on here who claimed is just isn't used much in the business world. So, I figured I'd ask you all.
+
+Is Jetpack common in business today? Should I become familiar with it alongside Kotlin/XML? Thanks in advance for any input.
+## [9][HUMBLE BOOK BUNDLE: IOS &amp; ANDROID MOBILE DEVELOPMENT BY PACKT Get Flutter for Beginners, Xamarin.Forms Projects and more! US$1,286 WORTH OF AWESOME STUFF PAY US$1 OR MORE](https://www.reddit.com/r/androiddev/comments/j6pwxu/humble_book_bundle_ios_android_mobile_development/)
+- url: https://www.humblebundle.com/books/ios-android-mobile-development-packt-books?partner=mfasula&amp;charity=2175662
 ---
 
-## [10][Moving from React Native to Kotlin Multiplatform](https://www.reddit.com/r/androiddev/comments/j5j57o/moving_from_react_native_to_kotlin_multiplatform/)
-- url: https://link.medium.com/D6OPgAZVkab
+## [10][How to make animations like playstore?](https://www.reddit.com/r/androiddev/comments/j6c4vx/how_to_make_animations_like_playstore/)
+- url: https://v.redd.it/trrtvcyt3jr51
 ---
 
-## [11][Getting to know RecyclerView](https://www.reddit.com/r/androiddev/comments/j61xew/getting_to_know_recyclerview/)
-- url: https://medium.com/androiddevelopers/getting-to-know-recyclerview-ea14f8514e6
+## [11][Accord : Automated performance measurements that easily integrates with existing CI infrastructure.](https://www.reddit.com/r/androiddev/comments/j6pbc4/accord_automated_performance_measurements_that/)
+- url: https://github.com/naman14/Accord
 ---
 
-## [12][How to open a custom dialog box in Android ?](https://www.reddit.com/r/androiddev/comments/j61kap/how_to_open_a_custom_dialog_box_in_android/)
-- url: https://www.hotreloader.com/2020/10/how-to-open-custom-dialog-box-in-android.html
+## [12][Different active users number between the new and the old Google Play Console](https://www.reddit.com/r/androiddev/comments/j6kl2x/different_active_users_number_between_the_new_and/)
+- url: https://www.reddit.com/r/androiddev/comments/j6kl2x/different_active_users_number_between_the_new_and/
 ---
+I was doing a comparison between the two version, when I noticed that the active users numbers in app list is different from the old version.  
 
+I want to know which version has the most recently updated active users number?

@@ -85,59 +85,47 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][tsParticles 1.18.0 released - Particles animations for your website - React, Vue 2.x and 3.x, Angular and Svelte components available now](https://www.reddit.com/r/javascript/comments/j60ro0/tsparticles_1180_released_particles_animations/)
-- url: https://dev.to/matteobruni/tsparticles-1-18-0-released-7gk
+## [3][How to Use Google Sheets as a Database (Responsibly) With Node.js and Autocode](https://www.reddit.com/r/javascript/comments/j6ment/how_to_use_google_sheets_as_a_database/)
+- url: https://dev.to/hacubu/how-to-use-google-sheets-as-a-database-responsibly-3ohk
 ---
 
 ## [4][I've Been Building a 16-bit VM from Scratch over a Series of Videos, Most Recently Working on the Assembler and Assembly Language. In This One I Added Structures: A "High Level" Feature to Interpret Addresses as More Complex Data Types.](https://www.reddit.com/r/javascript/comments/j64l1s/ive_been_building_a_16bit_vm_from_scratch_over_a/)
 - url: https://www.youtube.com/watch?v=GkipKe0S_5E
 ---
 
-## [5][I made a chrome extension that shows the USD$ value of the reddit gold awards of all reddit posts as you browse](https://www.reddit.com/r/javascript/comments/j5mtlp/i_made_a_chrome_extension_that_shows_the_usd/)
-- url: https://chrome.google.com/webstore/detail/reddit-award-price-viewer/hfmbnmndfhcniigklamalgjffddndfcc
+## [5][I recreated an Interactive Paycard program from the React JS subreddit with Vanilla JS. Check out the source code (has a demo as well)](https://www.reddit.com/r/javascript/comments/j6h5b8/i_recreated_an_interactive_paycard_program_from/)
+- url: https://github.com/gogiakush/interactive-paycard-js
 ---
 
-## [6][[Boilerplate] React Rollup boilerplate for creating component libraries](https://www.reddit.com/r/javascript/comments/j631sc/boilerplate_react_rollup_boilerplate_for_creating/)
-- url: https://github.com/KaiHotz/react-rollup-boilerplate
+## [6][9 Great Tips To Use Array Methods Like a Pro!](https://www.reddit.com/r/javascript/comments/j6qbca/9_great_tips_to_use_array_methods_like_a_pro/)
+- url: https://dev.to/galelmalah/9-great-tips-to-use-array-methods-like-a-pro-dcc
 ---
 
-## [7][JavaScript Stack for Startup - benefits &amp; applications](https://www.reddit.com/r/javascript/comments/j63wb8/javascript_stack_for_startup_benefits_applications/)
-- url: https://www.byteant.com/blog/javascript-for-startups-a-complete-guide/
+## [7][I made a library that lets you create an Express server with Next.js-like syntax](https://www.reddit.com/r/javascript/comments/j6imh7/i_made_a_library_that_lets_you_create_an_express/)
+- url: https://github.com/donfour/nexpresso
 ---
 
-## [8][[AskJS] When you know you're a senior Javascript developer ?](https://www.reddit.com/r/javascript/comments/j600x5/askjs_when_you_know_youre_a_senior_javascript/)
-- url: https://www.reddit.com/r/javascript/comments/j600x5/askjs_when_you_know_youre_a_senior_javascript/
----
-*(excuse my english french guy)
-
-**A)** When you know you're a senior Javascript developer ?
- 
- 
-**B)** Is it possible to be "senior" without being Full Stack for example being just Frontend or just Backend or for the old programmer being full stack really mean being senior and understanding the whole picture better ?
- 
- 
-**C)** Why many Java and C# programmer dislike and avoid Javascript a lot ? are they stuck with their old mentalities and are afraid to learn new things or ? Keep reading on others thread that WebAssembly will be "the thing" etc
- 
- 
-**D)** Does the industry standardized on VSCode or the alternative IDE are just as good ? is it possible today in 2020 to completly disable the Telemetry in VSCode ?
-
-
-**E)** Does anyone have experience here working 100% remote as a JS dev in the USA but living in Canada ? Work permit, currency conversion, taxes etc etc all that jazz
-
-Thank you very much for your time
-## [9][Create Stripe Coupons and Promo Codes in Slack With Autocode and Node.js (x-post r/node)](https://www.reddit.com/r/javascript/comments/j60btm/create_stripe_coupons_and_promo_codes_in_slack/)
-- url: https://autocode.com/app/stripe/stripe-coupon-slack-app/
+## [8][Creating Simple Pie Charts with 3 Popular JavaScript Chart Libraries](https://www.reddit.com/r/javascript/comments/j6puwk/creating_simple_pie_charts_with_3_popular/)
+- url: http://www.coding-dude.com/wp/javascript/pie-chart-pros-cons/
 ---
 
-## [10][Turn off the lights with angular-dark-mode](https://www.reddit.com/r/javascript/comments/j63mrv/turn_off_the_lights_with_angulardarkmode/)
-- url: https://medium.com/@tal.ohana.x/turn-off-the-lights-with-angular-dark-mode-194241f491ae
+## [9][Two ways you can take advantage of types in JavaScript (without TypeScript)](https://www.reddit.com/r/javascript/comments/j6qqy2/two_ways_you_can_take_advantage_of_types_in/)
+- url: https://www.blinkingcaret.com/2020/10/07/javascript-intellisense/
 ---
 
-## [11][JavaScript Event Loop And Call Stack Explained](https://www.reddit.com/r/javascript/comments/j5fq5n/javascript_event_loop_and_call_stack_explained/)
-- url: https://felixgerschau.com/javascript-event-loop-call-stack/
+## [10][[AskJS] Thoughts on Quasar Framework for Windows/Mobile-based solution?](https://www.reddit.com/r/javascript/comments/j6lazu/askjs_thoughts_on_quasar_framework_for/)
+- url: https://www.reddit.com/r/javascript/comments/j6lazu/askjs_thoughts_on_quasar_framework_for/
+---
+I have a client that wants to use his app on both his new iPhone and Windows Desktop. Great. But I see React Native's Window package only allows it to work on those which have Window 10 SDK. He says that the program this is for can't really install it so they it has to work from a simple .exe build.
+
+Currently, we are using Quasar v0.15 and are looking toward migrating to Quasar v1... should we stick with Quasar or go another route?
+
+What's the best JavaScript solution towards building a Windows app now a days? (TypeScript is welcome.)
+## [11][I've created a Chrome extension for prettifying JSON and displaying rainbow color brackets](https://www.reddit.com/r/javascript/comments/j6ojb9/ive_created_a_chrome_extension_for_prettifying/)
+- url: https://github.com/vitozev/rainbow-json-formatter
 ---
 
-## [12][request-animation-helpers - small package for firing callbacks after future repaints](https://www.reddit.com/r/javascript/comments/j5ymk3/requestanimationhelpers_small_package_for_firing/)
-- url: https://github.com/alexmacarthur/request-animation-helpers
+## [12][[AskJS] What is your JavaScript framework of choice?](https://www.reddit.com/r/javascript/comments/j6o9i3/askjs_what_is_your_javascript_framework_of_choice/)
+- url: https://www.reddit.com/r/javascript/comments/j6o9i3/askjs_what_is_your_javascript_framework_of_choice/
 ---
-
+I have this question, mainly out of curiosity, but also for a personal project of mine, so I wanted to ask the JS developers: what is your development framework of choice? And secondly, which elements and qualities do you favour when comparing the frameworks?

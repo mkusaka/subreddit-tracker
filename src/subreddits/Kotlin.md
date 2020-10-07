@@ -1,5 +1,43 @@
 # Kotlin
-## [1][KVision v3.16.0 is released (with printing support)](https://www.reddit.com/r/Kotlin/comments/j6145b/kvision_v3160_is_released_with_printing_support/)
+## [1][Make Conversational AI Work](https://www.reddit.com/r/Kotlin/comments/j6qu4j/make_conversational_ai_work/)
+- url: https://www.reddit.com/r/Kotlin/comments/j6qu4j/make_conversational_ai_work/
+---
+Junction, a huge [hackathon](https://connected.hackjunction.com/) with a challenge for Kotlin, Android, and mobile devs is to be held on 6-8 of November
+
+Hackers have to create a conversational AI solution, using Kotlin-based framework
+
+The challenge prize is €1.500, and the main hackathon prize is €10.000
+
+If you are interested, apply to the challenge – online/offline hubs are available!
+
+[https://just-ai.com/junction-challenge/](https://www.reddit.com/r/Kotlin/%22)
+## [2][Doks: Search for your distributed documentation in one place (written in Kotlin)](https://www.reddit.com/r/Kotlin/comments/j6b6gl/doks_search_for_your_distributed_documentation_in/)
+- url: https://github.com/wlezzar/doks
+---
+
+## [3][Make Conversational AI Work with Kotlin](https://www.reddit.com/r/Kotlin/comments/j6qs7s/make_conversational_ai_work_with_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/j6qs7s/make_conversational_ai_work_with_kotlin/
+---
+Junction, a huge [hackathon](https://connected.hackjunction.com/) with a challenge for Kotlin, Android, and mobile devs is to be held on 6-8 of November
+
+Hackers have to create a conversational AI solution, using Kotlin-based framework
+
+The challenge prize is €1.500, and the main hackathon prize is €10.000
+
+If you are interested, apply to the challenge – online/offline hubs are available!
+
+[https://just-ai.com/junction-challenge/](https://www.reddit.com/r/Kotlin/%22)
+## [4][Gradle Kotlin jvm vs multiplatform plugin](https://www.reddit.com/r/Kotlin/comments/j6p0ux/gradle_kotlin_jvm_vs_multiplatform_plugin/)
+- url: https://www.reddit.com/r/Kotlin/comments/j6p0ux/gradle_kotlin_jvm_vs_multiplatform_plugin/
+---
+I wanna create a Gradle build for my Kotlin project. I saw there is a Kotlin jvm plugin and a multiplatform plugin.
+
+What's the difference? Which one should I use if I intend to target the JVM?
+## [5][About inline function](https://www.reddit.com/r/Kotlin/comments/j6m7bm/about_inline_function/)
+- url: https://www.reddit.com/r/Kotlin/comments/j6m7bm/about_inline_function/
+---
+If my kotlin project's target source is Java8 or above, need I use inline function in my project? Or does inline function improve the performance?
+## [6][KVision v3.16.0 is released (with printing support)](https://www.reddit.com/r/Kotlin/comments/j6145b/kvision_v3160_is_released_with_printing_support/)
 - url: https://www.reddit.com/r/Kotlin/comments/j6145b/kvision_v3160_is_released_with_printing_support/
 ---
 [KVision](https://github.com/rjaros/kvision) is an open source web framework created for Kotlin/JS. It allows developers to build modern web applications with the Kotlin language.
@@ -13,84 +51,65 @@ Last but not least, we continue to enhance state management experience by introd
 For more details about this release see the [changelog](https://github.com/rjaros/kvision/releases/tag/3.16.0).
 
 As always, any feedback is appreciated.
-## [2][Kotlin Public Roadmap Through Spring 2021 – Kotlin Blog](https://www.reddit.com/r/Kotlin/comments/j5oich/kotlin_public_roadmap_through_spring_2021_kotlin/)
-- url: https://blog.jetbrains.com/kotlin/2020/10/kotlin-public-roadmap-through-spring-2021/
+## [7][Type mismatch, but I'm using toInt(), but it still says it is a String?](https://www.reddit.com/r/Kotlin/comments/j6b3ue/type_mismatch_but_im_using_toint_but_it_still/)
+- url: https://www.reddit.com/r/Kotlin/comments/j6b3ue/type_mismatch_but_im_using_toint_but_it_still/
 ---
+Edit: I should mention what db is and what result are, as well as the COL\_ID:
 
-## [3][On Files and Okio](https://www.reddit.com/r/Kotlin/comments/j648jd/on_files_and_okio/)
-- url: https://publicobject.com/2020/10/06/files/
----
+val db = this.*readableDatabase* val query = "Select \* from " + *TABLE\_NAME* 
 
-## [4][Kotlin Telegram Bot looking for maintainers](https://www.reddit.com/r/Kotlin/comments/j5ptrk/kotlin_telegram_bot_looking_for_maintainers/)
-- url: https://www.reddit.com/r/Kotlin/comments/j5ptrk/kotlin_telegram_bot_looking_for_maintainers/
----
-Hi!
+val result = db.rawQuery(query, null)
 
-I'm Iván, the creator of [Kotlin Telegram Bot](https://github.com/kotlin-telegram-bot/kotlin-telegram-bot) a library to help you build telegram bots. 
+And these vals
 
-Since a year a go or so I have not been able to dedicate the time needed to maintain the project, so I looked for more people to help me with that. At the moment 2 other persons are helping with the project, but sometimes a big [PR which needs review](https://github.com/kotlin-telegram-bot/kotlin-telegram-bot/pull/103) or a bug comes out and neither of us is able to check it as fast as we would like (like months).
+val *DATABASE\_NAME* = "MyDB" 
 
-So, we are looking for more people! If you like telegram and/or Kotlin and are interested in contributing to the project DM me or send me an email at [ivanmartinga@gmail.com](mailto:ivanmartinga@gmail.com) 
+val *TABLE\_NAME* = "Users" 
 
-Thanks!
-## [5][Compile to native](https://www.reddit.com/r/Kotlin/comments/j5zixi/compile_to_native/)
-- url: https://www.reddit.com/r/Kotlin/comments/j5zixi/compile_to_native/
----
-What is the rational behind the Kotlin/Native compiler on a desktop if I can't use the Java API? What other API can I use, e.g., to access the file system or GUI libraries?
-## [6][Android Model-View-Intent with Unit Tests - Using Kotlin Flow](https://www.reddit.com/r/Kotlin/comments/j5kd1x/android_modelviewintent_with_unit_tests_using/)
-- url: https://medium.com/@AdamHurwitz/android-model-view-intent-with-unit-tests-260e9a0cdd64
----
+val *COL\_NAME* = "name" 
 
-## [7][New to kotlin, gradle. Does it get easier? Otherwise, kotlin is a beauty.](https://www.reddit.com/r/Kotlin/comments/j53sv3/new_to_kotlin_gradle_does_it_get_easier_otherwise/)
-- url: https://www.reddit.com/r/Kotlin/comments/j53sv3/new_to_kotlin_gradle_does_it_get_easier_otherwise/
----
-hi. I am new to Kotlin, "Gradle and the Kotlin DSL" build system. I am not new to programming though. I am using Intellij. I am trying to learn kotlin and the gradle build system using kotlin dsl all at the same time. And it is super confusing. Nothing seems straight forward. I am not new to programming at all by any stretch. But I am new to kotlin and the entire java ecosystem. And I want to learn this as soon as possible because, I will start work on a very large kotlin/gradle project at work very soon.
+val *COL\_AGE* = "age" 
 
-At the moment, I am trying to do the following just to test out the kotlin language, and learn more about the gradle/kotlin DSL build system.
-
-1. create a kotlin project with gradle/kotlinDSL as build system
-2. add the fuel (http client) as a dependency.
-3. use fuel to make a http request.
-
-At the moment I am stuck at "adding fuel as a dependency". In intellij, I added fuel as a dependency in project settings but still i keep getting "unresolved reference"
-
-
-Here are some of the problems I faced and does not seem straight-forward for someone that has been coding professionally for a long time, but is very new to the java ecosystem.
-
-* couldn't find the one package manager. python has pypi. rust has crates. c# has nuget. So I naively assumed I would find something like that in the java/jvm/kotlin world. Oh boy, how wrong I was.
-* theres like 10 different JDKs. I am not sure which one is the most used and which one I should use.
-* confusion about what the JDK is. Is it the compiler , runtime and standard libraries. ?
-* there is jscentral. maven central. and many others. Are they repositories of java libraries? kotlin libraries? or a combination of both.
-* can i use any java libary with kotlin? Or are there some java libraries that won't work with kotlin? If so how do I tell if a java library will not work with kotlin
-* are libraries restricted to working on only certain SDKs and not others?
-* what is a module? can modules exist within other modules? In the c# world a solution can have many projects. Is it something like that?
-
-I have so many other questions and If I seem frustrated, my apologies. I have been trying to get fuel added as a dependency and It just wont work. I've been trying to work this out for the past one day.
-
-Otherwise, I think kotlin is a beauty. I just wish it was easier to understand the ecosytem.
-
-Any help or document/tutorial/book that will help me to answer some or all these questions will be appreciated.
-## [8][Non-intrusive, AI aided, instant root cause analysis tool](https://www.reddit.com/r/Kotlin/comments/j5dr6x/nonintrusive_ai_aided_instant_root_cause_analysis/)
-- url: https://ycrash.io/
----
-
-## [9][A minimal real Kotlin Multiplatform Showcase](https://www.reddit.com/r/Kotlin/comments/j4v42x/a_minimal_real_kotlin_multiplatform_showcase/)
-- url: https://www.reddit.com/r/Kotlin/comments/j4v42x/a_minimal_real_kotlin_multiplatform_showcase/
----
-Recently I created a minimal app to illustrate the power of kotlin multiplatform. It currently runs on:
-
-* Android (available on Google Play)
-* iOS
-* Web
-
-You can checkout the [repository](https://github.com/moallemi/kotlin-multiplatform-showcase) for more info
+val *COL\_ID* = "id" 
 
 &amp;#x200B;
 
-https://preview.redd.it/ba04e0zr81r51.png?width=1000&amp;format=png&amp;auto=webp&amp;s=ed7a02304c2d3a362883b5845fb07ac17b0cd84b
-## [10][Kotlin for competitive programming](https://www.reddit.com/r/Kotlin/comments/j4yakf/kotlin_for_competitive_programming/)
-- url: https://www.reddit.com/r/Kotlin/comments/j4yakf/kotlin_for_competitive_programming/
+My error:[user.id](https://user.id) = result.getString(COL\_ID).toInt()
+
+&amp;#x200B;
+
+gives me the error:  "Type mismatch: inferred type is String but Int was expected"
+
+&amp;#x200B;
+
+I also tried  user.id = result.getInt(COL\_ID), but it still gives the same error.
+
+&amp;#x200B;
+
+I'm currently following this 2-video video series on SQLite in Android Studio in Kotlin: [https://www.youtube.com/watch?v=OxHNcCXnxnE](https://www.youtube.com/watch?v=OxHNcCXnxnE)
+
+They do the above and get no error.
+
+What am I doing wrong?
+
+Thank you!
+
+&amp;#x200B;
+
+I'm trying to learn Android Studio, Kotlin, and SQL/SQLite all at the same time without anything but youtube tutorials (it's for a university project, but they're literally just teaching us HTML and then asking us to build an entire working app in Android Studio using Kotlin to have a SQLite interaction)
+## [8][On Files and Okio](https://www.reddit.com/r/Kotlin/comments/j648jd/on_files_and_okio/)
+- url: https://publicobject.com/2020/10/06/files/
 ---
-I want to know if I can use Kotlin for Competitive programming without taking support of Java(Java collections).
-Is there anyone here who uses kotlin for cp? 
-If so would you like to share the details :)
+
+## [9][Kotlin Public Roadmap Through Spring 2021 – Kotlin Blog](https://www.reddit.com/r/Kotlin/comments/j5oich/kotlin_public_roadmap_through_spring_2021_kotlin/)
+- url: https://blog.jetbrains.com/kotlin/2020/10/kotlin-public-roadmap-through-spring-2021/
+---
+
+## [10][𝗟𝗲𝗲𝘁𝗖𝗼𝗱𝗲 #𝟮 - 𝗧𝘄𝗼 𝗦𝘂𝗺](https://www.reddit.com/r/Kotlin/comments/j67o9e/𝗟𝗲𝗲𝘁𝗖𝗼𝗱𝗲_𝟮_𝗧𝘄𝗼_𝗦𝘂𝗺/)
+- url: https://www.reddit.com/r/Kotlin/comments/j67o9e/𝗟𝗲𝗲𝘁𝗖𝗼𝗱𝗲_𝟮_𝗧𝘄𝗼_𝗦𝘂𝗺/
+---
+ A detailed post discussing how we can add two numbers where each digit is represented by nodes of linked lists -
+
+[https://redquark.org/leetcode/0002-add-two-numbers/](https://redquark.org/leetcode/0002-add-two-numbers/)
+
+Implemented in Kotlin

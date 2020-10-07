@@ -1,122 +1,106 @@
 # aws
-## [1][Week of Oct 5th - What AWS questions do you have? (but were always afraid to ask :-) )](https://www.reddit.com/r/aws/comments/j5jsap/week_of_oct_5th_what_aws_questions_do_you_have/)
-- url: https://www.reddit.com/r/aws/comments/j5jsap/week_of_oct_5th_what_aws_questions_do_you_have/
----
-Ask your AWS questions here and help others - Also don't forget that there are almost 2500 members in the /r/aws chatroom!
-## [2][Welcome to new mod u/_abhayshah!](https://www.reddit.com/r/aws/comments/j5trs4/welcome_to_new_mod_u_abhayshah/)
+## [1][Welcome to new mod u/_abhayshah!](https://www.reddit.com/r/aws/comments/j5trs4/welcome_to_new_mod_u_abhayshah/)
 - url: https://www.reddit.com/r/aws/comments/j5trs4/welcome_to_new_mod_u_abhayshah/
 ---
 Thrilled to expand the mod team in order better serve the community. As /r/aws grows, u/_abhayshah will be able to assist with AMAs, post flair, mod queue/mail, building out the Wiki, and more!   
 
 
 Please give him a nice /r/aws welcome and let us know how we can improve things together going forward.
-## [3][IaC comparison for event-driven architecture](https://www.reddit.com/r/aws/comments/j5uch5/iac_comparison_for_eventdriven_architecture/)
-- url: https://www.reddit.com/r/aws/comments/j5uch5/iac_comparison_for_eventdriven_architecture/
+## [2][Introducing Distributed Load Testing Solution from AWS](https://www.reddit.com/r/aws/comments/j6ga4c/introducing_distributed_load_testing_solution/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/10/introducing-distributed-load-testing-v1-1/
 ---
-Hey everyone!  I've been running production workloads on AWS for a long time (started when S3 was announced in 2006) and have been silently lurking on r/aws for over a year.  After many discussions with colleagues debating the future of cloud architectures, I decided to start [my own blog](https://blog.outwiththeold.info/) where I will explore new ways to solve old tasks.
 
-[In my first post](https://blog.outwiththeold.info/posts/event-driven-iac/) I compare two architectures, both built with the AWS CDK, that process a file dropped into an S3 bucket. One architecture uses ECS/Fargate and the other Lambda.
-
-I'd really like to hear what you think about this post and get suggestions for additional topics you would like to see covered.
-
-You can read my first post here:
-
-* [https://blog.outwiththeold.info/posts/event-driven-iac/](https://blog.outwiththeold.info/posts/event-driven-iac/)
-## [4][How to change a variable in a JavaScript file, depending on the build project used in CodeBuild?](https://www.reddit.com/r/aws/comments/j63sbr/how_to_change_a_variable_in_a_javascript_file/)
-- url: https://www.reddit.com/r/aws/comments/j63sbr/how_to_change_a_variable_in_a_javascript_file/
+## [3][AWS IAM role impersonation to HashiCorp Vault vulnerability](https://www.reddit.com/r/aws/comments/j6cmb0/aws_iam_role_impersonation_to_hashicorp_vault/)
+- url: https://googleprojectzero.blogspot.com/2020/10/enter-the-vault-auth-issues-hashicorp-vault.html
 ---
-I am building a serverless website using HTML, CSS and JavaScirpt that is hosted on an S3 bucket.
 
-I have a CodeCommit repository, with two branches: develop and master. I do all my development work in develop, and when I'm happy with the changes I merge into master, which is my production environment.
-
-I have two CodeBuild projects, one for the development environment and one for the production environment. I have a build spec file, which tells CodeBuild to sync the CodeCommit files with the S3 bucket that is hosting the website.
-
-There is a variable inside the JavaScript file, that contains the URL for a HTTP endpoint. I need to dynamically change this variable, depending on which environment I am deploying to - development or production. For example, if I deploy to develop, I want this variable to automatically be "[http://develop](http://develop)". Alternatively, if I deploy to master, I want it to be "[http://production](http://production)".
-
-How can I do this? I know there is something about environment variables, but I am not sure on how to tie this in with everything else.
-## [5][I've deleted my account but Amazon keeps billing me for Route 53 charges.](https://www.reddit.com/r/aws/comments/j5nh4w/ive_deleted_my_account_but_amazon_keeps_billing/)
-- url: https://www.reddit.com/r/aws/comments/j5nh4w/ive_deleted_my_account_but_amazon_keeps_billing/
+## [4][Cloudwatch Event Pattern Event Rule Limit](https://www.reddit.com/r/aws/comments/j6qso5/cloudwatch_event_pattern_event_rule_limit/)
+- url: https://www.reddit.com/r/aws/comments/j6qso5/cloudwatch_event_pattern_event_rule_limit/
 ---
-I deleted my AWS account because I wasn't using it and apparently I forgot to terminate the Route 53 service.
-
-Now Amazon won't let me access the account proper to finish it and their "customer support" form is utter garbage so, what should I do? Is there a direct e-mail address? Am I just screwed?
-
-Update that should have been qrittrn yrsterday but forgot to: I put a case in for the recovery of the account and I'm now waiting a response/update on it
-
-Update 2: They've gotten back to me, they're reopenning the account to let me fix it. Thanks for the help, everyone! Once it's done I'll officially mark this as closed.
-## [6][AWS development environment/workflows for large teams](https://www.reddit.com/r/aws/comments/j5xkqv/aws_development_environmentworkflows_for_large/)
-- url: https://www.reddit.com/r/aws/comments/j5xkqv/aws_development_environmentworkflows_for_large/
+We are trying to setup our cloudwatch to monitor 250+ servers. However, there are ec2 instances that are only started on-demand basis. This doesn't allow us to use "Any resource" as the it will include the instances that are intentionally stopped. Is there a way to exclude those stopped instances? Or is our only choice is to create multiple pattern event rules?
+## [5][Revisiting CDK project](https://www.reddit.com/r/aws/comments/j6q06v/revisiting_cdk_project/)
+- url: https://www.reddit.com/r/aws/comments/j6q06v/revisiting_cdk_project/
 ---
-Just curious how different development teams working with aws design their development environment when needing to test changes against real aws resources.
+It's been 6 months since I last looked at my first CDK project that is now running in production. However, I have a slight problem.
 
-For example, does each developer on your team create their own version of resources to test their changes against (ex: using cloudformation)? Does software like localstack usually work as an alternative?
-## [7][Most efficient way to connect to RDS without an own instance](https://www.reddit.com/r/aws/comments/j64g2i/most_efficient_way_to_connect_to_rds_without_an/)
-- url: https://www.reddit.com/r/aws/comments/j64g2i/most_efficient_way_to_connect_to_rds_without_an/
+We want to expand with a development setup that is identical to production. I made everything into reusable components back in March (with DTAP tags and everything). I haven't made any changes to the code, but when I run
+
+    cdk diff
+
+it shows that it wants to add a bunch of resources. I'm a bit scared it will completely fuck up my production environment or that it will create a new production environment. Does anyone have any tips or guidelines that could help me? Or is it better if I clone this repository and start fresh to make sure my Dev deployment won't accidentally mess with production?
+## [6][What was your AHA moment using AWS?](https://www.reddit.com/r/aws/comments/j6f58g/what_was_your_aha_moment_using_aws/)
+- url: https://www.reddit.com/r/aws/comments/j6f58g/what_was_your_aha_moment_using_aws/
 ---
-Hi everybody!
-
-We are starting to use AWS in our company, but we are still newbies, so I hope I don't bother if any question is too obvious, I have tried to document as much as possible as with the rest of the things we have already done.
-
-We have a Datalake in S3 made up of 3 buckets (in a dev account):
-
-* In the first bucket, we have the raw data, which we filter and normalize through Glue, to save it in the second bucket.
-* In the second bucket, we have the filtered data that is sent to EMR to perform several actions (data merge, variable creation and transformation)... and later saved in the third bucket.
-* In the third bucket, we have the final data that is consulted through Athena and sent to Quicksight.
-
-We need to incorporate data that is stored in an Oracle RDS instance into another AWS account. To incorporate it into our datalake, the data needs to be stored in S3 in the first cube. 
-
-I have seen that is possible to export RDS snapshots to S3 from another account, but this RDS database will be updated frequently. You can automate the daily creation of snapshots in S3, but only in the same account in which the RDS instance is placed. To send them to another account, I think it must be done manually.
-
-Therefore, I thought of creating an RDS instance in our account and connect that instance to the instance in the other account, and automate the generation of snapshots from our account. However, the creation of the RDS instance in our account has a very high cost in relation to the rest of services.
-
-Do you know if this task could be done in an efficient way without having to export the snapshots manually or without having to create an RDS instance in our account?
-
-Thanks a lot for your time!
-## [8][AWS S3 Browser-Based Uploads Question](https://www.reddit.com/r/aws/comments/j63ior/aws_s3_browserbased_uploads_question/)
-- url: https://www.reddit.com/r/aws/comments/j63ior/aws_s3_browserbased_uploads_question/
----
-Hi Everyone,
-
-I'm relatively new with very little experience in using AWS. I was wondering if it was possible to allow public users to upload files to a bucket I've setup using just a public URL? 
-
-What I am currently doing is extracting the files people upload to a dropbox then manually uploading the file to the s3 and setting up folders within the bucket.
-
-Thanks in advance!
-## [9][How should I deploy my AWS for a simple app?](https://www.reddit.com/r/aws/comments/j62rue/how_should_i_deploy_my_aws_for_a_simple_app/)
-- url: https://www.reddit.com/r/aws/comments/j62rue/how_should_i_deploy_my_aws_for_a_simple_app/
+Either the moment when you understood its full potential or when you knew that AWS was the right set of tools for your path?
+## [7][What's the proper way to troubleshoot site-to-site VPN (GRE stage)?](https://www.reddit.com/r/aws/comments/j6pf36/whats_the_proper_way_to_troubleshoot_sitetosite/)
+- url: https://www.reddit.com/r/aws/comments/j6pf36/whats_the_proper_way_to_troubleshoot_sitetosite/
 ---
 Hello,
 
-I am going to make a simple web app + Android app that contains a MySQL (Or MariaDB) database with not too many records. The app does not have registration, but it stores information provided by users. Both the web and the Android interface should send the data from the app to the database.
+I'm configuring subj from Customer Gateway (CG) to Virtual Private Gateway (VPG).
 
-I'm not expecting too much traffic, so I want to know how and what should I deploy, and make it scalable, if some miracle happens and the traffic grows. And also how can I secure my deployment?
+Ipsec tunnel as it is starts normal, on VPG side both redundant tunnels are in state "IPSEC IS UP", from CG side (strongswan) - ipsec status also in state established.
 
-I was thinking about a single EC2 instance and a single RDS. But there are many instances, and my budget is not too big right now, so I was thinking which is the best machine to deploy?
+But when i try to ping inner GRE address from CG to VPG - no luck, no reply packets. Tcpdump shows no activity from VPG side.  
+No specific firewall rules on CG side. This machine keeps other ipsec tunnels with no problem, and new endpoints added as new items in ipset lists.  
+What options do i have to troubleshoot the problem?  
+Because aws troubleshooting guide has only one advise for this kind of situation "review your tunnel interface configuration to make sure that the proper IP address is configured" :)  
+[https://docs.aws.amazon.com/vpn/latest/s2svpn/Generic\_Troubleshooting.html](https://docs.aws.amazon.com/vpn/latest/s2svpn/Generic_Troubleshooting.html)
+## [8][ECS + Windows Containers](https://www.reddit.com/r/aws/comments/j6oz1y/ecs_windows_containers/)
+- url: https://www.reddit.com/r/aws/comments/j6oz1y/ecs_windows_containers/
+---
+I have a bunch of Windows instances that aren’t important but need to be available for end users who need them, which is very infrequently but could be anytime of the day.
 
-Also, in order to save costs should I install the database on the EC2 itself and get a larger SSD space, or it's will be more expensive and less secured?
+Considering containerising them and running the workloads inside ECS, does anyone have experience with a similar setup or other suggestions?
+
+I use instance scheduler to schedule systems down when possible but these are low utilisation systems that need to be available 24x7.
+## [9][Feature request: target S3 static site with an ALB](https://www.reddit.com/r/aws/comments/j6orzo/feature_request_target_s3_static_site_with_an_alb/)
+- url: https://www.reddit.com/r/aws/comments/j6orzo/feature_request_target_s3_static_site_with_an_alb/
+---
+Hi everyone,
+
+I want to preface the following by noting that this is not a support request.
+
+I'm finding myself in the situation where I have an ALB with a path prefix that proxies to some Docker containers in Fargate. However the rest of the site is static so I would like to just make a static S3 site, offload TLS at the ALB, proxy what doesn't go to Fargate to the S3 site, and Bob would be your proverbial uncle.
+
+I am surprised to find that that is not possible out of the box. I can set up an EC2 instance, or something like Fargate, or redirect to another site, but if I want to have:
+
+- a single domain - one (1) domain,
+- with an S3 site
+- and an API endpoint of some kind in ECS
+- and cheap or free TLS
+- and I want to do all of that serverlessly,
+
+...then I need to spin up CloudFront in addition to the ALB I need for the ECS stuff. For various reasons I prefer an ALB for this over CloudFront.
+
+I know folks who work for AWS read this, so I'd like to submit the feature request that directly adding a static S3 bucket as a target to an ALB is something I for one would very much appreciate - as a matter of fact I actually totally expected it to be a thing, because it honestly seems like a super obvious feature to me. Of course, that may just be me because apparently it's not obvious to AWS. :)
+## [10][How can I guarantee performance globally?](https://www.reddit.com/r/aws/comments/j6hhb4/how_can_i_guarantee_performance_globally/)
+- url: https://www.reddit.com/r/aws/comments/j6hhb4/how_can_i_guarantee_performance_globally/
+---
+I've been given the task of making sure our Website/Mobile application performs well globally.  All our backend infrastructure runs in AWS (with Cloudflare sitting infront of everything). We are using Lambdas and API Gateway to run our api and backend. Our frontend application run in ECS. And the bulk of our content sits in S3 (\~5TB), with \~500gb in databases
+
+There seems to be a suggestion from colleagues of duplicating infrastructure (e.g. RDS, DyanmoDB, Compute platforms) and running it in different global regions, so that requests can be processed closer to the user/client . And then try and sync data between the different geographical regions to keep things up to date. But to me this sounds like a headache, not to mention expensive. 
+
+The easier option (and my more preferred option) would be to serve media content (e.g. images, large files) via a CDN, which can serve our content from different nodes around the world. The data processing would still be happening in the primary region (e.g. us-east-1) but large files would be served from a CDN located close to the clients location.
+
+Would be great to get some recommendations.
 
 Thanks
-## [10][Hosting thousands of static websites?](https://www.reddit.com/r/aws/comments/j60ze6/hosting_thousands_of_static_websites/)
-- url: https://www.reddit.com/r/aws/comments/j60ze6/hosting_thousands_of_static_websites/
+## [11][SQS - fifo queues and retention behaviour](https://www.reddit.com/r/aws/comments/j6nyxe/sqs_fifo_queues_and_retention_behaviour/)
+- url: https://www.reddit.com/r/aws/comments/j6nyxe/sqs_fifo_queues_and_retention_behaviour/
 ---
-What would be the best way to host a lot (thousands) static websites with different domains using AWS? Ideally with instant updates when content changes and without having to handle scaling ourselves. 
+Hi all,
 
-I’ve looked into just using S3 and CloudFront via API, but that would mean thousands of CloudFront distributions, as I understand it, since one distribution only can be associated with one certificate. This approach feels a bit hard to manage in the long run, but maybe it’s the way to go?
-## [11][Limiting the S3 PUT file size using pre-signed URLs](https://www.reddit.com/r/aws/comments/j5lhhn/limiting_the_s3_put_file_size_using_presigned_urls/)
-- url: https://www.reddit.com/r/aws/comments/j5lhhn/limiting_the_s3_put_file_size_using_presigned_urls/
----
-I am generating S3 pre signed URLs so that the client(mobile app) can PUT an image directly to S3 instead of going through a service. For my use case the expiry time of the pre signed URL needs to be configured for a longer window (10-20 mins). I want to limit the size of file upload to S3 so that any malicious attacker can not upload large files to the S3 bucket. The client will get the URL from a service which has access to the S3 bucket. I am using AWS Java SDK.
+We are looking at utilising SQS for our pipeline. 
 
-I found that this can be done using POST forms for browser uploads but how can I do this using just signed S3 URL PUTs? I have found conflicting answers for this on different platforms.
-## [12][Lightsail data transfer (egress) - what's the catch?](https://www.reddit.com/r/aws/comments/j5wgfi/lightsail_data_transfer_egress_whats_the_catch/)
-- url: https://www.reddit.com/r/aws/comments/j5wgfi/lightsail_data_transfer_egress_whats_the_catch/
----
-If I wanted to download 2TB from S3, I could proxy it through a lightsail instance for $5.
+I was hoping somebody would be able to answer a quick hypothetical question.
 
-Downloading it directly would cost $180. That's 36x more expensive.
+If we wanted to guarantee the order in which messages are processed using fifo queue type how does message retention period play a part in this process?
 
-Is this true? What's the catch? Why does this exist?
+For example, we have a few messages come into the queue and we have the first message fail to be handled by the application properly and the message is not removed.
 
-I was reading https://forums.aws.amazon.com/thread.jspa?threadID=253162 to find out, and it appears that the data transfer is prorated to the month - so if you have a lightsail instance for 15 days (half a month), you only get half of the month's data transfer limit (quite reasonable!). So it isn't even more ridiculous than that, you need the full month's $5.
+Will this result in the other messages waiting till the failed message reached the end of its retention time?
 
-Even if this is technically possible, is this the sort of thing that will cause AWS to terminate me for abusing their pricing model / services? I'm considering spinning up about two dozen of these $5 instances to download about 25 terabytes from S3.
+I have had a look online and the aws document and couldn’t find anything referencing this sort of behaviour. 
+
+I could setup some tests to check this behaviour but I thought maybe someone who has had dealing with this before maybe able to advise to save me sometime.

@@ -70,89 +70,99 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Which format should I ask from designer if I want such GIF graphics and display them in React Native?](https://www.reddit.com/r/reactjs/comments/j6489r/which_format_should_i_ask_from_designer_if_i_want/)
+## [3][Astrofox is now open-source (React/Electron/WebGL)](https://www.reddit.com/r/reactjs/comments/j6kutn/astrofox_is_now_opensource_reactelectronwebgl/)
+- url: https://v.redd.it/croxwhmzslr51
+---
+
+## [4][Which format should I ask from designer if I want such GIF graphics and display them in React Native?](https://www.reddit.com/r/reactjs/comments/j6489r/which_format_should_i_ask_from_designer_if_i_want/)
 - url: https://v.redd.it/tb9m9evyxgr51
 ---
 
-## [4][React Testing Library downloads surpasses Enzyme](https://www.reddit.com/r/reactjs/comments/j5jri7/react_testing_library_downloads_surpasses_enzyme/)
-- url: https://npmcharts.com/compare/@testing-library/react,enzyme
+## [5][Need to make a dynamic website with react and firebase for university.](https://www.reddit.com/r/reactjs/comments/j6pi0b/need_to_make_a_dynamic_website_with_react_and/)
+- url: https://www.reddit.com/r/reactjs/comments/j6pi0b/need_to_make_a_dynamic_website_with_react_and/
 ---
-
-## [5][Getting Started With Framer Motion](https://www.reddit.com/r/reactjs/comments/j5wire/getting_started_with_framer_motion/)
-- url: https://www.reddit.com/r/reactjs/comments/j5wire/getting_started_with_framer_motion/
+Lots of online classes and pdf notes and video tutorials.  A place to organize all of them. Thinking of creating a website, in the home page it will have cards of the subjects for e.g data structure,  computer architecture. When clicked on it., it will show two more cards pdf and video tutorials, when clicked on one it will take you to the respective page with the material. Now I want to make it all dynamic, instead of hard coding it. Through the admin panel I can create the subject cards. Any mental model or suggestions on how you would do it ?
+## [6][Dev Resources, a comprehensive list of assets, tools and learning resources](https://www.reddit.com/r/reactjs/comments/j6mzj3/dev_resources_a_comprehensive_list_of_assets/)
+- url: https://www.reddit.com/r/reactjs/comments/j6mzj3/dev_resources_a_comprehensive_list_of_assets/
 ---
-[https://letsbuildui.dev/articles/getting-started-with-framer-motion](https://letsbuildui.dev/articles/getting-started-with-framer-motion)
-## [6][Caple Design System - React UI Library](https://www.reddit.com/r/reactjs/comments/j5zh5b/caple_design_system_react_ui_library/)
-- url: https://github.com/cobaltinc/caple-design-system
----
-
-## [7][Onclick to push to a new route React Material UI](https://www.reddit.com/r/reactjs/comments/j654a8/onclick_to_push_to_a_new_route_react_material_ui/)
-- url: https://www.reddit.com/r/reactjs/comments/j654a8/onclick_to_push_to_a_new_route_react_material_ui/
----
-Hi everyone,
-
-How do I push to a new page with an Onclick from from a div, using a key value.
-
-Basically I have multiple cards and each one has a button that I want to take me into a page , I need a unique key/value for each card
-
-
-I can’t paste my code right now.
-
-Thanks!!
-## [8][[Help] How to update props based on prompt response?](https://www.reddit.com/r/reactjs/comments/j60w0y/help_how_to_update_props_based_on_prompt_response/)
-- url: https://www.reddit.com/r/reactjs/comments/j60w0y/help_how_to_update_props_based_on_prompt_response/
----
-I'd love some help here!
-
-I'm a beginner, so thank you for your advice and patience! I currently have a button that, on click, calls a function called "seriesPopup" that looks like this:
-
-`seriesPopup() {`
-
-`var seriesLabel = prompt("Please enter the series name and choose a dataset:", "Series");`
-
-  `}`
-
-I want an object type prop in the current component that updates itself with the result of seriesLabel when the prompt is submitted. 
-
-Right now, the defaultProps contains an object that looks like this:
-
-`UsersOverview.defaultProps = {`  
-`chartData: {`
-
-`datasets: [`
-
-`{`
-
-`label: "Test"`
-
-`}`
-
-`]}}`
-
-How would I update the "label" value in this object? I realize that this is in a defaultProps, which is not the ideal situation, so how would I update the prop outside of that? How can I make this.props.chartData.datasets\[0\]\[0\] equal seriesLabel?
+Dev Resources, a comprehensive list of assets, tools and learning resources for developers (and designers) has just arrived.
 
 &amp;#x200B;
 
+Folks from all levels can benefit from it:
+
+\- if you're experienced and building your product/project
+
+\- if you're a newcomer and are starting your dev journey
+
+\- if you're doing the #100DaysOfCode challenge
+
+&amp;#x200B;
+
+Go around and find what you need!
+
+&amp;#x200B;
+
+[https://devresourc.es/](https://devresourc.es/)
+## [7][How to update an atom state with Recoil?](https://www.reddit.com/r/reactjs/comments/j6qvty/how_to_update_an_atom_state_with_recoil/)
+- url: https://www.reddit.com/r/reactjs/comments/j6qvty/how_to_update_an_atom_state_with_recoil/
+---
+I have a basic atom:
+
+    export const userAtom = atom({
+      key: "user",
+      default: { name: "joe", age: 78 } 
+    });
+
+I can correctly display user.name, but not update it with SetUser. What is wrong with this code:
+
+    function App() {
+    const [user, setUser] = useRecoilState(userAtom)
+    
+      return (
+        &lt;&gt;
+          &lt;h5&gt;Hello {user.name}&lt;/h5&gt;
+    &lt;button onClick={()=&gt; setUser(prev=&gt; ({...prev,  name: "Jack"})}&gt;update name&lt;/button&gt;
+        &lt;/&gt;
+      )
+    }
+
 Thanks!
-## [9][I am looking for code basses with react and styled components](https://www.reddit.com/r/reactjs/comments/j64xm2/i_am_looking_for_code_basses_with_react_and/)
-- url: https://www.reddit.com/r/reactjs/comments/j64xm2/i_am_looking_for_code_basses_with_react_and/
----
-I have only been learning React for 2 weeks so far I have learnt react router and styled components.  
-
-And I  want to see how others people structure there code base and use react with styled components.  
-
-And  I want to see how other people are using react in a real applications.  
-
-At the moment I am trying to get better at css but I want to see how other people use react with styled components.
-## [10][React hooks best practices](https://www.reddit.com/r/reactjs/comments/j6376r/react_hooks_best_practices/)
-- url: https://tsh.io/blog/react-hooks-best-practices/
+## [8][React Native Shared Element Transition React Navigation V5 - Episode 6](https://www.reddit.com/r/reactjs/comments/j6qqqk/react_native_shared_element_transition_react/)
+- url: https://youtu.be/pq0mAv4y0Nw
 ---
 
-## [11][[Boilerplate] React Rollup boilerplate for creating component libraries](https://www.reddit.com/r/reactjs/comments/j62xj0/boilerplate_react_rollup_boilerplate_for_creating/)
-- url: https://github.com/KaiHotz/react-rollup-boilerplate
+## [9][How to style on a 2020 project](https://www.reddit.com/r/reactjs/comments/j6qamj/how_to_style_on_a_2020_project/)
+- url: https://www.reddit.com/r/reactjs/comments/j6qamj/how_to_style_on_a_2020_project/
+---
+The thing is... It's the first time I have to decide how to style a medium size project, It feels like a big decision to me.
+
+My two cents: I've been working with SASS + React for years, but I'm really interested on adopting styled components on this big scale/durable project.
+
+What are your thoughts guys?
+## [10][Membership only site/app with ReactJS possible?](https://www.reddit.com/r/reactjs/comments/j6pqnr/membership_only_siteapp_with_reactjs_possible/)
+- url: https://www.reddit.com/r/reactjs/comments/j6pqnr/membership_only_siteapp_with_reactjs_possible/
+---
+Hey guys,
+
+I'd like to build a membership only app (i.e. there's no content for non-members besides the login/register form) with ReactJS, because I really like the "snappy" feel of it and developing is really fun.
+
+But of course, since it's all JS, there's no way to really protect the "valuable" content from non-members, which sucks.
+
+Is there any tried and tested workaround/strategy for this besides serving the content via my backend (which is at least somewhat more protected)?
+
+Or is there even a way to combine server side rendering with all the perks of ReactJS?
+
+Thanks a bunch!
+## [11][Is there a way to make an action call return a promise?](https://www.reddit.com/r/reactjs/comments/j6p9yw/is_there_a_way_to_make_an_action_call_return_a/)
+- url: https://www.reddit.com/r/reactjs/comments/j6p9yw/is_there_a_way_to_make_an_action_call_return_a/
+---
+Lets say I have 2 actions (createPost, createPostImage) and I want to call createPostImage after  createPost is finished.Currently I have it set up in such a way that I call createPostImage inside the createPost action body once it finishes the API call, but that kind of messes up code (it looks ugly and annoys me because I know there is a better way of doing things).
+
+One way of which I thought of doing this is making the action return a promise, and then call dispatch inside that promise, but that too looks kind of odd and i dont know if it is the correct move.
+
+How is this usually handled in Redux?
+## [12][Created a Collaborative Code Editor using React, Node.js, and socket.io](https://www.reddit.com/r/reactjs/comments/j6aott/created_a_collaborative_code_editor_using_react/)
+- url: https://v.redd.it/7iatyglmqir51
 ---
 
-## [12][How should I automatically renew a JWT to keep a user authenticated?](https://www.reddit.com/r/reactjs/comments/j5zqre/how_should_i_automatically_renew_a_jwt_to_keep_a/)
-- url: https://www.reddit.com/r/reactjs/comments/j5zqre/how_should_i_automatically_renew_a_jwt_to_keep_a/
----
-There's just a single token which is issued upon login and is used to authorize requests. The token has a life of two weeks and to renew it I have to send a request to an endpoint with this current token before it expires. How can I write code to automate this?

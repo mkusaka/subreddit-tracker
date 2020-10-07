@@ -7,8 +7,8 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/iya619/personal_projects_show_off_your_own_project_andor/)
-- url: https://www.reddit.com/r/rails/comments/iya619/personal_projects_show_off_your_own_project_andor/
+## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/j6qvuh/personal_projects_show_off_your_own_project_andor/)
+- url: https://www.reddit.com/r/rails/comments/j6qvuh/personal_projects_show_off_your_own_project_andor/
 ---
 In this thread you can showcase your personal pet project to other redditors.
 
@@ -27,13 +27,62 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Ruby on Rails &amp; Digital Ocean](https://www.reddit.com/r/rails/comments/j63loa/ruby_on_rails_digital_ocean/)
+## [3][Scoped associations in Rails](https://www.reddit.com/r/rails/comments/j6lxl8/scoped_associations_in_rails/)
+- url: https://www.reddit.com/r/rails/comments/j6lxl8/scoped_associations_in_rails/
+---
+Howdy folks! 
+
+I've never thought that ActiveRecord associations could be used as scopes until last week. I couldn't find a step-by-step explanation, so [I did a quick write up about how one can scope associations in Rails](https://remimercier.com/scoped-active-record-associations/). 
+
+Some key take-aways: 
+👀  Make your code much more readable (stylish, even)
+✂  DRY things up
+⚡️  Preload your scopes and remove your N+1 queries
+
+Hope you'll like it!
+## [4][RailsAdmin: How to disable edit action?](https://www.reddit.com/r/rails/comments/j6qhyq/railsadmin_how_to_disable_edit_action/)
+- url: https://www.reddit.com/r/rails/comments/j6qhyq/railsadmin_how_to_disable_edit_action/
+---
+Hi there,
+
+I'm working on a rails project with [rails\_admin](https://github.com/sferik/rails_admin) and multiple models. There are several people working on the backend and I want to remove the ability to edit some of the records which have a `imported` boolean set to `true`. This records should just be readable in rails\_admin.
+
+Is it possible to remove the pencil-button in the list view of a record an make this records read only with the condition that the flag is `true`?
+
+The documentation [shows up](https://github.com/sferik/rails_admin/wiki/Base-action#only) some similar behavior to disable action in general but there is no way to bind this configuration on a condition (I guess).
+
+I just found out that you can define a method called `readonly?` on the model but that won't work while I have to update or change attributes while processing this record in my programming logic.
+
+Many thanks!
+## [5][active_storage in production](https://www.reddit.com/r/rails/comments/j6omlt/active_storage_in_production/)
+- url: https://www.reddit.com/r/rails/comments/j6omlt/active_storage_in_production/
+---
+background: I am building a Rails API for my react frontend Instagram clone.
+
+Everything was working perfectly in development but now that i pushed the code to my VPS I am having problems with active\_storage. The returned url for the image attachments looks like ´[mydomain.com/rails/active\_storage/blobs/somehash/somename.jpg](https://mydomain.com/rails/active_storage/blobs/somehash/somename.jpg)´ but placing that url in a img src (or trying to open it) gives a 404.   
+
+
+Using Unicorn and Nginx on the server, active\_storage is set to local file and saving to a postgresql db. Any ideas?
+## [6][Documentation or expertise with AWS Cognito SDK](https://www.reddit.com/r/rails/comments/j6desf/documentation_or_expertise_with_aws_cognito_sdk/)
+- url: https://www.reddit.com/r/rails/comments/j6desf/documentation_or_expertise_with_aws_cognito_sdk/
+---
+I am currently implementing Cognito in a rails 6 app with a view to then using OIDC from Cognito onwards, enabling SSO. Unfortunately, the docs are lacklustre at best. They go into quite a lot of technical detail (which is excellent) but then skip crucial points. For example, `secret_hash` ([used here](https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/CognitoIdentityProvider/Client.html#sign_up-instance_method)) requires some boilerplate code which feels like it should belong inside the SDK. The docs don't tell you this, nor how to generate it. Thankfully, [StackOverflow](https://stackoverflow.com/questions/37438879/unable-to-verify-secret-hash-for-client-in-amazon-cognito-userpools) came to my rescue.
+
+Of significant more concern is that everything I google seems to suggest that people try to get Cognito to work but then give up. I can find plenty of people who are trying to get it to work in Ruby but very few who have successfully done so. A lot of "it's not worth it" or "we looked into it but we couldn't get it to work" type comments.
+
+1. What should the actual flow look like?
+1. Should I be using the `admin_x` methods such as `admin_initiate_auth` or the standard `initiate_auth`? What's the difference?
+1. If I'm using the flow that requires `SRP_A`, how do I generate it?
+1. Almost as a show of hands - how many people have tried to implement it? Were you successful or not? Why?
+
+Thanks.
+## [7][Ruby on Rails &amp; Digital Ocean](https://www.reddit.com/r/rails/comments/j63loa/ruby_on_rails_digital_ocean/)
 - url: https://www.reddit.com/r/rails/comments/j63loa/ruby_on_rails_digital_ocean/
 ---
 I'm looking to migrate [my Ruby on Rails app](https://www.mugshotbot.com) from Heroku to Digital Ocean. I don't have any dev-ops experience and am very confused on where to start.
 
 Does anyone have any beginner tutorials or links I could work through?
-## [4][Active Storage -- Uploads via an API](https://www.reddit.com/r/rails/comments/j62zs0/active_storage_uploads_via_an_api/)
+## [8][Active Storage -- Uploads via an API](https://www.reddit.com/r/rails/comments/j62zs0/active_storage_uploads_via_an_api/)
 - url: https://www.reddit.com/r/rails/comments/j62zs0/active_storage_uploads_via_an_api/
 ---
 Hi!
@@ -48,7 +97,7 @@ I want to create an image upload feature for my current project. More specifical
 2. a form for images, submitted via JavaScript
 
 After the images have been submitted via JavaScript, I need permanent URLs to those images being sent back so I can use them in the first form. Ugh, I hope you understand what I mean.
-## [5][How to Deploy Ruby on Rails with MongoDB to Heroku?](https://www.reddit.com/r/rails/comments/j60455/how_to_deploy_ruby_on_rails_with_mongodb_to_heroku/)
+## [9][How to Deploy Ruby on Rails with MongoDB to Heroku?](https://www.reddit.com/r/rails/comments/j60455/how_to_deploy_ruby_on_rails_with_mongodb_to_heroku/)
 - url: https://www.reddit.com/r/rails/comments/j60455/how_to_deploy_ruby_on_rails_with_mongodb_to_heroku/
 ---
 Hi! I created a project by following this documentation of MongoDB [https://docs.mongodb.com/mongoid/current/tutorials/getting-started-rails/](https://docs.mongodb.com/mongoid/current/tutorials/getting-started-rails/)
@@ -56,19 +105,19 @@ Hi! I created a project by following this documentation of MongoDB [https://docs
 &amp;#x200B;
 
 I finished the project, but I don't know how to set it up to Heroku?
-## [6][How to implement CKEditor in Rails API](https://www.reddit.com/r/rails/comments/j61uay/how_to_implement_ckeditor_in_rails_api/)
+## [10][Integrating Bootstrap theme in Rails 6](https://www.reddit.com/r/rails/comments/j5v9xt/integrating_bootstrap_theme_in_rails_6/)
+- url: https://www.reddit.com/r/rails/comments/j5v9xt/integrating_bootstrap_theme_in_rails_6/
+---
+So, to save time, I purchased a bootstrap theme online for my project. I am having difficulty integrating it . Confused by webpacker /asset pipeline file system. 
+Could anyone walk me through the process or point me to a tutorial on how to properly integrate my bootstrap theme into rails 6 ?
+## [11][How to implement CKEditor in Rails API](https://www.reddit.com/r/rails/comments/j61uay/how_to_implement_ckeditor_in_rails_api/)
 - url: https://www.reddit.com/r/rails/comments/j61uay/how_to_implement_ckeditor_in_rails_api/
 ---
 Hi! I hope everyone is fine,  
 I have a task in which I have to implement CKEditor in rails, My work is from the backend side so I have to implement this on my API , After searching many tutorials I find each for the monolithic structure but just not for API,    
 Maybe it is easy just for API but I don't know how to do it &amp; how it works with API?    
 Can anyone please guide me?  or show me the path to implement this?
-## [7][Integrating Bootstrap theme in Rails 6](https://www.reddit.com/r/rails/comments/j5v9xt/integrating_bootstrap_theme_in_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/j5v9xt/integrating_bootstrap_theme_in_rails_6/
----
-So, to save time, I purchased a bootstrap theme online for my project. I am having difficulty integrating it . Confused by webpacker /asset pipeline file system. 
-Could anyone walk me through the process or point me to a tutorial on how to properly integrate my bootstrap theme into rails 6 ?
-## [8][Just a big thank you!](https://www.reddit.com/r/rails/comments/j5hz32/just_a_big_thank_you/)
+## [12][Just a big thank you!](https://www.reddit.com/r/rails/comments/j5hz32/just_a_big_thank_you/)
 - url: https://www.reddit.com/r/rails/comments/j5hz32/just_a_big_thank_you/
 ---
 tl;dr: lost interest in web dev, learnt Rails, have just completed rewriting my old homepage; thanks to the Rails community for helping me get through this.
@@ -100,47 +149,3 @@ Also, the people from Stack Overflow, numerous blogs around the web, YouTubers m
 My site is now live and I'm going to Open Source it very soon. I'd love to post a link, but I don't want my Reddit account to be associated with my homepage/IRL personality.
 
 So, again, thank you to all of you! ;)
-## [9][Ruby on Rails and Excel file sheet](https://www.reddit.com/r/rails/comments/j5u5z2/ruby_on_rails_and_excel_file_sheet/)
-- url: https://www.reddit.com/r/rails/comments/j5u5z2/ruby_on_rails_and_excel_file_sheet/
----
-Hello everyone,
-
-I've got a question. Is it possible to create a ruby on rails csv or xls file uploader which will save it on a database and make the data available in the future? The work flow would be something like uploading the file, treating or cleaning the data internally, and then making it visible as on a table (main) with only info of the user that uploaded the file, the date created at and the name of the file and making this data editable (which would take the user to another table where the data of the csv is visible) or deletable (this would also delete the csv table as well). I'm seeing it as a table within a table but I'm not sure what is the correct route for this implementation.
-
-**What I've been thinking:** So, since the main table (the table that has the user info) would share the user that uploaded the csv with the table of the "CSV" upload, then when the user decides to view the data, it would show the data related to the upload. Know this means that everytime the user uploads the file, it would create a database for this file? is this viable? The csv file would have 200 rows by 15 columns where the rows can vary 10 rows.
-
-Thanks.
-## [10][Different levels of caching for web application?](https://www.reddit.com/r/rails/comments/j5n8km/different_levels_of_caching_for_web_application/)
-- url: https://www.reddit.com/r/rails/comments/j5n8km/different_levels_of_caching_for_web_application/
----
-I'm trying to fix the page loading performance of my web application. Right now there is no caching. Here is an example feature that I am trying to optimize: 
-
-User clicks a page to see all of the versions of a code build across multiple deployments. The code fires API calls to AWS DynamoDB to check tables for version information and renders the information to the page. 
-
-Problem is that API calls are slow and also cost money. How can I cache the information returned from the database so that when a user loads the page it gets the data from the cache and not fire off API calls?
-## [11][Strange prompt on my rails app on Mobile, advice appreciated!](https://www.reddit.com/r/rails/comments/j5paat/strange_prompt_on_my_rails_app_on_mobile_advice/)
-- url: https://www.reddit.com/r/rails/comments/j5paat/strange_prompt_on_my_rails_app_on_mobile_advice/
----
-Hey Rails nerds,
-
-I've been working on my first big rails app for a while. We're just getting around to building out the mobile side and testing it on phones. 
-
-When submitting a form on my iPhone 8, I get this strange message asking me if i want to download createOrderBuy - this, by the way, is the back end target of the form i'm submitting. My form\_with looks like this:
-
-    &lt;%= form_with(url: "/stock/createOrderBuy",remote: true, method: "post", id: "buyForm", html: { class: "needs-validation", novalidate: true }) do %&gt; 
-
-I've included the download prompt I get on mobile. After googling around and trying a few things I haven't had any luck. Any guidance or advice is appreciated. Thank you!
-
-&amp;#x200B;
-
-https://preview.redd.it/9jq3i3p3nbr51.png?width=750&amp;format=png&amp;auto=webp&amp;s=97271050ce2d843d6ad3d6df564ebb319d57a664
-## [12][Is there a way to bypass optimistic lock?](https://www.reddit.com/r/rails/comments/j5lvi4/is_there_a_way_to_bypass_optimistic_lock/)
-- url: https://www.reddit.com/r/rails/comments/j5lvi4/is_there_a_way_to_bypass_optimistic_lock/
----
-Is there a way to bypass optimistic lock? 
-
-I have added **lock_version** colummn to my model, and there's a few occasion like in a background job  I want the code to be able to ignore the lock_version check and update the model attributes (so no StaleObjectError will be raised), but still undergo some custom validation I defined in model, hence I can't use save(validation: false)
-
-I tried model.reload.update(attribute: value) but sometimes it still throws ActiveRecord::StaleObjectError
-
-Any Ideas? I have googled for 2 hours but no answer for this

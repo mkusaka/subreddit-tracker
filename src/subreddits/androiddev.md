@@ -31,53 +31,134 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][The Supreme Court is taking on Google and Oracle one last time - The Verge](https://www.reddit.com/r/androiddev/comments/j6gygn/the_supreme_court_is_taking_on_google_and_oracle/)
-- url: https://www.theverge.com/2020/10/6/21504715/google-v-oracle-supreme-court-hearings-android-java
+## [3][QUESTION: Taking too long to get results of Google Android Associate developer test](https://www.reddit.com/r/androiddev/comments/j795rd/question_taking_too_long_to_get_results_of_google/)
+- url: https://www.reddit.com/r/androiddev/comments/j795rd/question_taking_too_long_to_get_results_of_google/
+---
+Hello Everyone,
+
+I completed my Google Android Associate Developer assessment and exit Interview on the 15th of May 2020, and my assessment as been being graded since then, its about 5months now. I have reached out to Google support but they have not provided any actual solutions or reasons.   
+Is this a reasonable amount of time for the results to still be processing even  with Covid-19 restrictions, can anyone with more information help me out.
+
+Thank you
+## [4][Collate all categories in SQLite database for "All questions"](https://www.reddit.com/r/androiddev/comments/j7a4jp/collate_all_categories_in_sqlite_database_for_all/)
+- url: https://www.reddit.com/r/androiddev/comments/j7a4jp/collate_all_categories_in_sqlite_database_for_all/
+---
+Hello all,
+
+I recently threw myself into the deep end and set out to develop an android app with very little experience in coding. I've followed advice given in this subreddit on my previous post and have been following a YouTube series by Coding in flow as [this](https://youtu.be/mONNvMIaulY) is exactly what I'm looking to do and feel like I'm learning a lot. I have adapted the code for my needs but is mostly the same (can be seen in his description box).
+
+  
+
+
+I'm struggling to get my head around the following: how do I make an "ALL" section which collates all questions, regardless of category. I have a feeling I'm overthinking this and would appreciate any input.
+
+  
+
+
+On a unrelated note, I've used his code for the spinner and it seems offset to the right despite being aligned to the start of the START QUIZ button. Any ideas?
+
+  
+
+
+I'm not really sure where to post these kind of basic questions. I unfortunately don't know anyone in the field who could help me out. I tried at stack overflow in code review but my post got removed.
+
+  
+
+
+Thanks!
+## [5][Is Kotlin the actual standard best choice to develop Android apps? Is it still Java? Will Kotlin in the future be the standard choice?](https://www.reddit.com/r/androiddev/comments/j7a48g/is_kotlin_the_actual_standard_best_choice_to/)
+- url: https://www.reddit.com/r/androiddev/comments/j7a48g/is_kotlin_the_actual_standard_best_choice_to/
 ---
 
-## [4][Doks: Search for your distributed documentation in one place (written in kotlin)](https://www.reddit.com/r/androiddev/comments/j6m3wr/doks_search_for_your_distributed_documentation_in/)
-- url: https://github.com/wlezzar/doks
+## [6][Is it possible to load more items from a listing API before reaching the bottom of the list?](https://www.reddit.com/r/androiddev/comments/j791wh/is_it_possible_to_load_more_items_from_a_listing/)
+- url: https://www.reddit.com/r/androiddev/comments/j791wh/is_it_possible_to_load_more_items_from_a_listing/
+---
+Hello!
+
+I am building an app that uses Paging 3 and a REST API through Retrofit, to fetch items. I have a recyclerview and I want to load more items and add them to the list before the user reaches the bottom. I'm also using LiveData and a combination of Kotlin/Java but I don't think it really matters.
+
+Any help would be greatly appreciated,
+Thanks.
+## [7][IntelliJ find and replace with regex](https://www.reddit.com/r/androiddev/comments/j7cqmx/intellij_find_and_replace_with_regex/)
+- url: https://medium.com/@vashisthg/intellij-find-and-replace-with-regex-a3f5aa885659
 ---
 
-## [5][ConstraintLayout 2.0.2](https://www.reddit.com/r/androiddev/comments/j6jdjw/constraintlayout_202/)
-- url: https://androidstudio.googleblog.com/2020/10/constraintlayout-202.html
+## [8][Using Github Actions to Automate Our Release Process](https://www.reddit.com/r/androiddev/comments/j6q5k1/using_github_actions_to_automate_our_release/)
+- url: https://riggaroo.dev/using-github-actions-to-automate-our-release-process/
 ---
 
-## [6][Wireless debugging in Android 11 off automatically when the device disconnects from the wifi and has to enable it from the setting manually.](https://www.reddit.com/r/androiddev/comments/j6p8q4/wireless_debugging_in_android_11_off/)
-- url: https://www.reddit.com/r/androiddev/comments/j6p8q4/wireless_debugging_in_android_11_off/
+## [9][Consume REST API from Kotlin?](https://www.reddit.com/r/androiddev/comments/j7b3wr/consume_rest_api_from_kotlin/)
+- url: https://www.reddit.com/r/androiddev/comments/j7b3wr/consume_rest_api_from_kotlin/
 ---
-I have been using wireless debugging.
+Hi all,
 
-Is there any way to turn on wireless debugging automatically when the device connects to a trusted network again?
+No matter what method I try (googling like a demon), I cannot get this to work.
 
-I have also look for the developer options API to turn the wireless debugging on automatically. So I can make quick tile. However, API is not available for the wireless debugging. In addition, setting search history deleted after some time (1 or 2 days.) and no shortcut available for the wireless debugging. :(
-## [7][Android Studio 4.0.2 is now available](https://www.reddit.com/r/androiddev/comments/j69spi/android_studio_402_is_now_available/)
-- url: https://www.reddit.com/r/androiddev/comments/j69spi/android_studio_402_is_now_available/
+Nearly every single example I have found online doesn't compile - and the couple that do, simply don't work, or crash the app out with no error the moment I attempt to connect.
+
+Someone here must know the easiest way to make a simple GET request to a third-party API and iterate through the JSON result?
+
+I'm starting to wonder if it's possible - despite, I should think, nearly every app out there needing to do something similar.
+
+So far, this is the closest I've got:
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val text = "Hello toast!"
+        val duration = Toast.LENGTH_SHORT
+        val toast = Toast.makeText(applicationContext, text, duration)
+        toast.show()
+
+        val button = findViewById&lt;Button&gt;(R.id.button)
+        button?.setOnClickListener()
+        {
+            Toast.makeText(
+                this@MainActivity,
+                "hello again", Toast.LENGTH_LONG
+            ).show()
+            sentGet()
+        }
+    }
+
+    private fun sentGet() {
+        val url = URL("http://www.google.com/")
+
+        with(url.openConnection() as HttpURLConnection) {
+            requestMethod = "GET"  // optional default is GET
+
+            println("\nSent 'GET' request to URL : $url; Response Code : $responseCode")
+
+        }
+    }
+
+But when I click the button, the app simply disappears without a word.
+## [10][Worth nagging users for a review?](https://www.reddit.com/r/androiddev/comments/j70wr4/worth_nagging_users_for_a_review/)
+- url: https://www.reddit.com/r/androiddev/comments/j70wr4/worth_nagging_users_for_a_review/
 ---
-[https://androidstudio.googleblog.com/2020/10/android-studio-402-available.html](https://androidstudio.googleblog.com/2020/10/android-studio-402-available.html)
-## [8][What About Jetpack? Is it commonly used in business right now?](https://www.reddit.com/r/androiddev/comments/j6jmps/what_about_jetpack_is_it_commonly_used_in/)
-- url: https://www.reddit.com/r/androiddev/comments/j6jmps/what_about_jetpack_is_it_commonly_used_in/
----
-I'm in the process of learning Android Development and I love it. A lot to learn, for sure, but who cares when Android Studio has drag-and-drop and Kotlin is a genuinely fun language. But I keep hearing and reading stuff about Jetpack.
+I think it's a bad user experience to ask a user to rate the app or show an in-app rating. We interrupt the user and then ask for a favor.
 
-Out of everything I've read, which is mainly from the Android Developer website, Jetpack makes Android Development a lot easier and more concise. Well, except for one guy on here who claimed is just isn't used much in the business world. So, I figured I'd ask you all.
+Wanted to find out if that was just my personal opinion. Ran a small survey and Android users agree it is annoying... but users also said they wouldn't give a rating otherwise.
 
-Is Jetpack common in business today? Should I become familiar with it alongside Kotlin/XML? Thanks in advance for any input.
-## [9][HUMBLE BOOK BUNDLE: IOS &amp; ANDROID MOBILE DEVELOPMENT BY PACKT Get Flutter for Beginners, Xamarin.Forms Projects and more! US$1,286 WORTH OF AWESOME STUFF PAY US$1 OR MORE](https://www.reddit.com/r/androiddev/comments/j6pwxu/humble_book_bundle_ios_android_mobile_development/)
-- url: https://www.humblebundle.com/books/ios-android-mobile-development-packt-books?partner=mfasula&amp;charity=2175662
----
+How do you balance the need for reviews without irritating users?
 
-## [10][How to make animations like playstore?](https://www.reddit.com/r/androiddev/comments/j6c4vx/how_to_make_animations_like_playstore/)
-- url: https://v.redd.it/trrtvcyt3jr51
+Has anything you've tried backfired?
+
+Data: [https://datastudio.google.com/s/luyhD0TXrVs](https://datastudio.google.com/s/luyhD0TXrVs)
+## [11][Can force stop phone calling in flutter?](https://www.reddit.com/r/androiddev/comments/j7ax95/can_force_stop_phone_calling_in_flutter/)
+- url: https://www.reddit.com/r/androiddev/comments/j7ax95/can_force_stop_phone_calling_in_flutter/
 ---
 
-## [11][Accord : Automated performance measurements that easily integrates with existing CI infrastructure.](https://www.reddit.com/r/androiddev/comments/j6pbc4/accord_automated_performance_measurements_that/)
-- url: https://github.com/naman14/Accord
+## [12][Billing V3 problems. IAP being consumed or expiring](https://www.reddit.com/r/androiddev/comments/j77z8v/billing_v3_problems_iap_being_consumed_or_expiring/)
+- url: https://www.reddit.com/r/androiddev/comments/j77z8v/billing_v3_problems_iap_being_consumed_or_expiring/
 ---
+Been running v1 billing for years, no trouble, forced to move to V3 and having some big problems. My beta build appears to be expiring IAP. They work for a while while then disappear seemingly for good, like they are a consumable.  I haven't changed anything store side and my purchasing code is mostly the same, aside for the minor changes to support the updated library (mostly changes to BillingResult).
 
-## [12][Different active users number between the new and the old Google Play Console](https://www.reddit.com/r/androiddev/comments/j6kl2x/different_active_users_number_between_the_new_and/)
-- url: https://www.reddit.com/r/androiddev/comments/j6kl2x/different_active_users_number_between_the_new_and/
----
-I was doing a comparison between the two version, when I noticed that the active users numbers in app list is different from the old version.  
+The purchase workflow appears to be working, after buying, I get my feature, but soon afterwards it's gone again.
 
-I want to know which version has the most recently updated active users number?
+Got some Beta testers that have lost their purchases, and not overly happy..  I could give them codes to get their purchases back, bit they are going to disappear again until I fix this.
+
+What have I got wrong?
+
+Thanks.

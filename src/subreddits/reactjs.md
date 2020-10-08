@@ -70,99 +70,57 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Astrofox is now open-source (React/Electron/WebGL)](https://www.reddit.com/r/reactjs/comments/j6kutn/astrofox_is_now_opensource_reactelectronwebgl/)
+## [3][React Core Team: Plans for rewriting the React docs](https://www.reddit.com/r/reactjs/comments/j72x6r/react_core_team_plans_for_rewriting_the_react_docs/)
+- url: https://github.com/reactjs/reactjs.org/issues/3308
+---
+
+## [4][Epic React: Javascript You Need To Know For React](https://www.reddit.com/r/reactjs/comments/j7afir/epic_react_javascript_you_need_to_know_for_react/)
+- url: https://blog.bhanuteja.dev/epic-react-javascript-you-need-to-know-for-react
+---
+
+## [5][React.js vs. Preact - Performance, Size and Project design](https://www.reddit.com/r/reactjs/comments/j78pkg/reactjs_vs_preact_performance_size_and_project/)
+- url: https://medium.com/javascript-in-plain-english/i-built-the-same-app-with-react-and-preact-here-are-the-differences-b0da382a6f72?source=friends_link&amp;sk=02abbeec98fe3fa4f75b60d8cba00b46
+---
+
+## [6][Astrofox is now open-source (React/Electron/WebGL)](https://www.reddit.com/r/reactjs/comments/j6kutn/astrofox_is_now_opensource_reactelectronwebgl/)
 - url: https://v.redd.it/croxwhmzslr51
 ---
 
-## [4][Which format should I ask from designer if I want such GIF graphics and display them in React Native?](https://www.reddit.com/r/reactjs/comments/j6489r/which_format_should_i_ask_from_designer_if_i_want/)
-- url: https://v.redd.it/tb9m9evyxgr51
+## [7][Looking for react electron voluntary developer](https://www.reddit.com/r/reactjs/comments/j7ct8y/looking_for_react_electron_voluntary_developer/)
+- url: https://www.reddit.com/r/reactjs/comments/j7ct8y/looking_for_react_electron_voluntary_developer/
+---
+Pm if interested
+## [8][trasnfer data from child component](https://www.reddit.com/r/reactjs/comments/j7c009/trasnfer_data_from_child_component/)
+- url: https://www.reddit.com/r/reactjs/comments/j7c009/trasnfer_data_from_child_component/
+---
+how do i access data from a child component to a parent component
+## [9][Four characters can optimize your React component - Ben Ilegbodu](https://www.reddit.com/r/reactjs/comments/j6v08t/four_characters_can_optimize_your_react_component/)
+- url: http://www.benmvp.com/blog/four-characters-optimize-react-component/
 ---
 
-## [5][Need to make a dynamic website with react and firebase for university.](https://www.reddit.com/r/reactjs/comments/j6pi0b/need_to_make_a_dynamic_website_with_react_and/)
-- url: https://www.reddit.com/r/reactjs/comments/j6pi0b/need_to_make_a_dynamic_website_with_react_and/
+## [10][Is Googles's "PageSpeed Insights" boken?](https://www.reddit.com/r/reactjs/comments/j7bjoa/is_googless_pagespeed_insights_boken/)
+- url: https://www.reddit.com/r/reactjs/comments/j7bjoa/is_googless_pagespeed_insights_boken/
 ---
-Lots of online classes and pdf notes and video tutorials.  A place to organize all of them. Thinking of creating a website, in the home page it will have cards of the subjects for e.g data structure,  computer architecture. When clicked on it., it will show two more cards pdf and video tutorials, when clicked on one it will take you to the respective page with the material. Now I want to make it all dynamic, instead of hard coding it. Through the admin panel I can create the subject cards. Any mental model or suggestions on how you would do it ?
-## [6][Dev Resources, a comprehensive list of assets, tools and learning resources](https://www.reddit.com/r/reactjs/comments/j6mzj3/dev_resources_a_comprehensive_list_of_assets/)
-- url: https://www.reddit.com/r/reactjs/comments/j6mzj3/dev_resources_a_comprehensive_list_of_assets/
----
-Dev Resources, a comprehensive list of assets, tools and learning resources for developers (and designers) has just arrived.
-
 &amp;#x200B;
 
-Folks from all levels can benefit from it:
+I am building a Gatsby site for a client that wanted a good CMS and "needed" a fast site (he had an issue with a Wix site before and is now obsessed with speed).
 
-\- if you're experienced and building your product/project
+During a meeting he pulls up the [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) based on LightHouse and checks the site. The score was 35 for mobile and 83 for desktop.
 
-\- if you're a newcomer and are starting your dev journey
+I thought there was something wrong with the site and started checking how other web apps were doing. It turned out that even major light-weight sites like "Facebook for Developers" struggled to score close to 30/40 in the mobile version.
 
-\- if you're doing the #100DaysOfCode challenge
+So now my question is: what's wrong with the mobile score that [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) gives?
 
-&amp;#x200B;
+btw you can check the site I am developing [here](https://thirsty-bell-786d5b.netlify.app/). It's still not pretty but speed wise I don't see visible issues.
 
-Go around and find what you need!
-
-&amp;#x200B;
-
-[https://devresourc.es/](https://devresourc.es/)
-## [7][How to update an atom state with Recoil?](https://www.reddit.com/r/reactjs/comments/j6qvty/how_to_update_an_atom_state_with_recoil/)
-- url: https://www.reddit.com/r/reactjs/comments/j6qvty/how_to_update_an_atom_state_with_recoil/
+How can I approach the subject with the client?
+## [11][Removing selected items (rows) from a table](https://www.reddit.com/r/reactjs/comments/j7b4e2/removing_selected_items_rows_from_a_table/)
+- url: https://www.reddit.com/r/reactjs/comments/j7b4e2/removing_selected_items_rows_from_a_table/
 ---
-I have a basic atom:
-
-    export const userAtom = atom({
-      key: "user",
-      default: { name: "joe", age: 78 } 
-    });
-
-I can correctly display user.name, but not update it with SetUser. What is wrong with this code:
-
-    function App() {
-    const [user, setUser] = useRecoilState(userAtom)
-    
-      return (
-        &lt;&gt;
-          &lt;h5&gt;Hello {user.name}&lt;/h5&gt;
-    &lt;button onClick={()=&gt; setUser(prev=&gt; ({...prev,  name: "Jack"})}&gt;update name&lt;/button&gt;
-        &lt;/&gt;
-      )
-    }
-
-Thanks!
-## [8][React Native Shared Element Transition React Navigation V5 - Episode 6](https://www.reddit.com/r/reactjs/comments/j6qqqk/react_native_shared_element_transition_react/)
-- url: https://youtu.be/pq0mAv4y0Nw
+In my app a user can select items on a table using checkboxes, and submit those items to an API. I need to "refresh" the table so that the submitted items will not be shown again. Basically, I need to "subtract" \[...selectedItems\] from \[...items\]. How can I do that?
+## [12][Library recommendations for a music streaming react app?](https://www.reddit.com/r/reactjs/comments/j7b0qg/library_recommendations_for_a_music_streaming/)
+- url: https://www.reddit.com/r/reactjs/comments/j7b0qg/library_recommendations_for_a_music_streaming/
 ---
+Hello, 
 
-## [9][How to style on a 2020 project](https://www.reddit.com/r/reactjs/comments/j6qamj/how_to_style_on_a_2020_project/)
-- url: https://www.reddit.com/r/reactjs/comments/j6qamj/how_to_style_on_a_2020_project/
----
-The thing is... It's the first time I have to decide how to style a medium size project, It feels like a big decision to me.
-
-My two cents: I've been working with SASS + React for years, but I'm really interested on adopting styled components on this big scale/durable project.
-
-What are your thoughts guys?
-## [10][Membership only site/app with ReactJS possible?](https://www.reddit.com/r/reactjs/comments/j6pqnr/membership_only_siteapp_with_reactjs_possible/)
-- url: https://www.reddit.com/r/reactjs/comments/j6pqnr/membership_only_siteapp_with_reactjs_possible/
----
-Hey guys,
-
-I'd like to build a membership only app (i.e. there's no content for non-members besides the login/register form) with ReactJS, because I really like the "snappy" feel of it and developing is really fun.
-
-But of course, since it's all JS, there's no way to really protect the "valuable" content from non-members, which sucks.
-
-Is there any tried and tested workaround/strategy for this besides serving the content via my backend (which is at least somewhat more protected)?
-
-Or is there even a way to combine server side rendering with all the perks of ReactJS?
-
-Thanks a bunch!
-## [11][Is there a way to make an action call return a promise?](https://www.reddit.com/r/reactjs/comments/j6p9yw/is_there_a_way_to_make_an_action_call_return_a/)
-- url: https://www.reddit.com/r/reactjs/comments/j6p9yw/is_there_a_way_to_make_an_action_call_return_a/
----
-Lets say I have 2 actions (createPost, createPostImage) and I want to call createPostImage after  createPost is finished.Currently I have it set up in such a way that I call createPostImage inside the createPost action body once it finishes the API call, but that kind of messes up code (it looks ugly and annoys me because I know there is a better way of doing things).
-
-One way of which I thought of doing this is making the action return a promise, and then call dispatch inside that promise, but that too looks kind of odd and i dont know if it is the correct move.
-
-How is this usually handled in Redux?
-## [12][Created a Collaborative Code Editor using React, Node.js, and socket.io](https://www.reddit.com/r/reactjs/comments/j6aott/created_a_collaborative_code_editor_using_react/)
-- url: https://v.redd.it/7iatyglmqir51
----
-
+I start working at a music streaming startup next week as a front-end developer, we're planning to use react and I was wondering if anybody that has experience with audio apps could help suggest some libraries and resources that could come in handy. I will surely tackle some challenges along the way and if someone experinced wants to be around so I can ask them questions every now and then, I'd really appreciate that too.

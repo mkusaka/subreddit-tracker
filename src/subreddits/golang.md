@@ -1,63 +1,65 @@
 # golang
-## [1][construct : Go generators for low abstraction persistence with PostgreSQL - Not an ORM](https://www.reddit.com/r/golang/comments/j6mt1u/construct_go_generators_for_low_abstraction/)
+## [1][Proposal to add errors.ErrUnsupported is accepted](https://www.reddit.com/r/golang/comments/j74okf/proposal_to_add_errorserrunsupported_is_accepted/)
+- url: https://github.com/golang/go/issues/41198#issuecomment-705078431
+---
+
+## [2][goc: A Comprehensive Coverage Testing System for Go, especially for complex scenarios, like e2e or system tests.](https://www.reddit.com/r/golang/comments/j78yp0/goc_a_comprehensive_coverage_testing_system_for/)
+- url: https://www.reddit.com/r/golang/comments/j78yp0/goc_a_comprehensive_coverage_testing_system_for/
+---
+[https://github.com/qiniu/goc](https://github.com/qiniu/goc)
+## [3][Cross Compilation (Linux-&gt;Windows)](https://www.reddit.com/r/golang/comments/j788kw/cross_compilation_linuxwindows/)
+- url: https://www.reddit.com/r/golang/comments/j788kw/cross_compilation_linuxwindows/
+---
+Hey there. I've successfully compiled an example project from Linux to Windows using Mingw-w64, however, I have to statically link the standard c and c++ libraries which drastically increases the executable size. If I don't statically link then my program throws an error on runtime specifying that it cannot locate "libstdc++6.dll" or "libgcc\_s\_seh-1.dll".
+
+Has anyone else run into this issue?
+
+Edit: I reduced the file size using the following commands:
+
+    strip --strip-unneeded test.exe
+    upx test.exe
+
+The initial strip reduced the file size to about 5,998KB from 20MB and then UPX reduced it further to  2,127KB.
+## [4][Gonum is now an "affiliated project" of NumFOCUS](https://www.reddit.com/r/golang/comments/j6uer7/gonum_is_now_an_affiliated_project_of_numfocus/)
+- url: https://www.reddit.com/r/golang/comments/j6uer7/gonum_is_now_an_affiliated_project_of_numfocus/
+---
+https://numfocus.salsalabs.org/numfocusnewsletter_september_2020?wvpId=7ed9ad03-52fb-4e84-96ee-a53d4bcadeb3
+
+how cool is that?
+yay us!
+## [5][Lateralus - Phishing campaign from terminal](https://www.reddit.com/r/golang/comments/j7cx2q/lateralus_phishing_campaign_from_terminal/)
+- url: https://www.reddit.com/r/golang/comments/j7cx2q/lateralus_phishing_campaign_from_terminal/
+---
+Hey guys, i have created tool to run phishing campaigns from terminal at following repo https://github.com/XdaemonX/lateralus. 
+
+Let me know what you think about it
+## [6][Best Language for the “Simple App”](https://www.reddit.com/r/golang/comments/j7bb9i/best_language_for_the_simple_app/)
+- url: https://www.reddit.com/r/golang/comments/j7bb9i/best_language_for_the_simple_app/
+---
+Benchmarking programming languages for Simple Hello World Rest Services. 
+
+Golang, Rust, Java(Spring Boot, Quarkus, Micronaut), NodeJS, .net Core
+
+[https://medium.com/@emreodabas\_20110/best-language-for-simple-app-979729d3e48d](https://medium.com/@emreodabas_20110/best-language-for-simple-app-979729d3e48d)
+## [7][Why is there no Try/Catch.](https://www.reddit.com/r/golang/comments/j7c8ut/why_is_there_no_trycatch/)
+- url: https://www.reddit.com/r/golang/comments/j7c8ut/why_is_there_no_trycatch/
+---
+I have been a developer for a long time and new to Go.  I understand the concept of trying to keep things to a minimum (1 way to do things).   However, why do we not get a Try/Catch paradigm for error handling?  Having used this in most other languages, its incredibly useful and saves a lot of coding rather than checking err != nil after many calls in a single function.   Any particular reason why Go leaves this out?
+## [8][File storage abstraction libraries suggestion?](https://www.reddit.com/r/golang/comments/j78q95/file_storage_abstraction_libraries_suggestion/)
+- url: https://www.reddit.com/r/golang/comments/j78q95/file_storage_abstraction_libraries_suggestion/
+---
+Hi,
+
+For my next project I'm looking for a file abstraction library for supporting both Local and S3 compatible storages (AWS S3, DigitalOcean Spaces, etc.).
+
+The only one I could found was [Stow](https://github.com/graymeta/stow) but it seems that it's no longer actively maintained (based on the unanswered issues and last commit date) and there is almost no documentation.
+
+Could you suggest another one or would you just create an interface on your own and go with it?
+## [9][construct : Go generators for low abstraction persistence with PostgreSQL - Not an ORM](https://www.reddit.com/r/golang/comments/j6mt1u/construct_go_generators_for_low_abstraction/)
 - url: https://github.com/networkteam/construct
 ---
 
-## [2][How do I mock methods in a function?](https://www.reddit.com/r/golang/comments/j6qk4t/how_do_i_mock_methods_in_a_function/)
-- url: https://www.reddit.com/r/golang/comments/j6qk4t/how_do_i_mock_methods_in_a_function/
+## [10][How do I use a bearer token with the twitter api](https://www.reddit.com/r/golang/comments/j771qe/how_do_i_use_a_bearer_token_with_the_twitter_api/)
+- url: https://www.reddit.com/r/golang/comments/j771qe/how_do_i_use_a_bearer_token_with_the_twitter_api/
 ---
-[https://play.golang.org/p/cuhMJv9Rqv4](https://play.golang.org/p/cuhMJv9Rqv4)
-
-&amp;#x200B;
-
-I wan to mock line number 36
-
-&amp;#x200B;
-## [3][Screego – multi user screen sharing via browser](https://www.reddit.com/r/golang/comments/j66vq2/screego_multi_user_screen_sharing_via_browser/)
-- url: https://app.voice.com/post/@sjkelleyjr/screego-multi-user-screen-sharing-via-browser-1601997319-1
----
-
-## [4][Best way to learn Go + JS for Web Apps](https://www.reddit.com/r/golang/comments/j6php1/best_way_to_learn_go_js_for_web_apps/)
-- url: https://www.reddit.com/r/golang/comments/j6php1/best_way_to_learn_go_js_for_web_apps/
----
-***Background***: I'm a student, I'm profound in Java, know the basics of Go and know the basics of JS. I'm tasked with creating a specific web app over the span of several months. 
-
-***Initial thoughts***:
-
-\- Go for backend (as apposed to PHP)
-
-\- Angular or something alike for frontend
-
-***My take***: 
-
-As I would have to learn almost everything from scrath with fairly limited time, I thought of signing up for a Udemy course, such as this one: [https://www.udemy.com/course/go-programming-language/](https://www.udemy.com/course/go-programming-language/). However, I would still need to learn how to use Angular.
-
-**What would you say is the best/easiest way to learn fullstack web development using Go (and maybe Angular)?** Will the Udemy course teach me everything I need to know, in order to develope a web application, including database integration, users login, etc.?
-## [5][Go Modules Done Better](https://www.reddit.com/r/golang/comments/j6n0xp/go_modules_done_better/)
-- url: https://medium.com/ckeyes88/go-modules-done-better-ae09783ae2f8?source=friends_link&amp;sk=0d7f8c48fac2ab8670a3ec0c4c07cbe6
----
-
-## [6][Embedding Python in Go](https://www.reddit.com/r/golang/comments/j6q7hu/embedding_python_in_go/)
-- url: https://www.reddit.com/r/golang/comments/j6q7hu/embedding_python_in_go/
----
-[https://poweruser.blog/embedding-python-in-go-338c0399f3d5](https://poweruser.blog/embedding-python-in-go-338c0399f3d5)
-## [7][Webhook Sentry: A secure egress proxy for webhooks](https://www.reddit.com/r/golang/comments/j6aibs/webhook_sentry_a_secure_egress_proxy_for_webhooks/)
-- url: https://github.com/juggernaut/webhook-sentry
----
-
-## [8][Continuous Delivery for Declarative Kubernetes, Serverless and Infrastructure Applications, written in Go](https://www.reddit.com/r/golang/comments/j65nqg/continuous_delivery_for_declarative_kubernetes/)
-- url: https://pipecd.dev/blog/2020/10/06/announcing-pipecd/
----
-
-## [9][I discovered sentry recently. Do I need to log all the same info into it in addition to logs and traces?](https://www.reddit.com/r/golang/comments/j6cujd/i_discovered_sentry_recently_do_i_need_to_log_all/)
-- url: https://www.reddit.com/r/golang/comments/j6cujd/i_discovered_sentry_recently_do_i_need_to_log_all/
----
-Website and golang client lib looks really good so it's probably a good thing.
-
-As I understand, if some unexpected (expected actually if I am ready to send it to the sentry) situation happens, I need to put all the context to the event and send it to the sentry. I also should do the same for logs and traces, or they are mutually exclusive?
-
-Do I need to use `sentry.Capture*` in all `if err != nil {` or in one such `if` on top level function call, like: `err := handleSomeRequest(args); if err != nil { sentry.CaptureException(err) }` ?
-## [10][bit: an experimental git CLI with a powerful interactive prompt and happy defaults](https://www.reddit.com/r/golang/comments/j5wggn/bit_an_experimental_git_cli_with_a_powerful/)
-- url: https://github.com/chriswalz/bit
----
-
+I've been trying to use the new twitter api with golang for a fun project and while everything works in insomina, I cannot get the bearer token to work in golang. How do I get authorized using the bearer token  with my request? I've tried doing r*eq.Header.Add("Authorization","Bearer " + bearer)* and making my request but had no luck.

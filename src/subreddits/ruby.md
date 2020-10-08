@@ -1,5 +1,41 @@
 # ruby
-## [1][μ-observers - Simple and powerful implementation of the observer pattern.](https://www.reddit.com/r/ruby/comments/j6qle5/μobservers_simple_and_powerful_implementation_of/)
+## [1][Polyphony has an io_uring backend!](https://www.reddit.com/r/ruby/comments/j79rmc/polyphony_has_an_io_uring_backend/)
+- url: https://www.reddit.com/r/ruby/comments/j79rmc/polyphony_has_an_io_uring_backend/
+---
+I am pleased to announce the release of [Polyphony](https://github.com/digital-fabric/polyphony) version 0.46.0, which includes a full-blown io\_uring backend. The io\_uring backend uses a relatively recent new I/O API in Linux that is the future of I/O processing. The new backend provides more than double the performance of the libev backend, achieving **over 120K requests/second** using a basic "Hello world" HTTP server.
+
+Those of you unfamiliar with io\_uring can head over to the [Lord of the io\_uring website](https://unixism.net/loti/index.html). The io\_uring backend is automatically used on Linux with kernel version 5.6 or higher.
+
+For more information on the new io\_uring backend, including preliminary benchmark numbers and design details you can consult the [pull request](https://github.com/digital-fabric/polyphony/pull/44). The source code for the io\_uring backend in all its glory can be found[ here](https://github.com/digital-fabric/polyphony/blob/master/ext/polyphony/backend_io_uring.c).
+
+For more information on Polyphony please consult the (slightly outdated) [Polyphony docs](https://digital-fabric.github.io/polyphony/).
+## [2][Getting started with Tailwind CSS on Rails 6](https://www.reddit.com/r/ruby/comments/j78xd7/getting_started_with_tailwind_css_on_rails_6/)
+- url: https://rubyyagi.com/tailwind-css-on-rails-6-intro/
+---
+
+## [3][What makes Ruby such a good language for creating DSLs ?](https://www.reddit.com/r/ruby/comments/j79fd2/what_makes_ruby_such_a_good_language_for_creating/)
+- url: https://www.reddit.com/r/ruby/comments/j79fd2/what_makes_ruby_such_a_good_language_for_creating/
+---
+I have no formal education in computer science, I have bussiness background, but was always interested in programming since young age. Lately I am working through [https://teachyourselfcs.com/](https://teachyourselfcs.com/)
+
+I am now working through classic SICP, apparently it later discusses creating language as another way of abstraction (complementing functional programming and OOP).
+
+Now, I have an ecommerce company where I have created some tools in Python. Mainly doing some http requests, automating sending emails,  downloading xml files, processing them, filtering products from warehouses etc. So mostly command line tools. Probably it will be rewritten soon to a server program that continously works in the background.
+
+I am looking for a language where I can experiment with ideas of: functional programming (doesn't have to be pure FP), OOP (I am very interested in fully grasping OOP, it so my worst area right now), metaprogramming.
+
+So right now I am somewhat productive in Python and need to decide, do I fully commit to Python or pivot to some other language. I don't have that much time to waste but on the other side, I would rather learn something where I can have more freedom to explore and learn advanced subjects.
+
+Here is my question: why is Ruby so known for creating DSL languages ? Why is metaprogramming such and important concept there and not in Python ? Python have decorators, metaclassess and AST module, how is Ruby in this regard ? Why is everyone in Python scared to touch those tools ? Are Python metaclasses not powerfull enough ?
+
+I also hate the word 'pythonic' and community insitance on using uniform programming style for each problem.
+## [4][How to generate fake text in multiple languages](https://www.reddit.com/r/ruby/comments/j79nvn/how_to_generate_fake_text_in_multiple_languages/)
+- url: https://www.reddit.com/r/ruby/comments/j79nvn/how_to_generate_fake_text_in_multiple_languages/
+---
+I'm trying to generate random words in multiple languages. Something like Faker::Lorem.words
+
+How would I do this in Ruby
+## [5][μ-observers - Simple and powerful implementation of the observer pattern.](https://www.reddit.com/r/ruby/comments/j6qle5/μobservers_simple_and_powerful_implementation_of/)
 - url: https://www.reddit.com/r/ruby/comments/j6qle5/μobservers_simple_and_powerful_implementation_of/
 ---
 &amp;#x200B;
@@ -37,11 +73,60 @@ https://preview.redd.it/468dj9y59or51.png?width=1471&amp;format=png&amp;auto=web
 https://preview.redd.it/emcwu2kp9or51.png?width=1259&amp;format=png&amp;auto=webp&amp;s=3e109c21d9183d7188929194b130ac06f2d7b761
 
 What do you think about it? Does it look good?
-## [2][dogweather/non_empty_array](https://www.reddit.com/r/ruby/comments/j6jbzv/dogweathernon_empty_array/)
-- url: https://github.com/dogweather/non_empty_array
+## [6][How's the Performance of Ruby 3.0.0-preview1?](https://www.reddit.com/r/ruby/comments/j6ssd0/hows_the_performance_of_ruby_300preview1/)
+- url: https://www.fastruby.io/blog/rails/performance/ruby/hows-the-performance-of-ruby-3.0.0-preview1.html
 ---
 
-## [3][Does ruby apply options in the hashbang even if it's called explicitly?](https://www.reddit.com/r/ruby/comments/j6muvf/does_ruby_apply_options_in_the_hashbang_even_if/)
+## [7][Multitenancy with Postgres schemas: key concepts explained](https://www.reddit.com/r/ruby/comments/j6wxp3/multitenancy_with_postgres_schemas_key_concepts/)
+- url: https://blog.arkency.com/multitenancy-with-postgres-schemas-key-concepts-explained/
+---
+
+## [8][Generating an Increasing unique number](https://www.reddit.com/r/ruby/comments/j6sbjt/generating_an_increasing_unique_number/)
+- url: https://www.reddit.com/r/ruby/comments/j6sbjt/generating_an_increasing_unique_number/
+---
+ I want to create an unique value. preferably something that's user friends  i.e. a-z and maybe numbers. 
+
+Approach 1. 
+
+for generating numbers 
+
+  
+I did something like this. 
+
+     (Time.now.to_f * 100000).to_i
+
+And locally it does look like it does it.   
+
+
+    2.4.7 :050 &gt; 10.times do 
+    2.4.7 :051 &gt;     puts (Time.now.to_f * 100000).to_i
+    2.4.7 :052?&gt;   end
+    160207178626801
+    160207178626804
+    160207178626805
+    160207178626806
+    160207178626807
+    160207178626808
+    160207178626809
+    160207178626810
+    160207178626811
+    160207178626812
+     =&gt; 10
+
+Approach 2.   
+
+
+Generating a hex and then converting to base 26. However I'm not sure if this will be unique.   
+
+
+Can someone help me out with this?
+## [9][Array.select question](https://www.reddit.com/r/ruby/comments/j6vkqb/arrayselect_question/)
+- url: https://www.reddit.com/r/ruby/comments/j6vkqb/arrayselect_question/
+---
+&amp;#x200B;
+
+[Hey guys when I use this code it just returns the original array. When I use array.select! and mutate the original array it works but why? Shouldn't array.select return an array with all elements that return true without modifying the existing array? Thanks.](https://preview.redd.it/swvwmukumpr51.png?width=279&amp;format=png&amp;auto=webp&amp;s=a6efc4d8f30b961b46b5445971035b594c4005cd)
+## [10][Does ruby apply options in the hashbang even if it's called explicitly?](https://www.reddit.com/r/ruby/comments/j6muvf/does_ruby_apply_options_in_the_hashbang_even_if/)
 - url: https://www.reddit.com/r/ruby/comments/j6muvf/does_ruby_apply_options_in_the_hashbang_even_if/
 ---
 I put `-wU` in the hashbang. Do I still need the `encoding` magic comment for case I decided to call `ruby file.rb` instead of just `./file.rb`? If I don't, is this consistent across all platforms?
@@ -49,77 +134,7 @@ I put `-wU` in the hashbang. Do I still need the `encoding` magic comment for ca
 What about when there's `env` in the hashbang?
 
 Edit: okay, it *does* read the options, sorry for asking before trying. But still I can't test on other OSs than Linux, can please someone here try?
-## [4][Help with Inject](https://www.reddit.com/r/ruby/comments/j6e5y5/help_with_inject/)
-- url: https://www.reddit.com/r/ruby/comments/j6e5y5/help_with_inject/
----
-&amp;#x200B;
 
-[In this problem we take in an unknown quantity of numbers and find the common divisors between them all. The factors method finds all of the factors for each number. Once we do nums.map we get a 2D array, each array contains all of the factors of the original number. I don't understand why we can then just .inject that 2D array to get all of the common elements of the arrays? Thanks](https://preview.redd.it/4uy1vw86mjr51.png?width=655&amp;format=png&amp;auto=webp&amp;s=e45e022b73aed51f20f806da7374d66d5ddb9e5d)
-## [5][Rails 6 and Stimulus.js - a quick and painless launch](https://www.reddit.com/r/ruby/comments/j62skn/rails_6_and_stimulusjs_a_quick_and_painless_launch/)
-- url: https://longliveruby.com/articles/rails-6-stimulus-js
----
-
-## [6][Is there a gem for XML to JSON convertion?](https://www.reddit.com/r/ruby/comments/j6ht5w/is_there_a_gem_for_xml_to_json_convertion/)
-- url: https://www.reddit.com/r/ruby/comments/j6ht5w/is_there_a_gem_for_xml_to_json_convertion/
----
-Hi there 
-I have a request to process a XML file 
-I got pretty surprised why an api return XML file instead of JSON 
-So i am wondering if would be more productive have this file First Converted to a JSON before start my data manipulation code . 
-
-Any thougths ? Is there any node package or Ruby gem for that?
-Best Regards
-## [7][Return to a pervious part of the code](https://www.reddit.com/r/ruby/comments/j6b428/return_to_a_pervious_part_of_the_code/)
-- url: https://www.reddit.com/r/ruby/comments/j6b428/return_to_a_pervious_part_of_the_code/
----
-Hello, Everyone!
-
-I am working on creating a password manager out of boredom. What I have now is just a bare metal way of controlling users. I'm using pretty simple control flow and a method to achieve this. It works well, but one part of it I can't figure out.
-
-\---Snip---
-
-puts "Choose profile to begin."puts ""puts "BlakeDianeOther"def user()u = gets.chompenduser = user().downcasewhile user doif user == "blake"puts "Enter Password"breakelsif user == "diane"puts "Enter Password:"breakelsif user == "other"puts "Enter username:"breakelseputs "Please choose your profile..."breakendendif user == "blake"branpass = gets.chompelsif user == "diane"despass = gets.chompelsif user == "other"othuser = gets.chompelsereturnendbranpasscheck = "Password000"despasscheck = "Passwor001"othusercheck = "Johnny".downcasewhile user doif branpass == branpasscheck and user == "blake"puts "Unlocking: Blake"breakelsif despass == despasscheck and user == "diane"puts "Unlocking: Diane"breakelsif othuser == othusercheck and user == "other"puts "Redirecting to Password set..."breakelseputs "Password invalid..."return user()endend
-
-\---Snip---
-
-This basically lists the users and allows you to choose the user that you want. One you choose the user, it prompts for a password.
-
-My issue is that when I get to the point of validating the predetermined password, if it is correct, it works, but it if is incorrect, I can't figure out how to get it to loop back to inputting the password until it is correct. Would define the password validation as a method and calling it when it is incorrect work?
-
-Any help is appreciated!
-
-&amp;#x200B;
-
-EDIT: I apologize for the formatting of the code. 
-## [8][Why You Should Migrate your Heroku Postgres Database to AWS RDS](https://www.reddit.com/r/ruby/comments/j61rm6/why_you_should_migrate_your_heroku_postgres/)
-- url: https://pawelurbanek.com/heroku-postgres-aws-rds
----
-
-## [9][GVL/GIL free concurrency?](https://www.reddit.com/r/ruby/comments/j67ayj/gvlgil_free_concurrency/)
-- url: https://www.reddit.com/r/ruby/comments/j67ayj/gvlgil_free_concurrency/
----
-I am looking for something like `Thread`s concurrency, but without GVL, so far I tried a couple of gems like Async and Polyphony, but those involve fibers, I am looking for something about true parallel execution.
-## [10][Trouble with \W regex matcher in Ruby](https://www.reddit.com/r/ruby/comments/j65t4d/trouble_with_w_regex_matcher_in_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/j65t4d/trouble_with_w_regex_matcher_in_ruby/
----
-I need to remove all non-word via regex and this is how I do it.   
-
-
- In English, it works fine. 
-
-    2.4.7 :010 &gt; 'hello  $%'.gsub(/\W/, '')
-     =&gt; "hello" 
-
-But when I try with Japanese,   
-
-
-    2.4.7 :009 &gt; 'こんにちは  $%'.gsub(/\W/, '')
-     =&gt; ""
-
-the word here is "hello" in Japanese but regex thinks it's a not a word and removes it   
-
-
-Can someone help me why this is happening and how to fix this? I was under the impression that regex would handle different languages.   
-
-
-PS. I tried the same in Python 2 and well and the behavior was just like here.
+Edit 2: Looking through the source, there's a testcase for it:
+* Link fixed on current commit: &lt;https://github.com/ruby/ruby/blob/62abdbadf2937372924ef68aadff5191fc0f0880/test/ruby/test_rubyoptions.rb#L421&gt;
+* Link fixed on `master` (no guarantee it'll survive till the end) &lt;https://github.com/ruby/ruby/blob/master/test/ruby/test_rubyoptions.rb#L421&gt;

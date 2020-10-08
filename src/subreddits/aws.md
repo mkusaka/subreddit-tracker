@@ -6,101 +6,85 @@ Thrilled to expand the mod team in order better serve the community. As /r/aws g
 
 
 Please give him a nice /r/aws welcome and let us know how we can improve things together going forward.
-## [2][Introducing Distributed Load Testing Solution from AWS](https://www.reddit.com/r/aws/comments/j6ga4c/introducing_distributed_load_testing_solution/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/10/introducing-distributed-load-testing-v1-1/
+## [2][GraphQL Tools &amp; libraries pt.3](https://www.reddit.com/r/aws/comments/j7bltp/graphql_tools_libraries_pt3/)
+- url: https://blog.graphqleditor.com/graphql-tools-part3/
 ---
 
-## [3][AWS IAM role impersonation to HashiCorp Vault vulnerability](https://www.reddit.com/r/aws/comments/j6cmb0/aws_iam_role_impersonation_to_hashicorp_vault/)
-- url: https://googleprojectzero.blogspot.com/2020/10/enter-the-vault-auth-issues-hashicorp-vault.html
+## [3][The Complete AWS Lambda Handbook for Beginners (Part 1)](https://www.reddit.com/r/aws/comments/j6tlnf/the_complete_aws_lambda_handbook_for_beginners/)
+- url: https://dashbird.io/blog/complete-aws-lambda-handbook-beginners-part-1/
 ---
 
-## [4][Cloudwatch Event Pattern Event Rule Limit](https://www.reddit.com/r/aws/comments/j6qso5/cloudwatch_event_pattern_event_rule_limit/)
-- url: https://www.reddit.com/r/aws/comments/j6qso5/cloudwatch_event_pattern_event_rule_limit/
+## [4][New – Redis 6 Compatibility for Amazon ElastiCache](https://www.reddit.com/r/aws/comments/j70d5r/new_redis_6_compatibility_for_amazon_elasticache/)
+- url: https://aws.amazon.com/blogs/aws/new-redis-6-compatibility-for-amazon-elasticache/
 ---
-We are trying to setup our cloudwatch to monitor 250+ servers. However, there are ec2 instances that are only started on-demand basis. This doesn't allow us to use "Any resource" as the it will include the instances that are intentionally stopped. Is there a way to exclude those stopped instances? Or is our only choice is to create multiple pattern event rules?
-## [5][Revisiting CDK project](https://www.reddit.com/r/aws/comments/j6q06v/revisiting_cdk_project/)
-- url: https://www.reddit.com/r/aws/comments/j6q06v/revisiting_cdk_project/
+
+## [5][reuse cloudfront for dev, test and prod?](https://www.reddit.com/r/aws/comments/j7a4qc/reuse_cloudfront_for_dev_test_and_prod/)
+- url: https://www.reddit.com/r/aws/comments/j7a4qc/reuse_cloudfront_for_dev_test_and_prod/
 ---
-It's been 6 months since I last looked at my first CDK project that is now running in production. However, I have a slight problem.
+Due to company policies, our global security team runs an uninformed Qualys scan on every CloudFront we have. This results in roughly 50k requests every other day (it scans for everything you can imagine, even WordPress and Joomla even though we don't use that).
 
-We want to expand with a development setup that is identical to production. I made everything into reusable components back in March (with DTAP tags and everything). I haven't made any changes to the code, but when I run
-
-    cdk diff
-
-it shows that it wants to add a bunch of resources. I'm a bit scared it will completely fuck up my production environment or that it will create a new production environment. Does anyone have any tips or guidelines that could help me? Or is it better if I clone this repository and start fresh to make sure my Dev deployment won't accidentally mess with production?
-## [6][What was your AHA moment using AWS?](https://www.reddit.com/r/aws/comments/j6f58g/what_was_your_aha_moment_using_aws/)
-- url: https://www.reddit.com/r/aws/comments/j6f58g/what_was_your_aha_moment_using_aws/
+To avoid doubling or tripling our costs, can I reuse a cloudfront that points to [dev.example.com](https://dev.example.com) and [test.example.com](https://test.example.com) ? Do I need to reuse my bucket for that as well or can those be separate?
+## [6][Testing tomorrow](https://www.reddit.com/r/aws/comments/j7cwx0/testing_tomorrow/)
+- url: https://www.reddit.com/r/aws/comments/j7cwx0/testing_tomorrow/
 ---
-Either the moment when you understood its full potential or when you knew that AWS was the right set of tools for your path?
-## [7][What's the proper way to troubleshoot site-to-site VPN (GRE stage)?](https://www.reddit.com/r/aws/comments/j6pf36/whats_the_proper_way_to_troubleshoot_sitetosite/)
-- url: https://www.reddit.com/r/aws/comments/j6pf36/whats_the_proper_way_to_troubleshoot_sitetosite/
+I’m testing for the Practitioner tomorrow. I’ve been studying for the past 3 weeks for this and every practice test I find I fail. Admittedly, I would be able to recite everything I’ve studied and I expect to get some answers wrong but failing these practice tests is starting to give me doubts. Anyone have any tips or advice I can use in my last 24 hours before the test?
+## [7][What DB for Lambda to work with GEO SPATIAL data?](https://www.reddit.com/r/aws/comments/j78pyb/what_db_for_lambda_to_work_with_geo_spatial_data/)
+- url: https://www.reddit.com/r/aws/comments/j78pyb/what_db_for_lambda_to_work_with_geo_spatial_data/
 ---
-Hello,
+Hi Guys,
 
-I'm configuring subj from Customer Gateway (CG) to Virtual Private Gateway (VPG).
-
-Ipsec tunnel as it is starts normal, on VPG side both redundant tunnels are in state "IPSEC IS UP", from CG side (strongswan) - ipsec status also in state established.
-
-But when i try to ping inner GRE address from CG to VPG - no luck, no reply packets. Tcpdump shows no activity from VPG side.  
-No specific firewall rules on CG side. This machine keeps other ipsec tunnels with no problem, and new endpoints added as new items in ipset lists.  
-What options do i have to troubleshoot the problem?  
-Because aws troubleshooting guide has only one advise for this kind of situation "review your tunnel interface configuration to make sure that the proper IP address is configured" :)  
-[https://docs.aws.amazon.com/vpn/latest/s2svpn/Generic\_Troubleshooting.html](https://docs.aws.amazon.com/vpn/latest/s2svpn/Generic_Troubleshooting.html)
-## [8][ECS + Windows Containers](https://www.reddit.com/r/aws/comments/j6oz1y/ecs_windows_containers/)
-- url: https://www.reddit.com/r/aws/comments/j6oz1y/ecs_windows_containers/
+What would you recommend to use to be able to store and query (efficiently) spatial data with a serverless app on AWS?  
+I am working with Node and there is a lib for geo hash for DynamoDB but its support is pretty uncertain, so I am not sure about it and unfortunately, DynamoDB does not support spatial data out of the box.  
+I thought about using Mongo Atlas hosted in same DC, but network peering is available from M10 which is $70/month which does not go well with cost scaling and without it, first of all, will be slower and it will incur fees for data transfer out of AWS (pretty stupid...).  
+Maybe someone has some experience with similar serverless app on AWS?
+## [8][Any lamda sample/tutorial to serve a static website from S3?](https://www.reddit.com/r/aws/comments/j79j8e/any_lamda_sampletutorial_to_serve_a_static/)
+- url: https://www.reddit.com/r/aws/comments/j79j8e/any_lamda_sampletutorial_to_serve_a_static/
 ---
-I have a bunch of Windows instances that aren’t important but need to be available for end users who need them, which is very infrequently but could be anytime of the day.
+This is what I post earlier:
 
-Considering containerising them and running the workloads inside ECS, does anyone have experience with a similar setup or other suggestions?
+[https://www.reddit.com/r/aws/comments/j6imbx/tried\_to\_build\_my\_personal\_blog\_using\_aws\_static/](https://www.reddit.com/r/aws/comments/j6imbx/tried_to_build_my_personal_blog_using_aws_static/)
 
-I use instance scheduler to schedule systems down when possible but these are low utilisation systems that need to be available 24x7.
-## [9][Feature request: target S3 static site with an ALB](https://www.reddit.com/r/aws/comments/j6orzo/feature_request_target_s3_static_site_with_an_alb/)
-- url: https://www.reddit.com/r/aws/comments/j6orzo/feature_request_target_s3_static_site_with_an_alb/
+I want to serve folder with HTML files on S3, Couldn't find on google
+
+Please help, thank you
+## [9][403 error when uploading file to S3 from browser](https://www.reddit.com/r/aws/comments/j7bypr/403_error_when_uploading_file_to_s3_from_browser/)
+- url: https://www.reddit.com/r/aws/comments/j7bypr/403_error_when_uploading_file_to_s3_from_browser/
 ---
-Hi everyone,
+I'm trying to upload file from browser direct to S3 presigned url.  And uploading always gets stuck at \~80% and throws 403 Forbidden error (without response body).
 
-I want to preface the following by noting that this is not a support request.
+I use PHP (Laravel) backend to generate presigned url:
 
-I'm finding myself in the situation where I have an ALB with a path prefix that proxies to some Docker containers in Fargate. However the rest of the site is static so I would like to just make a static S3 site, offload TLS at the ALB, proxy what doesn't go to Fargate to the S3 site, and Bob would be your proverbial uncle.
+    $s3 = Storage::disk('s3');
+    $client = $s3-&gt;getDriver()-&gt;getAdapter()-&gt;getClient();
+    $expiry = "+1 hour";
+    
+    $command = $client-&gt;getCommand('GetObject', [
+        'Bucket' =&gt; config('filesystems.disks.s3.bucket'),
+        'Key'    =&gt; Str::random(10),
+        'ContentType'    =&gt; 'video/mp4',
+    ]);
+    
+    $request = $client-&gt;createPresignedRequest($command, $expiry);
+    
+    return response()-&gt;json([
+        'uri' =&gt; (string) $request-&gt;getUri(),
+    ]);
 
-I am surprised to find that that is not possible out of the box. I can set up an EC2 instance, or something like Fargate, or redirect to another site, but if I want to have:
+And then execute PUT request with axios from browser:
 
-- a single domain - one (1) domain,
-- with an S3 site
-- and an API endpoint of some kind in ECS
-- and cheap or free TLS
-- and I want to do all of that serverlessly,
-
-...then I need to spin up CloudFront in addition to the ALB I need for the ECS stuff. For various reasons I prefer an ALB for this over CloudFront.
-
-I know folks who work for AWS read this, so I'd like to submit the feature request that directly adding a static S3 bucket as a target to an ALB is something I for one would very much appreciate - as a matter of fact I actually totally expected it to be a thing, because it honestly seems like a super obvious feature to me. Of course, that may just be me because apparently it's not obvious to AWS. :)
-## [10][How can I guarantee performance globally?](https://www.reddit.com/r/aws/comments/j6hhb4/how_can_i_guarantee_performance_globally/)
-- url: https://www.reddit.com/r/aws/comments/j6hhb4/how_can_i_guarantee_performance_globally/
+    const options = {
+        headers: {
+            'Content-Type': file.type,
+            'x-amz-acl': 'public-read',
+        },
+    };
+    
+    axios.put(signedUrl, file, options);
+## [10][Has anyone used ChatQL?](https://www.reddit.com/r/aws/comments/j7b25h/has_anyone_used_chatql/)
+- url: https://www.reddit.com/r/aws/comments/j7b25h/has_anyone_used_chatql/
 ---
-I've been given the task of making sure our Website/Mobile application performs well globally.  All our backend infrastructure runs in AWS (with Cloudflare sitting infront of everything). We are using Lambdas and API Gateway to run our api and backend. Our frontend application run in ECS. And the bulk of our content sits in S3 (\~5TB), with \~500gb in databases
-
-There seems to be a suggestion from colleagues of duplicating infrastructure (e.g. RDS, DyanmoDB, Compute platforms) and running it in different global regions, so that requests can be processed closer to the user/client . And then try and sync data between the different geographical regions to keep things up to date. But to me this sounds like a headache, not to mention expensive. 
-
-The easier option (and my more preferred option) would be to serve media content (e.g. images, large files) via a CDN, which can serve our content from different nodes around the world. The data processing would still be happening in the primary region (e.g. us-east-1) but large files would be served from a CDN located close to the clients location.
-
-Would be great to get some recommendations.
-
-Thanks
-## [11][SQS - fifo queues and retention behaviour](https://www.reddit.com/r/aws/comments/j6nyxe/sqs_fifo_queues_and_retention_behaviour/)
-- url: https://www.reddit.com/r/aws/comments/j6nyxe/sqs_fifo_queues_and_retention_behaviour/
+I want to use AWS AppSync. I wanted to have Chat functionality in my app so my friend suggested me to use ChatQL. The feature I am looking most in ChatQL is to notify the sender that msg has been delivered or not, whether it is read by the receiver or not, along with caching functionality. I am using React Native on client side. Does anyone has experience with ChatQL? Is there any other service from aws which provides real time msg sending along with informing sender whether msg delivered to receiver or not, caching etc. It could be GraphQL or REST architecture. I was using Nodejs socket io lib for real time chat but I needed some trigger for whether msg was send correctly or not. Of course I can create those triggers on my own but I want to stay away from it as there is a high chance I might make some mistake on my part
+## [11][Why isn't my s3 bucket secure?](https://www.reddit.com/r/aws/comments/j7azky/why_isnt_my_s3_bucket_secure/)
+- url: https://www.wolfe.id.au/2020/10/08/why-isnt-my-s3-bucket-secure/
 ---
-Hi all,
 
-We are looking at utilising SQS for our pipeline. 
-
-I was hoping somebody would be able to answer a quick hypothetical question.
-
-If we wanted to guarantee the order in which messages are processed using fifo queue type how does message retention period play a part in this process?
-
-For example, we have a few messages come into the queue and we have the first message fail to be handled by the application properly and the message is not removed.
-
-Will this result in the other messages waiting till the failed message reached the end of its retention time?
-
-I have had a look online and the aws document and couldn’t find anything referencing this sort of behaviour. 
-
-I could setup some tests to check this behaviour but I thought maybe someone who has had dealing with this before maybe able to advise to save me sometime.

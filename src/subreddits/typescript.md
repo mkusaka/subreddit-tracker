@@ -22,175 +22,215 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How to use jQuery Plugins like owl-carousel in typeScript?](https://www.reddit.com/r/typescript/comments/j6npge/how_to_use_jquery_plugins_like_owlcarousel_in/)
+## [2][Best TypeScript Node.js API Postgres Starter Kit?](https://www.reddit.com/r/typescript/comments/j771br/best_typescript_nodejs_api_postgres_starter_kit/)
+- url: https://www.reddit.com/r/typescript/comments/j771br/best_typescript_nodejs_api_postgres_starter_kit/
+---
+I see Microsoft has one for MongoDB. Not sure about it. Has too much for my test -- especially with Express.
+
+I am looking for a starter kit that has TypeScript with best practices ready to go however having express (or not) is not a deal breaker.
+
+Has anyone found anything similiar?
+## [3][TS inferring object type as null](https://www.reddit.com/r/typescript/comments/j7b0e5/ts_inferring_object_type_as_null/)
+- url: https://www.reddit.com/r/typescript/comments/j7b0e5/ts_inferring_object_type_as_null/
+---
+This is React code. Can anyone tell me why I'm facing issues with type assertion below, and how to fix it? i don't understand why `flashMessage` is inferred as a boolean type.
+
+    // outside return ()
+    const [flashMessage, setFlashMessage] = useState({});
+    
+    // inside return()
+    &lt;SnackbarContent  
+      message={ 'errors' in flashMessage as object ? 
+        flashMessage.errors : flashMessage.message }
+     /&gt;
+    
+    /* Conversion of type 'boolean' to type 'object' may 
+    be a mistake because neither type sufficiently overlaps 
+    with the other. If this was intentional, convert the expression 
+    to 'unknown' first.ts(2352) */
+    
+    
+    // removing 'as object' 
+    // Property 'message' does not exist on type '{}'.ts(2339)
+    
+    // this also fails
+      message={ 'errors' in flashMessage as Partial&lt;{ errors: string, message: string }&gt; ? flashMessage.errors : flashMessage.message }
+    
+## [4][The most useless API you will ever see](https://www.reddit.com/r/typescript/comments/j6wtlj/the_most_useless_api_you_will_ever_see/)
+- url: https://rand-api-docs.vercel.app
+---
+
+## [5][denogent - A build system built on Deno and TypeScript](https://www.reddit.com/r/typescript/comments/j72sjo/denogent_a_build_system_built_on_deno_and/)
+- url: https://www.reddit.com/r/typescript/comments/j72sjo/denogent_a_build_system_built_on_deno_and/
+---
+I want to introduce a project I've been working on for the past week\~two.
+
+[https://github.com/areller/denogent](https://github.com/areller/denogent)
+
+I was inspired by [https://nuke.build/](https://nuke.build/) which is a build system for .NET
+
+But my goal is to create a more universal build system that can be used for Deno, NodeJS, .NET, Python or any other project that needs to have a build pipeline.
+
+denogent comes as a CLI tool.
+
+You can use `denogent create` to create a `build.ts` file, where you specify your build pipeline
+
+    const compile = task('compile')
+        .does(async ctx =&gt; {
+            // compile program
+        });
+    
+    const test = task('test')
+        .dependsOn(compile)
+        .does(async ctx =&gt; {
+            // run tests
+        });
+    
+    const buildImage = task('build image')
+        .dependsOn(compile)
+        .does(async ctx =&gt; {
+            // build image
+        });
+    
+    const publishImage = task('publish image')
+        .dependsOn([test, buildImage])
+        .does(async ctx =&gt; {
+            // publish image
+        });
+
+You can then use `denogent run` to run the build pipeline locally, or use `denogent generate` to generate manifests for various CI systems. Right now, only GitHub Actions is supported but I plan to add integration with GitLab CI, Travis, Jenkins, etc...
+
+Here is what currently supported
+
+## Commands
+
+* `denogent run` \- runs the pipeline that's defined in `build.ts` locally
+* `denogent create` \- creates a `build.ts` file
+* `denogent tasks` \- gets a list of tasks (`compile`, `test`, etc...)
+* `denogent generate` \- generates manifest for a CI system (GH Actions, etc...)
+
+## CI Systems Integration
+
+* GitHub Actions
+
+## API
+
+* Runtime - run CLI commands, access secrets/arguments, etc...
+* Git - run git commands
+* FS - abstractions over the file system
+* Docker - run docker commands (build, push) + run docker services (e.g. running a database containers along side the integration tests task)
+
+## Build Kits (Integration with languages/platforms)
+
+* Deno - running tests
+* NodeJS - installing NodeJS
+
+Right now, I plan to
+
+1. Add more documentation
+2. Continue refactoring the code and increasing coverage
+3. Add support for more CI systems - Jenkins, GitLab CI, etc...
+4. Expand existing build kits (e.g. add more APIs for NodeJS)
+5. Add new build kits (e.g. dotnet, python, etc...)
+
+## Sample Projects
+
+1. [https://github.com/areller/denogent-samples-deno](https://github.com/areller/denogent-samples-deno)
+2. [https://github.com/areller/denogent-samples-nodejs](https://github.com/areller/denogent-samples-nodejs)
+
+Please share your thoughts about the project. Thank you :)
+## [6][Convincing typescript resources - talks, blog articles, studies, ...](https://www.reddit.com/r/typescript/comments/j7cw03/convincing_typescript_resources_talks_blog/)
+- url: https://www.reddit.com/r/typescript/comments/j7cw03/convincing_typescript_resources_talks_blog/
+---
+I'm looking for any kind of resources that advocate typescript. Could be an interview with some CTO talking about all the benefits they had when switching form JS to TS. Could be a tech talk ("Airbnb could have prevented 38% of bugs"). Could be a blog article.
+
+Thanks!
+## [7][How does typescript help?](https://www.reddit.com/r/typescript/comments/j7c2qi/how_does_typescript_help/)
+- url: https://www.reddit.com/r/typescript/comments/j7c2qi/how_does_typescript_help/
+---
+I've never used typescript before but recently a lot of people said me to do it and that is better for grand scale projects but they didnt really told me why. So I'm asking you now, how does typescript help you?
+## [8][I need help understanding how to share types between my front-end and back-end while using TypeORM](https://www.reddit.com/r/typescript/comments/j70br2/i_need_help_understanding_how_to_share_types/)
+- url: https://www.reddit.com/r/typescript/comments/j70br2/i_need_help_understanding_how_to_share_types/
+---
+I'm using Express w/ Typescript for my backend and React w/ Typescript for my frontend. I want to share types between them, so I don't have to duplicate code and so I can easily pass things through my Express API. 
+
+I know how to share interfaces between my Express app and React app, which I've done successfully  in the past when I was defining my types as interfaces and persisting them to Firestore.   
+
+
+I'm now using Postgres for a new project, using TypeORM, and struggling to figure out how to share types.   
+
+
+TypeORM has you use entity classes that are decorated with TypeORM decorators. This is working great for me on the backend, but using those types with my API and the client is causing me troubles.  
+
+
+Issues I'm running into:  
+1) Using the TypeORM entities in my client pulls in TypeORM and unnecessarily bloats the front end build.  
+2) References in TypeORM entities are causing circular references and causing errors when trying to convert objects to JSON when returning data in my API.   
+
+
+I'm kinda new to Typescript, so I feel like I'm missing something basic in  terms of best practices.
+## [9][Typescript or runtime responsibility?](https://www.reddit.com/r/typescript/comments/j6un7q/typescript_or_runtime_responsibility/)
+- url: https://www.reddit.com/r/typescript/comments/j6un7q/typescript_or_runtime_responsibility/
+---
+Hi everyone 👋I'm writing a React component for render collections.
+
+Through properties
+
+* you can provide a custom itemExtractor to adapt item type
+* you can provide a custom itemRender to change item component
+
+some use cases:
+
+    // Suppose a component(Collection) that renders a set of items(CollectionItem[])
+    // We use the default renderItem and the default extractItem (noop)... OK
+    const items: CollectionItem[] = [];
+    return &lt;Collection items={items} /&gt;;
+    
+    // Suppose that items type differs from CollectionItem[]
+    // We implements extractItem to get collectionItem type. Use default renderItem... OK
+    const items2: OtherType[] = [];
+    return &lt;Collection items={items} extractItem={(other: OtherType) =&gt; ({ title: other.name })} /&gt;;
+    
+    // Suppose that we need to render a different type
+    // Implements renderItem to render special fields. Use default extractItem (noop)... OK
+    const items3: OtherType[] = [];
+    return &lt;Collection items={items3} renderItem={(other: OtherType) =&gt; &lt;p&gt;{other.name}&lt;/p&gt;} /&gt;;
+
+**Thats works fine, but...  It is possible to expect an implementation for extractItem or renderItem if items type differs from CollectionItem?**for example&lt;Collection items={otherTypeItems} **\*expected\_extractItem / expected\_renderItem type error?\***/&gt;;
+
+    Implementation:
+    
+    export interface CollectionProps&lt;In, Out&gt; { 
+        items: In[]; 
+        extractItem: (data: In) =&gt; Out; 
+        renderItem: (data: Out, index: number) =&gt; React.ReactNode; 
+    }
+    
+    export const Collection = function &lt;In = CollectionItem, Out = CollectionItem&gt;(
+        props: CollectionProps&lt;In, Out&gt;
+    ) {
+        if (!props.items.length) return null;
+        return props.items.map((item, index) =&gt; 
+       props.renderItem(props.extractItem(item), index));
+    };
+    
+    Collection.defaultProps = {
+        extractItem: (i: CollectionItem) =&gt; i,
+        renderItem: (data: CollectionItem, index: number) =&gt; (
+            &lt;DefaultCollectionItem key={index} data={data} /&gt;)
+    };
+
+Is this Typescript responsability or should I check this on runtime? 🤔
+
+Any help regarding this will be appreciated  🙏
+## [10][I wrote my first Typescript React App. Would love some feedback if anyone is interested in giving it. I will post the link in the comments.](https://www.reddit.com/r/typescript/comments/j6s02p/i_wrote_my_first_typescript_react_app_would_love/)
+- url: https://www.reddit.com/r/typescript/comments/j6s02p/i_wrote_my_first_typescript_react_app_would_love/
+---
+
+## [11][How to use jQuery Plugins like owl-carousel in typeScript?](https://www.reddit.com/r/typescript/comments/j6npge/how_to_use_jquery_plugins_like_owlcarousel_in/)
 - url: https://www.reddit.com/r/typescript/comments/j6npge/how_to_use_jquery_plugins_like_owlcarousel_in/
 ---
 Hi!  
 I am new to typeScript. I can't figure out how to install the owl-carousel in my typeScript project.
 
 Any help regarding this will be appreciated! Thanks in advance.
-## [3][Building a Game With TypeScript. New episode! Colors and Layers](https://www.reddit.com/r/typescript/comments/j6858v/building_a_game_with_typescript_new_episode/)
-- url: https://medium.com/@gregsolo/building-a-game-with-typescript-colors-and-layers-337b0e4d71f?source=friends_link&amp;sk=45ea8fe1af4d87bbd4b1b12b43c4557b
----
-
-## [4][Is "keyof typeof" the correct way to assert an enum's keys?](https://www.reddit.com/r/typescript/comments/j6e1my/is_keyof_typeof_the_correct_way_to_assert_an/)
-- url: https://www.reddit.com/r/typescript/comments/j6e1my/is_keyof_typeof_the_correct_way_to_assert_an/
----
-I was trying to use an enum's keys to make a selection on it:
-
-    enum myEnum {
-      a = "a value"
-      b = "b value"
-    }
-    
-    const selection = myEnum[someVar as keyof typeof myEnum];
-
-Is this the correct usage? I tried to only use `keyof`, but a whole bunch of generic object keys came back in a lint error. 
-
-The above passes lint but feels wrong to me, I'm not sure exactly what the keys in `typeof myEnum` are but I doubt it is just `a` and `b`.
-## [5][Why is my higher-order factory function not throwing a type error, and how can I make it work?](https://www.reddit.com/r/typescript/comments/j64mkf/why_is_my_higherorder_factory_function_not/)
-- url: https://www.reddit.com/r/typescript/comments/j64mkf/why_is_my_higherorder_factory_function_not/
----
-`heroFactory([10, 10])` works, but I would also like to return many heroes into an array.
-
-`const heros = createMultipleInstantiatedClasses(3, heroFactory);` should not typecheck as it should accept only a function with an argument `factory: (position: Vector2) =&gt; T` but it does, and I get a load of `undefined` positions as a result. What is wrong with my type signature?
-
-If I change to `const heros = createMultipleInstantiatedClasses(3, heroFactory([10, 10]));` then I get ``&lt;Hero&gt;` is not a function`` error.
-
-Can anyone help? Thanks.
-
-https://www.typescriptlang.org/play?#code/KYDwDg9gTgLgBDAnmYcBqwDGNoCY4C8cA2gHYCuAtgEbBQA0cFNdAugNwBQnmANgIYBnQXAASdCHADenOHEiCAljEURSXOZjWCYUctmgAKBctWkAXOiw4ouAJTTZchAAtFggHQmVawvIhKPupOAL6cYZygkLBwAGbkpNhmcJhQwPwwwACy5LwqYLzAAJKkOvykKhnAACYAwgLCwIIAPAAqAHyGTsy0UADysfVCgk2WPXT0TrH8BlCIlsYBpmqWGLP2hO1wrZx2lq3ErI5yaTDkUKRwAIJQUPyIHrFQEJSGUnCFpADmMC5jVL0BkNGiIQoxprNEHYuBEotB4PFEkE4C4JAAxGY2RCLQJmVbWPB7MQSY5wU7nS6kYAAd2Jzxxy1I0PC3C0pXgqOefk5EAxkMMxAAjAAGRgi1jQuAAeilcD6AGkeNoORIRERUulMjk8ooCsV2eVKpk6g0RoJDABmRg8vlY5lK0oQQoeXgQL6GHmSmV0yTvbx4khwEVi4VwI4hQAQBA7BE7gC63R7VV7ZcQfdJ-LiVnAEtVgLFFFTqnAwRHxFy-UsgpYc3mCzVi-RSySK5mLNnSLn84Xi2Go0A
-
-```typescript
-export type Vector2 = [number, number];
-
-class Hero {
-  position;
-  constructor(position: Vector2) {
-    this.position = position;
-  }
-}
-
-export function createMultipleInstantiatedClasses&lt;T&gt;(
-  numberOfClasses: number,
-  factory: (position: Vector2) =&gt; T
-): T[] {
-  return Array.from({ length: numberOfClasses }, factory);
-}
-
-export function heroFactory(position: Vector2): Hero {
-  return new Hero(position);
-}
-
-const hero = heroFactory([10, 10]); // OK
-const heros = createMultipleInstantiatedClasses(3, heroFactory);
-
-console.log(hero); // Hero { position: [ 10, 10 ] } 
-console.log(heros); // [ Hero { position: undefined }, Hero { position: undefined }, Hero { position: undefined } ] 
-```
-## [6][Express REST APIs in TypeScript?](https://www.reddit.com/r/typescript/comments/j5vdz8/express_rest_apis_in_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/j5vdz8/express_rest_apis_in_typescript/
----
-
-Is there a cleaner way to do this like C# classes and methods?
-
-```csharp
-
-public class RestAPI {
-   [HTTPGet]
-   [Authorize]
-   public static string GetFoo() {
-   	return new string("Welcome to Foo!")
-   }
-}
-```
-
-Express.js routes look like Python req res and its fugly.
-## [7][Change types using TS Compiler API](https://www.reddit.com/r/typescript/comments/j5uodl/change_types_using_ts_compiler_api/)
-- url: https://www.reddit.com/r/typescript/comments/j5uodl/change_types_using_ts_compiler_api/
----
-Hi everyone,
-
-I am using the TS Compiler in a project and I need to modify the inference of TS a bit. For example, if I have:
-
-    let a = 2
-    a = 'name'
-
-the type nodes of both **a** identifiers are **numbers**. Of course this is expected in TS.
-
-However, is there any way for the compiler to actually say that **a** is **number | string** ? I saw *typescript.d.ts* and it is possible to do some hacks (or maybe do my own separate code analysis), but if there is any TS library or codefix that does that (and other types of inference on top of the inference done by TS) I think it would be better.
-## [8][Creating an express router in TypeScript](https://www.reddit.com/r/typescript/comments/j5kcvc/creating_an_express_router_in_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/j5kcvc/creating_an_express_router_in_typescript/
----
-Trying to build a clean application for a personal project using SOLID design principles.
-
-I was wondering how do you guys build a router in TypeScript? Do you use classes to initialise a router class?
-## [9][How to get notified about finished recursive http calls with typescript?](https://www.reddit.com/r/typescript/comments/j5ri9g/how_to_get_notified_about_finished_recursive_http/)
-- url: https://www.reddit.com/r/typescript/comments/j5ri9g/how_to_get_notified_about_finished_recursive_http/
----
-I am trying to recursively fetch Objects from a Server. An Object can have multiple objects as children and it is not known how many children there are and how deep the objects are nested.
-
-I have a function that fetches the data from the sever and creates typescript objects with it and adds the children to the according parent. My problem is, that I'm subscribing to the result in the function, so I never know when I am finished with fetching the objects from the server. Where do I have to subscribe to my result? And how can I still create my Typescript objects from the data when I don't subscribe in my fetch function?
-
-This is what I currently have:
-
-    fetchDataFromServer(token: HttpHeaders, url: string, parent: OwnObject) {
-    
-        let current: OwnObject;
-        return this.http    //subscribe should be done somwhere else but how can I get notified about the subscribe only if the recursion is completely finished
-          .get&lt;any&gt;(url, { headers: token }).subscribe(result =&gt; {
-            if (Array.isArray(result)) {
-              for (const resultChild of result) {
-                if (!this.isOfTypeToShow(resultChild)) continue;
-                else {
-                  current = new OwnObject(resultChild.name, resultChild.type, resultChild.href, resultChild.id, []);
-                  parent.childObject.push(current);
-                  if (!resultChild.type.endsWith('type that has no children')) { //this type cannot have children so no further search is necessary
-                    const urlOfChildren = this.createURLStringOfChildren(resultChild.relations, current);
-                    if (urlOfChildren !== '') {
-                      return this.fetchDataFromServer(token, urlOfChildren, current);
-                    }
-                  }
-                }
-              }
-            } else {
-              if (this.isOfTypeToShow(result)) {
-                current = new OwnObject(result.name, result.type, result.href, result.id, []); 
-                parent !== null ? parent.childObject.push(current) : this.rootObject.next(current);
-                if (!result.type.endsWith('type that has no children')) {
-                  const urlOfChildren = this.createURLStringOfChildren(result.relations, current);
-                  if (urlOfChildren !== '') {
-                    return this.fetchDataFromServer(token, urlOfChildren, current);
-                  }
-                }
-              }
-            }
-          }));
-      }
-
-Sorry for the bad  formatting and maybe noobish question, I am using angular btw and would be very happy if you could help me a little bit
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-The method createURLStringOfChildren just creates a url string according to the children of the current element. With this string I fetch the children from the server.
-
-The method isOfTypeToShow just returns true if the type of the element is interesting in the context (some types can be ignored)
-
-&amp;#x200B;
-
-I have also tried to use expand according to this example ([https://stackoverflow.com/questions/40529232/angular-2-http-observables-and-recursive-requests](https://stackoverflow.com/questions/40529232/angular-2-http-observables-and-recursive-requests)) example but it did not really help me with my problem. I have only limited knowledge about request calls in Typescript/Javascript.
-
-So basically I just need to know how I can do my operations in the function without subscribing to it and how I can get notified when the recursive http-call is completely finished.
-
-The function gets called from another component in the first place.
-## [10][What problem would there be with running an Express API server using ts-node](https://www.reddit.com/r/typescript/comments/j5le0l/what_problem_would_there_be_with_running_an/)
-- url: https://www.reddit.com/r/typescript/comments/j5le0l/what_problem_would_there_be_with_running_an/
----
-I use ts-node-dev and the server seems to run fine locally. Is there a reason not to just skip compilation and run the server from source code during production?
-## [11][Trying to understand this error message](https://www.reddit.com/r/typescript/comments/j5k6lo/trying_to_understand_this_error_message/)
-- url: https://www.reddit.com/r/typescript/comments/j5k6lo/trying_to_understand_this_error_message/
----
-I'm trying to assign a function to the onMouseDown property on a [styled component](https://github.com/styled-components/styled-components) but am getting an error message which I'm having an issue understanding the syntax of: `Type '(e: MouseEvent) =&gt; void' is not assignable to type '(event: MouseEvent&lt;HTMLDivElement, MouseEvent&gt;) =&gt; void'`
-Are `&lt;HTMLDivElement, MouseEvent&gt;` two generics in this case?

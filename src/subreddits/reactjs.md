@@ -70,57 +70,83 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][React Core Team: Plans for rewriting the React docs](https://www.reddit.com/r/reactjs/comments/j72x6r/react_core_team_plans_for_rewriting_the_react_docs/)
-- url: https://github.com/reactjs/reactjs.org/issues/3308
+## [3][Microsoft plans to unify Outlook across platforms using web technologies [React / React Native]](https://www.reddit.com/r/reactjs/comments/j7jwis/microsoft_plans_to_unify_outlook_across_platforms/)
+- url: https://www.neowin.net/news/microsoft-plans-to-unify-outlook-across-platforms-using-web-technologies?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+neowin-main+%28Neowin+News%29
 ---
 
-## [4][Epic React: Javascript You Need To Know For React](https://www.reddit.com/r/reactjs/comments/j7afir/epic_react_javascript_you_need_to_know_for_react/)
+## [4][Jotai - a simple State Manager for React.js](https://www.reddit.com/r/reactjs/comments/j7wh5o/jotai_a_simple_state_manager_for_reactjs/)
+- url: https://medium.com/javascript-in-plain-english/jotai-simple-state-management-for-react-b9318b0f7616?source=friends_link&amp;sk=57d2f0357a97a77ffa77f29132b876e2
+---
+
+## [5][Creating a presigned url to authenticate users](https://www.reddit.com/r/reactjs/comments/j7ycx4/creating_a_presigned_url_to_authenticate_users/)
+- url: https://www.reddit.com/r/reactjs/comments/j7ycx4/creating_a_presigned_url_to_authenticate_users/
+---
+I have a react app that has a traditional login page and flow. Once the user enters correct credentials, they are given a jwt which is stored in the browser local storage.
+
+However, I'd like to grant access to certain users by creating a short-term pre-signed URL (same as S3 does). The URL would look like `myapp.com/resource?token=ey6347fdefd....`
+
+I can then add a new route to my app `&lt;Route exact path="/resource" component={Resource}&gt;`. When anyone hits this path, I can define some logic in the `Resource` component to:
+
+1. Extract `token` from query string.
+2. Validate `token` and ensure it's not expired using `exp` from token.
+3. If successful, render the UI else redirect to `/login`.
+
+Just want to confirm if this is the right approach. 
+
+Also, would there be any case if I redirect users to `/login` in step 3 above? Asking because I will be the person creating those pre-signed URLs so assuming it's always correct (?). If a third party created those pre-signed URLs, then I'd be more concerned about validating them.
+## [6][Reset value of Material UI Checkbox components programmatically?](https://www.reddit.com/r/reactjs/comments/j7whwp/reset_value_of_material_ui_checkbox_components/)
+- url: https://www.reddit.com/r/reactjs/comments/j7whwp/reset_value_of_material_ui_checkbox_components/
+---
+Hi Everyone,
+
+I'm using Material UI Checkbox components to allow a user to select toppings for their pizza.  I followed the MUI docs when creating the component, ie the components have a 'checked' prop with a boolean value.  True = checked, false = unchecked.  I've tried to programmatically reset the values of each key/value pair to false onClick.  My function successfully resets the object to all keys having a false value, however, the UI does not update and the checkboxes remain checked.  I need the checkboxes to reset to reflect the state of the objects key/value pairs if, for example the user clicks to add a pizza to their cart and then wants to order another one, they should have a blank slate...the topping selections shouldn't remain checked. I've properly managed state using the useState hook, and the function that resets the object looks like this: 
+
+*const clearSelection = () =&gt; {*  
+ *setRegularChecked(regObj)*  
+ *setPremiumChecked(premObj)*  
+ *setSize(null)*  
+ *setVariant(null)*  
+ *}*
+
+setRegularChecked receives the regObj which looks like {ham: false, pepperoni: false}..etc for all regular toppings
+
+setPremiumChecked receives the premObj which looks like {prociutto: false, gorgonzola: false}..etc for all premium toppings
+
+setSize resets the pizza size selection to null as expected
+
+setVariant resets the pizza variant (sicilian, regular, etc) back to null as expected
+
+Does anyone know why this is happening?  Is it a bug?  Know of a solution? If you feel up to it, here is the full component code
+
+[https://github.com/Perrottarichard/pizzapizza-client/blob/master/src/components/Pizza.js](https://github.com/Perrottarichard/pizzapizza-client/blob/master/src/components/Pizza.js)
+## [7][React 17 rc 3 is out - final call for bugs](https://www.reddit.com/r/reactjs/comments/j7kble/react_17_rc_3_is_out_final_call_for_bugs/)
+- url: https://twitter.com/dan_abramov/status/1314293585739681792?s=20
+---
+
+## [8][Material UI checkbox false value not updating in Ui](https://www.reddit.com/r/reactjs/comments/j7xgzq/material_ui_checkbox_false_value_not_updating_in/)
+- url: https://v.redd.it/ikkg59ks42s51
+---
+
+## [9][How to join a Slack Channel for React development?](https://www.reddit.com/r/reactjs/comments/j7xb08/how_to_join_a_slack_channel_for_react_development/)
+- url: https://www.reddit.com/r/reactjs/comments/j7xb08/how_to_join_a_slack_channel_for_react_development/
+---
+I would like to join a Slack channel of React developers.  
+I find [https://reactjs.org/community/support.html](https://reactjs.org/community/support.html) but none of the links lead to an opportunity to join a Slack channel.  
+This is confusing to me.  
+What am I missing?
+## [10][React - Keydown event is taking 500ms and the same function via onClick take 50ms](https://www.reddit.com/r/reactjs/comments/j7wog3/react_keydown_event_is_taking_500ms_and_the_same/)
+- url: https://www.reddit.com/r/reactjs/comments/j7wog3/react_keydown_event_is_taking_500ms_and_the_same/
+---
+I am trying to create a keyboard shortcut for my react-redux application. The keydown function takes 500 ms and if I do the same via the onClick function it takes 50ms. I have tried the same by creating a production version but no good results.
+
+A hack I tested was to call an onClick event inside the keydown function which take lesser time than the original function. I also tried using Chrome Memory Profiler to see that's wrong. But no luck.
+
+Can anyone suggest any solution to debug this problem?
+## [11][Epic React: Javascript You Need To Know For React](https://www.reddit.com/r/reactjs/comments/j7afir/epic_react_javascript_you_need_to_know_for_react/)
 - url: https://blog.bhanuteja.dev/epic-react-javascript-you-need-to-know-for-react
 ---
 
-## [5][React.js vs. Preact - Performance, Size and Project design](https://www.reddit.com/r/reactjs/comments/j78pkg/reactjs_vs_preact_performance_size_and_project/)
-- url: https://medium.com/javascript-in-plain-english/i-built-the-same-app-with-react-and-preact-here-are-the-differences-b0da382a6f72?source=friends_link&amp;sk=02abbeec98fe3fa4f75b60d8cba00b46
+## [12][Build a Timeline Component With React and React-Chrono](https://www.reddit.com/r/reactjs/comments/j7vvpz/build_a_timeline_component_with_react_and/)
+- url: https://medium.com/better-programming/build-a-timeline-component-with-react-and-react-chrono-fb1b962b020e
 ---
 
-## [6][Astrofox is now open-source (React/Electron/WebGL)](https://www.reddit.com/r/reactjs/comments/j6kutn/astrofox_is_now_opensource_reactelectronwebgl/)
-- url: https://v.redd.it/croxwhmzslr51
----
-
-## [7][Looking for react electron voluntary developer](https://www.reddit.com/r/reactjs/comments/j7ct8y/looking_for_react_electron_voluntary_developer/)
-- url: https://www.reddit.com/r/reactjs/comments/j7ct8y/looking_for_react_electron_voluntary_developer/
----
-Pm if interested
-## [8][trasnfer data from child component](https://www.reddit.com/r/reactjs/comments/j7c009/trasnfer_data_from_child_component/)
-- url: https://www.reddit.com/r/reactjs/comments/j7c009/trasnfer_data_from_child_component/
----
-how do i access data from a child component to a parent component
-## [9][Four characters can optimize your React component - Ben Ilegbodu](https://www.reddit.com/r/reactjs/comments/j6v08t/four_characters_can_optimize_your_react_component/)
-- url: http://www.benmvp.com/blog/four-characters-optimize-react-component/
----
-
-## [10][Is Googles's "PageSpeed Insights" boken?](https://www.reddit.com/r/reactjs/comments/j7bjoa/is_googless_pagespeed_insights_boken/)
-- url: https://www.reddit.com/r/reactjs/comments/j7bjoa/is_googless_pagespeed_insights_boken/
----
-&amp;#x200B;
-
-I am building a Gatsby site for a client that wanted a good CMS and "needed" a fast site (he had an issue with a Wix site before and is now obsessed with speed).
-
-During a meeting he pulls up the [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) based on LightHouse and checks the site. The score was 35 for mobile and 83 for desktop.
-
-I thought there was something wrong with the site and started checking how other web apps were doing. It turned out that even major light-weight sites like "Facebook for Developers" struggled to score close to 30/40 in the mobile version.
-
-So now my question is: what's wrong with the mobile score that [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/) gives?
-
-btw you can check the site I am developing [here](https://thirsty-bell-786d5b.netlify.app/). It's still not pretty but speed wise I don't see visible issues.
-
-How can I approach the subject with the client?
-## [11][Removing selected items (rows) from a table](https://www.reddit.com/r/reactjs/comments/j7b4e2/removing_selected_items_rows_from_a_table/)
-- url: https://www.reddit.com/r/reactjs/comments/j7b4e2/removing_selected_items_rows_from_a_table/
----
-In my app a user can select items on a table using checkboxes, and submit those items to an API. I need to "refresh" the table so that the submitted items will not be shown again. Basically, I need to "subtract" \[...selectedItems\] from \[...items\]. How can I do that?
-## [12][Library recommendations for a music streaming react app?](https://www.reddit.com/r/reactjs/comments/j7b0qg/library_recommendations_for_a_music_streaming/)
-- url: https://www.reddit.com/r/reactjs/comments/j7b0qg/library_recommendations_for_a_music_streaming/
----
-Hello, 
-
-I start working at a music streaming startup next week as a front-end developer, we're planning to use react and I was wondering if anybody that has experience with audio apps could help suggest some libraries and resources that could come in handy. I will surely tackle some challenges along the way and if someone experinced wants to be around so I can ask them questions every now and then, I'd really appreciate that too.

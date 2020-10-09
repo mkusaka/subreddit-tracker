@@ -1,9 +1,51 @@
 # Kotlin
-## [1][Kotlin Multiplatform Mobile (KMM) goes Alpha](https://www.reddit.com/r/Kotlin/comments/j79eyu/kotlin_multiplatform_mobile_kmm_goes_alpha/)
+## [1][Released kotlinx.serialization first public stable release](https://www.reddit.com/r/Kotlin/comments/j7f6dk/released_kotlinxserialization_first_public_stable/)
+- url: https://github.com/Kotlin/kotlinx.serialization/releases/tag/v1.0.0
+---
+
+## [2][Seek help configuring kotlin + gradle](https://www.reddit.com/r/Kotlin/comments/j7ykhw/seek_help_configuring_kotlin_gradle/)
+- url: https://www.reddit.com/r/Kotlin/comments/j7ykhw/seek_help_configuring_kotlin_gradle/
+---
+Build is failing because local jar dependency is not being used (see pic).  
+Please see repo with code -   
+[https://github.com/sanskrit-coders/jyotisha-kotlin/blob/master/build.gradle](https://github.com/sanskrit-coders/jyotisha-kotlin/blob/master/build.gradle)  
+
+
+https://preview.redd.it/mlxvj8ili2s51.png?width=1147&amp;format=png&amp;auto=webp&amp;s=c699643a5178e88636516b2c23678505dfb5b17d
+## [3][Convert JSON to Kotlin classes.](https://www.reddit.com/r/Kotlin/comments/j7xz7x/convert_json_to_kotlin_classes/)
+- url: https://www.reddit.com/r/Kotlin/comments/j7xz7x/convert_json_to_kotlin_classes/
+---
+Hi all,
+
+I have a chunk of json from here (https://world.openfoodfacts.org/api/v0/product/5010358111810.json), that I need to be able to parse.
+
+I wrote a quick prototype in C# where I simply pasted the JSON in to Visual Studio and it converts the json into C# classes.
+
+I realise that you can't do that in Android Studio and I tried an online json--&gt;Kotlin class converter tool, which appeared to do the job...until I imported them into Android Studio. 
+
+It didn't like some of the names it created, so I set about changing them manually, then realised that when it comes to deserialising it, the deserializer won't know what the names are to match.
+
+How do you all go about creating the classes for a JSON string this size?
+
+Failing that, is it possible to convert it to a generic type and iterate around the result?
+## [4][kotlinx.serialization 1.0 released – Kotlin Blog](https://www.reddit.com/r/Kotlin/comments/j7h8cp/kotlinxserialization_10_released_kotlin_blog/)
+- url: https://blog.jetbrains.com/kotlin/2020/10/kotlinx-serialization-1-0-released/
+---
+
+## [5][A beginner question](https://www.reddit.com/r/Kotlin/comments/j7s3n0/a_beginner_question/)
+- url: https://www.reddit.com/r/Kotlin/comments/j7s3n0/a_beginner_question/
+---
+I have dragged a number of buttons into a view. I have used the attributes panel to give these buttons properties. My question is under these circumstances is it required that I create a variable for these buttons in the .kt  file. I am thinking that under these circumstances the IDE has already accomplished this. Is this the case?
+Thanks
+## [6][Kotlin Multiplatform Mobile (KMM) goes Alpha](https://www.reddit.com/r/Kotlin/comments/j79eyu/kotlin_multiplatform_mobile_kmm_goes_alpha/)
 - url: https://thetechjourno.blogspot.com/2020/10/kotlin-multiplatform-mobile-kmm-goes.html
 ---
 
-## [2][Calling REST API from Kotlin?](https://www.reddit.com/r/Kotlin/comments/j7binh/calling_rest_api_from_kotlin/)
+## [7][Interested in writing Kotlin articles, get paid to write tutorials, follow the link.](https://www.reddit.com/r/Kotlin/comments/j7b5lp/interested_in_writing_kotlin_articles_get_paid_to/)
+- url: https://developers.decoded.africa/get-paid-to-write-tutorials/
+---
+
+## [8][Calling REST API from Kotlin?](https://www.reddit.com/r/Kotlin/comments/j7binh/calling_rest_api_from_kotlin/)
 - url: https://www.reddit.com/r/Kotlin/comments/j7binh/calling_rest_api_from_kotlin/
 ---
 Hi all,
@@ -50,11 +92,7 @@ So far, this is the closest I've got:
     }
 
 But when I click the button, the app simply disappears without a word.
-## [3][Interested in writing Kotlin articles, get paid to write tutorials, follow the link.](https://www.reddit.com/r/Kotlin/comments/j7b5lp/interested_in_writing_kotlin_articles_get_paid_to/)
-- url: https://developers.decoded.africa/get-paid-to-write-tutorials/
----
-
-## [4][Help! Can't even get a "toast" pop up working.](https://www.reddit.com/r/Kotlin/comments/j79qd5/help_cant_even_get_a_toast_pop_up_working/)
+## [9][Help! Can't even get a "toast" pop up working.](https://www.reddit.com/r/Kotlin/comments/j79qd5/help_cant_even_get_a_toast_pop_up_working/)
 - url: https://www.reddit.com/r/Kotlin/comments/j79qd5/help_cant_even_get_a_toast_pop_up_working/
 ---
 Hi all,
@@ -93,49 +131,7 @@ Which doesn't moan about anything, but just doesn't work. I can step over/into i
 What do you have to do to get a popup working in Kotlin?
 
 TIA.
-## [5][Kotlin JSON to Data class - JSON Serialization with Jackson Library](https://www.reddit.com/r/Kotlin/comments/j6vf5s/kotlin_json_to_data_class_json_serialization_with/)
-- url: https://rrtutors.com/tutorials/Kotlin-JSON-Serialization-with-Jackson
+## [10][I want to learn kotlin, do you have any advice?](https://www.reddit.com/r/Kotlin/comments/j7ef0a/i_want_to_learn_kotlin_do_you_have_any_advice/)
+- url: https://www.reddit.com/r/Kotlin/comments/j7ef0a/i_want_to_learn_kotlin_do_you_have_any_advice/
 ---
-
-## [6][Can Ktor deal with JSON-API?](https://www.reddit.com/r/Kotlin/comments/j6u9o8/can_ktor_deal_with_jsonapi/)
-- url: https://www.reddit.com/r/Kotlin/comments/j6u9o8/can_ktor_deal_with_jsonapi/
----
-I have someone elses API I want to interact with and am looking to build a client using Ktor for it.
-
-Their api is [JSON-API conform data](https://jsonapi.org/). There is already an existing client based on Spring Boot and looking through the code it looks like Spring can get POJOs from JSON-API conforming data basically out of the box.
-
-I've done all manner of google searches and haven't found any example of Ktor doing this. Can someone here give me some pointers? I want to serialize/deserialize POJOS with the JSON-API format.
-## [7][Make Conversational AI Work](https://www.reddit.com/r/Kotlin/comments/j6qu4j/make_conversational_ai_work/)
-- url: https://www.reddit.com/r/Kotlin/comments/j6qu4j/make_conversational_ai_work/
----
-Junction, a huge [hackathon](https://connected.hackjunction.com/) with a challenge for Kotlin, Android, and mobile devs is to be held on 6-8 of November
-
-Hackers have to create a conversational AI solution, using Kotlin-based framework
-
-The challenge prize is €1.500, and the main hackathon prize is €10.000
-
-If you are interested, apply to the challenge – online/offline hubs are available!
-
-[https://just-ai.com/junction-challenge/](https://just-ai.com/junction-challenge/)
-## [8][Make Conversational AI Work with Kotlin](https://www.reddit.com/r/Kotlin/comments/j6qs7s/make_conversational_ai_work_with_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/j6qs7s/make_conversational_ai_work_with_kotlin/
----
-Junction, a huge [hackathon](https://connected.hackjunction.com/) with a challenge for Kotlin, Android, and mobile devs is to be held on 6-8 of November
-
-Hackers have to create a conversational AI solution, using Kotlin-based framework
-
-The challenge prize is €1.500, and the main hackathon prize is €10.000
-
-If you are interested, apply to the challenge – online/offline hubs are available!
-
-[https://just-ai.com/junction-challenge/](https://just-ai.com/junction-challenge/)
-## [9][Gradle Kotlin jvm vs multiplatform plugin](https://www.reddit.com/r/Kotlin/comments/j6p0ux/gradle_kotlin_jvm_vs_multiplatform_plugin/)
-- url: https://www.reddit.com/r/Kotlin/comments/j6p0ux/gradle_kotlin_jvm_vs_multiplatform_plugin/
----
-I wanna create a Gradle build for my Kotlin project. I saw there is a Kotlin jvm plugin and a multiplatform plugin.
-
-What's the difference? Which one should I use if I intend to target the JVM?
-## [10][Doks: Search for your distributed documentation in one place (written in Kotlin)](https://www.reddit.com/r/Kotlin/comments/j6b6gl/doks_search_for_your_distributed_documentation_in/)
-- url: https://github.com/wlezzar/doks
----
-
+Hello, I want to learn kotlin. I can't use IntelliJ IDEA because I have 1GB RAM and Intel Pentium 2 T3200 laptop. I didn't know any languages ​​before, but so far I have learned the basic syntax. The Kotlin playground is insufficient, do you have any program suggestions for applying and improving what I have learned? Also do you have any advice for learning?

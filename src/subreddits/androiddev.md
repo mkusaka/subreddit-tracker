@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/j5ipv0/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/j5ipv0/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/j7y7dm/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/j7y7dm/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - October 05, 2020](https://www.reddit.com/r/androiddev/comments/j5hb6o/weekly_questions_thread_october_05_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/j5hb6o/weekly_questions_thread_october_05_2020/
 ---
@@ -31,134 +25,82 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][QUESTION: Taking too long to get results of Google Android Associate developer test](https://www.reddit.com/r/androiddev/comments/j795rd/question_taking_too_long_to_get_results_of_google/)
-- url: https://www.reddit.com/r/androiddev/comments/j795rd/question_taking_too_long_to_get_results_of_google/
+## [3][Best Infinite Scrolling Recyclerview solution?](https://www.reddit.com/r/androiddev/comments/j7v6ze/best_infinite_scrolling_recyclerview_solution/)
+- url: https://www.reddit.com/r/androiddev/comments/j7v6ze/best_infinite_scrolling_recyclerview_solution/
 ---
-Hello Everyone,
+I hope this post doesn't get buried. I've been using an abstract class that's a popular stack overflow answer that overrides the addOnScrollListener method to give a call back with the page number, pretty straight forward. 
 
-I completed my Google Android Associate Developer assessment and exit Interview on the 15th of May 2020, and my assessment as been being graded since then, its about 5months now. I have reached out to Google support but they have not provided any actual solutions or reasons.   
-Is this a reasonable amount of time for the results to still be processing even  with Covid-19 restrictions, can anyone with more information help me out.
+I've also tried Paging 3 which kinda worked but I still find it to be a little complicated.
 
-Thank you
-## [4][Collate all categories in SQLite database for "All questions"](https://www.reddit.com/r/androiddev/comments/j7a4jp/collate_all_categories_in_sqlite_database_for_all/)
-- url: https://www.reddit.com/r/androiddev/comments/j7a4jp/collate_all_categories_in_sqlite_database_for_all/
----
-Hello all,
+I tried out the State Restoration policy, but it didn't help my case. 
 
-I recently threw myself into the deep end and set out to develop an android app with very little experience in coding. I've followed advice given in this subreddit on my previous post and have been following a YouTube series by Coding in flow as [this](https://youtu.be/mONNvMIaulY) is exactly what I'm looking to do and feel like I'm learning a lot. I have adapted the code for my needs but is mostly the same (can be seen in his description box).
+Further more some answers in stack overflow say save the layout and data as a bundle and restore it. 
 
-  
+The first solution works but my problem is let's say I have a Fragment A and I scroll to 50th item, and on click of item I go to fragment B. On pressing of the back button, the page view is shown from the top. 
 
+But to solve this issue what I've done is have a member variable of the inflated view and check if it's null in the OnCreateView method. 
 
-I'm struggling to get my head around the following: how do I make an "ALL" section which collates all questions, regardless of category. I have a feeling I'm overthinking this and would appreciate any input.
+Haven't faced any issues so far with my solution, but I want to know what's the standard solution to this problem, what do apps like Facebook or Instagram use? 
 
-  
-
-
-On a unrelated note, I've used his code for the spinner and it seems offset to the right despite being aligned to the start of the START QUIZ button. Any ideas?
-
-  
-
-
-I'm not really sure where to post these kind of basic questions. I unfortunately don't know anyone in the field who could help me out. I tried at stack overflow in code review but my post got removed.
-
-  
-
-
-Thanks!
-## [5][Is Kotlin the actual standard best choice to develop Android apps? Is it still Java? Will Kotlin in the future be the standard choice?](https://www.reddit.com/r/androiddev/comments/j7a48g/is_kotlin_the_actual_standard_best_choice_to/)
-- url: https://www.reddit.com/r/androiddev/comments/j7a48g/is_kotlin_the_actual_standard_best_choice_to/
+I've heard that some use a viewmodel to hold the state of the recyclerview is it a good way to do it?
+## [4][The button takes you to their website to insert your card. Ain’t this against the rules of big G?](https://www.reddit.com/r/androiddev/comments/j7wqox/the_button_takes_you_to_their_website_to_insert/)
+- url: https://i.redd.it/dsrsiol7u1s51.jpg
 ---
 
-## [6][Is it possible to load more items from a listing API before reaching the bottom of the list?](https://www.reddit.com/r/androiddev/comments/j791wh/is_it_possible_to_load_more_items_from_a_listing/)
-- url: https://www.reddit.com/r/androiddev/comments/j791wh/is_it_possible_to_load_more_items_from_a_listing/
----
-Hello!
-
-I am building an app that uses Paging 3 and a REST API through Retrofit, to fetch items. I have a recyclerview and I want to load more items and add them to the list before the user reaches the bottom. I'm also using LiveData and a combination of Kotlin/Java but I don't think it really matters.
-
-Any help would be greatly appreciated,
-Thanks.
-## [7][IntelliJ find and replace with regex](https://www.reddit.com/r/androiddev/comments/j7cqmx/intellij_find_and_replace_with_regex/)
-- url: https://medium.com/@vashisthg/intellij-find-and-replace-with-regex-a3f5aa885659
+## [5][Released kotlinx.serialization first public stable release](https://www.reddit.com/r/androiddev/comments/j7f7v3/released_kotlinxserialization_first_public_stable/)
+- url: https://github.com/Kotlin/kotlinx.serialization/releases/tag/v1.0.0
 ---
 
-## [8][Using Github Actions to Automate Our Release Process](https://www.reddit.com/r/androiddev/comments/j6q5k1/using_github_actions_to_automate_our_release/)
-- url: https://riggaroo.dev/using-github-actions-to-automate-our-release-process/
+## [6][Can someone please tell me where can I find the 'Subscription benefits' setting in the play console mentioned in this video (@ 8:59 minutes).](https://www.reddit.com/r/androiddev/comments/j7wue7/can_someone_please_tell_me_where_can_i_find_the/)
+- url: https://youtu.be/gnrNckXeSjQ?t=539
 ---
 
-## [9][Consume REST API from Kotlin?](https://www.reddit.com/r/androiddev/comments/j7b3wr/consume_rest_api_from_kotlin/)
-- url: https://www.reddit.com/r/androiddev/comments/j7b3wr/consume_rest_api_from_kotlin/
+## [7][It's almost the end of 2020 let's hear about your tech stack!](https://www.reddit.com/r/androiddev/comments/j7ly0z/its_almost_the_end_of_2020_lets_hear_about_your/)
+- url: https://www.reddit.com/r/androiddev/comments/j7ly0z/its_almost_the_end_of_2020_lets_hear_about_your/
 ---
-Hi all,
+CI setup, modules, languages (I'm assuming mostly Kotlin), DI, testing, etc. What have you found most useful / beneficial that you'd added this year? 
 
-No matter what method I try (googling like a demon), I cannot get this to work.
-
-Nearly every single example I have found online doesn't compile - and the couple that do, simply don't work, or crash the app out with no error the moment I attempt to connect.
-
-Someone here must know the easiest way to make a simple GET request to a third-party API and iterate through the JSON result?
-
-I'm starting to wonder if it's possible - despite, I should think, nearly every app out there needing to do something similar.
-
-So far, this is the closest I've got:
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val text = "Hello toast!"
-        val duration = Toast.LENGTH_SHORT
-        val toast = Toast.makeText(applicationContext, text, duration)
-        toast.show()
-
-        val button = findViewById&lt;Button&gt;(R.id.button)
-        button?.setOnClickListener()
-        {
-            Toast.makeText(
-                this@MainActivity,
-                "hello again", Toast.LENGTH_LONG
-            ).show()
-            sentGet()
-        }
-    }
-
-    private fun sentGet() {
-        val url = URL("http://www.google.com/")
-
-        with(url.openConnection() as HttpURLConnection) {
-            requestMethod = "GET"  // optional default is GET
-
-            println("\nSent 'GET' request to URL : $url; Response Code : $responseCode")
-
-        }
-    }
-
-But when I click the button, the app simply disappears without a word.
-## [10][Worth nagging users for a review?](https://www.reddit.com/r/androiddev/comments/j70wr4/worth_nagging_users_for_a_review/)
-- url: https://www.reddit.com/r/androiddev/comments/j70wr4/worth_nagging_users_for_a_review/
+Here's mine. Small to medium team, large code base. Jenkins CI only running unit tests. Modules broken up between UI, Domain, Model. Nothing fancier than that. Dagger. We found modularisation the most beneficial thing we did this year. Do it!
+## [8][Has someone beta access to the Google Admob app?](https://www.reddit.com/r/androiddev/comments/j7vmuy/has_someone_beta_access_to_the_google_admob_app/)
+- url: https://www.reddit.com/r/androiddev/comments/j7vmuy/has_someone_beta_access_to_the_google_admob_app/
 ---
-I think it's a bad user experience to ask a user to rate the app or show an in-app rating. We interrupt the user and then ask for a favor.
-
-Wanted to find out if that was just my personal opinion. Ran a small survey and Android users agree it is annoying... but users also said they wouldn't give a rating otherwise.
-
-How do you balance the need for reviews without irritating users?
-
-Has anything you've tried backfired?
-
-Data: [https://datastudio.google.com/s/luyhD0TXrVs](https://datastudio.google.com/s/luyhD0TXrVs)
-## [11][Can force stop phone calling in flutter?](https://www.reddit.com/r/androiddev/comments/j7ax95/can_force_stop_phone_calling_in_flutter/)
-- url: https://www.reddit.com/r/androiddev/comments/j7ax95/can_force_stop_phone_calling_in_flutter/
+Today I got an email from Admob announcing the Google Admob Beta App and asking me to download it. Unfortunately, the beta is already full. I'm very excited about this app. Can somebody who has downloaded the app please provide an apk?
+## [9][Automate publishing app to the Google Play Store with GitHub Actions+ Fastlane](https://www.reddit.com/r/androiddev/comments/j7y5w1/automate_publishing_app_to_the_google_play_store/)
+- url: https://medium.com/scalereal/automate-publishing-app-to-the-google-play-store-with-github-actions-fastlane-ac9104712486
 ---
 
-## [12][Billing V3 problems. IAP being consumed or expiring](https://www.reddit.com/r/androiddev/comments/j77z8v/billing_v3_problems_iap_being_consumed_or_expiring/)
-- url: https://www.reddit.com/r/androiddev/comments/j77z8v/billing_v3_problems_iap_being_consumed_or_expiring/
+## [10][Freelancer developing app for a company: How to proceed with payment for google developer account?](https://www.reddit.com/r/androiddev/comments/j7y5e2/freelancer_developing_app_for_a_company_how_to/)
+- url: https://www.reddit.com/r/androiddev/comments/j7y5e2/freelancer_developing_app_for_a_company_how_to/
 ---
-Been running v1 billing for years, no trouble, forced to move to V3 and having some big problems. My beta build appears to be expiring IAP. They work for a while while then disappear seemingly for good, like they are a consumable.  I haven't changed anything store side and my purchasing code is mostly the same, aside for the minor changes to support the updated library (mostly changes to BillingResult).
+Hey guys, I'm new at this community! I'm developing an app for a company (South America) and I'll do everything related to the setup of their Google Developer Account. My question is: how do I go about the $25 fee?  
 
-The purchase workflow appears to be working, after buying, I get my feature, but soon afterwards it's gone again.
 
-Got some Beta testers that have lost their purchases, and not overly happy..  I could give them codes to get their purchases back, bit they are going to disappear again until I fix this.
+Do I charge the company and then pay it myself? I'm concerned about the currency variation and if my credit card information (that I'll use to pay it) will be visible for them later...
 
-What have I got wrong?
+Or is it better if I create a gmail account for them, then ask for the contractor to access it and pay with their credit card, then proceed?
 
-Thanks.
+Has anyone dealt with this before? What is the best approach/practice here?
+
+Thanks in advance!
+## [11][Our 2D game we created for our university minor (Humans Please)](https://www.reddit.com/r/androiddev/comments/j7xpci/our_2d_game_we_created_for_our_university_minor/)
+- url: https://www.reddit.com/r/androiddev/comments/j7xpci/our_2d_game_we_created_for_our_university_minor/
+---
+Humans Please is made by 5 people that came together for their University minor.
+
+We are hoping that reaching out to the Reddit community will help us with reaching one of our minor goals. We need to reach 100 playstore downloads
+
+What is Humans Please all about?
+
+You are an alien whose job is to deliver humans to the Mothership. This is easier said than done, because along the way you will encounter many obstacles, like meteorites and planes. This isn’t your only concern, because you also have a timer to worry about. Can you reach the Mothership in time without crashing?
+
+[Playstore Link](https://play.google.com/store/apps/details?id=com.FirepetalStudios.HumansPlease)
+## [12][Application/Tool that will harvest all data stored on phone given user's permission](https://www.reddit.com/r/androiddev/comments/j7x71f/applicationtool_that_will_harvest_all_data_stored/)
+- url: https://www.reddit.com/r/androiddev/comments/j7x71f/applicationtool_that_will_harvest_all_data_stored/
+---
+I want to create an art installation that will generate visuals based on the user's personal data.
+
+For that I am looking for a tool that will collect and download all possible data that is stored on the user's smartphone. Firstly, I am interested to find out what kind of data is possible to download, and secondly - how?
+
+&amp;#x200B;
+
+Do you know of existing tools that do that, and if not, what do I have to look for if I would like to develop something like that myself? I'm more of an artist and I have a very basic background in programming.

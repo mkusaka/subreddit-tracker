@@ -27,11 +27,34 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Storing user settings in rails 5 API](https://www.reddit.com/r/rails/comments/j79doh/storing_user_settings_in_rails_5_api/)
+## [3][Moving to Rails from the Front End](https://www.reddit.com/r/rails/comments/j7llb1/moving_to_rails_from_the_front_end/)
+- url: https://www.reddit.com/r/rails/comments/j7llb1/moving_to_rails_from_the_front_end/
+---
+Hello friends! I'm currently a senior front end developer. I've been using Rails in personal projects for a little over 3 years now and I'm reaching out to you all for some advice. I'm finding that I have greatly enjoyed working on the server side and have fallen in love with Ruby and Rails and I'd like to attempt a pivot in my career and move to a position that is more focused on those technologies. I have worked on the server side professionally with node but it's been in a very limited capacity so it's hard to point to that experience as some kind of proof.
+
+I understand that the competition is fierce and that these domains can be pretty different but I'm hoping someone can help me think a little creatively about moving into this awesome community.
+## [4][React/Rails + devise question: how the F*** do I render current_user data in my React front-end?](https://www.reddit.com/r/rails/comments/j7plfk/reactrails_devise_question_how_the_f_do_i_render/)
+- url: https://www.reddit.com/r/rails/comments/j7plfk/reactrails_devise_question_how_the_f_do_i_render/
+---
+Need some help! 
+
+I am trying to render my current\_user data on my React front-end. 
+
+The JSON renders fine directly in the browser at localhost:3000/current\_user (a custom route I wrote), but when I try to fetch that data in react, I get a null response. I am using devise+google\_oauth2 with a Rails API. The authentication is working, user\_signed\_in? returns true, current user checks out, all of that.
+
+ I have been googling for hours and haven't found anything that works. I tried installing the devise-token-authentication gem and overwriting the standard devise current\_user with this method in my application controller like so:
+
+`def current_user`  
+  `token = request.headers["Authorization"].to_s`  
+  `User.find_for_database_authentication(authentication_token: token)`  
+`end` 
+
+but that didn't work either (stack overflow solution). I am using the `before_action :authenticate_user!` in my custom controller, which seems to be doing something as I get a 401 response without it. No matter how I try to tackle this, the JSON response from my fetch returns null. If anyone can help. I would greatly appreciate it! I'm assuming it has something to do with the request from my front-end not being authenticated but I can't figure this one out for the life of me...
+## [5][Storing user settings in rails 5 API](https://www.reddit.com/r/rails/comments/j79doh/storing_user_settings_in_rails_5_api/)
 - url: https://www.reddit.com/r/rails/comments/j79doh/storing_user_settings_in_rails_5_api/
 ---
 I'm wondering what the best way to store user preferences / settings in a rails 5 api application. Most of my search results use deprecated gems, or are behind a paywall. (looking at you gorails). Any info on the topic would be greatly appreciated, thanks
-## [4][link_to generates path like /controller?id=1234, I need /controller/1234](https://www.reddit.com/r/rails/comments/j711dn/link_to_generates_path_like_controllerid1234_i/)
+## [6][link_to generates path like /controller?id=1234, I need /controller/1234](https://www.reddit.com/r/rails/comments/j711dn/link_to_generates_path_like_controllerid1234_i/)
 - url: https://www.reddit.com/r/rails/comments/j711dn/link_to_generates_path_like_controllerid1234_i/
 ---
 I am having some trouble rendering my show.html.erb view. I have the following line to create a button on the page:
@@ -45,7 +68,7 @@ in routes.rb I have:
 `resources :books`
 
 Can anyone shed any light on what I'm doing wrong here?
-## [5][Scoped associations in Rails](https://www.reddit.com/r/rails/comments/j6lxl8/scoped_associations_in_rails/)
+## [7][Scoped associations in Rails](https://www.reddit.com/r/rails/comments/j6lxl8/scoped_associations_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/j6lxl8/scoped_associations_in_rails/
 ---
 Howdy folks! 
@@ -58,7 +81,7 @@ Some key take-aways:
 ⚡️  Preload your scopes and remove your N+1 queries
 
 Hope you'll like it!
-## [6][RailsAdmin: How to disable edit action?](https://www.reddit.com/r/rails/comments/j6qhyq/railsadmin_how_to_disable_edit_action/)
+## [8][RailsAdmin: How to disable edit action?](https://www.reddit.com/r/rails/comments/j6qhyq/railsadmin_how_to_disable_edit_action/)
 - url: https://www.reddit.com/r/rails/comments/j6qhyq/railsadmin_how_to_disable_edit_action/
 ---
 Hi there,
@@ -72,7 +95,7 @@ The documentation [shows up](https://github.com/sferik/rails_admin/wiki/Base-act
 I just found out that you can define a method called `readonly?` on the model but that won't work while I have to update or change attributes while processing this record in my programming logic.
 
 Many thanks!
-## [7][active_storage in production](https://www.reddit.com/r/rails/comments/j6omlt/active_storage_in_production/)
+## [9][active_storage in production](https://www.reddit.com/r/rails/comments/j6omlt/active_storage_in_production/)
 - url: https://www.reddit.com/r/rails/comments/j6omlt/active_storage_in_production/
 ---
 background: I am building a Rails API for my react frontend Instagram clone.
@@ -80,7 +103,7 @@ background: I am building a Rails API for my react frontend Instagram clone.
 Everything was working perfectly in development but now that i pushed the code to my VPS I am having problems with active\_storage. I can upload pictures but when I try to get them the returned url for the image looks like ´[mydomain.com/rails/active\_storage/blobs/somehash/somename.jpg](https://mydomain.com/rails/active_storage/blobs/somehash/somename.jpg)´ -   placing that url in a img src (or trying to open it) returns a 404.
 
 Using Unicorn and Nginx on the server, active\_storage is set to **local file** and saving to a postgresql db. Any ideas?
-## [8][Documentation or expertise with AWS Cognito SDK](https://www.reddit.com/r/rails/comments/j6desf/documentation_or_expertise_with_aws_cognito_sdk/)
+## [10][Documentation or expertise with AWS Cognito SDK](https://www.reddit.com/r/rails/comments/j6desf/documentation_or_expertise_with_aws_cognito_sdk/)
 - url: https://www.reddit.com/r/rails/comments/j6desf/documentation_or_expertise_with_aws_cognito_sdk/
 ---
 I am currently implementing Cognito in a rails 6 app with a view to then using OIDC from Cognito onwards, enabling SSO. Unfortunately, the docs are lacklustre at best. They go into quite a lot of technical detail (which is excellent) but then skip crucial points. For example, `secret_hash` ([used here](https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/CognitoIdentityProvider/Client.html#sign_up-instance_method)) requires some boilerplate code which feels like it should belong inside the SDK. The docs don't tell you this, nor how to generate it. Thankfully, [StackOverflow](https://stackoverflow.com/questions/37438879/unable-to-verify-secret-hash-for-client-in-amazon-cognito-userpools) came to my rescue.
@@ -93,13 +116,13 @@ Of significant more concern is that everything I google seems to suggest that pe
 1. Almost as a show of hands - how many people have tried to implement it? Were you successful or not? Why?
 
 Thanks.
-## [9][Ruby on Rails &amp; Digital Ocean](https://www.reddit.com/r/rails/comments/j63loa/ruby_on_rails_digital_ocean/)
+## [11][Ruby on Rails &amp; Digital Ocean](https://www.reddit.com/r/rails/comments/j63loa/ruby_on_rails_digital_ocean/)
 - url: https://www.reddit.com/r/rails/comments/j63loa/ruby_on_rails_digital_ocean/
 ---
 I'm looking to migrate [my Ruby on Rails app](https://www.mugshotbot.com) from Heroku to Digital Ocean. I don't have any dev-ops experience and am very confused on where to start.
 
 Does anyone have any beginner tutorials or links I could work through?
-## [10][Active Storage -- Uploads via an API](https://www.reddit.com/r/rails/comments/j62zs0/active_storage_uploads_via_an_api/)
+## [12][Active Storage -- Uploads via an API](https://www.reddit.com/r/rails/comments/j62zs0/active_storage_uploads_via_an_api/)
 - url: https://www.reddit.com/r/rails/comments/j62zs0/active_storage_uploads_via_an_api/
 ---
 Hi!
@@ -114,16 +137,3 @@ I want to create an image upload feature for my current project. More specifical
 2. a form for images, submitted via JavaScript
 
 After the images have been submitted via JavaScript, I need permanent URLs to those images being sent back so I can use them in the first form. Ugh, I hope you understand what I mean.
-## [11][How to Deploy Ruby on Rails with MongoDB to Heroku?](https://www.reddit.com/r/rails/comments/j60455/how_to_deploy_ruby_on_rails_with_mongodb_to_heroku/)
-- url: https://www.reddit.com/r/rails/comments/j60455/how_to_deploy_ruby_on_rails_with_mongodb_to_heroku/
----
-Hi! I created a project by following this documentation of MongoDB [https://docs.mongodb.com/mongoid/current/tutorials/getting-started-rails/](https://docs.mongodb.com/mongoid/current/tutorials/getting-started-rails/)
-
-&amp;#x200B;
-
-I finished the project, but I don't know how to set it up to Heroku?
-## [12][Integrating Bootstrap theme in Rails 6](https://www.reddit.com/r/rails/comments/j5v9xt/integrating_bootstrap_theme_in_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/j5v9xt/integrating_bootstrap_theme_in_rails_6/
----
-So, to save time, I purchased a bootstrap theme online for my project. I am having difficulty integrating it . Confused by webpacker /asset pipeline file system. 
-Could anyone walk me through the process or point me to a tutorial on how to properly integrate my bootstrap theme into rails 6 ?

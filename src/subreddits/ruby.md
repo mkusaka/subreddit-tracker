@@ -1,5 +1,95 @@
 # ruby
-## [1][Polyphony has an io_uring backend!](https://www.reddit.com/r/ruby/comments/j79rmc/polyphony_has_an_io_uring_backend/)
+## [1][Ruby 2.7.2 has revised Rdoc for Hash](https://www.reddit.com/r/ruby/comments/j7l51e/ruby_272_has_revised_rdoc_for_hash/)
+- url: https://www.reddit.com/r/ruby/comments/j7l51e/ruby_272_has_revised_rdoc_for_hash/
+---
+I've spent a good part of this year working on revisions to the RDoc for Hash.  The revisions include all methods documentation in addition to much of the introductory text (class documentation).  Lots more example code.
+
+Check it out:
+
+\- 2.7.2: [https://ruby-doc.org/core-2.7.2/Hash.html](https://ruby-doc.org/core-2.7.2/Hash.html)
+
+\- 2.7.1: [https://ruby-doc.org/core-2.7.1/Hash.html](https://ruby-doc.org/core-2.7.1/Hash.html)
+## [2][Speeding up Rails with Memoization](https://www.reddit.com/r/ruby/comments/j7v6l2/speeding_up_rails_with_memoization/)
+- url: https://www.honeybadger.io/blog/ruby-rails-memoization/?utm_source=rubyweekly&amp;utm_medium=email&amp;utm_campaign=ruby
+---
+
+## [3][Can someone help me out with what this does rand(999_999)](https://www.reddit.com/r/ruby/comments/j7vkhg/can_someone_help_me_out_with_what_this_does/)
+- url: https://www.reddit.com/r/ruby/comments/j7vkhg/can_someone_help_me_out_with_what_this_does/
+---
+I'm trying to generate a fixed digit random number, and I came across this code. Could someone help me with what is happening here?  
+
+
+I'm not sure i get much from the documentation for rand either.
+## [4][Beginner need some help understaind data pipeline](https://www.reddit.com/r/ruby/comments/j7vlbx/beginner_need_some_help_understaind_data_pipeline/)
+- url: https://www.reddit.com/r/ruby/comments/j7vlbx/beginner_need_some_help_understaind_data_pipeline/
+---
+Context:  
+ I am pulling in data from a social media site and storing it in my database. For eg. Everday I make an api req to fetch all tweets of a user. Then make another api req for each tweet to fetch its public\_metrics like tweets, likes,etc.   
+
+
+If I am using Sidekiq, how should I build my data pipeline?  
+
+
+Right now, I have a worker who just makes both the api calls from the same worker.  
+Should I separate, "fetching all tweets" into a seprate worker and "fetch tweets metrics" into a separate wrker?
+## [5][Fastest way to generating a n digit number](https://www.reddit.com/r/ruby/comments/j7w5xn/fastest_way_to_generating_a_n_digit_number/)
+- url: https://www.reddit.com/r/ruby/comments/j7w5xn/fastest_way_to_generating_a_n_digit_number/
+---
+I found this code to generate 6 digit number 
+
+    rand(100000...999999)
+
+Is this approach fine?   
+I'm not sure what the two dots(..) or three dots(...) mean and I hope it doesn't expand into an array and then rand selects a values
+## [6]["Ruby 2.7.2 ... contains intentional incompatibility"](https://www.reddit.com/r/ruby/comments/j7fk83/ruby_272_contains_intentional_incompatibility/)
+- url: https://www.reddit.com/r/ruby/comments/j7fk83/ruby_272_contains_intentional_incompatibility/
+---
+[https://www.ruby-lang.org/en/news/2020/10/02/ruby-2-7-2-released/](https://www.ruby-lang.org/en/news/2020/10/02/ruby-2-7-2-released/)
+
+Anybody know what the incompatibility is? I'm glad they mention it as an issue, but I couldn't find any details on that page.
+## [7][Help to create the shortest hexadecimal string from two strings](https://www.reddit.com/r/ruby/comments/j7juoj/help_to_create_the_shortest_hexadecimal_string/)
+- url: https://www.reddit.com/r/ruby/comments/j7juoj/help_to_create_the_shortest_hexadecimal_string/
+---
+I have two strings say first = "say" and second = "henlo". I want to find the shortest possible user-friendly string(a-z, 0-9) that can encode this information. This string isn't any encrypted value I want it to be as human-readable as possible.
+
+This is how I do it currently. I combine the two words with space since both the words can't contain space like "first second" word = "say henlo" and compute the hexdigest using SHA1 and I get a value like so
+
+    require 'faker'
+    
+    all = {}
+    iterations = 5000000
+    word_size = 10
+    count, duplicates = 0, 0
+    
+    iterations.times do
+        word = Faker::Lorem.sentence(80, true, 15).split(' ').sample(2).join(' ')
+        digest = Digest::SHA1.hexdigest(word)[0..word_size-1]
+        if all[digest] == word
+            duplicates += 1
+            next
+        end
+        if all.include?(digest) 
+            puts [digest, all[digest], word].inspect
+            count += 1
+        end
+        all[digest] = word
+    end
+    puts [iterations, word_size, duplicates, count, (count.to_f / (iterations - duplicates)) * 100].inspect
+
+And this is the result I got
+
+    [1000000, 8, 363802, 64, 0.01]
+    [1000000, 10, 363723, 0, 0.0]
+    [5000000, 10, 3769185, 0, 0.0]
+
+Now, I have a couple of questions.
+
+1. Is there any other way to shrink the hexdigest likes into something shorter, and user-readable string without increasing the chance of collision?
+2. What is the probability that taking the first n characters is unique for a set of words like 1M words? How could I reliability calculate it to compute the trade-offs
+
+EDIT:The purpose of the short string isn't to substitute saving both the string themselves but to generate a short string for the user which they can use in their API calls.  
+EDIT 2: The reason I can't use the "human-friend" words as it is, is because it can be languages with accents(French and unicode ones also)  and API key is ASCII only. 
+## [8][Polyphony has an io_uring backend!](https://www.reddit.com/r/ruby/comments/j79rmc/polyphony_has_an_io_uring_backend/)
 - url: https://www.reddit.com/r/ruby/comments/j79rmc/polyphony_has_an_io_uring_backend/
 ---
 I am pleased to announce the release of [Polyphony](https://github.com/digital-fabric/polyphony) version 0.46.0, which includes a full-blown io\_uring backend. The io\_uring backend uses a relatively recent new I/O API in Linux that is the future of I/O processing. The new backend provides more than double the performance of the libev backend, achieving **over 120K requests/second** using a basic "Hello world" HTTP server.
@@ -9,132 +99,17 @@ Those of you unfamiliar with io\_uring can head over to the [Lord of the io\_uri
 For more information on the new io\_uring backend, including preliminary benchmark numbers and design details you can consult the [pull request](https://github.com/digital-fabric/polyphony/pull/44). The source code for the io\_uring backend in all its glory can be found[ here](https://github.com/digital-fabric/polyphony/blob/master/ext/polyphony/backend_io_uring.c).
 
 For more information on Polyphony please consult the (slightly outdated) [Polyphony docs](https://digital-fabric.github.io/polyphony/).
-## [2][Getting started with Tailwind CSS on Rails 6](https://www.reddit.com/r/ruby/comments/j78xd7/getting_started_with_tailwind_css_on_rails_6/)
+## [9][Getting started with Tailwind CSS on Rails 6](https://www.reddit.com/r/ruby/comments/j78xd7/getting_started_with_tailwind_css_on_rails_6/)
 - url: https://rubyyagi.com/tailwind-css-on-rails-6-intro/
 ---
 
-## [3][What makes Ruby such a good language for creating DSLs ?](https://www.reddit.com/r/ruby/comments/j79fd2/what_makes_ruby_such_a_good_language_for_creating/)
-- url: https://www.reddit.com/r/ruby/comments/j79fd2/what_makes_ruby_such_a_good_language_for_creating/
+## [10][Copy all files in a directory tree to a common destination with Ruby](https://www.reddit.com/r/ruby/comments/j7f3uo/copy_all_files_in_a_directory_tree_to_a_common/)
+- url: https://www.reddit.com/r/ruby/comments/j7f3uo/copy_all_files_in_a_directory_tree_to_a_common/
 ---
-I have no formal education in computer science, I have bussiness background, but was always interested in programming since young age. Lately I am working through [https://teachyourselfcs.com/](https://teachyourselfcs.com/)
+I have published a few of my old Ruby articles at Medium. Here is the "friends link" so you can view the article without a membership.
 
-I am now working through classic SICP, apparently it later discusses creating language as another way of abstraction (complementing functional programming and OOP).
+[https://medium.com/@bradtrupp/copy-all-files-in-a-directory-tree-to-a-common-destination-with-ruby-e944553995ef?source=friends\_link&amp;sk=f6b9dfb362a6f8b329bd1d1c42407d06](https://medium.com/@bradtrupp/copy-all-files-in-a-directory-tree-to-a-common-destination-with-ruby-e944553995ef?source=friends_link&amp;sk=f6b9dfb362a6f8b329bd1d1c42407d06)
 
-Now, I have an ecommerce company where I have created some tools in Python. Mainly doing some http requests, automating sending emails,  downloading xml files, processing them, filtering products from warehouses etc. So mostly command line tools. Probably it will be rewritten soon to a server program that continously works in the background.
+An old podcast receiver program that I used to use kept each feed in a separate subdirectory. I wanted the audio files in a single directory for my ease of playing.
 
-I am looking for a language where I can experiment with ideas of: functional programming (doesn't have to be pure FP), OOP (I am very interested in fully grasping OOP, it so my worst area right now), metaprogramming.
-
-So right now I am somewhat productive in Python and need to decide, do I fully commit to Python or pivot to some other language. I don't have that much time to waste but on the other side, I would rather learn something where I can have more freedom to explore and learn advanced subjects.
-
-Here is my question: why is Ruby so known for creating DSL languages ? Why is metaprogramming such and important concept there and not in Python ? Python have decorators, metaclassess and AST module, how is Ruby in this regard ? Why is everyone in Python scared to touch those tools ? Are Python metaclasses not powerfull enough ?
-
-I also hate the word 'pythonic' and community insitance on using uniform programming style for each problem.
-## [4][How to generate fake text in multiple languages](https://www.reddit.com/r/ruby/comments/j79nvn/how_to_generate_fake_text_in_multiple_languages/)
-- url: https://www.reddit.com/r/ruby/comments/j79nvn/how_to_generate_fake_text_in_multiple_languages/
----
-I'm trying to generate random words in multiple languages. Something like Faker::Lorem.words
-
-How would I do this in Ruby
-## [5][μ-observers - Simple and powerful implementation of the observer pattern.](https://www.reddit.com/r/ruby/comments/j6qle5/μobservers_simple_and_powerful_implementation_of/)
-- url: https://www.reddit.com/r/ruby/comments/j6qle5/μobservers_simple_and_powerful_implementation_of/
----
-&amp;#x200B;
-
-[https:\/\/github.com\/serradura\/u-observers](https://preview.redd.it/ankry7il8or51.png?width=616&amp;format=png&amp;auto=webp&amp;s=369eb78bb7cfec252615ff3d85b48995e7c4a6ab)
-
-**Compatibility**
-
-|Ruby|ActiveRecord/Rails|
-|:-|:-|
-|\&gt;= 2.2.0|\&gt;=3.2, &lt; 6.1|
-
-*Note: The ActiveRecord isn't a dependency, but you could add a module to enable some static methods that were designed to be used with its* [*callbacks*](https://guides.rubyonrails.org/active_record_callbacks.html)*.*
-
-**About**
-
-This gem implements the observer pattern [\[1\]](https://en.wikipedia.org/wiki/Observer_pattern)[\[2\]](https://refactoring.guru/design-patterns/observer) (also known as publish/subscribe). It provides a simple mechanism for one object to inform a set of interested third-party objects when its state changes.
-
-Ruby's standard library [has an abstraction](https://ruby-doc.org/stdlib-2.7.1/libdoc/observer/rdoc/Observable.html) that enables you to use this pattern. But its design can conflict with other mainstream libraries, like the [ActiveModel/ActiveRecord](https://api.rubyonrails.org/classes/ActiveModel/Dirty.html#method-i-changed), which also has the [changed](https://ruby-doc.org/stdlib-2.7.1/libdoc/observer/rdoc/Observable.html#method-i-changed) method. In this case, the behavior of the Stdlib will be compromised.
-
-Because of this issue, I decided to create a gem that encapsulates the pattern without changing the object's implementation so much. The Micro::Observers includes just one instance method in the target class (its instance will be the observed subject).
-
-**Usage examples**
-
-*Attaching and notifying observers*
-
-[https://github.com/serradura/u-observers#usage](https://github.com/serradura/u-observers#usage)
-
-https://preview.redd.it/468dj9y59or51.png?width=1471&amp;format=png&amp;auto=webp&amp;s=652d3f79f6a37c28fbeb16e06d0d5b595ed43803
-
-*ActiveRecord integration*
-
-[https://github.com/serradura/u-observers#activerecord-and-activemodel-integrations](https://github.com/serradura/u-observers#activerecord-and-activemodel-integrations)
-
-https://preview.redd.it/emcwu2kp9or51.png?width=1259&amp;format=png&amp;auto=webp&amp;s=3e109c21d9183d7188929194b130ac06f2d7b761
-
-What do you think about it? Does it look good?
-## [6][How's the Performance of Ruby 3.0.0-preview1?](https://www.reddit.com/r/ruby/comments/j6ssd0/hows_the_performance_of_ruby_300preview1/)
-- url: https://www.fastruby.io/blog/rails/performance/ruby/hows-the-performance-of-ruby-3.0.0-preview1.html
----
-
-## [7][Multitenancy with Postgres schemas: key concepts explained](https://www.reddit.com/r/ruby/comments/j6wxp3/multitenancy_with_postgres_schemas_key_concepts/)
-- url: https://blog.arkency.com/multitenancy-with-postgres-schemas-key-concepts-explained/
----
-
-## [8][Generating an Increasing unique number](https://www.reddit.com/r/ruby/comments/j6sbjt/generating_an_increasing_unique_number/)
-- url: https://www.reddit.com/r/ruby/comments/j6sbjt/generating_an_increasing_unique_number/
----
- I want to create an unique value. preferably something that's user friends  i.e. a-z and maybe numbers. 
-
-Approach 1. 
-
-for generating numbers 
-
-  
-I did something like this. 
-
-     (Time.now.to_f * 100000).to_i
-
-And locally it does look like it does it.   
-
-
-    2.4.7 :050 &gt; 10.times do 
-    2.4.7 :051 &gt;     puts (Time.now.to_f * 100000).to_i
-    2.4.7 :052?&gt;   end
-    160207178626801
-    160207178626804
-    160207178626805
-    160207178626806
-    160207178626807
-    160207178626808
-    160207178626809
-    160207178626810
-    160207178626811
-    160207178626812
-     =&gt; 10
-
-Approach 2.   
-
-
-Generating a hex and then converting to base 26. However I'm not sure if this will be unique.   
-
-
-Can someone help me out with this?
-## [9][Array.select question](https://www.reddit.com/r/ruby/comments/j6vkqb/arrayselect_question/)
-- url: https://www.reddit.com/r/ruby/comments/j6vkqb/arrayselect_question/
----
-&amp;#x200B;
-
-[Hey guys when I use this code it just returns the original array. When I use array.select! and mutate the original array it works but why? Shouldn't array.select return an array with all elements that return true without modifying the existing array? Thanks.](https://preview.redd.it/swvwmukumpr51.png?width=279&amp;format=png&amp;auto=webp&amp;s=a6efc4d8f30b961b46b5445971035b594c4005cd)
-## [10][Does ruby apply options in the hashbang even if it's called explicitly?](https://www.reddit.com/r/ruby/comments/j6muvf/does_ruby_apply_options_in_the_hashbang_even_if/)
-- url: https://www.reddit.com/r/ruby/comments/j6muvf/does_ruby_apply_options_in_the_hashbang_even_if/
----
-I put `-wU` in the hashbang. Do I still need the `encoding` magic comment for case I decided to call `ruby file.rb` instead of just `./file.rb`? If I don't, is this consistent across all platforms?
-
-What about when there's `env` in the hashbang?
-
-Edit: okay, it *does* read the options, sorry for asking before trying. But still I can't test on other OSs than Linux, can please someone here try?
-
-Edit 2: Looking through the source, there's a testcase for it:
-* Link fixed on current commit: &lt;https://github.com/ruby/ruby/blob/62abdbadf2937372924ef68aadff5191fc0f0880/test/ruby/test_rubyoptions.rb#L421&gt;
-* Link fixed on `master` (no guarantee it'll survive till the end) &lt;https://github.com/ruby/ruby/blob/master/test/ruby/test_rubyoptions.rb#L421&gt;
+I wrote this quick Ruby utility back many years back to flatten out all the files into a single directory before I copy them to my (now retired) mp3 player.

@@ -23,90 +23,88 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/10/07/this-week-in-rust-359/
 ---
 
-## [3][Woohoo, milestones being made. Updated 2 days ago](https://www.reddit.com/r/rust/comments/j76xgg/woohoo_milestones_being_made_updated_2_days_ago/)
-- url: https://i.redd.it/o7w56ku9xsr51.png
+## [3][Memory Safe ‘curl’ for a More Secure Internet](https://www.reddit.com/r/rust/comments/j7yegb/memory_safe_curl_for_a_more_secure_internet/)
+- url: https://www.abetterinternet.org/post/memory-safe-curl/
 ---
 
-## [4][Designing a New Rust Class at Stanford: Safety in Systems Programming](https://www.reddit.com/r/rust/comments/j6yht2/designing_a_new_rust_class_at_stanford_safety_in/)
-- url: https://reberhardt.com/blog/2020/10/05/designing-a-new-class-at-stanford-safety-in-systems-programming.html
+## [4][density-mesh v1.2 | Now it supports working with mesh chunks, ideal for big worlds and real-time terrain generation!](https://www.reddit.com/r/rust/comments/j7onr7/densitymesh_v12_now_it_supports_working_with_mesh/)
+- url: https://i.redd.it/1zo3jps4nyr51.png
 ---
 
-## [5][density-mesh - Image to 2D mesh converter](https://www.reddit.com/r/rust/comments/j73ijj/densitymesh_image_to_2d_mesh_converter/)
-- url: https://i.redd.it/1dyzc32ftrr51.png
----
-
-## [6][This Month in Rust GameDev #14 - September 2020](https://www.reddit.com/r/rust/comments/j722i5/this_month_in_rust_gamedev_14_september_2020/)
-- url: https://rust-gamedev.github.io/posts/newsletter-014
----
-
-## [7][The cost of Rust async/await](https://www.reddit.com/r/rust/comments/j703ge/the_cost_of_rust_asyncawait/)
-- url: https://github.com/jkarneges/rust-async-bench
----
-
-## [8][Introducing `code-tour`, an attempt to improve Rust example-based learning approach. Any feedbacks?](https://www.reddit.com/r/rust/comments/j7a5pa/introducing_codetour_an_attempt_to_improve_rust/)
-- url: https://www.reddit.com/r/rust/comments/j7a5pa/introducing_codetour_an_attempt_to_improve_rust/
----
-Hello folks,
-
-Today I'm releasing [code-tour](https://github.com/Hywan/code-tour-rs), which is my attempt to improve Rust example-based learning approach. Basically, it is `cargo run --example` on steroid. It turns:
-
-    // examples/foo.rs
-    
-    use code_tour::code_tour;
-    
-    #[derive(Debug)]
-    struct S {
-        x: i32,
-        y: i32,
-    }
-    
-    #[code_tour]
-    fn main() {
-        /// Declare something.
-        /// Because it's an example.
-        let a = S { x: 7, y: 42 };
-    
-        let b = a.x + a.y;
-    
-        /// Here is the result!
-        let c = b + 1;
-    }
-
-into the following when runned with `cargo run --example foo`:
-
-[\`cargo run --example foo\`](https://preview.redd.it/5atxloadbur51.png?width=670&amp;format=png&amp;auto=webp&amp;s=eb91c652fd2b36a3e5880b001ed158c03efa85cf)
-
-The idea is that when a user runs an example, it usually prints nothing except if the author has added `println!` and `dbg!` statements everywhere. Moreover, all comments are useless, except if the user has the example opened side-by-side with the cargo run.
-
-With code-tour, statements (+ doc) are displayed at runtime. The results are twofold:
-
-1. It simplified the *editorial* work for the authors, and
-2. It provides a better *experience* to the users!
-
-This crate also provides an *interactive* mode (for long examples), and a *quiet* mode (e.g. for CI).
-
-I'm sharing this here today in order to collect feedbacks:
-
-* Do you think it is useful for you?
-* How would you improve this?
-* Why 42?
-
-Repository: [https://github.com/Hywan/code-tour-rs](https://github.com/Hywan/code-tour-rs)
-
-On crates.io: [https://crates.io/crates/code-tour](https://crates.io/crates/code-tour)
-## [9][Iterators in Rust](https://www.reddit.com/r/rust/comments/j794ro/iterators_in_rust/)
-- url: https://blog.thoughtram.io/iterators-in-rust/
----
-
-## [10][Make a Language in Rust, Part Eight: Function Definitions](https://www.reddit.com/r/rust/comments/j7clns/make_a_language_in_rust_part_eight_function/)
-- url: https://arzg.github.io/lang/8/
----
-
-## [11][Announcing Rust 1.47.0](https://www.reddit.com/r/rust/comments/j7d49v/announcing_rust_1470/)
+## [5][Announcing Rust 1.47.0](https://www.reddit.com/r/rust/comments/j7d49v/announcing_rust_1470/)
 - url: https://blog.rust-lang.org/2020/10/08/Rust-1.47.html
 ---
 
-## [12][Make a Language in Rust, Part Seven: A REPL](https://www.reddit.com/r/rust/comments/j6p8wt/make_a_language_in_rust_part_seven_a_repl/)
-- url: https://arzg.github.io/lang/7/
+## [6][Repos with beginner issues](https://www.reddit.com/r/rust/comments/j7w20s/repos_with_beginner_issues/)
+- url: https://www.reddit.com/r/rust/comments/j7w20s/repos_with_beginner_issues/
+---
+Hi! I was wondering if anyone could suggest me repositories with nice beginner issues to start working on something practical after having finished the book. Thanks!
+## [7][dangerous: library for safely and explicitly handling untrusted aka dangerous data](https://www.reddit.com/r/rust/comments/j7u0ue/dangerous_library_for_safely_and_explicitly/)
+- url: https://www.reddit.com/r/rust/comments/j7u0ue/dangerous_library_for_safely_and_explicitly/
+---
+First development release for a parsing library with optional verbose errors. Would love to hear any opinions/issues! I'm working on a couple of libraries that consume the dangerous crate, so hopefully with decent amount of dog-fooding I'll find some improvements (or bugs heh) along the way.
+
+[https://github.com/avitex/rust-dangerous](https://github.com/avitex/rust-dangerous)
+
+Updated with example verbose error below
+
+```text
+[ERRO]: ahhh!: error attempting to convert input to str: expected utf-8 code point
+&gt; ['h' 'e' ff 'l' 'o']
+           ^^
+additional:
+  error offset: 2, input length: 5
+backtrace:
+  1. `read all`
+  2. `read` (expected message)
+  3. `read` (expected body)
+  4. `convert input to str` (expected utf-8 code point)
+```
+## [8][Compile-time guarantee for regexp captures?](https://www.reddit.com/r/rust/comments/j7w2s0/compiletime_guarantee_for_regexp_captures/)
+- url: https://www.reddit.com/r/rust/comments/j7w2s0/compiletime_guarantee_for_regexp_captures/
+---
+Hypothetical question: what would it take for the compiler to be able to check that for `regex::Regex::new(r"^(\d{1,18})blargh$").captures(some_string).unwrap().get(1)` is not only always `Some()`, but also a valid `u64` after parsing?
+## [9][Best Book/material for People who want to level up in systems programming](https://www.reddit.com/r/rust/comments/j7p7or/best_bookmaterial_for_people_who_want_to_level_up/)
+- url: https://www.reddit.com/r/rust/comments/j7p7or/best_bookmaterial_for_people_who_want_to_level_up/
+---
+I’m looking to “level up” my understanding of more “advanced” topics in Rust at a higher level. Like when I should use ARC, channel, etc. Coming from Elixir I can look into erlang books and materials. I was wondering if anyone had any recommendations about picking up some higher level topics in rust (which I haven’t been able to find) or even in C.
+## [10][Patterns of fallible iteration](https://www.reddit.com/r/rust/comments/j7n6ei/patterns_of_fallible_iteration/)
+- url: https://morestina.net/blog/1607/fallible-iteration
+---
+
+## [11][serde_json benchmark](https://www.reddit.com/r/rust/comments/j7yopg/serde_json_benchmark/)
+- url: https://www.reddit.com/r/rust/comments/j7yopg/serde_json_benchmark/
+---
+Hello everyone.
+
+According to this, serde\_json has a rate of above 500 MB/s parsing a json string to a structure.
+
+                                    DOM                STRUCT
+    ======= serde_json ======= parse|stringify ===== parse|stringify ====
+    data/canada.json         280 MB/s   370 MB/s   510 MB/s   320 MB/s
+    data/citm_catalog.json   400 MB/s   420 MB/s   840 MB/s   660 MB/s
+    data/twitter.json        270 MB/s   730 MB/s   530 MB/s   850 MB/s
+    
+
+[https://github.com/serde-rs/json-benchmark](https://github.com/serde-rs/json-benchmark)
+
+&amp;#x200B;
+
+However, when I try to parse an 18 MB file it takes me about half a second when built for release.
+
+Here's my test code:
+
+        let mut buffer = String::new();
+        let mut f = File::open("data.json").unwrap();
+        f.read_to_string(&amp;mut buffer).unwrap();
+    
+        let start = now(); // now is a fn that returns current time in ms
+        let value: serde_json::Value = serde_json::from_str(buffer.as_str()).unwrap();
+        println!("string to value: {}", now() - start);
+
+Am I reading the benchmark wrong? Is my code wrong?  
+Who's lying?
+## [12][Woohoo, milestones being made. Updated 2 days ago](https://www.reddit.com/r/rust/comments/j76xgg/woohoo_milestones_being_made_updated_2_days_ago/)
+- url: https://i.redd.it/o7w56ku9xsr51.png
 ---
 

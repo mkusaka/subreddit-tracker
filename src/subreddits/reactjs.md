@@ -70,83 +70,72 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Microsoft plans to unify Outlook across platforms using web technologies [React / React Native]](https://www.reddit.com/r/reactjs/comments/j7jwis/microsoft_plans_to_unify_outlook_across_platforms/)
-- url: https://www.neowin.net/news/microsoft-plans-to-unify-outlook-across-platforms-using-web-technologies?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+neowin-main+%28Neowin+News%29
+## [3][Any life-changing react libraries out there everyone should know about?](https://www.reddit.com/r/reactjs/comments/j88t0r/any_lifechanging_react_libraries_out_there/)
+- url: https://www.reddit.com/r/reactjs/comments/j88t0r/any_lifechanging_react_libraries_out_there/
+---
+I just discovered [framer-motion](https://github.com/framer/motion) and it's actually ridiculous how easy it is to create complex animations and what it does to improve the look and feel of a website.
+
+Anything else life-changing out there? Can be funny, can be useful, can be just plain genius! Would love to hear about your discoveries. No links to generic lists please, tell me about your own personal experience and why you like it.
+## [4][React-Firebase question - why does my component keep sending expired tokens?](https://www.reddit.com/r/reactjs/comments/j8hmw0/reactfirebase_question_why_does_my_component_keep/)
+- url: https://www.reddit.com/r/reactjs/comments/j8hmw0/reactfirebase_question_why_does_my_component_keep/
+---
+ Hey folks,
+
+So, I've had an issue with a React-Firebase project I'm working on. I'm based in New Zealand, so I set the cloud firestore location to as close to me as possible, which is australia-southeast1.
+
+When I was making post requests to my firestore, I kept getting the error "Firebase ID token has expired. Get a fresh ID token from your client app and try again".
+
+I noticed that when I set my laptop to eastern Australian time, it fixed the problem - I could make post requests with any faults. Firebase tokens expire after an hour, so I can only assume that because of the two hour time difference, firebase thought I was sending it expired tokens. Obviously I want to create a website that people in all time zones use, so how do I fix this?
+
+I feel like this is a stupid question that reflects my lack of understanding of how servers work, but hey, I'm a newbie. Anyway, code as follows:
+
+[https://codepen.io/mildredthecat/pen/zYBxgBw?editors=0010](https://codepen.io/mildredthecat/pen/zYBxgBw?editors=0010)
+## [5][My first full stack project with React and Firebase, any feedback is more than welcome!](https://www.reddit.com/r/reactjs/comments/j8hy9h/my_first_full_stack_project_with_react_and/)
+- url: https://github.com/ngso/cornerbox
 ---
 
-## [4][Jotai - a simple State Manager for React.js](https://www.reddit.com/r/reactjs/comments/j7wh5o/jotai_a_simple_state_manager_for_reactjs/)
-- url: https://medium.com/javascript-in-plain-english/jotai-simple-state-management-for-react-b9318b0f7616?source=friends_link&amp;sk=57d2f0357a97a77ffa77f29132b876e2
+## [6][React and React Native videocall](https://www.reddit.com/r/reactjs/comments/j8ie0a/react_and_react_native_videocall/)
+- url: https://www.reddit.com/r/reactjs/comments/j8ie0a/react_and_react_native_videocall/
 ---
+Me and the team have to build webapp with React, and the same mobile app built with React Native. We need to add a video call integration, it needs to be one-to-one AND multiple. Noone of us have experience on that. The difficult part is finding one library which helps us on both platforms, web and mobile. One plus would be, on mobile, that it works with Expo; it would be better so we can count on its features without ejecting.
 
-## [5][Creating a presigned url to authenticate users](https://www.reddit.com/r/reactjs/comments/j7ycx4/creating_a_presigned_url_to_authenticate_users/)
-- url: https://www.reddit.com/r/reactjs/comments/j7ycx4/creating_a_presigned_url_to_authenticate_users/
+&amp;#x200B;
+
+Do you have any suggestion? Thanks a lot!
+## [7][Why do so many companies seem to prefer React over Vue or Angular?](https://www.reddit.com/r/reactjs/comments/j866z3/why_do_so_many_companies_seem_to_prefer_react/)
+- url: https://www.reddit.com/r/reactjs/comments/j866z3/why_do_so_many_companies_seem_to_prefer_react/
 ---
-I have a react app that has a traditional login page and flow. Once the user enters correct credentials, they are given a jwt which is stored in the browser local storage.
-
-However, I'd like to grant access to certain users by creating a short-term pre-signed URL (same as S3 does). The URL would look like `myapp.com/resource?token=ey6347fdefd....`
-
-I can then add a new route to my app `&lt;Route exact path="/resource" component={Resource}&gt;`. When anyone hits this path, I can define some logic in the `Resource` component to:
-
-1. Extract `token` from query string.
-2. Validate `token` and ensure it's not expired using `exp` from token.
-3. If successful, render the UI else redirect to `/login`.
-
-Just want to confirm if this is the right approach. 
-
-Also, would there be any case if I redirect users to `/login` in step 3 above? Asking because I will be the person creating those pre-signed URLs so assuming it's always correct (?). If a third party created those pre-signed URLs, then I'd be more concerned about validating them.
-## [6][Reset value of Material UI Checkbox components programmatically?](https://www.reddit.com/r/reactjs/comments/j7whwp/reset_value_of_material_ui_checkbox_components/)
-- url: https://www.reddit.com/r/reactjs/comments/j7whwp/reset_value_of_material_ui_checkbox_components/
+Is it because of the pool of developers? Or actual engineering reasons? Or a legacy adoption of react when vue wasnt that popular?
+## [8][How does Spotify protect audio files from being downloaded in browser dev tools?](https://www.reddit.com/r/reactjs/comments/j8isjv/how_does_spotify_protect_audio_files_from_being/)
+- url: https://www.reddit.com/r/reactjs/comments/j8isjv/how_does_spotify_protect_audio_files_from_being/
 ---
-Hi Everyone,
-
-I'm using Material UI Checkbox components to allow a user to select toppings for their pizza.  I followed the MUI docs when creating the component, ie the components have a 'checked' prop with a boolean value.  True = checked, false = unchecked.  I've tried to programmatically reset the values of each key/value pair to false onClick.  My function successfully resets the object to all keys having a false value, however, the UI does not update and the checkboxes remain checked.  I need the checkboxes to reset to reflect the state of the objects key/value pairs if, for example the user clicks to add a pizza to their cart and then wants to order another one, they should have a blank slate...the topping selections shouldn't remain checked. I've properly managed state using the useState hook, and the function that resets the object looks like this: 
-
-*const clearSelection = () =&gt; {*  
- *setRegularChecked(regObj)*  
- *setPremiumChecked(premObj)*  
- *setSize(null)*  
- *setVariant(null)*  
- *}*
-
-setRegularChecked receives the regObj which looks like {ham: false, pepperoni: false}..etc for all regular toppings
-
-setPremiumChecked receives the premObj which looks like {prociutto: false, gorgonzola: false}..etc for all premium toppings
-
-setSize resets the pizza size selection to null as expected
-
-setVariant resets the pizza variant (sicilian, regular, etc) back to null as expected
-
-Does anyone know why this is happening?  Is it a bug?  Know of a solution? If you feel up to it, here is the full component code
-
-[https://github.com/Perrottarichard/pizzapizza-client/blob/master/src/components/Pizza.js](https://github.com/Perrottarichard/pizzapizza-client/blob/master/src/components/Pizza.js)
-## [7][React 17 rc 3 is out - final call for bugs](https://www.reddit.com/r/reactjs/comments/j7kble/react_17_rc_3_is_out_final_call_for_bugs/)
-- url: https://twitter.com/dan_abramov/status/1314293585739681792?s=20
+ Hi,  
+I tried hard and couldn't download files from Spotify, will be happy if I implement this encryption method for my next project.
+## [9][.evn variables undefined reactjs](https://www.reddit.com/r/reactjs/comments/j8i74j/evn_variables_undefined_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/j8i74j/evn_variables_undefined_reactjs/
 ---
+ 
 
-## [8][Material UI checkbox false value not updating in Ui](https://www.reddit.com/r/reactjs/comments/j7xgzq/material_ui_checkbox_false_value_not_updating_in/)
-- url: https://v.redd.it/ikkg59ks42s51
+Greetings,
+
+I create react app with npx create-react-app, and tried to use env variables.
+
+I named the variable with REACT\_APP , prefix, but it still does not work( prints undefiend)
+
+here is the test project - &gt; [https://workupload.com/file/B4FXKJ8HJRL](https://workupload.com/file/B4FXKJ8HJRL)
+
+Should I do smth else to make it work?
+## [10][Are there any decent SMTP/email modules?](https://www.reddit.com/r/reactjs/comments/j8i3iv/are_there_any_decent_smtpemail_modules/)
+- url: https://www.reddit.com/r/reactjs/comments/j8i3iv/are_there_any_decent_smtpemail_modules/
 ---
-
-## [9][How to join a Slack Channel for React development?](https://www.reddit.com/r/reactjs/comments/j7xb08/how_to_join_a_slack_channel_for_react_development/)
-- url: https://www.reddit.com/r/reactjs/comments/j7xb08/how_to_join_a_slack_channel_for_react_development/
+Same as title. Basically looking for a SMTP library that can help me send emails to myself from the contact me section of my wevsite. wondering if there is something like smtplib from python?
+## [11][Where can I get different background videos/gifs for my app?](https://www.reddit.com/r/reactjs/comments/j80rdy/where_can_i_get_different_background_videosgifs/)
+- url: https://www.reddit.com/r/reactjs/comments/j80rdy/where_can_i_get_different_background_videosgifs/
 ---
-I would like to join a Slack channel of React developers.  
-I find [https://reactjs.org/community/support.html](https://reactjs.org/community/support.html) but none of the links lead to an opportunity to join a Slack channel.  
-This is confusing to me.  
-What am I missing?
-## [10][React - Keydown event is taking 500ms and the same function via onClick take 50ms](https://www.reddit.com/r/reactjs/comments/j7wog3/react_keydown_event_is_taking_500ms_and_the_same/)
-- url: https://www.reddit.com/r/reactjs/comments/j7wog3/react_keydown_event_is_taking_500ms_and_the_same/
----
-I am trying to create a keyboard shortcut for my react-redux application. The keydown function takes 500 ms and if I do the same via the onClick function it takes 50ms. I have tried the same by creating a production version but no good results.
+I would like to create a weather Web app something similar to this I found on dribble https://dribbble.com/shots/10956687-Climate-applications
 
-A hack I tested was to call an onClick event inside the keydown function which take lesser time than the original function. I also tried using Chrome Memory Profiler to see that's wrong. But no luck.
-
-Can anyone suggest any solution to debug this problem?
-## [11][Epic React: Javascript You Need To Know For React](https://www.reddit.com/r/reactjs/comments/j7afir/epic_react_javascript_you_need_to_know_for_react/)
-- url: https://blog.bhanuteja.dev/epic-react-javascript-you-need-to-know-for-react
----
-
-## [12][Build a Timeline Component With React and React-Chrono](https://www.reddit.com/r/reactjs/comments/j7vvpz/build_a_timeline_component_with_react_and/)
-- url: https://medium.com/better-programming/build-a-timeline-component-with-react-and-react-chrono-fb1b962b020e
+I'm wondering where I can get different background images for different weather type? Like sunny, raining, snowing etc.
+## [12][Build an Income Tracker in ReactJS ~ useState, useEffect, useRef](https://www.reddit.com/r/reactjs/comments/j8016c/build_an_income_tracker_in_reactjs_usestate/)
+- url: https://www.youtube.com/watch?v=K5eoHVbwAhI&amp;feature=share
 ---
 

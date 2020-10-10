@@ -23,88 +23,76 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/10/07/this-week-in-rust-359/
 ---
 
-## [3][Memory Safe ‘curl’ for a More Secure Internet](https://www.reddit.com/r/rust/comments/j7yegb/memory_safe_curl_for_a_more_secure_internet/)
+## [3][Built a tiny web tool with RustWasm](https://www.reddit.com/r/rust/comments/j8ht8a/built_a_tiny_web_tool_with_rustwasm/)
+- url: https://www.reddit.com/r/rust/comments/j8ht8a/built_a_tiny_web_tool_with_rustwasm/
+---
+I'm still quite new to the language but I have found myself rather infatuated with RustWasm lately and I went ahead to create a simple [random password generator](https://wasm-pass.gq) with wasm-bindgen, rand and React.js. Feel free to give it a try, open to feedback and contributions.
+## [4][A New Backend for Cranelift, Part 1: Instruction Selection – Mozilla Hacks](https://www.reddit.com/r/rust/comments/j8aqbs/a_new_backend_for_cranelift_part_1_instruction/)
+- url: https://hacks.mozilla.org/2020/10/a-new-backend-for-cranelift-part-1-instruction-selection/
+---
+
+## [5][Memory Safe ‘curl’ for a More Secure Internet](https://www.reddit.com/r/rust/comments/j7yegb/memory_safe_curl_for_a_more_secure_internet/)
 - url: https://www.abetterinternet.org/post/memory-safe-curl/
 ---
 
-## [4][density-mesh v1.2 | Now it supports working with mesh chunks, ideal for big worlds and real-time terrain generation!](https://www.reddit.com/r/rust/comments/j7onr7/densitymesh_v12_now_it_supports_working_with_mesh/)
-- url: https://i.redd.it/1zo3jps4nyr51.png
+## [6][RustDesk: a remote desktop software written with Rust](https://www.reddit.com/r/rust/comments/j8dl4p/rustdesk_a_remote_desktop_software_written_with/)
+- url: https://www.producthunt.com/posts/rustdesk
 ---
 
-## [5][Announcing Rust 1.47.0](https://www.reddit.com/r/rust/comments/j7d49v/announcing_rust_1470/)
-- url: https://blog.rust-lang.org/2020/10/08/Rust-1.47.html
+## [7][How To Send Keyboard Events To Another Process In Rust ?](https://www.reddit.com/r/rust/comments/j8fp23/how_to_send_keyboard_events_to_another_process_in/)
+- url: https://www.reddit.com/r/rust/comments/j8fp23/how_to_send_keyboard_events_to_another_process_in/
 ---
+In a game I play, there is a macro assigned to the key `4` and I have written a small rust program that uses [enigo lib](https://github.com/enigo-rs/enigo) to simulate the key press. When I run the program in cmd, I can see that `4` key is being pressed repeatedly (once a second) because it's written onto the console window, but when I switch to game process, while the rust code is running, it doesn't work, and windows says my rust program was blocked from making unwanted changes.
 
-## [6][Repos with beginner issues](https://www.reddit.com/r/rust/comments/j7w20s/repos_with_beginner_issues/)
-- url: https://www.reddit.com/r/rust/comments/j7w20s/repos_with_beginner_issues/
+How is it that remote-control/conference applications like team-viewer/zoom etc. is able to send key clicks to another processes if windows is blocking them ?
+
+EDIT: I'm able to send key events to the sublime text, but not to the game. But zoom is able to control the game as well.
+## [8][Building entire toolchain from source](https://www.reddit.com/r/rust/comments/j8j454/building_entire_toolchain_from_source/)
+- url: https://www.reddit.com/r/rust/comments/j8j454/building_entire_toolchain_from_source/
 ---
-Hi! I was wondering if anyone could suggest me repositories with nice beginner issues to start working on something practical after having finished the book. Thanks!
-## [7][dangerous: library for safely and explicitly handling untrusted aka dangerous data](https://www.reddit.com/r/rust/comments/j7u0ue/dangerous_library_for_safely_and_explicitly/)
-- url: https://www.reddit.com/r/rust/comments/j7u0ue/dangerous_library_for_safely_and_explicitly/
+Hey, is there any way to use rustup or a tool like it to manage and build the entire toolchain from source? 
+
+I can't use my default rustup toolchains, as the powerpc64-linux binaries use a different linker to my system and segfault.
+## [9][Help needed: Moving a buffer and a Cow pointing to it in a struct.](https://www.reddit.com/r/rust/comments/j8irng/help_needed_moving_a_buffer_and_a_cow_pointing_to/)
+- url: https://www.reddit.com/r/rust/comments/j8irng/help_needed_moving_a_buffer_and_a_cow_pointing_to/
 ---
-First development release for a parsing library with optional verbose errors. Would love to hear any opinions/issues! I'm working on a couple of libraries that consume the dangerous crate, so hopefully with decent amount of dog-fooding I'll find some improvements (or bugs heh) along the way.
+Hey everyone,
 
-[https://github.com/avitex/rust-dangerous](https://github.com/avitex/rust-dangerous)
+I'm currently using the quick\_xml crate to parse an XML file. Being a pull parser, the central API looks like:  
 
-Updated with example verbose error below
-
-```text
-[ERRO]: ahhh!: error attempting to convert input to str: expected utf-8 code point
-&gt; ['h' 'e' ff 'l' 'o']
-           ^^
-additional:
-  error offset: 2, input length: 5
-backtrace:
-  1. `read all`
-  2. `read` (expected message)
-  3. `read` (expected body)
-  4. `convert input to str` (expected utf-8 code point)
 ```
-## [8][Compile-time guarantee for regexp captures?](https://www.reddit.com/r/rust/comments/j7w2s0/compiletime_guarantee_for_regexp_captures/)
-- url: https://www.reddit.com/r/rust/comments/j7w2s0/compiletime_guarantee_for_regexp_captures/
----
-Hypothetical question: what would it take for the compiler to be able to check that for `regex::Regex::new(r"^(\d{1,18})blargh$").captures(some_string).unwrap().get(1)` is not only always `Some()`, but also a valid `u64` after parsing?
-## [9][Best Book/material for People who want to level up in systems programming](https://www.reddit.com/r/rust/comments/j7p7or/best_bookmaterial_for_people_who_want_to_level_up/)
-- url: https://www.reddit.com/r/rust/comments/j7p7or/best_bookmaterial_for_people_who_want_to_level_up/
----
-I’m looking to “level up” my understanding of more “advanced” topics in Rust at a higher level. Like when I should use ARC, channel, etc. Coming from Elixir I can look into erlang books and materials. I was wondering if anyone had any recommendations about picking up some higher level topics in rust (which I haven’t been able to find) or even in C.
-## [10][Patterns of fallible iteration](https://www.reddit.com/r/rust/comments/j7n6ei/patterns_of_fallible_iteration/)
-- url: https://morestina.net/blog/1607/fallible-iteration
+let mut buffer = Vec::new();
+let event = reader.read_event(&amp;mut buffer);
+
+Element { buffer, event } // &lt;- this fails as buffer is mutable borrowed...
+```
+
+Now once the expected event occurs, I'd like to return a struct in which I move the buffer and the event (which internally contains a Cow which lifetime is bound to the buffer). However the borrow checker doesn't like this approach, as it considers buffer as mutably borrowed.
+
+For completeness, the signature of read_event is: `pub fn read_event&lt;'a, 'b&gt;(&amp;'a mut self, buf: &amp;'b mut Vec&lt;u8&gt;) -&gt; Result&lt;Event&lt;'b&gt;&gt;`
+
+Therefore packing the buffer and the resulting event together should be technically safe.
+
+I hope I'm explaining enough to understand my problem. Is there a safe way to achive this in Rust? (without giving up the zero-copy capabilities). 
+
+many thanks in advance :)
+## [10][rust in curl with hyper](https://www.reddit.com/r/rust/comments/j7yw4o/rust_in_curl_with_hyper/)
+- url: https://daniel.haxx.se/blog/2020/10/09/rust-in-curl-with-hyper/
 ---
 
-## [11][serde_json benchmark](https://www.reddit.com/r/rust/comments/j7yopg/serde_json_benchmark/)
-- url: https://www.reddit.com/r/rust/comments/j7yopg/serde_json_benchmark/
+## [11][Introducing instant.bible - An as-you-type Bible search engine written in Rust, Swift, Kotlin, and TypeScript!](https://www.reddit.com/r/rust/comments/j8anec/introducing_instantbible_an_asyoutype_bible/)
+- url: https://knpw.rs/blog/instant-bible
 ---
-Hello everyone.
 
-According to this, serde\_json has a rate of above 500 MB/s parsing a json string to a structure.
+## [12][Are we Bluetooth yet?](https://www.reddit.com/r/rust/comments/j81m4z/are_we_bluetooth_yet/)
+- url: https://www.reddit.com/r/rust/comments/j81m4z/are_we_bluetooth_yet/
+---
+Hello everyone, I have finally the chance to use Rust at work but I'm kinda stumbling on an issue.
 
-                                    DOM                STRUCT
-    ======= serde_json ======= parse|stringify ===== parse|stringify ====
-    data/canada.json         280 MB/s   370 MB/s   510 MB/s   320 MB/s
-    data/citm_catalog.json   400 MB/s   420 MB/s   840 MB/s   660 MB/s
-    data/twitter.json        270 MB/s   730 MB/s   530 MB/s   850 MB/s
-    
+I'm starting the development of an application (I'd be pretty much the only developer and I can chose what to use, as long as it makes sense) which lets the user interact with a Bluetooth device my company made and I wanted to use Flutter strictly for the GUI side and Rust for the application logic (interfacing with the device, handling access to the filesystem, network calls and, eventually, some machine learning stuff either in the back end or the app itself, but TBD). The target platform would mainly be Android, but the goal in the long run would also be to support iOS and desktop (Windows mainly).
 
-[https://github.com/serde-rs/json-benchmark](https://github.com/serde-rs/json-benchmark)
+Well, so far so good, but surprisingly enough when I was looking for Bluetooth crates I didn't find anything that seems usable, either because unmaintained (last update years ago) or incomplete (not supporting the platforms I need). I didn't find any recent post talking about it here and no reference in [Awesome Rust](https://github.com/rust-unofficial/awesome-rust) or [Not Yet Awesome Rust](https://github.com/not-yet-awesome-rust/not-yet-awesome-rust). I was looking for something like [QT's Bluetooth](https://doc.qt.io/qt-5/qtbluetooth-index.html).
 
 &amp;#x200B;
 
-However, when I try to parse an 18 MB file it takes me about half a second when built for release.
-
-Here's my test code:
-
-        let mut buffer = String::new();
-        let mut f = File::open("data.json").unwrap();
-        f.read_to_string(&amp;mut buffer).unwrap();
-    
-        let start = now(); // now is a fn that returns current time in ms
-        let value: serde_json::Value = serde_json::from_str(buffer.as_str()).unwrap();
-        println!("string to value: {}", now() - start);
-
-Am I reading the benchmark wrong? Is my code wrong?  
-Who's lying?
-## [12][Woohoo, milestones being made. Updated 2 days ago](https://www.reddit.com/r/rust/comments/j76xgg/woohoo_milestones_being_made_updated_2_days_ago/)
-- url: https://i.redd.it/o7w56ku9xsr51.png
----
-
+I'm posting here hoping you might have some good suggestions on the matter and convince me not to dump Rust already for this use case. Thanks in advance for your support.

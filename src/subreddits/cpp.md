@@ -56,65 +56,72 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Why is an r/cpp mod collecting feedback about r/cpp off twitter rather than asking for that feedback r/cpp](https://www.reddit.com/r/cpp/comments/j7wigk/why_is_an_rcpp_mod_collecting_feedback_about_rcpp/)
-- url: https://www.reddit.com/r/cpp/comments/j7wigk/why_is_an_rcpp_mod_collecting_feedback_about_rcpp/
+## [2][Introducing fp library](https://www.reddit.com/r/cpp/comments/j8h81u/introducing_fp_library/)
+- url: https://www.reddit.com/r/cpp/comments/j8h81u/introducing_fp_library/
 ---
-In the last few days we have been plunged into a controversy that has nothing to do with what this sub used to be about. First a mod posted a video and locked the thread using a very condescending sentence to make it sound like somehow we are all needing some lecturing, while deleting any other threads about it. Thankfully the decision was reverted, and once the cat was out of the bag, a new thread was allowed to be created where people would be allowed to discuss the matter.
+Hi, the author of [Dragonbox](https://github.com/jk-jeon/dragonbox) again. I'm now working on a more comprehensive [library](https://github.com/jk-jeon/fp) with features related to conversions between strings and floating-point numbers. It's in an early stage and is not really usable right now AFAICT, but I want to gather some opinions from you guys. Please take a look at the [repo](https://github.com/jk-jeon/fp) if you are interested. Any idea/feedback is very welcome, and contribution is even more welcome.
 
-It seems clear to me, *that most users of this sub are sympathetic to case of inclusion*, but it doesn't mean we are keen in seeing this sort of content being pushed through the sub, considering how heated it can become, while others made clear they at least disagree with the methods proposed to address this issue (myself included).
+As stated in the README, the goal of the library is to provide conversion algorithms between decimal and binary floating-point  numbers rather than string parsing/formatting. String parsing/formatting routines provided in the library should be considered as proof-of-concepts, although I'll continue to work on improving them as well. Therefore, I put much effort on cleanly separate decimal/binary conversion routines from string parsing/formatting as much as possible.
 
-Now, **the same mod has asked his social circle in twitter to send feedback to the moderation channel about how they feel about r/cpp this precisely after locking the thread posted in this sub**. I think this is very unethical, as an attempt to certainly prejudice the feedback to be according to the sort of opinions he has surrounded himself with in twitter, while excluding all the other users of this sub who happened to participate on the thread but are not on his circle of friends.
+Currently, the library has the following features (with rudimentary/subject-to-change API's):
 
-I have said this before in reply to the mod in question: his behaviour is not transparent and frankly quite an insult to many of the users in this sub.
+1. **Dragonbox**: shortest-roundtrip binary-to-decimal conversion algorithm for formatting. The version in this library is not really different from the original implementation, except that it uses a larger table (in order to share it with the parsing algorithm).
+2. **Ryu-printf**: fixed-precision binary-to-decimal conversion algorithm for formatting. This is nothing more than just an implementation of the algorithm as written in the [paper](https://dl.acm.org/doi/pdf/10.1145/3360595) with a few modifications, but somewhat mysteriously it uses way fewer amount of static data compared to the original implementation by Ulf Adams. (I honestly have no idea why this happened.) But the size of static data is still huge; it's about 40KB.
+3. **Dooly**: limited-precision (9 for `float`'s, 17 for `double`'s) decimal-to-binary conversion algorithm for parsing. This is the one that I mentioned in the [previous post](https://www.reddit.com/r/cpp/comments/ishdj9/updates_in_dragonbox/) about Dragonbox. Ryu library also provides a similar algorithm, and it seems that the performances of these algorithms are similar.
+4. Combining Dooly and (a slight extension of) Ryu-printf, string-to-float parsing for arbitrary length input is also possible. A gist of the idea is explained in the comment of /u/STL in [this post](https://www.reddit.com/r/cpp/comments/iqlnt4/parsing_floats_in_c_benchmarking_strtod_vs_from/). (I originally got the idea from discussions with fast\_io's author, though.) /u/STL said that it might be agonizingly slow, but it turned out to be a lot faster than the current implementation of MS STL's  `std::from_chars`. (To be fair, my implementation does way fewer error handlings so the actual performance gap should be somewhat smaller.)
+## [3][Crux: Symbolic Testing for C, C++, and Rust](https://www.reddit.com/r/cpp/comments/j8iu5v/crux_symbolic_testing_for_c_c_and_rust/)
+- url: https://crux.galois.com/
+---
 
-I'm gonna tag u/cleroth here to review this, but I think all the mods in this sub ought to question this sort of behaviour.
+## [4][Inheritance is for sharing an interface (and so is overloading)](https://www.reddit.com/r/cpp/comments/j87m1s/inheritance_is_for_sharing_an_interface_and_so_is/)
+- url: https://quuxplusone.github.io/blog/2020/10/09/when-to-derive-and-overload/
+---
 
-edit: To the claim this is about feedback from those who've left this sub, if you look on the tweet made, you're gonna see the request being made to active users who are his friends to send negative feedback about the sub. Coincidently, these users happened to be on the minority of a discussion had on the last few days in this sub. I think I've my point clear.
+## [5][periodic_function v0.1.0 released! Thank you all for the helpful feedback!](https://www.reddit.com/r/cpp/comments/j83v8l/periodic_function_v010_released_thank_you_all_for/)
+- url: https://www.reddit.com/r/cpp/comments/j83v8l/periodic_function_v010_released_thank_you_all_for/
+---
+A while back I made my initial [post](https://www.reddit.com/r/cpp/comments/iun0qh/periodicfunction_a_small_header_only_library_to/?utm_source=share&amp;utm_medium=web2x&amp;context=3) about the `periodic_function` library I had created and I receive a **ton** of feedback.
 
-edit 2: There's evidence already presented in the comments, that accords with what I've heard from others, that this mod is working alongside specific communities to prejudice the collection of feedback by work alongside a specific political group. I rest my case.
+*Thank you so much to everyone who commented.* Your suggestions and critical eyes have made the library more robust and better overall. The suggestions and comments have been addressed in the `v0.1.0` release and I hope some of you can find it useful. 
 
-So this is what this is all about:
+Thank you again! I really appreciate those who took the time to nitpick my code; it was eye-opening and a great learning experience.
 
-https://www.reddit.com/r/cpp/comments/j7wigk/why_is_an_rcpp_mod_collecting_feedback_about_rcpp/g87l321?utm_source=share&amp;utm_medium=web2x&amp;context=3
-## [3][toml++ v2.2.0 released](https://www.reddit.com/r/cpp/comments/j7wg45/toml_v220_released/)
+Release is [here](https://github.com/DeveloperPaul123/periodic-function/releases/tag/v0.1.0).
+## [6][Compile time conditional struct/class member variable in C++](https://www.reddit.com/r/cpp/comments/j8gesp/compile_time_conditional_structclass_member/)
+- url: https://www.reddit.com/r/cpp/comments/j8gesp/compile_time_conditional_structclass_member/
+---
+[https://medium.com/@saleem.iitg/c-compile-time-conditional-struct-member-variables-c3761a35eca9](https://medium.com/@saleem.iitg/c-compile-time-conditional-struct-member-variables-c3761a35eca9)
+## [7][Potential way to solve dangling reference to temporary?](https://www.reddit.com/r/cpp/comments/j89kzz/potential_way_to_solve_dangling_reference_to/)
+- url: https://www.reddit.com/r/cpp/comments/j89kzz/potential_way_to_solve_dangling_reference_to/
+---
+When I am writing [when() in SugarPP](https://github.com/HO-COOH/SugarPP), I kept wondering how to deal with returning reference of possibly lvalue references and rvalue reference. To make it simpler, it's the same as
+```cpp
+int x{};
+auto&amp;&amp; bigger = std::max(x, -1);
+//... Use bigger, OK, but dangling if -1 is bigger
+```
+I gave up by just return by value. But it's obviously not optimal if I also want to be able to modify through the reference (both the lvalue or the temporary), as if the temporary is also lvalue.
+
+Of course I can just give it a name to trivially solve it but still it's amazingly unintuitive. What if the compiler can implicitly generate a name to make the temporary to a lvalue when the function accepts reference (because temporary will still "materialize" anyway) at the current calling scope, but still interpret it as rvalues like this:
+```cpp
+int x{};
+int __temp = -1;
+auto&amp;&amp; bigger = std::max(x, std::move(__temp));
+//... Use bigger, OK now
+```
+## [8][toml++ v2.2.0 released](https://www.reddit.com/r/cpp/comments/j7wg45/toml_v220_released/)
 - url: https://marzer.github.io/tomlplusplus/
 ---
 
-## [4][std::variant is broken in Clang, and it exposes how pointer aliasing and unions are broken in C++.](https://www.reddit.com/r/cpp/comments/j7gn2d/stdvariant_is_broken_in_clang_and_it_exposes_how/)
-- url: https://lists.isocpp.org/std-discussion/2020/10/0882.php
+## [9][cpp.chat : episode 75 - 'I Really like Sugar', with Conor Hoekstra](https://www.reddit.com/r/cpp/comments/j81djk/cppchat_episode_75_i_really_like_sugar_with_conor/)
+- url: https://cpp.chat/75/
 ---
 
-## [5][Enzyme: High-Performance Automatic Differentiation of LLVM](https://www.reddit.com/r/cpp/comments/j7fb4a/enzyme_highperformance_automatic_differentiation/)
-- url: https://github.com/wsmoses/Enzyme
+## [10][What C++ Programmers Need to Know about Header ＜random＞| CppCon 2016: Walter E. Brown](https://www.reddit.com/r/cpp/comments/j802n2/what_c_programmers_need_to_know_about_header/)
+- url: https://www.youtube.com/watch?v=6DPkyvkMkk8
 ---
 
-## [6][Detecting Iterator Invalidation with CodeQL](https://www.reddit.com/r/cpp/comments/j7ywkf/detecting_iterator_invalidation_with_codeql/)
-- url: https://blog.trailofbits.com/2020/10/09/detecting-iterator-invalidation-with-codeql/
+## [11][Why do Rust fanboys claims that Modern C++ is unsafe?](https://www.reddit.com/r/cpp/comments/j8i51r/why_do_rust_fanboys_claims_that_modern_c_is_unsafe/)
+- url: https://www.reddit.com/r/cpp/comments/j8i51r/why_do_rust_fanboys_claims_that_modern_c_is_unsafe/
 ---
 
-## [7][CppCast: Meeting C++ 2020](https://www.reddit.com/r/cpp/comments/j7rn5g/cppcast_meeting_c_2020/)
-- url: https://cppcast.com/meeting-cpp-2020/
----
-
-## [8][C++/Programming - budget for trainings during COVID-19. How do you utilize it right now?](https://www.reddit.com/r/cpp/comments/j78grv/cprogramming_budget_for_trainings_during_covid19/)
-- url: https://www.reddit.com/r/cpp/comments/j78grv/cprogramming_budget_for_trainings_during_covid19/
----
-Hello guys, normally I would join some conference in real. In my workplace I have a dedicated budget for training/self-development.  Nowadays I have no clue how to utilize it.  Can you recommend any good trainings, conferences in 2020 in Europe?
-## [9][On December 3rd is the 2nd Meeting C++ online conference (with Herb Sutter)](https://www.reddit.com/r/cpp/comments/j7ep1w/on_december_3rd_is_the_2nd_meeting_c_online/)
-- url: https://meetingcpp.com/meetingcpp/news/items/On-December-3rd-is-the-2nd-Meeting-Cpp-online-conference.html
----
-
-## [10][rotor v0.09 release (c++ actor framework, but not caf)](https://www.reddit.com/r/cpp/comments/j7cyai/rotor_v009_release_c_actor_framework_but_not_caf/)
-- url: https://habr.com/ru/post/522588/
----
-
-## [11][There is a need for more organized, open system with standard proposals](https://www.reddit.com/r/cpp/comments/j6nl77/there_is_a_need_for_more_organized_open_system/)
-- url: https://www.reddit.com/r/cpp/comments/j6nl77/there_is_a_need_for_more_organized_open_system/
----
-Once again there is a question "Does anyone know what is the status of XXX proposal?" posted on this subreddit. Myself, I had such a question about different proposals many times, and always found it hard to answer. The information seems to be all over the place - reddit posts, meeting reports, mailing lists... I think there is a dire need for system, where one can find all ongoing / closed proposals with their statuses, current revisions, and links to all the previous revisions. One could argue, that papers on http://www.open-std.org/ have all the information, but it is impossible to:
-- find the newest revision of given paper,
-- search for any particular paper, without knowing the year it was published,
-- filter papers by subgroups / topics,
-- there is no easy to find information, that the paper got rejected, abandoned etc. there only is an information, if the paper got adopted.
-
-I think there is a need for website (maybe community-driven/created?) with all that information. Maybe also as a forum for discussion on certain proposals, rather than obscure mailing lists. Is it only me, or do anyone else thinks the same?

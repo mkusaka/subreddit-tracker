@@ -27,13 +27,141 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Moving to Rails from the Front End](https://www.reddit.com/r/rails/comments/j7llb1/moving_to_rails_from_the_front_end/)
+## [3][Generating multi-page pdf reports consisting of headers and tables](https://www.reddit.com/r/rails/comments/j8b6fb/generating_multipage_pdf_reports_consisting_of/)
+- url: https://www.reddit.com/r/rails/comments/j8b6fb/generating_multipage_pdf_reports_consisting_of/
+---
+What do you guys use to accomplish this? I looked into wicked\_pdf but generating 30 pages took way too long. Am I doing it wrong because I was forced to use combine\_pdf gem to combine 30 files to one. Should I be using Prawn gem instead? Is there another method?
+## [4][How to hook standalone graphiql client to Rails routes?](https://www.reddit.com/r/rails/comments/j8gvig/how_to_hook_standalone_graphiql_client_to_rails/)
+- url: https://www.reddit.com/r/rails/comments/j8gvig/how_to_hook_standalone_graphiql_client_to_rails/
+---
+Graphiql-Rails hasn't been updated for almost two years and it's missing quite some features (like request header). 
+
+I downloaded the standalone graphiql client, but having trouble how to hook it up to the routes. Do I need to define some additional routes in rails for it to work? Currently I only have 
+
+`post "/graphql", to: "graphql#execute"`
+## [5][How Do I Serve GZip CSS and JS with Rails 6 App Using Cloudfront?](https://www.reddit.com/r/rails/comments/j860xd/how_do_i_serve_gzip_css_and_js_with_rails_6_app/)
+- url: https://www.reddit.com/r/rails/comments/j860xd/how_do_i_serve_gzip_css_and_js_with_rails_6_app/
+---
+Hello everyone!  
+
+I'm trying to serve my CSS and JS compressed as a gzip from Cloudfront with my Rails 6 app, but I can't get it to work.
+
+Following [Thoughtbot's tutorial](https://thoughtbot.com/blog/content-compression-with-rack-deflater), I added this to application.rb:
+
+    config.middleware.use Rack::Deflater 
+
+I have also configured Cloudfront to automatically set [Compress Objects Automatically](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html) to 'yes' in Cloudfront. What am I doing wrong?
+
+&amp;#x200B;
+
+https://preview.redd.it/rheow3c4j4s51.png?width=676&amp;format=png&amp;auto=webp&amp;s=aee0401e385caa5e76a968aa3bbc80d9bcaae133
+
+&amp;#x200B;
+
+https://preview.redd.it/d71jnp56j4s51.png?width=912&amp;format=png&amp;auto=webp&amp;s=e26abe0d3be450b7e72adc5fd6800734808115b1
+## [6][Active Storage -- IOError closed stream](https://www.reddit.com/r/rails/comments/j81jyh/active_storage_ioerror_closed_stream/)
+- url: https://www.reddit.com/r/rails/comments/j81jyh/active_storage_ioerror_closed_stream/
+---
+Hi. I don't know what the hell is going on here. I try to mirror my Cloudinary Active Storage uploads to my local disk. This is my storage.yml:
+
+```yml
+test:
+  service: Disk
+  root: &lt;%= Rails.root.join("tmp/storage") %&gt;
+
+local:
+  service: Disk
+  root: &lt;%= Rails.root.join("storage") %&gt;
+
+cloudinary:
+  service: Cloudinary
+  api_key: &lt;%= ENV.fetch 'CL_API_KEY' %&gt;
+  api_secret: &lt;%= ENV.fetch 'CL_API_SECRET' %&gt;
+  cloud_name: &lt;%= ENV.fetch 'CL_CLOUD_NAME' %&gt;
+  upload_preset: &lt;%= ENV.fetch 'CL_UPLOAD_PRESET' %&gt;
+
+backup:
+  service: Mirror
+  primary: cloudinary
+  mirrors:
+    - local
+```
+
+In my development and production env files, I have configured `backup` to be the Active Storage "driver":
+
+```rb
+config.active_storage.service = :backup
+```
+
+Everytime I make an upload, it goes through just fine to Cloudinary, but craps out saving it locally with said error (IOError closed stream).
+
+The model that I use for uploads:
+
+```rb
+class Post &lt; ApplicationRecord
+    has_many :comments, dependent: :destroy
+    has_many :taggings, dependent: :destroy
+    has_many :tags, through: :taggings
+
+    has_many_attached :attachments
+
+    validates :title, presence: true, length: { maximum: 255 }
+    validates :slug, presence: true, length: { maximum: 255 }, uniqueness: true
+    validates :content, presence: true
+
+    attr_accessor :remove_attachments
+
+    def to_param
+        self.slug
+    end
+
+    def all_tags= names
+        self.tags = names.split(',').map do |name|
+            Tag.where(name: name).first_or_create!
+        end
+    end
+
+    def all_tags
+        tags.map(&amp;:name).join ', '
+    end
+
+    def self.tagged_with name
+        Tag.find_by!(name: name).posts
+    end
+
+    after_save :delete_attachments!, if: :remove_attachments
+    private def delete_attachments!
+        attachments.purge_later
+    end
+end
+```
+
+The controller's `create` and `post_params` methods:
+
+```rb
+    def create
+        @post = Post.new post_params
+
+        if @post.save
+            redirect_to @post
+        else
+            render 'new'
+        end
+    end
+
+    private def post_params
+        params.require(:post).permit :title, :slug, :content, :is_draft, :is_archived, :all_tags, :remove_attachments, attachments: []
+    end
+```
+
+I really don't know what's causing this and I couldn't find anything online. I'm going on vacation tomorrow and I'd love to fix it today, but I can't figure out how. Thanks a lot!
+## [7][Moving to Rails from the Front End](https://www.reddit.com/r/rails/comments/j7llb1/moving_to_rails_from_the_front_end/)
 - url: https://www.reddit.com/r/rails/comments/j7llb1/moving_to_rails_from_the_front_end/
 ---
 Hello friends! I'm currently a senior front end developer. I've been using Rails in personal projects for a little over 3 years now and I'm reaching out to you all for some advice. I'm finding that I have greatly enjoyed working on the server side and have fallen in love with Ruby and Rails and I'd like to attempt a pivot in my career and move to a position that is more focused on those technologies. I have worked on the server side professionally with node but it's been in a very limited capacity so it's hard to point to that experience as some kind of proof.
 
 I understand that the competition is fierce and that these domains can be pretty different but I'm hoping someone can help me think a little creatively about moving into this awesome community.
-## [4][React/Rails + devise question: how the F*** do I render current_user data in my React front-end?](https://www.reddit.com/r/rails/comments/j7plfk/reactrails_devise_question_how_the_f_do_i_render/)
+## [8][React/Rails + devise question: how the F*** do I render current_user data in my React front-end?](https://www.reddit.com/r/rails/comments/j7plfk/reactrails_devise_question_how_the_f_do_i_render/)
 - url: https://www.reddit.com/r/rails/comments/j7plfk/reactrails_devise_question_how_the_f_do_i_render/
 ---
 Need some help! 
@@ -50,11 +178,11 @@ The JSON renders fine directly in the browser at localhost:3000/current\_user (a
 `end` 
 
 but that didn't work either (stack overflow solution). I am using the `before_action :authenticate_user!` in my custom controller, which seems to be doing something as I get a 401 response without it. No matter how I try to tackle this, the JSON response from my fetch returns null. If anyone can help. I would greatly appreciate it! I'm assuming it has something to do with the request from my front-end not being authenticated but I can't figure this one out for the life of me...
-## [5][Storing user settings in rails 5 API](https://www.reddit.com/r/rails/comments/j79doh/storing_user_settings_in_rails_5_api/)
+## [9][Storing user settings in rails 5 API](https://www.reddit.com/r/rails/comments/j79doh/storing_user_settings_in_rails_5_api/)
 - url: https://www.reddit.com/r/rails/comments/j79doh/storing_user_settings_in_rails_5_api/
 ---
 I'm wondering what the best way to store user preferences / settings in a rails 5 api application. Most of my search results use deprecated gems, or are behind a paywall. (looking at you gorails). Any info on the topic would be greatly appreciated, thanks
-## [6][link_to generates path like /controller?id=1234, I need /controller/1234](https://www.reddit.com/r/rails/comments/j711dn/link_to_generates_path_like_controllerid1234_i/)
+## [10][link_to generates path like /controller?id=1234, I need /controller/1234](https://www.reddit.com/r/rails/comments/j711dn/link_to_generates_path_like_controllerid1234_i/)
 - url: https://www.reddit.com/r/rails/comments/j711dn/link_to_generates_path_like_controllerid1234_i/
 ---
 I am having some trouble rendering my show.html.erb view. I have the following line to create a button on the page:
@@ -68,7 +196,7 @@ in routes.rb I have:
 `resources :books`
 
 Can anyone shed any light on what I'm doing wrong here?
-## [7][Scoped associations in Rails](https://www.reddit.com/r/rails/comments/j6lxl8/scoped_associations_in_rails/)
+## [11][Scoped associations in Rails](https://www.reddit.com/r/rails/comments/j6lxl8/scoped_associations_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/j6lxl8/scoped_associations_in_rails/
 ---
 Howdy folks! 
@@ -81,7 +209,7 @@ Some key take-aways:
 ⚡️  Preload your scopes and remove your N+1 queries
 
 Hope you'll like it!
-## [8][RailsAdmin: How to disable edit action?](https://www.reddit.com/r/rails/comments/j6qhyq/railsadmin_how_to_disable_edit_action/)
+## [12][RailsAdmin: How to disable edit action?](https://www.reddit.com/r/rails/comments/j6qhyq/railsadmin_how_to_disable_edit_action/)
 - url: https://www.reddit.com/r/rails/comments/j6qhyq/railsadmin_how_to_disable_edit_action/
 ---
 Hi there,
@@ -95,45 +223,3 @@ The documentation [shows up](https://github.com/sferik/rails_admin/wiki/Base-act
 I just found out that you can define a method called `readonly?` on the model but that won't work while I have to update or change attributes while processing this record in my programming logic.
 
 Many thanks!
-## [9][active_storage in production](https://www.reddit.com/r/rails/comments/j6omlt/active_storage_in_production/)
-- url: https://www.reddit.com/r/rails/comments/j6omlt/active_storage_in_production/
----
-background: I am building a Rails API for my react frontend Instagram clone.
-
-Everything was working perfectly in development but now that i pushed the code to my VPS I am having problems with active\_storage. I can upload pictures but when I try to get them the returned url for the image looks like ´[mydomain.com/rails/active\_storage/blobs/somehash/somename.jpg](https://mydomain.com/rails/active_storage/blobs/somehash/somename.jpg)´ -   placing that url in a img src (or trying to open it) returns a 404.
-
-Using Unicorn and Nginx on the server, active\_storage is set to **local file** and saving to a postgresql db. Any ideas?
-## [10][Documentation or expertise with AWS Cognito SDK](https://www.reddit.com/r/rails/comments/j6desf/documentation_or_expertise_with_aws_cognito_sdk/)
-- url: https://www.reddit.com/r/rails/comments/j6desf/documentation_or_expertise_with_aws_cognito_sdk/
----
-I am currently implementing Cognito in a rails 6 app with a view to then using OIDC from Cognito onwards, enabling SSO. Unfortunately, the docs are lacklustre at best. They go into quite a lot of technical detail (which is excellent) but then skip crucial points. For example, `secret_hash` ([used here](https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/CognitoIdentityProvider/Client.html#sign_up-instance_method)) requires some boilerplate code which feels like it should belong inside the SDK. The docs don't tell you this, nor how to generate it. Thankfully, [StackOverflow](https://stackoverflow.com/questions/37438879/unable-to-verify-secret-hash-for-client-in-amazon-cognito-userpools) came to my rescue.
-
-Of significant more concern is that everything I google seems to suggest that people try to get Cognito to work but then give up. I can find plenty of people who are trying to get it to work in Ruby but very few who have successfully done so. A lot of "it's not worth it" or "we looked into it but we couldn't get it to work" type comments.
-
-1. What should the actual flow look like?
-1. Should I be using the `admin_x` methods such as `admin_initiate_auth` or the standard `initiate_auth`? What's the difference?
-1. If I'm using the flow that requires `SRP_A`, how do I generate it?
-1. Almost as a show of hands - how many people have tried to implement it? Were you successful or not? Why?
-
-Thanks.
-## [11][Ruby on Rails &amp; Digital Ocean](https://www.reddit.com/r/rails/comments/j63loa/ruby_on_rails_digital_ocean/)
-- url: https://www.reddit.com/r/rails/comments/j63loa/ruby_on_rails_digital_ocean/
----
-I'm looking to migrate [my Ruby on Rails app](https://www.mugshotbot.com) from Heroku to Digital Ocean. I don't have any dev-ops experience and am very confused on where to start.
-
-Does anyone have any beginner tutorials or links I could work through?
-## [12][Active Storage -- Uploads via an API](https://www.reddit.com/r/rails/comments/j62zs0/active_storage_uploads_via_an_api/)
-- url: https://www.reddit.com/r/rails/comments/j62zs0/active_storage_uploads_via_an_api/
----
-Hi!
-
-*Short version:* I'm planning on writing an editor with an image uploader. The images have to be uploaded seperately from the rest of the form via AJAX, so that the server can return permanent URLs that can then be used in the editor. How would I go about this? Do I need an extra Image model or can I still attach those images to my original Page/Post/whatever model?
-
-*Long version:*
-
-I want to create an image upload feature for my current project. More specifically, it should accept images via an API. The idea is to have 2 forms on a page:
-
-1. the normal contents form
-2. a form for images, submitted via JavaScript
-
-After the images have been submitted via JavaScript, I need permanent URLs to those images being sent back so I can use them in the first form. Ugh, I hope you understand what I mean.

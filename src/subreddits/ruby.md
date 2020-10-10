@@ -1,16 +1,10 @@
 # ruby
-## [1][Ruby 2.7.2 has revised Rdoc for Hash](https://www.reddit.com/r/ruby/comments/j7l51e/ruby_272_has_revised_rdoc_for_hash/)
-- url: https://www.reddit.com/r/ruby/comments/j7l51e/ruby_272_has_revised_rdoc_for_hash/
+## [1][hubba gem - little github api helper for (auto-)generating statistics reports (summary, stars, timeline, updates)](https://www.reddit.com/r/ruby/comments/j8fz13/hubba_gem_little_github_api_helper_for/)
+- url: https://github.com/rubycoco/git/tree/master/hubba
 ---
-I've spent a good part of this year working on revisions to the RDoc for Hash.  The revisions include all methods documentation in addition to much of the introductory text (class documentation).  Lots more example code.
 
-Check it out:
-
-\- 2.7.2: [https://ruby-doc.org/core-2.7.2/Hash.html](https://ruby-doc.org/core-2.7.2/Hash.html)
-
-\- 2.7.1: [https://ruby-doc.org/core-2.7.1/Hash.html](https://ruby-doc.org/core-2.7.1/Hash.html)
-## [2][Speeding up Rails with Memoization](https://www.reddit.com/r/ruby/comments/j7v6l2/speeding_up_rails_with_memoization/)
-- url: https://www.honeybadger.io/blog/ruby-rails-memoization/?utm_source=rubyweekly&amp;utm_medium=email&amp;utm_campaign=ruby
+## [2][Remote Ruby: Adam Wathan joins to talk TailwindCSS, Tailwind UI, and View Components](https://www.reddit.com/r/ruby/comments/j7zouw/remote_ruby_adam_wathan_joins_to_talk_tailwindcss/)
+- url: https://share.transistor.fm/s/7bd5b843
 ---
 
 ## [3][Can someone help me out with what this does rand(999_999)](https://www.reddit.com/r/ruby/comments/j7vkhg/can_someone_help_me_out_with_what_this_does/)
@@ -20,7 +14,34 @@ I'm trying to generate a fixed digit random number, and I came across this code.
 
 
 I'm not sure i get much from the documentation for rand either.
-## [4][Beginner need some help understaind data pipeline](https://www.reddit.com/r/ruby/comments/j7vlbx/beginner_need_some_help_understaind_data_pipeline/)
+## [4][Ruby 2.7.2 has revised Rdoc for Hash](https://www.reddit.com/r/ruby/comments/j7l51e/ruby_272_has_revised_rdoc_for_hash/)
+- url: https://www.reddit.com/r/ruby/comments/j7l51e/ruby_272_has_revised_rdoc_for_hash/
+---
+I've spent a good part of this year working on revisions to the RDoc for Hash.  The revisions include all methods documentation in addition to much of the introductory text (class documentation).  Lots more example code.
+
+Check it out:
+
+\- 2.7.2: [https://ruby-doc.org/core-2.7.2/Hash.html](https://ruby-doc.org/core-2.7.2/Hash.html)
+
+\- 2.7.1: [https://ruby-doc.org/core-2.7.1/Hash.html](https://ruby-doc.org/core-2.7.1/Hash.html)
+## [5][Multithreading -- Parallelizing loops](https://www.reddit.com/r/ruby/comments/j80sz0/multithreading_parallelizing_loops/)
+- url: https://www.reddit.com/r/ruby/comments/j80sz0/multithreading_parallelizing_loops/
+---
+I am looking for something like Julia's `Threads.@threads` macro, which allows to parallelize a for loop within multithreading, now I am looking for something like this for Ruby.
+## [6][Fastest way to generating a n digit number](https://www.reddit.com/r/ruby/comments/j7w5xn/fastest_way_to_generating_a_n_digit_number/)
+- url: https://www.reddit.com/r/ruby/comments/j7w5xn/fastest_way_to_generating_a_n_digit_number/
+---
+I found this code to generate 6 digit number 
+
+    rand(100000...999999)
+
+Is this approach fine?   
+I'm not sure what the two dots(..) or three dots(...) mean and I hope it doesn't expand into an array and then rand selects a values
+## [7][Speeding up Rails with Memoization](https://www.reddit.com/r/ruby/comments/j7v6l2/speeding_up_rails_with_memoization/)
+- url: https://www.honeybadger.io/blog/ruby-rails-memoization/?utm_source=rubyweekly&amp;utm_medium=email&amp;utm_campaign=ruby
+---
+
+## [8][Beginner need some help understaind data pipeline](https://www.reddit.com/r/ruby/comments/j7vlbx/beginner_need_some_help_understaind_data_pipeline/)
 - url: https://www.reddit.com/r/ruby/comments/j7vlbx/beginner_need_some_help_understaind_data_pipeline/
 ---
 Context:  
@@ -32,22 +53,13 @@ If I am using Sidekiq, how should I build my data pipeline?
 
 Right now, I have a worker who just makes both the api calls from the same worker.  
 Should I separate, "fetching all tweets" into a seprate worker and "fetch tweets metrics" into a separate wrker?
-## [5][Fastest way to generating a n digit number](https://www.reddit.com/r/ruby/comments/j7w5xn/fastest_way_to_generating_a_n_digit_number/)
-- url: https://www.reddit.com/r/ruby/comments/j7w5xn/fastest_way_to_generating_a_n_digit_number/
----
-I found this code to generate 6 digit number 
-
-    rand(100000...999999)
-
-Is this approach fine?   
-I'm not sure what the two dots(..) or three dots(...) mean and I hope it doesn't expand into an array and then rand selects a values
-## [6]["Ruby 2.7.2 ... contains intentional incompatibility"](https://www.reddit.com/r/ruby/comments/j7fk83/ruby_272_contains_intentional_incompatibility/)
+## [9]["Ruby 2.7.2 ... contains intentional incompatibility"](https://www.reddit.com/r/ruby/comments/j7fk83/ruby_272_contains_intentional_incompatibility/)
 - url: https://www.reddit.com/r/ruby/comments/j7fk83/ruby_272_contains_intentional_incompatibility/
 ---
 [https://www.ruby-lang.org/en/news/2020/10/02/ruby-2-7-2-released/](https://www.ruby-lang.org/en/news/2020/10/02/ruby-2-7-2-released/)
 
 Anybody know what the incompatibility is? I'm glad they mention it as an issue, but I couldn't find any details on that page.
-## [7][Help to create the shortest hexadecimal string from two strings](https://www.reddit.com/r/ruby/comments/j7juoj/help_to_create_the_shortest_hexadecimal_string/)
+## [10][Help to create the shortest hexadecimal string from two strings](https://www.reddit.com/r/ruby/comments/j7juoj/help_to_create_the_shortest_hexadecimal_string/)
 - url: https://www.reddit.com/r/ruby/comments/j7juoj/help_to_create_the_shortest_hexadecimal_string/
 ---
 I have two strings say first = "say" and second = "henlo". I want to find the shortest possible user-friendly string(a-z, 0-9) that can encode this information. This string isn't any encrypted value I want it to be as human-readable as possible.
@@ -89,27 +101,3 @@ Now, I have a couple of questions.
 
 EDIT:The purpose of the short string isn't to substitute saving both the string themselves but to generate a short string for the user which they can use in their API calls.  
 EDIT 2: The reason I can't use the "human-friend" words as it is, is because it can be languages with accents(French and unicode ones also)  and API key is ASCII only. 
-## [8][Polyphony has an io_uring backend!](https://www.reddit.com/r/ruby/comments/j79rmc/polyphony_has_an_io_uring_backend/)
-- url: https://www.reddit.com/r/ruby/comments/j79rmc/polyphony_has_an_io_uring_backend/
----
-I am pleased to announce the release of [Polyphony](https://github.com/digital-fabric/polyphony) version 0.46.0, which includes a full-blown io\_uring backend. The io\_uring backend uses a relatively recent new I/O API in Linux that is the future of I/O processing. The new backend provides more than double the performance of the libev backend, achieving **over 120K requests/second** using a basic "Hello world" HTTP server.
-
-Those of you unfamiliar with io\_uring can head over to the [Lord of the io\_uring website](https://unixism.net/loti/index.html). The io\_uring backend is automatically used on Linux with kernel version 5.6 or higher.
-
-For more information on the new io\_uring backend, including preliminary benchmark numbers and design details you can consult the [pull request](https://github.com/digital-fabric/polyphony/pull/44). The source code for the io\_uring backend in all its glory can be found[ here](https://github.com/digital-fabric/polyphony/blob/master/ext/polyphony/backend_io_uring.c).
-
-For more information on Polyphony please consult the (slightly outdated) [Polyphony docs](https://digital-fabric.github.io/polyphony/).
-## [9][Getting started with Tailwind CSS on Rails 6](https://www.reddit.com/r/ruby/comments/j78xd7/getting_started_with_tailwind_css_on_rails_6/)
-- url: https://rubyyagi.com/tailwind-css-on-rails-6-intro/
----
-
-## [10][Copy all files in a directory tree to a common destination with Ruby](https://www.reddit.com/r/ruby/comments/j7f3uo/copy_all_files_in_a_directory_tree_to_a_common/)
-- url: https://www.reddit.com/r/ruby/comments/j7f3uo/copy_all_files_in_a_directory_tree_to_a_common/
----
-I have published a few of my old Ruby articles at Medium. Here is the "friends link" so you can view the article without a membership.
-
-[https://medium.com/@bradtrupp/copy-all-files-in-a-directory-tree-to-a-common-destination-with-ruby-e944553995ef?source=friends\_link&amp;sk=f6b9dfb362a6f8b329bd1d1c42407d06](https://medium.com/@bradtrupp/copy-all-files-in-a-directory-tree-to-a-common-destination-with-ruby-e944553995ef?source=friends_link&amp;sk=f6b9dfb362a6f8b329bd1d1c42407d06)
-
-An old podcast receiver program that I used to use kept each feed in a separate subdirectory. I wanted the audio files in a single directory for my ease of playing.
-
-I wrote this quick Ruby utility back many years back to flatten out all the files into a single directory before I copy them to my (now retired) mp3 player.

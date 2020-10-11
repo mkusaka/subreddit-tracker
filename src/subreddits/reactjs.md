@@ -70,72 +70,81 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Any life-changing react libraries out there everyone should know about?](https://www.reddit.com/r/reactjs/comments/j88t0r/any_lifechanging_react_libraries_out_there/)
+## [3][Fullstack starterkit october update](https://www.reddit.com/r/reactjs/comments/j91n40/fullstack_starterkit_october_update/)
+- url: https://www.reddit.com/r/reactjs/comments/j91n40/fullstack_starterkit_october_update/
+---
+October update to Fullstack GraphQL starter kit is live
+
+Changelog: [https://github.com/karanpratapsingh/fullstack-starterkit/pull/19](https://github.com/karanpratapsingh/fullstack-starterkit/pull/19)
+
+This update includes: update Prisma, react fast refresh plugin, subscription support in graphql server, production issue fixes
+## [4][Simple and flexible modal dialog component for React JS](https://www.reddit.com/r/reactjs/comments/j8npic/simple_and_flexible_modal_dialog_component_for/)
+- url: https://v.redd.it/ngr67m9hqas51
+---
+
+## [5][Does redux store have a maximum capacity?](https://www.reddit.com/r/reactjs/comments/j93iva/does_redux_store_have_a_maximum_capacity/)
+- url: https://www.reddit.com/r/reactjs/comments/j93iva/does_redux_store_have_a_maximum_capacity/
+---
+I want to create a MERN social media app where I implement infinite scrolling to fetch posts as the user scrolls down, at the same time caching them in the redux store. However, I was wondering whether the  store can run out of storage or get full if the user scrolls too far down and I fetch too many posts. Does redux have a limited storage? Is there a better implementation (not storing posts in the store but fetching them on every re-render)? Can React Context api also get jam packed?
+## [6][How to deploy your NextJs Project on Elastic Beanstalk in 5 Minutes.](https://www.reddit.com/r/reactjs/comments/j9453j/how_to_deploy_your_nextjs_project_on_elastic/)
+- url: https://medium.com/@florian.martens22/how-to-deploy-your-nextjs-project-on-elastic-beanstalk-in-5-minutes-7f6bbd8b05be
+---
+
+## [7][Omegle Clone - But instead of video chatting, it calls your phone.](https://www.reddit.com/r/reactjs/comments/j92694/omegle_clone_but_instead_of_video_chatting_it/)
+- url: https://www.reddit.com/r/reactjs/comments/j92694/omegle_clone_but_instead_of_video_chatting_it/
+---
+To keep myself entertained during quarantine, I've been creating silly projects. 
+
+Over this weekend, I created a service that randomly matches users in a one-on-one phone conversion, where they can chat anonymously for 5 minutes.
+
+I created this using Create-React-App (Front-end), Firebase (Back-end) &amp; Twilio (Calling).
+
+Try It: [https://start-a-conversation.firebaseapp.com/](https://start-a-conversation.firebaseapp.com/)  
+Github: [https://github.com/NickMandylas/start-a-conversation](https://github.com/NickMandylas/start-a-conversation)
+
+\--
+
+**How does it work?**  
+Sign in using your mobile (SMS verification). Join the queue, we'll match you with a stranger, and you'll receive a call from our bot. \*Queuing can take a while, so you can close the window &amp; it'll keep you in the queue.
+
+**How does it keep me anonymous?**  
+It calls you! The bot sets up a conference call between you and your stranger. We call you via a landline and merges you in once you accept. No data/phone number is shared between you and your matched caller. Think about how Uber handles calls between you and your driver.
+
+**How do you handle matchmaking?**
+
+1. Using Firebase Realtime Database, all users who enter the queue, they have a user entry is created in a "matchmaking" table with the status "in-queue". 
+2. When a user entry is created, a firebase function is run that finds another player with a status "in-queue". 
+3. If a match is found, a match entry is created in the "matches" table, with the "matchId" &amp; "userIds". 
+4. When a match entry is created, a firebase function is run that calls both user's mobile phones &amp; setups a conference call for the two users. The call time length is set to 5 minutes.
+## [8][What's better?](https://www.reddit.com/r/reactjs/comments/j927bn/whats_better/)
+- url: https://www.reddit.com/r/reactjs/comments/j927bn/whats_better/
+---
+Hello, everyone! I'm new in reactjs and I'd like to know what's better? To use redux or hooks? React-bootstrap or something else? Create a million components with their containers and the right structure, or write in a common component creating separately only those components that I will use more than once. Is there something right? Or is everything at your discretion?
+## [9][Server Side Rendering with Next.js](https://www.reddit.com/r/reactjs/comments/j93huk/server_side_rendering_with_nextjs/)
+- url: https://medium.com/@prateek.vijayudr27/server-side-rendering-with-next-js-56f84f98f9bd
+---
+
+## [10][Searching for Good SaaS boilerplate with multi-tenancy](https://www.reddit.com/r/reactjs/comments/j8secu/searching_for_good_saas_boilerplate_with/)
+- url: https://www.reddit.com/r/reactjs/comments/j8secu/searching_for_good_saas_boilerplate_with/
+---
+Auth, subdomains and payments would be great  
+Prefer NodeJS, Docker, Redis/PostgreSQL for backend stuff  
+No need for fancy design, functionality first
+
+What did you use last time you built SaaS?
+## [11][Any life-changing react libraries out there everyone should know about?](https://www.reddit.com/r/reactjs/comments/j88t0r/any_lifechanging_react_libraries_out_there/)
 - url: https://www.reddit.com/r/reactjs/comments/j88t0r/any_lifechanging_react_libraries_out_there/
 ---
 I just discovered [framer-motion](https://github.com/framer/motion) and it's actually ridiculous how easy it is to create complex animations and what it does to improve the look and feel of a website.
 
 Anything else life-changing out there? Can be funny, can be useful, can be just plain genius! Would love to hear about your discoveries. No links to generic lists please, tell me about your own personal experience and why you like it.
-## [4][React-Firebase question - why does my component keep sending expired tokens?](https://www.reddit.com/r/reactjs/comments/j8hmw0/reactfirebase_question_why_does_my_component_keep/)
-- url: https://www.reddit.com/r/reactjs/comments/j8hmw0/reactfirebase_question_why_does_my_component_keep/
+## [12][onscroll scroll one entire section at a time?](https://www.reddit.com/r/reactjs/comments/j91exq/onscroll_scroll_one_entire_section_at_a_time/)
+- url: https://www.reddit.com/r/reactjs/comments/j91exq/onscroll_scroll_one_entire_section_at_a_time/
 ---
- Hey folks,
+Hello.
 
-So, I've had an issue with a React-Firebase project I'm working on. I'm based in New Zealand, so I set the cloud firestore location to as close to me as possible, which is australia-southeast1.
-
-When I was making post requests to my firestore, I kept getting the error "Firebase ID token has expired. Get a fresh ID token from your client app and try again".
-
-I noticed that when I set my laptop to eastern Australian time, it fixed the problem - I could make post requests with any faults. Firebase tokens expire after an hour, so I can only assume that because of the two hour time difference, firebase thought I was sending it expired tokens. Obviously I want to create a website that people in all time zones use, so how do I fix this?
-
-I feel like this is a stupid question that reflects my lack of understanding of how servers work, but hey, I'm a newbie. Anyway, code as follows:
-
-[https://codepen.io/mildredthecat/pen/zYBxgBw?editors=0010](https://codepen.io/mildredthecat/pen/zYBxgBw?editors=0010)
-## [5][My first full stack project with React and Firebase, any feedback is more than welcome!](https://www.reddit.com/r/reactjs/comments/j8hy9h/my_first_full_stack_project_with_react_and/)
-- url: https://github.com/ngso/cornerbox
----
-
-## [6][React and React Native videocall](https://www.reddit.com/r/reactjs/comments/j8ie0a/react_and_react_native_videocall/)
-- url: https://www.reddit.com/r/reactjs/comments/j8ie0a/react_and_react_native_videocall/
----
-Me and the team have to build webapp with React, and the same mobile app built with React Native. We need to add a video call integration, it needs to be one-to-one AND multiple. Noone of us have experience on that. The difficult part is finding one library which helps us on both platforms, web and mobile. One plus would be, on mobile, that it works with Expo; it would be better so we can count on its features without ejecting.
+I am making a website where the idea is when you scroll down you will scroll all the way down into the next section and if you scroll up you will scroll up to the previous section for all the sections. Does anybody have a good idea how to do this in react or a library that does it? 
 
 &amp;#x200B;
 
-Do you have any suggestion? Thanks a lot!
-## [7][Why do so many companies seem to prefer React over Vue or Angular?](https://www.reddit.com/r/reactjs/comments/j866z3/why_do_so_many_companies_seem_to_prefer_react/)
-- url: https://www.reddit.com/r/reactjs/comments/j866z3/why_do_so_many_companies_seem_to_prefer_react/
----
-Is it because of the pool of developers? Or actual engineering reasons? Or a legacy adoption of react when vue wasnt that popular?
-## [8][How does Spotify protect audio files from being downloaded in browser dev tools?](https://www.reddit.com/r/reactjs/comments/j8isjv/how_does_spotify_protect_audio_files_from_being/)
-- url: https://www.reddit.com/r/reactjs/comments/j8isjv/how_does_spotify_protect_audio_files_from_being/
----
- Hi,  
-I tried hard and couldn't download files from Spotify, will be happy if I implement this encryption method for my next project.
-## [9][.evn variables undefined reactjs](https://www.reddit.com/r/reactjs/comments/j8i74j/evn_variables_undefined_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/j8i74j/evn_variables_undefined_reactjs/
----
- 
-
-Greetings,
-
-I create react app with npx create-react-app, and tried to use env variables.
-
-I named the variable with REACT\_APP , prefix, but it still does not work( prints undefiend)
-
-here is the test project - &gt; [https://workupload.com/file/B4FXKJ8HJRL](https://workupload.com/file/B4FXKJ8HJRL)
-
-Should I do smth else to make it work?
-## [10][Are there any decent SMTP/email modules?](https://www.reddit.com/r/reactjs/comments/j8i3iv/are_there_any_decent_smtpemail_modules/)
-- url: https://www.reddit.com/r/reactjs/comments/j8i3iv/are_there_any_decent_smtpemail_modules/
----
-Same as title. Basically looking for a SMTP library that can help me send emails to myself from the contact me section of my wevsite. wondering if there is something like smtplib from python?
-## [11][Where can I get different background videos/gifs for my app?](https://www.reddit.com/r/reactjs/comments/j80rdy/where_can_i_get_different_background_videosgifs/)
-- url: https://www.reddit.com/r/reactjs/comments/j80rdy/where_can_i_get_different_background_videosgifs/
----
-I would like to create a weather Web app something similar to this I found on dribble https://dribbble.com/shots/10956687-Climate-applications
-
-I'm wondering where I can get different background images for different weather type? Like sunny, raining, snowing etc.
-## [12][Build an Income Tracker in ReactJS ~ useState, useEffect, useRef](https://www.reddit.com/r/reactjs/comments/j8016c/build_an_income_tracker_in_reactjs_usestate/)
-- url: https://www.youtube.com/watch?v=K5eoHVbwAhI&amp;feature=share
----
-
+I could patch together a solution that would work but I would like to know the best way to achieve it.

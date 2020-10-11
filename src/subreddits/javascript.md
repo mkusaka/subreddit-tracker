@@ -13,43 +13,43 @@ this is the place.
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][npmx: Bringing npmjs.com to the terminal](https://www.reddit.com/r/javascript/comments/j8f7p7/npmx_bringing_npmjscom_to_the_terminal/)
+## [3][Webpack 5 release](https://www.reddit.com/r/javascript/comments/j8x3a3/webpack_5_release/)
+- url: https://webpack.js.org/blog/2020-10-10-webpack-5-release/
+---
+
+## [4][I brought cron to the web! cron is 45 years old this year. I built a productivity tool that lets you schedule web push notifications, through the browser, using the tried-and-true cron expression format](https://www.reddit.com/r/javascript/comments/j8nrbo/i_brought_cron_to_the_web_cron_is_45_years_old/)
+- url: https://cronpush.tygr.info
+---
+
+## [5][Fullstack starterkit october update](https://www.reddit.com/r/javascript/comments/j91nhc/fullstack_starterkit_october_update/)
+- url: /r/reactjs/comments/j91n40/fullstack_starterkit_october_update/
+---
+
+## [6][How I Gave A Modern Look For HackerNews Feed](https://www.reddit.com/r/javascript/comments/j8o3i9/how_i_gave_a_modern_look_for_hackernews_feed/)
+- url: https://blog.bhanuteja.dev/how-i-gave-a-modern-look-for-hackernews-feed
+---
+
+## [7][Webpack 5 Headache](https://www.reddit.com/r/javascript/comments/j939jm/webpack_5_headache/)
+- url: https://blog.sindresorhus.com/webpack-5-headache-b6ac24973bf1
+---
+
+## [8][npmx: Bringing npmjs.com to the terminal](https://www.reddit.com/r/javascript/comments/j8f7p7/npmx_bringing_npmjscom_to_the_terminal/)
 - url: https://github.com/terminal-junkies/npmx
 ---
 
-## [4][An open source app for Bars and Restaurants customers to order from their tables.](https://www.reddit.com/r/javascript/comments/j8grww/an_open_source_app_for_bars_and_restaurants/)
-- url: https://github.com/athenasbane/BarApp
+## [9][Github-feed-cli: Bring your github feed right to your terminal.](https://www.reddit.com/r/javascript/comments/j91w8e/githubfeedcli_bring_your_github_feed_right_to/)
+- url: https://github.com/RocktimSaikia/github-feed-cli
 ---
 
-## [5][The 16 JavaScript debugging tips you probably didn’t know](https://www.reddit.com/r/javascript/comments/j8g9g9/the_16_javascript_debugging_tips_you_probably/)
-- url: https://raygun.com/learn/javascript-debugging-tips?utm_medium=newsletter&amp;utm_source=javascriptweekly&amp;utm_campaign=cooperpress&amp;utm_content=article
+## [10][Type Guards in Javascript Using JSDoc Comments](https://www.reddit.com/r/javascript/comments/j8sfd0/type_guards_in_javascript_using_jsdoc_comments/)
+- url: https://goulet.dev/posts/type-guard-in-jsdoc/
 ---
 
-## [6][JavaScript escape room game: [code]capi Code Out!](https://www.reddit.com/r/javascript/comments/j7x2ef/javascript_escape_room_game_codecapi_code_out/)
-- url: https://codeout.codecapi.com
+## [11][Is there such thing as Idiomatic React?](https://www.reddit.com/r/javascript/comments/j8yet7/is_there_such_thing_as_idiomatic_react/)
+- url: /r/react/comments/j8viey/is_there_such_thing_as_idiomatic_react/
 ---
 
-## [7][English to MemeMan's Engls Transliteration Tool](https://www.reddit.com/r/javascript/comments/j8khsd/english_to_mememans_engls_transliteration_tool/)
-- url: https://meme-man-english.github.io/
----
-
-## [8][ZzFXM - a tiny JavaScipt music generator](https://www.reddit.com/r/javascript/comments/j84pze/zzfxm_a_tiny_javascipt_music_generator/)
-- url: https://keithclark.co.uk/articles/zzfxm/
----
-
-## [9][Building a Game With TypeScript. New episode! Colors and Layers](https://www.reddit.com/r/javascript/comments/j84ssi/building_a_game_with_typescript_new_episode/)
-- url: https://medium.com/@gregsolo/building-a-game-with-typescript-colors-and-layers-337b0e4d71f?source=friends_link&amp;sk=45ea8fe1af4d87bbd4b1b12b43c4557b
----
-
-## [10][vue-float-menu - a smart draggable menu](https://www.reddit.com/r/javascript/comments/j86kb3/vuefloatmenu_a_smart_draggable_menu/)
-- url: https://github.com/prabhuignoto/vue-float-menu
----
-
-## [11][LIVE TALK: "Snowpack: Faster web tooling, powered by ESM" by Fred K Schott](https://www.reddit.com/r/javascript/comments/j899wv/live_talk_snowpack_faster_web_tooling_powered_by/)
-- url: https://speakeasyjs.com/watch
----
-
-## [12][vue-speedometer: Vue component for showing speedometer like gauge](https://www.reddit.com/r/javascript/comments/j82z5l/vuespeedometer_vue_component_for_showing/)
-- url: https://github.com/palerdot/vue-speedometer
+## [12][small and powerful diet planner](https://www.reddit.com/r/javascript/comments/j8na1p/small_and_powerful_diet_planner/)
+- url: http://jedzoka.github.io/
 ---
 

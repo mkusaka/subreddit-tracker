@@ -23,76 +23,118 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/10/07/this-week-in-rust-359/
 ---
 
-## [3][Built a tiny web tool with RustWasm](https://www.reddit.com/r/rust/comments/j8ht8a/built_a_tiny_web_tool_with_rustwasm/)
-- url: https://www.reddit.com/r/rust/comments/j8ht8a/built_a_tiny_web_tool_with_rustwasm/
----
-I'm still quite new to the language but I have found myself rather infatuated with RustWasm lately and I went ahead to create a simple [random password generator](https://wasm-pass.gq) with wasm-bindgen, rand and React.js. Feel free to give it a try, open to feedback and contributions.
-## [4][A New Backend for Cranelift, Part 1: Instruction Selection – Mozilla Hacks](https://www.reddit.com/r/rust/comments/j8aqbs/a_new_backend_for_cranelift_part_1_instruction/)
-- url: https://hacks.mozilla.org/2020/10/a-new-backend-for-cranelift-part-1-instruction-selection/
+## [3][Rust FFI: Microsoft Flight Simulator SDK Part 1 [video]](https://www.reddit.com/r/rust/comments/j92jc0/rust_ffi_microsoft_flight_simulator_sdk_part_1/)
+- url: https://youtu.be/jNNz4h3iIlw
 ---
 
-## [5][Memory Safe ‘curl’ for a More Secure Internet](https://www.reddit.com/r/rust/comments/j7yegb/memory_safe_curl_for_a_more_secure_internet/)
-- url: https://www.abetterinternet.org/post/memory-safe-curl/
+## [4][I made a Gameboy/Gameboy Color Emulator which runs in the browser](https://www.reddit.com/r/rust/comments/j8vw84/i_made_a_gameboygameboy_color_emulator_which_runs/)
+- url: https://www.reddit.com/r/rust/comments/j8vw84/i_made_a_gameboygameboy_color_emulator_which_runs/
+---
+Hello everyone,
+
+I made this a few months back but now finally decided to wrap it up. Mainly during the lockdown I was home a lot more and wanted to do something in Rust. I love using Rust + WASM, so that resulted in a CHIP-8 emulator. Right after that I began work on a gameboy/color emulator.
+
+Initially I just wanted to be able to emulate Pokemon Gold/Silver/Crystal, the first games I ever played on a gameboy emulator when I was a kid. Eventually however it devolved into madness about passing tests and improving accuracy, spending weeks fixing single bugs.
+
+Anyways, I wrote the emu just for myself as a learning experience. So it's lacking in a lot of features you'd expect from one made for others to use, and it's also not mobile friendly unfortunately (but I'll work on that soon). Still, it may be of some interest to someone here :D
+
+[https://github.com/BlueBlazin/gbemu](https://github.com/BlueBlazin/gbemu)
+
+Thanks for reading and feel free to suggest any improvements here!
+## [5][Optional parameters in Rust](https://www.reddit.com/r/rust/comments/j8p6fx/optional_parameters_in_rust/)
+- url: https://vidify.org/blog/rust-parameters/
 ---
 
-## [6][RustDesk: a remote desktop software written with Rust](https://www.reddit.com/r/rust/comments/j8dl4p/rustdesk_a_remote_desktop_software_written_with/)
-- url: https://www.producthunt.com/posts/rustdesk
+## [6][New to Rust, and decided to make a game](https://www.reddit.com/r/rust/comments/j8wqfi/new_to_rust_and_decided_to_make_a_game/)
+- url: https://www.reddit.com/r/rust/comments/j8wqfi/new_to_rust_and_decided_to_make_a_game/
+---
+Hey everyone!
+
+I just recently started to learn Rust, and as an exercise I decided to make a small game in theme with October.
+
+Camp Misty is an asymmetric multiplayer game of deduction where a helpless victim is being hunted down by a ruthless killer!
+
+The game is played on the command line, and works on local networks as well as over the internet. Instructions for how to play are included with the game.
+
+[You can find it on GitHub, here.](https://github.com/ReeCocho/camp-misty).
+
+Since I’m fairly new to Rust, I would really appreciate it if you could take a look and provide some pointers on my usage of the language. Also, if you find any bugs (which I am sure there are plenty of) please notify me so I can fix them.
+
+Thanks!
+## [7][Introduction of Lazy API in Polars DataFrame library](https://www.reddit.com/r/rust/comments/j93ize/introduction_of_lazy_api_in_polars_dataframe/)
+- url: https://www.reddit.com/r/rust/comments/j93ize/introduction_of_lazy_api_in_polars_dataframe/
+---
+I just released `v0.7.x` for Polars. Polars is a DataFrame library fully implemented in Rust. This release introduces a [lazy AP](https://ritchie46.github.io/polars/polars/lazy/frame/struct.LazyFrame.html)[i](https://ritchie46.github.io/polars/polars/lazy/frame/struct.LazyFrame.html). Polars is completely in-memory so the `eager` API is very much like Pandas (only faster). The lazy API is somewhat in between spark and pandas. There is no distributed computation, but the queries will be optimized to do less work.
+
+* [github](https://github.com/ritchie46/polars)
+* [changelog](https://docs.rs/polars/0.7.1/polars/doc/changelog/v0_7/index.html)
+* [introductory notebook in Python](https://github.com/ritchie46/polars/blob/master/examples/10_minutes_to_pypolars.ipynb)
+
+I should note that a lot of the lazy API exists due to the excellent work done on [Apache DataFusion](https://arrow.apache.org/blog/2019/02/04/datafusion-donation/) from which I learned a lot.
+## [8][📽 Atomatic Rust code coverage in VSCode [follow up]](https://www.reddit.com/r/rust/comments/j91z8r/atomatic_rust_code_coverage_in_vscode_follow_up/)
+- url: https://youtu.be/JEgrkmEAHjA
 ---
 
-## [7][How To Send Keyboard Events To Another Process In Rust ?](https://www.reddit.com/r/rust/comments/j8fp23/how_to_send_keyboard_events_to_another_process_in/)
-- url: https://www.reddit.com/r/rust/comments/j8fp23/how_to_send_keyboard_events_to_another_process_in/
+## [9][gdbstub 0.4: An ergonomic, #![no_std] implementation of the GDB Remote Serial Protocol in Rust](https://www.reddit.com/r/rust/comments/j8oaxw/gdbstub_04_an_ergonomic_no_std_implementation_of/)
+- url: https://www.reddit.com/r/rust/comments/j8oaxw/gdbstub_04_an_ergonomic_no_std_implementation_of/
 ---
-In a game I play, there is a macro assigned to the key `4` and I have written a small rust program that uses [enigo lib](https://github.com/enigo-rs/enigo) to simulate the key press. When I run the program in cmd, I can see that `4` key is being pressed repeatedly (once a second) because it's written onto the console window, but when I switch to game process, while the rust code is running, it doesn't work, and windows says my rust program was blocked from making unwanted changes.
+[crates.io](https://crates.io/crates/gdbstub) | [docs](https://docs.rs/gdbstub/) | [repo](https://github.com/daniel5151/gdbstub)
 
-How is it that remote-control/conference applications like team-viewer/zoom etc. is able to send key clicks to another processes if windows is blocking them ?
+An ergonomic and easy-to-integrate implementation of the [GDB Remote Serial Protocol](https://sourceware.org/gdb/onlinedocs/gdb/Remote-Protocol.html#Remote-Protocol) in Rust, with full `#![no_std]` support. `gdbstub` makes extensive use of Rust's powerful type system + generics to enforce protocol invariants at compile time, minimizing the number of tricky protocol details end users have to worry about.
 
-EDIT: I'm able to send key events to the sublime text, but not to the game. But zoom is able to control the game as well.
-## [8][Building entire toolchain from source](https://www.reddit.com/r/rust/comments/j8j454/building_entire_toolchain_from_source/)
-- url: https://www.reddit.com/r/rust/comments/j8j454/building_entire_toolchain_from_source/
+A lot has changed since my [last post](https://www.reddit.com/r/rust/comments/hpys1x/gdbstub_02_an_ergonomic_allocationfree/) announcing `gdbstub 0.2`!
+
+Version `0.4` includes a _major_ API overhaul, tons of internal optimizations, and a slew of new GDB protocol features, making it the fastest, leanest, and most featureful release of `gdbstub` yet!
+
+It's been absolutely incredible having so many people contribute to the library, and seeing `gdbstub` being used in all sorts of cool projects. Thank you for all the support!
+
+- Lots of new [built-in](https://docs.rs/gdbstub/0.4.0/gdbstub/arch/index.html) architecture definitions:
+    -   RISC-V (only integer ISA at the moment) [\#21](https://github.com/daniel5151/gdbstub/pull/21) ([thomashk0](https://github.com/thomashk0))
+    -   x86 (i386) [\#23](https://github.com/daniel5151/gdbstub/pull/23) ([jamcleod](https://github.com/jamcleod))
+    -   x86_86 [\#11](https://github.com/daniel5151/gdbstub/pull/11) ([jamcleod](https://github.com/jamcleod))
+    -   32-bit PowerPC [\#25](https://github.com/daniel5151/gdbstub/pull/25) ([jamcleod](https://github.com/jamcleod))
+    -   Mips and Mips64 [\#13](https://github.com/daniel5151/gdbstub/pull/13) ([starfleetcadet75](https://github.com/starfleetcadet75))
+
+- A bunch of newly implemented GDB Protocol Extensions:
+    -   [`ExtendedMode`](https://docs.rs/gdbstub/0.4.0/gdbstub/target/ext/extended_mode/index.html) - Allow targets to spawn new processes / attach to existing processes / restart execution.
+        -   Includes support for `set disable-randomization`, `set environment`, `set startup-with-shell`, and `set cwd`. 
+    -   [`SectionOffsets`](https://docs.rs/gdbstub/0.4.0/gdbstub/target/ext/section_offsets/index.html) - Get section/segment relocation offsets from the target. [\#30](https://github.com/daniel5151/gdbstub/pull/30) ([mchesser](https://github.com/mchesser))
+    -   `Target::base` - Add single register read/write methods + `RegId` identifiers [\#22](https://github.com/daniel5151/gdbstub/pull/22) ([thomashk0](https://github.com/thomashk0))
+    -   `Target::base` - Add `StopReason::Signal(u8)` variant [\#19](https://github.com/daniel5151/gdbstub/pull/19) ([mchesser](https://github.com/mchesser))
+
+- A Major API Overhaul:
+    -   The `Target` API has been rewritten to use ["Inlineable Dyn Extension Traits" (IDETs)](https://docs.rs/gdbstub/0.4.0/gdbstub/target/ext/index.html#how-protocol-extensions-work---inlineable-dyn-extension-traits-idets)
+        -   _By breaking up `Target` into smaller pieces which can be mixed-and-matched, not only does has it made it easier than ever to get up-and-running with `gdbstub`, but it's also unlocked a ton of awesome internal optimizations + ergonomic improvements:_
+            -   Eliminates the binary-size impact of unimplemented GDB protocol features by _guaranteeing_ dead-code-elimination of all unused parsing/handling code.
+            -   Adds compile-time enforcement that certain groups of methods are implemented in-tandem, removing the need for runtime checks (e.g: `add_sw_breakpoint` and `remove_sw_breakpoint`).
+            -   Introduces a robust framework for adding new protocol extensions in a backwards-compatible manner.
+    -   Update the `Target` API with support for _non-fatal_ error handling.
+    -   Update the `Connection` trait with new (mostly optional) methods.
+    -   Error types are now marked as `#[non_exhaustive]`.
+
+
+By the way, if you're taking part in [Hacktoberfest](https://hacktoberfest.digitalocean.com/) this year, there are plenty of ways to contribute to `gdbstub`. There's a whole laundry list of protocol extensions and new architectures to support, so check out the [issue tracker](https://github.com/daniel5151/gdbstub/issues) and consider lending a hand!
+
+Cheers!
+## [10][Ocean - A C/C++ project manager/build system written in Rust](https://www.reddit.com/r/rust/comments/j8rdbo/ocean_a_cc_project_managerbuild_system_written_in/)
+- url: /r/Cplusplus/comments/j8rd3y/ocean_a_cc_project_managerbuild_system_written_in/
 ---
-Hey, is there any way to use rustup or a tool like it to manage and build the entire toolchain from source? 
 
-I can't use my default rustup toolchains, as the powerpc64-linux binaries use a different linker to my system and segfault.
-## [9][Help needed: Moving a buffer and a Cow pointing to it in a struct.](https://www.reddit.com/r/rust/comments/j8irng/help_needed_moving_a_buffer_and_a_cow_pointing_to/)
-- url: https://www.reddit.com/r/rust/comments/j8irng/help_needed_moving_a_buffer_and_a_cow_pointing_to/
+## [11][t-rec, a blazingly fast terminal recorder that generates animated gif images for the web written in rust for MacOS](https://www.reddit.com/r/rust/comments/j8tqs9/trec_a_blazingly_fast_terminal_recorder_that/)
+- url: https://www.reddit.com/r/rust/comments/j8tqs9/trec_a_blazingly_fast_terminal_recorder_that/
 ---
-Hey everyone,
-
-I'm currently using the quick\_xml crate to parse an XML file. Being a pull parser, the central API looks like:  
-
-```
-let mut buffer = Vec::new();
-let event = reader.read_event(&amp;mut buffer);
-
-Element { buffer, event } // &lt;- this fails as buffer is mutable borrowed...
-```
-
-Now once the expected event occurs, I'd like to return a struct in which I move the buffer and the event (which internally contains a Cow which lifetime is bound to the buffer). However the borrow checker doesn't like this approach, as it considers buffer as mutably borrowed.
-
-For completeness, the signature of read_event is: `pub fn read_event&lt;'a, 'b&gt;(&amp;'a mut self, buf: &amp;'b mut Vec&lt;u8&gt;) -&gt; Result&lt;Event&lt;'b&gt;&gt;`
-
-Therefore packing the buffer and the resulting event together should be technically safe.
-
-I hope I'm explaining enough to understand my problem. Is there a safe way to achive this in Rust? (without giving up the zero-copy capabilities). 
-
-many thanks in advance :)
-## [10][rust in curl with hyper](https://www.reddit.com/r/rust/comments/j7yw4o/rust_in_curl_with_hyper/)
-- url: https://daniel.haxx.se/blog/2020/10/09/rust-in-curl-with-hyper/
----
-
-## [11][Introducing instant.bible - An as-you-type Bible search engine written in Rust, Swift, Kotlin, and TypeScript!](https://www.reddit.com/r/rust/comments/j8anec/introducing_instantbible_an_asyoutype_bible/)
-- url: https://knpw.rs/blog/instant-bible
----
-
-## [12][Are we Bluetooth yet?](https://www.reddit.com/r/rust/comments/j81m4z/are_we_bluetooth_yet/)
-- url: https://www.reddit.com/r/rust/comments/j81m4z/are_we_bluetooth_yet/
----
-Hello everyone, I have finally the chance to use Rust at work but I'm kinda stumbling on an issue.
-
-I'm starting the development of an application (I'd be pretty much the only developer and I can chose what to use, as long as it makes sense) which lets the user interact with a Bluetooth device my company made and I wanted to use Flutter strictly for the GUI side and Rust for the application logic (interfacing with the device, handling access to the filesystem, network calls and, eventually, some machine learning stuff either in the back end or the app itself, but TBD). The target platform would mainly be Android, but the goal in the long run would also be to support iOS and desktop (Windows mainly).
-
-Well, so far so good, but surprisingly enough when I was looking for Bluetooth crates I didn't find anything that seems usable, either because unmaintained (last update years ago) or incomplete (not supporting the platforms I need). I didn't find any recent post talking about it here and no reference in [Awesome Rust](https://github.com/rust-unofficial/awesome-rust) or [Not Yet Awesome Rust](https://github.com/not-yet-awesome-rust/not-yet-awesome-rust). I was looking for something like [QT's Bluetooth](https://doc.qt.io/qt-5/qtbluetooth-index.html).
-
 &amp;#x200B;
 
-I'm posting here hoping you might have some good suggestions on the matter and convince me not to dump Rust already for this use case. Thanks in advance for your support.
+[demo of t-rec](https://i.redd.it/q60pnehlfcs51.gif)
+
+[https://github.com/sassman/t-rec-rs](https://github.com/sassman/t-rec-rs)
+
+[https://crates.io/crates/t-rec](https://crates.io/crates/t-rec)
+
+This is the first release, therefore testing and feedback is very much appreciated. 
+
+Contributions for Linux and Windows support are welcome as well :)
+## [12][Are there any good video blogs on rust?](https://www.reddit.com/r/rust/comments/j8y5zx/are_there_any_good_video_blogs_on_rust/)
+- url: https://www.reddit.com/r/rust/comments/j8y5zx/are_there_any_good_video_blogs_on_rust/
+---
+Coming from C++, and looking for something similar like C++ Weekly [https://www.youtube.com/playlist?list=PLs3KjaCtOwSZ2tbuV1hx8Xz-rFZTan2J1](https://www.youtube.com/playlist?list=PLs3KjaCtOwSZ2tbuV1hx8Xz-rFZTan2J1)

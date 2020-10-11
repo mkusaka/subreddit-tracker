@@ -1,154 +1,65 @@
 # golang
-## [1][Go Proxyless GRPC Load Balancing on Kubernetes](https://www.reddit.com/r/golang/comments/j8dtnz/go_proxyless_grpc_load_balancing_on_kubernetes/)
-- url: https://link.medium.com/7t4I71YAsab
+## [1][bubbletea: A fun, functional and stateful framework to build terminal apps 🏗](https://www.reddit.com/r/golang/comments/j8rk2i/bubbletea_a_fun_functional_and_stateful_framework/)
+- url: https://github.com/charmbracelet/bubbletea
 ---
 
-## [2][grofer: A system profiler written in golang!](https://www.reddit.com/r/golang/comments/j852wz/grofer_a_system_profiler_written_in_golang/)
-- url: https://www.reddit.com/r/golang/comments/j852wz/grofer_a_system_profiler_written_in_golang/
+## [2][Managing Microservice Schema and Interfaces in Distributed Environments With Protocol Buffers - [Part - I] Feel free to comments your thoughts on this. All examples used in the blog is written in golang](https://www.reddit.com/r/golang/comments/j9095x/managing_microservice_schema_and_interfaces_in/)
+- url: https://ednsquare.com/story/managing-microservice-schema-and-interfaces-in-distributed-environments-with-protocol-buffers-part-i-------AkFVJP
 ---
-In the spirit of Hacktoberfest, inspired by gotop, here's a TUI based system/resource monitor, written purely in golang that we've been working on: [grofer](https://github.com/pesos/grofer)  
 
-It provides basic stats about your system along with a few helpful metrics such as number of voluntary and involuntary context switches, time spent servicing different types of interrupts, etc. And we're currently working on building export functionality for the monitored system data in hopes of it being usable to profile remote machines. 
-
-We've been having tons of fun developing it and learning quite a lot ourselves from the contributions that people send in! 
-
-If anyone's interested in contributing to a beginner friendly, golang repository, please do check it out!
-## [3][Python Dev needing some help with implementing a constructor.](https://www.reddit.com/r/golang/comments/j8fvim/python_dev_needing_some_help_with_implementing_a/)
-- url: https://www.reddit.com/r/golang/comments/j8fvim/python_dev_needing_some_help_with_implementing_a/
+## [3][statsviz: instant live visualization of your Go application runtime statistics (GC, MemStats, etc.) in the browser](https://www.reddit.com/r/golang/comments/j8u1gk/statsviz_instant_live_visualization_of_your_go/)
+- url: https://github.com/arl/statsviz
 ---
-Hi there,
 
-I'm a Python dev but am learning Go at work. I've been seeing this type of constructor pattern seen [here](https://stackoverflow.com/questions/18125625/constructors-in-go#:~:text=In%20Go%2C%20a%20constructor%20can,pointer%20to%20a%20modified%20structure.&amp;text=For%20weak%20dependencies%20and%20better,interface%20that%20this%20structure%20implements.&amp;text=Golang%20is%20not%20OOP%20language%20in%20its%20official%20documents). 
+## [4][what do you do with golang in your company?](https://www.reddit.com/r/golang/comments/j91b3v/what_do_you_do_with_golang_in_your_company/)
+- url: https://www.reddit.com/r/golang/comments/j91b3v/what_do_you_do_with_golang_in_your_company/
+---
+I'm newbie to golang and I wonder what kind of project you do with golang. 
 
-I'm trying to implement and practice how I've been seeing this pattern at work. Here's my example code
+I think it'll help motivate to learn golang
 
-    import (
-        "fmt"
-    )
-
-    type colors interface {
-        colorMethod1() byte
-        colorMethod2(byte) byte
-    }
-
-    type Colors struct {
-        R   byte
-        G   byte
-        B   byte
-    }
-
-    type Params struct {
-        R   byte
-        G   byte
-        B   byte
-    }
-
-    func (c *Colors) colorMethod1() byte {
-        return c.R
-    }
-
-    func (c *Colors) colorMethod2(b byte) byte {
-        return c.B
-    }
-
-    // Constructor
-    func NewColors (p Params) colors {
-        return &amp;Colors{
-            R:p.R,
-            G:p.G,
-            B:p.B,
-        }
-    }
-
-
-    // I'm using a Jupyter Notebook so I don't need a main() func
-    b := NewColors(Params{4, 6 ,7})
-    b.colorMethod1()
-    &gt;&gt;&gt; 4
-
-My issue here is that when I try `b.R` I end up with 
-
-     type main.colors has no field or method "R": b.R
-
-Could I get some insight as to why? Here's me trying to implement it with a doggo.
-
-https://play.golang.org/p/0MeZRePd0xC
-## [4][kubecolor: a CLI tool to colorize kubectl output written in Go](https://www.reddit.com/r/golang/comments/j8khzf/kubecolor_a_cli_tool_to_colorize_kubectl_output/)
+can you guys tell me?
+## [5][kubecolor: a CLI tool to colorize kubectl output written in Go](https://www.reddit.com/r/golang/comments/j8khzf/kubecolor_a_cli_tool_to_colorize_kubectl_output/)
 - url: https://www.reddit.com/r/golang/comments/j8khzf/kubecolor_a_cli_tool_to_colorize_kubectl_output/
 ---
 [https://github.com/dty1er/kubecolor](https://github.com/dty1er/kubecolor)
-## [5][Pagination and dynamic filtering arrays and slices for restful](https://www.reddit.com/r/golang/comments/j8hpt5/pagination_and_dynamic_filtering_arrays_and/)
-- url: https://www.reddit.com/r/golang/comments/j8hpt5/pagination_and_dynamic_filtering_arrays_and/
+## [6][Looking for a sample GO script showing how to stream a few mp4s placed in a directory.](https://www.reddit.com/r/golang/comments/j92sll/looking_for_a_sample_go_script_showing_how_to/)
+- url: https://www.reddit.com/r/golang/comments/j92sll/looking_for_a_sample_go_script_showing_how_to/
 ---
-[https://github.com/kohestanimahdi/go-pagination-filtering](https://github.com/kohestanimahdi/go-pagination-filtering)
-## [6][A Go package for marshaling and unmarshaling map[string]string with struct tags.](https://www.reddit.com/r/golang/comments/j88glg/a_go_package_for_marshaling_and_unmarshaling/)
-- url: https://github.com/chanced/labeler
----
-
-## [7][Can gRPC be completely used in place of websockets?](https://www.reddit.com/r/golang/comments/j7wjlf/can_grpc_be_completely_used_in_place_of_websockets/)
-- url: https://www.reddit.com/r/golang/comments/j7wjlf/can_grpc_be_completely_used_in_place_of_websockets/
----
-I'm coming from nodejs and after implementing API in gRPC I found its more fun in building APIs with gRPC. I already knew golang for a while and was switching to golang. I am wondering if I want to implement a chat application or a server monitoring app with grpc instead of websockets, is it going to be a good idea?
-## [8][Understand more about Go basics with one interview question](https://www.reddit.com/r/golang/comments/j8h35x/understand_more_about_go_basics_with_one/)
-- url: https://www.pixelstech.net/article/1602313746-Understand-more-about-Go-basics-with-one-interview-question
+Can anybody recommend a sample GO script showing how to stream a few mp4s placed in a directory or similar.
+## [7][Experimenting with Golang bufio Reader vs Scanner to understand the difference](https://www.reddit.com/r/golang/comments/j93hpg/experimenting_with_golang_bufio_reader_vs_scanner/)
+- url: https://shareablecode.com/snippets/difference-between-golang-bufio-reader-vs-scanner-newreader-vs-newscanner-f8eP-uc1U
 ---
 
-## [9][todocheck v0.3.0 released](https://www.reddit.com/r/golang/comments/j8gjsp/todocheck_v030_released/)
-- url: https://github.com/preslavmihaylov/todocheck/releases/tag/v0.3.0
+## [8][Best material to learn golang](https://www.reddit.com/r/golang/comments/j938e6/best_material_to_learn_golang/)
+- url: https://www.reddit.com/r/golang/comments/j938e6/best_material_to_learn_golang/
+---
+what are good udemy or youtube resources available to learn golang, apart from official doc. I have couple of yrs of experience in java and kinda curious about golang, wants to get more insight into it.
+## [9][go modules making me rage! How do I fork a module?](https://www.reddit.com/r/golang/comments/j8pqms/go_modules_making_me_rage_how_do_i_fork_a_module/)
+- url: https://www.reddit.com/r/golang/comments/j8pqms/go_modules_making_me_rage_how_do_i_fork_a_module/
+---
+What I'm trying to do, I believe, is extremely standard, yet go modules are causing me to regret every decision.
+
+Here's my app, fooApp. Various 3rd party imports such as "import github.com/authorA/mygolibrary/v3". I did `go mod init` followed by `go mod tidy` and I was able to get a solid build with `go build`, finding all the dependencies and such.
+
+Now, I want to fork authorA's library so that I can make some fixes to eventually submit pull-requests. So, I went to github and forked it to "github.com/mememeB/mygolibrary". I then changed my import lines accordingly "import github.com/mememeB/mygolibrary/v3"
+
+`go build` then fetches my library, but complains that mygolibrary is defined as authorA/mygolibrary but imported as mememeB/mygolibrary
+
+Ok. So, some googling says I need to add a "replace" line in my go.mod file.
+
+`replace github.com/authorA/mygolibrary/v3 =&gt; github.com/mememeB/mygolibrary/v3`
+
+New error. "replacement module without version must be directory path" What? More searching.
+
+`replace github.com/authorA/mygolibrary/v3 =&gt; github.com/mememeB/mygolibrary/v3 v0`
+
+More complaints that mememeB's go.mod file defines the fork as authorA.
+
+Must I really change everything (go.mod, all imports) in my fork to match my "url"? That makes submitting PR's insane because now there's tons more differences than originally needed.
+
+What's the proper way to fork a module and use it in your apps?
+## [10][Go might support converting a slice []T to an array pointer *[N]T in Go 1.16](https://www.reddit.com/r/golang/comments/j8lbav/go_might_support_converting_a_slice_t_to_an_array/)
+- url: https://github.com/golang/go/issues/395
 ---
 
-## [10][Finding the single occurring int in a slice of duplicates](https://www.reddit.com/r/golang/comments/j8byrc/finding_the_single_occurring_int_in_a_slice_of/)
-- url: https://www.reddit.com/r/golang/comments/j8byrc/finding_the_single_occurring_int_in_a_slice_of/
----
-Hey All,
-
-I recently came across this challenge with my friends and this is the solution we came up with.  But there are always multiple ways to come up with a solution so I thought to post here to see what you guys can come up with.
-
-Prompt:
-
-Given a slice of positive integers greater than 0, every element appears more than once except for one. Find the odd one out. If no such element exists, return -1.
-
-ex.
-
-\[\]int {10, 10, 20, 30, 30}
-
-output:
-
-20
-
-&amp;#x200B;
-
-My groups code:
-
-    package main
-    
-    import "fmt"
-    
-    // import "fmt"
-    
-    func main() {
-    	nums := []int{10, 10, 20, 30, 30}
-    	finalAnswer := findSingleNum(nums)
-    	fmt.Println(finalAnswer)
-    }
-    
-    func findSingleNum(slice []int) int {
-    	answer := -1
-    	for _, v := range slice {
-    		var results []int
-    		for ind, val := range slice {
-    			if val == v {
-    				results = append(results, val)
-    			}
-    			if ind == len(slice)-1 &amp;&amp; len(results) == 1 {
-    				answer = results[0]
-    			}
-    		}
-    	}
-    	if answer == -1 {
-    		return answer
-    	}
-    	return answer
-    }
-
-&amp;#x200B;

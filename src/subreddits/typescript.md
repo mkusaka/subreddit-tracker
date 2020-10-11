@@ -22,19 +22,97 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How to view JSDoc (or at least signature) for untyped JS dependencies? Tried both WebStrorm and VisualCode](https://www.reddit.com/r/typescript/comments/j8hj0y/how_to_view_jsdoc_or_at_least_signature_for/)
+## [2][How to get intuitively comfortable with TypeScript?](https://www.reddit.com/r/typescript/comments/j8vwzf/how_to_get_intuitively_comfortable_with_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/j8vwzf/how_to_get_intuitively_comfortable_with_typescript/
+---
+I've seen the docs and have played around with TS in toy projects, in an attempt to add it to my repertoire. I come from a background where my projects didn't use TS at all. How does one develop an intuitive sense of using TS for production?
+
+While I realize the significance, I find it hard to bridge the gap between my amateur knowledge and being production-ready as the rest of my skillset.
+
+I keep having to double-check what to type something while I'm implementing, sometimes resorting to online searches especially for imported libraries. There's also the pain of not knowing for sure if I typed it the right way. Is it normal for it to be time-consuming at the start?
+## [3][Vue and TypeScript](https://www.reddit.com/r/typescript/comments/j91mz2/vue_and_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/j91mz2/vue_and_typescript/
+---
+I am totally new to typescript i just wanted to do some side project to learn a bit more of it with vue. But i cant even configure my first app i am having problems with vue imports. I have made shim.d.ts but nothing is fixing the import error on "import App from './App.vue'" ....
+
+Is there any straightforward tutorial how to set up my vue app with typescript , or if anyone could give me suggestion how to fix this and avoid these kind of errors in future id be really thankful.
+## [4][Generic type for type conversion](https://www.reddit.com/r/typescript/comments/j93t98/generic_type_for_type_conversion/)
+- url: https://www.reddit.com/r/typescript/comments/j93t98/generic_type_for_type_conversion/
+---
+Hi,
+
+I have some custom types like
+
+    type MyType = {
+        id: number;
+        title: string;
+        checked: boolean;
+    }
+
+I am trying to make a generic type (if possible) that will convert any boolean property in the type to binary (0|1).
+
+&amp;#x200B;
+
+I was thinking of something like the following
+
+    type BoToBiFormat = {[x:string]:any}
+    type BoolToBinary&lt;T extends BoToBiFormat&gt; = {
+        [x in keyof T]: T[x] === boolean ? 0|1 : T[x];
+    }
+
+but that obviously didn't work. Is there a way to make such a type?
+## [5][How to view JSDoc (or at least signature) for untyped JS dependencies? Tried both WebStrorm and VisualCode](https://www.reddit.com/r/typescript/comments/j8hj0y/how_to_view_jsdoc_or_at_least_signature_for/)
 - url: https://i.redd.it/2q0surn3j8s51.png
 ---
 
-## [3][Typescript project starter: npm-ready, plus testing and CLI templates](https://www.reddit.com/r/typescript/comments/j88pwf/typescript_project_starter_npmready_plus_testing/)
+## [6][Bug in type definitions for HOF?](https://www.reddit.com/r/typescript/comments/j8xnfz/bug_in_type_definitions_for_hof/)
+- url: https://www.reddit.com/r/typescript/comments/j8xnfz/bug_in_type_definitions_for_hof/
+---
+Hello, I'm currently writing a little Axios-like wrapper around the Fetch API for the size benefits. To do this, I enlist a higher order function that differentiates body-less methods like GET, DELETE, OPTIONS, etc. from POST, PUT, etc. 
+
+Here's my code (roughly)
+
+
+```
+type BodylessMethods = 'get' | 'delete' | 'options' | 'head';
+type BodyMethods = 'post' | 'put' | 'patch';
+const isOfBodylessMethod = (method: string): method is BodylessMethods =&gt; ['get', 'delete', 'options', 'head'].includes(method);
+
+...
+
+private request = (method: BodyMethods | BodylessMethods) =&gt; {
+  return isOfBodylessMethod(method)
+    ? (resource: string, params?: Record&lt;string, unknown&gt;) =&gt; {
+        ...
+      }
+    : (resource: string, data?: Record&lt;string, unknown&gt;, params?: Record&lt;string, unknown&gt;) =&gt; {
+        ...
+      };
+};
+
+public get = this.request('get');
+```
+
+The problem I'm running into is that, for some reason the bodyless methods (`.get()`, `.delete()`, etc) throw an error if I make `data` a non-optional parameter in that second function, and I don't quite know why. I'm given `TS2554: Expected 2-3 arguments, but got 1.` Why would 2 arguments be expected? The first function has 1 required, 1 optional, the second 2 required and 1 optional. Surely 1-3 arguments should be expected?
+
+Now, this can easily be fixed by keeping `data` optional, and should likely be solved that way as the spec doesn't require a body with POST, PUT, etc., but I'd like to know why this issue is popping up. I don't understand where it is coming from.
+## [7][Best TypeScript video tutorial for beginners or intermediate (free or paid) in 2020?](https://www.reddit.com/r/typescript/comments/j8qe9c/best_typescript_video_tutorial_for_beginners_or/)
+- url: https://www.reddit.com/r/typescript/comments/j8qe9c/best_typescript_video_tutorial_for_beginners_or/
+---
+
+## [8][Self casting from json?](https://www.reddit.com/r/typescript/comments/j8vjk1/self_casting_from_json/)
+- url: https://www.reddit.com/r/typescript/comments/j8vjk1/self_casting_from_json/
+---
+I have a function that accepts a class object. If I pass a json inside, typescript seems to automatically cast the json object into the object declared in the parameter. Is this reliable? Or should I map it and pass it in?
+## [9][Typescript project starter: npm-ready, plus testing and CLI templates](https://www.reddit.com/r/typescript/comments/j88pwf/typescript_project_starter_npmready_plus_testing/)
 - url: https://github.com/bscotch/typescript-template
 ---
 
-## [4][Jeff and Dom Make A Game - a coworker and his friend have been making a multiplayer game in TypeScript the past 5 months and streaming the whole thing](https://www.reddit.com/r/typescript/comments/j8b8nv/jeff_and_dom_make_a_game_a_coworker_and_his/)
+## [10][Jeff and Dom Make A Game - a coworker and his friend have been making a multiplayer game in TypeScript the past 5 months and streaming the whole thing](https://www.reddit.com/r/typescript/comments/j8b8nv/jeff_and_dom_make_a_game_a_coworker_and_his/)
 - url: https://youtu.be/z8e_cUsJyxM
 ---
 
-## [5][If interviewing at a JS-only place, would you say you like Typescript because it makes your code more type-safe?](https://www.reddit.com/r/typescript/comments/j7x355/if_interviewing_at_a_jsonly_place_would_you_say/)
+## [11][If interviewing at a JS-only place, would you say you like Typescript because it makes your code more type-safe?](https://www.reddit.com/r/typescript/comments/j7x355/if_interviewing_at_a_jsonly_place_would_you_say/)
 - url: https://www.reddit.com/r/typescript/comments/j7x355/if_interviewing_at_a_jsonly_place_would_you_say/
 ---
 Something like 75% of all errors are TypeErrors and all my portfolio items showcase mid level Typescript even though by experience I'm a junior. It's the one technology I feel strongly about because in the JS days I spent 30% of my time building the project, 70% of the time figuring out where the interpreter's dynamic type inference is throwing an error.
@@ -42,126 +120,3 @@ Something like 75% of all errors are TypeErrors and all my portfolio items showc
 Do JS only companies take offense if you start raving about how much TS has reinforced your code and sense of clarity on what is being returned where? Should I downplay it if I know they're not big on TS? 
 
 Intuition says yes especially given my lack of corporate experience (3 years learning/practicing at home though). PS: I know the best answer is to find a company that has TS but in these times I can't be picky.
-## [6][Help getting declaration files to register with typeRoots setting](https://www.reddit.com/r/typescript/comments/j86fer/help_getting_declaration_files_to_register_with/)
-- url: https://www.reddit.com/r/typescript/comments/j86fer/help_getting_declaration_files_to_register_with/
----
-    // tsconfig.json inside "compilerOptions"
-        "typeRoots": ["./@types", "./node_modules/@types"],
-    
-    // {projectRoot}/@types/express/index.d.ts
-    declare global {
-      namespace Express {
-        interface Request {
-          verifiedAccessToken: string
-        }
-      }
-    }
-
-In another file with req annotated to Request inside the function parameter, I am still not able to set verifiedAccessToken without a lint error in VsCode:
-
-    req.verifiedAccessToken = accessToken;
-    // Property 'verifiedAccessToken' does not exist on 
-    // type 'Request&lt;ParamsDictionary, any, any, ParsedQs&gt;'.ts(2339)
-
-Anything else that needs to be done? Or syntax errors in index.d.ts above?
-## [7][They changed the compiler and now the code no longer compiles](https://www.reddit.com/r/typescript/comments/j7tkwz/they_changed_the_compiler_and_now_the_code_no/)
-- url: https://www.reddit.com/r/typescript/comments/j7tkwz/they_changed_the_compiler_and_now_the_code_no/
----
-I know how to fix the code but I don't understand the logic behind the new behaviour, I think this is a bug.
-
-I really don't understand why the following code compiles under TS 3.7.5 but under TS 3.9.7 is an error
-
-&amp;#x200B;
-
-    interface Data {
-      nullableArray?: number[]
-      notNullable: number[];
-    }
-    
-    function dummyFunction(data: Data) {
-      data.nullableArray?.flat().map(x =&gt; x * 10); // &lt;-- no longer compile "object is possibly undefined
-      data.notNullable.flat().map(x =&gt; x * 10);
-    }
-    
-
-The error occurs on `x =&gt; x * 10` but the [Optional Chaining](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html) ensures `flat()` is not called if `nullableArray` is `null` or `undefined`, so why now this code is incorrect?
-## [8][How to have correct "this" type in callback function?](https://www.reddit.com/r/typescript/comments/j7eq51/how_to_have_correct_this_type_in_callback_function/)
-- url: https://www.reddit.com/r/typescript/comments/j7eq51/how_to_have_correct_this_type_in_callback_function/
----
-    function wrapFunction&lt;F extends (...fnArgs: unknown[]) =&gt; void&gt;(
-      fn: F
-    ): (...args: Parameters&lt;F&gt;) =&gt; void {
-      return function (this: unknown, ...args: unknown[]): void {
-        fn.apply(this, args)
-      }
-    }
-    
-    class SomeClass {
-      myProperty = 'hey'
-      myFunction: wrapFunction(function(){
-        this.myProperty // "this" is not correct and "myProperty" is not known
-      })
-    }
-
-wrapFunction could also be used in any class, so scope is quite dynamic.
-## [9][How do I use `keyof typeof` on a Map in a class?](https://www.reddit.com/r/typescript/comments/j7h1nr/how_do_i_use_keyof_typeof_on_a_map_in_a_class/)
-- url: https://www.reddit.com/r/typescript/comments/j7h1nr/how_do_i_use_keyof_typeof_on_a_map_in_a_class/
----
-I have the following but don't want to type `checkEntity(entity: string)`s parameter with a string. I want it to only accept strings that are keys in `this.entities`.
-
-I don't want to resort to hard coding `type entityKeys = "hero" | "zombie"`, there are a lot of keys in the actual program. I am missing the syntax to get what I need... `keyof typeof this.entities` is not a thing.
-
-```typescript
-export class World {
-  entities;
-
-  constructor() {
-    this.entities = new Map&lt;string, [][]&gt;([
-      ["hero", []],
-      ["zombies", [[], [], []]],
-    ]);
-  }
-
-  checkEntity(entity: string): void {
-    if (this.entities.has(entity)) {
-      console.log(this.entities.get(entity));
-    }
-  }
-}
-const world = new World();
-world.checkEntity("doesnotexist"); // type error wanted
-```
-## [10][Best TypeScript Node.js API Postgres Starter Kit?](https://www.reddit.com/r/typescript/comments/j771br/best_typescript_nodejs_api_postgres_starter_kit/)
-- url: https://www.reddit.com/r/typescript/comments/j771br/best_typescript_nodejs_api_postgres_starter_kit/
----
-I see Microsoft has one for MongoDB. Not sure about it. Has too much for my test -- especially with Express.
-
-I am looking for a starter kit that has TypeScript with best practices ready to go however having express (or not) is not a deal breaker.
-
-Has anyone found anything similiar?
-## [11][TS inferring object type as null](https://www.reddit.com/r/typescript/comments/j7b0e5/ts_inferring_object_type_as_null/)
-- url: https://www.reddit.com/r/typescript/comments/j7b0e5/ts_inferring_object_type_as_null/
----
-This is React code. Can anyone tell me why I'm facing issues with type assertion below, and how to fix it? i don't understand why `flashMessage` is inferred as a boolean type.
-
-    // outside return ()
-    const [flashMessage, setFlashMessage] = useState({});
-    
-    // inside return()
-    &lt;SnackbarContent  
-      message={ 'errors' in flashMessage as object ? 
-        flashMessage.errors : flashMessage.message }
-     /&gt;
-    
-    /* Conversion of type 'boolean' to type 'object' may 
-    be a mistake because neither type sufficiently overlaps 
-    with the other. If this was intentional, convert the expression 
-    to 'unknown' first.ts(2352) */
-    
-    
-    // removing 'as object' 
-    // Property 'message' does not exist on type '{}'.ts(2339)
-    
-    // this also fails
-      message={ 'errors' in flashMessage as Partial&lt;{ errors: string, message: string }&gt; ? flashMessage.errors : flashMessage.message }
-    

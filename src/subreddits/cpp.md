@@ -56,76 +56,103 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Overloading by Return Type in C++](https://www.reddit.com/r/cpp/comments/j94jd8/overloading_by_return_type_in_c/)
+## [2][Increased Complexity of C++20 Range Algorithms Declarations - Is It Worth?](https://www.reddit.com/r/cpp/comments/j9ndx1/increased_complexity_of_c20_range_algorithms/)
+- url: https://www.bfilipek.com/2020/10/complex-ranges-algorithms.html?m=1
+---
+
+## [3][A very short war story on too much overloading](https://www.reddit.com/r/cpp/comments/j9e9k7/a_very_short_war_story_on_too_much_overloading/)
+- url: https://quuxplusone.github.io/blog/2020/10/11/overloading-considered-harmful/
+---
+
+## [4][Modern C++ Undo/Redo framework](https://www.reddit.com/r/cpp/comments/j9of7d/modern_c_undoredo_framework/)
+- url: https://www.reddit.com/r/cpp/comments/j9of7d/modern_c_undoredo_framework/
+---
+Hello everyone, just sharing my latest development.  
+[https://github.com/ryder052/History](https://github.com/ryder052/History)
+
+Happy coding :)
+## [5][std::i/ostream's are a bit too oversized for both usage and implementation. Are there lighter alternatives widely used?](https://www.reddit.com/r/cpp/comments/j9mqsu/stdiostreams_are_a_bit_too_oversized_for_both/)
+- url: https://www.reddit.com/r/cpp/comments/j9mqsu/stdiostreams_are_a_bit_too_oversized_for_both/
+---
+Disclaimer: I'm not solving any specific production case.
+
+Standard input/output stream specifications include a lot of details - locales, buffering, large set of virtual functions. And they're known for their performance implications. So I was wondering if there's some simpler version of i/o interface, coming from some 3rd party library, which is widely used. Something like this:
+
+    struct reader {
+        virtual std::size_t read(std::span&lt;std::byte&gt; buffer) = 0;
+    }
+    struct writer {
+        virtual std::size_t write(std::span&lt;std::byte&gt; buffer) = 0;
+        virtual void flush() = 0;
+    }
+
+Or does everyone either just use std::i/o stream's or reimplements concept above from scratch?
+
+EDIT: I'd like to clarify that I'm not looking for alternative text formatting facilities. And I'm well aware about `std::format`. What I'm looking for is a widely used thin interface for reading bytes from some source or writing bytes to some sink.
+## [6][bitflags v1.3.0 - raw flags support](https://www.reddit.com/r/cpp/comments/j9mh4y/bitflags_v130_raw_flags_support/)
+- url: https://www.reddit.com/r/cpp/comments/j9mh4y/bitflags_v130_raw_flags_support/
+---
+Hi everybody,
+
+New version of [bitflags](https://github.com/m-peko/bitflags) library is released these days!
+
+Previously, you could create your flags only by writing something like:
+
+    BEGIN_BITFLAGS(Flags)
+        FLAG(none)
+        FLAG(flag_a)
+        FLAG(flag_b)
+        FLAG(flag_c)
+    END_BITFLAGS(Flags)
+
+Each flag is consisted of raw value (bits) and flag's name. So you could get a string representation of each flag by writing: `Flags::flag_a.name` .
+
+In the new version, you can create raw flags, i.e. flags without string representation. Purpose of this feature is to provide light version that would take up as little space as possible:
+
+    BEGIN_RAW_BITFLAGS(RawFlags)
+        RAW_FLAG(none)
+        RAW_FLAG(flag_a)
+        RAW_FLAG(flag_b)
+    END_RAW_BITFLAGS(RawFlags)
+
+What do you think of this feature?
+
+**What's next?**
+
+In the next version, support for C++11 and C++14 will be added.
+
+Thank you all!
+## [7][I made a vector that maintains polymorphism without being (I hope) too janky](https://www.reddit.com/r/cpp/comments/j9mcum/i_made_a_vector_that_maintains_polymorphism/)
+- url: https://github.com/friedkeenan/poly_vector
+---
+
+## [8][Overloading by Return Type in C++](https://www.reddit.com/r/cpp/comments/j94jd8/overloading_by_return_type_in_c/)
 - url: https://artificial-mind.net/blog/2020/10/10/return-type-overloading
 ---
 
-## [3][Bjarne Stroustrup on "dead bodies of type theorists"](https://www.reddit.com/r/cpp/comments/j90thn/bjarne_stroustrup_on_dead_bodies_of_type_theorists/)
-- url: https://www.reddit.com/r/cpp/comments/j90thn/bjarne_stroustrup_on_dead_bodies_of_type_theorists/
+## [9][Fegeya Scrift - Colorized &amp; Customizable CLI Shell Project for everyone. Written in C++17.](https://www.reddit.com/r/cpp/comments/j9nwvl/fegeya_scrift_colorized_customizable_cli_shell/)
+- url: https://www.reddit.com/r/cpp/comments/j9nwvl/fegeya_scrift_colorized_customizable_cli_shell/
 ---
-I can't produce a link off the top of my head, but I remember Bjarne Stroustrup saying (on a few occasions, in a talk or a panel) that "non-type template parameters were introduced in C++ over the dead bodies of some type theorists" (quote from memory). This surprises me since types depending on values is a fundamental concept in Martin-Löf type theory which is older than C++. Does anyone have any knowledge on what feedback Bjarne Stroustrup received from type theorists?
-## [4][r/cpp status update](https://www.reddit.com/r/cpp/comments/j8t9fu/rcpp_status_update/)
-- url: https://www.reddit.com/r/cpp/comments/j8t9fu/rcpp_status_update/
+Hello everyone, This is Scrift, my CLI shell project for GNU/Linux and FreeBSD (maybe OpenBSD and NetBSD (for GNU C and Clang)).
+
+This project's all features listed on GitHub (README).
+
+[GitHub repository is here! Click me](https://github.com/ferhatgec/scrift)
+
+[Example video is here, Click me! (YouTube)](https://www.youtube.com/watch?v=ao5OqL-smzs&amp;t=8s)
+## [10][CppCon 2020 presentation recommendations?](https://www.reddit.com/r/cpp/comments/j9atb4/cppcon_2020_presentation_recommendations/)
+- url: https://www.reddit.com/r/cpp/comments/j9atb4/cppcon_2020_presentation_recommendations/
 ---
-Hi r/cpp,
+I've seen four videos so far and I can only recommend one of them as being interesting and/or well presented: [The Many Shades of reference_wrapper - Zhihao Yuan - CppCon 2020](https://www.youtube.com/watch?v=EKJMZCL00Ak)
 
-As many of you recently saw, there were several highly controversial threads over the past few days. The active mod team (myself, u/cleroth, and u/blelbach) were simply unprepared for this, and we've been working on addressing the issues with the subreddit that have been brought up. Most recently, an inactive senior mod returned and disrupted our work by de-modding and banning u/cleroth, removing most mod powers from u/blelbach, and attempting to make rule changes. (If you're unfamiliar with reddit's mod seniority system, it allows senior mods to remove junior mods at any time - so I was unable to stop this.)
-
-We're glad to report that order has been restored, thanks to the top-ranked mod who graciously responded to our request for help. The disruptive mod has been removed, and the changes have been reverted. u/cleroth and u/blelbach's mod powers have been restored.
-
-It has been a very long week. While we've returned to the state the subreddit was initially in, the mod team still needs to address the underlying problems. Here's a quick summary of our plans:
-
-* We're going to write more detailed rules and guidance.
-* We're going to improve moderation to enforce those rules, almost certainly recruiting more mods. If you'd like to apply, send us a modmail, although it may take us some time to reply.
-* We'll decide whether u/blelbach will retain his mod powers. He has repeatedly apologized for his actions.
-* We've set up a moderator Discord so we can communicate more rapidly when important issues arise (previously, we acted near-independently). To be clear, this isn't a secret society where we're brewing nefarious plans. (We *already* had the ability to communicate privately via modmail.) As we make decisions, informed by user feedback, we'll communicate them here.
-* We're going to continue to collect feedback to make improvements; please send us your thoughts via modmail. (We've upgraded the modmail system to more easily read and respond.)
-
-We'll make another announcement when we have progress to report.
-
-For the time being, this thread will remain open for comments, if users wish to discuss things beyond sending modmails. I ask of you, for the love of cats, please behave well. We reserve the right to remove egregious comments and lock the thread if it becomes necessary. Please do not create other posts to discuss this - they will be removed.
-
--- u/STL, u/cleroth, u/blelbach
-## [5][C++ as a Second Language, 2.0](https://www.reddit.com/r/cpp/comments/j8n6u5/c_as_a_second_language_20/)
-- url: https://www.youtube.com/watch?v=DSs7xKW6NaQ
+Do you guys have recommendations?
+## [11][what's the actual C++20 features compilers support status?](https://www.reddit.com/r/cpp/comments/j9q25y/whats_the_actual_c20_features_compilers_support/)
+- url: https://www.reddit.com/r/cpp/comments/j9q25y/whats_the_actual_c20_features_compilers_support/
 ---
+according to my experience with the trunk nightly builds and vs preview:
 
-## [6][Tips for debugging C++ code?](https://www.reddit.com/r/cpp/comments/j91f8c/tips_for_debugging_c_code/)
-- url: https://www.reddit.com/r/cpp/comments/j91f8c/tips_for_debugging_c_code/
----
-It's been years since I had a C++ job. I got back into it recently and finally hit a wall on debugging a problem. What are your techniques on debugging C++ problems?
-## [7][Empirically Measuring, &amp; Reducing, C++’s Accidental Complexity - Herb Sutter - CppCon 2020](https://www.reddit.com/r/cpp/comments/j8tf9k/empirically_measuring_reducing_cs_accidental/)
-- url: https://youtu.be/6lurOCdaj0Y
----
+* **concepts/range**: GCC has the most complete and highest quality implementation. MSVC doesn't support requires expression in other contexts. Clang still doesn't support requires-clause short-circuiting, and lacks concepts and ranges library features.
 
-## [8][Lunasvg : Ultra-fast svg library written in C++ .](https://www.reddit.com/r/cpp/comments/j8ulsw/lunasvg_ultrafast_svg_library_written_in_c/)
-- url: https://github.com/sammycage/lunasvg
----
+* **modules**: Clang and MSVC merged it in trunk, but feels buggier than GCC modules branch.
 
-## [9][Introducing fp library](https://www.reddit.com/r/cpp/comments/j8h81u/introducing_fp_library/)
-- url: https://www.reddit.com/r/cpp/comments/j8h81u/introducing_fp_library/
----
-Hi, the author of [Dragonbox](https://github.com/jk-jeon/dragonbox) again. I'm now working on a more comprehensive [library](https://github.com/jk-jeon/fp) with features related to conversions between strings and floating-point numbers. It's in an early stage and is not really usable right now AFAICT, but I want to gather some opinions from you guys. Please take a look at the [repo](https://github.com/jk-jeon/fp) if you are interested. Any idea/feedback is very welcome, and contribution is even more welcome.
-
-As stated in the README, the goal of the library is to provide conversion algorithms between decimal and binary floating-point  numbers rather than string parsing/formatting. String parsing/formatting routines provided in the library should be considered as proof-of-concepts, although I'll continue to work on improving them as well. Therefore, I put much effort on cleanly separate decimal/binary conversion routines from string parsing/formatting as much as possible.
-
-Currently, the library has the following features (with rudimentary/subject-to-change API's):
-
-1. **Dragonbox**: shortest-roundtrip binary-to-decimal conversion algorithm for formatting. The version in this library is not really different from the original implementation, except that it uses a larger table (in order to share it with the parsing algorithm).
-2. **Ryu-printf**: fixed-precision binary-to-decimal conversion algorithm for formatting. This is nothing more than just an implementation of the algorithm as written in the [paper](https://dl.acm.org/doi/pdf/10.1145/3360595) with a few modifications, but somewhat mysteriously it uses way fewer amount of static data compared to the original implementation by Ulf Adams. (I honestly have no idea why this happened.) But the size of static data is still huge; it's about 40KB.
-3. **Dooly**: limited-precision (9 for `float`'s, 17 for `double`'s) decimal-to-binary conversion algorithm for parsing. This is the one that I mentioned in the [previous post](https://www.reddit.com/r/cpp/comments/ishdj9/updates_in_dragonbox/) about Dragonbox. Ryu library also provides a similar algorithm, and it seems that the performances of these algorithms are similar.
-4. Combining Dooly and (a slight extension of) Ryu-printf, string-to-float parsing for arbitrary length input is also possible. A gist of the idea is explained in the comment of /u/STL in [this post](https://www.reddit.com/r/cpp/comments/iqlnt4/parsing_floats_in_c_benchmarking_strtod_vs_from/). (I originally got the idea from discussions with fast\_io's author, though.) /u/STL said that it might be agonizingly slow, but it turned out to be a lot faster than the current implementation of MS STL's  `std::from_chars`. (To be fair, my implementation does way fewer error handlings so the actual performance gap should be somewhat smaller.)
-## [10][Crux: Symbolic Testing for C, C++, and Rust](https://www.reddit.com/r/cpp/comments/j8iu5v/crux_symbolic_testing_for_c_c_and_rust/)
-- url: https://crux.galois.com/
----
-
-## [11][Want To Chat C++? Join The Best Technical C++ Chat Community!](https://www.reddit.com/r/cpp/comments/j8s1n0/want_to_chat_c_join_the_best_technical_c_chat/)
-- url: https://www.reddit.com/r/cpp/comments/j8s1n0/want_to_chat_c_join_the_best_technical_c_chat/
----
-If you would like to chat with other C++ engineers, get help on C++ topics, or participate and learn about the latest developments in the C++ Standard, there's a great place for you! It is called the Cpplang Slack and you can get a free invite here:
-
-[https://cppalliance.org/slack](https://cppalliance.org/slack)
-
-Be sure to check out our #learn channel for answers to common C++ questions!
-
-This is the place to go if you want robust, technical C++ discussion *without* the politics! Please abide by our Acceptable Use Policy: [https://cppalliance.org/slack/](https://cppalliance.org/slack/)
+* **coroutine**: Clang has the highest quality implementation. GCC is almost on par with Clang, though the implementation started latest. MSVC is almost unusable.

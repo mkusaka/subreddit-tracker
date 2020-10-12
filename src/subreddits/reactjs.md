@@ -70,81 +70,75 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Fullstack starterkit october update](https://www.reddit.com/r/reactjs/comments/j91n40/fullstack_starterkit_october_update/)
-- url: https://www.reddit.com/r/reactjs/comments/j91n40/fullstack_starterkit_october_update/
----
-October update to Fullstack GraphQL starter kit is live
-
-Changelog: [https://github.com/karanpratapsingh/fullstack-starterkit/pull/19](https://github.com/karanpratapsingh/fullstack-starterkit/pull/19)
-
-This update includes: update Prisma, react fast refresh plugin, subscription support in graphql server, production issue fixes
-## [4][Simple and flexible modal dialog component for React JS](https://www.reddit.com/r/reactjs/comments/j8npic/simple_and_flexible_modal_dialog_component_for/)
-- url: https://v.redd.it/ngr67m9hqas51
+## [3][The online course "Master React by Building a Product Hunt Clone" is Free this week.](https://www.reddit.com/r/reactjs/comments/j9ptpr/the_online_course_master_react_by_building_a/)
+- url: https://v.redd.it/h6ov1tykons51
 ---
 
-## [5][Does redux store have a maximum capacity?](https://www.reddit.com/r/reactjs/comments/j93iva/does_redux_store_have_a_maximum_capacity/)
-- url: https://www.reddit.com/r/reactjs/comments/j93iva/does_redux_store_have_a_maximum_capacity/
----
-I want to create a MERN social media app where I implement infinite scrolling to fetch posts as the user scrolls down, at the same time caching them in the redux store. However, I was wondering whether the  store can run out of storage or get full if the user scrolls too far down and I fetch too many posts. Does redux have a limited storage? Is there a better implementation (not storing posts in the store but fetching them on every re-render)? Can React Context api also get jam packed?
-## [6][How to deploy your NextJs Project on Elastic Beanstalk in 5 Minutes.](https://www.reddit.com/r/reactjs/comments/j9453j/how_to_deploy_your_nextjs_project_on_elastic/)
-- url: https://medium.com/@florian.martens22/how-to-deploy-your-nextjs-project-on-elastic-beanstalk-in-5-minutes-7f6bbd8b05be
+## [4][Epic React: React Fundamentals - (Tutorial for beginners)](https://www.reddit.com/r/reactjs/comments/j9nivx/epic_react_react_fundamentals_tutorial_for/)
+- url: https://blog.bhanuteja.dev/epic-react-react-fundamentals-part-1
 ---
 
-## [7][Omegle Clone - But instead of video chatting, it calls your phone.](https://www.reddit.com/r/reactjs/comments/j92694/omegle_clone_but_instead_of_video_chatting_it/)
-- url: https://www.reddit.com/r/reactjs/comments/j92694/omegle_clone_but_instead_of_video_chatting_it/
----
-To keep myself entertained during quarantine, I've been creating silly projects. 
-
-Over this weekend, I created a service that randomly matches users in a one-on-one phone conversion, where they can chat anonymously for 5 minutes.
-
-I created this using Create-React-App (Front-end), Firebase (Back-end) &amp; Twilio (Calling).
-
-Try It: [https://start-a-conversation.firebaseapp.com/](https://start-a-conversation.firebaseapp.com/)  
-Github: [https://github.com/NickMandylas/start-a-conversation](https://github.com/NickMandylas/start-a-conversation)
-
-\--
-
-**How does it work?**  
-Sign in using your mobile (SMS verification). Join the queue, we'll match you with a stranger, and you'll receive a call from our bot. \*Queuing can take a while, so you can close the window &amp; it'll keep you in the queue.
-
-**How does it keep me anonymous?**  
-It calls you! The bot sets up a conference call between you and your stranger. We call you via a landline and merges you in once you accept. No data/phone number is shared between you and your matched caller. Think about how Uber handles calls between you and your driver.
-
-**How do you handle matchmaking?**
-
-1. Using Firebase Realtime Database, all users who enter the queue, they have a user entry is created in a "matchmaking" table with the status "in-queue". 
-2. When a user entry is created, a firebase function is run that finds another player with a status "in-queue". 
-3. If a match is found, a match entry is created in the "matches" table, with the "matchId" &amp; "userIds". 
-4. When a match entry is created, a firebase function is run that calls both user's mobile phones &amp; setups a conference call for the two users. The call time length is set to 5 minutes.
-## [8][What's better?](https://www.reddit.com/r/reactjs/comments/j927bn/whats_better/)
-- url: https://www.reddit.com/r/reactjs/comments/j927bn/whats_better/
----
-Hello, everyone! I'm new in reactjs and I'd like to know what's better? To use redux or hooks? React-bootstrap or something else? Create a million components with their containers and the right structure, or write in a common component creating separately only those components that I will use more than once. Is there something right? Or is everything at your discretion?
-## [9][Server Side Rendering with Next.js](https://www.reddit.com/r/reactjs/comments/j93huk/server_side_rendering_with_nextjs/)
-- url: https://medium.com/@prateek.vijayudr27/server-side-rendering-with-next-js-56f84f98f9bd
+## [5][Killing bad parts of Redux. Say goodbye to boilerplate.](https://www.reddit.com/r/reactjs/comments/j9on25/killing_bad_parts_of_redux_say_goodbye_to/)
+- url: https://klis87.hashnode.dev/killing-bad-parts-of-redux-say-goodbye-to-boilerplate
 ---
 
-## [10][Searching for Good SaaS boilerplate with multi-tenancy](https://www.reddit.com/r/reactjs/comments/j8secu/searching_for_good_saas_boilerplate_with/)
-- url: https://www.reddit.com/r/reactjs/comments/j8secu/searching_for_good_saas_boilerplate_with/
+## [6][Webpack 5 release (2020-10-10) | webpack](https://www.reddit.com/r/reactjs/comments/j978oe/webpack_5_release_20201010_webpack/)
+- url: https://webpack.js.org/blog/2020-10-10-webpack-5-release/
 ---
-Auth, subdomains and payments would be great  
-Prefer NodeJS, Docker, Redis/PostgreSQL for backend stuff  
-No need for fancy design, functionality first
 
-What did you use last time you built SaaS?
-## [11][Any life-changing react libraries out there everyone should know about?](https://www.reddit.com/r/reactjs/comments/j88t0r/any_lifechanging_react_libraries_out_there/)
-- url: https://www.reddit.com/r/reactjs/comments/j88t0r/any_lifechanging_react_libraries_out_there/
+## [7][React Redirect with custom claims [Firebase Auth]](https://www.reddit.com/r/reactjs/comments/j9pzal/react_redirect_with_custom_claims_firebase_auth/)
+- url: /r/Firebase/comments/j9psy6/react_redirect_with_custom_claims/
 ---
-I just discovered [framer-motion](https://github.com/framer/motion) and it's actually ridiculous how easy it is to create complex animations and what it does to improve the look and feel of a website.
 
-Anything else life-changing out there? Can be funny, can be useful, can be just plain genius! Would love to hear about your discoveries. No links to generic lists please, tell me about your own personal experience and why you like it.
-## [12][onscroll scroll one entire section at a time?](https://www.reddit.com/r/reactjs/comments/j91exq/onscroll_scroll_one_entire_section_at_a_time/)
-- url: https://www.reddit.com/r/reactjs/comments/j91exq/onscroll_scroll_one_entire_section_at_a_time/
+## [8][We Made a Trend Aggregation Website - Displays Trending Movies, Streams, Tweets, TV Shows, Reddit Posts, and Youtube Videos](https://www.reddit.com/r/reactjs/comments/j9e6ow/we_made_a_trend_aggregation_website_displays/)
+- url: https://www.reddit.com/r/reactjs/comments/j9e6ow/we_made_a_trend_aggregation_website_displays/
 ---
-Hello.
+My college friends and I just finished a website that takes the top trending data from 7 platforms (movies, twitch, twitter, tv shows, reddit, spotify, youtube) and displays them in order of popularity. We wanted a way to bring the top trending content to one place so that we don’t have to check multiple sites. We used Reactjs for our front-end and we were able to create some pretty fun animated components like our header and footer. 
 
-I am making a website where the idea is when you scroll down you will scroll all the way down into the next section and if you scroll up you will scroll up to the previous section for all the sections. Does anybody have a good idea how to do this in react or a library that does it? 
+Feel free to take a look at our site or see what we were able to create with React! Feedback is always welcome :)
+
+[metatrends.live](https://metatrends.live)
+## [9][Beginner Help Needed](https://www.reddit.com/r/reactjs/comments/j9n6nu/beginner_help_needed/)
+- url: https://www.reddit.com/r/reactjs/comments/j9n6nu/beginner_help_needed/
+---
+Hello, I recently started trying to learn react on my own and am trying to create a small project. So im trying to make a simple template for a site. I created a component for the header and footer and put them into a layout component together, now what i am trying to figure out is how can i make other pages and bring the template into them so that when they display the header and footer are added to those components on the top and bottom of the page. Any and all help is appreciated would really like to understand how its done and any reading material on it would also help since im not sure my search results are getting me anywhere.
+## [10][Setting up a React app with styled-components to consume a Node API](https://www.reddit.com/r/reactjs/comments/j9hpnk/setting_up_a_react_app_with_styledcomponents_to/)
+- url: https://dev.to/souzamarlon/setting-up-a-react-app-with-styled-components-to-consume-a-node-api-2426
+---
+
+## [11][Getting a warning in my Jest/Enzyme test suite](https://www.reddit.com/r/reactjs/comments/j9qqtq/getting_a_warning_in_my_jestenzyme_test_suite/)
+- url: https://www.reddit.com/r/reactjs/comments/j9qqtq/getting_a_warning_in_my_jestenzyme_test_suite/
+---
+My test suite suite has a handful of tests like this one, they all pass but they cause the warning below to show up. I have read and tried a few solutions online for a while but Im not getting anywhere.  Im not changing the state so Im not sure why the warning shows up in the first place. 
+
+`it("Closing", async() =&gt; {`  
+ `const newState = {...state, step: Step.Closing};`  
+ `const tree = renderer.create(&lt;App appStore={newState}/&gt;).toJSON();`  
+ `expect(tree).toMatchSnapshot();`  
+  `});`
+
+Passes but triggers this warning:
+
+ `Warning: An update to Pane inside a test was not wrapped in act(...).`
+
+`When testing, code that causes React state updates should be wrapped into act(...):`
+
+`act(() =&gt; {`
+
+`/* fire events that update state */`
+
+`});`
+
+`/* assert on the output */`
+
+How could I fix this?
+## [12][Confused on where to begin with my React project. Any info is greatly appreaciated](https://www.reddit.com/r/reactjs/comments/j9ptaf/confused_on_where_to_begin_with_my_react_project/)
+- url: https://www.reddit.com/r/reactjs/comments/j9ptaf/confused_on_where_to_begin_with_my_react_project/
+---
+I need help trying to figure out where to start with my project. I want to build a music library web app that allows user to add, edit, delete, and fetch all data in the table (when the homepage loads). the database will include information on each artist, including, artistName, genre, release date, record label used to fund the album, and possible much more. I want to use React for the front end, Node.js, Express for the backend and MySQL for my database. This is my first time using Express, so I don't know  fetch the data in my MySQL db table. I would like to display the results using the `&lt;TableCell&gt;`tag. I feel like I have a general idea of what needs to be done, but I'm not extremely confident when it comes to working on my own projects. I have this issues of second guessing myself.
 
 &amp;#x200B;
 
-I could patch together a solution that would work but I would like to know the best way to achieve it.
+Any information is greatly appreciated!  Much love &lt;3
+
+EDIT: I dont know how to properly markdown yet via Reddit. First time posting on this sub (second edit).

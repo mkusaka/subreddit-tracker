@@ -1,63 +1,58 @@
 # ruby
-## [1][Scope Gates in Ruby: Flat Scopes](https://www.reddit.com/r/ruby/comments/j92h27/scope_gates_in_ruby_flat_scopes/)
-- url: https://medium.com/rubycademy/scope-gates-in-ruby-flat-scopes-bbf100f8e459
+## [1][The Ruby world beyond Ruby on Rails - web frameworks](https://www.reddit.com/r/ruby/comments/j9ojp0/the_ruby_world_beyond_ruby_on_rails_web_frameworks/)
+- url: https://longliveruby.com/articles/rails-alternatives-ruby-web-frameworks
 ---
 
-## [2][Middleman init fails with BigDecimal error](https://www.reddit.com/r/ruby/comments/j8thab/middleman_init_fails_with_bigdecimal_error/)
-- url: https://www.reddit.com/r/ruby/comments/j8thab/middleman_init_fails_with_bigdecimal_error/
+## [2][Ruby 2.7.2 has revised Rdoc for Array](https://www.reddit.com/r/ruby/comments/j9791u/ruby_272_has_revised_rdoc_for_array/)
+- url: https://www.reddit.com/r/ruby/comments/j9791u/ruby_272_has_revised_rdoc_for_array/
 ---
-I just ran `middleman init` with Ruby 2.7.2 and hit an Active Support BigDecimal error "undefined method `new' for BigDecimal:Class". Anyone have any idea what this is all about?
-## [3][hubba gem - little github api helper for (auto-)generating statistics reports (summary, stars, timeline, updates)](https://www.reddit.com/r/ruby/comments/j8fz13/hubba_gem_little_github_api_helper_for/)
-- url: https://github.com/rubycoco/git/tree/master/hubba
----
-
-## [4][Remote Ruby: Adam Wathan joins to talk TailwindCSS, Tailwind UI, and View Components](https://www.reddit.com/r/ruby/comments/j7zouw/remote_ruby_adam_wathan_joins_to_talk_tailwindcss/)
-- url: https://share.transistor.fm/s/7bd5b843
----
-
-## [5][Can someone help me out with what this does rand(999_999)](https://www.reddit.com/r/ruby/comments/j7vkhg/can_someone_help_me_out_with_what_this_does/)
-- url: https://www.reddit.com/r/ruby/comments/j7vkhg/can_someone_help_me_out_with_what_this_does/
----
-I'm trying to generate a fixed digit random number, and I came across this code. Could someone help me with what is happening here?  
-
-
-I'm not sure i get much from the documentation for rand either.
-## [6][Ruby 2.7.2 has revised Rdoc for Hash](https://www.reddit.com/r/ruby/comments/j7l51e/ruby_272_has_revised_rdoc_for_hash/)
-- url: https://www.reddit.com/r/ruby/comments/j7l51e/ruby_272_has_revised_rdoc_for_hash/
----
-I've spent a good part of this year working on revisions to the RDoc for Hash.  The revisions include all methods documentation in addition to much of the introductory text (class documentation).  Lots more example code.
+I've  spent a good part of this year working on revisions to the RDoc for  Array.  The revisions include all methods documentation in addition to  much of the introductory text (class documentation).  Lots more example  code.
 
 Check it out:
 
-\- 2.7.2: [https://ruby-doc.org/core-2.7.2/Hash.html](https://ruby-doc.org/core-2.7.2/Hash.html)
+\- 2.7.2: [https://ruby-doc.org/core-2.7.2/Array.html](https://ruby-doc.org/core-2.7.2/Array.html)
 
-\- 2.7.1: [https://ruby-doc.org/core-2.7.1/Hash.html](https://ruby-doc.org/core-2.7.1/Hash.html)
-## [7][Multithreading -- Parallelizing loops](https://www.reddit.com/r/ruby/comments/j80sz0/multithreading_parallelizing_loops/)
-- url: https://www.reddit.com/r/ruby/comments/j80sz0/multithreading_parallelizing_loops/
+\- 2.7.1: [https://ruby-doc.org/core-2.7.1/Array.html](https://ruby-doc.org/core-2.7.1/Array.html)
+## [3][Ruby + Hacktoberfest Meetup! Tonight! JWTs](https://www.reddit.com/r/ruby/comments/j9q4hx/ruby_hacktoberfest_meetup_tonight_jwts/)
+- url: https://www.reddit.com/r/ruby/comments/j9q4hx/ruby_hacktoberfest_meetup_tonight_jwts/
 ---
-I am looking for something like Julia's `Threads.@threads` macro, which allows to parallelize a for loop within multithreading, now I am looking for something like this for Ruby.
-## [8][Fastest way to generating a n digit number](https://www.reddit.com/r/ruby/comments/j7w5xn/fastest_way_to_generating_a_n_digit_number/)
-- url: https://www.reddit.com/r/ruby/comments/j7w5xn/fastest_way_to_generating_a_n_digit_number/
+🎟[https://live.remo.co/e/israelrb-hacktoberfest/register](https://live.remo.co/e/israelrb-hacktoberfest/register)
+
+Join us for the 3rd israel.rb virtual meetup!
+
+This time it'll be a Hacktoberfest edition with special guest Dan Moore from FusionAuth discussing JSON Web Tokens (JWTs) and what Rails developers need to know about them.
+
+We'll also have lightning talks from the community! If you're interested in giving a 5-10 minute lightning talk on an open source theme, let us know!  
+
+
+https://preview.redd.it/avcky8gksns51.jpg?width=820&amp;format=pjpg&amp;auto=webp&amp;s=d21cf36839efd639be7c3b527175b6aba0c245f6
+
+⏰ 19:00 Israel / 17:00 London / 12:00 NYC / 09:00 SF
+## [4][Ruby: The not so good parts](https://www.reddit.com/r/ruby/comments/j9c8z7/ruby_the_not_so_good_parts/)
+- url: https://www.chrismytton.com/ruby-the-not-so-good-parts/
 ---
-I found this code to generate 6 digit number 
 
-    rand(100000...999999)
-
-Is this approach fine?   
-I'm not sure what the two dots(..) or three dots(...) mean and I hope it doesn't expand into an array and then rand selects a values
-## [9][Speeding up Rails with Memoization](https://www.reddit.com/r/ruby/comments/j7v6l2/speeding_up_rails_with_memoization/)
-- url: https://www.honeybadger.io/blog/ruby-rails-memoization/?utm_source=rubyweekly&amp;utm_medium=email&amp;utm_campaign=ruby
+## [5][Integrate Bootstrap 4 on Rails 6 Application using Webpack and Yarn || No gem needed](https://www.reddit.com/r/ruby/comments/j9mwmm/integrate_bootstrap_4_on_rails_6_application/)
+- url: https://www.youtube.com/watch?v=Zhw_GSoWQrc&amp;t=19s
 ---
 
-## [10][Beginner need some help understaind data pipeline](https://www.reddit.com/r/ruby/comments/j7vlbx/beginner_need_some_help_understaind_data_pipeline/)
-- url: https://www.reddit.com/r/ruby/comments/j7vlbx/beginner_need_some_help_understaind_data_pipeline/
+## [6][Scope Gates in Ruby: Flat Scopes](https://www.reddit.com/r/ruby/comments/j92h27/scope_gates_in_ruby_flat_scopes/)
+- url: https://medium.com/rubycademy/scope-gates-in-ruby-flat-scopes-bbf100f8e459
 ---
-Context:  
- I am pulling in data from a social media site and storing it in my database. For eg. Everday I make an api req to fetch all tweets of a user. Then make another api req for each tweet to fetch its public\_metrics like tweets, likes,etc.   
 
+## [7][Programmer Happiness Isn't About Programmers - Debunking a widely misconceived myth](https://www.reddit.com/r/ruby/comments/j9jdvv/programmer_happiness_isnt_about_programmers/)
+- url: https://medium.com/@fagnerbrack/programmer-happiness-71a35a723402
+---
 
-If I am using Sidekiq, how should I build my data pipeline?  
+## [8][Middleman init fails with BigDecimal error](https://www.reddit.com/r/ruby/comments/j8thab/middleman_init_fails_with_bigdecimal_error/)
+- url: https://www.reddit.com/r/ruby/comments/j8thab/middleman_init_fails_with_bigdecimal_error/
+---
+I just ran `middleman init` with Ruby 2.7.2 and hit an Active Support BigDecimal error "undefined method `new' for BigDecimal:Class". Anyone have any idea what this is all about?
+## [9][hubba gem - little github api helper for (auto-)generating statistics reports (summary, stars, timeline, updates)](https://www.reddit.com/r/ruby/comments/j8fz13/hubba_gem_little_github_api_helper_for/)
+- url: https://github.com/rubycoco/git/tree/master/hubba
+---
 
+## [10][Remote Ruby: Adam Wathan joins to talk TailwindCSS, Tailwind UI, and View Components](https://www.reddit.com/r/ruby/comments/j7zouw/remote_ruby_adam_wathan_joins_to_talk_tailwindcss/)
+- url: https://share.transistor.fm/s/7bd5b843
+---
 
-Right now, I have a worker who just makes both the api calls from the same worker.  
-Should I separate, "fetching all tweets" into a seprate worker and "fetch tweets metrics" into a separate wrker?

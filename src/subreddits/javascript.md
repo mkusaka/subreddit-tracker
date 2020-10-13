@@ -1,13 +1,5 @@
 # javascript
-## [1][WTF Wednesday (October 07, 2020)](https://www.reddit.com/r/javascript/comments/j6tkx9/wtf_wednesday_october_07_2020/)
-- url: https://www.reddit.com/r/javascript/comments/j6tkx9/wtf_wednesday_october_07_2020/
----
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
-
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Your /r/javascript recap for the week of October 05 - October 11](https://www.reddit.com/r/javascript/comments/j9ngrp/your_rjavascript_recap_for_the_week_of_october_05/)
+## [1][Your /r/javascript recap for the week of October 05 - October 11](https://www.reddit.com/r/javascript/comments/j9ngrp/your_rjavascript_recap_for_the_week_of_october_05/)
 - url: https://www.reddit.com/r/javascript/comments/j9ngrp/your_rjavascript_recap_for_the_week_of_october_05/
 ---
 **Monday, October 05 - Sunday, October 11**
@@ -87,43 +79,49 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][Javascript You Need To Know For React](https://www.reddit.com/r/javascript/comments/j9orfs/javascript_you_need_to_know_for_react/)
-- url: https://blog.bhanuteja.dev/epic-react-javascript-you-need-to-know-for-react
+## [2][Showoff Saturday (October 10, 2020)](https://www.reddit.com/r/javascript/comments/j8j4f7/showoff_saturday_october_10_2020/)
+- url: https://www.reddit.com/r/javascript/comments/j8j4f7/showoff_saturday_october_10_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][A website that helps you practice JavaScript skills through projects.](https://www.reddit.com/r/javascript/comments/j9zyih/a_website_that_helps_you_practice_javascript/)
+- url: http://www.codeaway.io
 ---
 
-## [4][Live map of "good morning" and "good night" tweets](https://www.reddit.com/r/javascript/comments/j98f4z/live_map_of_good_morning_and_good_night_tweets/)
-- url: https://wakingandsleeping-globe.glitch.me/
----
-
-## [5][We made a trend aggregation website in reactjs to show you what's trending!](https://www.reddit.com/r/javascript/comments/j9ed6y/we_made_a_trend_aggregation_website_in_reactjs_to/)
-- url: https://metatrends.live/
----
-
-## [6][Published my first package to NPM this weekend. Can anyone offer any feedback?](https://www.reddit.com/r/javascript/comments/j9oawr/published_my_first_package_to_npm_this_weekend/)
-- url: https://github.com/marknorrapscm/number-rollup
----
-
-## [7][How we built the Chrome DevTools Issues tab | Web | Google Developers](https://www.reddit.com/r/javascript/comments/j9okdi/how_we_built_the_chrome_devtools_issues_tab_web/)
-- url: https://developers.google.com/web/updates/2020/09/issues-tab
----
-
-## [8][[AskJS] Should you commit the node_modules folder to Git?](https://www.reddit.com/r/javascript/comments/j9qydh/askjs_should_you_commit_the_node_modules_folder/)
-- url: https://www.reddit.com/r/javascript/comments/j9qydh/askjs_should_you_commit_the_node_modules_folder/
----
-My biggest concern with not checking node\_modules into git is that 10 years down the road when your production application is still in use, npm may not be around. Or npm might become corrupted; or the maintainers might decide to remove the library that you rely on from their repository; or the version you use might be trimmed out.
-## [9][Creating Waveforms Out of Spotify Tracks](https://www.reddit.com/r/javascript/comments/j9qvx0/creating_waveforms_out_of_spotify_tracks/)
+## [4][Creating Waveforms Out of Spotify Tracks](https://www.reddit.com/r/javascript/comments/j9qvx0/creating_waveforms_out_of_spotify_tracks/)
 - url: https://medium.com/@leemartin/creating-waveforms-out-of-spotify-tracks-b22030dd442b?source=friends_link&amp;sk=1e74a4f9ab25519a40e5d7185f33f139
 ---
 
-## [10][NotSyke - A fun multiplayer game made with React.js and Node.js](https://www.reddit.com/r/javascript/comments/j9i2o3/notsyke_a_fun_multiplayer_game_made_with_reactjs/)
-- url: http://notsyke.com
+## [5][MikroORM 4.1: Let’s talk about performance](https://www.reddit.com/r/javascript/comments/jadccn/mikroorm_41_lets_talk_about_performance/)
+- url: https://medium.com/@b4nan/mikroorm-4-1-lets-talk-about-performance-b184d612f1d5
 ---
 
-## [11][Webpack 5 release](https://www.reddit.com/r/javascript/comments/j8x3a3/webpack_5_release/)
-- url: https://webpack.js.org/blog/2020-10-10-webpack-5-release/
+## [6][Pair Programming Patterns](https://www.reddit.com/r/javascript/comments/jacs7b/pair_programming_patterns/)
+- url: https://rfornal.hashnode.dev/pair-programming-patterns-ckeivmlg8009qtds105lr0fc4
 ---
 
-## [12][I made a site to track your TV shows and calculate your watch time!](https://www.reddit.com/r/javascript/comments/j986my/i_made_a_site_to_track_your_tv_shows_and/)
-- url: https://junkies-200810.web.app/
+## [7][Hyper-Lightweight Website Designs](https://www.reddit.com/r/javascript/comments/jacrkq/hyperlightweight_website_designs/)
+- url: https://rfornal.hashnode.dev/hyper-lightweight-website-designs-ckg6lgeg600dz9cs1bfwphy4d
+---
+
+## [8][Top JavaScript Calendar Plugins](https://www.reddit.com/r/javascript/comments/jacre5/top_javascript_calendar_plugins/)
+- url: https://stepnov.hashnode.dev/top-javascript-calendar-plugins
+---
+
+## [9][Regular Expressions And Template Literals](https://www.reddit.com/r/javascript/comments/jacr6g/regular_expressions_and_template_literals/)
+- url: https://rfornal.hashnode.dev/regular-expressions-and-template-literals-ckg7yr2ko004431s18u0l0qru
+---
+
+## [10][I built a library called categorize](https://www.reddit.com/r/javascript/comments/jaawf0/i_built_a_library_called_categorize/)
+- url: /r/node/comments/jaavtv/i_built_a_library_called_categorize/
+---
+
+## [11][Published my first package to NPM this weekend. Can anyone offer any feedback?](https://www.reddit.com/r/javascript/comments/j9oawr/published_my_first_package_to_npm_this_weekend/)
+- url: https://github.com/marknorrapscm/number-rollup
+---
+
+## [12][New documentation website of eo-locale](https://www.reddit.com/r/javascript/comments/ja9wrb/new_documentation_website_of_eolocale/)
+- url: https://eo-locale.netlify.app/
 ---
 

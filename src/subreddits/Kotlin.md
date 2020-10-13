@@ -1,5 +1,33 @@
 # Kotlin
-## [1][Design Patterns and Principles in Kotlin | Notes from Head First Design Patterns](https://www.reddit.com/r/Kotlin/comments/j9m8oc/design_patterns_and_principles_in_kotlin_notes/)
+## [1][A Look Into the Future by Roman Elizarov](https://www.reddit.com/r/Kotlin/comments/j9xv07/a_look_into_the_future_by_roman_elizarov/)
+- url: https://youtu.be/0FF19HJDqMo
+---
+
+## [2][Why Kotlin is so popular for Android development and not general Java Development?](https://www.reddit.com/r/Kotlin/comments/j9qhcn/why_kotlin_is_so_popular_for_android_development/)
+- url: https://www.reddit.com/r/Kotlin/comments/j9qhcn/why_kotlin_is_so_popular_for_android_development/
+---
+So I already know Java and working on it for 5 year. 
+
+Now I am transining to Kotlin and all I hear is "Kotlin for Android". I know this is easy and kind of language which reduces the code base of app and main Null Pointer.
+
+But why so much for Android and not anything else. I worked on Spring boot and want to convert whole Rest API in Kotlin. 
+
+Let me know what is reason if there is any to become very good language for Android development and not for other kind of S/W and web development on Java.
+## [3][Kotlin Online Event Opinion: I found Roman Elizarovs Talk a bit "concerning"](https://www.reddit.com/r/Kotlin/comments/j9xzp4/kotlin_online_event_opinion_i_found_roman/)
+- url: https://www.reddit.com/r/Kotlin/comments/j9xzp4/kotlin_online_event_opinion_i_found_roman/
+---
+I suppose a lot of you guys have also attended today's online event (What is "KOE"?). The last speaker, Roman Elizarov, talked about the future of Kotlin. And to make this clear from the beginning: I find the decisions he presented very reasonable and understandable. And yet, I find the implications concerning. Let me go into detail:
+
+- The decorator pattern was proposed as a (I admit, very beautiful) solution to the multiple receiver problem. But it's not one of the community-proposed syntaxes. Rather it resembles annotations very. Personally I don't like that because 1. There are already actually annotations, this could lead to confusion and 2. Annotations are probably the number one reason why Java is so bad nowadays. They're abused as metaprogramming tools, creating entire DSLs inside the annotation ecosystem (see SpEL), and all that just because Java isn't expressive enough. Annotation Metaprogramming causes a negative feedback loop in the language development, because a lack of expressiveness in Java causes the rise of annotation abuse, which in turn renders expressiveness in the main language (Java) unneeded. I was pretty that Kotlin uses annotations merely as (documentation) markers and solves every other problem with its own unique features. I really don't want Kotlin to take the same way downhill as Java
+
+- The Ternary operator proposal was promptly rejected, even though it (or any slight variation of it) would really significantly cut down on the expression length. I think it is worth to spend some time trying to find a good alternative
+
+- After the talk, Roman answered a question about reifying typeargs in classes ([a topic which is very important to me](https://www.reddit.com/r/Kotlin/comments/hexe8l/discussion_do_you_think_this_would_be_a_cool/?utm_medium=android_app&amp;utm_source=share)). He just answered that only the use cases matter, which makes me think the Kotlin team isn't very keen on implementing this feature, but rather other features covering the most relevant use cases.
+
+Now as I said before, I think these choices make a lot of sense for the majority of users and use cases. But my concern for the future is that the development of Kotlin will be, as opposed to how it has been, "use-case first" and instead of introducing new, innovative features, common patterns will me used to solve one specific (and popular) use case. And well, I can understand why this is happening. Kotlin is growing, and as it does, practical usability becomes more important than core values like non-invasiveness and innovation. Generally speaking, this is a good thing. Kotlin becomes more relevant to bigger and bigger companies, it becomes more "mature". But personally I fear that this could be the first step on a path leading to a huge, monolithic and inflexible language like Java, and I really don't want this. There's a good reason that I prefer Kotlin over Java.
+
+But enough talk from me, what are your thoughts on this? Do you think Kotlin's innovative design and genuineness is at stake in the future? And do you think that the development of a more pluggable compiler could have a reasonable effect on this issue?
+## [4][Design Patterns and Principles in Kotlin | Notes from Head First Design Patterns](https://www.reddit.com/r/Kotlin/comments/j9m8oc/design_patterns_and_principles_in_kotlin_notes/)
 - url: https://www.reddit.com/r/Kotlin/comments/j9m8oc/design_patterns_and_principles_in_kotlin_notes/
 ---
 Here are my notes I made while reading the book **Head First Design Patterns**. It has a full and quality implementation of every design pattern in the book with notes on different patterns and principles. The examples are written in Kotlin.
@@ -9,13 +37,20 @@ The Head First Design Pattern is a great read if you are just starting to learn 
 Check out the Github repo below and do star it if you find it useful: [https://github.com/Devansh-Maurya/Design-Patterns-And-Principles](https://github.com/Devansh-Maurya/Design-Patterns-And-Principles)
 
 https://preview.redd.it/dirikolr5ms51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=109648c86dd47e25cbd863c5d9c919569ead1639
-## [2][How to build Slackbot with Kotlin, Ktor &amp; deploy to Heroku](https://www.reddit.com/r/Kotlin/comments/j9ddk5/how_to_build_slackbot_with_kotlin_ktor_deploy_to/)
-- url: https://www.reddit.com/r/Kotlin/comments/j9ddk5/how_to_build_slackbot_with_kotlin_ktor_deploy_to/
+## [5][type check with generics](https://www.reddit.com/r/Kotlin/comments/j9xlgn/type_check_with_generics/)
+- url: https://www.reddit.com/r/Kotlin/comments/j9xlgn/type_check_with_generics/
 ---
-I wrote a Slackbot at work and I thought it might be helpful to make an article with a simple example of how I went about creating and deploying one. Hope this helps someone and always welcome feedback!
+how can i check is obj is part of animals
 
-https://plusmobileapps.com/2020/10/09/ktor-slackbot-heroku.html
-## [3][How to fix “e: Unable to compile C bridges” with Kotlin Multiplatform.](https://www.reddit.com/r/Kotlin/comments/j9n6lw/how_to_fix_e_unable_to_compile_c_bridges_with/)
+var obj:T
+
+if(obj is Animal)
+
+where Animal is
+
+data class Animal&lt;T&gt;(
+)
+## [6][How to fix “e: Unable to compile C bridges” with Kotlin Multiplatform.](https://www.reddit.com/r/Kotlin/comments/j9n6lw/how_to_fix_e_unable_to_compile_c_bridges_with/)
 - url: https://www.reddit.com/r/Kotlin/comments/j9n6lw/how_to_fix_e_unable_to_compile_c_bridges_with/
 ---
 We’ve come across this problem several times, and for the first time, it was a bit problem to find what’s wrong.
@@ -31,17 +66,13 @@ This problem usually hits us on CI/CD, where you are in a clean environment. The
 This one is just a quick tip that can save you nerves eventually 📷.
 
 [https://localazy.com/blog/kotlin-mpp-unable-to-compile-c-bridges](https://localazy.com/blog/kotlin-mpp-unable-to-compile-c-bridges)
-## [4][Why Kotlin is so popular for Android development and not general Java Development?](https://www.reddit.com/r/Kotlin/comments/j9qhcn/why_kotlin_is_so_popular_for_android_development/)
-- url: https://www.reddit.com/r/Kotlin/comments/j9qhcn/why_kotlin_is_so_popular_for_android_development/
+## [7][How to build Slackbot with Kotlin, Ktor &amp; deploy to Heroku](https://www.reddit.com/r/Kotlin/comments/j9ddk5/how_to_build_slackbot_with_kotlin_ktor_deploy_to/)
+- url: https://www.reddit.com/r/Kotlin/comments/j9ddk5/how_to_build_slackbot_with_kotlin_ktor_deploy_to/
 ---
-So I already know Java and working on it for 5 year. 
+I wrote a Slackbot at work and I thought it might be helpful to make an article with a simple example of how I went about creating and deploying one. Hope this helps someone and always welcome feedback!
 
-Now I am transining to Kotlin and all I hear is "Kotlin for Android". I know this is easy and kind of language which reduces the code base of app and main Null Pointer.
-
-But why so much for Android and not anything else. I worked on Spring boot and want to convert whole Rest API in Kotlin. 
-
-Let me know what is reason if there is any to become very good language for Android development and not for other kind of S/W and web development on Java.
-## [5][Trying to upload an image. Correct way to get image file from uri?](https://www.reddit.com/r/Kotlin/comments/j9ljv8/trying_to_upload_an_image_correct_way_to_get/)
+https://plusmobileapps.com/2020/10/09/ktor-slackbot-heroku.html
+## [8][Trying to upload an image. Correct way to get image file from uri?](https://www.reddit.com/r/Kotlin/comments/j9ljv8/trying_to_upload_an_image_correct_way_to_get/)
 - url: https://www.reddit.com/r/Kotlin/comments/j9ljv8/trying_to_upload_an_image_correct_way_to_get/
 ---
 Hi there, 
@@ -61,64 +92,13 @@ requestBody.addFormDataPart("image\_$index", "image\_$index.$fileExtension", fil
 This compiles and runs, up until I execute the request, where I get the file not found error. 
 
 If anyone has had similar issues, or can point me in the right direction I would be very appreciative, as I'm getting seriously over it (after 8 hours+ of failure)
-## [6][Kotlin Bootcamp for Programmers 3: Functions](https://www.reddit.com/r/Kotlin/comments/j8n5p1/kotlin_bootcamp_for_programmers_3_functions/)
-- url: https://codelabs.developers.google.com/codelabs/kotlin-bootcamp-functions/#9
----
-
-## [7][Having a hard time deciding between java and kotlin](https://www.reddit.com/r/Kotlin/comments/j90qnv/having_a_hard_time_deciding_between_java_and/)
+## [9][Having a hard time deciding between java and kotlin](https://www.reddit.com/r/Kotlin/comments/j90qnv/having_a_hard_time_deciding_between_java_and/)
 - url: https://www.reddit.com/r/Kotlin/comments/j90qnv/having_a_hard_time_deciding_between_java_and/
 ---
 Well i still consider myself as a beginner even if I started 3 years (kept switching language look at my reddit profile it's a mess...) and I still do the same mistake, anyway some guy told me to learn kotlin and not java (well he got mad after he called me a thickheaded because I told him that kotlin is only for mobile dev lmao), because java had some 'flaws'
 So any suggestion?.
 Thanks.
-## [8][A TornadoFx question](https://www.reddit.com/r/Kotlin/comments/j8vphl/a_tornadofx_question/)
-- url: https://www.reddit.com/r/Kotlin/comments/j8vphl/a_tornadofx_question/
+## [10][Kotlin Bootcamp for Programmers 3: Functions](https://www.reddit.com/r/Kotlin/comments/j8n5p1/kotlin_bootcamp_for_programmers_3_functions/)
+- url: https://codelabs.developers.google.com/codelabs/kotlin-bootcamp-functions/#9
 ---
-Hey guys,
 
-I have a question about the usage of tableview in TornadoFx. I have this simple code:
-
-main.kt
-
-    class Person (val name:String, val age:Int) {}
-    
-    fun main () {
-        val listOfPeople = listOf&lt;Person&gt; (
-            Person("Jhon",34),
-            Person("Mary",30),
-            Person("Jack",32)
-    }
-
-MainApp class:
-
-    import tornadofx.*
-    
-    class MainApp :App(MainView::class)
-
-MainView class:
-
-    import tornadofx.*
-    
-    class MainView :View() {
-        override val root = vbox {  
-            tableview {
-            } 
-        }
-    }
-
-Now my quetion is: how do I populate the tableview in my MainView with the list in the main function? How, in general, can I refer to elements of the main module in the Views in TornadoFx? And also do I need to update the tableview or other components fields when properties change at runtime?
-
-I'm a little bit of a newbie with Tornado, so I apologize if this is a naive question, but still I can't figure out how to make a referral to these elements.
-
-Thanks in advance!
-## [9][Learning Kotlin Coroutines](https://www.reddit.com/r/Kotlin/comments/j8kyy4/learning_kotlin_coroutines/)
-- url: https://www.reddit.com/r/Kotlin/comments/j8kyy4/learning_kotlin_coroutines/
----
-I am trying to learn Kotlin corountines through [Kotlin Corountines Official Documentation](https://kotlinlang.org/docs/reference/coroutines/basics.html) but I'm having hard time understanding what's going on.  
-Can you suggest  other tutorials (with JVM as target and not android)?
-## [10][AndroidBites: Awesome-Kotlin-Extensions [Resource]](https://www.reddit.com/r/Kotlin/comments/j91eaw/androidbites_awesomekotlinextensions_resource/)
-- url: https://www.reddit.com/r/Kotlin/comments/j91eaw/androidbites_awesomekotlinextensions_resource/
----
-Hi Guys, I have started an awesome series, where I plan to host a list of Kotlin extensions, Please do check it out and if you like to contribute anything form your arsenal then your always welcome!
-
-Resource link 👉 [https://chetangupta.net/awesome-kotlin-extensions/](https://chetangupta.net/awesome-kotlin-extensions/)

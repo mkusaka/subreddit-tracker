@@ -70,75 +70,84 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][The online course "Master React by Building a Product Hunt Clone" is Free this week.](https://www.reddit.com/r/reactjs/comments/j9ptpr/the_online_course_master_react_by_building_a/)
+## [3][Stop useEffect from running on every render with useCallback](https://www.reddit.com/r/reactjs/comments/jabyri/stop_useeffect_from_running_on_every_render_with/)
+- url: https://maxrozen.com/stop-useeffect-running-every-render-with-usecallback/
+---
+
+## [4][The online course "Master React by Building a Product Hunt Clone" is Free this week.](https://www.reddit.com/r/reactjs/comments/j9ptpr/the_online_course_master_react_by_building_a/)
 - url: https://v.redd.it/h6ov1tykons51
 ---
 
-## [4][Epic React: React Fundamentals - (Tutorial for beginners)](https://www.reddit.com/r/reactjs/comments/j9nivx/epic_react_react_fundamentals_tutorial_for/)
-- url: https://blog.bhanuteja.dev/epic-react-react-fundamentals-part-1
+## [5][How to build a React application in a Django project](https://www.reddit.com/r/reactjs/comments/jac6f8/how_to_build_a_react_application_in_a_django/)
+- url: https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/integrating-django-react/
 ---
 
-## [5][Killing bad parts of Redux. Say goodbye to boilerplate.](https://www.reddit.com/r/reactjs/comments/j9on25/killing_bad_parts_of_redux_say_goodbye_to/)
-- url: https://klis87.hashnode.dev/killing-bad-parts-of-redux-say-goodbye-to-boilerplate
+## [6][Making Typing Animation with React Hooks](https://www.reddit.com/r/reactjs/comments/ja80uw/making_typing_animation_with_react_hooks/)
+- url: https://lo-victoria.com/making-typing-animation-with-react-hooks
 ---
 
-## [6][Webpack 5 release (2020-10-10) | webpack](https://www.reddit.com/r/reactjs/comments/j978oe/webpack_5_release_20201010_webpack/)
-- url: https://webpack.js.org/blog/2020-10-10-webpack-5-release/
+## [7][What is this [nam]: val syntax about where nam is not an array?](https://www.reddit.com/r/reactjs/comments/jacfog/what_is_this_nam_val_syntax_about_where_nam_is/)
+- url: https://www.reddit.com/r/reactjs/comments/jacfog/what_is_this_nam_val_syntax_about_where_nam_is/
 ---
-
-## [7][React Redirect with custom claims [Firebase Auth]](https://www.reddit.com/r/reactjs/comments/j9pzal/react_redirect_with_custom_claims_firebase_auth/)
-- url: /r/Firebase/comments/j9psy6/react_redirect_with_custom_claims/
----
-
-## [8][We Made a Trend Aggregation Website - Displays Trending Movies, Streams, Tweets, TV Shows, Reddit Posts, and Youtube Videos](https://www.reddit.com/r/reactjs/comments/j9e6ow/we_made_a_trend_aggregation_website_displays/)
-- url: https://www.reddit.com/r/reactjs/comments/j9e6ow/we_made_a_trend_aggregation_website_displays/
----
-My college friends and I just finished a website that takes the top trending data from 7 platforms (movies, twitch, twitter, tv shows, reddit, spotify, youtube) and displays them in order of popularity. We wanted a way to bring the top trending content to one place so that we don’t have to check multiple sites. We used Reactjs for our front-end and we were able to create some pretty fun animated components like our header and footer. 
-
-Feel free to take a look at our site or see what we were able to create with React! Feedback is always welcome :)
-
-[metatrends.live](https://metatrends.live)
-## [9][Beginner Help Needed](https://www.reddit.com/r/reactjs/comments/j9n6nu/beginner_help_needed/)
-- url: https://www.reddit.com/r/reactjs/comments/j9n6nu/beginner_help_needed/
----
-Hello, I recently started trying to learn react on my own and am trying to create a small project. So im trying to make a simple template for a site. I created a component for the header and footer and put them into a layout component together, now what i am trying to figure out is how can i make other pages and bring the template into them so that when they display the header and footer are added to those components on the top and bottom of the page. Any and all help is appreciated would really like to understand how its done and any reading material on it would also help since im not sure my search results are getting me anywhere.
-## [10][Setting up a React app with styled-components to consume a Node API](https://www.reddit.com/r/reactjs/comments/j9hpnk/setting_up_a_react_app_with_styledcomponents_to/)
-- url: https://dev.to/souzamarlon/setting-up-a-react-app-with-styled-components-to-consume-a-node-api-2426
----
-
-## [11][Getting a warning in my Jest/Enzyme test suite](https://www.reddit.com/r/reactjs/comments/j9qqtq/getting_a_warning_in_my_jestenzyme_test_suite/)
-- url: https://www.reddit.com/r/reactjs/comments/j9qqtq/getting_a_warning_in_my_jestenzyme_test_suite/
----
-My test suite suite has a handful of tests like this one, they all pass but they cause the warning below to show up. I have read and tried a few solutions online for a while but Im not getting anywhere.  Im not changing the state so Im not sure why the warning shows up in the first place. 
-
-`it("Closing", async() =&gt; {`  
- `const newState = {...state, step: Step.Closing};`  
- `const tree = renderer.create(&lt;App appStore={newState}/&gt;).toJSON();`  
- `expect(tree).toMatchSnapshot();`  
-  `});`
-
-Passes but triggers this warning:
-
- `Warning: An update to Pane inside a test was not wrapped in act(...).`
-
-`When testing, code that causes React state updates should be wrapped into act(...):`
-
-`act(() =&gt; {`
-
-`/* fire events that update state */`
-
-`});`
-
-`/* assert on the output */`
-
-How could I fix this?
-## [12][Confused on where to begin with my React project. Any info is greatly appreaciated](https://www.reddit.com/r/reactjs/comments/j9ptaf/confused_on_where_to_begin_with_my_react_project/)
-- url: https://www.reddit.com/r/reactjs/comments/j9ptaf/confused_on_where_to_begin_with_my_react_project/
----
-I need help trying to figure out where to start with my project. I want to build a music library web app that allows user to add, edit, delete, and fetch all data in the table (when the homepage loads). the database will include information on each artist, including, artistName, genre, release date, record label used to fund the album, and possible much more. I want to use React for the front end, Node.js, Express for the backend and MySQL for my database. This is my first time using Express, so I don't know  fetch the data in my MySQL db table. I would like to display the results using the `&lt;TableCell&gt;`tag. I feel like I have a general idea of what needs to be done, but I'm not extremely confident when it comes to working on my own projects. I have this issues of second guessing myself.
+    myChangeHandler = (event) =&gt; {
+    let nam = event.target.name; 
+    let val = event.target.value; 
+    this.setState({[nam]: val}); 
+    }
 
 &amp;#x200B;
+## [8][I curated all the remote job openings from Hacker News who is hiring - October](https://www.reddit.com/r/reactjs/comments/jadekz/i_curated_all_the_remote_job_openings_from_hacker/)
+- url: https://www.reddit.com/r/reactjs/comments/jadekz/i_curated_all_the_remote_job_openings_from_hacker/
+---
+Here I would like to share more than 480 remote jobs that I've curated from Hacker News Who is hiring thread. All these are 100% remote jobs not just allowed to work from home during COVID-19. These are 100% remote jobs and will continue to follow that after the covid.
 
-Any information is greatly appreciated!  Much love &lt;3
+https://remoteleaf.com/whoishiring.   
 
-EDIT: I dont know how to properly markdown yet via Reddit. First time posting on this sub (second edit).
+Note: Select "javascript" in the skills filter to view all the javascript jobs
+
+✅ 100% remote full-time jobs.    
+✅ Each and every job is manually curated and verified. Spent more than 14 hours for this.
+## [9][Fixing lazyload images with React Server-Side Render](https://www.reddit.com/r/reactjs/comments/jacpvf/fixing_lazyload_images_with_react_serverside/)
+- url: https://hieunc.com/posts/6fNu3@O9xp-fixing-lazyload-images-with-react-server-side-render
+---
+
+## [10][Taming network with redux-requests, part 1 - Introduction](https://www.reddit.com/r/reactjs/comments/jac5k9/taming_network_with_reduxrequests_part_1/)
+- url: https://klis87.hashnode.dev/taming-network-with-redux-requests-part-1-introduction
+---
+
+## [11][Best way to render data to client from server by visiting url with Apollo Client / GraphQL](https://www.reddit.com/r/reactjs/comments/jabsu1/best_way_to_render_data_to_client_from_server_by/)
+- url: https://www.reddit.com/r/reactjs/comments/jabsu1/best_way_to_render_data_to_client_from_server_by/
+---
+So I'm currently integrating the Stripe API with my app and I have reached the stage where I need to [Create a SetupIntent](https://stripe.com/docs/payments/save-and-reuse#web-create-setup-intent) which returns a `client_id` object from the server to the client.
+
+Since I'm using NextJS w/ Apollo Client which (query and mutation resolvers) alongside GraphQL, I don't believe the example on the Stripe docs applies in my case. Maybe someone could explain why, but for example, the sample code they give is this:
+
+    app.engine('.hbs', expressHandlebars({ extname: '.hbs' }));
+    app.set('view engine', '.hbs');
+    app.set('views', './views');
+    
+    app.get('/card-wallet', async (req, res) =&gt; {
+      const intent =  await stripe.setupIntents.create({
+        customer: customer.id,
+      });
+      res.render('card_wallet', { client_secret: intent.client_secret });
+    });
+    
+    app.listen(3000, () =&gt; {
+      console.log('Running on port 3000');
+    });
+
+And we're particularly interested in this part, since the templating engine does not apply in my case:
+
+    app.get('/card-wallet', async (req, res) =&gt; {
+      const intent =  await stripe.setupIntents.create({
+        customer: customer.id,
+      });
+      res.render('card_wallet', { client_secret: intent.client_secret });
+    });
+
+How would I implement this with Queries / Mutations? Is it even possible to implement this with an Apollo Client set up?
+## [12][how can I apply a search filter to my current redux store?](https://www.reddit.com/r/reactjs/comments/jabfm6/how_can_i_apply_a_search_filter_to_my_current/)
+- url: https://www.reddit.com/r/reactjs/comments/jabfm6/how_can_i_apply_a_search_filter_to_my_current/
+---
+hey guys I have a &lt;NoteList /&gt; component that renders the list of my notes from the store. I want to maintain a search input that can filter the existing data in the store based on the search input. I read some articles on defining action filters but none of them made sense to me, can you guys help?

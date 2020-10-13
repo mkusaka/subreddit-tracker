@@ -1,111 +1,83 @@
 # golang
-## [1][spluggy: Static Plugins for Go](https://www.reddit.com/r/golang/comments/j9oia1/spluggy_static_plugins_for_go/)
-- url: https://www.reddit.com/r/golang/comments/j9oia1/spluggy_static_plugins_for_go/
----
-Everybody loves [**plugins**](https://en.wikipedia.org/wiki/Plug-in_(computing)). Well, not everybody, but they can offer many advantages. Arguably the biggest ones are modularization of your program and making it easy to extend it. I'm working on an open source project in Go and needed these benefits, so I opted for a plugin architecture. But how?
-
-Go offers a [**way to create and load plugins**](https://golang.org/pkg/plugin/). Unfortunately it imposes a lot of [**technical limitations**](https://www.reddit.com/r/golang/comments/b6h8qq/is_anyone_actually_using_go_plugins/ejkxd2k/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3). Yet even disregarding those, your functionality is spread over several binary files. I decided to create a small tool to solve this: [***spluggy***](https://github.com/codomatech/spluggy).
-
-spluggy is a [**code generation**](https://blog.golang.org/generate) tool which helps you define static plugins (i.e. at compile time.) These plugins are then built into a single executable. It provides a way to have modularity and extensibility without managing multiple binaries.
-
-spluggy is written with the ~~lazy~~ busy developer in mind. You don't need to maintain an explicit list of your plugins. You only have to define them as sub-packages within the same package. As long as they expose a common function, spluggy will discover your plugins and expose them to external packages.
-
-spluggy is available on [**Github**](https://github.com/codomatech/spluggy). The repository has an [**example**](https://github.com/codomatech/spluggy/tree/main/example) demonstrating how to use spluggy in your project.
-## [2][I made a small app to play spooky sounds for the Halloween season](https://www.reddit.com/r/golang/comments/j9f651/i_made_a_small_app_to_play_spooky_sounds_for_the/)
-- url: https://github.com/fagnercarvalho/go-spooky-sounds
+## [1][Building a Mapping Language with Parser Combinators](https://www.reddit.com/r/golang/comments/jaanek/building_a_mapping_language_with_parser/)
+- url: https://youtu.be/JiViND-bpmw
 ---
 
-## [3][Use of Go for Distributed Computing](https://www.reddit.com/r/golang/comments/j97ct8/use_of_go_for_distributed_computing/)
-- url: https://www.reddit.com/r/golang/comments/j97ct8/use_of_go_for_distributed_computing/
----
-Hi all, I"m a newbie trying to better understand between go and distributed computing. Can you answer the below questions I have?
-
-1. Noticed a lot of distributed computing/distributed systems class taught in go. Why is this?
-1. How is Go actually used to manage cluster computing/HPC systems in practice? Examples would be helpful
-1. Traditional HPC systems are build on C/C++ with openMP, MPI, etc. Can Go do the same things?
-1. What are the pros/cons of building a modern distributed compute/HPC system today in Go vs C++? 
-
-
-Thanks all.
-## [4][Most efficient probabilistic datastructure: Bloom vs Cuckoo filters](https://www.reddit.com/r/golang/comments/j9qsb8/most_efficient_probabilistic_datastructure_bloom/)
-- url: https://panmari.github.io/2020/10/09/probabilistic-filter-golang.html
+## [2][Canada's COVID tracking server is written in go](https://www.reddit.com/r/golang/comments/j9s1gy/canadas_covid_tracking_server_is_written_in_go/)
+- url: https://github.com/cds-snc/covid-alert-server
 ---
 
-## [5][Interface Semantics &amp; Polymorphism: Leveraging the interface to write code whose behavior can change depending on the data being passed through](https://www.reddit.com/r/golang/comments/j9a54c/interface_semantics_polymorphism_leveraging_the/)
-- url: https://youtu.be/wLgpY-wzy2o
+## [3][The privacy layer for github.com/facebook/ent is open-source now](https://www.reddit.com/r/golang/comments/jac42q/the_privacy_layer_for_githubcomfacebookent_is/)
+- url: https://www.reddit.com/r/golang/comments/jac42q/the_privacy_layer_for_githubcomfacebookent_is/
+---
+Hey guys, 2 weeks ago we open-sourced our [GraphQL with ent](https://www.reddit.com/r/golang/comments/j2ljgh/ent_gqlgen_3/), and today, I'm super happy to share that we open-sourced our privacy layer (authorization) for ent. 
+
+One of the main advantages of the privacy layer is that, you write the privacy policy once (in the schema), and it is always evaluated. No matter where queries and mutations are performed in your codebase, it will always go through the privacy layer.
+
+The docs is available in [entgo.io/docs/privacy](https://entgo.io/docs/privacy), and you're more than welcome to go over it and share with me your feedback in the issue tracker ([github.com/facebook/ent](https://github.com/facebook/ent/pulls)).
+## [4][A Go unikernel running on x86 bare metal](https://www.reddit.com/r/golang/comments/j9u10g/a_go_unikernel_running_on_x86_bare_metal/)
+- url: https://www.reddit.com/r/golang/comments/j9u10g/a_go_unikernel_running_on_x86_bare_metal/
+---
+[https://github.com/icexin/eggos](https://github.com/icexin/eggos)
+
+&amp;#x200B;
+
+Run a single Go applications on x86 bare metal, except for some assembly and C, most of the code is written in Go, support most features of Go (like GC, goroutine) and standard libraries, also come with a network stack that can run most `net` based libraries.
+
+Some snapshots
+
+A javascript interpreter supporting http GET
+
+[JS](https://i.redd.it/utsie4bvwos51.gif)
+
+An NES emulator
+
+[NES](https://i.redd.it/f3zurxozwos51.gif)
+
+&amp;#x200B;
+## [5][How to improve as a Golang Developer?](https://www.reddit.com/r/golang/comments/ja27c5/how_to_improve_as_a_golang_developer/)
+- url: https://www.reddit.com/r/golang/comments/ja27c5/how_to_improve_as_a_golang_developer/
+---
+**tl;dr: What concepts do I need to master to become an industry-ready, hireable Golang Software Developer.**  
+
+
+Hello nice people of r/golang, hope you're all safe and doing well. I've been for some time now a member of this community, though not very active, I'm always looking around.   
+
+
+This year as many of you know have been very hard for everybody, and I think I've hit a weird point in my career. After being a freelancer mostly developing in Golang for the last two years I've come to the conclusion that probably I won't be able to complete my Systems Engineering degree (Computer Science department) and will now have to think about going forward on my career without a degree. Golang is a programming language that I really enjoy programming in, and I've put a lot of effort into learning and improving my skills.   
+
+
+I can hold my ground with most of the builtin constructs, concepts, and packages. I know how to work and group goroutines, set up web services, use third-party APIs, use most of the os-related packages, and so on.  
+
+
+I guess that my question is, what do I need to learn to become an industry-ready software developer assuming that I know most of the essentials on CS? (Algorithms and Data Structures, some OS-concepts, etc)
+## [6][How we decreased one of our APIs response time by 87% and used fewer resources](https://www.reddit.com/r/golang/comments/jadhsq/how_we_decreased_one_of_our_apis_response_time_by/)
+- url: https://labs.armut.com/how-we-decreased-one-of-our-apis-response-time-by-87-and-used-less-resources-ce847e83308
 ---
 
-## [6][brightness - Backlight utility](https://www.reddit.com/r/golang/comments/j9h5xq/brightness_backlight_utility/)
-- url: https://gitlab.com/tslocum/brightness
+## [7][Part 3 of my tutorial on Pythons SimpleHTTPServer in go - This time Features!!!!!](https://www.reddit.com/r/golang/comments/jad95m/part_3_of_my_tutorial_on_pythons_simplehttpserver/)
+- url: https://hesec.de/posts/goshs-new-features/
 ---
 
-## [7][gin-brotli: A gin-gonic middleware for brotli compression](https://www.reddit.com/r/golang/comments/j9e8lv/ginbrotli_a_gingonic_middleware_for_brotli/)
-- url: https://github.com/anargu/gin-brotli
+## [8][Is there any problem-solving platforms that will allow me to go deep in Go?](https://www.reddit.com/r/golang/comments/ja7v67/is_there_any_problemsolving_platforms_that_will/)
+- url: https://www.reddit.com/r/golang/comments/ja7v67/is_there_any_problemsolving_platforms_that_will/
 ---
-
-## [8][Separating Data Store from the Domain](https://www.reddit.com/r/golang/comments/j9g79h/separating_data_store_from_the_domain/)
-- url: https://www.reddit.com/r/golang/comments/j9g79h/separating_data_store_from_the_domain/
+Most of the problem-solving sites allow you to solve the problems in various languages and Go is one of them in most platforms. The problem is these problems, in most cases doesn't require where Go shines, e.g. Concurrency. Is there any problem-solving site where I can work on my Go-specific skills?
+## [9][I need zalgo regex for yagpdb. Discord bot. Golang.](https://www.reddit.com/r/golang/comments/jaab8n/i_need_zalgo_regex_for_yagpdb_discord_bot_golang/)
+- url: https://www.reddit.com/r/golang/comments/jaab8n/i_need_zalgo_regex_for_yagpdb_discord_bot_golang/
 ---
-Hey Gophers,
+I want to know what is regex for zalgo ?  I want to use in yagpdb bot automod v2.
 
-I'm working on a personal project and am just working on figuring out how I'd like to structure my code. I'm running into a bit of a snag and wanted to see how you all might handle this.
+Zalgo like this - t̡̖̳h͕̭͎i̦̳͇s̝͚͉ ̶̺̬i͖̪̝s͉̯͙ ̷̼̰a͕̫̯ ̦̩̻e̝̖͈x̣̫̰ā̳͙̹mͩ́̂p̘̮̰lͨͯ͛ȅ͔̹̳ ̢͇̌ö̳̮͎f͚̰̀ ̳̗͊z͇̑̔a̷̞ͧl̘̝̥g̛̣̫o̳͐̔ ̹̹̙t̵̬̑ẽ̡̪̼x̨̖̍t̨̗̭
 
-I would like to use the "repository" pattern you see presented in Domain Driven Design (and used in plenty of other places). The idea is simple, to have a struct that acts as a repository and handles all interactions with whatever kind of data store I like. This way I avoid cluttering the domain with mapping tables to structs and executing queries.
 
-Simple enough, you might end up with an interface that looks like this:
+I have a coding but it's not working on yagpdb.
+Plz share me a coding to solve my problem.
+Thanks in advance.
 
-```go
-package inventory
-
-import "context"
-
-type Repository interface {
-	GetProduct(ctx context.Context, sku string) (Product, error)
-	AddProduct(ctx context.Context, product Product, quantity int) (error)
-	AddTransaction(ctx context.Context, product Product, quantity int) (error)
-}
-```
-
-Pretty nice. Maybe the factory function that creates this repository takes in your database connection and the resulting struct uses that DB connection to implement the "GetProduct". This is an especially nice pattern because it makes mocking the "Repository" interface dead simple.
-
-The rub I'm having here is this. Imagine that we wanted to have an atomic transaction that updated two tables. For instance you need to call the `AddProduct` function, and then the `AddTransaction` function above. We would want to begin a transaction, execute our updates, and commit if everything looks good. That transaction would need to be in the "model" layer, allowing the model to decide whether it makes sense to commit or not.
-
-Your model layer function might look something like this:
-
-```go
-package inventory
-
-type Inventory struct {
-	repo *Repository
-}
-
-func (i *Inventory) AddInventory(ctx context.Context, product Product, quantity int) error {
-	err := repo.AddProduct(ctx, product, quantity)
-	if err != nil {
-		return err
-	}
-	err := repo.AddTransaction(ctx, product, quantity)
-	if err != nil {
-		return err // Uh oh! A Problem happened here, we need to roll back adding the product!
-	}
-	return nil
-}
-```
-
-The code above is no good. If we want to roll back our `AddProduct`, we simply don't have that option. I've thought about some possible solutions but they all seem... messy. The main advantage I'm looking for here is to be able to abstract away my repository so that I can cleanly design and test my domain model.
-
-I'd love to hear if you've come up with an interesting solution in your personal or professional projects.
-## [9][Am I wasting my time?](https://www.reddit.com/r/golang/comments/j9b6en/am_i_wasting_my_time/)
-- url: https://www.reddit.com/r/golang/comments/j9b6en/am_i_wasting_my_time/
----
-For a school semester project, I've decided to use Go as my backend language for a web application I have to build (including database and everything you could want from a web app).
-
-Since I didn't know where to start, I enrolled in this course: [\*click\*](https://www.udemy.com/course/go-programming-language). It teaches me server-side programming with Go, without using any third-party libraries. This course is 20h in video-material alone. After this, I would still need to learn how to do the frontend side of things. 
-
-**Is there any more efficient way I could be learning this?**
-
-I'm really not sure whether this is the best course for what I'm looking for or whether there's a better way to go about this. Any suggestions/thoughts?
-## [10][What are some of the best Golang video tutorials out there?](https://www.reddit.com/r/golang/comments/j9gnju/what_are_some_of_the_best_golang_video_tutorials/)
-- url: https://www.reddit.com/r/golang/comments/j9gnju/what_are_some_of_the_best_golang_video_tutorials/
+This is 👇🏼 coding for zalgo. I got it from Google search. 
+/([^\u0009-\u02b7\u2000-\u20bf\u2122\u0308]|(?![^aeiouy])\u0308)/gm
+## [10][Bit – A modernized Git CLI written in Go](https://www.reddit.com/r/golang/comments/j9tgpw/bit_a_modernized_git_cli_written_in_go/)
+- url: https://github.com/chriswalz/bit
 ---
 

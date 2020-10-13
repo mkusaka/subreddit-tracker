@@ -23,125 +23,110 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/j9l0o7/whats_everyone_working_on_this_week_422020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-42-2020/49997?u=llogiq)!
-## [3][Proving that 1 + 1 = 2 in Rust](https://www.reddit.com/r/rust/comments/j9nnpv/proving_that_1_1_2_in_rust/)
-- url: https://gist.github.com/gretingz/bc194c20a2de2c7bcc0f457282ba2662
+## [3][Getting back to C++ after Rust is a pain.](https://www.reddit.com/r/rust/comments/ja5aoe/getting_back_to_c_after_rust_is_a_pain/)
+- url: https://www.reddit.com/r/rust/comments/ja5aoe/getting_back_to_c_after_rust_is_a_pain/
+---
+I would like to share some thoughts about Rust with you guys and maybe hear from you what you think about this.
+
+I'm a software engineer working in the Visual Effects Industry, we write tools for making CG artists work easier and more efficient.  As you can imagine, C++ is dominant there for everything other than the pipeline, which is mostly Python. 
+
+I'm an experienced Python programmer, I write Python for 10+ years now, but I also wrote a good amount of C++ code **with an important note** \- it was mostly plugins for other software with huge and powerful SDKs which cover 95% of your c++ needs. I never had to think about which library to use for parallel programming or string manipulation, logging etc and I basically followed common practices of those mature SDKs (Autodesk Maya, SideEffects Houdini).
+
+About two years ago I started learning Rust and as many of us, fall in love with it. I spent a lot of time learning it and wrote several command-line tools at work (for which I would've previously chose Python). My obsession with Rust even made me write a simple bindings to some of our studio's C++ APIs and I had fun with it. I'm eagerly grasping any opportunity to writing Rust at work, but it's very hard to find application for it other than for simple utilities.
+
+Sadly, Rust has no place in our industry and for me to grow as a developer I need to dive into C++ at a deeper level. I recently made a few attempts and oh boy it's pain. My brain got so Rusty that when I'm staring at some simple C++ code I'm questioning what a hell I'm doing with my life and do I really need all this suffering? :)  Dozens of ways to initialize variables, completely unreadable STL and function signatures, unreadable error messages,  implicit copying,  not clear who owns what, segfaults  and so on....
+
+And now there's C++20. I watched a lot of recent CppCon videos and I'm seeing the shaping of a completely different language within this new standard (which is nonetheless built on top of the same old and crazily complicated codebase). C++20 is finally getting some features we love in Rust - ranges, contracts, async, modules etc. Unfortunately, in visual effects, we won't be able to use the new C++ standard anytime soon (in 5 years maybe?). Will it make C++ easier and safer to use? Maybe. But can you imagine where Rust would be in 5 years? I'm guessing far ahead!
+
+I like my job, and I know that learning C++ helps my carrier, but gosh it's so hard after Rust. I'm finding excuses to not do so and just enjoying Rust when I can.
+
+My takeaway - if you're a good C++ programmer, learning Rust will make you even better coder( or draw away from C++ forever LOL). But if Rust is your first language, learning C++ is a nightmare! Thank you for your attention!
+## [4][SixtyFPS: New GUI framework written in Rust (alpha)](https://www.reddit.com/r/rust/comments/jac66t/sixtyfps_new_gui_framework_written_in_rust_alpha/)
+- url: https://github.com/sixtyfpsui/sixtyfps/
 ---
 
-## [4][Rust after the honeymoon](https://www.reddit.com/r/rust/comments/j99o0t/rust_after_the_honeymoon/)
-- url: http://dtrace.org/blogs/bmc/2020/10/11/rust-after-the-honeymoon/
+## [5][Async-graphql 2.0.0 version is finally released!](https://www.reddit.com/r/rust/comments/ja7bne/asyncgraphql_200_version_is_finally_released/)
+- url: https://www.reddit.com/r/rust/comments/ja7bne/asyncgraphql_200_version_is_finally_released/
+---
+`Async-graphql` is a high-performance server-side library that supports all GraphQL specifications. The `2.0.0` version has undergone a lot of refactoring, and it now has better performance and easier-to-use API.
+
+Thanks to `Koxiaet`, and everyone who contributed to this library! 😁
+
+Repo: [https://github.com/async-graphql/async-graphql](https://github.com/async-graphql/async-graphql)
+
+Benchmark: [https://github.com/async-graphql/benchmark](https://github.com/async-graphql/benchmark)
+
+## Features
+
+* Fully supports async/await
+* Type safety
+* Rustfmt friendly (Procedural Macro)
+* Custom scalars
+* Minimal overhead
+* Easy integration (actix\_web, tide, warp, rocket ...)
+* Upload files (Multipart request)
+* Subscriptions (WebSocket transport)
+* Custom extensions
+* Apollo Tracing extension
+* Limit query complexity/depth
+* Error Extensions
+* Apollo Federation
+* Batch Queries
+* Apollo Persisted Queries
+## [6][Rust is the second highest paid programming language in 2020](https://www.reddit.com/r/rust/comments/j9w5j2/rust_is_the_second_highest_paid_programming/)
+- url: https://expertain.net/what-are-the-highest-paid-programming-languages/
 ---
 
-## [5][jlrs v0.7: write functions in Rust and call them from Julia, execute multiple tasks in parallel, use Julia arrays with ndarray](https://www.reddit.com/r/rust/comments/j9n0ee/jlrs_v07_write_functions_in_rust_and_call_them/)
-- url: https://www.reddit.com/r/rust/comments/j9n0ee/jlrs_v07_write_functions_in_rust_and_call_them/
+## [7][Real-time programming in Rust?](https://www.reddit.com/r/rust/comments/jadbzs/realtime_programming_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/jadbzs/realtime_programming_in_rust/
 ---
-Last Saturday I released jlrs v0.7 which has two major new features.
+I’ve always been interested in doing (interactive) audio coding, such as synthesizers and the like. In fact, it was one of the reasons why I started with C++. Doing real-time (audio) programming almost inevitably involves multithreading, as you generally need one real-time thread to render the audio without any delays. Any work such as loading samples should run on background threads.
 
-First of all, you can now use functionality from jlrs when writing Rust code that is called from Julia using its `ccall` interface. This function can call arbitrary functions defined in dynamic libraries that use the C ABI (ie functions marked with `extern "C"`, and possibly `#[no_mangle]` in Rust). While this can be achieved without using jlrs, it's now possible to use features from jlrs such as borrowing array data.
+As the real-time thread has to return in milliseconds and can never miss a deadline, it often involves lockfree data structures and you’re quite limited in what you can do there. Blocking behaviour is not allowed in the real-time thread, meaning that any function that has an unknown duration cannot be used there. This includes more than you’d initially think:
 
-The second major feature is the introduction of an (experimental) async runtime. This feature is highly experimental and only works on Linux. With the async runtime you can use `Value::call_async` to offload a function call to another thread (using `Base.Threads.@spawn`) and wait for the result; while the computation is running the runtime is free to work on other tasks. This feature is experimental because it's the first async code I've ever written and depends on some unstable features.
+* Mutexes (which can lead to *priority inversion*)
+* Disk access
+* Practically all system calls
+* Object creation/destruction (as they might call memory allocation functions)
 
-Additionally, some small features have been added. The biggest one of these is that there's a new arrya type, `TypedArray`, which is highly similar to `Array` except that the type of the elements is explicitly known. The crate `jlrs-ndarray` is now available to easily borrow array data from Julia as an `ArrayView(Mut)` from ndarray.
+This is quite hard and I was wondering if Rust might make this easier (async/await, no\_std and custom allocators are things that come to mind here). In C++, it’s basically up to you to make sure you’re not using functions which can block in your audio thread. One thing I’ve been thinking about is whether it would be possible to check at compile time whether your real-time code isn't calling any blocking functions (functions could be annotated with "RealTimeSafe"/"NonBlocking" or a subset of the no\_std)?
 
-The repository now contains several examples, so if you're curious how to use these new features you can take a look [here](https://github.com/Taaitaaiger/jlrs/tree/master/examples).
-
-[Github](https://github.com/Taaitaaiger/jlrs)
-
-[Docs.rs](https://docs.rs/jlrs/0.7.0/jlrs/index.html)
-
-[Crates.io](https://crates.io/crates/jlrs)
-## [6][rust-analyzer changelog #46](https://www.reddit.com/r/rust/comments/j9q5hn/rustanalyzer_changelog_46/)
-- url: https://rust-analyzer.github.io/thisweek/2020/10/12/changelog-46.html
+Also, are there any people here using Rust for lockfree/real-time programming? If so, what is your experience? Are there good/easy libraries for lockfree data structures (Crossbeam)? What is missing/could be improved?
+## [8][Pre-RFC: Split up Tier-2 into two tiers](https://www.reddit.com/r/rust/comments/ja2wsk/prerfc_split_up_tier2_into_two_tiers/)
+- url: https://internals.rust-lang.org/t/pre-rfc-split-up-tier-2-platforms/13196
 ---
 
-## [7][Have you stopped using Rust? And if yes, why?](https://www.reddit.com/r/rust/comments/j9ogc4/have_you_stopped_using_rust_and_if_yes_why/)
-- url: https://www.reddit.com/r/rust/comments/j9ogc4/have_you_stopped_using_rust_and_if_yes_why/
+## [9][Further info on Rust support in SailfishOS](https://www.reddit.com/r/rust/comments/jacvmk/further_info_on_rust_support_in_sailfishos/)
+- url: https://www.reddit.com/r/rust/comments/jacvmk/further_info_on_rust_support_in_sailfishos/
 ---
-Hi there,
+Taken from [official blog post](https://blog.jolla.com/sailfish-os-pallas-yllastunturi-is-now-available/):
 
-I would be interested to read some of the stories of people who were using Rust for some time, but then decided it wasn't the good choice for their project or situation. There is a lot of praise around the language, for good reasons, and a lot of focus on its unique features (or lack of terrible ones). I feel it could be interesting to hear a bit about the other stories, about situations where some of you decided their problem wasn't in fact a good fit.
+&gt; Developer Offering
+&gt; 
+&gt; We’ve included experimental support for the Rust programming language in this release. This addition is related to the upcoming browser upgrades, but we will experiment with using Rust in other areas as well. We welcome and appreciate all comments from the community about the behaviour and use of this addition and encourage you to share your experiences on the forum.
+&gt; 
+&gt; In preparation for future needs we are also releasing experimental support for 64-bit hardware (aarch64). This experiment is aimed at potential upcoming devices and is not currently used by any existing hardware. It should be noted by our development community that we do not consider the aarch64 ABI stable yet. Recompiling applications might be needed later when the 64-bit architecture becomes officially supported.
+&gt; 
+&gt; We invite our partners and community to take this into use where devices support it (e.g. HW ports) and to share your feedback via our forum (https://forum.sailfishos.org/).
+&gt; 
+&gt; We’ve also updated our Notification API so that the interface now includes progress information that can be displayed on the Events view.
 
-You know the saying: "use the right tool for the job", so what are jobs where you **actually tried** to use Rust but found out it wasn't the right tool?
-## [8][Learn Rust by building the game Snake](https://www.reddit.com/r/rust/comments/j9o6lu/learn_rust_by_building_the_game_snake/)
-- url: https://blog.scottlogic.com/2020/10/08/lets-build-snake-with-rust.html
----
+This is a follow-up post to my post from 12 days ago: https://www.reddit.com/r/rust/comments/j35d01/mobile_operating_system_sailfishos_now_supports/
 
-## [9][I just published my first crate: imperative-rs, deriving instruction sets from enums](https://www.reddit.com/r/rust/comments/j9ol07/i_just_published_my_first_crate_imperativers/)
-- url: https://www.reddit.com/r/rust/comments/j9ol07/i_just_published_my_first_crate_imperativers/
----
-Hey everyone,
-
-after seeing the post about the [Game Boy Color emulator for the browser](https://www.reddit.com/r/rust/comments/j8vw84/i_made_a_gameboygameboy_color_emulator_which_runs/) last night, I thought it was finally time to publish the little project I've been working on for the last few months.
-
-[imperative-rs](https://crates.io/crates/imperative-rs) can be used to automatically derive instruction sets from enums:
-
-    #[derive(InstructionSet)] 
-    enum Instruction {
-        #[opcode="0x00_xx_yy"]
-        Add{x:u8, y:u8},
-        #[opcode="0x01_xx_yy"]
-        Mov{x:u8, y:u8}
-    }
-    fn exec(&amp;mut self) -&gt; impl Error
-        let num_bytes, instr = Instruction::decode(&amp;mem[self.pc..])?;
-        self.pc += num_bytes;
-        match instr {
-            Instruction::Add(x, y) =&gt; self.acc = x + y,
-            Instruction::Mov(x, y) =&gt; self.reg[y] = self.mem[x],
-        }
-    }
-
-So instead of matching on tons of in literals like this:
-
-    match opcode {
-        0x00 =&gt; self.nop(),
-        0x01 =&gt; {
-            match next_byte {
-                //some more instructions here
-            }
-        }
-    }
-
-you can decode the instruction from memory and just match on your enum with all the instructions in it.
-
-    enum Instruction {
-        Nop,
-        Mov{s:usize, t:usize},
-        Ldi{....},
-        Add{....},
-        //etc.
-    }
-
-and
-
-    match instr {
-        Instruction::Nop =&gt; {},
-        Instruction::Mov{s, t} =&gt; self.mem[t] = self.mem[s],
-        //etc.
-    }
-
-You can define opcodes in hex or bin format, with or without underscores. the macro checks for collisions (i.e. opcodes that can't be distinguished from one another). Only restriction is that variable names need to be one symbol long and can't be hex digits for now.
-
- To decode instructions from your memory you just hand over a memory slice starting at the current program counter and it give you back an instruction and the number of bytes used or an error if no instruction could be decoded.
-## [10][Announcing httpmock v0.5.0](https://www.reddit.com/r/rust/comments/j9o8zq/announcing_httpmock_v050/)
-- url: https://www.reddit.com/r/rust/comments/j9o8zq/announcing_httpmock_v050/
----
-Hi all!
-
-A while ago, I released an HTTP mocking library called [httpmock](https://crates.io/crates/httpmock).  It got a major overhaul recently with a strong focus on improving usability and ease of use. I am very excited to announce the following changes in the new [version 0.5.0](https://github.com/alexliesenfeld/httpmock/releases/tag/v0.5.0).
-
-**Most important changes:**
-
-* A new API that makes it easy to read and write tests (see [examples](https://crates.io/crates/httpmock)).
-* Assertion failures now print very useful and smart error messages that will help you identify and fix bugs in your tests.
-* Many new helpers for easy request matching and response definition (such as cookies, redirects, binary and file body, response delays, and more).
-* Documentation improvements (a lot!).
-
-[This article](https://medium.com/@alexliesenfeld/rust-http-testing-with-httpmock-3d411200669c) demonstrates many of the new features in the form of a tutorial.
-## [11][Contract as Code as Contract: using Rust to unify specification and implementation of web services APIs](https://www.reddit.com/r/rust/comments/j9qagk/contract_as_code_as_contract_using_rust_to_unify/)
-- url: https://www.youtube.com/watch?v=EmSjZbSzA3A
+I'm just happy to see them write about the browser engine (a long standing problem with SFOS), the possibility of future devices with 64bit support, and general support of the Rust language. :)
+## [10][blades - a (very) fast static site generator](https://www.reddit.com/r/rust/comments/ja1lpq/blades_a_very_fast_static_site_generator/)
+- url: https://github.com/grego/blades
 ---
 
-## [12][hors v0.7.2 is released, with higher performance (compared to previous version, and origin howdoi) Any code suggestions (especially about tokio usage code) is very appreciated](https://www.reddit.com/r/rust/comments/j9oeet/hors_v072_is_released_with_higher_performance/)
-- url: https://i.redd.it/kmfunojx3ns51.jpg
+## [11][aarch64-pc-windows-msvc has been promoted to Tier 2 Development Platform! 🎉](https://www.reddit.com/r/rust/comments/j9wocy/aarch64pcwindowsmsvc_has_been_promoted_to_tier_2/)
+- url: https://github.com/rust-lang/rust/pull/75914
 ---
 
+## [12][Looking for 2D geometry library in rust](https://www.reddit.com/r/rust/comments/ja8nwi/looking_for_2d_geometry_library_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/ja8nwi/looking_for_2d_geometry_library_in_rust/
+---
+Hi all,
+
+I need a library to deal with basic 2D geometry functions, such as handling shapes, doing boolean operations with polygons (intersection, xor, etc). 
+
+Can anyone suggest a library that implement theses functions for me?

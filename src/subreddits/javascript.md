@@ -85,43 +85,49 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [3][A website that helps you practice JavaScript skills through projects.](https://www.reddit.com/r/javascript/comments/j9zyih/a_website_that_helps_you_practice_javascript/)
-- url: http://www.codeaway.io
+## [3][Presenting v7.0.0 of the npm CLI - The GitHub Blog](https://www.reddit.com/r/javascript/comments/jan9a0/presenting_v700_of_the_npm_cli_the_github_blog/)
+- url: https://github.blog/2020-10-13-presenting-v7-0-0-of-the-npm-cli/
 ---
 
-## [4][Creating Waveforms Out of Spotify Tracks](https://www.reddit.com/r/javascript/comments/j9qvx0/creating_waveforms_out_of_spotify_tracks/)
-- url: https://medium.com/@leemartin/creating-waveforms-out-of-spotify-tracks-b22030dd442b?source=friends_link&amp;sk=1e74a4f9ab25519a40e5d7185f33f139
+## [4][I made a CLI tool that can convert typed text to realistic handwriting!](https://www.reddit.com/r/javascript/comments/jayauf/i_made_a_cli_tool_that_can_convert_typed_text_to/)
+- url: https://github.com/alias-rahil/handwritten.js.git
 ---
 
-## [5][MikroORM 4.1: Let’s talk about performance](https://www.reddit.com/r/javascript/comments/jadccn/mikroorm_41_lets_talk_about_performance/)
-- url: https://medium.com/@b4nan/mikroorm-4-1-lets-talk-about-performance-b184d612f1d5
+## [5][Secure URL-friendly unique string ID generator in ~10 LOC](https://www.reddit.com/r/javascript/comments/jayvl4/secure_urlfriendly_unique_string_id_generator_in/)
+- url: https://github.com/xxczaki/attoid
 ---
 
-## [6][Pair Programming Patterns](https://www.reddit.com/r/javascript/comments/jacs7b/pair_programming_patterns/)
-- url: https://rfornal.hashnode.dev/pair-programming-patterns-ckeivmlg8009qtds105lr0fc4
+## [6][[AskJS] JavaScript - what are nowadays bad parts?](https://www.reddit.com/r/javascript/comments/jazc3c/askjs_javascript_what_are_nowadays_bad_parts/)
+- url: https://www.reddit.com/r/javascript/comments/jazc3c/askjs_javascript_what_are_nowadays_bad_parts/
+---
+TL;DR: What are things in JS or it\`s ecosystem (tool-chain) that anoys you? ;)
+
+Historicaly there was a lot of hate on JS for it's ecosystem, and rolling jokes about how every day welcomes new JS framework.
+
+But  as I work for over 2 years with JavaScript every day, I must admire,  that I really enjoy it. I like it\`s broad areas of usage (browsers,  servers, native applications, even IoT), package managing (that may be controversial, I know), and  especially open source projects that grown around JS, like Vue, Svelte,  React, deno, nvm or volta, whole JAMStack thing, and countles more  amazing projects. There was a chatoic time after ES6 release, but now,  it is with us for few years. There are many bundlers and build tools  available, and everyone can choose something that best suits their  needs.
+
+Yet still, I hear people complaining on some aspects of JS every day. Therefore I would like to hear you, [r/javascript](https://www.reddit.com/r/javascript/) community, what are things you don't like about working with JS, and why?
+## [7][Generate screenshots for your translation keys](https://www.reddit.com/r/javascript/comments/jaj7bl/generate_screenshots_for_your_translation_keys/)
+- url: https://dev.to/kantord/generate-screenshots-for-your-translation-keys-1f1n
 ---
 
-## [7][Hyper-Lightweight Website Designs](https://www.reddit.com/r/javascript/comments/jacrkq/hyperlightweight_website_designs/)
-- url: https://rfornal.hashnode.dev/hyper-lightweight-website-designs-ckg6lgeg600dz9cs1bfwphy4d
+## [8][Updated sensible webpack 5 boilerplate](https://www.reddit.com/r/javascript/comments/jaspi5/updated_sensible_webpack_5_boilerplate/)
+- url: https://github.com/taniarascia/webpack-boilerplate
 ---
 
-## [8][Top JavaScript Calendar Plugins](https://www.reddit.com/r/javascript/comments/jacre5/top_javascript_calendar_plugins/)
-- url: https://stepnov.hashnode.dev/top-javascript-calendar-plugins
+## [9][Presenting v7.0.0 of the npm CLI - The GitHub Blog](https://www.reddit.com/r/javascript/comments/jaski2/presenting_v700_of_the_npm_cli_the_github_blog/)
+- url: https://github.blog/2020-10-13-presenting-v7-0-0-of-the-npm-cli
 ---
 
-## [9][Regular Expressions And Template Literals](https://www.reddit.com/r/javascript/comments/jacr6g/regular_expressions_and_template_literals/)
-- url: https://rfornal.hashnode.dev/regular-expressions-and-template-literals-ckg7yr2ko004431s18u0l0qru
+## [10][React Component Patterns in Ember.js](https://www.reddit.com/r/javascript/comments/jafcx7/react_component_patterns_in_emberjs/)
+- url: https://www.effective-ember.com/blog/react-component-patterns/
 ---
 
-## [10][I built a library called categorize](https://www.reddit.com/r/javascript/comments/jaawf0/i_built_a_library_called_categorize/)
-- url: /r/node/comments/jaavtv/i_built_a_library_called_categorize/
+## [11][A set of color widgets for the web](https://www.reddit.com/r/javascript/comments/jakova/a_set_of_color_widgets_for_the_web/)
+- url: https://everycolorpicker.com/
 ---
 
-## [11][Published my first package to NPM this weekend. Can anyone offer any feedback?](https://www.reddit.com/r/javascript/comments/j9oawr/published_my_first_package_to_npm_this_weekend/)
-- url: https://github.com/marknorrapscm/number-rollup
----
-
-## [12][New documentation website of eo-locale](https://www.reddit.com/r/javascript/comments/ja9wrb/new_documentation_website_of_eolocale/)
-- url: https://eo-locale.netlify.app/
+## [12][All Prime Day Deals on Javascript Books is Live Now. (Up to 97% OFF)](https://www.reddit.com/r/javascript/comments/jawhfy/all_prime_day_deals_on_javascript_books_is_live/)
+- url: http://prime-deal.info/javascript
 ---
 

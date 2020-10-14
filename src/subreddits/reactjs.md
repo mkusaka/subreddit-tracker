@@ -70,84 +70,100 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Stop useEffect from running on every render with useCallback](https://www.reddit.com/r/reactjs/comments/jabyri/stop_useeffect_from_running_on_every_render_with/)
-- url: https://maxrozen.com/stop-useeffect-running-every-render-with-usecallback/
+## [3][Smooth DOC - a premium Gatsby.js documentation theme is now open source](https://www.reddit.com/r/reactjs/comments/javt8b/smooth_doc_a_premium_gatsbyjs_documentation_theme/)
+- url: https://github.com/gregberge/smooth-doc
 ---
 
-## [4][The online course "Master React by Building a Product Hunt Clone" is Free this week.](https://www.reddit.com/r/reactjs/comments/j9ptpr/the_online_course_master_react_by_building_a/)
-- url: https://v.redd.it/h6ov1tykons51
+## [4][Hey guys, I wanted to share my tutorial on how to make a Socket IO Chat App using ReactJS and NodeJS!](https://www.reddit.com/r/reactjs/comments/jaf269/hey_guys_i_wanted_to_share_my_tutorial_on_how_to/)
+- url: https://www.youtube.com/watch?v=XS79S6nmaGM
 ---
 
-## [5][How to build a React application in a Django project](https://www.reddit.com/r/reactjs/comments/jac6f8/how_to_build_a_react_application_in_a_django/)
-- url: https://www.saaspegasus.com/guides/modern-javascript-for-django-developers/integrating-django-react/
+## [5][Is it safe to mutate destructured state variable?](https://www.reddit.com/r/reactjs/comments/jazc53/is_it_safe_to_mutate_destructured_state_variable/)
+- url: https://www.reddit.com/r/reactjs/comments/jazc53/is_it_safe_to_mutate_destructured_state_variable/
 ---
+Golden rule of React is not to mutate a state variable directly.
 
-## [6][Making Typing Animation with React Hooks](https://www.reddit.com/r/reactjs/comments/ja80uw/making_typing_animation_with_react_hooks/)
-- url: https://lo-victoria.com/making-typing-animation-with-react-hooks
----
+However, if I destructure the state, can I then update this variable safely? For example;
 
-## [7][What is this [nam]: val syntax about where nam is not an array?](https://www.reddit.com/r/reactjs/comments/jacfog/what_is_this_nam_val_syntax_about_where_nam_is/)
-- url: https://www.reddit.com/r/reactjs/comments/jacfog/what_is_this_nam_val_syntax_about_where_nam_is/
----
-    myChangeHandler = (event) =&gt; {
-    let nam = event.target.name; 
-    let val = event.target.value; 
-    this.setState({[nam]: val}); 
+    this.state = {
+      arr: [{id: 1}]
+    }
+    
+    fooBar = () =&gt; {
+      const { arr } = this.state;
+      arr.push({id: 2});
+      this.setState({ arr });
     }
 
+Or should I clone this array and work on it?
+
+    fooBar = () =&gt; {
+      const { arr } = this.state;
+      const clonedArr = [...arr];
+      clonedArr.push({id: 2});
+      this.setState({ arr: clonedArr });
+    }
+## [6][chat application using react native](https://www.reddit.com/r/reactjs/comments/jawzuq/chat_application_using_react_native/)
+- url: https://www.reddit.com/r/reactjs/comments/jawzuq/chat_application_using_react_native/
+---
+Hello everyone, I have an idea for my last year college project in react. I want to build a real time mobile chat application. Its about 2 years that I am learning front end development and all my focus was on Javascript and I think now I am in intermediate level. Is it really hard and complex to build such application using react?
+
+and what other technologies should I use I searched and found that I can use firebase or sokcet..
+
+what database and server side programming language should I use, can I use node.js for server side and mangodb for database?
+## [7][Back button requires 4 clicks to work](https://www.reddit.com/r/reactjs/comments/jaw969/back_button_requires_4_clicks_to_work/)
+- url: https://www.reddit.com/r/reactjs/comments/jaw969/back_button_requires_4_clicks_to_work/
+---
+I'm using React Router v6 and using the navigate API and passing minus 1 with the intention of returning to the previous page. [This page](https://pastebin.com/19CbQrY4) is landed upon when when an error occurs during an API request. When I'm on this page and try to go back to the previous one, it takes 4 clicks to do that. What could be the reason for this?
+## [8][How to code JS in ReactJS?](https://www.reddit.com/r/reactjs/comments/jb0mu0/how_to_code_js_in_reactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/jb0mu0/how_to_code_js_in_reactjs/
+---
+I've read that you always code JS in useEffect, but I've seen other people code it differently. So confused about it, would like some clarity!
+## [9][Phosphor Icons, a flexible icon family for everyone](https://www.reddit.com/r/reactjs/comments/jai9gi/phosphor_icons_a_flexible_icon_family_for_everyone/)
+- url: https://phosphoricons.com/
+---
+
+## [10][Bind an method in the constructor function](https://www.reddit.com/r/reactjs/comments/jayxd9/bind_an_method_in_the_constructor_function/)
+- url: https://www.reddit.com/r/reactjs/comments/jayxd9/bind_an_method_in_the_constructor_function/
+---
+Hi fellows !  
+I took some vacations to go for an online React course at [codeacademy.com](https://codeacademy.com) .  
+I have a question:  
+Why do you need to bind, in the constructor function, a method to the object itself, when that method uses the *this* keyword?  
+If the method is from a different class component instance, I understand why:  
+When that happens, the *this* would refer to the instance and not the the source class component, that's why its needed to bind the method to the source class component.
+
+But, if the method is from the same class component why do I need that *this* refers to the object itself?  
+
+
+I hope my text was not confusing.  
+
+
+Thanks a lot
+## [11][How to save,edit and update user profile information in Reactjs with Nodejs](https://www.reddit.com/r/reactjs/comments/jayw0w/how_to_saveedit_and_update_user_profile/)
+- url: https://www.reddit.com/r/reactjs/comments/jayw0w/how_to_saveedit_and_update_user_profile/
+---
+ This is the user profile page: [User Page](https://codesandbox.io/s/gifted-varahamihira-dbhco?file=/src/UserInfo.js)
+
+I would like as soon as a user registers all fields are "readOnly",  then the user clicks the "Edit" button and the fields become editable.  While the fields are editable, the "Edit" button changes to "Save". Once  the user has filled out the form, he clicks on "Save", the data is sent  to the database and becomes visible in "readOnly". Once the data has been saved, from the second "Edit" onwards the "Save"  button will have to update without creating new elements in the  database.
+
+First time: Edit--&gt;Input Data--&gt; Save   
+ From second time: Edit--&gt;Change Data--&gt;Update
+
+I know maybe it's a bit too much but I can't solve it myself. The back-end side works, but obviously every time I send the data a new line is created in the table.
+## [12][I want to create a video editor along with some text animations](https://www.reddit.com/r/reactjs/comments/jayudf/i_want_to_create_a_video_editor_along_with_some/)
+- url: https://www.reddit.com/r/reactjs/comments/jayudf/i_want_to_create_a_video_editor_along_with_some/
+---
+hey guys,  
+I want to create a video editor in ReactJS.  
+any recommendation about the libraries I need to use?  
+if anyone had already created please allow me to fork.  
+I had found these libraries.  any reviews about these?
+
+1: PixiJS  
+2: D3JS  
+3: FabricJS
+
 &amp;#x200B;
-## [8][I curated all the remote job openings from Hacker News who is hiring - October](https://www.reddit.com/r/reactjs/comments/jadekz/i_curated_all_the_remote_job_openings_from_hacker/)
-- url: https://www.reddit.com/r/reactjs/comments/jadekz/i_curated_all_the_remote_job_openings_from_hacker/
----
-Here I would like to share more than 480 remote jobs that I've curated from Hacker News Who is hiring thread. All these are 100% remote jobs not just allowed to work from home during COVID-19. These are 100% remote jobs and will continue to follow that after the covid.
 
-https://remoteleaf.com/whoishiring.   
-
-Note: Select "javascript" in the skills filter to view all the javascript jobs
-
-✅ 100% remote full-time jobs.    
-✅ Each and every job is manually curated and verified. Spent more than 14 hours for this.
-## [9][Fixing lazyload images with React Server-Side Render](https://www.reddit.com/r/reactjs/comments/jacpvf/fixing_lazyload_images_with_react_serverside/)
-- url: https://hieunc.com/posts/6fNu3@O9xp-fixing-lazyload-images-with-react-server-side-render
----
-
-## [10][Taming network with redux-requests, part 1 - Introduction](https://www.reddit.com/r/reactjs/comments/jac5k9/taming_network_with_reduxrequests_part_1/)
-- url: https://klis87.hashnode.dev/taming-network-with-redux-requests-part-1-introduction
----
-
-## [11][Best way to render data to client from server by visiting url with Apollo Client / GraphQL](https://www.reddit.com/r/reactjs/comments/jabsu1/best_way_to_render_data_to_client_from_server_by/)
-- url: https://www.reddit.com/r/reactjs/comments/jabsu1/best_way_to_render_data_to_client_from_server_by/
----
-So I'm currently integrating the Stripe API with my app and I have reached the stage where I need to [Create a SetupIntent](https://stripe.com/docs/payments/save-and-reuse#web-create-setup-intent) which returns a `client_id` object from the server to the client.
-
-Since I'm using NextJS w/ Apollo Client which (query and mutation resolvers) alongside GraphQL, I don't believe the example on the Stripe docs applies in my case. Maybe someone could explain why, but for example, the sample code they give is this:
-
-    app.engine('.hbs', expressHandlebars({ extname: '.hbs' }));
-    app.set('view engine', '.hbs');
-    app.set('views', './views');
-    
-    app.get('/card-wallet', async (req, res) =&gt; {
-      const intent =  await stripe.setupIntents.create({
-        customer: customer.id,
-      });
-      res.render('card_wallet', { client_secret: intent.client_secret });
-    });
-    
-    app.listen(3000, () =&gt; {
-      console.log('Running on port 3000');
-    });
-
-And we're particularly interested in this part, since the templating engine does not apply in my case:
-
-    app.get('/card-wallet', async (req, res) =&gt; {
-      const intent =  await stripe.setupIntents.create({
-        customer: customer.id,
-      });
-      res.render('card_wallet', { client_secret: intent.client_secret });
-    });
-
-How would I implement this with Queries / Mutations? Is it even possible to implement this with an Apollo Client set up?
-## [12][how can I apply a search filter to my current redux store?](https://www.reddit.com/r/reactjs/comments/jabfm6/how_can_i_apply_a_search_filter_to_my_current/)
-- url: https://www.reddit.com/r/reactjs/comments/jabfm6/how_can_i_apply_a_search_filter_to_my_current/
----
-hey guys I have a &lt;NoteList /&gt; component that renders the list of my notes from the store. I want to maintain a search input that can filter the existing data in the store based on the search input. I read some articles on defining action filters but none of them made sense to me, can you guys help?
+Cheers.

@@ -1,83 +1,135 @@
 # golang
-## [1][Building a Mapping Language with Parser Combinators](https://www.reddit.com/r/golang/comments/jaanek/building_a_mapping_language_with_parser/)
-- url: https://youtu.be/JiViND-bpmw
+## [1][Teles is a small logger for Go. Logging in telegram bot, log file, terminal.](https://www.reddit.com/r/golang/comments/jays0n/teles_is_a_small_logger_for_go_logging_in/)
+- url: https://github.com/4FR4KO-POVELECKO/teles
 ---
 
-## [2][Canada's COVID tracking server is written in go](https://www.reddit.com/r/golang/comments/j9s1gy/canadas_covid_tracking_server_is_written_in_go/)
-- url: https://github.com/cds-snc/covid-alert-server
+## [2][Machine: A zero dependency library for managed goroutines, inspired by errgroup.Group.](https://www.reddit.com/r/golang/comments/jaqypa/machine_a_zero_dependency_library_for_managed/)
+- url: https://www.reddit.com/r/golang/comments/jaqypa/machine_a_zero_dependency_library_for_managed/
+---
+- GitHub: https://github.com/autom8ter/machine
+- GoDoc: https://pkg.go.dev/github.com/autom8ter/machine
+- import "github.com/autom8ter/machine"
+
+
+Machine is a zero dependency runtime for managed goroutines. It is inspired by errgroup.Group with extra bells &amp; whistles:
+
+- throttled/max goroutines
+
+- global context cancellation propagation across all goroutines or groups of goroutines(sub machines)
+
+- singe goroutine context cancellation propagation
+
+- goroutines are each given an ID, tags, and record metrics for monitoring/debugging(see machine.Stats)
+
+- pluggable publish/subscribe interface for passing messages between goroutines. An in memory implementation is provided by default, but may be swapped out with redis/nats when scaling horizontally
+
+- middlewares for wrapping/decorating functions(cron, panic-recovery, logging, etc)
+
+- "sub" machines for creating a dependency tree between groups of goroutines
+
+- goroutine leak prevention- machine.Wait() will not unblock until all goroutines exit
+
+- greater than 80% test coverage
+
+- familiar interface for executing goroutines: machine.Go(func(r Routine))
+
+Visit https://github.com/autom8ter/machine/blob/master/examples/README.md for examples that are easy to grok(under &lt; 500 lines of code)
+- gRPC Bidirectional Chat Stream Server
+- TCP Reverse Proxy
+- Concurrent Cron Job Server
+
+
+Roadmap:
+- Prometheus middleware for collecting fine-grained metrics on goroutines
+- Opentracing middleware for tracing context propagation and routine execution
+- Redis pubsub implementation
+- Zap logger middleware for logging when routines start/finish
+- Nats pubsub implementation
+- Pluggable, concurrency, safe Directed Acyclical Graph storage for storing business logic
+- Policies on what routines channels Routines can publish/subscribe to
+## [3][ew: Run stuff everywhere](https://www.reddit.com/r/golang/comments/jazfnq/ew_run_stuff_everywhere/)
+- url: https://www.reddit.com/r/golang/comments/jazfnq/ew_run_stuff_everywhere/
+---
+Hi!
+
+As I just tagged the official v1.0.0, I thought I would post it here:
+
+[https://github.com/kernle32dll/ew](https://github.com/kernle32dll/ew)
+
+ew is inspired by [gr](https://github.com/mixu/gr), and basically allows to execute any command on a tagged bunch of folders.
+
+For example, I automated my go dependency updates with this, which now just boil down to `ew @matag sh -c 'go get -u &amp;&amp; go mod tidy'`. It also includes a shorthand to get an overview of your git repositories via `ew status`.
+
+Feedback is appreciated!
+## [4][Calling a Rust function from Go](https://www.reddit.com/r/golang/comments/jaw47e/calling_a_rust_function_from_go/)
+- url: https://www.reddit.com/r/golang/comments/jaw47e/calling_a_rust_function_from_go/
+---
+How to call a Rust function from Go?
+
+Are there libraries that are ready for production the most?
+## [5][panicwatch: a panicwrap alternative [feedback appreciated]](https://www.reddit.com/r/golang/comments/jaxmpm/panicwatch_a_panicwrap_alternative_feedback/)
+- url: https://www.reddit.com/r/golang/comments/jaxmpm/panicwatch_a_panicwrap_alternative_feedback/
+---
+github: [https://github.com/grongor/panicwatch](https://github.com/grongor/panicwatch)
+
+I created this package because I didn't like the idea that my actual application runs in the background, and the processes that I launched is only a proxy for my application. It is probably perfectly fine, I just didn't like it. So this library achieves the same goal while keeping the application "in front" by running the "monitoring process" in the background. The monitoring process reads stderr of your application (using some dup magic; also solved for Windows, Arm,...) and scans it for panics. When it finds one, it calls the configured callback and exits. If there are any errors in the watcher process, or if the watcher process dies, configurable callbacks are called so that you can handle the situation as you like.
+
+It was more of a challenge than a need for some solution...but hey, it works nicely :)
+
+I'd appreciate any feedback and comments. Thanks!
+
+**tl;dr:**
+
+* achieves the same goal as panicwrap
+* instead of being a proxy, it spawns background process that does the monitoring
+* works on *most* platforms/architectures, including Linux, Windows, and Arm
+## [6][Serverless, Zero-Trust SSH on Microsoft Azure](https://www.reddit.com/r/golang/comments/jaxat0/serverless_zerotrust_ssh_on_microsoft_azure/)
+- url: https://github.com/ThalesGroup/sshizzle
 ---
 
-## [3][The privacy layer for github.com/facebook/ent is open-source now](https://www.reddit.com/r/golang/comments/jac42q/the_privacy_layer_for_githubcomfacebookent_is/)
-- url: https://www.reddit.com/r/golang/comments/jac42q/the_privacy_layer_for_githubcomfacebookent_is/
----
-Hey guys, 2 weeks ago we open-sourced our [GraphQL with ent](https://www.reddit.com/r/golang/comments/j2ljgh/ent_gqlgen_3/), and today, I'm super happy to share that we open-sourced our privacy layer (authorization) for ent. 
-
-One of the main advantages of the privacy layer is that, you write the privacy policy once (in the schema), and it is always evaluated. No matter where queries and mutations are performed in your codebase, it will always go through the privacy layer.
-
-The docs is available in [entgo.io/docs/privacy](https://entgo.io/docs/privacy), and you're more than welcome to go over it and share with me your feedback in the issue tracker ([github.com/facebook/ent](https://github.com/facebook/ent/pulls)).
-## [4][A Go unikernel running on x86 bare metal](https://www.reddit.com/r/golang/comments/j9u10g/a_go_unikernel_running_on_x86_bare_metal/)
-- url: https://www.reddit.com/r/golang/comments/j9u10g/a_go_unikernel_running_on_x86_bare_metal/
----
-[https://github.com/icexin/eggos](https://github.com/icexin/eggos)
-
-&amp;#x200B;
-
-Run a single Go applications on x86 bare metal, except for some assembly and C, most of the code is written in Go, support most features of Go (like GC, goroutine) and standard libraries, also come with a network stack that can run most `net` based libraries.
-
-Some snapshots
-
-A javascript interpreter supporting http GET
-
-[JS](https://i.redd.it/utsie4bvwos51.gif)
-
-An NES emulator
-
-[NES](https://i.redd.it/f3zurxozwos51.gif)
-
-&amp;#x200B;
-## [5][How to improve as a Golang Developer?](https://www.reddit.com/r/golang/comments/ja27c5/how_to_improve_as_a_golang_developer/)
-- url: https://www.reddit.com/r/golang/comments/ja27c5/how_to_improve_as_a_golang_developer/
----
-**tl;dr: What concepts do I need to master to become an industry-ready, hireable Golang Software Developer.**  
-
-
-Hello nice people of r/golang, hope you're all safe and doing well. I've been for some time now a member of this community, though not very active, I'm always looking around.   
-
-
-This year as many of you know have been very hard for everybody, and I think I've hit a weird point in my career. After being a freelancer mostly developing in Golang for the last two years I've come to the conclusion that probably I won't be able to complete my Systems Engineering degree (Computer Science department) and will now have to think about going forward on my career without a degree. Golang is a programming language that I really enjoy programming in, and I've put a lot of effort into learning and improving my skills.   
-
-
-I can hold my ground with most of the builtin constructs, concepts, and packages. I know how to work and group goroutines, set up web services, use third-party APIs, use most of the os-related packages, and so on.  
-
-
-I guess that my question is, what do I need to learn to become an industry-ready software developer assuming that I know most of the essentials on CS? (Algorithms and Data Structures, some OS-concepts, etc)
-## [6][How we decreased one of our APIs response time by 87% and used fewer resources](https://www.reddit.com/r/golang/comments/jadhsq/how_we_decreased_one_of_our_apis_response_time_by/)
+## [7][How we decreased one of our APIs response time by 87% and used fewer resources](https://www.reddit.com/r/golang/comments/jadhsq/how_we_decreased_one_of_our_apis_response_time_by/)
 - url: https://labs.armut.com/how-we-decreased-one-of-our-apis-response-time-by-87-and-used-less-resources-ce847e83308
 ---
 
-## [7][Part 3 of my tutorial on Pythons SimpleHTTPServer in go - This time Features!!!!!](https://www.reddit.com/r/golang/comments/jad95m/part_3_of_my_tutorial_on_pythons_simplehttpserver/)
-- url: https://hesec.de/posts/goshs-new-features/
+## [8][[SERIOUS] Question: ORM or Not? What do you prefer?](https://www.reddit.com/r/golang/comments/jaryoo/serious_question_orm_or_not_what_do_you_prefer/)
+- url: https://www.reddit.com/r/golang/comments/jaryoo/serious_question_orm_or_not_what_do_you_prefer/
 ---
+Coming from Django and Grails.. I am struggling to find a mature ORM in Go. What do you use? Why do you like it? I have tried a few but they all seem to lack something. 
 
-## [8][Is there any problem-solving platforms that will allow me to go deep in Go?](https://www.reddit.com/r/golang/comments/ja7v67/is_there_any_problemsolving_platforms_that_will/)
-- url: https://www.reddit.com/r/golang/comments/ja7v67/is_there_any_problemsolving_platforms_that_will/
+My Use case is using this in a REST API with some business logic thrown in. 
+
+Please don't bother talking about whether an ORM is actually possible in Go or not.
+## [9][Working with Date and Time in Golang](https://www.reddit.com/r/golang/comments/jazhye/working_with_date_and_time_in_golang/)
+- url: https://www.reddit.com/r/golang/comments/jazhye/working_with_date_and_time_in_golang/
 ---
-Most of the problem-solving sites allow you to solve the problems in various languages and Go is one of them in most platforms. The problem is these problems, in most cases doesn't require where Go shines, e.g. Concurrency. Is there any problem-solving site where I can work on my Go-specific skills?
-## [9][I need zalgo regex for yagpdb. Discord bot. Golang.](https://www.reddit.com/r/golang/comments/jaab8n/i_need_zalgo_regex_for_yagpdb_discord_bot_golang/)
-- url: https://www.reddit.com/r/golang/comments/jaab8n/i_need_zalgo_regex_for_yagpdb_discord_bot_golang/
+&amp;#x200B;
+
+[mohitkhare.com](https://preview.redd.it/o6qnh5wmx1t51.png?width=670&amp;format=png&amp;auto=webp&amp;s=a879e9d7a083e94ce9339c7216b1a01a8bf81561)
+
+Hey Gophers 👋
+
+Wrote a piece on how to work with Date and Time in Golang.
+
+I had to search for this topic again and again. Finally wrote a post to create a complete guide to date and time in Go. It covers the following topics -
+
+* Fetching epoch timestamps
+* Time in multiple timezones
+* Modifying and working with date
+
+📗 Read: [https://www.mohitkhare.com/blog/date-time-golang/](https://www.mohitkhare.com/blog/date-time-golang/)
+
+Do share if you have some feedbacks 🙂
+## [10][I use go for about 5 years now and I still haven't needed generics. What's wrong with me?](https://www.reddit.com/r/golang/comments/janp4h/i_use_go_for_about_5_years_now_and_i_still_havent/)
+- url: https://www.reddit.com/r/golang/comments/janp4h/i_use_go_for_about_5_years_now_and_i_still_havent/
 ---
-I want to know what is regex for zalgo ?  I want to use in yagpdb bot automod v2.
+I can't understand people saying that lack of generics is a big go disadvantage.
 
-Zalgo like this - t̡̖̳h͕̭͎i̦̳͇s̝͚͉ ̶̺̬i͖̪̝s͉̯͙ ̷̼̰a͕̫̯ ̦̩̻e̝̖͈x̣̫̰ā̳͙̹mͩ́̂p̘̮̰lͨͯ͛ȅ͔̹̳ ̢͇̌ö̳̮͎f͚̰̀ ̳̗͊z͇̑̔a̷̞ͧl̘̝̥g̛̣̫o̳͐̔ ̹̹̙t̵̬̑ẽ̡̪̼x̨̖̍t̨̗̭
+I can imagine couple of tasks where generics are useful but not unavoidable: image processing, intensive math computations.
 
+What tasks are really require generics where it is not "usual way of solving it" but the only (almost) option?
 
-I have a coding but it's not working on yagpdb.
-Plz share me a coding to solve my problem.
-Thanks in advance.
+*-- Added day later --*
 
-This is 👇🏼 coding for zalgo. I got it from Google search. 
-/([^\u0009-\u02b7\u2000-\u20bf\u2122\u0308]|(?![^aeiouy])\u0308)/gm
-## [10][Bit – A modernized Git CLI written in Go](https://www.reddit.com/r/golang/comments/j9tgpw/bit_a_modernized_git_cli_written_in_go/)
-- url: https://github.com/chriswalz/bit
----
+In the next morning I remembered how I implemented skiplist on interfaces and used `sed` to substitute interface{} to a basic\_type. That is definitely the case.
 
+I'm obviously just not meeting such challenges where generics are needed.

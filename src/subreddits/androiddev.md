@@ -31,105 +31,85 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][[OPEN-SOURCE] Safe Dot - iOS 14 privacy in Android](https://www.reddit.com/r/androiddev/comments/jabro9/opensource_safe_dot_ios_14_privacy_in_android/)
-- url: https://www.reddit.com/r/androiddev/comments/jabro9/opensource_safe_dot_ios_14_privacy_in_android/
+## [3][Anyone using Nav component with Compose](https://www.reddit.com/r/androiddev/comments/jas77r/anyone_using_nav_component_with_compose/)
+- url: https://www.reddit.com/r/androiddev/comments/jas77r/anyone_using_nav_component_with_compose/
 ---
-I've recently built an app that mimics the iOS 14's privacy feature which alerts the user when third-party app uses your device camera or microphone.
-
-Link to Google Play : https://play.google.com/store/apps/details?id=com.aravi.dot
-
-So, the thing is I'm not really good at programming yet. I can build things and make them work but I can't make them efficient and 100% bug free. So I need help from you guys. 
-
-I've made the source code open-source feel free to contribute to the app even it can be a translation to your language it really is helpful.
-
-Here is the link to the repo : https://github.com/kamaravichow/safe-dot-android
-
-If you have any suggestions or found bugs in the app feel free to use issues section in the repo or the comments of this post. I'll be happy to respond 😃.
-## [4][Is it really that difficult to get app downloads as a new developer on the Play Store?](https://www.reddit.com/r/androiddev/comments/ja9378/is_it_really_that_difficult_to_get_app_downloads/)
-- url: https://www.reddit.com/r/androiddev/comments/ja9378/is_it_really_that_difficult_to_get_app_downloads/
----
-I have heard many developers say that it is very difficult to get downloads on the Google Play store. Especially when people are downloading less apps and keeping fewer apps on their devices, how has the struggle been for new developers?
-
-I am curious to know this because I am currently developing an app and want to be aware of all of this. I would love to hear thoughts from other Android developers! Thank you for all those who respond!
-## [5][Android Studio 4.1 now available with new features including Database Inspector, Native Memory Profiler, Hilt/Dagger Navigation Support and TensorFlow Lite Support](https://www.reddit.com/r/androiddev/comments/j9uv1w/android_studio_41_now_available_with_new_features/)
-- url: https://android-developers.googleblog.com/2020/10/android-studio-41.html
+How was your experience? What are the cons in current state?
+## [4][Create moving windows that stay on top of other apps on Android](https://www.reddit.com/r/androiddev/comments/jazvzc/create_moving_windows_that_stay_on_top_of_other/)
+- url: https://dev.to/localazy/5-floating-windows-on-android-moving-window-1192
 ---
 
-## [6][Animating photos using OpenGL ES](https://www.reddit.com/r/androiddev/comments/jacvar/animating_photos_using_opengl_es/)
-- url: https://www.reddit.com/r/androiddev/comments/jacvar/animating_photos_using_opengl_es/
+## [5][Ideal way to store favourites/bookmarked records in Database](https://www.reddit.com/r/androiddev/comments/jazcra/ideal_way_to_store_favouritesbookmarked_records/)
+- url: https://www.reddit.com/r/androiddev/comments/jazcra/ideal_way_to_store_favouritesbookmarked_records/
 ---
-I made an app which uses OpenGL ES fragment shaders and PyTorch foreground object segmentation to create live photo filters.
+Hey guys,
 
-This is my first project working with the GPU.
+Calling all the database enthusiasts for help.
 
-Some interesting tech details:
+What should be the ideal strategy to store the favourites/bookmarked records..
 
-\-The color matching when using live background is achieved by exporting color lookup tables (LUTs) from photoshop and applying them by a custom fragment shader.
+Let's consider I have Employe table (Id, name, salary), if user selects emp101 as favourite 
+Should that be stored as record in Favourites table (storing id of the emp) or we should have a column in emp table it self.
 
-\-The foreground object segmentation model is U2Net
-
-\-Some shaders are from Shadertoy (pretty large collection of fragment shaders) 
-
-https://reddit.com/link/jacvar/video/l2vuqj3t0vs51/player
-## [7][Has anyone figured out the secure implementation of HostNameVerifier ?](https://www.reddit.com/r/androiddev/comments/jackpy/has_anyone_figured_out_the_secure_implementation/)
-- url: https://www.reddit.com/r/androiddev/comments/jackpy/has_anyone_figured_out_the_secure_implementation/
+Which strategy is good to get all employees who are marked as fav or not using single query.
+## [6][How to perform Android development for two companies?](https://www.reddit.com/r/androiddev/comments/jaycbn/how_to_perform_android_development_for_two/)
+- url: https://www.reddit.com/r/androiddev/comments/jaycbn/how_to_perform_android_development_for_two/
 ---
-This is my current implementation:
+I have my own startup, under which I would like to publish Android apps and additionally I would like to publish applications on behalf of another company, as a freelancer. Can I (and how can I) have two Google Android accounts? Should I create two business gmails? Or can I create everything from my personal gmail?
 
-`private HostnameVerifier getHostnameVerifier(final URL url) {`
+Googled information is controversal. Most often people ask abount account ban, which is not interesting to me
+## [7][What can I realistically expect to be asked in a job interview for an Entry Level Android Developer position?](https://www.reddit.com/r/androiddev/comments/jahp8v/what_can_i_realistically_expect_to_be_asked_in_a/)
+- url: https://www.reddit.com/r/androiddev/comments/jahp8v/what_can_i_realistically_expect_to_be_asked_in_a/
+---
+  
 
-`return new HostnameVerifier() {`
+Hi all,
 
-`public boolean verify(String hostname, SSLSession session) {`
+Basically, the title says it all. I find it frustrating reading through interview questions on the internet because I feel like most of them seem to assume you’re applying to FAANG (or similar) companies for some senior role. This frustrates me because I end up feeling inadequate and unprepared reading things like, “You’re going to have to do 7 interviews consisting of phone/in-person/whiteboarding/pair programming” or “I went to X interviews and only got asked these complex algo questions, nothing Android specific”.
 
-`String host_name = "examplesomething.com"`
+For some context I’m a recently graduated CS major from the US without any professional SDev job experience. I’ve only been doing Android Dev for a little over a year with an app on the Play Store and some smaller personal projects, but I feel like I have a solid grasp on almost everything needed to make an Android app (except for more complex libraries like RxJava). My main issue is with algorithmic questions. I cannot for the life of me get good at them even as I spend hours on LeetCode or HackerRank. I can answer simple questions but when things get complex, I struggle to grasp them, which makes me concerned for job interviews where algo questions seem to be favored instead of job specific questions, like Android Development, which I can answer.
 
-`if(url.getHost().equals(host_name) &amp;&amp; session.getPeerHost().equals(host_name)){`
+So basically, my question is what interview process can I reasonably be expected to go through being new for an entry level Android dev position? What type of questions would I be asked? Could I expect interviewers to "go easy on me" in a sense because it's an entry level position? I would really appreciate answers from entry level Android Devs who’ve gone through this process or interviewers who’ve led the process. I would also appreciate any online resources that accurately describe the Entry level process. Thanks!
+## [8][Has anyone developed a 120fps video recorder?](https://www.reddit.com/r/androiddev/comments/jb0exf/has_anyone_developed_a_120fps_video_recorder/)
+- url: https://www.reddit.com/r/androiddev/comments/jb0exf/has_anyone_developed_a_120fps_video_recorder/
+---
+My phone is capable of video up to 480fps. But this is only in slowmo mode and doesn't record audio. Has anyone developed an app that will record 120fps video with audio too?
 
-`return true;`
+My TV is 120hz so it would be cool to be able to watch 120hz video on that with full audio.
+## [9][ConstraintLayout issues in v 2.0.2](https://www.reddit.com/r/androiddev/comments/jb0e6v/constraintlayout_issues_in_v_202/)
+- url: https://www.reddit.com/r/androiddev/comments/jb0e6v/constraintlayout_issues_in_v_202/
+---
+Is it just me or is anyone else's &lt;include&gt; xml ViewDataBinding with &lt;data&gt; variables is not displaying inside ConstraintLayout after updating to v 2.0.2.
 
-`}else{`
-
-`return false;`
-
-`}`
-
-`}`
-
-`};`
+Also Android Studio is not reading the children id's of this same &lt;include&gt; which I guess might have something to do with it not displaying, but this has nothing to do with ConstraintLayout, rather with the IDE latest update.
 
 &amp;#x200B;
 
-Even the official google support page [here](https://support.google.com/faqs/answer/7188426) gives the same advice:
-
-If you are using the [HostnameVerifier](https://developer.android.com/reference/javax/net/ssl/HostnameVerifier.html) interface, change the implementation of the [verify](https://developer.android.com/reference/javax/net/ssl/HostnameVerifier.html#verify(java.lang.String,%20javax.net.ssl.SSLSession)) method to return false whenever the hostname of the server does not meet your expectations.
+After reversing back to previous version of constraintLayout, the IDE is still not able to read the children of the &lt;include&gt; xml but it compiles without problem nonetheless, and the view is able to be drawn again.
 
 &amp;#x200B;
 
-Even then i still get insecure implementation of HostnameVerifier Error. Any ideas why? Thank you
-## [8][A Look Into the Future by Roman Elizarov](https://www.reddit.com/r/androiddev/comments/j9xujt/a_look_into_the_future_by_roman_elizarov/)
-- url: https://youtu.be/0FF19HJDqMo
+[https://issuetracker.google.com/issues/170720908](https://issuetracker.google.com/issues/170720908)
+## [10][Do I need still PowerManager.WakeLock?](https://www.reddit.com/r/androiddev/comments/jb0bgt/do_i_need_still_powermanagerwakelock/)
+- url: https://www.reddit.com/r/androiddev/comments/jb0bgt/do_i_need_still_powermanagerwakelock/
 ---
+Hi,
 
-## [9][Released my first game](https://www.reddit.com/r/androiddev/comments/jad1hf/released_my_first_game/)
-- url: https://www.reddit.com/r/androiddev/comments/jad1hf/released_my_first_game/
+I was using AlarmManager for scheduled network connections in background and I was using PowerManager.WakeLock before connect internet to wake up device. I changed it to WorkManager. Do I need still PowerManager.WakeLock to wake up device before connect to internet?
+## [11][Testing tools for Kotlin. Quick recap in 2020 on my blog.](https://www.reddit.com/r/androiddev/comments/jaztls/testing_tools_for_kotlin_quick_recap_in_2020_on/)
+- url: https://www.reddit.com/r/androiddev/comments/jaztls/testing_tools_for_kotlin_quick_recap_in_2020_on/
 ---
-https://play.google.com/store/apps/details?id=com.vishwah.FlatLandInChaos
-
-Released my first game on Play store please play my game and leave review , and I needed thoughts and suggestions
-## [10][Storybook UI component explorer but for Android?](https://www.reddit.com/r/androiddev/comments/jacrii/storybook_ui_component_explorer_but_for_android/)
-- url: https://www.reddit.com/r/androiddev/comments/jacrii/storybook_ui_component_explorer_but_for_android/
+Hey!  
+Are you up to date with testing tools in Kotlin?   
+I wrote a quick recap from my Android perspective:  
+[https://www.thecodeside.com/2020/10/13/testing-tools-for-kotlin-quick-recap-in-2020/](https://www.thecodeside.com/2020/10/13/testing-tools-for-kotlin-quick-recap-in-2020/)
+## [12][Help with making battery widget (noob here)](https://www.reddit.com/r/androiddev/comments/jaznhc/help_with_making_battery_widget_noob_here/)
+- url: https://www.reddit.com/r/androiddev/comments/jaznhc/help_with_making_battery_widget_noob_here/
 ---
-I'm looking to visualize my Android component library, and have used a solution called [Storybook JS](https://storybook.js.org/) in the past for Javascript component libraries. Is there a similar solution for Android? Specifically Kotlin.
-## [11][How to get back into shared Play Console account?](https://www.reddit.com/r/androiddev/comments/jac4gm/how_to_get_back_into_shared_play_console_account/)
-- url: https://www.reddit.com/r/androiddev/comments/jac4gm/how_to_get_back_into_shared_play_console_account/
----
-A few months ago an organization invited me into their account to deploy an App, I logged in and created some of the info for the App, images etc. 
+It has been a while that I was making an app but I got stuck a lot at the core function so I stopped working on it for months. 
 
-Today I logged back into my console account and cant find how to get back into the other shared account, would I receive any notification if I get removed or access expires?
+Now, I can't find clear and direct information on how to do this anywhere else, so I hope I get help here. 
 
-On the top right profile/dropdown thing there is "manage dev accounts" but they only lead to a screen to select my own gmail accounts.
-## [12][Replacing Mocks by Ryan Harter](https://www.reddit.com/r/androiddev/comments/j9wq0j/replacing_mocks_by_ryan_harter/)
-- url: https://ryanharter.com/blog/2020/06/replacing-mocks/
----
+All I need in order to finish is simply setup the simple function (in my mind at least) of "battery pecentage (number%) = this_image.png", like "10% = show 10.png, 20% = show 20.png" etc. 
 
+I hope to get assistance here on how to make this work. Thanks.

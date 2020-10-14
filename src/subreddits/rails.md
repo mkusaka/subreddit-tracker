@@ -19,7 +19,85 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Need help: Rails credentials in Github actions pipeline](https://www.reddit.com/r/rails/comments/jaa7vc/need_help_rails_credentials_in_github_actions/)
+## [2][Watch me build a new Ruby/Rails community in public 📹](https://www.reddit.com/r/rails/comments/jaoh8a/watch_me_build_a_new_rubyrails_community_in_public/)
+- url: https://www.reddit.com/r/rails/comments/jaoh8a/watch_me_build_a_new_rubyrails_community_in_public/
+---
+Hey all,
+
+I've been wanting to see a place/resource build up more hype about Rails and Ruby again like the good ole' days so I'm building one in public.
+
+Some background about what exactly I plan on building is here: [https://web-crunch.com/posts/lets-build-for-ruby-and-rails-developers](https://web-crunch.com/posts/lets-build-for-ruby-and-rails-developers)
+
+I plan to commit to a few hours of recording my progress a week for an initial MVP of the job board portion of the app. Once that's complete I'll do a tentative soft launch and continue adding more of the community features. 
+
+#### Primary goals:
+
+- Build some buzz around Ruby / Rails.
+- Bring more Ruby and Rails developers together.
+- Have a centralized place to find Ruby and Rails jobs.
+- Showcase profiles developers can use to get hired.
+- Have a community forum for all things Ruby and Rails + more web/programming topics.
+- Maybe make some side $$
+
+The ongoing YouTube playlist is here: [https://www.youtube.com/playlist?list=PL01nNIgQ4uxOfChhPf3jxq8H6fUWnCeLC](https://www.youtube.com/playlist?list=PL01nNIgQ4uxOfChhPf3jxq8H6fUWnCeLC)
+
+The ongoing collection of articles/videos is here:
+[https://web-crunch.com/collections/lets-build-for-ruby-and-rails-developers](https://web-crunch.com/collections/lets-build-for-ruby-and-rails-developers)
+
+The buzz around the Laravel community is inspiring and is a big driver for me to take on this project. 
+
+It's worth noting that I'm not a super-advanced Rails developer like I'm sure many of you are but I believe I know enough to build something such as this (no matter how scrappy to start). Feedback and pointers are welcomed as I'm also using this as a learning experience and potential to earn some side income. 
+
+**TL;DR;** I'm building a community and job board for Ruby/Rails developers in public. Maybe follow along if you're interested?
+## [3][Webpacker Issues](https://www.reddit.com/r/rails/comments/jaxxx0/webpacker_issues/)
+- url: https://www.reddit.com/r/rails/comments/jaxxx0/webpacker_issues/
+---
+Hi, just a stressed out dev trying to get some JS to work through Webpacker. The error i'm getting is that a method is undefined. I'm trying to install/compile a third party js libary (masonry) into Webpacker and i'm having an absolute nightmare with it. I've installed the package I want through Yarn and I can see that it's the correct one as when I do 'yarn list', I can see it. Great, so we have it installed and can see in the package.json that it's installed but how do I know what I need to require/import? Surely it should just be a matter of installing it through a package managers (bower, npm or yarn) and then just  requiring the file in the app/javascript/packs/application.js using the name of the file in the package.json?
+
+Is there something i'm missing? I've looked everywhere on how to do this but every article I go to seems to say something else...
+
+**Update**: SOLVED. Issue was I wasn't referencing the file correctly within the application.js file. It's clicked with me now and I think I now understand how it all links up together. To my understanding, whenever you 'require' a file in the application.js, it looks within the .node\_modules folder which I did not know about. I got the solution by looking at my yarn.lock file to see the name of the folder and then looked in the .node\_modules/#{directory} so when I put 'require("#{directory}"), it thought it was the directory than the file. It just confused me as some of the other requires (actiontext, actionstorage etc) didn't reference their files, it references the directory to include (Tell me if i'm wrong).
+## [4][Minitest vs RSpec for Rails Development](https://www.reddit.com/r/rails/comments/jay6xk/minitest_vs_rspec_for_rails_development/)
+- url: https://www.reddit.com/r/rails/comments/jay6xk/minitest_vs_rspec_for_rails_development/
+---
+Hi guys. Recently completed a bootcamp, covering a lot of Ruby on Rails and using RSpec as the testing framework from this. I also see from looking online a lot of people set up RSpec as their framework for Rails `rails new -T` without minitest (the default)
+
+  
+What are peoples opinions on using Minitest, as I have been approached to interview for a role which uses it and from looking online it seems inferior in many ways. I am trying to get it set up on my rails app (just to play with it) and cant seem to find a good coverage solution (like simplecov) as I found it to be a problem setting this up with Minitest (with the little documentation on it also)
+
+So yeah just a question, what do you guys use to test Rails apps and if its minitest what resources and coverage do you use!
+## [5][ActiveStorage query optionals](https://www.reddit.com/r/rails/comments/jazt1a/activestorage_query_optionals/)
+- url: https://www.reddit.com/r/rails/comments/jazt1a/activestorage_query_optionals/
+---
+Hi guys, I was wondering if AS has building queries for doing joins. That way, I would avoiding the n+1 query problem. E.g: In the example bellow, I fetched all the attachments for 'files\_attached' (query 1) and later I display each file's filename (the 3 blob queries for 3 files). 
+
+    ##query 1
+    ActiveStorage::Attachment Load (0.3ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3
+    
+    ## displaying filenames for each file fetched
+    ##query 2
+    ActiveStorage::Blob Load (0.2ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2
+    
+    ##query 3
+    ActiveStorage::Blob Load (0.2ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2
+    
+    ##query 4
+    ActiveStorage::Blob Load (0.2ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2
+
+I'm aware that I could make one single query using raw SQL, but I would like to avoid it if possible.
+## [6][What can a Noob put in his portfolio ?](https://www.reddit.com/r/rails/comments/jagmh4/what_can_a_noob_put_in_his_portfolio/)
+- url: https://www.reddit.com/r/rails/comments/jagmh4/what_can_a_noob_put_in_his_portfolio/
+---
+As the title said, i'm completely new to ruby/rails what i should put in my portfolio ? any ideas ?
+## [7][devise doesn't work after adding a new field](https://www.reddit.com/r/rails/comments/jaeea4/devise_doesnt_work_after_adding_a_new_field/)
+- url: https://www.reddit.com/r/rails/comments/jaeea4/devise_doesnt_work_after_adding_a_new_field/
+---
+Recently, I have created a project and I want people to be known by their usernames instead of emails. So, I added a migration like this:
+
+    rails g migration add_username_to_users username:string:uniq
+
+This is not a problematic thing, is it? By the way, now when I run my app and try to login, it says "invalid email, username or password" and doesn't log me in. What have I missed?
+## [8][Need help: Rails credentials in Github actions pipeline](https://www.reddit.com/r/rails/comments/jaa7vc/need_help_rails_credentials_in_github_actions/)
 - url: https://www.reddit.com/r/rails/comments/jaa7vc/need_help_rails_credentials_in_github_actions/
 ---
 Hello dear Rails community, I am relatively new to Rails and to learn I am building a new application which I want to deploy to my Ubuntu v-server via Github actions. I am really struggling with deploying the app since using this particular stack (Rails / Docker / Github actions) is new to me.
@@ -36,94 +114,64 @@ After studying on how to set up a Rails app in Github actions I have come really
     Caused by:
     OpenSSL::Cipher::CipherError: 
 
+I have /config/master.key and also /config/credentials/&lt;environment&gt;.key for each environment. I also added the master.key to the Github actions secrets and pass the master.key secret like this:
+
+    env:   
+      RAILS_ENV: test
+      RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+
+When I added my test environment key to the main.yml
+
+    env: 
+     RAILS_ENV: test
+     RAILS_TEST_KEY: ${{ secrets.RAILS_TEST_KEY }}
+
+as mentioned [here](https://blog.saeloun.com/2019/10/10/rails-6-adds-support-for-multi-environment-credentials.html#storing-encryption-key-in-environment-variables) i got the original error again:
+
+    rails aborted!
+    NoMethodError: Cannot load database configuration:
+    undefined method `[]' for nil:NilClass
+
 I hope I provided all the necessary info and I would appreciate any help I can get.
-## [3][Way to test your application under big traffic - jMeter](https://www.reddit.com/r/rails/comments/j9nrkh/way_to_test_your_application_under_big_traffic/)
+## [9][Best practices for ruby gems continuous integrate](https://www.reddit.com/r/rails/comments/jantiu/best_practices_for_ruby_gems_continuous_integrate/)
+- url: https://www.reddit.com/r/rails/comments/jantiu/best_practices_for_ruby_gems_continuous_integrate/
+---
+I have a project which is a Rails engine. It's built using Gitlab CI and published to a private on-premise gem repo. The gem repo is set to disallow re-deploy so that if the gem's version has not changed, the publish step will fail.  I'm wondering what some best practices are around this. Does it make sense to try to incorporate some sort of automation that auto-increments the minor or patch-level version numbers? Or should I do the opposite and have an earlier test that checks to see whether the current version is greater than the previous version?
+## [10][What do multiple conditions in the if for callback do?](https://www.reddit.com/r/rails/comments/jadz5n/what_do_multiple_conditions_in_the_if_for/)
+- url: https://www.reddit.com/r/rails/comments/jadz5n/what_do_multiple_conditions_in_the_if_for/
+---
+Suppose I have a user record like this   
+
+
+    class User &lt; ActiveRecord::Base
+      has_many :user_emails, dependent: :destroy
+      accepts_nested_attributes_for :user_emails, allow_destroy: true
+      before_update :call_main_update, if: [:first_condition, :second_condition]
+    
+      def first_condition
+        puts "FIRST CONDITION"
+        return true
+      end
+      
+      def second_condition
+        puts "SECOND CONDITION"
+        return true 
+      end
+    
+      def call_main_update
+        puts "MAIN UPDATE"
+      end
+    end
+
+is the above code equal to this? 
+
+    before_update :call_main_update, if: -&gt; { first_condition &amp;&amp; second_condition }
+
+From what I tested it out it looks like it. But I couldn't find any documentation here [https://guides.rubyonrails.org/active\_record\_callbacks.html](https://guides.rubyonrails.org/active_record_callbacks.html).   
+
+
+Could you help me out with what it actually does?
+## [11][Way to test your application under big traffic - jMeter](https://www.reddit.com/r/rails/comments/j9nrkh/way_to_test_your_application_under_big_traffic/)
 - url: https://www.reddit.com/r/rails/comments/j9nrkh/way_to_test_your_application_under_big_traffic/
 ---
 If you would like to check where are endpoints "to-be-improved" in your application, before users will encounter it during big traffic - there you have quick blogpost about our experience apache-jmeter [https://www.2n.pl/blog/apache-jmeter](https://www.2n.pl/blog/apache-jmeter) . Feedback / other approaches would be appreciated!
-## [4][DEPLOYED MY FIRST APPLICATION!! (That actually went right.)](https://www.reddit.com/r/rails/comments/j9mdqg/deployed_my_first_application_that_actually_went/)
-- url: https://www.reddit.com/r/rails/comments/j9mdqg/deployed_my_first_application_that_actually_went/
----
-Hey guys, just wanted to thank all the people of the Rails community for all the help and guidance y’all gave me over the past months.
-
-Finally deployed a working application and planning on keeping it up for a long time!
-
-Next mini project: Deploying Wordpress to a subdomain.
-
-Literally spent hours looking through documentation and it feels so satisfying. Goodnight! (It’s 3 AM and I have work in 4 hours. 😂)
-
-Thanks again! 🙏
-## [5][How to notify IE users that their browser is not supported?](https://www.reddit.com/r/rails/comments/j9qfug/how_to_notify_ie_users_that_their_browser_is_not/)
-- url: https://www.reddit.com/r/rails/comments/j9qfug/how_to_notify_ie_users_that_their_browser_is_not/
----
-My current project is not supporting IE at all. I've looked at progressive enhancement but IE is just so far behind modern browser that it doesn't even support important features for this project. Instead of having to deal with confused IE users that just see a broken site I want to automatically redirect them to a page that tells them to use a modern browser. Now I'm wondering what would be the best way to achieve this?
-
-I've thought of three ways so far and wanted to get some opinions on them:
-
-1. Look at useragent on rails side and use a redirect. Basically locking IE users out of the app completely because every request would be redirected.
-
-2. Look at useragent on frontend via JS and redirect that way. Same as the first solution but would instead be happening on the users device. This would mean rails wouldn't have to check the useragent on every request.
-
-3. Look at useragent on frontend via JS and show a notification. This would allow the user to remove the notification and "use" the application (even though IE users literally can't use it). Probably the user friendliest.
-
-Would love to get some opinions on those options. Maybe there is also a way that I haven't even thought about?
-## [6][Add library (not as gem) in Rails 6](https://www.reddit.com/r/rails/comments/j9qu2m/add_library_not_as_gem_in_rails_6/)
-- url: https://www.reddit.com/r/rails/comments/j9qu2m/add_library_not_as_gem_in_rails_6/
----
-
-
-I need to add this library: https://photon.komoot.de/ in my Ruby on Rails application. I should only use it in one page (view). I wouldn't want to set up complicated stuff like Webpacker. Is there any way to add a js library quickly?
-## [7][Is it necessary to install Kibana while using elastic-search](https://www.reddit.com/r/rails/comments/j9nnjk/is_it_necessary_to_install_kibana_while_using/)
-- url: https://www.reddit.com/r/rails/comments/j9nnjk/is_it_necessary_to_install_kibana_while_using/
----
-I'm using elastic-search by following this tutorial [https://iridakos.com/programming/2017/12/03/elasticsearch-and-rails-tutorial](https://iridakos.com/programming/2017/12/03/elasticsearch-and-rails-tutorial) 
-
-but by running  `User.import(force: true) I` face  an error `uninitialized constant Faraday::Error::ConnectionFailed`  i don't know the reason my be it occurs because I skip the kabana installation but I don't think so.
-
-Need help from seniors.
-## [8][Rails + Hacktoberfest meetup tonight! JWTs for Rails!](https://www.reddit.com/r/rails/comments/j9q575/rails_hacktoberfest_meetup_tonight_jwts_for_rails/)
-- url: https://www.reddit.com/r/rails/comments/j9q575/rails_hacktoberfest_meetup_tonight_jwts_for_rails/
----
-🎟[https://live.remo.co/e/israelrb-hacktoberfest/register](https://live.remo.co/e/israelrb-hacktoberfest/register)  
-⏰ 19:00 Israel / 17:00 London / 12:00 NYC / 09:00 SF  
-
-
-Join us for the 3rd israel.rb virtual meetup!
-
-This time it'll be a Hacktoberfest edition with special guest Dan Moore from FusionAuth discussing JSON Web Tokens (JWTs) and what Rails developers need to know about them.
-
-We'll also have lightning talks from the community! If you're interested in giving a 5-10 minute lightning talk on an open source theme, let us know!
-
-https://preview.redd.it/96znkrxqsns51.jpg?width=820&amp;format=pjpg&amp;auto=webp&amp;s=53294b0be8ba64ced90afeb8676aeffa971b67c8
-## [9][Fill PDF form with user data [Prawn]](https://www.reddit.com/r/rails/comments/j984ay/fill_pdf_form_with_user_data_prawn/)
-- url: https://www.reddit.com/r/rails/comments/j984ay/fill_pdf_form_with_user_data_prawn/
----
-My goal is to fill the existing PDF interactive form with user data.
-
-Requirements for this are:
-
-*   it SHOULD be able to insert data into text fields;
-*   it SHOULD be commercial free 
-*   it MAY be able to insert an image on the XY position.
-
-Based on research, I chose [Prawn-Rails gem](https://github.com/cortiz/prawn-rails). I'm a little confused with documentation, how can fill form fields on the existing PDF interactive form? 
-
-&amp;#x200B;
-
-The process is like this:
-
-User fills in the form, the service collects data from the form and generates pdf based on that. 
-
-The generated pdf is always the same, only user data is changing.
-## [10][Return Forms from backend ?](https://www.reddit.com/r/rails/comments/j957e4/return_forms_from_backend/)
-- url: https://www.reddit.com/r/rails/comments/j957e4/return_forms_from_backend/
----
-Hello folks, any one tried to return forms as json and in frontend just check the type of field if it is an file input or a text area or a text , number ? any one tried that before ? any guide ?
-
-backend rails 
-
-frontend using react
-## [11][Building a Linktree clone with Rails in the live stream](https://www.reddit.com/r/rails/comments/j92bpp/building_a_linktree_clone_with_rails_in_the_live/)
-- url: https://youtu.be/A9vTag8-2JY
----
-

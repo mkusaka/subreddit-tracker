@@ -1,99 +1,96 @@
 # aws
-## [1][Week of Oct 12th - What are you building this week in AWS?](https://www.reddit.com/r/aws/comments/j9s5xz/week_of_oct_12th_what_are_you_building_this_week/)
-- url: https://www.reddit.com/r/aws/comments/j9s5xz/week_of_oct_12th_what_are_you_building_this_week/
----
-Share what you are working on
-## [2][I built a GitHub Action that deploys static sites to Cloudfront](https://www.reddit.com/r/aws/comments/ja1k9g/i_built_a_github_action_that_deploys_static_sites/)
-- url: https://github.com/onramper/action-deploy-aws-static-site
+## [1][Amazon EKS now supports Kubernetes version 1.18](https://www.reddit.com/r/aws/comments/jat1y3/amazon_eks_now_supports_kubernetes_version_118/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/10/amazon-eks-supports-kubernetes-version-1-18/
 ---
 
-## [3][Timestream vs. InfluxDB](https://www.reddit.com/r/aws/comments/ja8hg3/timestream_vs_influxdb/)
-- url: https://www.reddit.com/r/aws/comments/ja8hg3/timestream_vs_influxdb/
+## [2][What RDS instance do you use and how many simultaneous connection are you handling?](https://www.reddit.com/r/aws/comments/jb0j36/what_rds_instance_do_you_use_and_how_many/)
+- url: https://www.reddit.com/r/aws/comments/jb0j36/what_rds_instance_do_you_use_and_how_many/
 ---
-We have been using influxdb in the past as a time series database, however, I would be curious as to how it compares to Timestream? Apart from the obvious advantages of Timestream being a fully managed database, is there anything Timestream does that influxdb can’t do?
-Thanks!
-## [4][Set alarm on sending rate SES](https://www.reddit.com/r/aws/comments/jadisj/set_alarm_on_sending_rate_ses/)
-- url: https://www.reddit.com/r/aws/comments/jadisj/set_alarm_on_sending_rate_ses/
+* just gathering information on user experience with RDS
+## [3][Is there a way to generate AWS CLI command from exisiting resources?](https://www.reddit.com/r/aws/comments/jaxf5w/is_there_a_way_to_generate_aws_cli_command_from/)
+- url: https://www.reddit.com/r/aws/comments/jaxf5w/is_there_a_way_to_generate_aws_cli_command_from/
 ---
-Unfortunately one of our systems went into a loop and started sending replies to a out of office reply (internally luckily), but resulting in over 100k emails sent in the last 24 hours.
+Hello there,
 
-https://imgur.com/a/6sF0gTL
+I was wondering if there is a AWS resource say RDS, is there a way we can generate AWS CLI command to create this exact RDS with all the settings same as the running one?
 
-As a result that we've hit our limit for 24 hours, I requested a temporary limit increase to circumvent this, but I don't want to run into this issue again.
-
-I tried setting up a cloudwatch alarm for my SES metrics, but those metrics don't correlate to what is in my SES Sending Statistics screen:
-https://imgur.com/a/3vmJ4iH
-
-What parameters do I need to put in here to get the same graphs?
-## [5][EC2 VPN Data Transfer price question](https://www.reddit.com/r/aws/comments/jadi6c/ec2_vpn_data_transfer_price_question/)
-- url: https://www.reddit.com/r/aws/comments/jadi6c/ec2_vpn_data_transfer_price_question/
+Thanks
+## [4][Serverless Swagger UI for API Gateway](https://www.reddit.com/r/aws/comments/jadw8n/serverless_swagger_ui_for_api_gateway/)
+- url: https://www.reddit.com/r/aws/comments/jadw8n/serverless_swagger_ui_for_api_gateway/
 ---
-So I've setup a VPN on my EC2 server. How will Amazon calculate my data transfer usage? Say I downloaded 1GB of data via VPN, will they count it as 1GB IN (From internet to EC2) + 1GB OUT (From EC2 to my device)?
-## [6][Connect EC2 instances without IP (using DNS?)](https://www.reddit.com/r/aws/comments/ja9zsb/connect_ec2_instances_without_ip_using_dns/)
-- url: https://www.reddit.com/r/aws/comments/ja9zsb/connect_ec2_instances_without_ip_using_dns/
+Quite long but detailed (I hope!) article on how to create an always up-to-date Swagger UI website for API Gateway, protected with Cognito authentication - missing part for sharing API documentation. For TL;DR see the repo with full example - link at the bottom.
+
+[https://betterdev.blog/serverless-swagger-ui-for-api-gateway/](https://betterdev.blog/serverless-swagger-ui-for-api-gateway/)
+## [5][Python package to get eks-token (Alternate to aws eks get-token CLI)](https://www.reddit.com/r/aws/comments/jaw7o1/python_package_to_get_ekstoken_alternate_to_aws/)
+- url: https://github.com/peak-ai/eks-token
 ---
-I have now searched for a couple of hours for this without a result... this shows me that my approach is maybe flawed or I am using the wrong search terms...
 
-I want multiple EC2 instances to work together. They are in a private subnet. They don't need to be reachable on the internet. 
-
-Of course they can reach one another using their IPs. However, if I rebuild an instance it will get a new IP. Therefore I want them to have internal DNS names within their VPC so they can reach each other using "server1.local" or "server2.local".
-
-Is that possible using AWS tools?
-## [7][Ever Wonder About Snowflake and Databricks' Relationship with AWS as Allies &amp; Competitors?](https://www.reddit.com/r/aws/comments/jacvi8/ever_wonder_about_snowflake_and_databricks/)
-- url: https://www.reddit.com/r/aws/comments/jacvi8/ever_wonder_about_snowflake_and_databricks/
+## [6][Account Vending Machine](https://www.reddit.com/r/aws/comments/jaw02p/account_vending_machine/)
+- url: https://www.reddit.com/r/aws/comments/jaw02p/account_vending_machine/
 ---
-Last month the Future Data Conference had Ben Horowitz (partner at Andreessan-Horowitz) give his thoughts,[I thought it was interesting](https://medium.com/whispering-data/the-3-most-interesting-ideas-from-the-future-data-conference-caf849fa4958?source=friends_link&amp;sk=b6fbdd7e4bc35f9d1298c981a7f12820)!
-## [8][How can I make a real time dashboard (with a time lag of less than a minute)?](https://www.reddit.com/r/aws/comments/ja9u5n/how_can_i_make_a_real_time_dashboard_with_a_time/)
-- url: https://www.reddit.com/r/aws/comments/ja9u5n/how_can_i_make_a_real_time_dashboard_with_a_time/
+Hi everyone!
+
+So I have a need to create new accounts on the fly, and to bootstrap these new accounts with correct IAM roles so that our application pipelines can deploy their things.
+
+Anyone have a good way to do this that is not customizable control tower? :)
+
+Cheers!
+## [7][AWS::SSM::MaintenanceWindowTask output to cloudwatch](https://www.reddit.com/r/aws/comments/jayg6h/awsssmmaintenancewindowtask_output_to_cloudwatch/)
+- url: https://www.reddit.com/r/aws/comments/jayg6h/awsssmmaintenancewindowtask_output_to_cloudwatch/
 ---
-  
+Hello, 
 
-Question- How can I make a real time dashboard (with a time lag of less than a minute)? 
+If I create a task via the console, I can tick a box to send output to CloudWatch. I can't find anything in the CF documentation about doing this. 
 
-My database is available in AWS Postgres RDS instance. I also made dashboards in Quicksight but it can refresh data hourly only and now we need real time dashboarding.
-## [9][Windows CIFS replacement options](https://www.reddit.com/r/aws/comments/jab71r/windows_cifs_replacement_options/)
-- url: https://www.reddit.com/r/aws/comments/jab71r/windows_cifs_replacement_options/
+Does anyone know how this can be done?
+## [8][Suitable AWS services to run Python script from website](https://www.reddit.com/r/aws/comments/jaxs0w/suitable_aws_services_to_run_python_script_from/)
+- url: https://www.reddit.com/r/aws/comments/jaxs0w/suitable_aws_services_to_run_python_script_from/
 ---
-Our team utilizes several applications and systems that are being migrated to AWS. We also use an extensive amount of excel spreadsheets for Third-Party compliance report tracking. We have been told by our internal security group that once the transition of the systems servers and application servers are completed (December 2020) they will not open ports to our Windows file share
+Hi everyone,
 
-I am researching, frantically I might add, for a solution in AWS that fits the requirements.
+I need help to decide which AWS service or maybe also pointed to tutorial how to set up one (since I am new to AWS).
 
-* Ability to write (Alteryx) excel file outputs programmatically 
-* Teams to be able to access files in a file directory type of interface (GUI) team is best described as technically autistic (They are highly skilled in working our specific systems, but new technology introduction is a painstaking, loooooong training process.)
-* Read, write files as needed. Techs pull generated docs (Alteryx) from file system, research critical issues, add notes/ticket creations/etc and save back to file store.
+I have a uni project where we need to deploy our script in the cloud and we decided to place it on AWS.
 
+The idea or the process how it is gonna look like would be: 
+
+* The website will have a form that when submitted will also trigger a python script in AWS.
+* Python script that will do computation in the cloud and outputting some file output.
+
+That is the step that I need to do, at least for this stretch.
+
+I did some research of what might be a possibility service to use.
+
+I created EC2 instance where, I can call the address from anywhere and outputting "Hello, World" in html format. I think I can call that address to trigger the python script.
+
+However are there better way to do this? I heard a lot about Lambda and S3, but not sure if those  are the one that suits the requirement.
+
+Thank you so much in advance for the help!
+## [9][A History of AWS Services](https://www.reddit.com/r/aws/comments/jaghu7/a_history_of_aws_services/)
+- url: https://www.awsgeek.com/AWS-History/
+---
+
+## [10][AWS CDK for AWS Budget with notification and CF deploy stack](https://www.reddit.com/r/aws/comments/jan2x2/aws_cdk_for_aws_budget_with_notification_and_cf/)
+- url: https://www.reddit.com/r/aws/comments/jan2x2/aws_cdk_for_aws_budget_with_notification_and_cf/
+---
 &amp;#x200B;
 
-It seems a simple list. I thought a EC2 with EFS mounted was our answer. Our data needs is small, under 200GB with the vast majority being archival (120GB historical archive) access for a small team of techs (30), on Windows machines.  
+https://preview.redd.it/y9t33214lxs51.png?width=2272&amp;format=png&amp;auto=webp&amp;s=07ed922c1eeb87f3ce9b275fba70e49f74eeea42
 
+Hi All,
 
-But the rub there was Windows, since EFS has no native windows support. 
+I wrote an article recently about using AWS Budgets and setting up notifications with thresholds for your AWS budget to keep an eye on costs. Which something we should all do but most of the examples out there use CloudWatch + SNS. 
 
-I just found  Amazon FSx but haven't researched it enough.  
+I'm a big fan of CDK but there is often a lack of real world examples. So all of my examples will be in CDK but I also provide the CF deploy stack launch button so you can hit the ground running if you just want to try it out.
 
+It's very basic but hopefully helps someone, open source project:
 
-Any suggestions?
-## [10][API Gateway &lt;-&gt; EC2 connection](https://www.reddit.com/r/aws/comments/jaaqr8/api_gateway_ec2_connection/)
-- url: https://www.reddit.com/r/aws/comments/jaaqr8/api_gateway_ec2_connection/
----
-Hi guys,
+[https://github.com/talkncloud/aws/tree/main/essential-billing](https://github.com/talkncloud/aws/tree/main/essential-billing)
 
-I'm trying to set up an EC2 with an application that I want to be consumed only by API Gateway and hides the endpoints from everything else.
+There is a link to the article in the github repo if you want to read up on it.
 
-I tried with a private VPC but then API Gateway doesn't find the endpoints. 
+Let me know if questions or feedback, keen to improve it if people it's useful.
 
-&amp;#x200B;
+Thanks,
 
-I'm really lost now, if API Gateway had a static Ip I could make a security group that blocked everything else and use a pubic VPC but doens't seem to be the case.
-
-&amp;#x200B;
-
-Any ideas I could try? 
-
-&amp;#x200B;
-
-Thanks!
-## [11][We now have AWS TLS termination at the network load balancer. What’s the difference with ALB and NLB? Both can perform the same actions now?](https://www.reddit.com/r/aws/comments/ja822t/we_now_have_aws_tls_termination_at_the_network/)
-- url: https://www.reddit.com/r/aws/comments/ja822t/we_now_have_aws_tls_termination_at_the_network/
----
-
+Mick

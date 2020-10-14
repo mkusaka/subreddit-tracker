@@ -56,99 +56,53 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Question about packages coming from a Python Perspective](https://www.reddit.com/r/cpp/comments/ja8ybj/question_about_packages_coming_from_a_python/)
-- url: https://www.reddit.com/r/cpp/comments/ja8ybj/question_about_packages_coming_from_a_python/
+## [2][TIL: Double linked list using one pointer per node.](https://www.reddit.com/r/cpp/comments/jawzei/til_double_linked_list_using_one_pointer_per_node/)
+- url: https://en.wikipedia.org/wiki/XOR_linked_list
 ---
-Okay, so I want to learn a little cpp, so I decided to do this facial recognition thing with OpenCV. I've done it before with python. Super easy, quick and simple. With Python you can just pip install the OpenCV module, and use it in seconds. However, when attempting with Cpp, it looks like I'm having to use this cmake command to build the OpenCV ordeal. This process it taking FOREVER. I am wondering if I am missing something or if this is just the process with cpp. I found out there isn't a pip for cpp unfortunetly. 
+
+## [3][Networking in C++ Part #1: MMO Client/Server, ASIO &amp; Framework Basics](https://www.reddit.com/r/cpp/comments/jah4sb/networking_in_c_part_1_mmo_clientserver_asio/)
+- url: https://www.reddit.com/r/cpp/comments/jah4sb/networking_in_c_part_1_mmo_clientserver_asio/
+---
+[https://www.youtube.com/watch?v=2hNdkYInj4g](https://www.youtube.com/watch?v=2hNdkYInj4g&amp;t=31s)
 
 &amp;#x200B;
 
-I guess what I am trying to figure out is:
-
-\- Is this a normal application for cpp? (Facial Recognition)
-
-\- Do you have to build each package you want to use? (ie OpenCV)
-
-\- Is there some fundamental thing I am missing?
-## [3][Clang 11.0.0 is out](https://www.reddit.com/r/cpp/comments/j9rq0y/clang_1100_is_out/)
-- url: https://releases.llvm.org/11.0.0/tools/clang/docs/ReleaseNotes.html
+I found that video very intersting and how i hardly find any good content about networking programming with an use case in C++, i decided to share it here.
+## [4][Reflection-like functionality in C++11 using CRTP, garbage and default member values](https://www.reddit.com/r/cpp/comments/jaww7i/reflectionlike_functionality_in_c11_using_crtp/)
+- url: https://lordsof.tech/programming/reflection-in-c11/
 ---
 
-## [4][Does this code snippet lead to undefined behavior?](https://www.reddit.com/r/cpp/comments/ja6xnq/does_this_code_snippet_lead_to_undefined_behavior/)
-- url: https://www.reddit.com/r/cpp/comments/ja6xnq/does_this_code_snippet_lead_to_undefined_behavior/
----
-I came across some code in android project
-
-[https://cs.android.com/android/platform/superproject/+/master:system/netd/include/Fwmark.h;l=24?q=fwmark.h](https://cs.android.com/android/platform/superproject/+/master:system/netd/include/Fwmark.h;l=24?q=fwmark.h)
-
-    union Fwmark {
-        uint32_t intValue;
-        struct {
-            unsigned netId          : 16;
-            bool explicitlySelected :  1;
-            bool protectedFromVpn   :  1;
-            Permission permission   :  2;
-            bool uidBillingDone     :  1;
-        };
-        constexpr Fwmark() : intValue(0) {}
-    
-        static inline uint32_t getUidBillingMask() {
-            Fwmark m;
-            m.uidBillingDone = true;
-            return m.intValue;
-        }
-    };
-
-The intention here is to use union to do cast between bitfield and uint32\_t.
-
-I suspect this is still undefined behavior.
-## [5][C++ in a web app (series of blog posts)](https://www.reddit.com/r/cpp/comments/j9yjsj/c_in_a_web_app_series_of_blog_posts/)
-- url: https://www.reddit.com/r/cpp/comments/j9yjsj/c_in_a_web_app_series_of_blog_posts/
----
-Want to learn how to run your C++ code on the web? A series of blogs has been published to explain the steps to do this. Great for demonstration or to move the heavy computation from the server to the browser.
-
-[Using C++ in a web app with WebAssembly](https://blog.esciencecenter.nl/using-c-in-a-web-app-with-webassembly-efd78c08469)
-
-[Help! My C++ web app is not responding](https://blog.esciencecenter.nl/help-my-c-web-app-is-not-responding-b930ca3034ad)
-
-[Interact with your C++ web app using React forms](https://blog.esciencecenter.nl/interact-with-your-c-web-app-using-react-forms-543e676a7634)
-
-[Spice up your C++ web app with visualizations](https://blog.esciencecenter.nl/spice-up-your-c-web-app-with-visualizations-bcc1e888ec25)
-
-[C++ web app with WebAssembly, Vega, Web Worker and React](https://blog.esciencecenter.nl/c-web-app-with-webassembly-vega-web-worker-and-react-1e5b750c88df)
-## [6][Taruga is a simple single-header C++11 library for turtle graphics!](https://www.reddit.com/r/cpp/comments/j9yx0r/taruga_is_a_simple_singleheader_c11_library_for/)
-- url: https://www.reddit.com/r/cpp/comments/j9yx0r/taruga_is_a_simple_singleheader_c11_library_for/
----
-Examples (on Streamable): [drawing a Koch fractal](https://streamable.com/27ltmt) and [drawing a spiral](https://streamable.com/x5anqh).
-
-Differently than other C++ implementations, Taruga offers a very simple API, it's code is easy to understand, needs only one (widely accessible) dependency and is hardware-accelerated.
-
-More examples (and obviously, the code) are available at [the Taruga repo](https://github.com/vrmiguel/taruga/).
-
-Any insights and (constructive) critique are welcome!
-## [7][Faster C++ builds, simplified: a new metric for time](https://www.reddit.com/r/cpp/comments/j9tbeb/faster_c_builds_simplified_a_new_metric_for_time/)
-- url: https://devblogs.microsoft.com/cppblog/faster-cpp-builds-simplified-a-new-metric-for-time/
+## [5][Memory Reordering Caught in the Act (2012)](https://www.reddit.com/r/cpp/comments/jawy7i/memory_reordering_caught_in_the_act_2012/)
+- url: https://preshing.com/20120515/memory-reordering-caught-in-the-act/
 ---
 
-## [8][Increased Complexity of C++20 Range Algorithms Declarations - Is It Worth?](https://www.reddit.com/r/cpp/comments/j9ndx1/increased_complexity_of_c20_range_algorithms/)
-- url: https://www.bfilipek.com/2020/10/complex-ranges-algorithms.html?m=1
+## [6]["Hello World!" using CMake and C++20 Modules with the latest Visual Studio Preview](https://www.reddit.com/r/cpp/comments/jal7iw/hello_world_using_cmake_and_c20_modules_with_the/)
+- url: https://github.com/rick-de-water/ModuleHelloWorld
 ---
 
-## [9][Upsetting Opinions about Static Analyzers](https://www.reddit.com/r/cpp/comments/j9ymgv/upsetting_opinions_about_static_analyzers/)
-- url: https://www.viva64.com/en/b/0765/
+## [7][The Dynamic Runtime Inlining (DRTI) project](https://www.reddit.com/r/cpp/comments/jb0nio/the_dynamic_runtime_inlining_drti_project/)
+- url: https://github.com/drti/drti
 ---
 
-## [10][`visitor&lt;Variants...&gt;` concept from scratch](https://www.reddit.com/r/cpp/comments/j9vu4c/visitorvariants_concept_from_scratch/)
-- url: https://godbolt.org/z/xeW9Gf
+## [8][C++ Day 2020 (online-only)](https://www.reddit.com/r/cpp/comments/jazurb/c_day_2020_onlineonly/)
+- url: https://isocpp.org/blog/2020/10/cppday20
 ---
 
-## [11][When a coroutine ‘suspends’, does control flow halt or pass to the caller?](https://www.reddit.com/r/cpp/comments/j9r3ez/when_a_coroutine_suspends_does_control_flow_halt/)
-- url: https://www.reddit.com/r/cpp/comments/j9r3ez/when_a_coroutine_suspends_does_control_flow_halt/
+## [9][C++ Core Guidelines: A Short Detour to Contracts in C++20](https://www.reddit.com/r/cpp/comments/jaztd6/c_core_guidelines_a_short_detour_to_contracts_in/)
+- url: https://www.modernescpp.com/index.php/c-core-guidelines-a-detour-to-contracts
 ---
-https://github.com/lewissbaker/cppcoro/blob/master/lib/async_manual_reset_event.cpp
 
-I’m trying to understand what happens when await_suspend returns true. Does the thread of execution pass control back to where co_await was called by the user? Or does the thread of execution simply halt until we get a call to resume?
+## [10][Q&amp;A with Titus Winters: C++ in 2020 and Beyond](https://www.reddit.com/r/cpp/comments/jamkv9/qa_with_titus_winters_c_in_2020_and_beyond/)
+- url: https://youtu.be/QIAdFrPmBDQ
+---
 
-Put another way, after await_suspend returns true, where does the EIP register point? Are CPU resources returned to the OS?
+## [11][Are there any good guides that directly compare MATLAB to C++ and vice versa?](https://www.reddit.com/r/cpp/comments/jaqdt1/are_there_any_good_guides_that_directly_compare/)
+- url: https://www.reddit.com/r/cpp/comments/jaqdt1/are_there_any_good_guides_that_directly_compare/
+---
+I've been very happily working almost exclusively in MATLAB for a bit over ten years now. Initially, I used did controls, but then switched over to computational mechanics and geometry. I've only very sparsely used Python when collaborating with others, and have used C++ in a very minimal capacity (just quick edits of inputs and parameters).
 
-After iterating through the linked list on a call to set(), how does resume() know which threads of execution to resume on? Does the coroutine handle hold this information?
+Due to the nature of what I'm working on these days, I've accepted that I just need to bite the bullet and learn C++ to a reasonable level of proficiency, and move my ongoing projects there.
+
+While tutorials are good and fine, I feel I would really benefit from a succinct comparison of MATLAB and C++ syntax, data structures, and general best practices; a translation between one and the other, if you will. Does anyone know of such a thing? All I've been able to find are mostly hollow blog posts with too much SEO.
+
+If anyone has any suggestions, thank you in advance!

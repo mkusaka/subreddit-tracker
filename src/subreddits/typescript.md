@@ -22,7 +22,69 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Why do interfaces even exist in TypeScript?](https://www.reddit.com/r/typescript/comments/jas9hl/why_do_interfaces_even_exist_in_typescript/)
+## [2][Question about creating an interface out of T](https://www.reddit.com/r/typescript/comments/jbgjrs/question_about_creating_an_interface_out_of_t/)
+- url: https://www.reddit.com/r/typescript/comments/jbgjrs/question_about_creating_an_interface_out_of_t/
+---
+Hello,
+
+&amp;#x200B;
+
+is it possible to create an interface based on a given type?
+
+    // main file
+    interface LoginForm {
+        username: string
+        password: string
+    }
+    const form = Form&lt;LoginForm&gt;{
+        username: ''
+        password: ''
+    }
+    
+    // types.ts
+    export interface Form&lt;T&gt; {
+     // create the Form interface based on the given type 'T'
+    }
+
+what I want to create is the Form interface based on the given `T` so that I can use the `keyof` like the following 
+
+    const FormKey = keyof Form
+
+and then in the main file, I can just use the FormKey type on a method like..
+
+    const hasError (formKey: FormKey) =&gt; {
+        return this.form[formKey]
+    }
+
+&amp;#x200B;
+
+is my approach doable? or are any way around to do this? 
+
+  
+any response is appreciated, thanks!
+## [3][node file.ts](https://www.reddit.com/r/typescript/comments/jbmps8/node_filets/)
+- url: https://www.reddit.com/r/typescript/comments/jbmps8/node_filets/
+---
+When I use ts-jest I do :
+
+    npx jest aTestFileName.test.ts
+
+which compiles the ts file to JavaScript on the run, and executes it, but also auto source maps the errors. There are no JavaScript file or source map files created on my project folder.
+
+Is there any way to do something similar when I want to execute a ts file that is not a test.ts file for jest?
+
+For the time being I create a fake ts test file and use ts-jest .
+## [4][Building a game With TypeScript. New episode! Team and Fleet. Today we are going to talk about camaraderie and opposition and introduce 3 new members of our happy family: Team, Fleet, and, of course, Ship](https://www.reddit.com/r/typescript/comments/jb4h1b/building_a_game_with_typescript_new_episode_team/)
+- url: https://medium.com/@gregsolo/building-a-game-with-typescript-team-and-fleet-f223d39e9248?source=friends_link&amp;sk=937227e4118edb7ea3125a641a52422d
+---
+
+## [5][Looking for typescript websocket library to communicate between node.js and vue.js](https://www.reddit.com/r/typescript/comments/jbalqc/looking_for_typescript_websocket_library_to/)
+- url: https://www.reddit.com/r/typescript/comments/jbalqc/looking_for_typescript_websocket_library_to/
+---
+I need push communication from the server.
+
+I was trying [socket.io](https://socket.io) but couldn't figure out how to turn of cross-site-scripting protection that was triggering for localhost (also [socket.io](https://socket.io) doesn't seem to be great with typescript).
+## [6][Why do interfaces even exist in TypeScript?](https://www.reddit.com/r/typescript/comments/jas9hl/why_do_interfaces_even_exist_in_typescript/)
 - url: https://www.reddit.com/r/typescript/comments/jas9hl/why_do_interfaces_even_exist_in_typescript/
 ---
 I am rather inexperienced in TypeScript, but I am not asking of how to use them, but rather why.
@@ -56,7 +118,37 @@ But maybe I still miss something, so feel free to become transpilers of my text 
 ...
 
 Also still I found some scary 'tutorials', in one, it was suggested to use `noImplicityAny = false`, which I think, is pretty insane to do, while choosing strictly typed language. Also different tutorial stated, that `type` and `interface` should be used in specific different scenarios, however they haven't mentioned any reason behind - maybe you have some real reasons?
-## [3][TS &amp; React.js: Conflict between initial state and type during prop passage on conditionally rendered component](https://www.reddit.com/r/typescript/comments/jap2sv/ts_reactjs_conflict_between_initial_state_and/)
+## [7][Strange compilation on down level iteration](https://www.reddit.com/r/typescript/comments/jawgy4/strange_compilation_on_down_level_iteration/)
+- url: https://www.reddit.com/r/typescript/comments/jawgy4/strange_compilation_on_down_level_iteration/
+---
+Hello!
+
+```
+const countChildren = &lt;T extends HTMLElement&gt;(el: T) =&gt; {
+  return [...el.children].length;
+};
+```
+
+The idea being, to turn an HTMLCollection to an array. Of course to do this, you need to have these in `tsconfig.json`, `lib: ["dom.iterable", /*w.e. else*/]` and `downlevelIteration:true`.
+
+When I do this just now in the [typescript playground](https://www.typescriptlang.org/play?#code/MYewdgzgLgBApgGxgXhgExMArgWzmKAOmACc4BDKOAUQTjwIAoByLBZgSgG4AoH0SLABmASxLQU6TLnxFSFKrXqyWCEZ37gJEOALSSM2BnLKUadY6vUceiQuQAOD-GgDCACxEI0jUeKg2do7OYG6e3ow6ejaagjAiVCSSANqEaXbA4WhkYAC6vLEQIHSECCAA5owJcCQcQA) it works, though the transpiled code persist with `[...arr]`.
+
+However, and this is perhaps oddly specific, running `tsdx create some-project` and then enabling `dom.iterable` and `downlevelIteration`, compiles `countChildren` to:
+
+```
+var countChildren = function countChildren(el) {
+  return [].concat(el.children).length;
+};
+```
+
+Which is wrong. 
+
+&gt; This yields `[HTMLCollection(2)]` instead of  `[child0, child1]`.
+
+It should be something akin to `[].slice.call(el.children)`
+
+Am I missing something here? Some option in `tsconfig` is perhaps playing me foul?
+## [8][TS &amp; React.js: Conflict between initial state and type during prop passage on conditionally rendered component](https://www.reddit.com/r/typescript/comments/jap2sv/ts_reactjs_conflict_between_initial_state_and/)
 - url: https://www.reddit.com/r/typescript/comments/jap2sv/ts_reactjs_conflict_between_initial_state_and/
 ---
 In react I assign accountData to an empty object using useState. If a session is detected and loads a dataset, accountData is then updated to the shape of an interface Accountdata.
@@ -99,43 +191,13 @@ I was hoping the conditional render would block a type error but it did not. Wha
         103 |           /&gt;
         104 |   } else {
         105 |     return (
-## [4][Prefer default or named exports?](https://www.reddit.com/r/typescript/comments/jalhr2/prefer_default_or_named_exports/)
+## [9][Prefer default or named exports?](https://www.reddit.com/r/typescript/comments/jalhr2/prefer_default_or_named_exports/)
 - url: https://www.reddit.com/r/typescript/comments/jalhr2/prefer_default_or_named_exports/
 ---
 ESLint AirBnb template wants me to prefer default exports. When I brought up that VsCode would be nice to prefer default exports on "Refactor into new file" I got some replies saying named exports are better in most ways.
 
 What do you guys have to say about this? I'm moving towards named recently as it makes it so nice to write interfaces and classes in the current file and "poof" them away into a support file without another thought. If named is also better, great.
-## [5][Strange compilation on down level iteration](https://www.reddit.com/r/typescript/comments/jawgy4/strange_compilation_on_down_level_iteration/)
-- url: https://www.reddit.com/r/typescript/comments/jawgy4/strange_compilation_on_down_level_iteration/
----
-Hello!
-
-```
-const countChildren = &lt;T extends HTMLElement&gt;(el: T) =&gt; {
-  return [...el.children].length;
-};
-```
-
-The idea being, to turn an HTMLCollection to an array. Of course to do this, you need to have these in `tsconfig.json`, `lib: ["dom.iterable", /*w.e. else*/]` and `downlevelIteration:true`.
-
-When I do this just now in the [typescript playground](https://www.typescriptlang.org/play?#code/MYewdgzgLgBApgGxgXhgExMArgWzmKAOmACc4BDKOAUQTjwIAoByLBZgSgG4AoH0SLABmASxLQU6TLnxFSFKrXqyWCEZ37gJEOALSSM2BnLKUadY6vUceiQuQAOD-GgDCACxEI0jUeKg2do7OYG6e3ow6ejaagjAiVCSSANqEaXbA4WhkYAC6vLEQIHSECCAA5owJcCQcQA) it works, though the transpiled code persist with `[...arr]`.
-
-However, and this is perhaps oddly specific, running `tsdx create some-project` and then enabling `dom.iterable` and `downlevelIteration`, compiles `countChildren` to:
-
-```
-var countChildren = function countChildren(el) {
-  return [].concat(el.children).length;
-};
-```
-
-Which is wrong. 
-
-&gt; This yields `[HTMLCollection(2)]` instead of  `[child0, child1]`.
-
-It should be something akin to `[].slice.call(el.children)`
-
-Am I missing something here? Some option in `tsconfig` is perhaps playing me foul?
-## [6][How to display singular resources from those with variable ID endpoints.](https://www.reddit.com/r/typescript/comments/jak7yj/how_to_display_singular_resources_from_those_with/)
+## [10][How to display singular resources from those with variable ID endpoints.](https://www.reddit.com/r/typescript/comments/jak7yj/how_to_display_singular_resources_from_those_with/)
 - url: https://www.reddit.com/r/typescript/comments/jak7yj/how_to_display_singular_resources_from_those_with/
 ---
 Hello, I have a list of data coming from a resource all in one endpoint of /users from the backend in a Java controller. To get singular resources, I use /users/{id} on that same controller. I am wondering how to get those singular resources to display using my user.service.ts, and app-routing.module.ts. This is what I currently have:
@@ -152,7 +214,7 @@ Hello, I have a list of data coming from a resource all in one endpoint of /user
     ]; //under app-routing.module.ts
 
 TLDR: I just want to pass in users/{id} rather than users/1 but TS doesn't let me. I think it's a formatting thing for automatically pushing stuff into browser fields.
-## [7][Need Some Help with the Pipe Operator](https://www.reddit.com/r/typescript/comments/jafad3/need_some_help_with_the_pipe_operator/)
+## [11][Need Some Help with the Pipe Operator](https://www.reddit.com/r/typescript/comments/jafad3/need_some_help_with_the_pipe_operator/)
 - url: https://www.reddit.com/r/typescript/comments/jafad3/need_some_help_with_the_pipe_operator/
 ---
 Hello,  I need some help figuring this out.
@@ -211,77 +273,3 @@ I get this error:
       Type 'User' is missing the following properties from type 'Product': title, description, url
 
 What can I do to fix this? Thanks.
-## [8][How to import external js files to run in a browser](https://www.reddit.com/r/typescript/comments/jaf8cr/how_to_import_external_js_files_to_run_in_a/)
-- url: https://www.reddit.com/r/typescript/comments/jaf8cr/how_to_import_external_js_files_to_run_in_a/
----
-Hey there! I am quite new to typescript, but have been programming for some years now. I want to create some simple graphics using the webgl api and I would like to use the gl-matrix library. But I cannot figure out how to use this dependency in typescript. I tried everything I found online, nothing works. Or the compiler complains that it does not understand the functions that come from the library, or the browser complains that it doesn't know about require and exports. I have tried something similar before with other js files (with typings available) and just gave up, as I couldn't get my head wrapped around TS + npm + some dependency builder like webpack.
-
-Is there a way to just use a library like gl-matrix in typescript in a simple way without using anything like webpack or similar tools?
-## [9][Make tsconfig reference all exported variables (for testing mock/spy/stub)](https://www.reddit.com/r/typescript/comments/ja4zqn/make_tsconfig_reference_all_exported_variables/)
-- url: https://www.reddit.com/r/typescript/comments/ja4zqn/make_tsconfig_reference_all_exported_variables/
----
-I have a file like this:
-
-&amp;#x200B;
-
-Foo.tsx:
-
-`export default function Foo() {`
-
-`return 'hi';`
-
-`}`
-
-GroupItem.tsx:
-
-`import Foo from 'Foo.tsx';`
-
-`export const useGroupIds = () =&gt; [];`
-
-`export default function GroupItem() {`
-
-`const groupIds = useGroupIds();`
-
-`return &lt;Foo /&gt;`
-
-`}`
-
-We see in \`GroupItem\` I reference \`useGroupIds\`. This is captured by reference. Is it possible to make TypeScript refer to it as \`module.useGroupIds\`?
-
-I ask this because I am trying to write a test and put a spy on \`useGroupIds\` but when I do that \`spy(module, 'useGroupIds')\` the \`GroupItem\` is not using this spied one as it caught it by reference.
-
-My hope is to get ts to compile the above like this:
-
-`import Foo from 'Foo.tsx';`
-
-`export const useGroupIds = () =&gt; [];`
-
-`export default function GroupItem() {`
-
-`const groupIds = GroupItemModule.useGroupIds();`
-
-`return &lt;``FooModule.``default` `/&gt;`
-
-`}`
-
-&amp;#x200B;
-
-So now when I mock like this:
-
-`import * as FooModule from './Foo';`
-
-`import * as GroupItemModule from './GroupItem';`
-
-`jest.spyOn(FooModule, 'default')`
-
-`jest.spyOn(GroupItemModule, 'useGroupIds')`
-
-Then the spied functions will be properly called.
-## [10][I made a tool that makes writing Minecraft datapack recipes easier](https://www.reddit.com/r/typescript/comments/j9r7uk/i_made_a_tool_that_makes_writing_minecraft/)
-- url: https://github.com/Asha20/simple-recipe
----
-
-## [11][A Complete Guide To TypeScript Decorator](https://www.reddit.com/r/typescript/comments/j9sbaj/a_complete_guide_to_typescript_decorator/)
-- url: https://saul-mirone.github.io/a-complete-guide-to-typescript-decorator/
----
-

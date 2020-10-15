@@ -79,55 +79,51 @@
 
 
 &amp;nbsp;
-## [2][Showoff Saturday (October 10, 2020)](https://www.reddit.com/r/javascript/comments/j8j4f7/showoff_saturday_october_10_2020/)
-- url: https://www.reddit.com/r/javascript/comments/j8j4f7/showoff_saturday_october_10_2020/
+## [2][WTF Wednesday (October 14, 2020)](https://www.reddit.com/r/javascript/comments/jb3j0k/wtf_wednesday_october_14_2020/)
+- url: https://www.reddit.com/r/javascript/comments/jb3j0k/wtf_wednesday_october_14_2020/
 ---
-Did you find or create something cool this week in javascript? 
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
 
-Show us here!
-## [3][Presenting v7.0.0 of the npm CLI - The GitHub Blog](https://www.reddit.com/r/javascript/comments/jan9a0/presenting_v700_of_the_npm_cli_the_github_blog/)
-- url: https://github.blog/2020-10-13-presenting-v7-0-0-of-the-npm-cli/
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][Don't Copy Paste Into a Shell](https://www.reddit.com/r/javascript/comments/jbkeab/dont_copy_paste_into_a_shell/)
+- url: https://briantracy.xyz/writing/copy-paste-shell.html
 ---
 
-## [4][I made a CLI tool that can convert typed text to realistic handwriting!](https://www.reddit.com/r/javascript/comments/jayauf/i_made_a_cli_tool_that_can_convert_typed_text_to/)
+## [4][The Hashicorp stack](https://www.reddit.com/r/javascript/comments/jblx46/the_hashicorp_stack/)
+- url: https://news.ycombinator.com/item?id=24781419
+---
+
+## [5][I made a CLI tool that can convert typed text to realistic handwriting!](https://www.reddit.com/r/javascript/comments/jayauf/i_made_a_cli_tool_that_can_convert_typed_text_to/)
 - url: https://github.com/alias-rahil/handwritten.js.git
 ---
 
-## [5][Secure URL-friendly unique string ID generator in ~10 LOC](https://www.reddit.com/r/javascript/comments/jayvl4/secure_urlfriendly_unique_string_id_generator_in/)
-- url: https://github.com/xxczaki/attoid
+## [6]["I've always been intrigued by the idea of JavaScript being used server-side. Since it's so common client-side, it would only make sense to use it server side. I guess its only a matter of time before someone figures this out and does something about it." someone in 2006. 4yrs later node came out](https://www.reddit.com/r/javascript/comments/jbl0oj/ive_always_been_intrigued_by_the_idea_of/)
+- url: https://www.reddit.com/r/reddit.com/comments/24783/javascript_the_worlds_most_misunderstood/c4102/?utm_source=reddit&amp;utm_medium=web2x&amp;context=3
 ---
 
-## [6][[AskJS] JavaScript - what are nowadays bad parts?](https://www.reddit.com/r/javascript/comments/jazc3c/askjs_javascript_what_are_nowadays_bad_parts/)
-- url: https://www.reddit.com/r/javascript/comments/jazc3c/askjs_javascript_what_are_nowadays_bad_parts/
----
-TL;DR: What are things in JS or it\`s ecosystem (tool-chain) that anoys you? ;)
-
-Historicaly there was a lot of hate on JS for it's ecosystem, and rolling jokes about how every day welcomes new JS framework.
-
-But  as I work for over 2 years with JavaScript every day, I must admire,  that I really enjoy it. I like it\`s broad areas of usage (browsers,  servers, native applications, even IoT), package managing (that may be controversial, I know), and  especially open source projects that grown around JS, like Vue, Svelte,  React, deno, nvm or volta, whole JAMStack thing, and countles more  amazing projects. There was a chatoic time after ES6 release, but now,  it is with us for few years. There are many bundlers and build tools  available, and everyone can choose something that best suits their  needs.
-
-Yet still, I hear people complaining on some aspects of JS every day. Therefore I would like to hear you, [r/javascript](https://www.reddit.com/r/javascript/) community, what are things you don't like about working with JS, and why?
-## [7][Generate screenshots for your translation keys](https://www.reddit.com/r/javascript/comments/jaj7bl/generate_screenshots_for_your_translation_keys/)
-- url: https://dev.to/kantord/generate-screenshots-for-your-translation-keys-1f1n
+## [7][YogAI: TensorFlow powered yoga instructor - Made With TensorFlow.js](https://www.reddit.com/r/javascript/comments/jbbugx/yogai_tensorflow_powered_yoga_instructor_made/)
+- url: https://cris-maillo.github.io/yogAI/index.html
 ---
 
-## [8][Updated sensible webpack 5 boilerplate](https://www.reddit.com/r/javascript/comments/jaspi5/updated_sensible_webpack_5_boilerplate/)
-- url: https://github.com/taniarascia/webpack-boilerplate
+## [8][Using gRPC in Aurelia 2](https://www.reddit.com/r/javascript/comments/jbjfc4/using_grpc_in_aurelia_2/)
+- url: https://mobilemancer.com/2020/07/09/using-grpc-in-aurelia-2/
 ---
 
-## [9][Presenting v7.0.0 of the npm CLI - The GitHub Blog](https://www.reddit.com/r/javascript/comments/jaski2/presenting_v700_of_the_npm_cli_the_github_blog/)
-- url: https://github.blog/2020-10-13-presenting-v7-0-0-of-the-npm-cli
+## [9][Writing Crank.js from Scratch](https://www.reddit.com/r/javascript/comments/jb4mqk/writing_crankjs_from_scratch/)
+- url: https://crank.js.org/blog/writing-crank-from-scratch
 ---
 
-## [10][React Component Patterns in Ember.js](https://www.reddit.com/r/javascript/comments/jafcx7/react_component_patterns_in_emberjs/)
-- url: https://www.effective-ember.com/blog/react-component-patterns/
+## [10][essentia.js - a JavaScript library for music/audio signal analysis and processing for both real-time and offline use-cases. The core of essentia.js is powered by Essentia C++ library back-end using WebAssembly along with a high-level Typescript API and add-on utility modules](https://www.reddit.com/r/javascript/comments/jb21im/essentiajs_a_javascript_library_for_musicaudio/)
+- url: https://mtg.github.io/essentia.js/
 ---
 
-## [11][A set of color widgets for the web](https://www.reddit.com/r/javascript/comments/jakova/a_set_of_color_widgets_for_the_web/)
-- url: https://everycolorpicker.com/
+## [11][Advantages of functional programming in JavaScript. Do you agree with the article?](https://www.reddit.com/r/javascript/comments/jbd0wu/advantages_of_functional_programming_in/)
+- url: https://www.7urtle.com/javascript-functional-programming-advantages
 ---
 
-## [12][All Prime Day Deals on Javascript Books is Live Now. (Up to 97% OFF)](https://www.reddit.com/r/javascript/comments/jawhfy/all_prime_day_deals_on_javascript_books_is_live/)
-- url: http://prime-deal.info/javascript
+## [12][I started making a Discord monitor in Unity with a Discord.js backend](https://www.reddit.com/r/javascript/comments/jb5fw1/i_started_making_a_discord_monitor_in_unity_with/)
+- url: https://sqpdprojects.blogspot.com/2020/10/creating-discord-monitor-in-unity.html
 ---
 

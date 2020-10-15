@@ -31,85 +31,51 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Anyone using Nav component with Compose](https://www.reddit.com/r/androiddev/comments/jas77r/anyone_using_nav_component_with_compose/)
-- url: https://www.reddit.com/r/androiddev/comments/jas77r/anyone_using_nav_component_with_compose/
----
-How was your experience? What are the cons in current state?
-## [4][Create moving windows that stay on top of other apps on Android](https://www.reddit.com/r/androiddev/comments/jazvzc/create_moving_windows_that_stay_on_top_of_other/)
-- url: https://dev.to/localazy/5-floating-windows-on-android-moving-window-1192
+## [3][What happened to Slices ? Ok, we still get Slices as Assistant response, but I never get Slices as a search suggestion (see image).](https://www.reddit.com/r/androiddev/comments/jbjovt/what_happened_to_slices_ok_we_still_get_slices_as/)
+- url: https://i.redd.it/is7svgvcy7t51.png
 ---
 
-## [5][Ideal way to store favourites/bookmarked records in Database](https://www.reddit.com/r/androiddev/comments/jazcra/ideal_way_to_store_favouritesbookmarked_records/)
-- url: https://www.reddit.com/r/androiddev/comments/jazcra/ideal_way_to_store_favouritesbookmarked_records/
+## [4][Gradle 6.7 Released](https://www.reddit.com/r/androiddev/comments/jbffgz/gradle_67_released/)
+- url: https://docs.gradle.org/6.7/release-notes.html
 ---
-Hey guys,
 
-Calling all the database enthusiasts for help.
-
-What should be the ideal strategy to store the favourites/bookmarked records..
-
-Let's consider I have Employe table (Id, name, salary), if user selects emp101 as favourite 
-Should that be stored as record in Favourites table (storing id of the emp) or we should have a column in emp table it self.
-
-Which strategy is good to get all employees who are marked as fav or not using single query.
-## [6][How to perform Android development for two companies?](https://www.reddit.com/r/androiddev/comments/jaycbn/how_to_perform_android_development_for_two/)
-- url: https://www.reddit.com/r/androiddev/comments/jaycbn/how_to_perform_android_development_for_two/
+## [5][Remember to implement account hold and restore in your app by november 1, 2020](https://www.reddit.com/r/androiddev/comments/jbglmz/remember_to_implement_account_hold_and_restore_in/)
+- url: https://www.reddit.com/r/androiddev/comments/jbglmz/remember_to_implement_account_hold_and_restore_in/
 ---
-I have my own startup, under which I would like to publish Android apps and additionally I would like to publish applications on behalf of another company, as a freelancer. Can I (and how can I) have two Google Android accounts? Should I create two business gmails? Or can I create everything from my personal gmail?
+If your Android app sells subscription products, then you will need to make sure these subscription features (account hold, restore, pause, and resubscribe) are supported. If your Android app does not sell subscription products, you will not need to worry about this upcoming change.
 
-Googled information is controversal. Most often people ask abount account ban, which is not interesting to me
-## [7][What can I realistically expect to be asked in a job interview for an Entry Level Android Developer position?](https://www.reddit.com/r/androiddev/comments/jahp8v/what_can_i_realistically_expect_to_be_asked_in_a/)
-- url: https://www.reddit.com/r/androiddev/comments/jahp8v/what_can_i_realistically_expect_to_be_asked_in_a/
+If you have paid apps or in app purchase then you don’t to make any changes.
+## [6][Benchmarking Gson vs Jackson vs Moshi 2020 | Eric Decanini](https://www.reddit.com/r/androiddev/comments/jbj9wg/benchmarking_gson_vs_jackson_vs_moshi_2020_eric/)
+- url: https://www.ericdecanini.com/2020/10/13/benchmarking-gson-vs-jackson-vs-moshi-2020/
 ---
-  
 
-Hi all,
-
-Basically, the title says it all. I find it frustrating reading through interview questions on the internet because I feel like most of them seem to assume you’re applying to FAANG (or similar) companies for some senior role. This frustrates me because I end up feeling inadequate and unprepared reading things like, “You’re going to have to do 7 interviews consisting of phone/in-person/whiteboarding/pair programming” or “I went to X interviews and only got asked these complex algo questions, nothing Android specific”.
-
-For some context I’m a recently graduated CS major from the US without any professional SDev job experience. I’ve only been doing Android Dev for a little over a year with an app on the Play Store and some smaller personal projects, but I feel like I have a solid grasp on almost everything needed to make an Android app (except for more complex libraries like RxJava). My main issue is with algorithmic questions. I cannot for the life of me get good at them even as I spend hours on LeetCode or HackerRank. I can answer simple questions but when things get complex, I struggle to grasp them, which makes me concerned for job interviews where algo questions seem to be favored instead of job specific questions, like Android Development, which I can answer.
-
-So basically, my question is what interview process can I reasonably be expected to go through being new for an entry level Android dev position? What type of questions would I be asked? Could I expect interviewers to "go easy on me" in a sense because it's an entry level position? I would really appreciate answers from entry level Android Devs who’ve gone through this process or interviewers who’ve led the process. I would also appreciate any online resources that accurately describe the Entry level process. Thanks!
-## [8][Has anyone developed a 120fps video recorder?](https://www.reddit.com/r/androiddev/comments/jb0exf/has_anyone_developed_a_120fps_video_recorder/)
-- url: https://www.reddit.com/r/androiddev/comments/jb0exf/has_anyone_developed_a_120fps_video_recorder/
+## [7][Automate your apk signing process with gradle](https://www.reddit.com/r/androiddev/comments/jbjw35/automate_your_apk_signing_process_with_gradle/)
+- url: https://codingbatch.com/2020/10/15/automate-your-apk-signing-process-with-gradle-for-different-flavors/
 ---
-My phone is capable of video up to 480fps. But this is only in slowmo mode and doesn't record audio. Has anyone developed an app that will record 120fps video with audio too?
 
-My TV is 120hz so it would be cool to be able to watch 120hz video on that with full audio.
-## [9][ConstraintLayout issues in v 2.0.2](https://www.reddit.com/r/androiddev/comments/jb0e6v/constraintlayout_issues_in_v_202/)
-- url: https://www.reddit.com/r/androiddev/comments/jb0e6v/constraintlayout_issues_in_v_202/
+## [8][Android Architecture And Kotlin](https://www.reddit.com/r/androiddev/comments/jbjio7/android_architecture_and_kotlin/)
+- url: https://www.reddit.com/r/androiddev/comments/jbjio7/android_architecture_and_kotlin/
 ---
-Is it just me or is anyone else's &lt;include&gt; xml ViewDataBinding with &lt;data&gt; variables is not displaying inside ConstraintLayout after updating to v 2.0.2.
+Actually, I am doing Android App development from past 4 months and right Now I am really confused about what is the right time to start learning Kotlin and especially MVVM/MVP Architecture
 
-Also Android Studio is not reading the children id's of this same &lt;include&gt; which I guess might have something to do with it not displaying, but this has nothing to do with ConstraintLayout, rather with the IDE latest update.
+So at what point I should Start learning Architecture Components and Kotlin
 
-&amp;#x200B;
-
-After reversing back to previous version of constraintLayout, the IDE is still not able to read the children of the &lt;include&gt; xml but it compiles without problem nonetheless, and the view is able to be drawn again.
-
-&amp;#x200B;
-
-[https://issuetracker.google.com/issues/170720908](https://issuetracker.google.com/issues/170720908)
-## [10][Do I need still PowerManager.WakeLock?](https://www.reddit.com/r/androiddev/comments/jb0bgt/do_i_need_still_powermanagerwakelock/)
-- url: https://www.reddit.com/r/androiddev/comments/jb0bgt/do_i_need_still_powermanagerwakelock/
+You can share your journey it will help me a lot ,and If possible can you tell me the proper roadmap to achieve it, Please!
+## [9][View not being inflated after exiting fragment and pressing the back button fast](https://www.reddit.com/r/androiddev/comments/jbnczg/view_not_being_inflated_after_exiting_fragment/)
+- url: https://www.reddit.com/r/androiddev/comments/jbnczg/view_not_being_inflated_after_exiting_fragment/
 ---
-Hi,
+I have an app with a couple of fragments you can transition between. Now a big problem I have is that if I enter another fragment(using nav_graph), and immediately press the back button it will go into a blank screen. I checked it in more than one fragment.
 
-I was using AlarmManager for scheduled network connections in background and I was using PowerManager.WakeLock before connect internet to wake up device. I changed it to WorkManager. Do I need still PowerManager.WakeLock to wake up device before connect to internet?
-## [11][Testing tools for Kotlin. Quick recap in 2020 on my blog.](https://www.reddit.com/r/androiddev/comments/jaztls/testing_tools_for_kotlin_quick_recap_in_2020_on/)
-- url: https://www.reddit.com/r/androiddev/comments/jaztls/testing_tools_for_kotlin_quick_recap_in_2020_on/
+After further testing I found out that what happens is that when I use the naviagtion to navigate to another fragment, on pause gets called, and then onDestroyView, with about a second delay, and pressing the back button in that time will make it so the onDestoyView does not get called, meaning that onCreateView does not get called so the fragment does not inflate the xml view layout.(e.g tried setting the xml to just be a black screen with a button, still get a blank whitish screen). Any Idea how I can fix this? Maybe inflate the view in the onResume if it has not been inflated, or destroy the view in onPause or something?
+## [10][I saw an app that shows the devtools on phones. However this app connects to an appspot website to do this. Is it possible to do the same thing by creating a local server for devtools so it can be used offline?](https://www.reddit.com/r/androiddev/comments/jbn24x/i_saw_an_app_that_shows_the_devtools_on_phones/)
+- url: https://i.redd.it/7iycctw0b9t51.jpg
 ---
-Hey!  
-Are you up to date with testing tools in Kotlin?   
-I wrote a quick recap from my Android perspective:  
-[https://www.thecodeside.com/2020/10/13/testing-tools-for-kotlin-quick-recap-in-2020/](https://www.thecodeside.com/2020/10/13/testing-tools-for-kotlin-quick-recap-in-2020/)
-## [12][Help with making battery widget (noob here)](https://www.reddit.com/r/androiddev/comments/jaznhc/help_with_making_battery_widget_noob_here/)
-- url: https://www.reddit.com/r/androiddev/comments/jaznhc/help_with_making_battery_widget_noob_here/
+
+## [11][Java 16 getting Vector API (SIMD/AVX) integration](https://www.reddit.com/r/androiddev/comments/jbk5w3/java_16_getting_vector_api_simdavx_integration/)
+- url: https://mail.openjdk.java.net/pipermail/panama-dev/2020-October/011149.html
 ---
-It has been a while that I was making an app but I got stuck a lot at the core function so I stopped working on it for months. 
 
-Now, I can't find clear and direct information on how to do this anywhere else, so I hope I get help here. 
+## [12][Hey guys, rolling out a quick survey for android devs to understand developer environment preferences. Would be great if you could spare out 2 mins to fill out the same. Thanks in advance!](https://www.reddit.com/r/androiddev/comments/jbm92l/hey_guys_rolling_out_a_quick_survey_for_android/)
+- url: https://forms.gle/CfPRmqZ7qg9UYXQ86
+---
 
-All I need in order to finish is simply setup the simple function (in my mind at least) of "battery pecentage (number%) = this_image.png", like "10% = show 10.png, 20% = show 20.png" etc. 
-
-I hope to get assistance here on how to make this work. Thanks.

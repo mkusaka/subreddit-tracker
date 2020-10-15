@@ -70,100 +70,91 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Smooth DOC - a premium Gatsby.js documentation theme is now open source](https://www.reddit.com/r/reactjs/comments/javt8b/smooth_doc_a_premium_gatsbyjs_documentation_theme/)
-- url: https://github.com/gregberge/smooth-doc
+## [3][Simple project: You enter the location and shows you how many Covid-19 cases are there. It ain't much, bit is honest work...](https://www.reddit.com/r/reactjs/comments/jbb1my/simple_project_you_enter_the_location_and_shows/)
+- url: https://v.redd.it/qei382wmy4t51
 ---
 
-## [4][Hey guys, I wanted to share my tutorial on how to make a Socket IO Chat App using ReactJS and NodeJS!](https://www.reddit.com/r/reactjs/comments/jaf269/hey_guys_i_wanted_to_share_my_tutorial_on_how_to/)
-- url: https://www.youtube.com/watch?v=XS79S6nmaGM
+## [4][My React skills are out of date, how do I remain competitive for 2021?](https://www.reddit.com/r/reactjs/comments/jb1vo8/my_react_skills_are_out_of_date_how_do_i_remain/)
+- url: https://www.reddit.com/r/reactjs/comments/jb1vo8/my_react_skills_are_out_of_date_how_do_i_remain/
+---
+I first started learning React back in 2016, this was the time when React had 2 APIs, the well-known Classes API, and the previous Object? API.
+
+I believe I am fairly competent in writing React applications, as I have worked on a Full-Stack application at my workplace. I don't use Express, but rather Golang.
+
+In the middle of 2016, my company switched over to WordPress/PHP along with jQuery, no chance of React, and that job ended last week.
+
+I do currently know:
+
+* Hooks (useState, useEffect, useReducer)
+* React Router 3
+* Redux
+* Webpack
+
+I feel that since I have not worked with React in any significant capacity since 2016, I am not competitive. I feel overwhelmed at just how different the front-end ecosystem is these and I have no idea what I should learn to get myself up to speed.
+## [5][Feedback on React Application](https://www.reddit.com/r/reactjs/comments/jbmqhu/feedback_on_react_application/)
+- url: https://www.reddit.com/r/reactjs/comments/jbmqhu/feedback_on_react_application/
+---
+I am React beginner , but i gotta say , im pretty proud of myself for building this cool CV MAKING website called [Resume Factory](https://www.resumefactory.co/) which i deployed using Heroku. I could really really use some Feedback .
+
+Source Code: [https://github.com/ksekwamote/cvmaker\_new](https://github.com/ksekwamote/cvmaker_new)
+
+Website: [https://www.resumefactory.co/](https://www.resumefactory.co/)
+## [6][I have a config.js file that I want to use config depending on environment variable, how do I make local .env and docker .env?](https://www.reddit.com/r/reactjs/comments/jblpch/i_have_a_configjs_file_that_i_want_to_use_config/)
+- url: https://www.reddit.com/r/reactjs/comments/jblpch/i_have_a_configjs_file_that_i_want_to_use_config/
+---
+I have a config.js file that I want to use config depending on  environment variable, how do I make local .env and docker .env?
+
+Does anyone have any tips?
+## [7][Async and await not working in my react app..](https://www.reddit.com/r/reactjs/comments/jbngd4/async_and_await_not_working_in_my_react_app/)
+- url: https://www.reddit.com/r/reactjs/comments/jbngd4/async_and_await_not_working_in_my_react_app/
+---
+I got an error for using async and await within my fetchData() function.  
+How can i solve?
+
+useEffect(() =&gt; {  
+async function fetchData(){  
+const request = await axios.get(fetchUrl);  
+console.log(request);  
+return request;  
+}  
+fetchData();  
+},\[\]);
+
+note: node version is -v14.13.1  
+Thanks in advance  
+[\#React](https://web.facebook.com/hashtag/react?__eep__=6&amp;__cft__[0]=AZUGddbRxhKcL97s9t1KkxxoBk4RhgjgvEltVN24kWPJiLAOeorIjp0Ezf7W-SD_nPTO33eUHBdTFUrs6JAsf6_M-SeNrZyQcAUOPxsTjA5sO06GIoq1JqbYk3yJhgG9PlNevRJg_A42MCi3Fjh5SV6a7199gEWuYMc9jgPM8FINJdI0ckzESWhdZHEkQ94JQrSb8oj96cILFpqmgeDecIWn&amp;__tn__=*NK-R)  
+[\#ReactJS](https://web.facebook.com/hashtag/reactjs?__eep__=6&amp;__cft__[0]=AZUGddbRxhKcL97s9t1KkxxoBk4RhgjgvEltVN24kWPJiLAOeorIjp0Ezf7W-SD_nPTO33eUHBdTFUrs6JAsf6_M-SeNrZyQcAUOPxsTjA5sO06GIoq1JqbYk3yJhgG9PlNevRJg_A42MCi3Fjh5SV6a7199gEWuYMc9jgPM8FINJdI0ckzESWhdZHEkQ94JQrSb8oj96cILFpqmgeDecIWn&amp;__tn__=*NK-R)
+## [8][Need STUPID React App ideas to practice my dev skills](https://www.reddit.com/r/reactjs/comments/jbn908/need_stupid_react_app_ideas_to_practice_my_dev/)
+- url: https://www.reddit.com/r/reactjs/comments/jbn908/need_stupid_react_app_ideas_to_practice_my_dev/
+---
+Got any interesting, fun, and/or stupid ideas?
+## [9][Best React Animations course?](https://www.reddit.com/r/reactjs/comments/jbn1w5/best_react_animations_course/)
+- url: https://www.reddit.com/r/reactjs/comments/jbn1w5/best_react_animations_course/
+---
+Hi!  
+
+
+I am a React Native developer and I am very interested in learning more about animations since our clients are very much into it. I started using spring but I believe I need to know more in order to do more and so I'm asking you, who do you think has the best React animations/spring course out there? I found  Start React Native ( by William  Candillon) but he is pricey and I would like to know if it's worth investing in his courses? Thank you
+## [10][Tic Tac Toe using React.js Playlist (Really Good)](https://www.reddit.com/r/reactjs/comments/jbmz90/tic_tac_toe_using_reactjs_playlist_really_good/)
+- url: https://www.youtube.com/playlist?list=PLsS7rcLJIvNPqY5sNOFCEWQxZ0yQIqjRS
 ---
 
-## [5][Is it safe to mutate destructured state variable?](https://www.reddit.com/r/reactjs/comments/jazc53/is_it_safe_to_mutate_destructured_state_variable/)
-- url: https://www.reddit.com/r/reactjs/comments/jazc53/is_it_safe_to_mutate_destructured_state_variable/
+## [11][Open source React DataGrid](https://www.reddit.com/r/reactjs/comments/jblxi8/open_source_react_datagrid/)
+- url: https://www.reddit.com/r/reactjs/comments/jblxi8/open_source_react_datagrid/
 ---
-Golden rule of React is not to mutate a state variable directly.
+Hi all,
 
-However, if I destructure the state, can I then update this variable safely? For example;
+I'm looking for a React DataGrid component, ideally open source, to tick the following requirements:
 
-    this.state = {
-      arr: [{id: 1}]
-    }
-    
-    fooBar = () =&gt; {
-      const { arr } = this.state;
-      arr.push({id: 2});
-      this.setState({ arr });
-    }
+* fully documented
+* used in production by Enterprise users
+* developed on react ground up - not a wrapper like ag-grid
+* have multi-level grouping
 
-Or should I clone this array and work on it?
-
-    fooBar = () =&gt; {
-      const { arr } = this.state;
-      const clonedArr = [...arr];
-      clonedArr.push({id: 2});
-      this.setState({ arr: clonedArr });
-    }
-## [6][chat application using react native](https://www.reddit.com/r/reactjs/comments/jawzuq/chat_application_using_react_native/)
-- url: https://www.reddit.com/r/reactjs/comments/jawzuq/chat_application_using_react_native/
+Cheers
+## [12][Switching between React and Angular](https://www.reddit.com/r/reactjs/comments/jbllzq/switching_between_react_and_angular/)
+- url: https://www.reddit.com/r/reactjs/comments/jbllzq/switching_between_react_and_angular/
 ---
-Hello everyone, I have an idea for my last year college project in react. I want to build a real time mobile chat application. Its about 2 years that I am learning front end development and all my focus was on Javascript and I think now I am in intermediate level. Is it really hard and complex to build such application using react?
+I started learning React for a side project a year ago, and so far I love creating user interfaces with this library! But recently, as a junior developer, I was hired to work on a multi-solution platform including an Angular web project. 
 
-and what other technologies should I use I searched and found that I can use firebase or sokcet..
-
-what database and server side programming language should I use, can I use node.js for server side and mangodb for database?
-## [7][Back button requires 4 clicks to work](https://www.reddit.com/r/reactjs/comments/jaw969/back_button_requires_4_clicks_to_work/)
-- url: https://www.reddit.com/r/reactjs/comments/jaw969/back_button_requires_4_clicks_to_work/
----
-I'm using React Router v6 and using the navigate API and passing minus 1 with the intention of returning to the previous page. [This page](https://pastebin.com/19CbQrY4) is landed upon when when an error occurs during an API request. When I'm on this page and try to go back to the previous one, it takes 4 clicks to do that. What could be the reason for this?
-## [8][How to code JS in ReactJS?](https://www.reddit.com/r/reactjs/comments/jb0mu0/how_to_code_js_in_reactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/jb0mu0/how_to_code_js_in_reactjs/
----
-I've read that you always code JS in useEffect, but I've seen other people code it differently. So confused about it, would like some clarity!
-## [9][Phosphor Icons, a flexible icon family for everyone](https://www.reddit.com/r/reactjs/comments/jai9gi/phosphor_icons_a_flexible_icon_family_for_everyone/)
-- url: https://phosphoricons.com/
----
-
-## [10][Bind an method in the constructor function](https://www.reddit.com/r/reactjs/comments/jayxd9/bind_an_method_in_the_constructor_function/)
-- url: https://www.reddit.com/r/reactjs/comments/jayxd9/bind_an_method_in_the_constructor_function/
----
-Hi fellows !  
-I took some vacations to go for an online React course at [codeacademy.com](https://codeacademy.com) .  
-I have a question:  
-Why do you need to bind, in the constructor function, a method to the object itself, when that method uses the *this* keyword?  
-If the method is from a different class component instance, I understand why:  
-When that happens, the *this* would refer to the instance and not the the source class component, that's why its needed to bind the method to the source class component.
-
-But, if the method is from the same class component why do I need that *this* refers to the object itself?  
-
-
-I hope my text was not confusing.  
-
-
-Thanks a lot
-## [11][How to save,edit and update user profile information in Reactjs with Nodejs](https://www.reddit.com/r/reactjs/comments/jayw0w/how_to_saveedit_and_update_user_profile/)
-- url: https://www.reddit.com/r/reactjs/comments/jayw0w/how_to_saveedit_and_update_user_profile/
----
- This is the user profile page: [User Page](https://codesandbox.io/s/gifted-varahamihira-dbhco?file=/src/UserInfo.js)
-
-I would like as soon as a user registers all fields are "readOnly",  then the user clicks the "Edit" button and the fields become editable.  While the fields are editable, the "Edit" button changes to "Save". Once  the user has filled out the form, he clicks on "Save", the data is sent  to the database and becomes visible in "readOnly". Once the data has been saved, from the second "Edit" onwards the "Save"  button will have to update without creating new elements in the  database.
-
-First time: Edit--&gt;Input Data--&gt; Save   
- From second time: Edit--&gt;Change Data--&gt;Update
-
-I know maybe it's a bit too much but I can't solve it myself. The back-end side works, but obviously every time I send the data a new line is created in the table.
-## [12][I want to create a video editor along with some text animations](https://www.reddit.com/r/reactjs/comments/jayudf/i_want_to_create_a_video_editor_along_with_some/)
-- url: https://www.reddit.com/r/reactjs/comments/jayudf/i_want_to_create_a_video_editor_along_with_some/
----
-hey guys,  
-I want to create a video editor in ReactJS.  
-any recommendation about the libraries I need to use?  
-if anyone had already created please allow me to fork.  
-I had found these libraries.  any reviews about these?
-
-1: PixiJS  
-2: D3JS  
-3: FabricJS
-
-&amp;#x200B;
-
-Cheers.
+I already have the web requirements to make fast progress but a lot of things vary between React and Angular. Right now, despite getting a full-time job based on an Angular project, I'm still working on a React side project. Have you experienced multiple javascript frontend frameworks/libraries in your webdev journey ?

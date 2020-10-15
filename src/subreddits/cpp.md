@@ -56,53 +56,43 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][TIL: Double linked list using one pointer per node.](https://www.reddit.com/r/cpp/comments/jawzei/til_double_linked_list_using_one_pointer_per_node/)
+## [2][LLVM 11.0.0 Released - highlights for C/C++ developers](https://www.reddit.com/r/cpp/comments/jbn7cp/llvm_1100_released_highlights_for_cc_developers/)
+- url: https://tobias.hieta.se/llvm11-release
+---
+
+## [3][C++20 STL Features: 1 Year of Development on GitHub](https://www.reddit.com/r/cpp/comments/jb9grs/c20_stl_features_1_year_of_development_on_github/)
+- url: https://devblogs.microsoft.com/cppblog/cpp20-stl-features/
+---
+
+## [4][How to cross-compile for embedded with CMake like a champ](https://www.reddit.com/r/cpp/comments/jbn3z3/how_to_crosscompile_for_embedded_with_cmake_like/)
+- url: https://kubasejdak.com/how-to-cross-compile-for-embedded-with-cmake-like-a-champ
+---
+
+## [5][Compile and run desktop C++ apps in github codespaces](https://www.reddit.com/r/cpp/comments/jbikd0/compile_and_run_desktop_c_apps_in_github/)
+- url: https://www.mudlet.org/2020/10/develop-run-desktop-apps-in-the-cloud-github-codespaces/
+---
+
+## [6][A case study in implementation inheritance](https://www.reddit.com/r/cpp/comments/jbjg35/a_case_study_in_implementation_inheritance/)
+- url: https://quuxplusone.github.io/blog/2020/10/15/implementation-inheritance/
+---
+
+## [7][Next Tuesday: Meeting C++ online Job fair](https://www.reddit.com/r/cpp/comments/jbly7e/next_tuesday_meeting_c_online_job_fair/)
+- url: https://meetingcpp.com/mcpp/online/jobfair.php
+---
+
+## [8][TIL: Double linked list using one pointer per node.](https://www.reddit.com/r/cpp/comments/jawzei/til_double_linked_list_using_one_pointer_per_node/)
 - url: https://en.wikipedia.org/wiki/XOR_linked_list
 ---
 
-## [3][Networking in C++ Part #1: MMO Client/Server, ASIO &amp; Framework Basics](https://www.reddit.com/r/cpp/comments/jah4sb/networking_in_c_part_1_mmo_clientserver_asio/)
-- url: https://www.reddit.com/r/cpp/comments/jah4sb/networking_in_c_part_1_mmo_clientserver_asio/
----
-[https://www.youtube.com/watch?v=2hNdkYInj4g](https://www.youtube.com/watch?v=2hNdkYInj4g&amp;t=31s)
-
-&amp;#x200B;
-
-I found that video very intersting and how i hardly find any good content about networking programming with an use case in C++, i decided to share it here.
-## [4][Reflection-like functionality in C++11 using CRTP, garbage and default member values](https://www.reddit.com/r/cpp/comments/jaww7i/reflectionlike_functionality_in_c11_using_crtp/)
-- url: https://lordsof.tech/programming/reflection-in-c11/
+## [9][Does C++ still deserve the bad rap it has had for so long?](https://www.reddit.com/r/cpp/comments/jbn5jc/does_c_still_deserve_the_bad_rap_it_has_had_for/)
+- url: https://nibblestew.blogspot.com/2020/10/does-c-still-deserve-bad-rap-it-has-had.html
 ---
 
-## [5][Memory Reordering Caught in the Act (2012)](https://www.reddit.com/r/cpp/comments/jawy7i/memory_reordering_caught_in_the_act_2012/)
-- url: https://preshing.com/20120515/memory-reordering-caught-in-the-act/
+## [10][A brief introduction to C++ structured binding](https://www.reddit.com/r/cpp/comments/jb8fnv/a_brief_introduction_to_c_structured_binding/)
+- url: https://devblogs.microsoft.com/oldnewthing/20201014-00/?p=104367
 ---
 
-## [6]["Hello World!" using CMake and C++20 Modules with the latest Visual Studio Preview](https://www.reddit.com/r/cpp/comments/jal7iw/hello_world_using_cmake_and_c20_modules_with_the/)
-- url: https://github.com/rick-de-water/ModuleHelloWorld
----
-
-## [7][The Dynamic Runtime Inlining (DRTI) project](https://www.reddit.com/r/cpp/comments/jb0nio/the_dynamic_runtime_inlining_drti_project/)
+## [11][The Dynamic Runtime Inlining (DRTI) project](https://www.reddit.com/r/cpp/comments/jb0nio/the_dynamic_runtime_inlining_drti_project/)
 - url: https://github.com/drti/drti
 ---
 
-## [8][C++ Day 2020 (online-only)](https://www.reddit.com/r/cpp/comments/jazurb/c_day_2020_onlineonly/)
-- url: https://isocpp.org/blog/2020/10/cppday20
----
-
-## [9][C++ Core Guidelines: A Short Detour to Contracts in C++20](https://www.reddit.com/r/cpp/comments/jaztd6/c_core_guidelines_a_short_detour_to_contracts_in/)
-- url: https://www.modernescpp.com/index.php/c-core-guidelines-a-detour-to-contracts
----
-
-## [10][Q&amp;A with Titus Winters: C++ in 2020 and Beyond](https://www.reddit.com/r/cpp/comments/jamkv9/qa_with_titus_winters_c_in_2020_and_beyond/)
-- url: https://youtu.be/QIAdFrPmBDQ
----
-
-## [11][Are there any good guides that directly compare MATLAB to C++ and vice versa?](https://www.reddit.com/r/cpp/comments/jaqdt1/are_there_any_good_guides_that_directly_compare/)
-- url: https://www.reddit.com/r/cpp/comments/jaqdt1/are_there_any_good_guides_that_directly_compare/
----
-I've been very happily working almost exclusively in MATLAB for a bit over ten years now. Initially, I used did controls, but then switched over to computational mechanics and geometry. I've only very sparsely used Python when collaborating with others, and have used C++ in a very minimal capacity (just quick edits of inputs and parameters).
-
-Due to the nature of what I'm working on these days, I've accepted that I just need to bite the bullet and learn C++ to a reasonable level of proficiency, and move my ongoing projects there.
-
-While tutorials are good and fine, I feel I would really benefit from a succinct comparison of MATLAB and C++ syntax, data structures, and general best practices; a translation between one and the other, if you will. Does anyone know of such a thing? All I've been able to find are mostly hollow blog posts with too much SEO.
-
-If anyone has any suggestions, thank you in advance!

@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/j9q7kr/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/j9q7kr/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/jc92op/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/jc92op/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - October 12, 2020](https://www.reddit.com/r/androiddev/comments/j9oso5/weekly_questions_thread_october_12_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/j9oso5/weekly_questions_thread_october_12_2020/
 ---
@@ -31,51 +25,78 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][What happened to Slices ? Ok, we still get Slices as Assistant response, but I never get Slices as a search suggestion (see image).](https://www.reddit.com/r/androiddev/comments/jbjovt/what_happened_to_slices_ok_we_still_get_slices_as/)
-- url: https://i.redd.it/is7svgvcy7t51.png
+## [3][It's pretty hard to make games](https://www.reddit.com/r/androiddev/comments/jbuzb8/its_pretty_hard_to_make_games/)
+- url: https://i.redd.it/neembhs2dbt51.png
 ---
 
-## [4][Gradle 6.7 Released](https://www.reddit.com/r/androiddev/comments/jbffgz/gradle_67_released/)
-- url: https://docs.gradle.org/6.7/release-notes.html
+## [4][Is anyone else getting tired of Android Studio &amp; Gradle performance?](https://www.reddit.com/r/androiddev/comments/jc6wzw/is_anyone_else_getting_tired_of_android_studio/)
+- url: https://www.reddit.com/r/androiddev/comments/jc6wzw/is_anyone_else_getting_tired_of_android_studio/
+---
+I just ran my unit tests through the terminal, it took 6 mins. (\~30 smaller modules so guess I'll have to live with that)
+
+Before that I was typing in Android Studio and the autocomplete was struggling to come up with something within 3 seconds. The Android Studio task is taking around 200% of my CPU when I start typing, according to activity monitor. It lies steadily at 4GB of ram + some java processes together taking another 5GB. I'm currently at 14,3 out of 16 GB of ram, with 2GB in the swap, no emulator only 5 chrome tabs, slack, and spotify open.
+
+I've got a Macbook Pro 2018, pretty maxed out with 2,7 GHz quad-core i7, 16GB ram. Do I have to throw this out and get the 16 inch, i9 &amp; 64GB? I don't even want a bigger computer.
+
+Anyways, I had to write down my frustration. Is someone else experiencing this or am I going mad?
+## [5][androiddevnotes/awesome-jetpack-compose-learning-resources A continuously updated list of learning Jetpack Compose for Android apps.](https://www.reddit.com/r/androiddev/comments/jc71v3/androiddevnotesawesomejetpackcomposelearningresour/)
+- url: https://github.com/androiddevnotes/awesome-jetpack-compose-learning-resources
 ---
 
-## [5][Remember to implement account hold and restore in your app by november 1, 2020](https://www.reddit.com/r/androiddev/comments/jbglmz/remember_to_implement_account_hold_and_restore_in/)
-- url: https://www.reddit.com/r/androiddev/comments/jbglmz/remember_to_implement_account_hold_and_restore_in/
----
-If your Android app sells subscription products, then you will need to make sure these subscription features (account hold, restore, pause, and resubscribe) are supported. If your Android app does not sell subscription products, you will not need to worry about this upcoming change.
-
-If you have paid apps or in app purchase then you don’t to make any changes.
-## [6][Benchmarking Gson vs Jackson vs Moshi 2020 | Eric Decanini](https://www.reddit.com/r/androiddev/comments/jbj9wg/benchmarking_gson_vs_jackson_vs_moshi_2020_eric/)
-- url: https://www.ericdecanini.com/2020/10/13/benchmarking-gson-vs-jackson-vs-moshi-2020/
+## [6][Introducing the Android for Cars App Library](https://www.reddit.com/r/androiddev/comments/jbu2la/introducing_the_android_for_cars_app_library/)
+- url: https://android-developers.googleblog.com/2020/10/introducing-android-for-cars-app-library.html?linkId=102091973
 ---
 
-## [7][Automate your apk signing process with gradle](https://www.reddit.com/r/androiddev/comments/jbjw35/automate_your_apk_signing_process_with_gradle/)
-- url: https://codingbatch.com/2020/10/15/automate-your-apk-signing-process-with-gradle-for-different-flavors/
+## [7][Why is it mandatory to upload 7-inch tablet screenshots to Play Console?](https://www.reddit.com/r/androiddev/comments/jc1ps0/why_is_it_mandatory_to_upload_7inch_tablet/)
+- url: https://www.reddit.com/r/androiddev/comments/jc1ps0/why_is_it_mandatory_to_upload_7inch_tablet/
+---
+Is this a new requirement? I'm trying to publish a game designed for mobile phones, but they're forcing me to include screenshots for a "7-inch tablet"..
+## [8][Reddit android app : what pattern is used to navigate/open their "modals" on top of the rest of the UI ?](https://www.reddit.com/r/androiddev/comments/jc9d5y/reddit_android_app_what_pattern_is_used_to/)
+- url: https://www.reddit.com/r/androiddev/comments/jc9d5y/reddit_android_app_what_pattern_is_used_to/
+---
+I am Using Android architecture patterns with : Navigation Graph, NavHost in a very basic / standard way
+
+Currently I have one activity, with inside its layout :
+
+\- Material AppBarLayout + Toolbar
+
+\- NavHostFragment
+
+Then obviously, I have a few different fragment that I navigateTo and their content gets replaced under my toolbar. 
+
+All standard for now, but now how can I navigate to a fragment like it is done in Reddit App when :
+
+\- clicking on the Search icon
+
+\- clicking on any post to see it 
+
+? It seems like a popup/modal that take all screen space and having its own back button.
+
+&amp;#x200B;
+
+Tried BottomSheemDialogFragment without success.  
+Is it a new activity with another dedicated NavHostFragment ? :'(
+
+&amp;#x200B;
+
+gif of the areddit app showing what I mean : [https://gfycat.com/fr/bouncyfalseeidolonhelvum](https://gfycat.com/fr/bouncyfalseeidolonhelvum)
+
+Thanks for the help
+## [9][How to ensure your phone won't brick during rooting?](https://www.reddit.com/r/androiddev/comments/jc8rdg/how_to_ensure_your_phone_wont_brick_during_rooting/)
+- url: https://www.reddit.com/r/androiddev/comments/jc8rdg/how_to_ensure_your_phone_wont_brick_during_rooting/
 ---
 
-## [8][Android Architecture And Kotlin](https://www.reddit.com/r/androiddev/comments/jbjio7/android_architecture_and_kotlin/)
-- url: https://www.reddit.com/r/androiddev/comments/jbjio7/android_architecture_and_kotlin/
+## [10][Status bar.](https://www.reddit.com/r/androiddev/comments/jc89nc/status_bar/)
+- url: https://www.reddit.com/r/androiddev/comments/jc89nc/status_bar/
 ---
-Actually, I am doing Android App development from past 4 months and right Now I am really confused about what is the right time to start learning Kotlin and especially MVVM/MVP Architecture
-
-So at what point I should Start learning Architecture Components and Kotlin
-
-You can share your journey it will help me a lot ,and If possible can you tell me the proper roadmap to achieve it, Please!
-## [9][View not being inflated after exiting fragment and pressing the back button fast](https://www.reddit.com/r/androiddev/comments/jbnczg/view_not_being_inflated_after_exiting_fragment/)
-- url: https://www.reddit.com/r/androiddev/comments/jbnczg/view_not_being_inflated_after_exiting_fragment/
+Hi, i wish to add an actively updated piece of system information to my status bar, but i can't figure out where the functionality for this is. What i want to add is along the lines of the battery percentage, but all i can find is how to change colors and dimming. Any idea on how to add custom system information to the status bar?
+## [11][New Google Play Console Can’t Upload. Try Again Error](https://www.reddit.com/r/androiddev/comments/jc0o1s/new_google_play_console_cant_upload_try_again/)
+- url: https://www.reddit.com/r/androiddev/comments/jc0o1s/new_google_play_console_cant_upload_try_again/
 ---
-I have an app with a couple of fragments you can transition between. Now a big problem I have is that if I enter another fragment(using nav_graph), and immediately press the back button it will go into a blank screen. I checked it in more than one fragment.
+Tried uploading a new APK to production but can’t upload on the new Play Console. But I switched to classic Google Play Console and was successfully able to upload. 
 
-After further testing I found out that what happens is that when I use the naviagtion to navigate to another fragment, on pause gets called, and then onDestroyView, with about a second delay, and pressing the back button in that time will make it so the onDestoyView does not get called, meaning that onCreateView does not get called so the fragment does not inflate the xml view layout.(e.g tried setting the xml to just be a black screen with a button, still get a blank whitish screen). Any Idea how I can fix this? Maybe inflate the view in the onResume if it has not been inflated, or destroy the view in onPause or something?
-## [10][I saw an app that shows the devtools on phones. However this app connects to an appspot website to do this. Is it possible to do the same thing by creating a local server for devtools so it can be used offline?](https://www.reddit.com/r/androiddev/comments/jbn24x/i_saw_an_app_that_shows_the_devtools_on_phones/)
-- url: https://i.redd.it/7iycctw0b9t51.jpg
----
-
-## [11][Java 16 getting Vector API (SIMD/AVX) integration](https://www.reddit.com/r/androiddev/comments/jbk5w3/java_16_getting_vector_api_simdavx_integration/)
-- url: https://mail.openjdk.java.net/pipermail/panama-dev/2020-October/011149.html
----
-
-## [12][Hey guys, rolling out a quick survey for android devs to understand developer environment preferences. Would be great if you could spare out 2 mins to fill out the same. Thanks in advance!](https://www.reddit.com/r/androiddev/comments/jbm92l/hey_guys_rolling_out_a_quick_survey_for_android/)
-- url: https://forms.gle/CfPRmqZ7qg9UYXQ86
+Anybody experienced the same issue? And how do I resolve it in the future? I am using Safari by the way.
+## [12][Develop your Personal Voice Assistant in Python which will listen to your voice commands and work accordingly.](https://www.reddit.com/r/androiddev/comments/jc7xpd/develop_your_personal_voice_assistant_in_python/)
+- url: https://youtu.be/yvCZ5OI--yU
 ---
 

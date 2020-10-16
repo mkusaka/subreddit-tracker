@@ -70,91 +70,217 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Simple project: You enter the location and shows you how many Covid-19 cases are there. It ain't much, bit is honest work...](https://www.reddit.com/r/reactjs/comments/jbb1my/simple_project_you_enter_the_location_and_shows/)
-- url: https://v.redd.it/qei382wmy4t51
+## [3][Facebook just released React 16.14.0, 15.7.0 (!) and 0.14.0 (!!!) with support for new JSX transform](https://www.reddit.com/r/reactjs/comments/jbxcrh/facebook_just_released_react_16140_1570_and_0140/)
+- url: https://twitter.com/reactjs/status/1316810405646344192?s=19
 ---
 
-## [4][My React skills are out of date, how do I remain competitive for 2021?](https://www.reddit.com/r/reactjs/comments/jb1vo8/my_react_skills_are_out_of_date_how_do_i_remain/)
-- url: https://www.reddit.com/r/reactjs/comments/jb1vo8/my_react_skills_are_out_of_date_how_do_i_remain/
----
-I first started learning React back in 2016, this was the time when React had 2 APIs, the well-known Classes API, and the previous Object? API.
-
-I believe I am fairly competent in writing React applications, as I have worked on a Full-Stack application at my workplace. I don't use Express, but rather Golang.
-
-In the middle of 2016, my company switched over to WordPress/PHP along with jQuery, no chance of React, and that job ended last week.
-
-I do currently know:
-
-* Hooks (useState, useEffect, useReducer)
-* React Router 3
-* Redux
-* Webpack
-
-I feel that since I have not worked with React in any significant capacity since 2016, I am not competitive. I feel overwhelmed at just how different the front-end ecosystem is these and I have no idea what I should learn to get myself up to speed.
-## [5][Feedback on React Application](https://www.reddit.com/r/reactjs/comments/jbmqhu/feedback_on_react_application/)
-- url: https://www.reddit.com/r/reactjs/comments/jbmqhu/feedback_on_react_application/
----
-I am React beginner , but i gotta say , im pretty proud of myself for building this cool CV MAKING website called [Resume Factory](https://www.resumefactory.co/) which i deployed using Heroku. I could really really use some Feedback .
-
-Source Code: [https://github.com/ksekwamote/cvmaker\_new](https://github.com/ksekwamote/cvmaker_new)
-
-Website: [https://www.resumefactory.co/](https://www.resumefactory.co/)
-## [6][I have a config.js file that I want to use config depending on environment variable, how do I make local .env and docker .env?](https://www.reddit.com/r/reactjs/comments/jblpch/i_have_a_configjs_file_that_i_want_to_use_config/)
-- url: https://www.reddit.com/r/reactjs/comments/jblpch/i_have_a_configjs_file_that_i_want_to_use_config/
----
-I have a config.js file that I want to use config depending on  environment variable, how do I make local .env and docker .env?
-
-Does anyone have any tips?
-## [7][Async and await not working in my react app..](https://www.reddit.com/r/reactjs/comments/jbngd4/async_and_await_not_working_in_my_react_app/)
-- url: https://www.reddit.com/r/reactjs/comments/jbngd4/async_and_await_not_working_in_my_react_app/
----
-I got an error for using async and await within my fetchData() function.  
-How can i solve?
-
-useEffect(() =&gt; {  
-async function fetchData(){  
-const request = await axios.get(fetchUrl);  
-console.log(request);  
-return request;  
-}  
-fetchData();  
-},\[\]);
-
-note: node version is -v14.13.1  
-Thanks in advance  
-[\#React](https://web.facebook.com/hashtag/react?__eep__=6&amp;__cft__[0]=AZUGddbRxhKcL97s9t1KkxxoBk4RhgjgvEltVN24kWPJiLAOeorIjp0Ezf7W-SD_nPTO33eUHBdTFUrs6JAsf6_M-SeNrZyQcAUOPxsTjA5sO06GIoq1JqbYk3yJhgG9PlNevRJg_A42MCi3Fjh5SV6a7199gEWuYMc9jgPM8FINJdI0ckzESWhdZHEkQ94JQrSb8oj96cILFpqmgeDecIWn&amp;__tn__=*NK-R)  
-[\#ReactJS](https://web.facebook.com/hashtag/reactjs?__eep__=6&amp;__cft__[0]=AZUGddbRxhKcL97s9t1KkxxoBk4RhgjgvEltVN24kWPJiLAOeorIjp0Ezf7W-SD_nPTO33eUHBdTFUrs6JAsf6_M-SeNrZyQcAUOPxsTjA5sO06GIoq1JqbYk3yJhgG9PlNevRJg_A42MCi3Fjh5SV6a7199gEWuYMc9jgPM8FINJdI0ckzESWhdZHEkQ94JQrSb8oj96cILFpqmgeDecIWn&amp;__tn__=*NK-R)
-## [8][Need STUPID React App ideas to practice my dev skills](https://www.reddit.com/r/reactjs/comments/jbn908/need_stupid_react_app_ideas_to_practice_my_dev/)
-- url: https://www.reddit.com/r/reactjs/comments/jbn908/need_stupid_react_app_ideas_to_practice_my_dev/
----
-Got any interesting, fun, and/or stupid ideas?
-## [9][Best React Animations course?](https://www.reddit.com/r/reactjs/comments/jbn1w5/best_react_animations_course/)
-- url: https://www.reddit.com/r/reactjs/comments/jbn1w5/best_react_animations_course/
----
-Hi!  
-
-
-I am a React Native developer and I am very interested in learning more about animations since our clients are very much into it. I started using spring but I believe I need to know more in order to do more and so I'm asking you, who do you think has the best React animations/spring course out there? I found  Start React Native ( by William  Candillon) but he is pricey and I would like to know if it's worth investing in his courses? Thank you
-## [10][Tic Tac Toe using React.js Playlist (Really Good)](https://www.reddit.com/r/reactjs/comments/jbmz90/tic_tac_toe_using_reactjs_playlist_really_good/)
-- url: https://www.youtube.com/playlist?list=PLsS7rcLJIvNPqY5sNOFCEWQxZ0yQIqjRS
+## [4][Just a cool dropdown animation that I recently completed.](https://www.reddit.com/r/reactjs/comments/jc515n/just_a_cool_dropdown_animation_that_i_recently/)
+- url: https://v.redd.it/ccg4jukklet51
 ---
 
-## [11][Open source React DataGrid](https://www.reddit.com/r/reactjs/comments/jblxi8/open_source_react_datagrid/)
-- url: https://www.reddit.com/r/reactjs/comments/jblxi8/open_source_react_datagrid/
+## [5][Self - closing tags in React](https://www.reddit.com/r/reactjs/comments/jc8964/self_closing_tags_in_react/)
+- url: https://www.reddit.com/r/reactjs/comments/jc8964/self_closing_tags_in_react/
 ---
-Hi all,
+I'm just wondering about the difference between a self-closing tag and non self-closing tags in the context of React. I was used to what that meant in html, but there seems to be a bit more to it in React? 
 
-I'm looking for a React DataGrid component, ideally open source, to tick the following requirements:
+In a tutorial I am following it mentions that because &lt;textarea&gt; is now self closing, we can add value property to it. The tutorial didn't elaborate but gave the impression that if the &lt;textarea&gt; element were not self closing, we would not be able to add the value attribute. Why is that?
+## [6][React Fundamentals: Understanding JSX](https://www.reddit.com/r/reactjs/comments/jc7xas/react_fundamentals_understanding_jsx/)
+- url: https://www.reddit.com/r/reactjs/comments/jc7xas/react_fundamentals_understanding_jsx/
+---
+In this article, you will learn:
 
-* fully documented
-* used in production by Enterprise users
-* developed on react ground up - not a wrapper like ag-grid
-* have multi-level grouping
+- What JSX is
+
+- How it gets compiled into normal Javascript
+
+- How to convert React.createElement() calls to JSX
+
+- Adding and Spreading Props
+
+- Interpolation in JSX, etc.
+
+[React Fundamentals: Understanding JSX](https://blog.bhanuteja.dev/react-fundamentals-understanding-jsx)
+## [7][Second Frontity Website–InterPayments.com](https://www.reddit.com/r/reactjs/comments/jc95ry/second_frontity_websiteinterpaymentscom/)
+- url: https://www.interpayments.com/
+---
+
+## [8][I created a web page using React but can't add/use Javascript function for my responsive navbar](https://www.reddit.com/r/reactjs/comments/jc8rle/i_created_a_web_page_using_react_but_cant_adduse/)
+- url: https://www.reddit.com/r/reactjs/comments/jc8rle/i_created_a_web_page_using_react_but_cant_adduse/
+---
+Hello, since  this  is not classic HTML and using JS with &lt;script&gt; I guess not working, I have a js code and I want to use its function in my Navbar component with onClick , it is for responsive navbar(hamburger style), how can I use it? I Searched a lot on online but couldn't find anything thatt I was able to understand. Basically I'm asking where do I put this JS Code in this React App that can grant me access to use its Function from my Navbar Component without a problem. Please help.
+## [9][Problem with React Routes and Redux](https://www.reddit.com/r/reactjs/comments/jc8el9/problem_with_react_routes_and_redux/)
+- url: https://www.reddit.com/r/reactjs/comments/jc8el9/problem_with_react_routes_and_redux/
+---
+I am new to state management in React. I have a query that whenever there is a change in Route location, all the data from Redux state should be cleared. 
+
+Thanks in advance.
+## [10][How to learn ReactJS as a developer?](https://www.reddit.com/r/reactjs/comments/jbtnys/how_to_learn_reactjs_as_a_developer/)
+- url: https://www.reddit.com/r/reactjs/comments/jbtnys/how_to_learn_reactjs_as_a_developer/
+---
+I'm struggling to learn react, I'm very new to web development but not coding at all, I come from an iOS and backend background. I've started watching some YouTube videos on react because I can't find any updated courses for 2020 React. I bought the **The Complete React Developer Course (w/ Hooks and Redux)** but returned it as all the videos where recorded from 2015/16 and at lot of the reviews are saying the course is very outdated. 
+
+I'm just having trouble figuring out the best way to learn react, the concepts seem to foreign to me and I really want to have a strong understanding of React so I can build my business. The fact is YouTube courses that I've watched really don't explain key concept of React they are just teaching how to build whatever they are building.
+
+So does anyone have any advice on how I can overcome this obstacle?
+## [11][Async/auth problems with React,Firebase - why is current user evaluating to null, when logged in?](https://www.reddit.com/r/reactjs/comments/jc6lh3/asyncauth_problems_with_reactfirebase_why_is/)
+- url: https://www.reddit.com/r/reactjs/comments/jc6lh3/asyncauth_problems_with_reactfirebase_why_is/
+---
+Hey folks
+
+I have a component, and one of it's functions is to get all the documents from a firebase collection, and return only the documents created by the currently logged in user:  [https://codepen.io/mildredthecat/pen/BazKKvy?editors=0010](https://codepen.io/mildredthecat/pen/BazKKvy?editors=0010)
+
+Only problem is that on executing this function, the page doesn't render and I get the following error:
+
+\`\`\` TypeError: Cannot read property 'uid' of null \`\`\`.
+
+&amp;#x200B;
+
+Upon page refesh however, the component renders without problem.
+
+Any ideas why and any suggestions on how I can fix my code? I'm logged in when testing this function, so \`\`\`this.state.userDetails.uid\`\`\` should be assigned a value, but it's evaluating to null. It seems to me like some sort of async issue with setState.
+
+I should mention that I'm also getting a warning saying the following:
+
+\`\`\`Warning: Can't perform a React state update on an unmounted component\`\`\`
 
 Cheers
-## [12][Switching between React and Angular](https://www.reddit.com/r/reactjs/comments/jbllzq/switching_between_react_and_angular/)
-- url: https://www.reddit.com/r/reactjs/comments/jbllzq/switching_between_react_and_angular/
----
-I started learning React for a side project a year ago, and so far I love creating user interfaces with this library! But recently, as a junior developer, I was hired to work on a multi-solution platform including an Angular web project. 
 
-I already have the web requirements to make fast progress but a lot of things vary between React and Angular. Right now, despite getting a full-time job based on an Angular project, I'm still working on a React side project. Have you experienced multiple javascript frontend frameworks/libraries in your webdev journey ?
+&amp;#x200B;
+
+EDIT: Here's the whole component, for context: [https://codepen.io/mildredthecat/pen/YzWqqoM?editors=0010](https://codepen.io/mildredthecat/pen/YzWqqoM?editors=0010)
+## [12][Issues with uploading and showing blob files](https://www.reddit.com/r/reactjs/comments/jc683p/issues_with_uploading_and_showing_blob_files/)
+- url: https://www.reddit.com/r/reactjs/comments/jc683p/issues_with_uploading_and_showing_blob_files/
+---
+After succeeding in uploading blob into MYSQL, I  don't have the opportunity to view the image on my reactJS. Is there anything I can d to display the image?  Please help
+
+I have the following component:
+
+class CreateProfile extends Component {
+  constructor(props) {
+    super(props);
+    //  this.fileInput = React.forwardRef();
+    this.state = {
+      profile_picture: '',
+      specialist: "",
+      bio: "",
+      errors: {},
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.onFileLoad = this.onFileLoad.bind(this);
+  }
+
+  //componentWillReceiveProps is being replaced by componentDidUpdate, as it is providing warning.
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    alert(`Selected file - ${this.fileInput.current.files[0].path.name}`);
+  }
+
+  async onSubmit(e) {
+    e.preventDefault();
+
+    const profileInformation = new FormData();
+    profileInformation.append("bio", this.state.bio);
+    profileInformation.append("specialist", this.state.specialist);
+    profileInformation.append("profile_picture", this.state.profile_picture[0]);
+  
+    this.props.createProfile(profileInformation, this.props.history);
+  
+  }
+
+  onChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
+
+  onFileLoad(e) {
+    this.setState({
+      [e.target.name]: e.target.files,
+    });
+    
+  }
+
+  render() {
+    const { errors } = this.state;
+
+    return (
+      &lt;div className="create-profile"&gt;
+        &lt;div className="container final-bottom"&gt;
+          &lt;div className="row"&gt;
+            &lt;div className="col-md-6 m-auto"&gt;
+              &lt;h1 className="display-4 text-center"&gt;Skapa profil&lt;/h1&gt;
+              &lt;p className="lead text-center"&gt;
+                Låt din profil sticka ut genom att skinna med enastående profil
+              &lt;/p&gt;
+              &lt;small className="d-block pb-3"&gt;* = obligatorisk fälter&lt;/small&gt;
+              &lt;form onSubmit={this.onSubmit}&gt;
+                &lt;TextAreaFieldGroup
+                  placeholder="Kort Biografi (profil)"
+                  name="bio"
+                  value={this.state.bio}
+                  onChange={this.onChange}
+                  error={errors.bio}
+                  info="Berätta lite om dig själv"
+                /&gt;
+
+                &lt;TextFieldGroup
+                  label="* Färdigheter/Områden"
+                  placeholder="* Färdigheter"
+                  name="specialist"
+                  value={this.state.specialist}
+                  onChange={this.onChange}
+                  errors={errors.specialist}
+                  info="Skriv dina färdigheter, och skiljer de med komma tecken (t.ex. HTML,CSS)"
+                /&gt;
+
+                &lt;div className="form-group"&gt;
+                  &lt;input
+                    type="file"
+                    className={classnames("form-control", {
+                      "is-invalid": errors.profile_picture,
+                    })}
+                    name="profile_picture"
+                    onChange={this.onFileLoad}
+                    value={undefined}
+                  /&gt;
+                  &lt;div className="invalid-feedback"&gt;
+                    {errors.profile_picture}
+                  &lt;/div&gt;
+                &lt;/div&gt;
+
+                &lt;input
+                  type="submit"
+                  value="Registrera profil"
+                  className="btn btn-info btn-block mt-4"
+                /&gt;
+              &lt;/form&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    );
+  }
+}
+
+CreateProfile.propTypes = {
+  profile: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired,
+  createProfile: PropTypes.func.isRequired,
+};
+
+const mapStateToProps = (state) =&gt; ({
+  profile: state.profile,
+  errors: state.errors,
+});
+
+export default connect(mapStateToProps, { createProfile })(
+  withRouter(CreateProfile)
+);

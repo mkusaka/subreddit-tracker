@@ -27,174 +27,174 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][validating if an email is REAL](https://www.reddit.com/r/rails/comments/jbbtw7/validating_if_an_email_is_real/)
-- url: https://www.reddit.com/r/rails/comments/jbbtw7/validating_if_an_email_is_real/
+## [3][Avo - Configuration-based, no-maintenance, extendable Ruby on Rails admin](https://www.reddit.com/r/rails/comments/jc85sc/avo_configurationbased_nomaintenance_extendable/)
+- url: https://www.reddit.com/r/rails/comments/jc85sc/avo_configurationbased_nomaintenance_extendable/
 ---
-Validating an email by REGEX is usually not enough.
+Hi guys,
 
-If you use `validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }, allow_blank: true` this will not allow to submit something like "**arebefrvevervv**" in the `email` field, but a user will still be able to submit an email address like "**vedsvear@vfdsvdf.c**" or "**test@test.test**" - we don't want this happening.
+Today I'd like to show you [Avo](https://avohq.io), a beautiful next-generation framework that empowers you, the developer, to create fantastic admin panels for your Ruby on Rails apps with the flexibility to fit your needs as you grow.
 
-So, we need a solution to check if the "**@domain**" or "**email@domain**" actually exists. Here's a [nice article](https://rubygarage.org/blog/how-to-validate-emails) that I found on this topic.
+Out of the box, it has an excellent CRUD interface, ordering, filters, and actions. It even knows how to handle your Active Record model relations. 
 
-There seem to be a few gems that help to add this additional validation layer:
+It's super easy to configure. There's one configuration file per model and one configuration line of code per field. You can add simple fields like text, textarea, dropdowns, and more complex ones like datetime, badges, loaders, currency, and others. There's even a cool one-liner single or multi-file Active Storage integration 🤯. 
 
-* [https://github.com/rubygarage/truemail](https://github.com/rubygarage/truemail)
-* [https://github.com/afair/email\_address](https://github.com/afair/email_address)
-* [https://github.com/micke/valid\_email2](https://github.com/micke/valid_email2)
+**Avo's mission is to make the job of developers easier and help them and companies move faster.**
 
-Do you have experience using any of these gems?  
-Which one should one go for?
-## [4][convert an array of nested arrays into an (array of arrays )](https://www.reddit.com/r/rails/comments/jblhwm/convert_an_array_of_nested_arrays_into_an_array/)
-- url: https://www.reddit.com/r/rails/comments/jblhwm/convert_an_array_of_nested_arrays_into_an_array/
+Try it in your app and let me know what you think.
+
+Thank you,  
+Adrian
+
+[https://avohq.io](https://avohq.io)  
+[https://twitter.com/avo\_hq](https://twitter.com/avo_hq)  
+[https://github.com/avo-hq/avo](https://github.com/avo-hq/avo)   
+[https://discord.gg/pkTF6y8](https://discord.gg/pkTF6y8)
+## [4][Rails 6 with Bootstrap and Webpacker: Quick guide](https://www.reddit.com/r/rails/comments/jbv43i/rails_6_with_bootstrap_and_webpacker_quick_guide/)
+- url: https://www.reddit.com/r/rails/comments/jbv43i/rails_6_with_bootstrap_and_webpacker_quick_guide/
 ---
-im learning rails and i have output like this  e.g 
+I guess this exact tutorial topic is already a "mauvais ton", but after reading 10+ guides on "How to install bootstrap on Rails 6" I wrote a quick guide: [https://blog.corsego.com/2020/10/rails-6-with-bootstrap-and-webpacker.html](https://blog.corsego.com/2020/10/rails-6-with-bootstrap-and-webpacker.html)
 
-`rows = [[[a,b,c]],[[d,e,f]],[[g,h,I]]]`  
-
-Now I want to convert this to this one  `rows = [[a,b,c],[d,e,f],[g,h,I]]`  
-
-can anyone please help me to remove that extrabrackets ?
-## [5][how is error_messages_for populated for an object](https://www.reddit.com/r/rails/comments/jbjpc9/how_is_error_messages_for_populated_for_an_object/)
-- url: https://www.reddit.com/r/rails/comments/jbjpc9/how_is_error_messages_for_populated_for_an_object/
+I hope you'll find it useful!
+## [5][Rails help](https://www.reddit.com/r/rails/comments/jc95ti/rails_help/)
+- url: https://www.reddit.com/r/rails/comments/jc95ti/rails_help/
 ---
-For a form, I have the error messages to be displayed like this 
+ hey guys, so i have this and i am trying to get each position(entertainment, src president) have its own page. lets say if i vote for the candidates of entertainment position it directs me to src president to vote and so on. how do i do this please? 
 
-    error_messages_for :model
+&amp;#x200B;
 
-I'm not able to figure out how a particular error message is populated. 
+https://preview.redd.it/g0sljvp7dgt51.png?width=1366&amp;format=png&amp;auto=webp&amp;s=849b2c46173b6aa28f04e9b8279cce0aa042ebda
 
-Like "Name is invalid"
+&gt;&lt;table&gt;  
+&gt;  
+&gt;  &lt;tbody&gt;  
+&gt;  
+&gt;&lt;%= form\_for u/election do |f| %&gt;  
+&gt;  
+&gt;  
+&gt;  
+&gt;&lt;% Position.includes(:candidates).order(:name).each do |position| %&gt;  
+&gt;  
+&gt;  
+&gt;  
+&gt;  &lt;tr&gt;  
+&gt;  
+&gt;&lt;th colspan="5"&gt;&lt;%= position.name %&gt;&lt;/th&gt;  
+&gt;  
+&gt;  &lt;/tr&gt;  
+&gt;  
+&gt;  &lt;% position.candidates.each do |candidate| %&gt;  
+&gt;  
+&gt;  &lt;tr&gt;  
+&gt;  
+&gt;&lt;td&gt;&lt;%= image\_tag(candidate.image, :size =&gt; '50x50') if candidate.image.attached? %&gt;&lt;/td&gt;  
+&gt;  
+&gt;&lt;td&gt;&lt;%= candidate.name %&gt;&lt;/td&gt;  
+&gt;  
+&gt;&lt;td&gt;&lt;%= candidate.info %&gt;&lt;/td&gt;  
+&gt;  
+&gt;&lt;td&gt;
 
-But the thing is there is no column called name in the model and I do not see things being explicitly added to the model. 
+&lt;%= f.check\_box :c\_votes %&gt;
 
-like model.errors.add(:base, 'Name is invalid')
+&amp;#x200B;
 
-so I'm not sure if for some validation this record, these messages get automatically added?
-## [6][Creating users as an Admin with devise](https://www.reddit.com/r/rails/comments/jb5vdp/creating_users_as_an_admin_with_devise/)
-- url: https://www.reddit.com/r/rails/comments/jb5vdp/creating_users_as_an_admin_with_devise/
+&gt;&lt;/td&gt;  
+&gt;  
+&gt;  &lt;/tr&gt;  
+&gt;  
+&gt;  &lt;% end %&gt;  
+&gt;  
+&gt;  &lt;td&gt;  &lt;%= f.submit "Submit"  %&gt;&lt;/td&gt;  
+&gt;  
+&gt;&lt;% end %&gt;  
+&gt;  
+&gt;  &lt;/tbody&gt;  
+&gt;  
+&gt;&lt;/table&gt;  
+&gt;  
+&gt;  
+&gt;  
+&gt; &lt;% end %&gt;
+
+here is the form please
+## [6][Find unique places from Scraping website data](https://www.reddit.com/r/rails/comments/jc8hsd/find_unique_places_from_scraping_website_data/)
+- url: https://www.reddit.com/r/rails/comments/jc8hsd/find_unique_places_from_scraping_website_data/
 ---
-I want to be able to register Users as an **admin** but I'm not able because when I try to register a new user I get the 'You are already signed in' alert. Is there any way I can go around that and just be able to register users. I tried a few things that I saw on stackoverflow, but none worked. 
+I have lists of restaurants in CSV file from 2 websites and also from google, but all files have some restaurants which are not present in other files.   
+i want to combine them all and want a unique from them but all files have their own id, 2 places can have a same name And even lat , lng is different for a same place &amp; their address may have words not in a same pattern.   
 
-Please help
-## [7][Rails EasyAutocomplete gem not shows suggestions](https://www.reddit.com/r/rails/comments/jb1b1s/rails_easyautocomplete_gem_not_shows_suggestions/)
-- url: https://www.reddit.com/r/rails/comments/jb1b1s/rails_easyautocomplete_gem_not_shows_suggestions/
+
+Any senior can please help me ?
+## [7][How to significantly archive and compress a given tmp Rails directory contents?](https://www.reddit.com/r/rails/comments/jc47cr/how_to_significantly_archive_and_compress_a_given/)
+- url: https://www.reddit.com/r/rails/comments/jc47cr/how_to_significantly_archive_and_compress_a_given/
 ---
-I was following this tutorial  [click][1] and I wrote the following code:
+My workflow is as follows:
 
-HTML:
+1. User requests to have the system send many PDF files (in the hundreds) to a given email address. I use Sidekiq to handle this job.
+2. I generate these pdf documents and save them to a random-named directory in tmp folder (eg. tmp/pdfs/2e3b8f6f-81e6-40b1-9cdc-d1bb0a0ee519/)
+3. I use the gem RubyZip and the example given to zip the `tmp/pdfs/2e3b8f6f-81e6-40b1-9cdc-d1bb0a0ee519/` directory into a zip file (eg. [thefiles.zip](https://thefiles.zip))
+4. I send [thefiles.zip](https://thefiles.zip) to the user via email.
 
-    &lt;input type="text" id="prova" placeholder="Enter name1..." data-behavior="autocomplete" /&gt;
+Problem: RubyZip does not significantly compress this archive. If I request that 24 PDF files equaling 12 MB be archived, the archive is 10MB for eg.
 
-JS:
-
-    $("#prova").keyup(function() {
-    
-      $.ajax({
-        type: "GET",
-        url: "https://photon.komoot.de/api/?q=" + $("#prova").val(),
-    
-        success: function(results) {
-    
-          var aList = results.features;
-          var aOptions = [];
-          let htmlVal = '';
-          for (i = 0; i &lt; aList.length; i++) {
-            optLabel = aList[i].properties.name;
-            aOptions.push(optLabel);
-          }
-    
-    
-          var options = {
-            data: aOptions
-          };
-    
-          $('*[data-behavior="autocomplete"]').easyAutocomplete(options);
-    
-        }
-      });
-    
-    });
-
-as you can see through the ajax call I connect to an external service that returns addresses. The problem is that they don't appear. Where am I wrong?
-(PS: The api rest works, I'm able to print in console.log aOptions array)
-  
-
-
-  [1]: https://joelc.io/dynamic-autocomplete-rails-6
-## [8][Watch me build a new Ruby/Rails community in public 📹](https://www.reddit.com/r/rails/comments/jaoh8a/watch_me_build_a_new_rubyrails_community_in_public/)
-- url: https://www.reddit.com/r/rails/comments/jaoh8a/watch_me_build_a_new_rubyrails_community_in_public/
+How can I do this?
+## [8][I curated all the remote job openings from Hacker News who is hiring - October](https://www.reddit.com/r/rails/comments/jbv2j8/i_curated_all_the_remote_job_openings_from_hacker/)
+- url: https://www.reddit.com/r/rails/comments/jbv2j8/i_curated_all_the_remote_job_openings_from_hacker/
 ---
-Hey all,
+Here I would like to share more than 480 remote jobs that I've curated from Hacker News Who is hiring thread. All these are 100% remote jobs not just allowed to work from home during COVID-19. These are 100% remote jobs and will continue to follow that after the covid.
 
-I've been wanting to see a place/resource build up more hype about Rails and Ruby again like the good ole' days so I'm building one in public.
+https://remoteleaf.com/whoishiring.   
 
-Some background about what exactly I plan on building is here: [https://web-crunch.com/posts/lets-build-for-ruby-and-rails-developers](https://web-crunch.com/posts/lets-build-for-ruby-and-rails-developers)
+Note: Select "ruby" in the skills filter to view all Ruby/Rails jobs
 
-I plan to commit to a few hours of recording my progress a week for an initial MVP of the job board portion of the app. Once that's complete I'll do a tentative soft launch and continue adding more of the community features. 
-
-#### Primary goals:
-
-- Build some buzz around Ruby / Rails.
-- Bring more Ruby and Rails developers together.
-- Have a centralized place to find Ruby and Rails jobs.
-- Showcase profiles developers can use to get hired.
-- Have a community forum for all things Ruby and Rails + more web/programming topics.
-- Maybe make some side $$
-
-The ongoing YouTube playlist is here: [https://www.youtube.com/playlist?list=PL01nNIgQ4uxOfChhPf3jxq8H6fUWnCeLC](https://www.youtube.com/playlist?list=PL01nNIgQ4uxOfChhPf3jxq8H6fUWnCeLC)
-
-The ongoing collection of articles/videos is here:
-[https://web-crunch.com/collections/lets-build-for-ruby-and-rails-developers](https://web-crunch.com/collections/lets-build-for-ruby-and-rails-developers)
-
-The buzz around the Laravel community is inspiring and is a big driver for me to take on this project. 
-
-It's worth noting that I'm not a super-advanced Rails developer like I'm sure many of you are but I believe I know enough to build something such as this (no matter how scrappy to start). Feedback and pointers are welcomed as I'm also using this as a learning experience and potential to earn some side income. 
-
-**TL;DR;** I'm building a community and job board for Ruby/Rails developers in public. Maybe follow along if you're interested?
-## [9][Minitest vs RSpec for Rails Development](https://www.reddit.com/r/rails/comments/jay6xk/minitest_vs_rspec_for_rails_development/)
-- url: https://www.reddit.com/r/rails/comments/jay6xk/minitest_vs_rspec_for_rails_development/
+✅ 100% remote full-time jobs.    
+✅ Each and every job is manually curated and verified. Spent more than 14 hours for this.
+## [9][Creating multiple user types in rails using devise?](https://www.reddit.com/r/rails/comments/jbp4tb/creating_multiple_user_types_in_rails_using_devise/)
+- url: https://www.reddit.com/r/rails/comments/jbp4tb/creating_multiple_user_types_in_rails_using_devise/
 ---
-Hi guys. Recently completed a bootcamp, covering a lot of Ruby on Rails and using RSpec as the testing framework from this. I also see from looking online a lot of people set up RSpec as their framework for Rails `rails new -T` without minitest (the default)
-
-What are peoples opinions on using Minitest, as I have been approached to interview for a role which uses it and from looking online it seems inferior in many ways. I am trying to get it set up on my rails app (just to play with it) and cant seem to find a good coverage solution (like simplecov) as I found it to be a problem setting this up with Minitest (with the little documentation on it also)
-
-So yeah just a question, what do you guys use to test Rails apps and if its minitest what resources and coverage do you use!  
-
-
-EDIT: beautiful simplecov (and simplecov-console), minitest works fine. Thanks for all the help!
-
-https://preview.redd.it/r0tl3klhb8t51.png?width=603&amp;format=png&amp;auto=webp&amp;s=c1745b697775e0dfbace8d3acb3fa6b329aaa117
-
-  
-
-## [10][ActiveStorage query optionals](https://www.reddit.com/r/rails/comments/jazt1a/activestorage_query_optionals/)
-- url: https://www.reddit.com/r/rails/comments/jazt1a/activestorage_query_optionals/
+Hi there, I want to have two different types of users (buyers, sellers) on my application. Should I create two types of users using devise to accomplish this? Or is there a more streamlined approach?
+## [10][Upgrading a rails app from 4.2 to 5.0...i need help](https://www.reddit.com/r/rails/comments/jbya8p/upgrading_a_rails_app_from_42_to_50i_need_help/)
+- url: https://www.reddit.com/r/rails/comments/jbya8p/upgrading_a_rails_app_from_42_to_50i_need_help/
 ---
-Hi guys, I was wondering if AS has building queries for doing joins. That way, I would avoiding the n+1 query problem. E.g: In the example bellow, I fetched all the attachments for 'files\_attached' (query 1) and later I display each file's filename (the 3 blob queries for 3 files). 
+O.k. so I finally got a rails server to load with Rails 5.0.0 and ruby 2.5.8 (I'm upgrading from ruby 2.2.4 and rails 4.2.0).
 
-    ##query 1
-    ActiveStorage::Attachment Load (0.3ms)  SELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3
-    
-    ## displaying filenames for each file fetched
-    ##query 2
-    ActiveStorage::Blob Load (0.2ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2
-    
-    ##query 3
-    ActiveStorage::Blob Load (0.2ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2
-    
-    ##query 4
-    ActiveStorage::Blob Load (0.2ms)  SELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2
+I don't have any sll issues.
 
-I'm aware that I could make one single query using raw SQL, but I would like to avoid it if possible.
-## [11][Webpacker Issues](https://www.reddit.com/r/rails/comments/jaxxx0/webpacker_issues/)
-- url: https://www.reddit.com/r/rails/comments/jaxxx0/webpacker_issues/
+I'm now at the "ActiveRecord::PendingMigrationError" level.
+
+Basically I haven't created the tables in my db (the db is already created in postgres).
+
+When I run the bin/rails db:migrate RAILS_ENV=development I get the following:
+
+&gt;PG::DatatypeMismatch: ERROR:  column "root_comment" is of type boolean but default expression is of type integer
+&gt;HINT:  You will need to rewrite or cast the expression.
+
+I've read a ton, and it seems rails 5 changed both migration scripts and how to define columns in postgres.
+
+Do I need to label my migration script with something like [4.2 or 5.0] or do I actually need to change the type (further screwing up my app)?
+
+Thanks in advance.
+## [11][Modal age confirmation? Or just a view for it?](https://www.reddit.com/r/rails/comments/jbtypu/modal_age_confirmation_or_just_a_view_for_it/)
+- url: https://www.reddit.com/r/rails/comments/jbtypu/modal_age_confirmation_or_just_a_view_for_it/
 ---
-Hi, just a stressed out dev trying to get some JS to work through Webpacker. The error i'm getting is that a method is undefined. I'm trying to install/compile a third party js libary (masonry) into Webpacker and i'm having an absolute nightmare with it. I've installed the package I want through Yarn and I can see that it's the correct one as when I do 'yarn list', I can see it. Great, so we have it installed and can see in the package.json that it's installed but how do I know what I need to require/import? Surely it should just be a matter of installing it through a package managers (bower, npm or yarn) and then just  requiring the file in the app/javascript/packs/application.js using the name of the file in the package.json?
+Hi folks. I'm making a web app for my web dev portfolio and it has to do with the cannabis industry. So I'd like to add an age confirmation to the landing page. I was thinking it could just be a modal that pops up and just asks if you're 21 or over, or has you enter your DOB, and then lets you continue to the site and browse through it even if you're not logged in. Or should there just be a view dedicated to that? Either way it'll need a controller, right? 
 
-Is there something i'm missing? I've looked everywhere on how to do this but every article I go to seems to say something else...
+Would this be a practical way in Rails to do this? The landing page will just have the log in or sign up links in the nav, and then there's an "enter" button in the middle of the page that would then prompt that modal. I'm just looking for advice or to be pointed in the right direction as I'm honestly not finding much in my research that would help me with this exact issue. A lot of what's coming up is deletion confirmation modals, or some other things that don't exactly help me. 
 
-**Update**: SOLVED. Issue was I wasn't referencing the file correctly within the application.js file. It's clicked with me now and I think I now understand how it all links up together. To my understanding, whenever you 'require' a file in the application.js, it looks within the .node\_modules folder which I did not know about. I got the solution by looking at my yarn.lock file to see the name of the folder and then looked in the .node\_modules/#{directory} so when I put 'require("#{directory}"), it thought it was the directory than the file. It just confused me as some of the other requires (actiontext, actionstorage etc) didn't reference their files, it references the directory to include (Tell me if i'm wrong).
-## [12][What can a Noob put in his portfolio ?](https://www.reddit.com/r/rails/comments/jagmh4/what_can_a_noob_put_in_his_portfolio/)
-- url: https://www.reddit.com/r/rails/comments/jagmh4/what_can_a_noob_put_in_his_portfolio/
+I'm still very new to Rails. I only just graduated boot camp a while ago so I'm building little apps for my portfolio and gaining that experience. Any help would be appreciated!
+## [12][CanCanCan + rolify... is it necessary?](https://www.reddit.com/r/rails/comments/jbryal/cancancan_rolify_is_it_necessary/)
+- url: https://www.reddit.com/r/rails/comments/jbryal/cancancan_rolify_is_it_necessary/
 ---
-As the title said, i'm completely new to ruby/rails what i should put in my portfolio ? any ideas ?
+Hi guys, in my website now I have only two roles. User &amp; Staff.
+
+But Staff is not a "real" role. In the DB I can set Staff true/false.
+
+Now I want to improve my website and add 5 kind of rules: User, Verified User, Banned User, Mod and Staff.
+
+Tecnically I can set their "power" in the `app/policies` area (using, for example  `user.try(:mod?)` )
+
+A developer suggested me to use CanCanCan and rolify.
+
+Is it really necessary? Just to add 4 roles? I don't want to add gems just to add one or two features...
+
+p.s. I already use devise

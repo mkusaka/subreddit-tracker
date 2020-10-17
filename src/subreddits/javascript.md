@@ -7,47 +7,49 @@ Whether you're a junior wanting your code sharpened or a senior interested in gi
 this is the place.
 
 [Named after this comic](https://davidwalsh.name/demo/code-review.png)
-## [2][Detect how powerful the GPU of user’s device is. Especially useful for setting defaults in graphically intensive applications.](https://www.reddit.com/r/javascript/comments/jc4p5t/detect_how_powerful_the_gpu_of_users_device_is/)
+## [2][Showoff Saturday (October 17, 2020)](https://www.reddit.com/r/javascript/comments/jctr6g/showoff_saturday_october_17_2020/)
+- url: https://www.reddit.com/r/javascript/comments/jctr6g/showoff_saturday_october_17_2020/
+---
+Did you find or create something cool this week in javascript? 
+
+Show us here!
+## [3][Introducing Talker: a super small i18n provider for React that supports Typescript, has 0 dependencies, and is very easy to use](https://www.reddit.com/r/javascript/comments/jcrqoz/introducing_talker_a_super_small_i18n_provider/)
+- url: https://www.npmjs.com/package/talkr
+---
+
+## [4][React Data Table with Material UI](https://www.reddit.com/r/javascript/comments/jcc2rm/react_data_table_with_material_ui/)
+- url: https://dev.to/cubejs/react-data-table-with-material-ui-and-a-spark-of-joy-50o1
+---
+
+## [5][Announcing Ionic Vue](https://www.reddit.com/r/javascript/comments/jchrsq/announcing_ionic_vue/)
+- url: https://ionicframework.com/blog/announcing-ionic-vue/
+---
+
+## [6][NPM 7.0 Released](https://www.reddit.com/r/javascript/comments/jco2e4/npm_70_released/)
+- url: https://github.blog/2020-10-13-presenting-v7-0-0-of-the-npm-cli/
+---
+
+## [7][Detect how powerful the GPU of user’s device is. Especially useful for setting defaults in graphically intensive applications.](https://www.reddit.com/r/javascript/comments/jc4p5t/detect_how_powerful_the_gpu_of_users_device_is/)
 - url: https://github.com/TimvanScherpenzeel/detect-gpu
 ---
 
-## [3][Don't Copy Paste Into a Shell](https://www.reddit.com/r/javascript/comments/jbkeab/dont_copy_paste_into_a_shell/)
-- url: https://briantracy.xyz/writing/copy-paste-shell.html
+## [8][Announcing the most advanced learning platform dedicated to Nuxt.js - MasteringNuxt.com](https://www.reddit.com/r/javascript/comments/jcsf43/announcing_the_most_advanced_learning_platform/)
+- url: https://masteringnuxt.com
 ---
 
-## [4][Type with typescript - cheat sheet with samples](https://www.reddit.com/r/javascript/comments/jc49z5/type_with_typescript_cheat_sheet_with_samples/)
-- url: http://goorep.se:1001/changelog/report/rSelect/PAGE_result.htm?alias=guest&amp;set=api&amp;query=Book+pages&amp;$$TArticleBook1.ArticleBookK=7096&amp;link=%5B%5B%229F1E006D78894848838A0970E2FF0BE9zoom%22,%22Object1%22,7096%5D,%5B%229F60D5FEDE8E41CC986C10147F0AD2F7zoom%22,%22TArticleBook1%22,7096%5D,%5B%2271C91DEE3C5A4FDC8EC1114C7C18033Bzoom%22,%22TArticleBook1%22,7096%5D%5D&amp;rows=50
+## [9][I created this resume builder. Give it a try. Feedbacks are welcome](https://www.reddit.com/r/javascript/comments/jcs4ww/i_created_this_resume_builder_give_it_a_try/)
+- url: https://resume-builder-react.netlify.app
 ---
 
-## [5][Nokia Composer music maker in 512 bytes of JavaScript](https://www.reddit.com/r/javascript/comments/jbvzwj/nokia_composer_music_maker_in_512_bytes_of/)
-- url: https://zserge.com/posts/nokia/
----
-
-## [6][Ellx - a platform for visual reactive programming](https://www.reddit.com/r/javascript/comments/jc5spe/ellx_a_platform_for_visual_reactive_programming/)
-- url: https://ellx.io
----
-
-## [7][Second Frontity Website–InterPayments.com](https://www.reddit.com/r/javascript/comments/jc95u6/second_frontity_websiteinterpaymentscom/)
+## [10][Second Frontity Website–InterPayments.com](https://www.reddit.com/r/javascript/comments/jc95u6/second_frontity_websiteinterpaymentscom/)
 - url: https://www.interpayments.com/
 ---
 
-## [8][JavaScript Tips For Developer 2020](https://www.reddit.com/r/javascript/comments/jc7u8n/javascript_tips_for_developer_2020/)
-- url: https://medium.com/@manish2bharti/javascript-tricks-for-developers-2637e1c1835d
+## [11][Ellx - a platform for visual reactive programming](https://www.reddit.com/r/javascript/comments/jc5spe/ellx_a_platform_for_visual_reactive_programming/)
+- url: https://ellx.io
 ---
 
-## [9][Github Actions Builder - A CLI tool to create / copy / paste github actions](https://www.reddit.com/r/javascript/comments/jc7i0o/github_actions_builder_a_cli_tool_to_create_copy/)
-- url: https://github.com/rajasegar/gab
+## [12][Don't Copy Paste Into a Shell](https://www.reddit.com/r/javascript/comments/jbkeab/dont_copy_paste_into_a_shell/)
+- url: https://briantracy.xyz/writing/copy-paste-shell.html
 ---
 
-## [10][Building a game With TypeScript. New episode! Team and Fleet. Today we are going to talk about camaraderie and opposition and introduce 3 new members of our happy family: Team, Fleet, and, of course, Ship](https://www.reddit.com/r/javascript/comments/jc2rn7/building_a_game_with_typescript_new_episode_team/)
-- url: https://medium.com/@gregsolo/building-a-game-with-typescript-team-and-fleet-f223d39e9248?source=friends_link&amp;sk=937227e4118edb7ea3125a641a52422d
----
-
-## [11][[AskJS] For securing/obfuscating Javascript code, can i use Obfuscator.io AND Jscrambler to get double the obfuscation?](https://www.reddit.com/r/javascript/comments/jc40jh/askjs_for_securingobfuscating_javascript_code_can/)
-- url: https://www.reddit.com/r/javascript/comments/jc40jh/askjs_for_securingobfuscating_javascript_code_can/
----
-For securing/obfuscating Javascript code, can i use Obfuscator.io AND Jscrambler to get double the obfuscation? I like Obfuscator.io for all its features and its strong security guarantees, but jscrambler looks pretty good with its ability to turn code into impossible-for-humans-to-read brackets. I was thinking combined maybe this could provide a super strong guarantee of obfuscation. Its possible to do both, right?
-
-I want code obfuscation robust enough so that, say i have a game written in javascript, a cheater cant manipulate this code to cheat on earning points. How secure do you think i can get my javascript code?
-
-And other recommendations you might make?

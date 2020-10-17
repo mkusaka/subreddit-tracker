@@ -23,85 +23,92 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/10/14/this-week-in-rust-360/
 ---
 
-## [3][Valve's Proton 5.13, now uses Rust!](https://www.reddit.com/r/rust/comments/jbzorm/valves_proton_513_now_uses_rust/)
-- url: https://www.reddit.com/r/rust/comments/jbzorm/valves_proton_513_now_uses_rust/
----
-A few hours ago [Proton 5.13-1](https://github.com/ValveSoftware/Proton/releases/tag/proton-5.13-1b) was released to github and the steam client, and with it, among exciting new supported games, the most exciting of all: new build requirements!
-
-&gt; The build system now depends on being able to build Rust code.
-
-Proton is now using Rust, in production, as part of [media-converter](https://github.com/ValveSoftware/Proton/tree/proton_5.13/media-converter)!
-
-Seeing increased Rust usage like this, in notable projects like Proton, is pretty exciting!
-## [4][Announcing Tokio 0.3 and the path to 1.0](https://www.reddit.com/r/rust/comments/jbr4m5/announcing_tokio_03_and_the_path_to_10/)
-- url: https://tokio.rs/blog/2020-10-tokio-0-3
+## [3][Announcement: xshell, ergonomic "bash" scripting in Rust](https://www.reddit.com/r/rust/comments/jctkpi/announcement_xshell_ergonomic_bash_scripting_in/)
+- url: https://docs.rs/xshell/0.1.2/xshell/index.html
 ---
 
-## [5][HPACK: Huffman encoder explained](https://www.reddit.com/r/rust/comments/jc7zfr/hpack_huffman_encoder_explained/)
-- url: https://kristijansedlak.medium.com/hpack-huffman-encoder-explained-61102edd6ecc
+## [4][How to Write Hygienic Rust Macros](https://www.reddit.com/r/rust/comments/jcpowx/how_to_write_hygienic_rust_macros/)
+- url: https://gist.github.com/Koxiaet/8c05ebd4e0e9347eb05f265dfb7252e1
 ---
 
-## [6][Question: are we pdf ready?](https://www.reddit.com/r/rust/comments/jc530c/question_are_we_pdf_ready/)
-- url: https://www.reddit.com/r/rust/comments/jc530c/question_are_we_pdf_ready/
----
-Are we pdf ready? What pdf crates are you using? For reading, parsing, rendering pdfs? And writing as well?
-## [7][Announcing ICU4X - Modular Internationalization Library in Rust!](https://www.reddit.com/r/rust/comments/jbv3ix/announcing_icu4x_modular_internationalization/)
-- url: https://github.com/unicode-org/icu4x/wiki/ICU4X-Project-Announcement
+## [5][Learn Rust With Benford's Law!](https://www.reddit.com/r/rust/comments/jcs1u2/learn_rust_with_benfords_law/)
+- url: https://gliderkite.github.io/posts/learn-rust-with-benford/
 ---
 
-## [8][A pitfall of Rust’s move/copy/drop semantics and zeroing data](https://www.reddit.com/r/rust/comments/jc9fkc/a_pitfall_of_rusts_movecopydrop_semantics_and/)
-- url: https://benma.github.io/2020/10/16/rust-zeroize-move.html
+## [6][Should Result::into_iter and Option::into_iter be considered harmful?](https://www.reddit.com/r/rust/comments/jcrijb/should_resultinto_iter_and_optioninto_iter_be/)
+- url: https://www.reddit.com/r/rust/comments/jcrijb/should_resultinto_iter_and_optioninto_iter_be/
+---
+I feel that canonical iterator function `into_iter` which is implemented for both `Result` and `Option` puts developer to a position where they are literally one character away from introducing a serious bug in their code, and should be considered harmful.
+
+I don't disagree that being able to iterate through `Result`/`Option` may be useful in some cases. But the fact that current implementation of this is being automatically picked up by the `for` loop is a really dangerous feature. If developer is not being careful, they may end up iterating over `Result`/`Option` as iterator where their intention was to iterate over underlying content of `Result`/`Option` which may be also implementing an iterator.
+
+For example, this code looks like it should be printing elements one by one, but it's not:
+
+```
+    fn get_elements() -&gt; Result&lt;Vec&lt;i32&gt;, Box&lt;dyn Error&gt;&gt; {
+        Ok(vec![1, 2, 3])
+    }
+
+    for n in get_elements() {
+        println!("Element: {:?}", n);
+    }
+```
+
+Correct version of this loop should look something like:
+
+```
+    for n in get_elements()? {
+        ...
+```
+
+What former code actually does is: if `get_elements()` returns some vector, then loop will run one iteration and print entire vector to the console. If `get_elements` returns an error, then this loop will just skip and do nothing, just silently ignoring the error.
+
+Compiler has little to offer to mitigate this: both of versions of the code are valid and compile without issues.
+
+If developer is using fancy IDE which highlights types like VSCode, they may notice that wrong time was inferred for the loop variable `n: Vec&lt;i32&gt;` instead of `n: i32`, but that won't help if for whatever reason they are ignoring elements in the loop:
+
+```
+    for _ in get_elements() {
+        println!("one more element");
+    }
+```
+
+What's are your thoughts? Am I missing some tools/features that can help to detect and prevent this kind of errors?
+
+https://repl.it/repls/InfatuatedZestyObservatory
+## [7][The entire minecraft protocol in Rust using macro magic](https://www.reddit.com/r/rust/comments/jcbawo/the_entire_minecraft_protocol_in_rust_using_macro/)
+- url: https://www.reddit.com/r/rust/comments/jcbawo/the_entire_minecraft_protocol_in_rust_using_macro/
+---
+For the last three weeks I've been working on this: an implementation of the Minecraft multiplayer network protocol in Rust. I want to deserialize bytes off the wire into structs and serialize structs into bytes.
+
+I've tried implementing this in other languages but never had a language powerful enough to complete the project in only 3 weeks.
+
+Here's my code, I hope you enjoy:
+
+* mcproto-rs: the protocol itself [https://github.com/Twister915/mcproto-rs](https://github.com/Twister915/mcproto-rs)
+* mctokio: tokio I/O stuff [https://github.com/Twister915/mctokio](https://github.com/Twister915/mctokio)
+* rustcord: a layer 7 server-switching proxy implementation (WIP): [https://github.com/Twister915/rustcord](https://github.com/Twister915/rustcord)
+
+Oh, and here's the macro magic: [https://github.com/Twister915/mcproto-rs/blob/master/src/v1\_15\_2.rs](https://github.com/Twister915/mcproto-rs/blob/master/src/v1_15_2.rs)
+## [8][When reproducible builds?](https://www.reddit.com/r/rust/comments/jct0y4/when_reproducible_builds/)
+- url: https://www.reddit.com/r/rust/comments/jct0y4/when_reproducible_builds/
+---
+In some domains, it is very important to be able to reproducibly rebuild a binary from the sources. This is cargo/rustc pretty bad at. Is there any movement on this issue?
+
+I only have this link (from 2017...) as some sort of reference: [https://users.rust-lang.org/t/testing-out-reproducible-builds/9758](https://users.rust-lang.org/t/testing-out-reproducible-builds/9758)
+## [9][Introducing an Event Emitter in rust](https://www.reddit.com/r/rust/comments/jcr42j/introducing_an_event_emitter_in_rust/)
+- url: https://github.com/Dylan-Kerler/event_emitter_rs
 ---
 
-## [9][Announcing async-hsm 0.2](https://www.reddit.com/r/rust/comments/jc0c0v/announcing_asynchsm_02/)
-- url: https://www.reddit.com/r/rust/comments/jc0c0v/announcing_asynchsm_02/
+## [10][Are out parameters idiomatic in Rust?](https://www.reddit.com/r/rust/comments/jcdg2e/are_out_parameters_idiomatic_in_rust/)
+- url: https://steveklabnik.com/writing/are-out-parameters-idiomatic-in-rust
 ---
- [Async-HSM](https://crates.io/crates/async-hsm) is an asynchronous hierarchical state machine (HSM). 
 
-States are represented by asynchronous functions and state transitions are sequences of asynchronous function-calls.
-## [10][Best way to update crates that come with a derive macro?](https://www.reddit.com/r/rust/comments/jc7ex5/best_way_to_update_crates_that_come_with_a_derive/)
-- url: https://www.reddit.com/r/rust/comments/jc7ex5/best_way_to_update_crates_that_come_with_a_derive/
+## [11][lfs: a small tool to list filesystems](https://www.reddit.com/r/rust/comments/jcugvo/lfs_a_small_tool_to_list_filesystems/)
+- url: https://github.com/Canop/lfs
 ---
-The github repo for my new library contains 2 crates.   
-Crate A: The main library, it has a dependency on crate B as it reexports it
 
-Crate B: The derive macro.  
-
-
-Should I always keep their version the same? Even if one crate did not have code changes? Or should I allow their version to diverge?
-
-On one hand, I like their versions to be the same. As it makes it really obvious which versions of the crate belong with each other.  However, especially with this crate I don't expect many updates to the derive macro (It implements a very small trait, without much logic) so always updating the version seems like a waste.
-
-Allowing their version to diverge means I don't have crate releases without code updates, however I can easily see it happen that crate A is at version 0.9 while B is still 0.1, which (if you ask me) looks stupid. I also don't know what for version bump I need to give crate B if it gets a new Derive macro that is only usable with an update to crate A. Is it a breaking change so that I know for sure that updating crate A gives the updated crate B? Or shouldn't I increase the version in that way because its not actually a breaking change?
-
-&amp;#x200B;
-
-Also an extra question, how do you keep dependencies up to date for libraries? For programs I normally rely on dependabot but that only works if there is a Cargo.lock file.
-## [11][genpdf, a user-friendly PDF generator written in pure Rust](https://www.reddit.com/r/rust/comments/jbk94w/genpdf_a_userfriendly_pdf_generator_written_in/)
-- url: https://www.reddit.com/r/rust/comments/jbk94w/genpdf_a_userfriendly_pdf_generator_written_in/
----
-genpdf ([crates.io](https://crates.io/crates/genpdf), [lib.rs](https://lib.rs/crates/genpdf), [docs.rs](https://docs.rs/genpdf), [source code](https://git.sr.ht/~ireas/genpdf-rs)) is a high-level PDF generator built on top of [`printpdf`](https://lib.rs/crates/printpdf) and [`rusttype`](https://lib.rs/crates/rusttype).  It takes care of the page layout and text alignment and renders a document tree into a PDF document.  All of its dependencies are written in Rust, so you don’t need any pre-installed libraries or tools.
-
-    // Create a document and set the default font family
-    let mut doc = genpdf::Document::new("./fonts", "Liberation")
-        .expect("Failed to create PDF document");
-    // Change the default settings
-    doc.set_margins(10);
-    doc.set_title("Demo document");
-    // Add one or more elements
-    doc.push(genpdf::elements::Paragraph::new("This is a demo document."));
-    // Render the document and write it to a file
-    doc.render_to_file("output.pdf")
-        .expect("Failed to write PDF file");
-
-For a complete example with all supported elements, see the
-[`examples/demo.rs`][] file that generates [this PDF document][].
-
-[`examples/demo.rs`]: https://git.sr.ht/~ireas/genpdf-rs/tree/master/examples/demo.rs
-[this PDF document]: https://git.sr.ht/~ireas/genpdf-rs/blob/master/examples/demo.pdf
-
-For more information, see the [readme](https://sr.ht/~ireas/genpdf-rs) and the  [API documentation](https://docs.rs/genpdf).
-## [12][Dota2 bindings for the official webapi in Rust](https://www.reddit.com/r/rust/comments/jbs7ad/dota2_bindings_for_the_official_webapi_in_rust/)
-- url: https://github.com/sn99/dota2_webapi_bindings
+## [12][Blackbody: a thermogram viewer written in Rust, also introducing a new file format parser in Rust](https://www.reddit.com/r/rust/comments/jcu81p/blackbody_a_thermogram_viewer_written_in_rust/)
+- url: https://bitbucket.org/nimmerwoner/blackbody/src/master/
 ---
 

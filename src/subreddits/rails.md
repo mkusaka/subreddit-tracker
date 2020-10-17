@@ -27,16 +27,51 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [3][Avo - Configuration-based, no-maintenance, extendable Ruby on Rails admin](https://www.reddit.com/r/rails/comments/jc85sc/avo_configurationbased_nomaintenance_extendable/)
+## [3][Gem/Ideas for seeing outliers in a dataset.](https://www.reddit.com/r/rails/comments/jcpo2k/gemideas_for_seeing_outliers_in_a_dataset/)
+- url: https://www.reddit.com/r/rails/comments/jcpo2k/gemideas_for_seeing_outliers_in_a_dataset/
+---
+I know that it is simple to just "sort by value" and notice the upper end of a dataset. However, my use case is rather complicated and doesn't necessarily have to do with an integer "value" per se. For example, say I have a set of students from several locations across the U.S. and a list of grades they received in a class and I'm trying to see what were the outlying cases in the class like so:
+
+&amp;#x200B;
+
+|Name|Class|Location|Grade(s)|
+|:-|:-|:-|:-|
+|John Wick|Genocide 101|Russia|\[100,82,0,78,80,85,10\]|
+
+I would want to average out the numbers, which would yield me something along the lines of 62.14%. However, this is in no way representative of the individual's real performance. So I would want to point out the outliers - in this specific case being the values of 100 and 0 - in order to get a more accurate representation of values. 
+
+I would also like to use this logic in a column comparison, though not to compare the students, to see that "Oh, these two went to Russia and studied genocide? The average of that location is xyz and these performed phenomenal and these performed terribly. They're outliers."
+
+That in mind, I do need to implement some form of standard deviation for the values, which I could do just fine.
+
+&amp;#x200B;
+
+Anyways, I know the maths I need and have that all mapped out, I'm just wondering if there's some sort of ML/AI or dataset analysis gem that I could use to assist in this - if one exists.
+
+Keyword: **Defining Outliers.** 
+
+TL;DR
+
+Need some help popping (though from hash/model form) some outliers from a dataset a la leetcode but in actual production with more complex values.
+## [4][Implementing HATEOAS in Rails API](https://www.reddit.com/r/rails/comments/jct7rc/implementing_hateoas_in_rails_api/)
+- url: https://www.reddit.com/r/rails/comments/jct7rc/implementing_hateoas_in_rails_api/
+---
+I'm trying to learn Rails a bit more, and I'm not sure how to do this 'properly'.
+From what I've seen, the routing url helpers should be able to do this, but I'm not sure if I'm misusing them or they simply can't work like this. For the record, I'm using `active_model_serializer`, and struggling with the following issues:
+
+1) Getting the self reference URL. I could easily hardcode the link to the resource, then interpolate the `:id`. Easy, but not maintainable. I tried using a url_helper, but `todo_url(object_id)` ends up producing `"self": "http://localhost:3000/todos.17740"`
+
+2) Getting URLs of resources not related to the object being serialized. For example, let's say in the case the client didn't send an auth token, return a link to the login/register endpoints.
+## [5][Avo - Configuration-based, no-maintenance, extendable Ruby on Rails admin](https://www.reddit.com/r/rails/comments/jc85sc/avo_configurationbased_nomaintenance_extendable/)
 - url: https://www.reddit.com/r/rails/comments/jc85sc/avo_configurationbased_nomaintenance_extendable/
 ---
 Hi guys,
 
 Today I'd like to show you [Avo](https://avohq.io), a beautiful next-generation framework that empowers you, the developer, to create fantastic admin panels for your Ruby on Rails apps with the flexibility to fit your needs as you grow.
 
-Out of the box, it has an excellent CRUD interface, ordering, filters, and actions. It even knows how to handle your Active Record model relations. 
+Out of the box, it has an excellent CRUD interface, ordering, filters, and actions. It even knows how to handle your Active Record model relations.
 
-It's super easy to configure. There's one configuration file per model and one configuration line of code per field. You can add simple fields like text, textarea, dropdowns, and more complex ones like datetime, badges, loaders, currency, and others. There's even a cool one-liner single or multi-file Active Storage integration 🤯. 
+It's super easy to configure. There's one configuration file per model and one configuration line of code per field. You can add simple fields like text, textarea, dropdowns, and more complex ones like datetime, badges, loaders, currency, and others. There's even a cool one-liner single or multi-file Active Storage integration 🤯.
 
 **Avo's mission is to make the job of developers easier and help them and companies move faster.**
 
@@ -45,17 +80,67 @@ Try it in your app and let me know what you think.
 Thank you,  
 Adrian
 
-[https://avohq.io](https://avohq.io)  
-[https://twitter.com/avo\_hq](https://twitter.com/avo_hq)  
-[https://github.com/avo-hq/avo](https://github.com/avo-hq/avo)   
-[https://discord.gg/pkTF6y8](https://discord.gg/pkTF6y8)
-## [4][Rails 6 with Bootstrap and Webpacker: Quick guide](https://www.reddit.com/r/rails/comments/jbv43i/rails_6_with_bootstrap_and_webpacker_quick_guide/)
+[avohq.io](https://avohq.io)
+
+[Twitter Account](https://twitter.com/avo_hq)
+
+[Github repo](https://github.com/avo-hq/avo)
+
+[Discord community server](https://discord.gg/pkTF6y8)
+## [6][Strategies for deploying Rails engines containing webpacker-compiled assets](https://www.reddit.com/r/rails/comments/jchwst/strategies_for_deploying_rails_engines_containing/)
+- url: https://www.reddit.com/r/rails/comments/jchwst/strategies_for_deploying_rails_engines_containing/
+---
+Hello all,
+
+I'm working on a Rails engine that contains assets that are compiled using webpacker. I'm wondering what the correct strategy is for packaging and deploying this gem. I've read the instructions [here](https://github.com/rails/webpacker/blob/master/docs/engines.md), but I find Step 7 a bit confusing.  I tried the instructions under "Use a separate middleware", but that didn't work. So my questions are:
+
+1. Should I be pre-compiling the assets in my gem and including the compiled assets (in the gem's public/packs) with the published gem and load those assets from there in the app? OR
+2. Should I *not* include the engine's assets, but run rake my-engine:webpacker:compile in the app?
+
+Anyone have any experience with this?
+## [7][What is the right gem to ban users? Devise, Pundit or Rolify?](https://www.reddit.com/r/rails/comments/jcdqwj/what_is_the_right_gem_to_ban_users_devise_pundit/)
+- url: https://www.reddit.com/r/rails/comments/jcdqwj/what_is_the_right_gem_to_ban_users_devise_pundit/
+---
+What is your experience?
+## [8][Unique URLs For Filter Combinations](https://www.reddit.com/r/rails/comments/jcgoul/unique_urls_for_filter_combinations/)
+- url: https://www.reddit.com/r/rails/comments/jcgoul/unique_urls_for_filter_combinations/
+---
+Hey everyone!
+
+I'm trying to improve the SEO of the site I'm working on, and there's one method in particular that would be promising with the niche I'm in. Basically, the idea revolves around having unique pages with content for combinations of filters. 
+
+As an example, this is something that [Nomad List](https://nomadlist.com/) implements and has success with. Let's say you select the "Cold now" and "Clean air" filters on NomadList - the page refreshes with a new URL '/cool-places-with-clean-air' and the new page has a matching H1 tag with a brief description. These custom filter pages rank well for a lot of long-tail keywords.
+
+I'm curious if anyone has experience implementing something similar in Rails? I currently have a filtering system setup in my app, but it uses query parameters in the form of '?filter_by_param1&amp;filter_by_param2'. I'd like to migrate this to a system based on unique urls so that they have potential to rank on Google. 
+
+I'm not really sure about how I could go about setting up the routing for something like this. The filtering itself as well as generating the content is something I can manage. 
+
+Would really appreciate any ideas! Thanks in advance :)
+## [9][Federated rails apps, how they can be made?](https://www.reddit.com/r/rails/comments/jcci9o/federated_rails_apps_how_they_can_be_made/)
+- url: https://www.reddit.com/r/rails/comments/jcci9o/federated_rails_apps_how_they_can_be_made/
+---
+I'm a member of Mastodon. And I'm on one instance. Most of my friends are on other instances. A lot of people from different networks, such as plume, can join us on Mastodon and share their thoughts and blogs or videos from plume or peertube can be shared using mastodon. 
+
+The ActivityPub protocol is really a mind-blowing thing to me. I love it. It helps people on different social networks to connect together (wasn't this what "thefacebook" meant to be?) and this is amazing. 
+
+I searched a lot about the protocol itself and read some parts of mastodon's code. But never saw a tutorial or centralized document about adding this feature to a rails app. If there will be one, that'd be the most helpful document on decentralized networks in my opinion.
+## [10][How do you generate the different combinations of product variants?](https://www.reddit.com/r/rails/comments/jcgq11/how_do_you_generate_the_different_combinations_of/)
+- url: https://www.reddit.com/r/rails/comments/jcgq11/how_do_you_generate_the_different_combinations_of/
+---
+Say I have a variant model that has the variants and values like this:
+
+color: {\[blue, red, green, etc.\]}
+
+Size: {\[XL,L,M,S\]}
+
+If I have a variant\_values model that belongs to variant how do I loop through those and generate variant\_value records for each possible combination?
+## [11][Rails 6 with Bootstrap and Webpacker: Quick guide](https://www.reddit.com/r/rails/comments/jbv43i/rails_6_with_bootstrap_and_webpacker_quick_guide/)
 - url: https://www.reddit.com/r/rails/comments/jbv43i/rails_6_with_bootstrap_and_webpacker_quick_guide/
 ---
 I guess this exact tutorial topic is already a "mauvais ton", but after reading 10+ guides on "How to install bootstrap on Rails 6" I wrote a quick guide: [https://blog.corsego.com/2020/10/rails-6-with-bootstrap-and-webpacker.html](https://blog.corsego.com/2020/10/rails-6-with-bootstrap-and-webpacker.html)
 
 I hope you'll find it useful!
-## [5][Rails help](https://www.reddit.com/r/rails/comments/jc95ti/rails_help/)
+## [12][Rails help](https://www.reddit.com/r/rails/comments/jc95ti/rails_help/)
 - url: https://www.reddit.com/r/rails/comments/jc95ti/rails_help/
 ---
  hey guys, so i have this and i am trying to get each position(entertainment, src president) have its own page. lets say if i vote for the candidates of entertainment position it directs me to src president to vote and so on. how do i do this please? 
@@ -117,84 +202,3 @@ https://preview.redd.it/g0sljvp7dgt51.png?width=1366&amp;format=png&amp;auto=web
 &gt; &lt;% end %&gt;
 
 here is the form please
-## [6][Find unique places from Scraping website data](https://www.reddit.com/r/rails/comments/jc8hsd/find_unique_places_from_scraping_website_data/)
-- url: https://www.reddit.com/r/rails/comments/jc8hsd/find_unique_places_from_scraping_website_data/
----
-I have lists of restaurants in CSV file from 2 websites and also from google, but all files have some restaurants which are not present in other files.   
-i want to combine them all and want a unique from them but all files have their own id, 2 places can have a same name And even lat , lng is different for a same place &amp; their address may have words not in a same pattern.   
-
-
-Any senior can please help me ?
-## [7][How to significantly archive and compress a given tmp Rails directory contents?](https://www.reddit.com/r/rails/comments/jc47cr/how_to_significantly_archive_and_compress_a_given/)
-- url: https://www.reddit.com/r/rails/comments/jc47cr/how_to_significantly_archive_and_compress_a_given/
----
-My workflow is as follows:
-
-1. User requests to have the system send many PDF files (in the hundreds) to a given email address. I use Sidekiq to handle this job.
-2. I generate these pdf documents and save them to a random-named directory in tmp folder (eg. tmp/pdfs/2e3b8f6f-81e6-40b1-9cdc-d1bb0a0ee519/)
-3. I use the gem RubyZip and the example given to zip the `tmp/pdfs/2e3b8f6f-81e6-40b1-9cdc-d1bb0a0ee519/` directory into a zip file (eg. [thefiles.zip](https://thefiles.zip))
-4. I send [thefiles.zip](https://thefiles.zip) to the user via email.
-
-Problem: RubyZip does not significantly compress this archive. If I request that 24 PDF files equaling 12 MB be archived, the archive is 10MB for eg.
-
-How can I do this?
-## [8][I curated all the remote job openings from Hacker News who is hiring - October](https://www.reddit.com/r/rails/comments/jbv2j8/i_curated_all_the_remote_job_openings_from_hacker/)
-- url: https://www.reddit.com/r/rails/comments/jbv2j8/i_curated_all_the_remote_job_openings_from_hacker/
----
-Here I would like to share more than 480 remote jobs that I've curated from Hacker News Who is hiring thread. All these are 100% remote jobs not just allowed to work from home during COVID-19. These are 100% remote jobs and will continue to follow that after the covid.
-
-https://remoteleaf.com/whoishiring.   
-
-Note: Select "ruby" in the skills filter to view all Ruby/Rails jobs
-
-✅ 100% remote full-time jobs.    
-✅ Each and every job is manually curated and verified. Spent more than 14 hours for this.
-## [9][Creating multiple user types in rails using devise?](https://www.reddit.com/r/rails/comments/jbp4tb/creating_multiple_user_types_in_rails_using_devise/)
-- url: https://www.reddit.com/r/rails/comments/jbp4tb/creating_multiple_user_types_in_rails_using_devise/
----
-Hi there, I want to have two different types of users (buyers, sellers) on my application. Should I create two types of users using devise to accomplish this? Or is there a more streamlined approach?
-## [10][Upgrading a rails app from 4.2 to 5.0...i need help](https://www.reddit.com/r/rails/comments/jbya8p/upgrading_a_rails_app_from_42_to_50i_need_help/)
-- url: https://www.reddit.com/r/rails/comments/jbya8p/upgrading_a_rails_app_from_42_to_50i_need_help/
----
-O.k. so I finally got a rails server to load with Rails 5.0.0 and ruby 2.5.8 (I'm upgrading from ruby 2.2.4 and rails 4.2.0).
-
-I don't have any sll issues.
-
-I'm now at the "ActiveRecord::PendingMigrationError" level.
-
-Basically I haven't created the tables in my db (the db is already created in postgres).
-
-When I run the bin/rails db:migrate RAILS_ENV=development I get the following:
-
-&gt;PG::DatatypeMismatch: ERROR:  column "root_comment" is of type boolean but default expression is of type integer
-&gt;HINT:  You will need to rewrite or cast the expression.
-
-I've read a ton, and it seems rails 5 changed both migration scripts and how to define columns in postgres.
-
-Do I need to label my migration script with something like [4.2 or 5.0] or do I actually need to change the type (further screwing up my app)?
-
-Thanks in advance.
-## [11][Modal age confirmation? Or just a view for it?](https://www.reddit.com/r/rails/comments/jbtypu/modal_age_confirmation_or_just_a_view_for_it/)
-- url: https://www.reddit.com/r/rails/comments/jbtypu/modal_age_confirmation_or_just_a_view_for_it/
----
-Hi folks. I'm making a web app for my web dev portfolio and it has to do with the cannabis industry. So I'd like to add an age confirmation to the landing page. I was thinking it could just be a modal that pops up and just asks if you're 21 or over, or has you enter your DOB, and then lets you continue to the site and browse through it even if you're not logged in. Or should there just be a view dedicated to that? Either way it'll need a controller, right? 
-
-Would this be a practical way in Rails to do this? The landing page will just have the log in or sign up links in the nav, and then there's an "enter" button in the middle of the page that would then prompt that modal. I'm just looking for advice or to be pointed in the right direction as I'm honestly not finding much in my research that would help me with this exact issue. A lot of what's coming up is deletion confirmation modals, or some other things that don't exactly help me. 
-
-I'm still very new to Rails. I only just graduated boot camp a while ago so I'm building little apps for my portfolio and gaining that experience. Any help would be appreciated!
-## [12][CanCanCan + rolify... is it necessary?](https://www.reddit.com/r/rails/comments/jbryal/cancancan_rolify_is_it_necessary/)
-- url: https://www.reddit.com/r/rails/comments/jbryal/cancancan_rolify_is_it_necessary/
----
-Hi guys, in my website now I have only two roles. User &amp; Staff.
-
-But Staff is not a "real" role. In the DB I can set Staff true/false.
-
-Now I want to improve my website and add 5 kind of rules: User, Verified User, Banned User, Mod and Staff.
-
-Tecnically I can set their "power" in the `app/policies` area (using, for example  `user.try(:mod?)` )
-
-A developer suggested me to use CanCanCan and rolify.
-
-Is it really necessary? Just to add 4 roles? I don't want to add gems just to add one or two features...
-
-p.s. I already use devise

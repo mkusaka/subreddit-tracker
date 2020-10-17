@@ -70,217 +70,197 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Facebook just released React 16.14.0, 15.7.0 (!) and 0.14.0 (!!!) with support for new JSX transform](https://www.reddit.com/r/reactjs/comments/jbxcrh/facebook_just_released_react_16140_1570_and_0140/)
-- url: https://twitter.com/reactjs/status/1316810405646344192?s=19
+## [3][Supercharge testing React applications with Wallaby.js](https://www.reddit.com/r/reactjs/comments/jcpnnk/supercharge_testing_react_applications_with/)
+- url: https://www.smashingmagazine.com/2020/10/supercharge-testing-react-applications-wallabyjs/
 ---
 
 ## [4][Just a cool dropdown animation that I recently completed.](https://www.reddit.com/r/reactjs/comments/jc515n/just_a_cool_dropdown_animation_that_i_recently/)
 - url: https://v.redd.it/ccg4jukklet51
 ---
 
-## [5][Self - closing tags in React](https://www.reddit.com/r/reactjs/comments/jc8964/self_closing_tags_in_react/)
-- url: https://www.reddit.com/r/reactjs/comments/jc8964/self_closing_tags_in_react/
----
-I'm just wondering about the difference between a self-closing tag and non self-closing tags in the context of React. I was used to what that meant in html, but there seems to be a bit more to it in React? 
-
-In a tutorial I am following it mentions that because &lt;textarea&gt; is now self closing, we can add value property to it. The tutorial didn't elaborate but gave the impression that if the &lt;textarea&gt; element were not self closing, we would not be able to add the value attribute. Why is that?
-## [6][React Fundamentals: Understanding JSX](https://www.reddit.com/r/reactjs/comments/jc7xas/react_fundamentals_understanding_jsx/)
-- url: https://www.reddit.com/r/reactjs/comments/jc7xas/react_fundamentals_understanding_jsx/
----
-In this article, you will learn:
-
-- What JSX is
-
-- How it gets compiled into normal Javascript
-
-- How to convert React.createElement() calls to JSX
-
-- Adding and Spreading Props
-
-- Interpolation in JSX, etc.
-
-[React Fundamentals: Understanding JSX](https://blog.bhanuteja.dev/react-fundamentals-understanding-jsx)
-## [7][Second Frontity Website–InterPayments.com](https://www.reddit.com/r/reactjs/comments/jc95ry/second_frontity_websiteinterpaymentscom/)
-- url: https://www.interpayments.com/
+## [5][Made a colour mixing tool](https://www.reddit.com/r/reactjs/comments/jcs0ml/made_a_colour_mixing_tool/)
+- url: https://jackrhumphrey.github.io/colour
 ---
 
-## [8][I created a web page using React but can't add/use Javascript function for my responsive navbar](https://www.reddit.com/r/reactjs/comments/jc8rle/i_created_a_web_page_using_react_but_cant_adduse/)
-- url: https://www.reddit.com/r/reactjs/comments/jc8rle/i_created_a_web_page_using_react_but_cant_adduse/
+## [6][How to start learn react js](https://www.reddit.com/r/reactjs/comments/jcuayx/how_to_start_learn_react_js/)
+- url: https://www.reddit.com/r/reactjs/comments/jcuayx/how_to_start_learn_react_js/
 ---
-Hello, since  this  is not classic HTML and using JS with &lt;script&gt; I guess not working, I have a js code and I want to use its function in my Navbar component with onClick , it is for responsive navbar(hamburger style), how can I use it? I Searched a lot on online but couldn't find anything thatt I was able to understand. Basically I'm asking where do I put this JS Code in this React App that can grant me access to use its Function from my Navbar Component without a problem. Please help.
-## [9][Problem with React Routes and Redux](https://www.reddit.com/r/reactjs/comments/jc8el9/problem_with_react_routes_and_redux/)
-- url: https://www.reddit.com/r/reactjs/comments/jc8el9/problem_with_react_routes_and_redux/
+Hi, recently I started to learn python and I really enjoy that. I have an idea how to simplify my job, but to do that i need frontend application. My friend told me to give up at flask and django and learn react js. The problem is that i never learned basic javascrip and I dont know how to start. I found this [course](https://www.udemy.com/course/react-the-complete-guide-incl-redux/) on udemy, can I start with this? I will appreciate every hint. Thanks.
+## [7][React-map-gl // How to filter with buttons and display markers](https://www.reddit.com/r/reactjs/comments/jcri3l/reactmapgl_how_to_filter_with_buttons_and_display/)
+- url: https://www.reddit.com/r/reactjs/comments/jcri3l/reactmapgl_how_to_filter_with_buttons_and_display/
 ---
-I am new to state management in React. I have a query that whenever there is a change in Route location, all the data from Redux state should be cleared. 
+ 
 
-Thanks in advance.
-## [10][How to learn ReactJS as a developer?](https://www.reddit.com/r/reactjs/comments/jbtnys/how_to_learn_reactjs_as_a_developer/)
-- url: https://www.reddit.com/r/reactjs/comments/jbtnys/how_to_learn_reactjs_as_a_developer/
----
-I'm struggling to learn react, I'm very new to web development but not coding at all, I come from an iOS and backend background. I've started watching some YouTube videos on react because I can't find any updated courses for 2020 React. I bought the **The Complete React Developer Course (w/ Hooks and Redux)** but returned it as all the videos where recorded from 2015/16 and at lot of the reviews are saying the course is very outdated. 
+Hello everyone!
 
-I'm just having trouble figuring out the best way to learn react, the concepts seem to foreign to me and I really want to have a strong understanding of React so I can build my business. The fact is YouTube courses that I've watched really don't explain key concept of React they are just teaching how to build whatever they are building.
+React   newbie here. I'm seeking your help because I am currently struggling   with a feature. I managed to display a list of markers from an external   file (list of 3 museums in London) and added popups to them. But now  I'd  like to filter them with 3 buttons: let's say button1 displays  marker  1, etc.
 
-So does anyone have any advice on how I can overcome this obstacle?
-## [11][Async/auth problems with React,Firebase - why is current user evaluating to null, when logged in?](https://www.reddit.com/r/reactjs/comments/jc6lh3/asyncauth_problems_with_reactfirebase_why_is/)
-- url: https://www.reddit.com/r/reactjs/comments/jc6lh3/asyncauth_problems_with_reactfirebase_why_is/
----
-Hey folks
+I have no clue on  how to  perform such thing: my first thought would be to add some  specific  characteristic to each of them in my Data.js  
+file but then I  do not know how to retrieve this info and based my  buttons on this  filter in my main component, could you please tell me  how to do it? Any  hints?
 
-I have a component, and one of it's functions is to get all the documents from a firebase collection, and return only the documents created by the currently logged in user:  [https://codepen.io/mildredthecat/pen/BazKKvy?editors=0010](https://codepen.io/mildredthecat/pen/BazKKvy?editors=0010)
-
-Only problem is that on executing this function, the page doesn't render and I get the following error:
-
-\`\`\` TypeError: Cannot read property 'uid' of null \`\`\`.
+Here is what I've done so far:
 
 &amp;#x200B;
 
-Upon page refesh however, the component renders without problem.
+ 
 
-Any ideas why and any suggestions on how I can fix my code? I'm logged in when testing this function, so \`\`\`this.state.userDetails.uid\`\`\` should be assigned a value, but it's evaluating to null. It seems to me like some sort of async issue with setState.
-
-I should mention that I'm also getting a warning saying the following:
-
-\`\`\`Warning: Can't perform a React state update on an unmounted component\`\`\`
-
-Cheers
-
-&amp;#x200B;
-
-EDIT: Here's the whole component, for context: [https://codepen.io/mildredthecat/pen/YzWqqoM?editors=0010](https://codepen.io/mildredthecat/pen/YzWqqoM?editors=0010)
-## [12][Issues with uploading and showing blob files](https://www.reddit.com/r/reactjs/comments/jc683p/issues_with_uploading_and_showing_blob_files/)
-- url: https://www.reddit.com/r/reactjs/comments/jc683p/issues_with_uploading_and_showing_blob_files/
----
-After succeeding in uploading blob into MYSQL, I  don't have the opportunity to view the image on my reactJS. Is there anything I can d to display the image?  Please help
-
-I have the following component:
-
-class CreateProfile extends Component {
-  constructor(props) {
-    super(props);
-    //  this.fileInput = React.forwardRef();
-    this.state = {
-      profile_picture: '',
-      specialist: "",
-      bio: "",
-      errors: {},
-    };
-
-    this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-    this.onFileLoad = this.onFileLoad.bind(this);
-  }
-
-  //componentWillReceiveProps is being replaced by componentDidUpdate, as it is providing warning.
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
-    }
-  }
-
-  handleSubmit(event) {
-    event.preventDefault();
-    alert(`Selected file - ${this.fileInput.current.files[0].path.name}`);
-  }
-
-  async onSubmit(e) {
-    e.preventDefault();
-
-    const profileInformation = new FormData();
-    profileInformation.append("bio", this.state.bio);
-    profileInformation.append("specialist", this.state.specialist);
-    profileInformation.append("profile_picture", this.state.profile_picture[0]);
-  
-    this.props.createProfile(profileInformation, this.props.history);
-  
-  }
-
-  onChange(e) {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  }
-
-  onFileLoad(e) {
-    this.setState({
-      [e.target.name]: e.target.files,
-    });
+    // Main document
+    import React, {PureComponent} from "react";
+    import ReactDOM from "react-dom";
+    import ReactMapGL, {Marker, Popup} from "react-map-gl";
+    import "./index.css";
+    import Data from "./Data.js";
     
-  }
-
-  render() {
-    const { errors } = this.state;
-
-    return (
-      &lt;div className="create-profile"&gt;
-        &lt;div className="container final-bottom"&gt;
-          &lt;div className="row"&gt;
-            &lt;div className="col-md-6 m-auto"&gt;
-              &lt;h1 className="display-4 text-center"&gt;Skapa profil&lt;/h1&gt;
-              &lt;p className="lead text-center"&gt;
-                Låt din profil sticka ut genom att skinna med enastående profil
-              &lt;/p&gt;
-              &lt;small className="d-block pb-3"&gt;* = obligatorisk fälter&lt;/small&gt;
-              &lt;form onSubmit={this.onSubmit}&gt;
-                &lt;TextAreaFieldGroup
-                  placeholder="Kort Biografi (profil)"
-                  name="bio"
-                  value={this.state.bio}
-                  onChange={this.onChange}
-                  error={errors.bio}
-                  info="Berätta lite om dig själv"
-                /&gt;
-
-                &lt;TextFieldGroup
-                  label="* Färdigheter/Områden"
-                  placeholder="* Färdigheter"
-                  name="specialist"
-                  value={this.state.specialist}
-                  onChange={this.onChange}
-                  errors={errors.specialist}
-                  info="Skriv dina färdigheter, och skiljer de med komma tecken (t.ex. HTML,CSS)"
-                /&gt;
-
-                &lt;div className="form-group"&gt;
-                  &lt;input
-                    type="file"
-                    className={classnames("form-control", {
-                      "is-invalid": errors.profile_picture,
-                    })}
-                    name="profile_picture"
-                    onChange={this.onFileLoad}
-                    value={undefined}
-                  /&gt;
-                  &lt;div className="invalid-feedback"&gt;
-                    {errors.profile_picture}
-                  &lt;/div&gt;
+    
+    const MAPBOX_TOKEN = "Mapbox_token";
+    
+    
+    class Mapp extends PureComponent {
+        constructor(props) {
+            super(props);
+            this.state = {
+                viewport: {
+                    latitude: 51.50985,
+                    longitude: -0.11892,
+                    zoom: 12,
+                },
+                markers: Data,
+                selectedMarker: null
+            };
+        }
+    
+        _renderMarkers() {
+            return (
+                this.state.markers.map(marker =&gt; (
+                    &lt;Marker
+                        key={marker.id}
+                        longitude={marker.longitude}
+                        latitude={marker.latitude}&gt;
+                            &lt;button 
+                                className="marker-btn"
+                                onClick={event =&gt; {
+                                    event.preventDefault();
+                                    this.setState({selectedMarker: marker})
+                                }}&gt;
+                                &lt;img 
+                                    className="marker-btn"
+                                    src="location-icon.svg"
+                                    alt="location Icon"
+                                /&gt;
+                            &lt;/button&gt;
+                    &lt;/Marker&gt;
+                ))
+            )
+        }
+    
+        _renderPopup() {
+            return(
+                this.state.selectedMarker &amp;&amp; (
+                    &lt;Popup
+                        longitude={this.state.selectedMarker.longitude}
+                        latitude={this.state.selectedMarker.latitude}
+                        onClose={() =&gt; {this.setState({selectedMarker: null})}}
+                        offsetLeft={22.5}
+                    &gt;
+                        &lt;div&gt;
+                            &lt;h3&gt;Name: {this.state.selectedMarker.site_name}&lt;/h3&gt;
+                            &lt;h4&gt;Website: {this.state.selectedMarker.website}&lt;/h4&gt;
+                        &lt;/div&gt;
+                    &lt;/Popup&gt;
+                )
+            )
+        }
+    
+        render() {
+            return (
+                &lt;div className="App"&gt;
+                    &lt;div className="Map"&gt;
+                        &lt;ReactMapGL
+                            {...this.state.viewport}
+                                width="100vw"
+                                height="100vh"
+                                mapStyle="mapbox://styles/mapbox/streets-v11"
+                                onViewportChange={viewport =&gt; this.setState({viewport})}
+                                mapboxApiAccessToken={MAPBOX_TOKEN}
+                            &gt;
+    
+                                {this._renderMarkers()}
+                                {this._renderPopup()}
+    
+                        &lt;/ReactMapGL&gt;
+                    &lt;/div&gt;
                 &lt;/div&gt;
+            );
+        }
+    }
+    
+    document.body.style.margin = 0;
+    ReactDOM.render(
+        &lt;Mapp /&gt;, 
+        document.getElementById("root")
+    )
 
-                &lt;input
-                  type="submit"
-                  value="Registrera profil"
-                  className="btn btn-info btn-block mt-4"
-                /&gt;
-              &lt;/form&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    );
-  }
-}
+ The file containing the information about my markers: 
 
-CreateProfile.propTypes = {
-  profile: PropTypes.object.isRequired,
-  errors: PropTypes.object.isRequired,
-  createProfile: PropTypes.func.isRequired,
-};
+ 
 
-const mapStateToProps = (state) =&gt; ({
-  profile: state.profile,
-  errors: state.errors,
-});
+    //Data.js
+    const Data = [
+      {
+        "id": 1,
+        "latitude": 51.5206436238135,
+        "longitude": -0.12869802265875,
+        "site_name": "Museum of Writing",
+        "website": "http://www.museumofwriting.co.uk/"
+      },
+      {
+        "id": 2,
+        "latitude": 51.5252701073731,
+        "longitude": -0.1216462226263,
+        "site_name": "The Foundling Museum",
+        "website": "http://www.foundlingmuseum.org.uk/"
+      },
+      {
+        "id": 3,
+        "latitude": 51.5484218889309,
+        "longitude": -0.17724635343509,
+        "site_name": "Freud Museum",
+        "website": "https://www.freud.org.uk/"
+      }
+    ]
+    
+    export default Data
 
-export default connect(mapStateToProps, { createProfile })(
-  withRouter(CreateProfile)
-);
+&amp;#x200B;
+
+Thak you in advance! Cheeeeeers
+## [8][Pins elements w/ Framer Motion](https://www.reddit.com/r/reactjs/comments/jcremw/pins_elements_w_framer_motion/)
+- url: https://www.reddit.com/r/reactjs/comments/jcremw/pins_elements_w_framer_motion/
+---
+Hi everybody! Someone have an idea how to pins elements with Framer Motion?
+
+Thank you in advance!
+## [9][Has anybody learned anything from the React Summit?](https://www.reddit.com/r/reactjs/comments/jcjqyr/has_anybody_learned_anything_from_the_react_summit/)
+- url: https://www.reddit.com/r/reactjs/comments/jcjqyr/has_anybody_learned_anything_from_the_react_summit/
+---
+I didn't have a chance to look back at the summit videos from today and yesterday but I only have the free base track anyway so just wondering if anyone attended the summit track and has anything interesting to share?
+## [10][A livestream where I go through building a spa, answer react questions, start building a store, and a blog. All from scratch in modern reactjs. More to come!](https://www.reddit.com/r/reactjs/comments/jcbvd5/a_livestream_where_i_go_through_building_a_spa/)
+- url: https://youtu.be/_1YojDFZEfU
+---
+
+## [11][Anyone serving React with Kubernetes?](https://www.reddit.com/r/reactjs/comments/jcq38k/anyone_serving_react_with_kubernetes/)
+- url: https://www.reddit.com/r/reactjs/comments/jcq38k/anyone_serving_react_with_kubernetes/
+---
+Hello all!  
+
+
+I have made my initial deployment in Kubernetes and I was wondering if someone has done the same. I ask because I am wondering what type of livenessProbe/readinessProbe I can place for the NGINX pod serving the static files.  
+
+
+Thank you in advance and regards.
+## [12][Need help with contact manager app](https://www.reddit.com/r/reactjs/comments/jcsbzv/need_help_with_contact_manager_app/)
+- url: https://www.reddit.com/r/reactjs/comments/jcsbzv/need_help_with_contact_manager_app/
+---
+Here's a simple contact manager app I made with React. The problem is that it only stores one record at a time so when I create a new record, the old one disappears. Does anyone know why? Here's the link:
+
+[https://stackblitz.com/edit/react-wbyplw?file=src/store.js](https://stackblitz.com/edit/react-wbyplw?file=src/store.js)

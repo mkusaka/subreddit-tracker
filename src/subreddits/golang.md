@@ -1,81 +1,75 @@
 # golang
-## [1][Olric v0.3.0-beta.6 is out: Distributed cache and in-memory key/value data store. It can be used both as an embedded Go library and as a language-independent service.](https://www.reddit.com/r/golang/comments/jc7gfg/olric_v030beta6_is_out_distributed_cache_and/)
-- url: https://github.com/buraksezer/olric/releases/tag/v0.3.0-beta.6
+## [1][Gosaic - 4yrs but still a piece of art](https://www.reddit.com/r/golang/comments/jcrmou/gosaic_4yrs_but_still_a_piece_of_art/)
+- url: https://github.com/atongen/gosaic
 ---
 
-## [2][How to customize Go's HTTP client](https://www.reddit.com/r/golang/comments/jc5a1i/how_to_customize_gos_http_client/)
-- url: https://rafallorenz.com/go/customize-http-client/
+## [2][RocksDB Wrapper, up to date with recent rocksdb releases and stress tested](https://www.reddit.com/r/golang/comments/jctgxd/rocksdb_wrapper_up_to_date_with_recent_rocksdb/)
+- url: https://github.com/linxGnu/grocksdb
 ---
 
-## [3][How do you log?](https://www.reddit.com/r/golang/comments/jc7mkx/how_do_you_log/)
-- url: https://www.reddit.com/r/golang/comments/jc7mkx/how_do_you_log/
----
-How do you people manage logger throughout whole application?
-
-Been using Uber's zap for past 4 years, initially via dependency injection:
-
-    type myImpl struct {
-        logger *zap.Logger
-    }
-    
-    func (impl myImpl) myFunct() {
-        impl.logger.Info("Hello world!")
-    }
-
-But for past year [via context](https://github.com/cantor-systems/zapctx):
-
-    func myFunc(ctx context.Context) {
-        zapctx.Info(ctx, "Hello world!)
-    }
-
-The latter approach works, however it implies global context and whenever you need to access logger, you need to pass context to that function.
-
-However, I have grown a bit doubtful of that and I am not sure if this is the way to go in the long term as for example I would like to add additional field "service", that contains the struct name, for all logger method calls in that struct implementation, however that is not doable with context logger, only with dependency inversion.
-
-So I was wondering, how do you do it?. What are your approaches to logging?
-## [4][Is it a bad practice to assign variable to other and then reassign it back?](https://www.reddit.com/r/golang/comments/jc7att/is_it_a_bad_practice_to_assign_variable_to_other/)
-- url: https://www.reddit.com/r/golang/comments/jc7att/is_it_a_bad_practice_to_assign_variable_to_other/
----
-I've got a quick question more in terms of code quality, but it's a go code, so I decided to post it here.
-
-I have such piece of code:
-
-    shortVar := some.Nested.Struct.Field
-    ... // do some processing (around 40 lines if that shortVar)
-    ...
-    some.Nested.Struct.Field = shortVar // is it a bad practice?
-
-I'm wondering if it's a bad practice to do so? Should I do it like in the above example or should I use `some.Nested.Struct.Field` everywhere?
-## [5][Looking for project to contribute bugfixes](https://www.reddit.com/r/golang/comments/jc5b2o/looking_for_project_to_contribute_bugfixes/)
-- url: https://www.reddit.com/r/golang/comments/jc5b2o/looking_for_project_to_contribute_bugfixes/
----
-I've been teaching my son programming and go and he has progressed to the point that I'm trying to find some actual real world problems for him to swing at. Can anyone suggest some good open source projects that have a decemt sized backlog of issues I could unleash him at?
-## [6][I wrote a tool to dump SSL Informations and test TLS Versions like SSLShopper e SSL Labs](https://www.reddit.com/r/golang/comments/jc96nk/i_wrote_a_tool_to_dump_ssl_informations_and_test/)
-- url: https://github.com/msfidelis/cassler
+## [3][Deep dive into the recent Generics proposal](https://www.reddit.com/r/golang/comments/jcc9xp/deep_dive_into_the_recent_generics_proposal/)
+- url: https://youtu.be/gIEPspmbMHM
 ---
 
-## [7][Returning gRPC error status WithDetails, but not showing up in body?](https://www.reddit.com/r/golang/comments/jc0521/returning_grpc_error_status_withdetails_but_not/)
-- url: https://www.reddit.com/r/golang/comments/jc0521/returning_grpc_error_status_withdetails_but_not/
----
-I'm currently following this:
-
-[https://medium.com/utility-warehouse-technology/advanced-grpc-error-usage-1b37398f0ff4](https://medium.com/utility-warehouse-technology/advanced-grpc-error-usage-1b37398f0ff4)
-
-I'm able to correctly add the details to the Error, but when I make a request to my endpoint via Postman. The body is just:  
-{  
- "error": "This is an error!"  
-}
-
-What steps should I follow to get the details to show up in the body as well?
-## [8][Need help with GORM!](https://www.reddit.com/r/golang/comments/jc3bj6/need_help_with_gorm/)
-- url: https://www.reddit.com/r/golang/comments/jc3bj6/need_help_with_gorm/
----
-So, I am very new to golang and I am working on a personal project of mine. So I am using gorm for db stuffs and whenever I do any operation gorm automatically  populate created, modified and deleted column depending on what operation I do. Now I want to also populate some custom columns of mine whenever any operation is done. Does anyone knows best and easy solution for this?
-## [9][[Academic] Software Development Survey (Software Developers)](https://www.reddit.com/r/golang/comments/jc61ak/academic_software_development_survey_software/)
-- url: /r/SampleSize/comments/jbsju0/academic_software_development_survey_software/
+## [4][Chronos - A static race detector](https://www.reddit.com/r/golang/comments/jcuyau/chronos_a_static_race_detector/)
+- url: https://github.com/amit-davidson/Chronos
 ---
 
-## [10][Free offline solution to convert PDFs into audiobooks -](https://www.reddit.com/r/golang/comments/jbmmga/free_offline_solution_to_convert_pdfs_into/)
-- url: https://github.com/Harry-027/go-audio
+## [5][validating v2 (a Go library for validating structs and fields) is released](https://www.reddit.com/r/golang/comments/jcv6gt/validating_v2_a_go_library_for_validating_structs/)
+- url: https://github.com/RussellLuo/validating
+---
+
+## [6][Is it hard to find a job?](https://www.reddit.com/r/golang/comments/jcuuoe/is_it_hard_to_find_a_job/)
+- url: https://www.reddit.com/r/golang/comments/jcuuoe/is_it_hard_to_find_a_job/
+---
+I have been studying Golang for some weeks. I love how simple and beautiful the things in Go are. But I don't know if it's hard to find a job in Go. What do you guys think about it?  
+
+By the way, I've already known programming. I had experience with C, Python, Kotlin, and Javascript (NodeJS). (no job experience, just in the college and in projects).
+
+I'd like to be a backend developer. I'm enjoying learning about Docker and Kubernetes as well. I kind of really need a job (or an internship) until the end of the first semester of 2021.
+
+&amp;#x200B;
+
+Thanks!!
+## [7][Calculate diff in 2 maps/json/structs](https://www.reddit.com/r/golang/comments/jcua6a/calculate_diff_in_2_mapsjsonstructs/)
+- url: https://www.reddit.com/r/golang/comments/jcua6a/calculate_diff_in_2_mapsjsonstructs/
+---
+I see go-cmp as an option for comparison. But was looking for another alternative to compare json/structs or maps[string]interface{}
+
+Issues with go-cmp:
+1) doesn't have a rich documentation on how to customise diff. Eg -Ignore fields starting with a character
+
+2) Have seen frequent panics in production.
+## [8][No Dependency Lightweight Telegram Bot](https://www.reddit.com/r/golang/comments/jctrt6/no_dependency_lightweight_telegram_bot/)
+- url: https://www.reddit.com/r/golang/comments/jctrt6/no_dependency_lightweight_telegram_bot/
+---
+Hello,
+
+I am testing a protptype single board computer for remote data monitoring in one of our customers. I prepared a simple no dependency lightweight telegram bot with go to see our application logs in telegram since our customer couldn't provide a static ip for remote access.
+
+[https://github.com/ermanimer/telegram\_bot](https://github.com/ermanimer/telegram_bot)
+
+Please review and comment, i am learning a lot from your feedbacks.
+
+Best regards
+## [9][How to do error tracing](https://www.reddit.com/r/golang/comments/jctq7b/how_to_do_error_tracing/)
+- url: https://www.reddit.com/r/golang/comments/jctq7b/how_to_do_error_tracing/
+---
+Hi guys, I'm building a **small** web server, regarding the clean-arch philosophy.
+
+It's a small app, so I don't want to over-engineering something, like using a distributed system or something like that, but k8s could be my deployment choice. 
+
+I want to attach a request ID to every request and pass it all the way to the DB access layer and log everything with this request ID, such I can track the whole process if the user submits the request ID(I’ll send the request ID as a field in response JSON and display it to the user just like FB does)
+
+While I'm using echov4, I can install the request ID middleware, extract the ID, bind it with logger and pass it way down.
+
+But I'm worried if these IDs will ever collide, I have seen someone using opentrace, Zipkin, etc
+. But they are for the distributed system.
+
+Any suggestions will be welcomed! 😉
+
+Edit: the title should be about tracking, not tracing.
+## [10][Another one package to manage migrations. Please, can someone review it?](https://www.reddit.com/r/golang/comments/jcthjk/another_one_package_to_manage_migrations_please/)
+- url: http://github.com/iamsalnikov/mymigrate
 ---
 

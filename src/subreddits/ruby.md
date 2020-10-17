@@ -1,9 +1,91 @@
 # ruby
-## [1][Guide to Reactive Rails](https://www.reddit.com/r/ruby/comments/jc5k8g/guide_to_reactive_rails/)
+## [1][Scalable Concurrency for Ruby 3](https://www.reddit.com/r/ruby/comments/jcg8cu/scalable_concurrency_for_ruby_3/)
+- url: https://www.youtube.com/watch?v=Y29SSOS4UOc
+---
+
+## [2][“How I generated incomes as a web developer without working as a freelancer”](https://www.reddit.com/r/ruby/comments/jcuube/how_i_generated_incomes_as_a_web_developer/)
+- url: https://medium.com/the-developers-journey/my-3-revenue-streams-as-a-developer-without-freelance-work-c5135dfa515d
+---
+
+## [3][football-to-sqlite tool - load / read football.txt match datafiles into a sqlite database](https://www.reddit.com/r/ruby/comments/jcuhyl/footballtosqlite_tool_load_read_footballtxt_match/)
+- url: https://github.com/sportdb/football.db/tree/master/football-to-sqlite
+---
+
+## [4][Error Handling in Ruby: Part I](https://www.reddit.com/r/ruby/comments/jcsa2q/error_handling_in_ruby_part_i/)
+- url: https://medium.com/rubycademy/error-handling-in-ruby-part-i-557898185e2f
+---
+
+## [5][relational match pattern?](https://www.reddit.com/r/ruby/comments/jciwww/relational_match_pattern/)
+- url: https://www.reddit.com/r/ruby/comments/jciwww/relational_match_pattern/
+---
+Hey so I just found out that C#9 is in the makings and I saw this snippet
+
+https://preview.redd.it/gb2bcogj1jt51.png?width=381&amp;format=png&amp;auto=webp&amp;s=c83cd5d43ddbb206eb581e9ca784bbdc1c86d221
+
+Is there any chance I'll get to write ruby like that? (Or is there a way to write code like that that I'm not aware of?)
+## [6][Guide to Reactive Rails](https://www.reddit.com/r/ruby/comments/jc5k8g/guide_to_reactive_rails/)
 - url: https://github.com/obie/guide-to-reactive-rails
 ---
 
-## [2][Looking for feedback on a gem I have been working on: active_snapshot](https://www.reddit.com/r/ruby/comments/jbzqju/looking_for_feedback_on_a_gem_i_have_been_working/)
+## [7][How to work with strings in Ruby to send to / receive from a Rust library, via FFI?](https://www.reddit.com/r/ruby/comments/jcbx8z/how_to_work_with_strings_in_ruby_to_send_to/)
+- url: https://www.reddit.com/r/ruby/comments/jcbx8z/how_to_work_with_strings_in_ruby_to_send_to/
+---
+I have a library in Rust which I want to use in Ruby via \`ffi\` gem. A Rust library has got some functions that operate with pure Rust strings.
+
+&amp;#x200B;
+
+In C++ a Rust string, if it was exported from Rust library, would be represented as follows:
+
+    
+        typedef struct {
+          const char* content;
+          uint32_t len;
+        } rust_string_t;
+
+In Ruby I do this:
+
+          class RustString &lt; FFI::Struct
+            layout
+              :content, :string,
+              :len, :uint32
+          end
+
+&amp;#x200B;
+
+But I also will need to convert normal Ruby strings to \`RustString\` back and forth. How would I do it? 
+
+&amp;#x200B;
+
+        def send_str_to_rust_func1(s1)
+          rs1 = RustString.new
+          rs1.content = s1
+          rs1.len = s1.length # should I additional 1 to the  length ?
+    
+          # [......]
+        end
+
+and
+
+        # returns string
+        def get_str_from_rust_func2
+          r_str = get_str_data_from_rust()
+          # should I return r_str as is?
+        end
+
+&amp;#x200B;
+
+Also, do I have to add 1 to the length of a string when converting to, or from, if at all?
+## [8][Seed_pic the gem to make seeding images easy](https://www.reddit.com/r/ruby/comments/jcaayn/seed_pic_the_gem_to_make_seeding_images_easy/)
+- url: https://www.reddit.com/r/ruby/comments/jcaayn/seed_pic_the_gem_to_make_seeding_images_easy/
+---
+I made my first gem this week and wanted to share it with you. I made a gem that helps seed image URLs into your database for you can use them in image tags to make your life easier. [seed_pic](https://rubygems.org/gems/seed_pic)
+## [9][github analytics with the hubba-reports gem - What are your most used languages (in char / bytes count)?](https://www.reddit.com/r/ruby/comments/jc7zvy/github_analytics_with_the_hubbareports_gem_what/)
+- url: https://www.reddit.com/r/ruby/comments/jc7zvy/github_analytics_with_the_hubbareports_gem_what/
+---
+Hello,  I have split the hubba github analytics gem into two, that is, [hubba](https://github.com/rubycoco/git/tree/master/hubba) and [hubba-reports](https://github.com/rubycoco/git/tree/master/hubba-reports) for easier (re)use and split the data gathering / collecting via github api calls and the report generation. Anyways, I have added a [new language report](https://github.com/rubycoco/git/blob/master/hubba-reports/lib/hubba/reports/reports/languages.rb) that lists all your languages used by char / bytes count and by number of repos. See [LANGUAGES.md](https://github.com/yorobot/backup/blob/master/LANGUAGES.md) as an example. Happy data crunching with ruby. Cheers. Prost. 
+
+PS: Know any other alternative github scripts / gems, please tell.
+## [10][Looking for feedback on a gem I have been working on: active_snapshot](https://www.reddit.com/r/ruby/comments/jbzqju/looking_for_feedback_on_a_gem_i_have_been_working/)
 - url: https://www.reddit.com/r/ruby/comments/jbzqju/looking_for_feedback_on_a_gem_i_have_been_working/
 ---
 I am looking for feedback on the design of a new "gem" that I have been working on called [`active_snapshot`](https://github.com/westonganger/active_snapshot)
@@ -13,169 +95,3 @@ I am looking for feedback on the design of a new "gem" that I have been working 
 **Description:** Simplified snapshots and restoration for ActiveRecord models and associations with a transparent white-box implementation.
 
 I appreciate your feedback and help.
-## [3][Job Opportunities for Rubyists](https://www.reddit.com/r/ruby/comments/jbrdu3/job_opportunities_for_rubyists/)
-- url: https://www.reddit.com/r/ruby/comments/jbrdu3/job_opportunities_for_rubyists/
----
-Hi! I'm Billy from Kin Insurance. We're a Chicago-based Series B start-up that is changing home insurance from what it is to what it should be. We've build our platform from the ground-up using Ruby on Rails, and we're growing. If anyone is interested in full-time engineering roles or knows someone on the market, feel free to visit our careers page for more information: [https://www.kin.com/careers](https://www.kin.com/careers).
-
-Also, feel free to post questions in comments, and I'll do my best to respond promptly.
-## [4][github analytics with the hubba-reports gem - What are your most used languages (in char / bytes count)?](https://www.reddit.com/r/ruby/comments/jc7zvy/github_analytics_with_the_hubbareports_gem_what/)
-- url: https://www.reddit.com/r/ruby/comments/jc7zvy/github_analytics_with_the_hubbareports_gem_what/
----
-Hello,  I have split the hubba github analytics gem into two, that is, [hubba](https://github.com/rubycoco/git/tree/master/hubba) and [hubba-reports](https://github.com/rubycoco/git/tree/master/hubba-reports) for easier (re)use and split the data gathering / collecting via github api calls and the report generation. Anyways, I have added a [new language report](https://github.com/rubycoco/git/blob/master/hubba-reports/lib/hubba/reports/reports/languages.rb) that lists all your languages used by char / bytes count and by number of repos. See [LANGUAGES.md](https://github.com/yorobot/backup/blob/master/LANGUAGES.md) as an example. Happy data crunching with ruby. Cheers. Prost. 
-
-PS: Know any other alternative github scripts / gems, please tell.
-## [5][RSpec return contain empty array](https://www.reddit.com/r/ruby/comments/jc2e0z/rspec_return_contain_empty_array/)
-- url: https://www.reddit.com/r/ruby/comments/jc2e0z/rspec_return_contain_empty_array/
----
-Sorry if this is not suitable in here, please guide me to the correct sub cause I don't know where to ask.
-
-I have a search method in Post model:
-   
-    def self.search(search, category_id)
-      if search.strip.empty?
-        []
-      elsif category_id.empty?
-        Post.approved.where('lower(title) LIKE ?', "%#{search.downcase.strip}%")
-      else
-        @category = Category.find_by('id = ?', category_id.to_i)
-        @category.posts.approved.where('lower(title) LIKE ?', "%#{search.downcase.strip}%")
-      end
-    end
-This is my post_spec.rb file:
-    
-    require 'rails helper'
-    
-    RSpec.describe Post, type: :model do
-      let(:user) { create(:user) }
-      let(:category) { create(:category) }
-      let(:comments) { create(:comment) }
-      let(:likes) { create(:like) }
-
-      describe 'methods' do
-        describe 'search post by keyword or by category' do
-          let(:post_1) { create(:post, title: 'some example title') }
-          let(:post_2) { create(:post, title: 'another title') }
-
-          it 'return post with title like keyword' do
-            expect(described_class.search('example', category.id.to_s)).to contain_exactly(post_1)
-            expect(described_class.search('EXAMPLE', category.id.to_s)).to contain_exactly(post_1)
-            expect(described_class.search('title', category.id.to_s)).to contain_exactly(post_1, post_2)
-            expect(described_class.search('foo', category.id.to_s)).to be_empty
-          end
-        end
-      end
-    end
-
-I don't know why my actual collection is an empty array but not the post
-
-    1) Post methods search post by keyword or by category return post with title like keyword
-      Failure/Error: expect(described_class.search('example', category.id.to_s)).to contain_exactly(post_1)
-      expected collection contained:  [#&lt;Post id: 152, title: "some example title"]
-      actual collection contained:    []
-      the missing elements were:      [#&lt;Post id: 152, title: "some example title"]    
-
-Any help is appreciated cause this is really give me a headache.
-## [6][Unexpected performance characteristics when exploring migrating a Rails app to Heroku](https://www.reddit.com/r/ruby/comments/jbvdjs/unexpected_performance_characteristics_when/)
-- url: https://bibwild.wordpress.com/2020/10/15/unexpected-performance-characteristics-when-exploring-migrating-a-rails-app-to-heroku/
----
-
-## [7][My personal tests with ractors](https://www.reddit.com/r/ruby/comments/jc1loz/my_personal_tests_with_ractors/)
-- url: https://www.reddit.com/r/ruby/comments/jc1loz/my_personal_tests_with_ractors/
----
-I was playing with ractors the other day, and I thought my experiments were cool enough to warrent a post...  
-
-
-```
-pi@raspberrypi:~ $ /usr/local/bin/ruby yo.rb 
-reminder, benchmark results are "user, system, total, (real)"
-without ractors
- 37.712969   0.016303  37.729272 ( 38.104503)
-with ractors
-&lt;internal:ractor&gt;:38: warning: Ractor is experimental, and the behavior may change in future versions of Ruby! Also there are many implementation issues.
- 43.812031   4.104823  47.916854 ( 16.301058)
-```
-```
-require 'benchmark'
-def do_the_work(x)
-  ### Perform meaningless work
-  bob = 0 
-  50_000.times do
-    bob += x
-  end
-  (1..x).map {"bunny rabbits"}.uniq 
-end
-def do_it_with_ractors
-  ractors = (1..8).map do
-    Ractor.new do
-      loop do
-        x = Ractor.recv
-        Ractor.yield(do_the_work(x))
-      end
-    end
-  end
-  a = Array.new
-  (1..4_000).each do |x|
-    ractors.sample.send(x)
-  end
-  (1..4_000).each do
-    a.push(Ractor.select(*ractors)[1])
-  end
-end
-def do_it_without_ractors
-  a = Array.new
-  (1..4_000).each do |x|
-    a.push(do_the_work(x))
-  end
-end
-puts "reminder, benchmark results are \"user, system, total, (real)\""
-puts "without ractors"
-puts(Benchmark.measure do 
-  do_it_without_ractors
-end)
-puts "with ractors"
-puts(Benchmark.measure do
-  do_it_with_ractors
-end)
-```
-## [8][How to create a cross-plathorm SDK library?](https://www.reddit.com/r/ruby/comments/jbl93u/how_to_create_a_crossplathorm_sdk_library/)
-- url: https://www.reddit.com/r/ruby/comments/jbl93u/how_to_create_a_crossplathorm_sdk_library/
----
-Let's say there's a library written in C++ for which I want to create an SDK or gem in Ruby.
-
-&amp;#x200B;
-
-A C++ library provides 3 plathorm-specific pre-compiled libraries:
-
-\* windows, \*.dll
-
-\* linux, \*.so
-
-\* macOS, \*.dylib
-
-&amp;#x200B;
-
-I'll use FFI gem and refer to a particular type of a precompiled library, from my Ruby SDK/gem, depending on a plathorm of the end user.
-
-&amp;#x200B;
-
-(1) What's a conventional way to do it? Where, how is it done?
-
-Namely:
-
-     main_precompiled_lib = 
-      if plathorm == Windows
-        "./win-lib.dll"
-      elseif plathorm == Linux
-        "./linux-lib.so"
-      elseif ....
-
-(2) How can I provide a way to the user to choose his plathorm?
-## [9][Best intermediate - expert training tools and resources?](https://www.reddit.com/r/ruby/comments/jbapcq/best_intermediate_expert_training_tools_and/)
-- url: https://www.reddit.com/r/ruby/comments/jbapcq/best_intermediate_expert_training_tools_and/
----
-Been using rails and ruby for a while now I'm fairly competent but like to step my game up to the next level with the quality of apps I create. Has anyone found any or have any favourite resources for doing so?
-## [10][OpenStruct in Ruby](https://www.reddit.com/r/ruby/comments/jbig5f/openstruct_in_ruby/)
-- url: https://medium.com/rubycademy/openstruct-in-ruby-ab6ba3aff9a4
----
-

@@ -22,13 +22,49 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Compile-time regular expressions in TS](https://www.reddit.com/r/typescript/comments/jcruy8/compiletime_regular_expressions_in_ts/)
+## [2][TypeORM Sucks!! Something I wanted to talk about since long!](https://www.reddit.com/r/typescript/comments/jcw28f/typeorm_sucks_something_i_wanted_to_talk_about/)
+- url: https://www.reddit.com/r/typescript/comments/jcw28f/typeorm_sucks_something_i_wanted_to_talk_about/
+---
+Let's address it, TypeORM sucks but the community doesn't seem to do anything about it!! So I would like to take the step forward:
+
+1. Querybuilder is very bad, chaotic
+
+2. Relational query is not supported - subquery on relation etc
+
+3. Eager loading is not supported
+
+4. Cannot extend query builder
+
+5. Repository is just sugar coating over bad querybuilder
+
+6. Migration is super ugly and bad, have to write raw alter table queries 50% of the times, don't run migrations in batch
+
+7. Seeders are not supported
+
+8. Documentation asks to enable the db-model syncronization in development, but says to create migrations for production - What the hell?
+
+9. Entity Manager is of no use
+
+10. Polymorphic relations not supported
+
+11. ORM cannot spot basic difference between where() and andWhere()
+
+&amp;#x200B;
+
+Thesre are my two cents! Your feedbacks are most welcome! 
+
+We need better alternative ORM in typescript!
+## [3][Type with typescript - cheat sheet with samples](https://www.reddit.com/r/typescript/comments/jd8pze/type_with_typescript_cheat_sheet_with_samples/)
+- url: http://goorep.se:1001/changelog/report/rSelect/PAGE_result.htm?alias=guest&amp;set=api&amp;query=Book+pages&amp;$$TArticleBook1.ArticleBookK=7096&amp;link=%5B%5B%229F1E006D78894848838A0970E2FF0BE9zoom%22,%22Object1%22,7096%5D,%5B%229F60D5FEDE8E41CC986C10147F0AD2F7zoom%22,%22TArticleBook1%22,7096%5D,%5B%2271C91DEE3C5A4FDC8EC1114C7C18033Bzoom%22,%22TArticleBook1%22,7096%5D%5D&amp;rows=50
+---
+
+## [4][Compile-time regular expressions in TS](https://www.reddit.com/r/typescript/comments/jcruy8/compiletime_regular_expressions_in_ts/)
 - url: https://www.reddit.com/r/typescript/comments/jcruy8/compiletime_regular_expressions_in_ts/
 ---
 I'm sorry, I got too excited with TS 4.1 and made compile-time regular expressions
 
 [https://github.com/microsoft/TypeScript/issues/6579#issuecomment-710776922](https://github.com/microsoft/TypeScript/issues/6579#issuecomment-710776922)
-## [3][Ultimate GraphQL + Typescript Setup?](https://www.reddit.com/r/typescript/comments/jcmyms/ultimate_graphql_typescript_setup/)
+## [5][Ultimate GraphQL + Typescript Setup?](https://www.reddit.com/r/typescript/comments/jcmyms/ultimate_graphql_typescript_setup/)
 - url: https://www.reddit.com/r/typescript/comments/jcmyms/ultimate_graphql_typescript_setup/
 ---
 Hey! I've just started using graphQL and would advice on whats the best framework setup for Typescript on Frontend (Vue 3) + Backend (Node).
@@ -50,14 +86,14 @@ I'd rather not have to manually set up all the the mutations / queries and if ne
 Anyway would love to hear opinions on what frameworks are best, so I can get all that juicy goodness from having a predefined schema.
 
 EDIT: To clarify I'll  be using a hosted graphQL instance and Node backend will also be a client. 
-## [4][Online ouija board built with typescript and pub/sub - https://spiritboard.ably.dev](https://www.reddit.com/r/typescript/comments/jc8lqq/online_ouija_board_built_with_typescript_and/)
+## [6][Online ouija board built with typescript and pub/sub - https://spiritboard.ably.dev](https://www.reddit.com/r/typescript/comments/jc8lqq/online_ouija_board_built_with_typescript_and/)
 - url: https://www.reddit.com/r/typescript/comments/jc8lqq/online_ouija_board_built_with_typescript_and/
 ---
 I made an online Ouija board!  [https://spiritboard.ably.dev/](https://spiritboard.ably.dev/)   
 
 
 It is open source so you can edit it and make it your own. [https://github.com/ably/ouija](https://github.com/ably/ouija) I've also written up a very thorough readme which goes over how it all works which is in the repo.
-## [5][I cannot get callback function arguments typed for the life of me](https://www.reddit.com/r/typescript/comments/jce7ik/i_cannot_get_callback_function_arguments_typed/)
+## [7][I cannot get callback function arguments typed for the life of me](https://www.reddit.com/r/typescript/comments/jce7ik/i_cannot_get_callback_function_arguments_typed/)
 - url: https://www.reddit.com/r/typescript/comments/jce7ik/i_cannot_get_callback_function_arguments_typed/
 ---
     type ConfigCallback = (...args: never[]) =&gt; AxiosRequestConfig
@@ -94,7 +130,7 @@ It is open source so you can edit it and make it your own. [https://github.com/a
     }
 
 Some might say I should do (type: string) =&gt; this.buildRequest&lt;&gt;() and remove all the trickery in buildRequest(), however "commons" or something similar doesn't have to be a function, so I want to avoid calling it like this.commons('params')().
-## [6][swc with Jest vs swc with Babel](https://www.reddit.com/r/typescript/comments/jcdie9/swc_with_jest_vs_swc_with_babel/)
+## [8][swc with Jest vs swc with Babel](https://www.reddit.com/r/typescript/comments/jcdie9/swc_with_jest_vs_swc_with_babel/)
 - url: https://www.reddit.com/r/typescript/comments/jcdie9/swc_with_jest_vs_swc_with_babel/
 ---
 So I've recently been seeing some impressive claims about various pieces of JS tooling written in languages other than JavaScript, so I was keen to give some of them a try.
@@ -145,7 +181,7 @@ I then added the following `.swcrc` to the root of the repository:
         "noInterop": false
       }
     }
-## [7][Updating relationship objects (using typeorm)](https://www.reddit.com/r/typescript/comments/jcct5w/updating_relationship_objects_using_typeorm/)
+## [9][Updating relationship objects (using typeorm)](https://www.reddit.com/r/typescript/comments/jcct5w/updating_relationship_objects_using_typeorm/)
 - url: https://www.reddit.com/r/typescript/comments/jcct5w/updating_relationship_objects_using_typeorm/
 ---
 I have two entities:
@@ -188,11 +224,11 @@ Each student and problem can exist independently; when creating a new problem, I
           }
 
 How can I update both sides (student + problem)?
-## [8][Bringing TypeScript types at runtime with TypeOnly](https://www.reddit.com/r/typescript/comments/jbpbnp/bringing_typescript_types_at_runtime_with_typeonly/)
+## [10][Bringing TypeScript types at runtime with TypeOnly](https://www.reddit.com/r/typescript/comments/jbpbnp/bringing_typescript_types_at_runtime_with_typeonly/)
 - url: https://medium.com/@paleo.said/c317e9dd8880
 ---
 
-## [9][What is the proper way to extend custom headers on a fetch request?](https://www.reddit.com/r/typescript/comments/jbxqh1/what_is_the_proper_way_to_extend_custom_headers/)
+## [11][What is the proper way to extend custom headers on a fetch request?](https://www.reddit.com/r/typescript/comments/jbxqh1/what_is_the_proper_way_to_extend_custom_headers/)
 - url: https://www.reddit.com/r/typescript/comments/jbxqh1/what_is_the_proper_way_to_extend_custom_headers/
 ---
 I was getting "No overload matches this call" until I used `new Header()` to sneak my custom headers in via object.
@@ -200,95 +236,3 @@ I was getting "No overload matches this call" until I used `new Header()` to sne
 Another option would be to use a global declaration file to extend the fetch global variable.
 
 Should one turn to declaration files for custom headers in this case?
-## [10][Is this a bug in Typescript on VS code?](https://www.reddit.com/r/typescript/comments/jc4zao/is_this_a_bug_in_typescript_on_vs_code/)
-- url: https://www.reddit.com/r/typescript/comments/jc4zao/is_this_a_bug_in_typescript_on_vs_code/
----
-Hi, Is this a bug in Typescript on VS code?
-
-or do I have to configure on my editor ?
-
-&amp;#x200B;
-
-basically, the type returned by the \`requestsHistory\` function should return the type of
-
-DeliveryRequestHistoryResponseData (right).
-
-but on the left side, it looks like my editor isn't working properly since the type inference is lost for some reason.
-
-&amp;#x200B;
-
-[the issue](https://preview.redd.it/v48bpqkzket51.png?width=1368&amp;format=png&amp;auto=webp&amp;s=4bd3bb6637388f9a1190014fcf7ac0b9b67b8a72)
-
-EDIT:
-
-    export interface DeliveryRequestModel {
-    	... // ommited for brevity
-    }
-    
-    export interface DeliveryRequestHistoryResponseData {
-    	data: {
-    		delivery_requests: DeliveryRequestModel[]
-    	},
-    	success: boolean
-    }
-
-&amp;#x200B;
-
-tsconfig.json that was generated by the nativescript-cli
-
-&amp;#x200B;
-
-[tsconfig.json](https://preview.redd.it/am18hhd2oet51.png?width=402&amp;format=png&amp;auto=webp&amp;s=abb5bc4094ac1ec80b87b1ae8ef7f420c0cfed96)
-## [11][How to use an existing type or empty string?](https://www.reddit.com/r/typescript/comments/jbynnz/how_to_use_an_existing_type_or_empty_string/)
-- url: https://www.reddit.com/r/typescript/comments/jbynnz/how_to_use_an_existing_type_or_empty_string/
----
-I'm using angular v9 w/ typescript v 3.5.3
-
-I feel like I run into this issue often and I never really understand the typescript rule for these cases. The typescript error I'm getting:
-
-&gt;error TS2345: Argument of type '"" | "Learn More" | "Be Healthy" | "Be Fit"' is not assignable to parameter of type 'Goal'.
-
-&amp;#x200B;
-
-Some example code:
-
-    // this type is used else where throughtout the code
-    export type Goal = 'Learn More' | 'Be Healthy' | 'Be Fit';
-    
-    // some of the component code
-    ...
-    class SomeComponent {
-      goalList: Goal[] = ['Learn More', 'Be Healthy', 'Be Fit'];
-      // 
-      goalSelection$ = new BehaviorSubject&lt;Goal|''&gt;('');
-    
-      ...
-    
-      // error occurs in this method
-      goalSelectIsValid() {
-        const goal = this.goalSelection$.getValue();
-        return this.goalList.includes(goal);
-      }
-    }
-    
-    ...
-    // template example
-    &lt;app-dropdown #goalDropdown&gt;
-      &lt;div currentlySelected&gt;
-        {{ (goalSelection$ | async) }}
-      &lt;/div&gt;
-      &lt;div dropdown&gt;
-        &lt;div class="layout vertical options"&gt;
-          &lt;button mat-button *ngFor="let item of goalList" (click)="updateGoalSelection(item); goalDropdown.open = false"&gt;
-            {{ item }}
-          &lt;/button&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/app-dropdown&gt;
-    &lt;button type="submit" [disabled]="!goalSelectIsValid()"&gt;
-
-So when I'm writing this out, my thought process is that `this.goalList.includes` is just validating the value of `this.goalSelection$.getValue()` .. I know that `goalSelection$` can be an empty string, but I'm not setting any value that invalidates the typing of `this.goalList`.
-
-This always trips me up, and I know it's a lack of understanding of typescript. 
-
-In these scenarios, how should I better approach typing these variables?

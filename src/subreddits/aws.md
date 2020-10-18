@@ -27,11 +27,78 @@ AWS always releases a bunch of features, sometimes everyday or atleast once a we
 10: More features in App Mesh(Circuit breaker, Rate Limiting)
 
 P.S: Not sure if some features are already available, but if something is missing, please feel free to add
-## [2][How many servers does AWS own now?](https://www.reddit.com/r/aws/comments/jclk7n/how_many_servers_does_aws_own_now/)
-- url: https://www.reddit.com/r/aws/comments/jclk7n/how_many_servers_does_aws_own_now/
+## [2][AWS CloudWatch colored logs for Spring apps](https://www.reddit.com/r/aws/comments/jd67la/aws_cloudwatch_colored_logs_for_spring_apps/)
+- url: https://chrome.google.com/webstore/detail/aws-cloudwatch-ansi-color/feoelakkoolicldilidmgbhpgabiodcd
 ---
-According to wikipedia, they have 1.4M servers in 2014. Does anyone know the latest figure?
-## [3][[Noob Question] Network Routing through the internet](https://www.reddit.com/r/aws/comments/jctgv4/noob_question_network_routing_through_the_internet/)
+
+## [3][Suggested AWS tool to browse large amounts of data](https://www.reddit.com/r/aws/comments/jdb8vo/suggested_aws_tool_to_browse_large_amounts_of_data/)
+- url: https://www.reddit.com/r/aws/comments/jdb8vo/suggested_aws_tool_to_browse_large_amounts_of_data/
+---
+I'm having a rather large elasticsearch cluster (1 month, 1TB of data spread on 9 nodes, thousand of shards). 
+
+The data is ingested daily and supposed to be stored for 10 more years. This will obviously cause the elasticsearch cluster to grow along with the cost.
+
+To prevent this, I'm currently implementing a snapshot policy to move old data to S3 buckets and procedures to restore them quickly when they would be needed.
+
+I'm wondering if maybe I should use some other AWS Tool like Athena or Redshift that would allow to browse the data stored on S3 before deciding to load them back into elasticsearch. Would any of them be suitable for this and - more importantly - would not cost much when not in use?
+## [4][[HELP, BUG?] Workspace deploying in public subnets (should be private)](https://www.reddit.com/r/aws/comments/jdf17i/help_bug_workspace_deploying_in_public_subnets/)
+- url: https://www.reddit.com/r/aws/comments/jdf17i/help_bug_workspace_deploying_in_public_subnets/
+---
+Hello. This is one of my first posts on reddit, long time user and lurker though.
+
+I've been using workspaces in my company and they're working well except for one potential bug or configuration issue. I've configured a VPC with one public subnet and 2 private subnets and I have attached a Simple AD directory to it, which uses the private subnets.
+
+The private subnets have internet access via a gateway and the workspaces have internet access when they are in the private subnets, so everything seems to work as intended. This architecture is described here: [https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html#configure-vpc-nat-gateway](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html#configure-vpc-nat-gateway)
+
+**Here's the odd part:** Whenever I launch workspaces, they seem to have a random chance of being deployed in the public subnet instead of either of the private ones. To get them to deploy in the private subnets I have to rebuild them a few times (sometimes only once but that's just luck). Once they are deployed in the private subnets they then work fully, internet access and all, as described above.
+
+I've read the post here: [https://www.reddit.com/r/aws/comments/esw6fd/workspace\_provisioning\_in\_wrong\_subnet/](https://www.reddit.com/r/aws/comments/esw6fd/workspace_provisioning_in_wrong_subnet/)  
+And the cause of the issue there doesn't seem to be the same cause for the issues I have with my setup.
+
+Any advice is greatly appreciated, I have not been able to find any relevant articles or information online about my specific issue, and there doesn't seem to be anything obviously wrong with my setup/configuration.
+
+EDIT: Clarifications
+## [5][Can API Gateway let me know what time zone the request is coming from?](https://www.reddit.com/r/aws/comments/jdeifq/can_api_gateway_let_me_know_what_time_zone_the/)
+- url: https://www.reddit.com/r/aws/comments/jdeifq/can_api_gateway_let_me_know_what_time_zone_the/
+---
+I am querying our database, which stores the date time data in GMT time. I want to adjust these times based on where the client is requesting the data.
+
+Can API Gateway let me know what time zone people are in, so that I can adjust the times?
+## [6][EKS + Secrets Manager](https://www.reddit.com/r/aws/comments/jczx1q/eks_secrets_manager/)
+- url: https://www.reddit.com/r/aws/comments/jczx1q/eks_secrets_manager/
+---
+Running Kubernetes on AWS is quite a bit easier than it used to be, but even now with EKS you can still feel the clash of approaches/technologies. There's the K8s way to do things and the AWS way to do things and the mish mash world of EKS.
+
+Anyway, I would like to come up with a sane way to synchronize secrets and even configmaps in a way that feels native to AWS and is also simple. The best solution I've seen thus far is this https://github.com/godaddy/kubernetes-external-secrets
+
+What I'd really like is a tool that can tell me what I have in Secrets Manager and/or Parameter Store and diffs that against what I have (insensitive and maybe templated secrets) in source control and in my clusters.
+
+I have a shitty combination of shell scripts to do this now but I'm close to writing my own tool. Just curious to hear what people are doing on this front.
+## [7][Cost of NVMe SSD Instance Storage?](https://www.reddit.com/r/aws/comments/jdb4cv/cost_of_nvme_ssd_instance_storage/)
+- url: https://www.reddit.com/r/aws/comments/jdb4cv/cost_of_nvme_ssd_instance_storage/
+---
+Hi, was checking pricing of some of the ec2 instance, and I was wondering if there is a different cost for the NVMe SSD instance storage for nitro instances (ala EBS)?  Or is the price already included into the hourly instance cost?
+## [8][CDK Native Applications - Are there any established patterns for highly integrated apps?](https://www.reddit.com/r/aws/comments/jczefh/cdk_native_applications_are_there_any_established/)
+- url: https://www.reddit.com/r/aws/comments/jczefh/cdk_native_applications_are_there_any_established/
+---
+TLDR; I argue that there should be an option to support writing and transpiling TypeScript based Lambda functions out of the box with the CDK.
+
+People keep mentioning how the lines between Application and IaC are getting blurred (Darko Mesaros touches on this in [this video](https://youtu.be/fWtuwGSoSOU?t=225). However, besides a very small number of posts on Medium, this idea doesn't appear to be fully embraced. Every video, repo, or article I've come across shows some interesting IaC solution using the CDK, but with the actual application logic being a completely decoupled, trivial, hello-world.js. I cannot find any example of a TypeScript based Lambda being integrated in the CDK docs / example repos and for me this would really be the icing on the cake for the CDK.
+
+This goes beyond simply wanting to write handlers in TypeScript. For most non-trivial Serverless applications, some of the most important services that Lambda integrates with are SQS and SES. Defining a Lambda handler that consumes from an SQS queue is, obviously, very well supported in the CDK. However, having the same handler dispatch messages to other queues, or to SES, or write to a DB, has no type-safe integration with the constructs defined in the CDK. So to write a Serverless application in the CDK, you either have to define some configuration in JSON / JavaScript and share that between the application logic and the IaC logic, or define your configuration twice.
+
+I have written about 5-6 Serverless stacks with the CDK which are 100% TypeScript based and it's been great. Type-safe interfaces / configurations that are shared between CDK constructs and App handlers have made complex stacks a piece of cake with little scope for misconfiguration or bugs. All that's required is a fairly straightforward Webpack configuration. I'm happy to share a template repo if people are interested.
+
+I want to know if this is some sort of crazy anti-pattern, or the next logical step in Serverless applications. Are other people building the same stack over and over, or is it just me? If this is in fact a popular model then why isn't it in official docs or templates, and what's the scope for having an official convention / template added somewhere?
+## [9][Managing my domain through AWS?](https://www.reddit.com/r/aws/comments/jd8xnf/managing_my_domain_through_aws/)
+- url: https://www.reddit.com/r/aws/comments/jd8xnf/managing_my_domain_through_aws/
+---
+Hi
+
+I just found out how awesome Elastic Beanstalk is, I was looking for the best way to deploy a Django project and came across EBT, read the documentation and found out that it is super duper easy to get up and going!
+
+I have a domain registered through namecheap that I want to manage through AWS as well, is it possible? By manage I mean adding / removing records, alleviating the option to ever log in into namecheap's control panel.
+## [10][[Noob Question] Network Routing through the internet](https://www.reddit.com/r/aws/comments/jctgv4/noob_question_network_routing_through_the_internet/)
 - url: https://www.reddit.com/r/aws/comments/jctgv4/noob_question_network_routing_through_the_internet/
 ---
 Hi, Noob here, just have a question how the network is routed through the internet when the client hits the url.
@@ -45,79 +112,27 @@ with cloudfront, route 53, Waf
 CLient(http request) ----&gt; Domain registrar DNS servers ----&gt; Route53 DNS ----&gt; cloudfront ----&gt; WAF ----&gt; EC2 live server
 
 THIS MIGHT VERY WELL BE A BLUNDER. I want to know the correct traffic travel path. Thank You. Experts please help!!
-## [4][What proportion of your bill goes on different services?](https://www.reddit.com/r/aws/comments/jcuu45/what_proportion_of_your_bill_goes_on_different/)
-- url: https://www.reddit.com/r/aws/comments/jcuu45/what_proportion_of_your_bill_goes_on_different/
+## [11][Extending Budget with Chatbot to Slack (CDK + CF)](https://www.reddit.com/r/aws/comments/jctbz4/extending_budget_with_chatbot_to_slack_cdk_cf/)
+- url: https://www.reddit.com/r/aws/comments/jctbz4/extending_budget_with_chatbot_to_slack_cdk_cf/
 ---
-I'm yet to work on any projects that create significant bills each month. Purely out of curiosity, I'd love to get some anecdotal data what on what makes up bills, i.e. roughly what proportion goes to VMs, databases, storage, etc, though I know this will vary wildly depending on use case. If you don't mind also sharing the type and size of the business, that would be great!
-## [5][Did you notice AWS Golang SDK v0.26.0 is broken???](https://www.reddit.com/r/aws/comments/jctl5s/did_you_notice_aws_golang_sdk_v0260_is_broken/)
-- url: https://www.reddit.com/r/aws/comments/jctl5s/did_you_notice_aws_golang_sdk_v0260_is_broken/
----
-For a long time we have been using V1 SDK (Golang) , and recently stated migrating to V2 (v0.23.0). We regularly update SDK versions, however our move to V0.26.0 was a disaster.
-
-It seems v0.26.0 is completely broken. All pagination related functionality is completely gone and there is no proper communication as well. I see issue opened for the same, but no proper feedback or action yet.
-
-Wondering if AWS SDK V2 team tests code or not? And how reliable would be going forward on V2.
-## [6][AWS Account Password Changed By Someone Else](https://www.reddit.com/r/aws/comments/jcd8jg/aws_account_password_changed_by_someone_else/)
-- url: https://www.reddit.com/r/aws/comments/jcd8jg/aws_account_password_changed_by_someone_else/
----
-I got an email today stating "We received a request to reset the password for the AWS account". Shortly followed by another email "Your Amazon Web Services Password Has Been Updated". Although this is not an account I use much, naturally I was very troubled by this email. I had to use the "Forgot password" link after not being able to log in, and was able to reset my password. Is there an audit trail where I can see who might have done what in my account? How can I be sure there are no browser sessions still open someplace using the old password?
-
-\----------------
-
-Thanks for all your great responses!
-
-1. I definitely checked that it was not phishing. Very long convoluted URL's, but definitely amazon domain.
-
-2. I did not use MFA on this account because I expected to create another account at some point, and my experience with Amazon is that sometimes you cannot have the same mobile number on more than one account MFA.
-
-3. I did not want to believe that my email (albeit a low priority secondary one) was hacked, but it had to have been in order to confirm the password change, right? Chrome has a "compromised password" feature which is really amazing, and confirms that that email was "found in data breach". So I've got some email password work this weekend...
-
-4. Out of curiosity, I will see if I can find anything in the CloudTrail. But as SelfDestructSep2020 recommends, I will probably "burn the account and make a new one".
-
 &amp;#x200B;
-## [7][Should you always use Control Tower, or does just using Organizations make sense in some situations?](https://www.reddit.com/r/aws/comments/jce5wr/should_you_always_use_control_tower_or_does_just/)
-- url: https://www.reddit.com/r/aws/comments/jce5wr/should_you_always_use_control_tower_or_does_just/
----
-Hi everybody,
 
-I'm creating a greenfield multi-account setup and am trying to figure out the best tools for the job. A bit about my place of work:
+https://preview.redd.it/cauqo9w81nt51.jpg?width=6000&amp;format=pjpg&amp;auto=webp&amp;s=2dfb83a73c96dfaa8b750aaf15f5edcebe58e2bd
 
-* 5 engineers, 12 employees overall. We are growing however, and I'd like to be able to support dozens and maybe hundreds of engineers
-* We have no regulatory requirements -- we don't store PII, health, or financial data or anything like that.
-* I am the only DevOps guy, though I may hire 1-2 more in the next 12 months.
+Hi All,
 
-The tool that AWS recommends is Control Tower (CT), however I feel this may be a bit of overkill. Seems like it's intended for large enterprises within regulated environments. I don't see us using Guardrails heavily. SCPs seem useful but those come with Organizations as well. I also don't feel like CT is quite ready for the big time -- the fact that it doesn't support nested OUs is a minus.
+My previous post discussed AWS Budget ([https://www.reddit.com/r/aws/comments/jan2x2/aws\_cdk\_for\_aws\_budget\_with\_notification\_and\_cf/](https://www.reddit.com/r/aws/comments/jan2x2/aws_cdk_for_aws_budget_with_notification_and_cf/)) and this one builds on that to integrate Budget with Chatbot for notifications via Slack.
 
-Do you think that simply using Organizations to create accounts, and then using something like Terraform or Cloud CDK to deploy infra is enough? Or am I missing something with CT?
+I think Chatbot is a pretty cool free service from AWS that will be one to watch in the future. This basic example will get you up and running with CF deploy stack button in minutes or you use the CDK stack to see how its built and make it better.
 
-Thank you in advance.
-## [8][Can I rely solely on snapshots for disaster recovery/restoration in production?](https://www.reddit.com/r/aws/comments/jcptn3/can_i_rely_solely_on_snapshots_for_disaster/)
-- url: https://www.reddit.com/r/aws/comments/jcptn3/can_i_rely_solely_on_snapshots_for_disaster/
----
-I'm currently building a multi-account disaster recovery plan. I wrote a script to do a logical pg\_dump and copy the file to S3 in another account.
+There github repo for this is open source and available here:
 
-I was curious if I could ditch the logical dumps and rely solely on cross-account snapshot sharing to remove the maintenance overhead. What's your prod DR system look like for RDS data? Do you think snapshots reliable enough to ditch logical dumps in a production app? Or should I do both?
-## [9][For gpu ec2's, am I charged whenever I'm using the gpu's or at all times when the instance is up?](https://www.reddit.com/r/aws/comments/jco1uu/for_gpu_ec2s_am_i_charged_whenever_im_using_the/)
-- url: https://www.reddit.com/r/aws/comments/jco1uu/for_gpu_ec2s_am_i_charged_whenever_im_using_the/
----
-Beginner question, if I'm doing deep learning on a gpu ec2 instance like p2.xlarge, am I charged whenever the instance if up?
+[https://github.com/talkncloud/aws/tree/main/essential-billing-bot](https://github.com/talkncloud/aws/tree/main/essential-billing-bot)
 
-For example, if I launched the instance for 10 hours, but I did 8 hours of programming and only 2 hours of training that actually uses the gpu's, am I charged for the full 10 hours?
+Question for everyone: Does anybody know how to script or automate the configuration between Chatbot and Slack? At the moment this is manual step in the console. I'd be interested to hear if this was something you can include in the stack? I've seen a couple of other services like this in AWS.
 
-If so, how do I efficiently manage ec2 costs?
-## [10][If I change the name of a field in a schema, how do I change the items currently in the database so their field is also renamed?](https://www.reddit.com/r/aws/comments/jcqdz5/if_i_change_the_name_of_a_field_in_a_schema_how/)
-- url: https://www.reddit.com/r/aws/comments/jcqdz5/if_i_change_the_name_of_a_field_in_a_schema_how/
----
+Suggestions &amp; feedback welcome, let me know how you're using Chatbot!
 
-## [11][EBS Lifecycle Manager Tagging Question](https://www.reddit.com/r/aws/comments/jcdh0r/ebs_lifecycle_manager_tagging_question/)
-- url: https://www.reddit.com/r/aws/comments/jcdh0r/ebs_lifecycle_manager_tagging_question/
----
-I configured EBS Lifecycle Manager to run nightly backups using the default tagging settings which are:
+Thanks,
 
-
-instance-id  : $(instance-id)
-
-
-timestamp :  $(timestamp)
-
-The tags work great, but the name's are blank. It's not the end of the world, but from a more userfriendly standpoint, is there a way to customize the name field to something like &lt;date&gt; : &lt;instanceName&gt; : &lt;volumeName&gt;?
+Mick

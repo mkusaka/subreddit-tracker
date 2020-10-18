@@ -40,7 +40,45 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Google removed app by mistake](https://www.reddit.com/r/androiddev/comments/jcsasd/google_removed_app_by_mistake/)
+## [3][Here is my custom prototype version of DOOM running on an android headunit...in a car!](https://www.reddit.com/r/androiddev/comments/jdeix0/here_is_my_custom_prototype_version_of_doom/)
+- url: https://youtu.be/5mmiPT2avrY
+---
+
+## [4][Create a google play account for the company instead of individual](https://www.reddit.com/r/androiddev/comments/jdctrb/create_a_google_play_account_for_the_company/)
+- url: https://www.reddit.com/r/androiddev/comments/jdctrb/create_a_google_play_account_for_the_company/
+---
+ 
+
+Hello,
+
+I'm having some difficulties trying to register a google play account for my company. I've started by creating a new google account by selecting "To manage my business" and after that I've selected payment method and added a new card. This has automatically created a payment profile with the account type as individual with no option to change it to business. 
+
+I looked over different help sections and from what I saw, I should have seen an option to chose from individual/business when creating the payment profile. I deleted the payment profile and create it again several times and couldn't see any option.
+
+Did someone else had the same problem and could provide some exact steps on how can I create a payment profile with the account type as business?
+## [5][If you use Glide, and if you use WebView, then you should use them together. Checkout the link and share your reviews.](https://www.reddit.com/r/androiddev/comments/jddp29/if_you_use_glide_and_if_you_use_webview_then_you/)
+- url: https://muditsen.medium.com/enhance-android-webview-performance-using-glide-aba4bbc41bc7
+---
+
+## [6][Android CodeView: an Easy way to create Code Editor app](https://www.reddit.com/r/androiddev/comments/jdc694/android_codeview_an_easy_way_to_create_code/)
+- url: https://medium.com/@amrdeveloper/android-codeview-an-easy-way-to-create-code-editor-app-5d67c3534f84
+---
+
+## [7][Loading Arraylist of data from firebase using ListIterator returning null](https://www.reddit.com/r/androiddev/comments/jdem7s/loading_arraylist_of_data_from_firebase_using/)
+- url: https://www.reddit.com/r/androiddev/comments/jdem7s/loading_arraylist_of_data_from_firebase_using/
+---
+Hi Im asking my question here cause , its been 3 days and I dont find any answer on my own  , hope one of you could help me 
+
+I want to load post from my Users inside an Recyclerview ; I'm loading post corretly . Inside of a Post I got the Firebase uid of the user who posted the post , I added all post users uid inside a arraylist and im trying to load all Users info data inside a model User . Before loading all data from user uid , Im trying to see if the user sill exist inside the database with a ondatange methode inside ListIterator , but some id who are still inside my database return null where they should return true , someone can explain me why ? Sorry for my bad english
+
+ 
+
+and here a link for my [question closed](https://stackoverflow.com/questions/64404330/loading-arraylist-of-data-from-firebase-using-listiterator-returning-null)
+
+&amp;#x200B;
+
+    public void CheckifUserstillexist(FragmentActivity activity, List&lt;String&gt; listuidusers) {     if (list.size() != 0){         List&lt;ModelUserProfil &gt; Listofusers = new Arraylist&lt;&gt;;          int i = 0;         for (ListIterator&lt;String&gt; it = list.listIterator(); it.hasNext(); i++) {              String UserUid= it.next();              isAccountExistSingleValue(UserUid, new OnObjectExistListener&lt;String&gt;() {                 @Override                 public void onDataChanged(boolean exist) {                      ModelUserProfil  Userprofil  =  new ModelUserProfil  ();                     Userprofil.setUserid(UserUid);                     Userprofil.setisAccountExisting(exist);                     Listofusers.add(Userprofil);                      if (!it.hasNext()) {                         ListIterator&lt;ModelUserProfil&gt; TheBigList  = Listofusers.listIterator();                         Collection&lt;ModelUserProfil  &gt; itemtodeletefromlist = new ArrayList&lt;&gt;();                          while (TheBigList.hasNext()) {                             ModelUserProfil  User = TheBigList.next();                             if (User .getisAccountExisting() != null){                                  if (!User.getisAccountExisting()){                                      itemtodeletefromlist .add(OldList);                                 }                             }else {                                 Useritemtodeletefromlist.add(OldList);                                 // Items that should not be add here  are add here                              }                         }                          if (Useritemtodeletefromlist.size() != 0){                             Listofusers.removeAll(itemtodeletefromlist );                         }                         LoadUsersInfo(Listofusers);                     }                 }             });         }     }else {         // List empty     } }
+## [8][Google removed app by mistake](https://www.reddit.com/r/androiddev/comments/jcsasd/google_removed_app_by_mistake/)
 - url: https://www.reddit.com/r/androiddev/comments/jcsasd/google_removed_app_by_mistake/
 ---
 # TL;DR
@@ -67,9 +105,7 @@ The reasons for removal were related to the User Generated Content policy, speci
 
 Both claims are false. The reviewer attached some screenshots of the walkthrough that is displayed after app launch as proof. The screen where the user has to accept the TOS and even explicitly agree to a summary regarding restrictions on user generated content was simply missing. It is not even technically possible to skip it.
 
-How could that happen? Looking into the server logs later on it seems that Google outsources its app reviews to the Philippines for cheap labor costs, possibly with the result of low quality app reviews, leading to severe mistakes like this one where an app with millions of downloads is removed without prior notice due to a single reviewer’s mistake. 
-
-Procedurally, this should have not been possible, but Google’s internal review processes are apparently a mess. They only recently introduced a more stringent app review process (rightly so) but this is plagued by [misinformation and lack of transparency](https://www.androidpolice.com/2019/09/03/google-play-expands-store-app-review/) ever since.
+How could it happen that an app with millions of downloads is removed without prior notice due to a single reviewer’s mistake? Looking into the server logs it seems that Google off-shores app reviewers to the Philippines. Going offshore into low labor cost markets is a common practice, often with implications on the quality of work. Procedurally, the removal should not have happened, but Google’s internal review processes are apparently a mess. They only recently introduced a more stringent app review process (rightly so) but this seems to be plagued by [misinformation and lack of transparency](https://www.androidpolice.com/2019/09/03/google-play-expands-store-app-review/) ever since.
 
 Luckily, the removal notice contains an appeal link to quickly resolve this mistake - or so I thought:
 
@@ -96,88 +132,44 @@ It is the next day, the app is now removed from the store for approximately 24 h
 Is this the way Google intents to treat their developers? How is it possible that a company with a clear monopolistic market dominance has free reign without proper regulation to impose arbitrary rules and low quality processes that are lacking due diligence on hundreds of thousands of developers who are economically dependent on their platform?
 
 There is something severely wrong here and it needs to be changed, through government policy, because self-regulation is a myth.
-## [4][Ugly Android Studio 4.1 icon](https://www.reddit.com/r/androiddev/comments/jcceq3/ugly_android_studio_41_icon/)
-- url: https://www.reddit.com/r/androiddev/comments/jcceq3/ugly_android_studio_41_icon/
+
+# Update
+Google has reinstated the app after approximately 24h.
+
+It is unclear at this point whether ~24h was the usual response time or whether either the appeal or the new build upload did speed things up. It is unlikely that this post has contributed because I did not reveal the app name to users who have reached out to me privately and asked for it.
+
+The app has been unavailable for ~24h, which has a monetary impact that I would preliminarily estimate to be a 4 figure USD loss from what I can see in the analytics so far. The number seems large enough to bother but too small to follow up on it considering the effort required to argue with Google, which probably has a low chance of success anyway. Another contra argument is possible retaliation from Google, which could be so sublime that it would be difficult to proof.
+
+This predicament is just another example that proper legislation is needed to protect the weaker ones, in this case the developers. And it should start at the basics: one of the largest tech companies in the world with an app store market size of billions of dollars and their developer contact form does not work for months, just as they are rolling out a more stringent app review process that seems to be poorly executed? Random? Possibly, but unlikely. Why? Because they can.
+## [9][Why is hilt the officially recommended DI library even though its in alpha?](https://www.reddit.com/r/androiddev/comments/jdc5s4/why_is_hilt_the_officially_recommended_di_library/)
+- url: https://www.reddit.com/r/androiddev/comments/jdc5s4/why_is_hilt_the_officially_recommended_di_library/
 ---
-Am I the only one who noticed ugly 4.1 icon? Before it looked stylish and on par with Visual Studio, Xcode, other development tools and now it looks like a cheap knockoff made by a student for a bowl of rice. It looks especially bad on Mac OS.
-## [5][Supercharing mobile app development with GPU accelerated machine learning using Android NDK and Vulkan Kompute](https://www.reddit.com/r/androiddev/comments/jcuwwe/supercharing_mobile_app_development_with_gpu/)
-- url: https://towardsdatascience.com/gpu-accelerated-machine-learning-in-your-mobile-applications-using-the-android-ndk-vulkan-kompute-1e9da37b7617
+Hilt is now being recommended throughout Android docs (under Best practices -&gt; Dependency Injection &amp; Guide to app architecture) to be used as the DI library. However, the library is still in alpha and as I understand it, its API can still drastically change, correct?  
+
+
+For new apps should I start using Hilt or is it safer bet to use existing established DI libraries?
+## [10][Review Times Google Play?](https://www.reddit.com/r/androiddev/comments/jd5v94/review_times_google_play/)
+- url: https://www.reddit.com/r/androiddev/comments/jd5v94/review_times_google_play/
 ---
-
-## [6][Where to store the data for a social media app?](https://www.reddit.com/r/androiddev/comments/jcrdw2/where_to_store_the_data_for_a_social_media_app/)
-- url: https://www.reddit.com/r/androiddev/comments/jcrdw2/where_to_store_the_data_for_a_social_media_app/
+Since COVID, it seems like review times have gone way up. Is this still the case, how long have you guys had to wait?
+## [11][11 — 17 October Android Newsletter](https://www.reddit.com/r/androiddev/comments/jdd0w8/11_17_october_android_newsletter/)
+- url: https://www.reddit.com/r/androiddev/comments/jdd0w8/11_17_october_android_newsletter/
 ---
-Hi, if I want to create a social media app for learning purposes. I am going to create not the clone social media app. I have an own idea for social media app.  Which options for store the database are better? AWS? Firebase? or other options? Is it free to use if I use it for learning purpose?
-## [7][How to query for autocomplete suggestions?](https://www.reddit.com/r/androiddev/comments/jcuwcl/how_to_query_for_autocomplete_suggestions/)
-- url: https://www.reddit.com/r/androiddev/comments/jcuwcl/how_to_query_for_autocomplete_suggestions/
----
-There are a list of autocomplete word suggestions shown as we type on the android keyboard. Is there any API through which I can pass some text and get back similar suggestions?  
-Note that my app is not a keyboard app.
-## [8][[DEV][GIVEAWAY] Big update for AutoTagger - music tag editor. 100 promo codes inside!](https://www.reddit.com/r/androiddev/comments/jcrwhh/devgiveaway_big_update_for_autotagger_music_tag/)
-- url: https://www.reddit.com/r/androiddev/comments/jcrwhh/devgiveaway_big_update_for_autotagger_music_tag/
----
-Hi folks! I'm a dev of *AutoTagger* app.  If you haven't heard about *AutoTagger* \- it's music tag editor with tag search feature (also it can search tags using track recognition) and many batch tag editing operations.
+Stay up to date with Android development, in this week's edition:  
+💨 Sharing Shortcuts  
+🗺️ Navigation Component  
+🥰 StateFlow &amp; UI  
+💡 Kotlin Scope Functions  
+and much more!
 
-&amp;#x200B;
+Read it here 👉[https://vladsonkin.com/android-newsletter-16/](https://vladsonkin.com/android-newsletter-16/)  
+What's your favorite article in this edition? I would love to see your comments!
 
-Since my last post about *AutoTagger*, i've added a big portion of features to the app.
+🔥Featuring [@RaulHernandezL](https://twitter.com/RaulHernandezL) [@chethaase](https://twitter.com/chethaase) [@safaorhanEN](https://twitter.com/safaorhanEN) [@tfcporciuncula](https://twitter.com/tfcporciuncula) [@informramiz](https://twitter.com/informramiz) [@SG5202](https://twitter.com/SG5202) [@thecodeside\_AL](https://twitter.com/thecodeside_AL) and many other great authors!
 
-Now it's only tag editor across Google Play which has batch editing features like on desktop apps.
-
-So, here are some of new features:
-
-* 6 full-featured batch operations: tag search, tag editing (with case transforming and tags deletion), files renaming, tracks numerating, extracting tags from filenames, batch file info viewing (bitrate, etc).
-* Many new tag fields for editing
-* Smooth material design animations and haptic feedback
-* Search by files, tracks, albums and artists
-* In-built audio player
-* Fullscreen cover art viewing
-* Displaying cover art size in tag search
-
-&amp;#x200B;
-
-[Download from Google Play](https://play.google.com/store/apps/details?id=com.serg.chuprin.tageditor)
-
-Of course, *AutoTagger* has free and paid version which allows you to feel the full power of the app. However, you can try most of features for free (all batch operations are free for 5 tracks at once).
-
-I attach **100 promo codes** for you guys. Please mark code as taken after use.
-
-[Extended version (50 items)](https://docs.google.com/spreadsheets/d/1HfIMCD1Qd0-kcKsRHTq03yYQooJWiEZu5v6StxliX4k/edit?usp=sharing)
-
-[Tag search using track recognition (50 items)](https://docs.google.com/spreadsheets/d/1NtMpLuJ9ChBotBx4N4Ts0_54r6HnHAasPMtRApSN_aA/edit?usp=sharing)
-
-Promo codes are valid untill oct. 21.
-
-&amp;#x200B;
-
-Hope you'll like it.
-## [9][Android-R scoped storage and SD card](https://www.reddit.com/r/androiddev/comments/jcrs18/androidr_scoped_storage_and_sd_card/)
-- url: https://www.reddit.com/r/androiddev/comments/jcrs18/androidr_scoped_storage_and_sd_card/
----
-Hi guys,
-I am working with scoped storage to make my app compatible with it.
-
-According to scoped storage we can't create any folder on the main storage of the device we have to use DCIM or Pictures folder for that.
-
-But i am confused about SD card. Does same rule apply to it? Because i am testing on pixel device and it doesn't have sd card slot so i am unable to test this usecase.
-
-If anyone has worked with scoped then kindly answer.
-Thanks
-## [10][Best NPM Packages to build Animations using ReactJS | Ashutosh Hathidara](https://www.reddit.com/r/androiddev/comments/jctxu5/best_npm_packages_to_build_animations_using/)
-- url: https://www.youtube.com/watch?v=OGGuw2dLBjk&amp;feature=share
+💚 Subscribe and receive new editions directly to your email. Weekly, no spam, unsub anytime.  
+Here is an example: [https://mailchi.mp/0426e7d6455d/android-newsletter-16](https://mailchi.mp/0426e7d6455d/android-newsletter-16)
+## [12][Why I Almost Gave Up On My Indie Game - Devlog](https://www.reddit.com/r/androiddev/comments/jcymy4/why_i_almost_gave_up_on_my_indie_game_devlog/)
+- url: https://www.youtube.com/watch?v=3LG4zlCfnmw
 ---
 
-## [11][Android control photo metadata](https://www.reddit.com/r/androiddev/comments/jcraga/android_control_photo_metadata/)
-- url: https://www.reddit.com/r/androiddev/comments/jcraga/android_control_photo_metadata/
----
-Say I want to create an android app that takes photos. Simple stuff. Now if I want the app to also control the metadata generated for the photo, how do I do that? Your answer is much appreciated.
-## [12][Saving files on Android: total madness](https://www.reddit.com/r/androiddev/comments/jcbpfi/saving_files_on_android_total_madness/)
-- url: https://www.reddit.com/r/androiddev/comments/jcbpfi/saving_files_on_android_total_madness/
----
-Recently I was trying a achieve what I thought a relatively simple goal: copying an audio file from the app's internal storage to the external storage.
-
-So I started to study the new MediaStore API: that's total madness. You need a 4 year degree to understand how it works. That API is pure garbage.
-
-In the end I managed to copy the file on API 29+, but on API 28- no way: I had to use a deprecated field (DATA) and the audio file is not shown.
-
-What do you think of data management in Android. Do you agree with me that it is pure garbage?

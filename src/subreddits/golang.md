@@ -1,75 +1,186 @@
 # golang
-## [1][Gosaic - 4yrs but still a piece of art](https://www.reddit.com/r/golang/comments/jcrmou/gosaic_4yrs_but_still_a_piece_of_art/)
-- url: https://github.com/atongen/gosaic
+## [1][Golang's repo displayed using Onefetch](https://www.reddit.com/r/golang/comments/jdek8w/golangs_repo_displayed_using_onefetch/)
+- url: https://i.redd.it/ltz7slxd6ut51.png
 ---
 
-## [2][RocksDB Wrapper, up to date with recent rocksdb releases and stress tested](https://www.reddit.com/r/golang/comments/jctgxd/rocksdb_wrapper_up_to_date_with_recent_rocksdb/)
-- url: https://github.com/linxGnu/grocksdb
+## [2][Which Udemy course to purchase?](https://www.reddit.com/r/golang/comments/jdd7n2/which_udemy_course_to_purchase/)
+- url: https://www.reddit.com/r/golang/comments/jdd7n2/which_udemy_course_to_purchase/
+---
+As the title says. I'm kinda bad at reading programming books, get distracted and bored very easily, but videos do very well for me.  Heard people say bad stuff about Go tutorials on udemy, especially Todd McLeod. Is it really that bad? I wanted to pick a good tutorial and practice on codewars.
+## [3][go routine problem](https://www.reddit.com/r/golang/comments/jd96zc/go_routine_problem/)
+- url: https://www.reddit.com/r/golang/comments/jd96zc/go_routine_problem/
+---
+Can someone tell me what I'm doing wrong?  Currently this script looks like its just hanging and never returning.  I've tested the snmp, and ip iteration independently and they worked. Once I introduced the go routine it looks like I've broken something. Can someone offer assistance as to what I've done wrong. Also I just read there is a better way of limiting go routines but in a pinch I just wanted to keep it under a thousand go routines.
+
+    package main
+    
+    import (
+    	"encoding/binary"
+    	"fmt"
+    	"log"
+    	"net"
+    	"sync"
+    
+    	g "github.com/gosnmp/gosnmp"
+    )
+    
+    const snmpComm string = "public"
+    
+    func poller(ip string, wg *sync.WaitGroup) {
+    	defer wg.Done()
+    	// Default is a pointer to a GoSNMP struct that contains sensible defaults
+    	// eg port 161, community public, etc
+    	g.Default.Target = ip
+    	g.Default.Community = snmpComm
+    
+    	err := g.Default.Connect()
+    	if err != nil {
+    		log.Fatalf("Connect() err: %v", err)
+    	}
+    	defer g.Default.Conn.Close()
+    
+    	oids := []string{"1.3.6.1.2.1.1.1.0", "1.3.6.1.2.1.1.5.0"}
+    	result, err2 := g.Default.Get(oids) // Get() accepts up to g.MAX_OIDS
+    	if err2 != nil {
+    		log.Fatalf("Get() err: %v", err2)
+    	}
+    
+    	for i, variable := range result.Variables {
+    		fmt.Printf("%d: oid: %s ", i, variable.Name)
+    	}
+    }
+    
+    func main() {
+    	var wg sync.WaitGroup
+    
+    	_, ipv4Net, err := net.ParseCIDR("10.201.0.0/16")
+    	if err != nil {
+    		fmt.Println(err)
+    	}
+    
+    	// convert IPNet struct mask and address to uint32
+    	// network is BigEndian
+    	mask := binary.BigEndian.Uint32(ipv4Net.Mask)
+    	start := binary.BigEndian.Uint32(ipv4Net.IP)
+    
+    	// find the final address
+    	finish := (start &amp; mask) | (mask ^ 0xffffffff)
+    
+    	// loop through addresses as uint32
+    	threadProtector := 0
+    	for i := start; i &lt;= finish; i++ {
+    		if threadProtector &lt;= 999 {
+    			// convert back to net.IP
+    			ip := make(net.IP, 4)
+    			binary.BigEndian.PutUint32(ip, i)
+    			ipstr := ip.String()
+    			wg.Add(1)
+    			go poller(ipstr, &amp;wg)
+    			threadProtector++
+    		} else if threadProtector == 1000 {
+    			wg.Wait()
+    			threadProtector = 0
+    		}
+    	}
+    
+    }
+## [4][How do you deal with microservice versioning when using a message bus?](https://www.reddit.com/r/golang/comments/jdbo1i/how_do_you_deal_with_microservice_versioning_when/)
+- url: https://www.reddit.com/r/golang/comments/jdbo1i/how_do_you_deal_with_microservice_versioning_when/
+---
+Hey all,
+
+Got a front end API that sends messages to back end services. Right now, the message bus uses just string values as the topic name to send something on, or subscribe to. Also, some services can pub/sub with other services as well, not just the API services. With that in mind, do you put version values within the topic name string?
+
+As an example, say I have a simple Email service, version 1. It only handles a TO and a message body. Json like {to: '...@...com', msg: 'blah blah'}.  Now, I get a more robust email service I can use, that can now support CC, html body, subject, etc. I also decide msg is not a good key.. so I modify the JSON payload to something like {to:..., subject:..., body:... cc:...}. Clearly the first version of my email service wont decode the new format correctly. But if I change the current service to the new format, then services still sending the old format wont work either. So.. in the case of event bus with topic strings... is the way to go to spin up a 2nd (new email service) while the 1st one still runs.. so that services now ready to use the new 2nd version, can work (using a new topic string.. either with v2 in it, or some new name like NewEmailService) and the current services using the old email service continue to work?
+## [5][Type analysis for annotated empty interface{}s](https://www.reddit.com/r/golang/comments/jdfis4/type_analysis_for_annotated_empty_interfaces/)
+- url: https://github.com/siadat/intertype#demo-1
 ---
 
-## [3][Deep dive into the recent Generics proposal](https://www.reddit.com/r/golang/comments/jcc9xp/deep_dive_into_the_recent_generics_proposal/)
-- url: https://youtu.be/gIEPspmbMHM
+## [6][My project for manage and run acceptance tests](https://www.reddit.com/r/golang/comments/jdf9k6/my_project_for_manage_and_run_acceptance_tests/)
+- url: https://www.reddit.com/r/golang/comments/jdf9k6/my_project_for_manage_and_run_acceptance_tests/
+---
+Today i release 1.0.0-beta version of [at2k](https://github.com/ilya-mezentsev/acceptance-testing-2k) - project for manage and run acceptance tests.
+
+It allows you write something like this
+```
+BEGIN
+    createUserResponse = CREATE USER {"name": "Jim"}
+
+    ASSERT createUserResponse.status EQUALS ok
+
+    userResponse = GET USER ${createUserResponse.hash}
+
+    ASSERT userResponse.status EQUALS ok
+    ASSERT userResponse.data.name EQUALS Jim
+    ASSERT userResponse.data.hash EQUALS ${createUserResponse.hash}
+END
+
+BEGIN
+    getNotExistsUserResponse = GET USER not-exists-hash
+
+    ASSERT getNotExistsUserResponse.status EQUALS error
+    ASSERT getNotExistsUserResponse.data EQUALS user-not-found
+END
+```
+
+To test code like this
+```
+users.get('/:hash', (req, res) =&gt; {
+    const user = usersRepository.find(u =&gt; u.hash === req.params.hash);
+
+    if (user) {
+        res.status(200).send({
+            status: 'ok',
+            data: user
+        });
+    } else {
+        res.status(200).send({
+            status: 'error',
+            data: 'user-not-found'
+        });
+    }
+});
+
+users.post('/', (req, res) =&gt; {
+    const { name } = req.body;
+    const hash = uuid4();
+
+    usersRepository.push({
+        hash, name
+    });
+    res.status(200).send({status: 'ok', hash});
+});
+```
+
+I'm quite new in releasing projects (and posting on reddit ;-)). Feel free to review code or write comments here - I'll be glad to get feedback)
+
+P.S. Web version is available [here](https://at2k-beta.site/). Please, don't overuse it, because server hasn't have enough of resources to handle "loads" of requests
+## [7][Glow: Markdown reader for the terminal with a TUI and encrypted cloud stash](https://www.reddit.com/r/golang/comments/jcxanh/glow_markdown_reader_for_the_terminal_with_a_tui/)
+- url: https://github.com/charmbracelet/glow
 ---
 
-## [4][Chronos - A static race detector](https://www.reddit.com/r/golang/comments/jcuyau/chronos_a_static_race_detector/)
-- url: https://github.com/amit-davidson/Chronos
----
-
-## [5][validating v2 (a Go library for validating structs and fields) is released](https://www.reddit.com/r/golang/comments/jcv6gt/validating_v2_a_go_library_for_validating_structs/)
+## [8][validating v2 (a Go library for validating structs and fields) is released](https://www.reddit.com/r/golang/comments/jcv6gt/validating_v2_a_go_library_for_validating_structs/)
 - url: https://github.com/RussellLuo/validating
 ---
 
-## [6][Is it hard to find a job?](https://www.reddit.com/r/golang/comments/jcuuoe/is_it_hard_to_find_a_job/)
-- url: https://www.reddit.com/r/golang/comments/jcuuoe/is_it_hard_to_find_a_job/
----
-I have been studying Golang for some weeks. I love how simple and beautiful the things in Go are. But I don't know if it's hard to find a job in Go. What do you guys think about it?  
-
-By the way, I've already known programming. I had experience with C, Python, Kotlin, and Javascript (NodeJS). (no job experience, just in the college and in projects).
-
-I'd like to be a backend developer. I'm enjoying learning about Docker and Kubernetes as well. I kind of really need a job (or an internship) until the end of the first semester of 2021.
-
-&amp;#x200B;
-
-Thanks!!
-## [7][Calculate diff in 2 maps/json/structs](https://www.reddit.com/r/golang/comments/jcua6a/calculate_diff_in_2_mapsjsonstructs/)
-- url: https://www.reddit.com/r/golang/comments/jcua6a/calculate_diff_in_2_mapsjsonstructs/
----
-I see go-cmp as an option for comparison. But was looking for another alternative to compare json/structs or maps[string]interface{}
-
-Issues with go-cmp:
-1) doesn't have a rich documentation on how to customise diff. Eg -Ignore fields starting with a character
-
-2) Have seen frequent panics in production.
-## [8][No Dependency Lightweight Telegram Bot](https://www.reddit.com/r/golang/comments/jctrt6/no_dependency_lightweight_telegram_bot/)
-- url: https://www.reddit.com/r/golang/comments/jctrt6/no_dependency_lightweight_telegram_bot/
----
-Hello,
-
-I am testing a protptype single board computer for remote data monitoring in one of our customers. I prepared a simple no dependency lightweight telegram bot with go to see our application logs in telegram since our customer couldn't provide a static ip for remote access.
-
-[https://github.com/ermanimer/telegram\_bot](https://github.com/ermanimer/telegram_bot)
-
-Please review and comment, i am learning a lot from your feedbacks.
-
-Best regards
-## [9][How to do error tracing](https://www.reddit.com/r/golang/comments/jctq7b/how_to_do_error_tracing/)
-- url: https://www.reddit.com/r/golang/comments/jctq7b/how_to_do_error_tracing/
----
-Hi guys, I'm building a **small** web server, regarding the clean-arch philosophy.
-
-It's a small app, so I don't want to over-engineering something, like using a distributed system or something like that, but k8s could be my deployment choice. 
-
-I want to attach a request ID to every request and pass it all the way to the DB access layer and log everything with this request ID, such I can track the whole process if the user submits the request ID(I’ll send the request ID as a field in response JSON and display it to the user just like FB does)
-
-While I'm using echov4, I can install the request ID middleware, extract the ID, bind it with logger and pass it way down.
-
-But I'm worried if these IDs will ever collide, I have seen someone using opentrace, Zipkin, etc
-. But they are for the distributed system.
-
-Any suggestions will be welcomed! 😉
-
-Edit: the title should be about tracking, not tracing.
-## [10][Another one package to manage migrations. Please, can someone review it?](https://www.reddit.com/r/golang/comments/jcthjk/another_one_package_to_manage_migrations_please/)
-- url: http://github.com/iamsalnikov/mymigrate
+## [9][Gosaic - 4yrs but still a piece of art](https://www.reddit.com/r/golang/comments/jcrmou/gosaic_4yrs_but_still_a_piece_of_art/)
+- url: https://github.com/atongen/gosaic
 ---
 
+## [10][Wrap function definition over 2 lines](https://www.reddit.com/r/golang/comments/jde5mo/wrap_function_definition_over_2_lines/)
+- url: https://www.reddit.com/r/golang/comments/jde5mo/wrap_function_definition_over_2_lines/
+---
+Hi all,
+
+Hopefully a simple one. Is it possible to wrap a function definition over 2 lines. I am working on a project that likes lines to be hard wrapped at around 80 characters. The hard limit is 100 characters but 80 is preferable. Is it possible to wrap a go function definition over 2 lines? Something like:
+
+```
+func getEntityByShortId(el *openpgp.EntityList , id uint32)
+    (entity *openpgp.Entity, err error) {
+......
+}
+```
+
+This doesn't work. Am I missing something or is it simply not possible?
+
+Thanks in advance

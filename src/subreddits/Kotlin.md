@@ -1,17 +1,39 @@
 # Kotlin
-## [1][Kweb 0.7.33 released, Kotlin web framework for backend developers adds support for FileReader / file uploads](https://www.reddit.com/r/Kotlin/comments/jcscyo/kweb_0733_released_kotlin_web_framework_for/)
+## [1][I've created a project that shows how you can write Grease-/Tamper-/Violent)-monkey user scripts with KotlinJS](https://www.reddit.com/r/Kotlin/comments/jd0guk/ive_created_a_project_that_shows_how_you_can/)
+- url: https://github.com/Foso/gtvmonkey-scripts#greasetamperviolent-monkey-scripts-with-kotlinjs
+---
+
+## [2][Making my Kotlin code more "Kotlin-y"](https://www.reddit.com/r/Kotlin/comments/jcyd2s/making_my_kotlin_code_more_kotliny/)
+- url: https://www.reddit.com/r/Kotlin/comments/jcyd2s/making_my_kotlin_code_more_kotliny/
+---
+Just a quick question about syntax and the difference from Java.
+
+I've recently written my first actual project in Kotlin and plan to release it to the Play Store, but I'm concerned that, since Kotlin also supports Java syntax, that my code isn't as 'Kotlin-y' as it could be. Is there some service that can scan my code and reformat it to more Kotlin-accurate ssyntax, like how the IntelliJ IDEA converts Java files to Kotlin files? I'd like to see how it should look for the sake of learning. 
+
+Thanks in advance.
+## [3][Kweb 0.7.33 released, Kotlin web framework for backend developers adds support for FileReader / file uploads](https://www.reddit.com/r/Kotlin/comments/jcscyo/kweb_0733_released_kotlin_web_framework_for/)
 - url: https://github.com/kwebio/kweb-core
 ---
 
-## [2][http4k blog: Nanoservices: The Power of Composition](https://www.reddit.com/r/Kotlin/comments/jc8tez/http4k_blog_nanoservices_the_power_of_composition/)
+## [4][Resources to learn Kotlin?](https://www.reddit.com/r/Kotlin/comments/jczxx6/resources_to_learn_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/jczxx6/resources_to_learn_kotlin/
+---
+I’m mainly a C++ / Haskell developer, plus I know Python and am planning to learn Rust (probably before Kotlin), but I have zero experience with JVM languages.
+
+For the purposes of Android development, I want to learn Kotlin. Can you please recommend any good resources to do that (books, free online courses etc.), **preferably without touching Java** (if at all possible)?
+## [5][[Academic] Software Development Survey (Software Developers)](https://www.reddit.com/r/Kotlin/comments/jcz9md/academic_software_development_survey_software/)
+- url: /r/SampleSize/comments/jbsju0/academic_software_development_survey_software/
+---
+
+## [6][http4k blog: Nanoservices: The Power of Composition](https://www.reddit.com/r/Kotlin/comments/jc8tez/http4k_blog_nanoservices_the_power_of_composition/)
 - url: https://www.http4k.org/blog/nanoservices/
 ---
 
-## [3][Kotlin 1.4 Online Event Recap](https://www.reddit.com/r/Kotlin/comments/jcbdi9/kotlin_14_online_event_recap/)
+## [7][Kotlin 1.4 Online Event Recap](https://www.reddit.com/r/Kotlin/comments/jcbdi9/kotlin_14_online_event_recap/)
 - url: https://link.medium.com/OzC2ERGhDab
 ---
 
-## [4][Accessing class member name via interpolation of number?](https://www.reddit.com/r/Kotlin/comments/jcimht/accessing_class_member_name_via_interpolation_of/)
+## [8][Accessing class member name via interpolation of number?](https://www.reddit.com/r/Kotlin/comments/jcimht/accessing_class_member_name_via_interpolation_of/)
 - url: https://www.reddit.com/r/Kotlin/comments/jcimht/accessing_class_member_name_via_interpolation_of/
 ---
 I just want to state that I know I'm doing this in a dumb way. I'm a newb.
@@ -25,11 +47,11 @@ How can I interpolate a number into the name? I mean, now I have
 rollButton.setOnClickListener **{** textView1.*text* = paragraphNumber().**paragraphText1}**
 
 but, I would rather be able to call on paragraphTextX where X would be a number 1 - 20. Is this possible? Please let me know if I'm not making any sense.
-## [5][OutOfMemoryError related JVM Arguments](https://www.reddit.com/r/Kotlin/comments/jc73ux/outofmemoryerror_related_jvm_arguments/)
+## [9][OutOfMemoryError related JVM Arguments](https://www.reddit.com/r/Kotlin/comments/jc73ux/outofmemoryerror_related_jvm_arguments/)
 - url: https://blog.heaphero.io/2019/06/21/outofmemoryerror-related-jvm-arguments/
 ---
 
-## [6][How do you add a KLib to a Native Gradle Project?](https://www.reddit.com/r/Kotlin/comments/jcdgc6/how_do_you_add_a_klib_to_a_native_gradle_project/)
+## [10][How do you add a KLib to a Native Gradle Project?](https://www.reddit.com/r/Kotlin/comments/jcdgc6/how_do_you_add_a_klib_to_a_native_gradle_project/)
 - url: https://www.reddit.com/r/Kotlin/comments/jcdgc6/how_do_you_add_a_klib_to_a_native_gradle_project/
 ---
 I have one project that looks like this:
@@ -71,43 +93,3 @@ fun bar(x: List&lt;Int&gt;): Int = x.last()
 ```
 
 Gradle compiles this to a KLib. How can I use this KLib in another project?
-## [7][Hi what is the problem? Dont see button id and textView](https://www.reddit.com/r/Kotlin/comments/jci3z3/hi_what_is_the_problem_dont_see_button_id_and/)
-- url: https://i.redd.it/il6afq33tit51.jpg
----
-
-## [8][Announcing Kofiko: Code-First Configuration library for Kotlin](https://www.reddit.com/r/Kotlin/comments/jbm9b9/announcing_kofiko_codefirst_configuration_library/)
-- url: https://github.com/davidohana/kofiko-kotlin
----
-
-## [9][.toUUID(): A tiny kotlin/jvm library for generating deterministic UUIDs for automated testing](https://www.reddit.com/r/Kotlin/comments/jbic8f/touuid_a_tiny_kotlinjvm_library_for_generating/)
-- url: https://www.reddit.com/r/Kotlin/comments/jbic8f/touuid_a_tiny_kotlinjvm_library_for_generating/
----
-Let's rip off the bandage: UUIDs is a pain to work with within the context of automated testing.
-
-* Creating UUIDs look ugly
-* Creating UUIDs takes up a lot of space
-* Creating UUIDs decrease readability.
-
-This might all be minor gripes I have, but I like my tests to be short and clean.
-
-The most common way to generate a human-readable UUID is doing the following:
-
-    UUID.fromString("00000000-0000-0000-0000-000000000001")
-
-If you use .toUUID() you can get the same result like this:
-
-    1.toUUID()
-
-There's also a few more bells and whistles like generating UUIDs based on a collection, varargs, range of integers or even in a sequence.
-
-If  you find yourself having to deal with UUIDs in automated tests, or you  want to generate a set of simple UUIDs quickly, then .toUUID() might be  up your alley:
-
-[https://github.com/atomfinger/toUUID](https://github.com/atomfinger/toUUID)
-
-*This post was also posted on* r/Java *a* [*few days ago*](https://www.reddit.com/r/java/comments/j9mv3x/touuid_a_tiny_library_for_generating/)*. If you find yourself sharing some of the same thoughts and opinions expressed in that thread, do head over to the* [*writeup I did in response to it*](https://github.com/atomfinger/toUUID/blob/main/why_touuid.md)*, which hopefully does a better job explaining the value of .toUUID().*
-## [10][Need some help](https://www.reddit.com/r/Kotlin/comments/jbv4rv/need_some_help/)
-- url: https://www.reddit.com/r/Kotlin/comments/jbv4rv/need_some_help/
----
-I´m a beginner in programming and have a problem implementing the inmobi ads in my app, banner and instertitial are the ads that i´m trying to put in,  if someone can help i will be pleased
-
- some extra info: i´m venezuelan so my english is a bit orthopedic

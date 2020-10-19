@@ -70,108 +70,133 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][cssbuttons: HTML &amp; CSS Buttons Collection Built in React](https://www.reddit.com/r/reactjs/comments/jcxy2p/cssbuttons_html_css_buttons_collection_built_in/)
-- url: https://v.redd.it/0i2s6afhjot51
+## [3][Testing Redux: to Mock store or not?](https://www.reddit.com/r/reactjs/comments/jdzh7c/testing_redux_to_mock_store_or_not/)
+- url: https://www.reddit.com/r/reactjs/comments/jdzh7c/testing_redux_to_mock_store_or_not/
 ---
+A lot of times our React components will either render something or not, based on the Redux state.
 
-## [4][I turned some browser event APIs into React hooks.](https://www.reddit.com/r/reactjs/comments/jd7dus/i_turned_some_browser_event_apis_into_react_hooks/)
-- url: https://www.reddit.com/r/reactjs/comments/jd7dus/i_turned_some_browser_event_apis_into_react_hooks/
----
-I had some spare time on a plane flight, so I took the opportunity to hack away at one of my TODO sticky notes.
+In testing I've found two approaches to this:
 
-* [use-ctrl-key](https://www.npmjs.com/package/use-ctrl-key): Listen to if the Ctrl key is pressed. `const ctrlKey: boolean = useCtrlKey();`
-* [use-key-down](https://www.npmjs.com/package/use-key-down): Given a key, listen to if it is pressed. `const isEnterKeyDown: boolean = useKeyDown('Enter');`
-* [use-mouse-move](https://www.npmjs.com/package/use-mouse-move): Listen to mouse movement. `const [x, y] = useMouseMove();` Supports absolute, client, movement (relative), offset, page, and screen coordinates.
-* [use-offline](https://www.npmjs.com/package/use-offline): Listens for network connectivity change events. `const isOffline: boolean = useOffline();`
-* [use-page-transition](https://www.npmjs.com/package/use-page-transition): Listen for page transition changes. `const [isVisible, isPersistent] = usePageTransition();`
-* [use-shift-key](https://www.npmjs.com/package/use-shift-key): Listen to if the Shift key is pressed. `const shiftKey: boolean = useShiftKey();`
-## [5][I built an open-source React (Gatsby) + Tailwind Personal Portfolio and Blog Template](https://www.reddit.com/r/reactjs/comments/jd77qy/i_built_an_opensource_react_gatsby_tailwind/)
-- url: https://github.com/RyanFitzgerald/devfolio
----
+1. mock the store (and pass it some default values)
+2. Use the 'real' store (and then changing the state by dispatching actions trough *store.dispatch(action(payload))* )
 
-## [6][Trouble with TypeScript and React Context](https://www.reddit.com/r/reactjs/comments/jdctw3/trouble_with_typescript_and_react_context/)
-- url: https://www.reddit.com/r/reactjs/comments/jdctw3/trouble_with_typescript_and_react_context/
----
-Hi guys,
+Approach 1 seems to be more of a unit test whereas 2 could be considered more of an integration test.
 
-I've been struggling with using React Context and TypeScript. I've managed to get the context to work and pass data correctly to the subscribed components, however I'm struggling to know how to type the createContext function. I know it expects a defaultValue, but I'm confused what it should be.
-
-I'm getting the following TypeScript error in my context file under the createContext function:
-
-    (alias) createContext&lt;unknown&gt;(defaultValue: unknown): React.Context&lt;unknown&gt;
-    import createContext
-    Expected 1 arguments, but got 0.ts(2554)
-    index.d.ts(385, 9): An argument for 'defaultValue' was not provided.
-    Peek Problem (Alt+F8)
-    No quick fixes available
-
-This is my Context:
-
-    import React, {useState, createContext} from 'react';
-    
-    interface NewPartyProviderProps {
-        children: React.ReactNode
-    }
-    
-    type NewParty = {
-        name: string
-    }
-    
-    export const NewPartyContext = createContext();
-    
-    export const NewPartyProvider = ({children}: NewPartyProviderProps) =&gt; {
-        const [newParty, setNewParty] = useState&lt;NewParty&gt;({name: ""});
-    
-        return (
-            &lt;NewPartyContext.Provider value={[newParty, setNewParty]}&gt;
-                {children}
-            &lt;/NewPartyContext.Provider&gt;
-        )
-    }
-
-And I'm using it in a component like this:
-
-    const NewPartyName = ({ navigation }: NewPartyNameProps) =&gt; {
-    
-      const [newParty, setNewParty] = useContext(NewPartyContext);
-    
-      return (...)
-    
-    }
-
-Any help would be much appreciated! :)
-## [7][How to change progress percent color in antd?](https://www.reddit.com/r/reactjs/comments/jdcs3q/how_to_change_progress_percent_color_in_antd/)
-- url: https://www.reddit.com/r/reactjs/comments/jdcs3q/how_to_change_progress_percent_color_in_antd/
----
-[https://codesandbox.io/s/jgu3j?file=/index.js](https://codesandbox.io/s/jgu3j?file=/index.js)
-
-How to change the progress percent(90%) color from black to red?
-## [8][Using Stackbit](https://www.reddit.com/r/reactjs/comments/jdf3q6/using_stackbit/)
-- url: https://www.reddit.com/r/reactjs/comments/jdf3q6/using_stackbit/
----
-A client of mine suggested that we try Stackbit but it feels like it isn't too "customizable" or flexible. I'd like to know your thoughts about it and the challenges you've faced using it.
-## [9][[Material-ui] Create multiple slider knobs in one slider in material-ui, reactjs](https://www.reddit.com/r/reactjs/comments/jdelc7/materialui_create_multiple_slider_knobs_in_one/)
-- url: https://www.reddit.com/r/reactjs/comments/jdelc7/materialui_create_multiple_slider_knobs_in_one/
----
-[https://i.ibb.co/LNRH21c/multiple-slider-design.png](https://i.ibb.co/LNRH21c/multiple-slider-design.png)   
-
-
-I am trying to create a slider which looks roughly similar to the photo attached. 
+However, the lines between unit and integration tests are sometimes somewhat blurry. Regardless the type of the test: I just want to check whether the right thing(s) render or not.
 
 &amp;#x200B;
 
-I know you can make multiple knobs by providing `defaultValue={[35,50,77]}` or something similar to the `&lt;Slider/&gt;` component as props. But I want to style the tracks and the individual knobs aswell. Is it possible? If not, is there any other way to achieve this apart from building my own component from scratch?
-## [10][Started to build a simple blog with the Wordpress API and Reactjs](https://www.reddit.com/r/reactjs/comments/jdel9q/started_to_build_a_simple_blog_with_the_wordpress/)
-- url: https://www.reddit.com/r/reactjs/comments/jdel9q/started_to_build_a_simple_blog_with_the_wordpress/
----
-Just want to make sure im doing good in terms of clean code and " "way" of doing things:
-https://github.com/morhaham/react-with-wordpress
-## [11][Different ways to create Refs in React](https://www.reddit.com/r/reactjs/comments/jdbpku/different_ways_to_create_refs_in_react/)
-- url: https://sumitkharche.hashnode.dev/different-ways-to-create-refs-in-react-ckgeraoen0c50pas18hzqa4u8
+I'm wondering what the best approach would be here with respect to good testing practices.
+## [4][Material-UI Builder - React editor for busy developers](https://www.reddit.com/r/reactjs/comments/jdzdug/materialui_builder_react_editor_for_busy/)
+- url: https://mui.dev
 ---
 
-## [12][I am learning react.js and made my first ever todolist using react.](https://www.reddit.com/r/reactjs/comments/jdbn7j/i_am_learning_reactjs_and_made_my_first_ever/)
-- url: https://www.reddit.com/r/reactjs/comments/jdbn7j/i_am_learning_reactjs_and_made_my_first_ever/
+## [5][How does the deployment of a React.js app work together with Docker?](https://www.reddit.com/r/reactjs/comments/jdi3e1/how_does_the_deployment_of_a_reactjs_app_work/)
+- url: https://www.reddit.com/r/reactjs/comments/jdi3e1/how_does_the_deployment_of_a_reactjs_app_work/
 ---
-Github Link : [https://github.com/FSojitra/Simple-react-ToDo-with-crud-action](https://github.com/FSojitra/Simple-react-ToDo-with-crud-action)   
-codesand box link : [https://codesandbox.io/s/awesome-water-rgjtr](https://codesandbox.io/s/awesome-water-rgjtr)
+I am currently studying Docker and applying it to a simple React.js app. I see how dockerizing my app makes it easier to deploy on Docker but I still fail to grasp what do I do when I want to deploy the app on a server so it is actually available publicly.   
+How does docker help me with this?  Also, currently, to my understanding when I build a docker image and them somebody else runs this image, they see my app running but they don't see my code actually ( at least I am not aware of how that might work). So I would like to see if somebody can clarify this to me?   
+
+
+Thanks in advance. I am sorry if this is really a stupid question, I just fail to grasp the whole concept.
+## [6][When it comes to styling what should I do?](https://www.reddit.com/r/reactjs/comments/jdyr25/when_it_comes_to_styling_what_should_i_do/)
+- url: https://www.reddit.com/r/reactjs/comments/jdyr25/when_it_comes_to_styling_what_should_i_do/
+---
+I am starting with React but as I progressed I got to know that the styling part is quite confusing. I was wondering if some React pros can provide me with some tips on what should I do. Like when should I use styled components, CSS Modules, and I love using SCSS and creating everything using that!
+## [7][Filtering an array of objects with a button](https://www.reddit.com/r/reactjs/comments/je0dv0/filtering_an_array_of_objects_with_a_button/)
+- url: https://www.reddit.com/r/reactjs/comments/je0dv0/filtering_an_array_of_objects_with_a_button/
+---
+React newbie here is asking for some help. Here is the deal: I have an array of 4 objects (in my Data.js  
+  file) and, after clicking on a button, I want to display only the items  belonging to "category A" in my example below. I'm a bit confused with  the use of setState (which I assume I would need since my button will  "update" the initial state to only reflect the data I want to display  (hence item 1 and 4). Any ideas how it can be done? Cheers!
+
+**index.js**
+
+    import React, {Component} from "react";
+    import ReactDOM from "react-dom";
+    import Data from "./Data.js";
+    
+    
+    
+    class Root extends Component {
+        constructor(props) {
+            super(props);
+            this.state = {
+                items: Data,
+            }
+        }
+    
+    myFunctionA = () =&gt; {
+        //
+    }
+        
+    render() {
+            return (
+                &lt;div&gt;
+                    &lt;button onClick={this.myFunctionA}&gt;Click me to display item 1 &amp; 4&lt;/button&gt;
+                &lt;/div&gt;
+                
+            )
+        }
+    }
+    
+    ReactDOM.render(&lt;Root /&gt;, document.getElementById("root"))
+
+ **Data.js** 
+
+ 
+
+    const Data = [
+      {
+        "id": 1,
+        "name": "First item",
+        "category": "A"
+      },
+      {
+        "id": 2,
+        "name": "Second item",
+        "category": "B"
+      },
+      {
+        "id": 3,
+        "name": "Third item",
+        "category": "C"
+      },
+      {
+        "id": 4,
+        "name": "Fourth item",
+        "category": "A"
+      },
+    ]
+    
+    export default Data
+## [8][React Drum Machine](https://www.reddit.com/r/reactjs/comments/jdoxd5/react_drum_machine/)
+- url: https://www.reddit.com/r/reactjs/comments/jdoxd5/react_drum_machine/
+---
+Fully functional drum loop machine made with React and SCSS. 
+
+https://5f8cb55600a2dfe85fdb0690--peaceful-minsky-d3b585.netlify.app/#
+
+Ignore the tempo, there's an issue with displaying the correct BPM, let me know if you have any questions!
+## [9][I was trying to build a custom calendar component in react native](https://www.reddit.com/r/reactjs/comments/je1nwd/i_was_trying_to_build_a_custom_calendar_component/)
+- url: https://stackoverflow.com/questions/64426848/adding-a-13th-month-to-calendar-in-react-native
+---
+
+## [10][Types for https://material-ui.com/](https://www.reddit.com/r/reactjs/comments/je1kcr/types_for_httpsmaterialuicom/)
+- url: https://www.reddit.com/r/reactjs/comments/je1kcr/types_for_httpsmaterialuicom/
+---
+Hi all 
+I use TypeScript to build my React app and would like to know, if @types for https://material-ui.com/ exists. 
+
+Thanks
+## [11][Is it possible to force Suspense fallback to be shown?](https://www.reddit.com/r/reactjs/comments/jdwiz8/is_it_possible_to_force_suspense_fallback_to_be/)
+- url: https://www.reddit.com/r/reactjs/comments/jdwiz8/is_it_possible_to_force_suspense_fallback_to_be/
+---
+For example, I want to show fallback while my data is fetching. However, when my data finishes fetching, I want fallback to be visible for a couple of seconds more.
+
+How do I do it?
+## [12][@re-active: React is redefined with reactivity](https://www.reddit.com/r/reactjs/comments/je0ioe/reactive_react_is_redefined_with_reactivity/)
+- url: https://www.reddit.com/r/reactjs/comments/je0ioe/reactive_react_is_redefined_with_reactivity/
+---
+This is a library for writing React applications using reactivity system which brings clear and concise way of data manipulation and out of the box optimized components for high performance. It also introduces a new way of creating functional component (inspired by Vue composition api), and a flux-like store.
+
+[https://github.com/kutlugsahin/re-active](https://github.com/kutlugsahin/re-active)

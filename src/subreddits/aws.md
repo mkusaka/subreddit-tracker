@@ -27,112 +27,111 @@ AWS always releases a bunch of features, sometimes everyday or atleast once a we
 10: More features in App Mesh(Circuit breaker, Rate Limiting)
 
 P.S: Not sure if some features are already available, but if something is missing, please feel free to add
-## [2][AWS CloudWatch colored logs for Spring apps](https://www.reddit.com/r/aws/comments/jd67la/aws_cloudwatch_colored_logs_for_spring_apps/)
-- url: https://chrome.google.com/webstore/detail/aws-cloudwatch-ansi-color/feoelakkoolicldilidmgbhpgabiodcd
+## [2][Is it possible to replicate an entire environment? Or copy every setting from every service?](https://www.reddit.com/r/aws/comments/je0thd/is_it_possible_to_replicate_an_entire_environment/)
+- url: https://www.reddit.com/r/aws/comments/je0thd/is_it_possible_to_replicate_an_entire_environment/
 ---
+Essentially I have an environment setup with every service I need, (VPCs / subnets / code pipeline / code build / subnets / DNS etc etc) and I want a QA environment with the exact same settings.
 
-## [3][Suggested AWS tool to browse large amounts of data](https://www.reddit.com/r/aws/comments/jdb8vo/suggested_aws_tool_to_browse_large_amounts_of_data/)
-- url: https://www.reddit.com/r/aws/comments/jdb8vo/suggested_aws_tool_to_browse_large_amounts_of_data/
+Is there a known way to do this?
+## [3][S3 replicate](https://www.reddit.com/r/aws/comments/je1a1j/s3_replicate/)
+- url: https://www.reddit.com/r/aws/comments/je1a1j/s3_replicate/
 ---
-I'm having a rather large elasticsearch cluster (1 month, 1TB of data spread on 9 nodes, thousand of shards). 
+Hi devs,
 
-The data is ingested daily and supposed to be stored for 10 more years. This will obviously cause the elasticsearch cluster to grow along with the cost.
-
-To prevent this, I'm currently implementing a snapshot policy to move old data to S3 buckets and procedures to restore them quickly when they would be needed.
-
-I'm wondering if maybe I should use some other AWS Tool like Athena or Redshift that would allow to browse the data stored on S3 before deciding to load them back into elasticsearch. Would any of them be suitable for this and - more importantly - would not cost much when not in use?
-## [4][[HELP, BUG?] Workspace deploying in public subnets (should be private)](https://www.reddit.com/r/aws/comments/jdf17i/help_bug_workspace_deploying_in_public_subnets/)
-- url: https://www.reddit.com/r/aws/comments/jdf17i/help_bug_workspace_deploying_in_public_subnets/
+I using S3 with a PHP system. Has some way to make a "backup" from the production bucket? Replicate it to new bucket with diferent type - like glacier - could be a good option?
+## [4][SNS automated statistics via email(?)](https://www.reddit.com/r/aws/comments/jdzzbt/sns_automated_statistics_via_email/)
+- url: https://www.reddit.com/r/aws/comments/jdzzbt/sns_automated_statistics_via_email/
 ---
-Hello. This is one of my first posts on reddit, long time user and lurker though.
+Hi,
 
-I've been using workspaces in my company and they're working well except for one potential bug or configuration issue. I've configured a VPC with one public subnet and 2 private subnets and I have attached a Simple AD directory to it, which uses the private subnets.
+We use an SNS Topic to send out SMS to customers on a daily basis.
 
-The private subnets have internet access via a gateway and the workspaces have internet access when they are in the private subnets, so everything seems to work as intended. This architecture is described here: [https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html#configure-vpc-nat-gateway](https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-vpc.html#configure-vpc-nat-gateway)
+I wanted to know if there is a way to get an automated statistics summary/report sent via email - to save users having to sign in and navigate to the S3 bucket where the daily usage reports are? (not much of a hardship I know)
 
-**Here's the odd part:** Whenever I launch workspaces, they seem to have a random chance of being deployed in the public subnet instead of either of the private ones. To get them to deploy in the private subnets I have to rebuild them a few times (sometimes only once but that's just luck). Once they are deployed in the private subnets they then work fully, internet access and all, as described above.
+Would also mean we don't have to create Users in IAM for those that just wanted to see stats.
 
-I've read the post here: [https://www.reddit.com/r/aws/comments/esw6fd/workspace\_provisioning\_in\_wrong\_subnet/](https://www.reddit.com/r/aws/comments/esw6fd/workspace_provisioning_in_wrong_subnet/)  
-And the cause of the issue there doesn't seem to be the same cause for the issues I have with my setup.
-
-Any advice is greatly appreciated, I have not been able to find any relevant articles or information online about my specific issue, and there doesn't seem to be anything obviously wrong with my setup/configuration.
-
-EDIT: Clarifications
-## [5][Can API Gateway let me know what time zone the request is coming from?](https://www.reddit.com/r/aws/comments/jdeifq/can_api_gateway_let_me_know_what_time_zone_the/)
-- url: https://www.reddit.com/r/aws/comments/jdeifq/can_api_gateway_let_me_know_what_time_zone_the/
+Thanks!
+## [5][Can I host a JavaScript website using S3?](https://www.reddit.com/r/aws/comments/jdj2ox/can_i_host_a_javascript_website_using_s3/)
+- url: https://www.reddit.com/r/aws/comments/jdj2ox/can_i_host_a_javascript_website_using_s3/
 ---
-I am querying our database, which stores the date time data in GMT time. I want to adjust these times based on where the client is requesting the data.
-
-Can API Gateway let me know what time zone people are in, so that I can adjust the times?
-## [6][EKS + Secrets Manager](https://www.reddit.com/r/aws/comments/jczx1q/eks_secrets_manager/)
-- url: https://www.reddit.com/r/aws/comments/jczx1q/eks_secrets_manager/
+Hi I am completely new to AWS and found [this](https://cloudirregular.substack.com/p/the-cloud-resume-challenge) resume challenge that I want to try. I also have very limited knowledge of web dev so this might be a dumb question. I read that S3 can only host "Static" web pages. Does that mean JavaScript and/or React is out of the question? I want to make my resume page have some minor CSS animations if possible.
+## [6][Cognito: resend MFA code (Java)](https://www.reddit.com/r/aws/comments/jdxkyz/cognito_resend_mfa_code_java/)
+- url: https://www.reddit.com/r/aws/comments/jdxkyz/cognito_resend_mfa_code_java/
 ---
-Running Kubernetes on AWS is quite a bit easier than it used to be, but even now with EKS you can still feel the clash of approaches/technologies. There's the K8s way to do things and the AWS way to do things and the mish mash world of EKS.
+This was asked for JavaScript library, but no solution was provided. 
 
-Anyway, I would like to come up with a sane way to synchronize secrets and even configmaps in a way that feels native to AWS and is also simple. The best solution I've seen thus far is this https://github.com/godaddy/kubernetes-external-secrets
+Scenario:
 
-What I'd really like is a tool that can tell me what I have in Secrets Manager and/or Parameter Store and diffs that against what I have (insensitive and maybe templated secrets) in source control and in my clusters.
+1. user signs in with MFA enabled
+2. SMS is sent and user needs to confirm challenge
+3. for whatever reason user didn’t receive SMS
 
-I have a shitty combination of shell scripts to do this now but I'm close to writing my own tool. Just curious to hear what people are doing on this front.
-## [7][Cost of NVMe SSD Instance Storage?](https://www.reddit.com/r/aws/comments/jdb4cv/cost_of_nvme_ssd_instance_storage/)
-- url: https://www.reddit.com/r/aws/comments/jdb4cv/cost_of_nvme_ssd_instance_storage/
+Is there any possibility to resend SMS without log in again?
+## [7][Where do I even begin?](https://www.reddit.com/r/aws/comments/jdzdvo/where_do_i_even_begin/)
+- url: https://www.reddit.com/r/aws/comments/jdzdvo/where_do_i_even_begin/
 ---
-Hi, was checking pricing of some of the ec2 instance, and I was wondering if there is a different cost for the NVMe SSD instance storage for nitro instances (ala EBS)?  Or is the price already included into the hourly instance cost?
-## [8][CDK Native Applications - Are there any established patterns for highly integrated apps?](https://www.reddit.com/r/aws/comments/jczefh/cdk_native_applications_are_there_any_established/)
-- url: https://www.reddit.com/r/aws/comments/jczefh/cdk_native_applications_are_there_any_established/
+It’s become apparent that all of a sudden the business I work for is moving at breakneck speed up into the cloud. Everything that used to sit on bare-metal in a giant CAR (Central Apparatus Room) is going up into AWS. We have S3 buckets, EC2 instances, an RDS database supporting it and all manor of other things, and full disclosure... I am entirely lost on what it is, what it all means, how to work within it and therefore how to work, period.
+
+I am terrified that if I don’t get a mastery of the basics soon, this will entirely pass me by and before I know it I will no longer be able to do my job and subsequently won’t be able to call myself an Engineer in the new world we have been forced to create.
+
+Where do I start with this stuff? How do I work my way through it from the very basics?
+
+TLDR; I’m old and new things scare me. Help.
+## [8][Intermittently unable to reach web server over VPN tunnel](https://www.reddit.com/r/aws/comments/jdvz8h/intermittently_unable_to_reach_web_server_over/)
+- url: https://www.reddit.com/r/aws/comments/jdvz8h/intermittently_unable_to_reach_web_server_over/
 ---
-TLDR; I argue that there should be an option to support writing and transpiling TypeScript based Lambda functions out of the box with the CDK.
+Hi, I have some machines running an application/website in ec2, which accesses a filestore located on premise. In order to access this filestore I have created a VPN tunnel.
 
-People keep mentioning how the lines between Application and IaC are getting blurred (Darko Mesaros touches on this in [this video](https://youtu.be/fWtuwGSoSOU?t=225). However, besides a very small number of posts on Medium, this idea doesn't appear to be fully embraced. Every video, repo, or article I've come across shows some interesting IaC solution using the CDK, but with the actual application logic being a completely decoupled, trivial, hello-world.js. I cannot find any example of a TypeScript based Lambda being integrated in the CDK docs / example repos and for me this would really be the icing on the cake for the CDK.
+Occasionally - for seemingly no reason, I am unable to hit my website from on premise. At the same time I will be able to hit it from off-premise, and every other network function still works on premise.
 
-This goes beyond simply wanting to write handlers in TypeScript. For most non-trivial Serverless applications, some of the most important services that Lambda integrates with are SQS and SES. Defining a Lambda handler that consumes from an SQS queue is, obviously, very well supported in the CDK. However, having the same handler dispatch messages to other queues, or to SES, or write to a DB, has no type-safe integration with the constructs defined in the CDK. So to write a Serverless application in the CDK, you either have to define some configuration in JSON / JavaScript and share that between the application logic and the IaC logic, or define your configuration twice.
+Is there some basic traffic I have forgotten to tunnel?
 
-I have written about 5-6 Serverless stacks with the CDK which are 100% TypeScript based and it's been great. Type-safe interfaces / configurations that are shared between CDK constructs and App handlers have made complex stacks a piece of cake with little scope for misconfiguration or bugs. All that's required is a fairly straightforward Webpack configuration. I'm happy to share a template repo if people are interested.
-
-I want to know if this is some sort of crazy anti-pattern, or the next logical step in Serverless applications. Are other people building the same stack over and over, or is it just me? If this is in fact a popular model then why isn't it in official docs or templates, and what's the scope for having an official convention / template added somewhere?
-## [9][Managing my domain through AWS?](https://www.reddit.com/r/aws/comments/jd8xnf/managing_my_domain_through_aws/)
-- url: https://www.reddit.com/r/aws/comments/jd8xnf/managing_my_domain_through_aws/
----
-Hi
-
-I just found out how awesome Elastic Beanstalk is, I was looking for the best way to deploy a Django project and came across EBT, read the documentation and found out that it is super duper easy to get up and going!
-
-I have a domain registered through namecheap that I want to manage through AWS as well, is it possible? By manage I mean adding / removing records, alleviating the option to ever log in into namecheap's control panel.
-## [10][[Noob Question] Network Routing through the internet](https://www.reddit.com/r/aws/comments/jctgv4/noob_question_network_routing_through_the_internet/)
-- url: https://www.reddit.com/r/aws/comments/jctgv4/noob_question_network_routing_through_the_internet/
----
-Hi, Noob here, just have a question how the network is routed through the internet when the client hits the url.
-
-I want to know how the traffic is routed using with/without WAF, Route 53(hostedzone) and cloudfront
-
-This is my understanding so far
-
-with cloudfront, route 53, Waf
-
-CLient(http request) ----&gt; Domain registrar DNS servers ----&gt; Route53 DNS ----&gt; cloudfront ----&gt; WAF ----&gt; EC2 live server
-
-THIS MIGHT VERY WELL BE A BLUNDER. I want to know the correct traffic travel path. Thank You. Experts please help!!
-## [11][Extending Budget with Chatbot to Slack (CDK + CF)](https://www.reddit.com/r/aws/comments/jctbz4/extending_budget_with_chatbot_to_slack_cdk_cf/)
-- url: https://www.reddit.com/r/aws/comments/jctbz4/extending_budget_with_chatbot_to_slack_cdk_cf/
----
 &amp;#x200B;
 
-https://preview.redd.it/cauqo9w81nt51.jpg?width=6000&amp;format=pjpg&amp;auto=webp&amp;s=2dfb83a73c96dfaa8b750aaf15f5edcebe58e2bd
+Thanks
+## [9][Why would a connection from an EC2 instance to Aurora serverless in the same VPC / subnet group be in a totally different CIDR?](https://www.reddit.com/r/aws/comments/jdu75w/why_would_a_connection_from_an_ec2_instance_to/)
+- url: https://www.reddit.com/r/aws/comments/jdu75w/why_would_a_connection_from_an_ec2_instance_to/
+---
+My VPC subnet is CIDR 172.31.0.0/16 and Aurora Serverless DB and an EC2 instance are both assigned to the same subnet group within it. The EC2 instance has a 172.31.x.x IP address as expected.
 
-Hi All,
+However when I connect from the EC2 instance the Aurora DB sees the connection as coming from 10.1.10.181 ?!? 
 
-My previous post discussed AWS Budget ([https://www.reddit.com/r/aws/comments/jan2x2/aws\_cdk\_for\_aws\_budget\_with\_notification\_and\_cf/](https://www.reddit.com/r/aws/comments/jan2x2/aws_cdk_for_aws_budget_with_notification_and_cf/)) and this one builds on that to integrate Budget with Chatbot for notifications via Slack.
+Has anyone encountered this before? Why is this happening?
+## [10][Cloudfront + S3 static-site DNS question](https://www.reddit.com/r/aws/comments/jdp6bj/cloudfront_s3_staticsite_dns_question/)
+- url: https://www.reddit.com/r/aws/comments/jdp6bj/cloudfront_s3_staticsite_dns_question/
+---
+Hey everyone,
+I apologize that this is likely more of a failure in understanding of DNS than an issue with AWS, but I could also be wrong.
 
-I think Chatbot is a pretty cool free service from AWS that will be one to watch in the future. This basic example will get you up and running with CF deploy stack button in minutes or you use the CDK stack to see how its built and make it better.
+I have a Cloudfront served static-site with S3 origin, an AWS generated SSL certificate, and use a NameCheap domain.
 
-There github repo for this is open source and available here:
+Issue:
 
-[https://github.com/talkncloud/aws/tree/main/essential-billing-bot](https://github.com/talkncloud/aws/tree/main/essential-billing-bot)
+With my current configuration:
+*domain*.com and www.*domain*.com are directed to https://www.*domain*.com where my content is rendered. 
+https://*domain*.com, however returns a 'This site cannot provide a secure connection' error.
 
-Question for everyone: Does anybody know how to script or automate the configuration between Chatbot and Slack? At the moment this is manual step in the console. I'd be interested to hear if this was something you can include in the stack? I've seen a couple of other services like this in AWS.
 
-Suggestions &amp; feedback welcome, let me know how you're using Chatbot!
+My DNS configuration:
 
-Thanks,
+CNAME Record, @, *mycloudfronturl*
 
-Mick
+CNAME Record, www, *mycloudfronturl*
+
+CNAME Record,*www ssl record name*, *www ssl record value*
+
+CNAME Record,*non-www ssl record name*, *non-www ssl record name*
+
+
+
+According to AWS Certificate Manager, both the *domain*.com and www.*domain*.com domains have been validated, and is in use by Cloudfront.
+
+Please let me know if there is anything else I can supply that might help.
+## [11][Is possibile that AWS SES notify of MX DNS errors.](https://www.reddit.com/r/aws/comments/jdoc3d/is_possibile_that_aws_ses_notify_of_mx_dns_errors/)
+- url: https://www.reddit.com/r/aws/comments/jdoc3d/is_possibile_that_aws_ses_notify_of_mx_dns_errors/
+---
+I was testing SES events by sending some bad emails.
+
+When sending an email to nonexistent domain SES does not notify about it.
+
+Does this type of failure counts to email quota?

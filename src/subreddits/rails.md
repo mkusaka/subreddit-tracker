@@ -7,11 +7,80 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][Ruby 3 introduces a new method 'name' on Symbol class](https://www.reddit.com/r/rails/comments/jcwa3o/ruby_3_introduces_a_new_method_name_on_symbol/)
-- url: https://www.reddit.com/r/rails/comments/jcwa3o/ruby_3_introduces_a_new_method_name_on_symbol/
+## [2][Adding users &amp; authorisation to a Rails app | Live-streaming Ruby on Rails](https://www.reddit.com/r/rails/comments/je15gu/adding_users_authorisation_to_a_rails_app/)
+- url: https://www.reddit.com/r/rails/comments/je15gu/adding_users_authorisation_to_a_rails_app/
 ---
-One of the important aspects of Ruby 3.0 is optimization. The part of that optimization is the introduction of the 'name' method for Symbol. [Ruby 3 Symbol Name](https://blog.bigbinary.com/2020/10/12/ruby-3-adds-symbol-name.html)
-## [3][Best/secure way of having users (ROUTING)](https://www.reddit.com/r/rails/comments/jde1np/bestsecure_way_of_having_users_routing/)
+I've done a couple more live-streams on the Sundae Club channel, where each week we live-stream building an app and look at features from a learner's perspective. In the last couple of weeks we've looked at:
+
+[https://www.youtube.com/watch?v=b-J1TuimRtk](https://www.youtube.com/watch?v=b-J1TuimRtk) - Adding users to a Rails app
+
+[https://www.youtube.com/watch?v=77Z_u2QDTZA](https://www.youtube.com/watch?v=77Z_u2QDTZA) - Adding user permissions to a Rails app
+
+Both videos follow roughly the same format where we look at some of the options that are available and then implement one of them on the app and try to see it in action. Chapters are listed on each videos to help you navigate and save you having to watch the whole stream.
+
+New streams are each Sunday at 10.30am (UK time) and available any time on YouTube.
+## [3][I’ve recorded a walk-through video of Action Cable’s JavaScript side](https://www.reddit.com/r/rails/comments/je185l/ive_recorded_a_walkthrough_video_of_action_cables/)
+- url: https://www.reddit.com/r/rails/comments/je185l/ive_recorded_a_walkthrough_video_of_action_cables/
+---
+I’ve recorded a walk-through video of Action Cable’s JavaScript side behind-the-scenes ––&gt;
+
+[https://twitter.com/liroyleshed/status/1318173979983728643](https://twitter.com/liroyleshed/status/1318173979983728643)
+
+(Couldn't upload the full video to Twitter, but working on a fix :)
+
+Thank you for watching.
+## [4][What is the best course for Ruby &amp; Ruby on Rails?](https://www.reddit.com/r/rails/comments/jdq7pu/what_is_the_best_course_for_ruby_ruby_on_rails/)
+- url: https://www.reddit.com/r/rails/comments/jdq7pu/what_is_the_best_course_for_ruby_ruby_on_rails/
+---
+Hello everyone,
+
+although I am already working a bit with Ruby on Rails, I want to focus myself more and more and deepen my knowledge with a deep, thorough course about Ruby, RoR (6), Stimulus JS etc.
+
+What is the best course for that, in your opinion? Could be one entire course or something like a Website with multiple modules (I already know GoRails, but there is no real structure for me and also, Chris is too fast for me sometimes :D (I love his courses tho!)).
+
+I learn the best when creating a project during the course, but it could be anything. Thanks a lot in advance!
+## [5][Same filter with same callback but for different conditions for different transactions](https://www.reddit.com/r/rails/comments/jdukz2/same_filter_with_same_callback_but_for_different/)
+- url: https://www.reddit.com/r/rails/comments/jdukz2/same_filter_with_same_callback_but_for_different/
+---
+Suppose I have two callbacks, with the same callback methods but to be called for different transactions for different conditions like below.  
+
+
+     after_rollback :model_method, on: :create, if: -&gt; { self.name == "create" }
+     after_rollback :model_method, on: :update, if: -&gt; { self.name == "update" }
+
+I can see that this is being overridden.   
+
+
+    User._rollback_callbacks.count // 1
+
+How can I achieve something similar without it being overridden?
+
+I was thinking something like this
+
+    def should_do_model_method?
+     if transaction_include_any_action([:update])
+        self.name == "update"
+     elsif transaction_include_any_action([:create])
+        self.name == "create"
+     end
+    end
+
+Is this the way to achieve this or is there any other way?
+## [6][Devise .. Deleting the Account.](https://www.reddit.com/r/rails/comments/jdi7qa/devise_deleting_the_account/)
+- url: https://www.reddit.com/r/rails/comments/jdi7qa/devise_deleting_the_account/
+---
+I added this in my views/settings/\_form.html.erb
+
+    &lt;%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?"}, method: :delete %&gt;
+
+If the user has no comment/votes/following/etc, it works perfectly and delete the account.
+
+But if he posted just one comment, I have this error
+
+    PG::ForeignKeyViolation: ERROR: update or delete on table "users" violates foreign key constraint "fk rails 40412334d9" on table "comments" DETAIL: Key (id)=(3872) is still referenced from table "comments". : DELETE FROM "users" WHERE "users"."id" = $1
+
+How to delete every comment of the user and then to delete the account?
+## [7][Best/secure way of having users (ROUTING)](https://www.reddit.com/r/rails/comments/jde1np/bestsecure_way_of_having_users_routing/)
 - url: https://www.reddit.com/r/rails/comments/jde1np/bestsecure_way_of_having_users_routing/
 ---
 Hi guys,
@@ -30,11 +99,15 @@ These I think are the two options and I prefer the second (it gives less info an
 2. /plans
 
 I'd love some advice or someone to suggest some good content to read on this! Thanks
-## [4][Generating (pfd, excel and docx) files on client side](https://www.reddit.com/r/rails/comments/jczhdk/generating_pfd_excel_and_docx_files_on_client_side/)
+## [8][Ruby 3 introduces a new method 'name' on Symbol class](https://www.reddit.com/r/rails/comments/jcwa3o/ruby_3_introduces_a_new_method_name_on_symbol/)
+- url: https://www.reddit.com/r/rails/comments/jcwa3o/ruby_3_introduces_a_new_method_name_on_symbol/
+---
+One of the important aspects of Ruby 3.0 is optimization. The part of that optimization is the introduction of the 'name' method for Symbol. [Ruby 3 Symbol Name](https://blog.bigbinary.com/2020/10/12/ruby-3-adds-symbol-name.html)
+## [9][Generating (pfd, excel and docx) files on client side](https://www.reddit.com/r/rails/comments/jczhdk/generating_pfd_excel_and_docx_files_on_client_side/)
 - url: https://www.reddit.com/r/rails/comments/jczhdk/generating_pfd_excel_and_docx_files_on_client_side/
 ---
 Hi guys! I was wondering if do you guys use JS libraries to generate PDFs, Excel and Docs file on the client computer? If so, what are the options? I was thinking in something simple: after the client receives the data, the JS library would generate the file.
-## [5][The character "-" in a xml builder](https://www.reddit.com/r/rails/comments/jcxl0l/the_character_in_a_xml_builder/)
+## [10][The character "-" in a xml builder](https://www.reddit.com/r/rails/comments/jcxl0l/the_character_in_a_xml_builder/)
 - url: https://www.reddit.com/r/rails/comments/jcxl0l/the_character_in_a_xml_builder/
 ---
 Hi guys,
@@ -58,7 +131,7 @@ This is the code in my view/feed/yandex.rss.builder
 BUT I have a bug only on the line `xml.turbo:adNetwork`.
 
 It seems that I can not add "`-`" character. I have a syntax report. How to solve?
-## [6][How to merge redirect_to session.delete(:return_to) with (locale: @language.locale)](https://www.reddit.com/r/rails/comments/jcxv4n/how_to_merge_redirect_to_sessiondeletereturn_to/)
+## [11][How to merge redirect_to session.delete(:return_to) with (locale: @language.locale)](https://www.reddit.com/r/rails/comments/jcxv4n/how_to_merge_redirect_to_sessiondeletereturn_to/)
 - url: https://www.reddit.com/r/rails/comments/jcxv4n/how_to_merge_redirect_to_sessiondeletereturn_to/
 ---
 I use this system to switch the language on my website (warning about  `def update` and `redirect_to` )
@@ -111,78 +184,3 @@ I tried with
       end
 
 but it doesn't work (  I can not add two elements there)
-## [7][Gem/Ideas for seeing outliers in a dataset.](https://www.reddit.com/r/rails/comments/jcpo2k/gemideas_for_seeing_outliers_in_a_dataset/)
-- url: https://www.reddit.com/r/rails/comments/jcpo2k/gemideas_for_seeing_outliers_in_a_dataset/
----
-I know that it is simple to just "sort by value" and notice the upper end of a dataset. However, my use case is rather complicated and doesn't necessarily have to do with an integer "value" per se. For example, say I have a set of students from several locations across the U.S. and a list of grades they received in a class and I'm trying to see what were the outlying cases in the class like so:
-
-&amp;#x200B;
-
-|Name|Class|Location|Grade(s)|
-|:-|:-|:-|:-|
-|John Wick|Genocide 101|Russia|\[100,82,0,78,80,85,10\]|
-
-I would want to average out the numbers, which would yield me something along the lines of 62.14%. However, this is in no way representative of the individual's real performance. So I would want to point out the outliers - in this specific case being the values of 100 and 0 - in order to get a more accurate representation of values. 
-
-I would also like to use this logic in a column comparison, though not to compare the students, to see that "Oh, these two went to Russia and studied genocide? The average of that location is xyz and these performed phenomenal and these performed terribly. They're outliers."
-
-That in mind, I do need to implement some form of standard deviation for the values, which I could do just fine.
-
-&amp;#x200B;
-
-Anyways, I know the maths I need and have that all mapped out, I'm just wondering if there's some sort of ML/AI or dataset analysis gem that I could use to assist in this - if one exists.
-
-Keyword: **Defining Outliers.** 
-
-TL;DR
-
-Need some help popping (though from hash/model form) some outliers from a dataset a la leetcode but in actual production with more complex values.
-## [8][Implementing HATEOAS in Rails API](https://www.reddit.com/r/rails/comments/jct7rc/implementing_hateoas_in_rails_api/)
-- url: https://www.reddit.com/r/rails/comments/jct7rc/implementing_hateoas_in_rails_api/
----
-I'm trying to learn Rails a bit more, and I'm not sure how to do this 'properly'.
-From what I've seen, the routing url helpers should be able to do this, but I'm not sure if I'm misusing them or they simply can't work like this. For the record, I'm using `active_model_serializer`, and struggling with the following issues:
-
-1) Getting the self reference URL. I could easily hardcode the link to the resource, then interpolate the `:id`. Easy, but not maintainable. I tried using a url_helper, but `todo_url(object_id)` ends up producing `"self": "http://localhost:3000/todos.17740"`
-
-2) Getting URLs of resources not related to the object being serialized. For example, let's say in the case the client didn't send an auth token, return a link to the login/register endpoints.
-## [9][Avo - Configuration-based, no-maintenance, extendable Ruby on Rails admin](https://www.reddit.com/r/rails/comments/jc85sc/avo_configurationbased_nomaintenance_extendable/)
-- url: https://www.reddit.com/r/rails/comments/jc85sc/avo_configurationbased_nomaintenance_extendable/
----
-Hi guys,
-
-Today I'd like to show you [Avo](https://avohq.io), a beautiful next-generation framework that empowers you, the developer, to create fantastic admin panels for your Ruby on Rails apps with the flexibility to fit your needs as you grow.
-
-Out of the box, it has an excellent CRUD interface, ordering, filters, and actions. It even knows how to handle your Active Record model relations.
-
-It's super easy to configure. There's one configuration file per model and one configuration line of code per field. You can add simple fields like text, textarea, dropdowns, and more complex ones like datetime, badges, loaders, currency, and others. There's even a cool one-liner single or multi-file Active Storage integration 🤯.
-
-**Avo's mission is to make the job of developers easier and help them and companies move faster.**
-
-Try it in your app and let me know what you think.
-
-Thank you,  
-Adrian
-
-[avohq.io](https://avohq.io)
-
-[Twitter Account](https://twitter.com/avo_hq)
-
-[Github repo](https://github.com/avo-hq/avo)
-
-[Discord community server](https://discord.gg/pkTF6y8)
-## [10][Strategies for deploying Rails engines containing webpacker-compiled assets](https://www.reddit.com/r/rails/comments/jchwst/strategies_for_deploying_rails_engines_containing/)
-- url: https://www.reddit.com/r/rails/comments/jchwst/strategies_for_deploying_rails_engines_containing/
----
-Hello all,
-
-I'm working on a Rails engine that contains assets that are compiled using webpacker. I'm wondering what the correct strategy is for packaging and deploying this gem. I've read the instructions [here](https://github.com/rails/webpacker/blob/master/docs/engines.md), but I find Step 7 a bit confusing.  I tried the instructions under "Use a separate middleware", but that didn't work. So my questions are:
-
-1. Should I be pre-compiling the assets in my gem and including the compiled assets (in the gem's public/packs) with the published gem and load those assets from there in the app? OR
-2. Should I *not* include the engine's assets, but run rake my-engine:webpacker:compile in the app?
-
-Anyone have any experience with this?
-## [11][What is the right gem to ban users? Devise, Pundit or Rolify?](https://www.reddit.com/r/rails/comments/jcdqwj/what_is_the_right_gem_to_ban_users_devise_pundit/)
-- url: https://www.reddit.com/r/rails/comments/jcdqwj/what_is_the_right_gem_to_ban_users_devise_pundit/
----
-What is your experience?

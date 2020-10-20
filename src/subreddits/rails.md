@@ -7,7 +7,92 @@ Please use this thread to discuss **cool** but relatively **unknown** gems you'v
 You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
 
 Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][Adding users &amp; authorisation to a Rails app | Live-streaming Ruby on Rails](https://www.reddit.com/r/rails/comments/je15gu/adding_users_authorisation_to_a_rails_app/)
+## [2][Where do people host their Rails 6 apps in 2020?](https://www.reddit.com/r/rails/comments/jeo0xy/where_do_people_host_their_rails_6_apps_in_2020/)
+- url: https://www.reddit.com/r/rails/comments/jeo0xy/where_do_people_host_their_rails_6_apps_in_2020/
+---
+I’m a returning Rails developer from the 4.2 days. Been out a couple years. 
+
+I used to use AWS Elastic Beanstalk, because we had other AWS resources that our app used.
+
+But here I am in October 2020, trying to get even the Rails 6 “yay you’re on Rails” default app running on Beanstalk, and it’s an endless slog of deploy, fail, check the logs, google the error, try a fix, repeat.
+
+Is Beanstalk the wrong solution now? How do people host Rails apps on AWS? I’ve never used containers - is that the approach I should take?
+## [3][Setting up a dev environment database to work on app locally?](https://www.reddit.com/r/rails/comments/jekdzx/setting_up_a_dev_environment_database_to_work_on/)
+- url: https://www.reddit.com/r/rails/comments/jekdzx/setting_up_a_dev_environment_database_to_work_on/
+---
+Say you join a project and you need to set up your local dev environment. You install Rails, bundle install etc., but how exactly does the database portion work?
+
+What I mean is, there's a production database that's pretty large with a couple dozen tables. When I work on the app locally, it won't run without connecting to a database for logins etc. Should I clone the whole production database and reproduce it locally, or what is the best practice here?
+## [4][data model for charting stock-prices/changes?](https://www.reddit.com/r/rails/comments/jedezf/data_model_for_charting_stockpriceschanges/)
+- url: https://www.reddit.com/r/rails/comments/jedezf/data_model_for_charting_stockpriceschanges/
+---
+Stocks are often charted out with prices and their given date of change. 
+
+IF you have a single stock and wanted to show the price changing over time, how would you model that in your database? 
+
+Sounds like TONS of data...
+## [5][Count No of Words From an Html String Blog](https://www.reddit.com/r/rails/comments/jendjr/count_no_of_words_from_an_html_string_blog/)
+- url: https://www.reddit.com/r/rails/comments/jendjr/count_no_of_words_from_an_html_string_blog/
+---
+Hi, guys hope you are fine,
+
+  
+I'm implementing an API in which I receive a Blog from the Front end in an HTML String with base 64 converted image and save this as a text in my API.
+
+But now I want to count the No of Words of a Blog but not the base 64 converted image words as it is a huge string.   
+
+
+Any kind of help will be appreciated?
+## [6][Question: What are you guys using for centralized logging that is not papertrail app](https://www.reddit.com/r/rails/comments/jehhqd/question_what_are_you_guys_using_for_centralized/)
+- url: https://www.reddit.com/r/rails/comments/jehhqd/question_what_are_you_guys_using_for_centralized/
+---
+Looking for an open sources solution to collect logs (centralize logging). Please suggest if you are using something in production. What has worked out well for you. 
+
+\- graylog  
+\- logstash  
+\- fluend  
+\- something else (hopefully)
+## [7][[Help] Seeding database adds duplicate files to aws s3 bucket](https://www.reddit.com/r/rails/comments/jehzr0/help_seeding_database_adds_duplicate_files_to_aws/)
+- url: https://www.reddit.com/r/rails/comments/jehzr0/help_seeding_database_adds_duplicate_files_to_aws/
+---
+So I was attempting to troubleshoot an issue with aws when I noticed that every time I run rails db:setup, it sends in duplicate files, but with random string names. The issue I initially had was fixed but now I have extra files in the bucket. This is a few examples of the names: 
+
+1gk9BGENPhY9N8b1DXBbjZ7j 
+
+UcvvBR9N3WDxPCx4yXT5uXhk
+
+g2mx2c5XpgV3dMWUFj1Gof2R
+
+
+windows 10 wsl2 running Ubuntu 18-04
+Some of my settings are:
+
+* ruby 2.5.1p57
+* Rails 5.2.4.4
+* npm 6.4.1
+* Files were loaded directly to the bucket from aws upload, rather than pushing them up through the rails app
+* the duplicate files are not default-ly public
+
+The seeds file has the setup something like this:
+
+    movie1 = Movie.create({title: "Splash page", description: "some description", rating: "pg-13", director: "Me", video_url: ""})
+
+    clip1 = open('https://pulled_straight_from_the_Object_url.amazonaws.com/test-video.webm')
+    cover_pic1 = open('https://pulled_straight_from_the_Object_url.amazonaws.com/test-cover_picture.jpg')
+
+    movie1.movie_clip.attach(io: clip1, filename: 'test-video.webm ')
+    movie1.cover_art.attach(io: cover_pic1, filename: 'test-cover_picture.jpg')
+
+I tried googling for something similar but couldn't find anything. It isn't a problem, since I can delete the files. I just want to know why it's happening.
+## [8][Tool for tracking clicks on buttons in Ruby on Rails Apps](https://www.reddit.com/r/rails/comments/jeh5qv/tool_for_tracking_clicks_on_buttons_in_ruby_on/)
+- url: https://www.reddit.com/r/rails/comments/jeh5qv/tool_for_tracking_clicks_on_buttons_in_ruby_on/
+---
+We have an app that does various things, but it's not so clear to us which users are clicking which buttons.
+
+We'd like to use this to build a profile of user activity.
+
+Most solutions from google analytics don't seem to let us know which user(s) clicked which things. Each logged in user corresponds to a `user_id` in our DB, and what we'd need to know precisely is which user_id clicked or didn't click certain buttons, or browsed certain pages, etc.
+## [9][Adding users &amp; authorisation to a Rails app | Live-streaming Ruby on Rails](https://www.reddit.com/r/rails/comments/je15gu/adding_users_authorisation_to_a_rails_app/)
 - url: https://www.reddit.com/r/rails/comments/je15gu/adding_users_authorisation_to_a_rails_app/
 ---
 I've done a couple more live-streams on the Sundae Club channel, where each week we live-stream building an app and look at features from a learner's perspective. In the last couple of weeks we've looked at:
@@ -19,168 +104,40 @@ I've done a couple more live-streams on the Sundae Club channel, where each week
 Both videos follow roughly the same format where we look at some of the options that are available and then implement one of them on the app and try to see it in action. Chapters are listed on each videos to help you navigate and save you having to watch the whole stream.
 
 New streams are each Sunday at 10.30am (UK time) and available any time on YouTube.
-## [3][I’ve recorded a walk-through video of Action Cable’s JavaScript side](https://www.reddit.com/r/rails/comments/je185l/ive_recorded_a_walkthrough_video_of_action_cables/)
-- url: https://www.reddit.com/r/rails/comments/je185l/ive_recorded_a_walkthrough_video_of_action_cables/
+## [10][Combine Dynamic Params Into Field](https://www.reddit.com/r/rails/comments/je6xqc/combine_dynamic_params_into_field/)
+- url: https://www.reddit.com/r/rails/comments/je6xqc/combine_dynamic_params_into_field/
 ---
-I’ve recorded a walk-through video of Action Cable’s JavaScript side behind-the-scenes ––&gt;
+I have some drop down select fields that are dynamic. They are displayed on the page based on how many options are selected. How do I combine the results of them in value field on create. 
 
-[https://twitter.com/liroyleshed/status/1318173979983728643](https://twitter.com/liroyleshed/status/1318173979983728643)
+So if the model is variant\_values, and within the form I have this:
 
-(Couldn't upload the full video to Twitter, but working on a fix :)
+        &lt;% u/product_variants.each do |product_variant| %&gt;
+        &lt;div class="col"&gt;
+          &lt;div class="form-group"&gt;
+          &lt;%= form.label product_variant.name %&gt;
+          &lt;%= form.select :value, product_variant.value.split(","), { name: 'variant[product_variant_ids][]', class: 'form-control' } %&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;% end %&gt;
 
-Thank you for watching.
-## [4][What is the best course for Ruby &amp; Ruby on Rails?](https://www.reddit.com/r/rails/comments/jdq7pu/what_is_the_best_course_for_ruby_ruby_on_rails/)
-- url: https://www.reddit.com/r/rails/comments/jdq7pu/what_is_the_best_course_for_ruby_ruby_on_rails/
+How would I combine them into one value field when I create the varaint\_value? right now it only submits the last product\_varaint field to be displayed.  I am think of combining them with a comma or hyphen between the values so I can separate them later.
+## [11][Trying to generate an app with a specific version, but Rails is updating itself.](https://www.reddit.com/r/rails/comments/jeg6be/trying_to_generate_an_app_with_a_specific_version/)
+- url: https://www.reddit.com/r/rails/comments/jeg6be/trying_to_generate_an_app_with_a_specific_version/
 ---
-Hello everyone,
+I'm trying to generate an app like so:
 
-although I am already working a bit with Ruby on Rails, I want to focus myself more and more and deepen my knowledge with a deep, thorough course about Ruby, RoR (6), Stimulus JS etc.
+`rails _6.0.1_ new myapp`
 
-What is the best course for that, in your opinion? Could be one entire course or something like a Website with multiple modules (I already know GoRails, but there is no real structure for me and also, Chris is too fast for me sometimes :D (I love his courses tho!)).
+But it updates itself when generating the app:
 
-I learn the best when creating a project during the course, but it could be anything. Thanks a lot in advance!
-## [5][Same filter with same callback but for different conditions for different transactions](https://www.reddit.com/r/rails/comments/jdukz2/same_filter_with_same_callback_but_for_different/)
-- url: https://www.reddit.com/r/rails/comments/jdukz2/same_filter_with_same_callback_but_for_different/
----
-Suppose I have two callbacks, with the same callback methods but to be called for different transactions for different conditions like below.  
+`Fetching rails 6.0.3.4`    
 
+`Installing rails 6.0.3.4`
 
-     after_rollback :model_method, on: :create, if: -&gt; { self.name == "create" }
-     after_rollback :model_method, on: :update, if: -&gt; { self.name == "update" }
+And then when I do 
 
-I can see that this is being overridden.   
+`bin/rails about`
 
+It of course shows Rails 6.0.3.4
 
-    User._rollback_callbacks.count // 1
-
-How can I achieve something similar without it being overridden?
-
-I was thinking something like this
-
-    def should_do_model_method?
-     if transaction_include_any_action([:update])
-        self.name == "update"
-     elsif transaction_include_any_action([:create])
-        self.name == "create"
-     end
-    end
-
-Is this the way to achieve this or is there any other way?
-## [6][Devise .. Deleting the Account.](https://www.reddit.com/r/rails/comments/jdi7qa/devise_deleting_the_account/)
-- url: https://www.reddit.com/r/rails/comments/jdi7qa/devise_deleting_the_account/
----
-I added this in my views/settings/\_form.html.erb
-
-    &lt;%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?"}, method: :delete %&gt;
-
-If the user has no comment/votes/following/etc, it works perfectly and delete the account.
-
-But if he posted just one comment, I have this error
-
-    PG::ForeignKeyViolation: ERROR: update or delete on table "users" violates foreign key constraint "fk rails 40412334d9" on table "comments" DETAIL: Key (id)=(3872) is still referenced from table "comments". : DELETE FROM "users" WHERE "users"."id" = $1
-
-How to delete every comment of the user and then to delete the account?
-## [7][Best/secure way of having users (ROUTING)](https://www.reddit.com/r/rails/comments/jde1np/bestsecure_way_of_having_users_routing/)
-- url: https://www.reddit.com/r/rails/comments/jde1np/bestsecure_way_of_having_users_routing/
----
-Hi guys,
-
-  
-I am new to development and I have made a few ruby apps. I want to make something a bit more impressive for my CV. So I am making a finance app, this will be where a user can have many plans (these plans will have data etc.).  
-
-
-What is the best way of setting up the routing for this, I am using devise due to getting online with users nice and quick but I am unsure of where to go next.  
-
-
-These I think are the two options and I prefer the second (it gives less info and is cleaner), but I cant find a way of making the Plans specific to the user in a way that is 'secure'.  
-
-
-1. users/user\_id/plans
-2. /plans
-
-I'd love some advice or someone to suggest some good content to read on this! Thanks
-## [8][Ruby 3 introduces a new method 'name' on Symbol class](https://www.reddit.com/r/rails/comments/jcwa3o/ruby_3_introduces_a_new_method_name_on_symbol/)
-- url: https://www.reddit.com/r/rails/comments/jcwa3o/ruby_3_introduces_a_new_method_name_on_symbol/
----
-One of the important aspects of Ruby 3.0 is optimization. The part of that optimization is the introduction of the 'name' method for Symbol. [Ruby 3 Symbol Name](https://blog.bigbinary.com/2020/10/12/ruby-3-adds-symbol-name.html)
-## [9][Generating (pfd, excel and docx) files on client side](https://www.reddit.com/r/rails/comments/jczhdk/generating_pfd_excel_and_docx_files_on_client_side/)
-- url: https://www.reddit.com/r/rails/comments/jczhdk/generating_pfd_excel_and_docx_files_on_client_side/
----
-Hi guys! I was wondering if do you guys use JS libraries to generate PDFs, Excel and Docs file on the client computer? If so, what are the options? I was thinking in something simple: after the client receives the data, the JS library would generate the file.
-## [10][The character "-" in a xml builder](https://www.reddit.com/r/rails/comments/jcxl0l/the_character_in_a_xml_builder/)
-- url: https://www.reddit.com/r/rails/comments/jcxl0l/the_character_in_a_xml_builder/
----
-Hi guys,
-
-i am working on a xml file (feed rss) fro Yandex turbo pages.
-
-This is the code in my view/feed/yandex.rss.builder
-
-    xml.instruct! :xml, version: '1.0'
-    xml.rss  "xmlns:yandex": 'http://news.yandex.ru', "xmlns:media": 'http://search.yahoo.com/mrss/', "xmlns:turbo": 'http://turbo.yandex.ru', version: '2.0' do
-      xml.channel do
-        xml.title 'My Title'
-        xml.description 'My Description'
-        xml.link root_url(locale: nil)
-        xml.language 'ru'
-        xml.turbo:analytics, type: 'Yandex', id: '123456', params:"{ 'param' : 'val' }" do end
-        xml.turbo:adNetwork type: 'Yandex', id: 'R-A-123456-7', turbo-ad-id: 'first_ad_place' do end
-      end
-    end
-
-BUT I have a bug only on the line `xml.turbo:adNetwork`.
-
-It seems that I can not add "`-`" character. I have a syntax report. How to solve?
-## [11][How to merge redirect_to session.delete(:return_to) with (locale: @language.locale)](https://www.reddit.com/r/rails/comments/jcxv4n/how_to_merge_redirect_to_sessiondeletereturn_to/)
-- url: https://www.reddit.com/r/rails/comments/jcxv4n/how_to_merge_redirect_to_sessiondeletereturn_to/
----
-I use this system to switch the language on my website (warning about  `def update` and `redirect_to` )
-
-    class LanguagesController &lt; ApplicationController
-      def edit
-        @language = Language.find_by(locale: I18n.locale)
-        session[:return_to] ||= request.referer
-        render layout: false
-      end
-    
-      def update
-        @language = Language.find(update_params[:id])
-        if user_signed_in?
-          setting = current_user.setting || current_user.build_setting
-          setting.language = @language.id
-          setting.save
-          redirect_to session.delete(:return_to)
-        else
-          redirect_to root_path(locale: @language.locale)
-        end
-      end
-    
-      private
-    
-      def update_params
-        params.require(:language).permit(:id)
-      end
-    end
-    
-
-As you can see in  `def update`, there is an if condition to check if the user is logged or not.
-
-But as you can see there are two different `redirect_to` . If the user is logged, he is redirected into the previous page. If not, in homepage ()
-
-I used this solution because I am not able to redirect the not-logged-user in the previous page with `(locale: @language.locale)`
-
-**How to do?**
-
-I tried with 
-
-      def update
-        @language = Language.find(update_params[:id])
-        if user_signed_in?
-          setting = current_user.setting || current_user.build_setting
-          setting.language = @language.id
-          setting.save
-        end
-        redirect_to session.delete(:return_to, locale: @language.locale)
-      end
-
-but it doesn't work (  I can not add two elements there)
+Why is this happening and how can I prevent it?

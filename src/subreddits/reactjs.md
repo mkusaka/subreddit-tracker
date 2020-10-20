@@ -70,133 +70,122 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Testing Redux: to Mock store or not?](https://www.reddit.com/r/reactjs/comments/jdzh7c/testing_redux_to_mock_store_or_not/)
-- url: https://www.reddit.com/r/reactjs/comments/jdzh7c/testing_redux_to_mock_store_or_not/
+## [3][Anyone else refuse to do technical assessments or take-home tests when interviewing?](https://www.reddit.com/r/reactjs/comments/jedwv4/anyone_else_refuse_to_do_technical_assessments_or/)
+- url: https://www.reddit.com/r/reactjs/comments/jedwv4/anyone_else_refuse_to_do_technical_assessments_or/
 ---
-A lot of times our React components will either render something or not, based on the Redux state.
+I'm not actively looking for a job, but I've passively thrown out resumes recently just for interviewing practice and had a bite today. They said they 'loved my experience', and then proceed to tell me that I have to complete a 2 hour technical assessment - wait for it...
 
-In testing I've found two approaches to this:
+... *Before* I have an interview with a human.
 
-1. mock the store (and pass it some default values)
-2. Use the 'real' store (and then changing the state by dispatching actions trough *store.dispatch(action(payload))* )
+WTF?
 
-Approach 1 seems to be more of a unit test whereas 2 could be considered more of an integration test.
+* I have a portfolio packed with 12 real-world projects spanning over 8 years of professional experience. Reference that.
+* I have a github with even more projects, most with production code. Again - reference that.
+* I have eight years of experience. Not trying to be cocky or anything, but come on.
+* I don't have the time. I have a full time job and a family.
 
-However, the lines between unit and integration tests are sometimes somewhat blurry. Regardless the type of the test: I just want to check whether the right thing(s) render or not.
+Anyway I've never encountered this before, so this was my response: 
 
-&amp;#x200B;
+"Hi guy,
 
-I'm wondering what the best approach would be here with respect to good testing practices.
-## [4][Material-UI Builder - React editor for busy developers](https://www.reddit.com/r/reactjs/comments/jdzdug/materialui_builder_react_editor_for_busy/)
+Thanks very much for getting back to me.
+
+I'm very busy with my work schedule as well as raising a toddler to find time for a technical test. You can find professional code in my github on my resume.
+
+A phone interview would help solidify my abilities.
+
+Thanks!
+Me"
+
+Who knows what'll happen but I can't believe this is the norm, if it is. Any job, including my most recent where I got it last year, did not have a test. They all followed one formula:
+
+- In person. Non technical and technical talk, shooting the shit. See if I'm a fit.
+- Offer
+
+That was it. For every job I've ever had in the past eight years.
+
+Does anyone else agree to these tests? I've also heard of so many devs take these test, and get ghosted. Screw that.
+## [4][ES6 Promises are not cancellable - what to do?](https://www.reddit.com/r/reactjs/comments/jeoy4q/es6_promises_are_not_cancellable_what_to_do/)
+- url: https://www.reddit.com/r/reactjs/comments/jeoy4q/es6_promises_are_not_cancellable_what_to_do/
+---
+I've been using native ES6 Promises on a project, until I saw an error in the console; turns out the component is unmounting while the promise is still pending. The suggested React warning is : "To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method."
+
+Ok, but then I find out ES6 Promises are not cancellable.  what the ?
+
+What do you React gurus do? (Ideas please, too lazy to Google for hours on end)
+
+**NB**: question is not related to ajax or server-side fetching.
+## [5][Tutorial: What Are Higher-Order Components in React? (w/ Examples + CodeSandboxes)](https://www.reddit.com/r/reactjs/comments/jedi88/tutorial_what_are_higherorder_components_in_react/)
+- url: https://www.aleksandrhovhannisyan.com/blog/dev/higher-order-components/
+---
+
+## [6][Material-UI Builder - React editor for busy developers](https://www.reddit.com/r/reactjs/comments/jdzdug/materialui_builder_react_editor_for_busy/)
 - url: https://mui.dev
 ---
 
-## [5][How does the deployment of a React.js app work together with Docker?](https://www.reddit.com/r/reactjs/comments/jdi3e1/how_does_the_deployment_of_a_reactjs_app_work/)
-- url: https://www.reddit.com/r/reactjs/comments/jdi3e1/how_does_the_deployment_of_a_reactjs_app_work/
+## [7]["React Epic" by Kent Dodds worth it?](https://www.reddit.com/r/reactjs/comments/jenm9w/react_epic_by_kent_dodds_worth_it/)
+- url: https://www.reddit.com/r/reactjs/comments/jenm9w/react_epic_by_kent_dodds_worth_it/
 ---
-I am currently studying Docker and applying it to a simple React.js app. I see how dockerizing my app makes it easier to deploy on Docker but I still fail to grasp what do I do when I want to deploy the app on a server so it is actually available publicly.   
-How does docker help me with this?  Also, currently, to my understanding when I build a docker image and them somebody else runs this image, they see my app running but they don't see my code actually ( at least I am not aware of how that might work). So I would like to see if somebody can clarify this to me?   
+Has anyone bought the React Epic Course/Workshop by Kent Dodds ([https://epicreact.dev/](https://epicreact.dev/))?
 
-
-Thanks in advance. I am sorry if this is really a stupid question, I just fail to grasp the whole concept.
-## [6][When it comes to styling what should I do?](https://www.reddit.com/r/reactjs/comments/jdyr25/when_it_comes_to_styling_what_should_i_do/)
-- url: https://www.reddit.com/r/reactjs/comments/jdyr25/when_it_comes_to_styling_what_should_i_do/
----
-I am starting with React but as I progressed I got to know that the styling part is quite confusing. I was wondering if some React pros can provide me with some tips on what should I do. Like when should I use styled components, CSS Modules, and I love using SCSS and creating everything using that!
-## [7][Filtering an array of objects with a button](https://www.reddit.com/r/reactjs/comments/je0dv0/filtering_an_array_of_objects_with_a_button/)
-- url: https://www.reddit.com/r/reactjs/comments/je0dv0/filtering_an_array_of_objects_with_a_button/
----
-React newbie here is asking for some help. Here is the deal: I have an array of 4 objects (in my Data.js  
-  file) and, after clicking on a button, I want to display only the items  belonging to "category A" in my example below. I'm a bit confused with  the use of setState (which I assume I would need since my button will  "update" the initial state to only reflect the data I want to display  (hence item 1 and 4). Any ideas how it can be done? Cheers!
-
-**index.js**
-
-    import React, {Component} from "react";
-    import ReactDOM from "react-dom";
-    import Data from "./Data.js";
-    
-    
-    
-    class Root extends Component {
-        constructor(props) {
-            super(props);
-            this.state = {
-                items: Data,
-            }
-        }
-    
-    myFunctionA = () =&gt; {
-        //
-    }
-        
-    render() {
-            return (
-                &lt;div&gt;
-                    &lt;button onClick={this.myFunctionA}&gt;Click me to display item 1 &amp; 4&lt;/button&gt;
-                &lt;/div&gt;
-                
-            )
-        }
-    }
-    
-    ReactDOM.render(&lt;Root /&gt;, document.getElementById("root"))
-
- **Data.js** 
-
- 
-
-    const Data = [
-      {
-        "id": 1,
-        "name": "First item",
-        "category": "A"
-      },
-      {
-        "id": 2,
-        "name": "Second item",
-        "category": "B"
-      },
-      {
-        "id": 3,
-        "name": "Third item",
-        "category": "C"
-      },
-      {
-        "id": 4,
-        "name": "Fourth item",
-        "category": "A"
-      },
-    ]
-    
-    export default Data
-## [8][React Drum Machine](https://www.reddit.com/r/reactjs/comments/jdoxd5/react_drum_machine/)
-- url: https://www.reddit.com/r/reactjs/comments/jdoxd5/react_drum_machine/
----
-Fully functional drum loop machine made with React and SCSS. 
-
-https://5f8cb55600a2dfe85fdb0690--peaceful-minsky-d3b585.netlify.app/#
-
-Ignore the tempo, there's an issue with displaying the correct BPM, let me know if you have any questions!
-## [9][I was trying to build a custom calendar component in react native](https://www.reddit.com/r/reactjs/comments/je1nwd/i_was_trying_to_build_a_custom_calendar_component/)
-- url: https://stackoverflow.com/questions/64426848/adding-a-13th-month-to-calendar-in-react-native
----
-
-## [10][Types for https://material-ui.com/](https://www.reddit.com/r/reactjs/comments/je1kcr/types_for_httpsmaterialuicom/)
-- url: https://www.reddit.com/r/reactjs/comments/je1kcr/types_for_httpsmaterialuicom/
----
-Hi all 
-I use TypeScript to build my React app and would like to know, if @types for https://material-ui.com/ exists. 
+I wonder if it's worth the money and the time for a developer that is using react for 3+ years. So would really appreciate some independent valuations.
 
 Thanks
-## [11][Is it possible to force Suspense fallback to be shown?](https://www.reddit.com/r/reactjs/comments/jdwiz8/is_it_possible_to_force_suspense_fallback_to_be/)
-- url: https://www.reddit.com/r/reactjs/comments/jdwiz8/is_it_possible_to_force_suspense_fallback_to_be/
----
-For example, I want to show fallback while my data is fetching. However, when my data finishes fetching, I want fallback to be visible for a couple of seconds more.
 
-How do I do it?
-## [12][@re-active: React is redefined with reactivity](https://www.reddit.com/r/reactjs/comments/je0ioe/reactive_react_is_redefined_with_reactivity/)
-- url: https://www.reddit.com/r/reactjs/comments/je0ioe/reactive_react_is_redefined_with_reactivity/
----
-This is a library for writing React applications using reactivity system which brings clear and concise way of data manipulation and out of the box optimized components for high performance. It also introduces a new way of creating functional component (inspired by Vue composition api), and a flux-like store.
+&amp;#x200B;
 
-[https://github.com/kutlugsahin/re-active](https://github.com/kutlugsahin/re-active)
+!approve
+## [8][How to create React Notifications/Toasts with 0 dependencies (except React 🙄)](https://www.reddit.com/r/reactjs/comments/jemxia/how_to_create_react_notificationstoasts_with_0/)
+- url: https://tinloof.com/blog/how-to-create-react-notifications-with-0-dependencies/
+---
+
+## [9][5 ways to create a self-documenting React component](https://www.reddit.com/r/reactjs/comments/jelcx6/5_ways_to_create_a_selfdocumenting_react_component/)
+- url: https://blog.whereisthemouse.com/5-ways-to-create-a-self-documenting-react-component
+---
+
+## [10][Understanding when to use useMemo](https://www.reddit.com/r/reactjs/comments/jekl6r/understanding_when_to_use_usememo/)
+- url: https://maxrozen.com/understanding-when-use-usememo/
+---
+
+## [11][Material Ui Lists conditional rendering](https://www.reddit.com/r/reactjs/comments/jeot4r/material_ui_lists_conditional_rendering/)
+- url: https://www.reddit.com/r/reactjs/comments/jeot4r/material_ui_lists_conditional_rendering/
+---
+Hi guys,
+
+I’m trying to hide one ListItem (item 1) depending if a variable is 0 or 1.
+
+and It’s a long list, is there a way to conditionally render so I don’t have to type the list twice?
+so basically—
+vairable === 0 include item 1 if not hide item 1
+
+
+&lt;List&gt;
+  &lt;ListItem&gt;
+    item 1
+&lt;ListItem/&gt;
+
+&lt;ListItem&gt;
+    item 2
+&lt;ListItem&gt;
+
+&lt;ListItem&gt;
+    item 3
+&lt;ListItem&gt;
+
+&lt;ListItem&gt;
+    item 4
+&lt;ListItem&gt;
+
+so on...
+
+&lt;/List&gt;
+## [12][Online Discussion Forum (Beginner React Project)](https://www.reddit.com/r/reactjs/comments/jeo6dk/online_discussion_forum_beginner_react_project/)
+- url: https://www.reddit.com/r/reactjs/comments/jeo6dk/online_discussion_forum_beginner_react_project/
+---
+I made an Online Discussion Forum with ReactJS.
+
+Take a look if interested.
+
+[Live Demo](https://narutovps-techtalk.herokuapp.com)
+
+[Code ](https://github.com/NarutoVPS/TechTalk/blob/main/gifs/cropped-min.gif)

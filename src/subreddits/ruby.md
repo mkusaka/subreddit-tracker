@@ -1,83 +1,185 @@
 # ruby
-## [1][Better Git diff output for Ruby, Python, Elixir, Go and more](https://www.reddit.com/r/ruby/comments/je09u7/better_git_diff_output_for_ruby_python_elixir_go/)
+## [1][Explaining magic behind popular Ruby code](https://www.reddit.com/r/ruby/comments/jekiry/explaining_magic_behind_popular_ruby_code/)
+- url: https://longliveruby.com/articles/the-magic-behind-ruby-code
+---
+
+## [2][How to ship a ruby gem/library with an external custom native library as a dependency?](https://www.reddit.com/r/ruby/comments/jeou5f/how_to_ship_a_ruby_gemlibrary_with_an_external/)
+- url: https://www.reddit.com/r/ruby/comments/jeou5f/how_to_ship_a_ruby_gemlibrary_with_an_external/
+---
+I'm building a library/gem in Ruby that calls some functions from a native **custom** library written in C++. A C++ library, in a pre-compiled form, is available for Windows, Linux and MacOS, and, of course, they're 3 different files.
+
+&amp;#x200B;
+
+**Questions**:
+
+how should I go about shipping my gem with with 1 or all 3 at once C++ libraries? 
+
+Should I put them into a subdirectory of my gem? Then, how would I allow a user to download a gem with a C++ library that's been pre-compiled for his OS rather than including all 3 at once?
+
+&amp;#x200B;
+
+Or require a user to download it on its own? Then how would get a path to that library, how would a user pass it into my gem?
+## [3][[HIRING] 9 Ruby Jobs](https://www.reddit.com/r/ruby/comments/jeph48/hiring_9_ruby_jobs/)
+- url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTjk1rnmRduqHpBl-3QxgGultV2FpKh96h8wfUx4gfKm5rfa1P7vyI5l8yVs7Q55K9yXAdIf6UstPyW/pubhtml
+---
+
+## [4][Ruby code hangs when run in the terminal via "ruby script.rb", whereas in Irb it doesn't hang](https://www.reddit.com/r/ruby/comments/jenlag/ruby_code_hangs_when_run_in_the_terminal_via_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/jenlag/ruby_code_hangs_when_run_in_the_terminal_via_ruby/
+---
+A simplied version of the code I have is this:
+
+        def my_get_data1(arg1)
+          Thread.new do
+            ExternalLib.get_data_by_block("arg1") do |a, b, c|
+              # [ result of computation and some other data comes here ]
+            end
+          end
+        end
+    
+
+I behaves differently in the terminal and in Irb. When run as a ruby script in the terminal - \`ruby ./script1.rb\` it hangs. When I copy the code of \`script1.rb\` into Irb and thus run it, it doesn't hang and returns a result.
+
+&amp;#x200B;
+
+I've heard that ruby code can behave different in such a case.
+
+&amp;#x200B;
+
+What can be an issue or cause?
+## [5][What are your guys thoughts on Crystal and Elixir?](https://www.reddit.com/r/ruby/comments/je90yt/what_are_your_guys_thoughts_on_crystal_and_elixir/)
+- url: https://www.reddit.com/r/ruby/comments/je90yt/what_are_your_guys_thoughts_on_crystal_and_elixir/
+---
+Hi everyone, hoping to get some insights into what you think of the two languages that seem to be popular with Rubyists.
+
+No judgement just interested to see if anyone has experience with them and what they think about them.
+
+For me I really like Crystal but is in a very new state and not even 1.0 so is a long time away from will pick up any major steam in terms of libs (complete personal opinion however!). 
+
+Elixir on the other hand goes into the functional world which we are all told is better but I still have issues not explaining concepts in terms of objects and state not being held closely to those objects. I love [Brian Goetz's talk on OOP vs FP](https://www.youtube.com/watch?v=HSk5fdKbd3o) where he thinks we should be object orientated on the outside and functional within.
+
+What do you guys think? Anyone have experience with them?
+## [6][Better Git diff output for Ruby, Python, Elixir, Go and more](https://www.reddit.com/r/ruby/comments/je09u7/better_git_diff_output_for_ruby_python_elixir_go/)
 - url: https://tekin.co.uk/2020/10/better-git-diff-output-for-ruby-python-elixir-and-more?src=twitter
 ---
 
-## [2][Pass a struct with a string field to a native library from Ruby, with pre-initialized string field, via FFI](https://www.reddit.com/r/ruby/comments/jdwkmz/pass_a_struct_with_a_string_field_to_a_native/)
-- url: https://www.reddit.com/r/ruby/comments/jdwkmz/pass_a_struct_with_a_string_field_to_a_native/
+## [7][How to Estimate The Size of a Rails Application](https://www.reddit.com/r/ruby/comments/je718a/how_to_estimate_the_size_of_a_rails_application/)
+- url: https://www.fastruby.io/blog/rails/code-quality/how-we-estimate-rails-application-size.html
 ---
-FFI gem.
+
+## [8][tutor/mentor for ruby](https://www.reddit.com/r/ruby/comments/jedvcc/tutormentor_for_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/jedvcc/tutormentor_for_ruby/
+---
+Hi,
+
+Looking for someone who is an expert in Ruby who would like to be my tutor/mentor. Currently working a cli/api project, and reading "Practical Object-Oriented Design" by Sandi Metz. In need of someone to talk to about everything and get some help. Thanks :)
+## [9][How to create a wrapper for a function that returns a result in a callback (block or proc)?](https://www.reddit.com/r/ruby/comments/jel38y/how_to_create_a_wrapper_for_a_function_that/)
+- url: https://www.reddit.com/r/ruby/comments/jel38y/how_to_create_a_wrapper_for_a_function_that/
+---
+I have a third-party library, in which there's a function that returns \`void\` directly, but has a block that's used as a callback:
+
+        def my_get_data1(arg1)
+          Thread.new do
+            ExternalLib.get_data_by_block("arg1") do |a, b, c|
+              # [ result of computation and some other data comes here ]
+            end
+          end
+        end
 
 &amp;#x200B;
 
-I have ruby code which passes a struct to a native Rust library. A struct contains a string field. I need to be able to specify string on Ruby side.
-
-            class MyStruct &lt; FFI::Struct
-              layout :s1, :string,
-                     :field2, :uint32,
-                     # other fields
-
-I've tried this:
-
-             def initialize(ruby_str)
-               self[:s1] = ruby_str
-               # [.......]
-
-And have gotten this:
-
-        `[]=': Cannot set :string fields (ArgumentError)
-
-And this blows segmentation fault:
-
-        def initialize(ruby_str)
-          p1 = FFI::MemoryPointer.from_string(ruby_str)
-          self[:content] = p1
-          self[:len] = ruby_str.length
+And there's the same kind of function that accepts a \`proc\` instead, and they both work identically:
 
 &amp;#x200B;
 
-I've read about this issue, but I've not found a clear solution, nor example. I need to be able to pass a string field **at least from Ruby (one way, that is)**.
+        MyProc = Proc.new do |a, b, c|
+            # [ result of computation and some other data comes here ]
+        end
+    
+        def my_get_data2(arg1)
+          Thread.new do
+            ExternalLib.get_data_by_proc(arg1, MyProc)
+          end
+        end
 
 &amp;#x200B;
 
-And, additionally, also convert a string  received from a native Rust library (not NULL terminated, but with a length specified in a separate field) into a Ruby string.
+**my\_get\_data1()** and **my\_get\_data2()** serve the purpose of an interface or wrapper of \`ExternalLib.get\_data()\` for the end user, this is what I need.
 
 &amp;#x200B;
 
-How can it be done then?
-## [3][Join our Ruby based Game Jam!](https://www.reddit.com/r/ruby/comments/jdj4zv/join_our_ruby_based_game_jam/)
-- url: https://itch.io/jam/teenytiny-dragonruby-minigamejam-2020
+Q: How can I actually allow a user to get access to the result of the computation -- to what's inside of the \`block\` or \`proc\`?
+
+&amp;#x200B;
+
+I want it to be something like this:
+
+        p1 = Proc.new do |a|
+          # [ user will access result here, via a]
+        end
+    
+        my_get_data1(arg1, p1)
+    
+    
+        my_get_data2(arg1) do do |a|
+          # [ user will access result here, via a]
+        end
+
+&amp;#x200B;
+
+P.S.
+
+I've found out that that I have to use **Thread.new** because otherwise, it'll hang when I run it as "ruby my\_script1.rb", probably due to GIL. In \`irb\` it won't, though.
+## [10][OpenAPI generator in Ruby, client code](https://www.reddit.com/r/ruby/comments/jebsyw/openapi_generator_in_ruby_client_code/)
+- url: https://www.reddit.com/r/ruby/comments/jebsyw/openapi_generator_in_ruby_client_code/
 ---
+Hello Reddit crowd!
 
-## [4][Modern Ruby book recommendation?](https://www.reddit.com/r/ruby/comments/jdf374/modern_ruby_book_recommendation/)
-- url: https://www.reddit.com/r/ruby/comments/jdf374/modern_ruby_book_recommendation/
----
-Hello!
+I couldn't find explanation about this, so I try my luck here!
 
-I was using Ruby quite extensively few years ago, I believe I got good grasp of it. I had some break because every company I worked for in the meantime was \*Pythonized\*. I would like to get back to this beautiful technology - and get to know all the good stuff that happened in between. I was thinking of reading a book on Ruby, cover to cover. Which would you recommend to me? I'd like it to cover at least Ruby 2.5. 
+I'm trying the `openapi-generator` (4.3.1). It generates models from the API description file. 
 
-Caveat: I'm not interested in RoR at all, I just enjoy using Ruby as a scripting language over Python. I'm a C++ / Rust developer.
-## [5][Introducing Boring Generators](https://www.reddit.com/r/ruby/comments/jdk8n7/introducing_boring_generators/)
-- url: https://www.abhaynikam.me/posts/introducing_boring_generators/
----
+For instance, it generates this:
 
-## [6][Idiomatic Ruby through Leetcode](https://www.reddit.com/r/ruby/comments/jdhqy6/idiomatic_ruby_through_leetcode/)
-- url: https://medium.com/@michaelviveros/idiomatic-ruby-through-leetcode-5ff395a0ef15
----
+    module OpenapiClient
+      class Thing
+        attr_accessor :id
+        attr_accessor :description
+    
+        # Attribute mapping from ruby-style variable name to JSON key.
+        def self.attribute_map
+          {
+            :'id' =&gt; :'id',
+            :'description' =&gt; :'description'
+          }
+        end
+    
+        # Attribute type mapping.
+        def self.openapi_types
+          {
+            :'id' =&gt; :'Integer',
+            :'description' =&gt; :'String'
+          }
+        end
+    
+        # ...
+      end
+    end
 
-## [7][Set up ActionText and Trix Editor on Rails 6 Application](https://www.reddit.com/r/ruby/comments/jd9vuk/set_up_actiontext_and_trix_editor_on_rails_6/)
-- url: https://www.youtube.com/watch?v=SMsqFRc25gw&amp;t=9s
----
+This behaves as expected:
 
-## [8][How ERB astutely uses `binding` to preprocess .html.erb files 📁](https://www.reddit.com/r/ruby/comments/jdbqv4/how_erb_astutely_uses_binding_to_preprocess/)
-- url: https://medium.com/rubycademy/context-binding-in-ruby-fa118ea62269
----
+    # All this is expected:
+    t = OpenapiClient::Thing.new(id: 1)
+    t.valid?
+    =&gt; false
+    t.list_invalid_properties
+    =&gt; ["invalid value for \"description\", description cannot be nil."]
 
-## [9][“How I generated incomes as a web developer without working as a freelancer”](https://www.reddit.com/r/ruby/comments/jcuube/how_i_generated_incomes_as_a_web_developer/)
-- url: https://medium.com/the-developers-journey/my-3-revenue-streams-as-a-developer-without-freelance-work-c5135dfa515d
----
+But **this does not behave as expected**:
 
-## [10][football-to-sqlite tool - load / read football.txt match datafiles into a sqlite database](https://www.reddit.com/r/ruby/comments/jcuhyl/footballtosqlite_tool_load_read_footballtxt_match/)
-- url: https://github.com/sportdb/football.db/tree/master/football-to-sqlite
----
+    t = OpenapiClient::Thing.new(id: "abc", description: 3)
+    t.valid?
+    =&gt; true
 
+`id` should be int and `description` a string, so it fails to check the type. Is there anything I'm doing wrong?
+
+🙏

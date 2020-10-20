@@ -85,53 +85,49 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Microsoft adds option to disable JScript in Internet Explorer](https://www.reddit.com/r/javascript/comments/jdy6rr/microsoft_adds_option_to_disable_jscript_in/)
+## [3][I created a twitter bot that posts dogs that are up for adoption! Check out all the good dogs.](https://www.reddit.com/r/javascript/comments/jecjwp/i_created_a_twitter_bot_that_posts_dogs_that_are/)
+- url: https://github.com/dwkoss/dogbot
+---
+
+## [4][[AskJS] Why hasn't the null type bug been fixed?](https://www.reddit.com/r/javascript/comments/jenrel/askjs_why_hasnt_the_null_type_bug_been_fixed/)
+- url: https://www.reddit.com/r/javascript/comments/jenrel/askjs_why_hasnt_the_null_type_bug_been_fixed/
+---
+    typeof null === 'object'; // true 
+
+The rationale I've heard is that it's too late to fix this one becaus an update to a null type would break a lot of old programs.
+
+Ok, so why don't we allow this as a default, but then add the null type if a version check indicates ES2020 or later? I think that could be implement with a top of file statement similar to strict mode.
+
+Only answer I can think of is that everyone is used to it, so it isn't a priority.
+## [5][Microsoft adds option to disable JScript in Internet Explorer](https://www.reddit.com/r/javascript/comments/jdy6rr/microsoft_adds_option_to_disable_jscript_in/)
 - url: https://www.zdnet.com/article/microsoft-adds-option-to-disable-jscript-in-internet-explorer/
 ---
 
-## [4][Project Loo: the best time-wasting, amazing, over-engineered project of my life](https://www.reddit.com/r/javascript/comments/jdnk8u/project_loo_the_best_timewasting_amazing/)
-- url: https://dev.to/polakshahar/project-loo-the-best-time-wasting-amazing-over-engineered-project-of-my-life-37m7
+## [6][Rich Harris: Futuristic Web Development [Svelte Summit 2020]](https://www.reddit.com/r/javascript/comments/jeagp1/rich_harris_futuristic_web_development_svelte/)
+- url: https://www.youtube.com/watch?v=qSfdtmcZ4d0
 ---
 
-## [5][[AskJS] What do you think about the new Svelte features that were revealed yesterday?](https://www.reddit.com/r/javascript/comments/jdzspt/askjs_what_do_you_think_about_the_new_svelte/)
-- url: https://www.reddit.com/r/javascript/comments/jdzspt/askjs_what_do_you_think_about_the_new_svelte/
----
-Yesterday at Svelte Summit, Rich Harris announced what the future of Svelte will look like and... wow! It is exciting!
-
-We're basically going to enter 2021 with a feature complete next-gen SSR framework on top of next-gen developer workflow with heavy support from both the Svelte and Snowpack teams.
-
-To quote a fellow developer who spearheaded the HMR support for Svelte: "This thing will essentially occupies the first spot of comparisons across frameworks on every marks for quite some time, all while being the simplest to use".
-
-If you want to take a look at a sneak peek the talk is here: https://www.youtube.com/watch?v=qSfdtmcZ4d0
-
-What are your thoughts?
-## [6][AskQL Nodejs QuickStart](https://www.reddit.com/r/javascript/comments/jdx66k/askql_nodejs_quickstart/)
-- url: https://yonatankra.com/askql-nodejs-quickstart/
+## [7][Ever Been Confused by Regular Expressions? I Made a Video about Building a Regex Engine from Scratch, In Pure JS, with Zero Dependencies](https://www.reddit.com/r/javascript/comments/jeowkm/ever_been_confused_by_regular_expressions_i_made/)
+- url: https://www.youtube.com/watch?v=u01jb8YN2Lw
 ---
 
-## [7][Cookie Store API Lands Chrome 87](https://www.reddit.com/r/javascript/comments/jdefzv/cookie_store_api_lands_chrome_87/)
-- url: https://medium.com/nmc-techblog/introducing-the-async-cookie-store-api-89cbecf401f
+## [8][Vue Hooks Form: Building forms with Vue composition API.](https://www.reddit.com/r/javascript/comments/jelzii/vue_hooks_form_building_forms_with_vue/)
+- url: https://github.com/beizhedenglong/vue-hooks-form
 ---
 
-## [8][Faster Web App Delivery with PRPL](https://www.reddit.com/r/javascript/comments/jdslny/faster_web_app_delivery_with_prpl/)
-- url: https://addyosmani.com/blog/the-prpl-pattern/
+## [9][Method Chaining and JavaScript](https://www.reddit.com/r/javascript/comments/jeklle/method_chaining_and_javascript/)
+- url: https://medium.com/@laflamablanc/method-chaining-and-javascript-7d840d6e3687
 ---
 
-## [9][rollup-plugin-rollup](https://www.reddit.com/r/javascript/comments/jdr98l/rolluppluginrollup/)
-- url: https://github.com/meh/rollup-plugin-rollup
+## [10][Dissecting A Dweet #9: City Sunset - Tiny JavaScript Analysis](https://www.reddit.com/r/javascript/comments/jedwu1/dissecting_a_dweet_9_city_sunset_tiny_javascript/)
+- url: http://frankforce.com/dissecting-a-dweet-9-city-sunset/?1
 ---
 
-## [10][[AskJS] Performance difference between using for loops and manual indexing for matrix multiplication](https://www.reddit.com/r/javascript/comments/jdkbfj/askjs_performance_difference_between_using_for/)
-- url: https://www.reddit.com/r/javascript/comments/jdkbfj/askjs_performance_difference_between_using_for/
----
-Im writing a school assignment where I'm supposed to make something similar to glMatrix (a library for matrix and vector operations mostly used for computer graphic). 
-
-Im wondering is there a big performance difference between using for loops for matrix multiplication vs. hard coding the indexes for a 4x4 matrix multiplication?
-## [11][Svelte Summit is a free whole-day online event - going on today (Sunday 18th)](https://www.reddit.com/r/javascript/comments/jdguel/svelte_summit_is_a_free_wholeday_online_event/)
-- url: https://sveltesummit.com/
+## [11][What I learned about WebSockets by building a real-time chat application using Socket.IO.](https://www.reddit.com/r/javascript/comments/jejgru/what_i_learned_about_websockets_by_building_a/)
+- url: https://medium.com/@jamesbrown5292/what-i-learned-about-websockets-by-building-a-real-time-chat-application-using-socket-io-3d9e163e504
 ---
 
-## [12][[AskJS] What JavaScript network visualisation library is recommended for PROV graphs?](https://www.reddit.com/r/javascript/comments/jdmldu/askjs_what_javascript_network_visualisation/)
-- url: https://www.reddit.com/r/javascript/comments/jdmldu/askjs_what_javascript_network_visualisation/
+## [12][Build a To Do List App with Web Components](https://www.reddit.com/r/javascript/comments/jeeteq/build_a_to_do_list_app_with_web_components/)
+- url: https://dev.to/jleeson/build-a-to-do-list-app-with-jolt-57bp
 ---
-Hi, I was wondering what JavaScript network visualisation library is recommended when making a web application where a user can draw and label PROV graphs?
+

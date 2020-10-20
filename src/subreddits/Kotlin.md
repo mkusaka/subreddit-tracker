@@ -1,53 +1,93 @@
 # Kotlin
-## [1][What is Kotlin's strategy for multiplatform UI?](https://www.reddit.com/r/Kotlin/comments/jdxvoe/what_is_kotlins_strategy_for_multiplatform_ui/)
+## [1][Kotlin Illustrated Guide - Enum Classes](https://www.reddit.com/r/Kotlin/comments/jeo9up/kotlin_illustrated_guide_enum_classes/)
+- url: https://typealias.com/start/kotlin-enum-classes/
+---
+
+## [2][jOOQ 3.14 includes support for kotlin code generation, among other features](https://www.reddit.com/r/Kotlin/comments/jeortf/jooq_314_includes_support_for_kotlin_code/)
+- url: https://blog.jooq.org/2020/10/20/jooq-3-14-released-with-sql-xml-and-sql-json-support/
+---
+
+## [3][Suggestion: Kotlin for the .NET platform](https://www.reddit.com/r/Kotlin/comments/jea7s5/suggestion_kotlin_for_the_net_platform/)
+- url: https://www.reddit.com/r/Kotlin/comments/jea7s5/suggestion_kotlin_for_the_net_platform/
+---
+The .NET platform has some various advantages over the JVM.  
+Having a Kotlin port to the .NET platform could be very nice.  
+JVM bytecode is pretty close to CLI bytecode, so a conversion would not be too complicated. Java bytecode to CLI bytecode tools already exist, [like IKVM.](https://en.wikipedia.org/wiki/IKVM.NET)  
+However, since Kotlin has many features .NET has but Java doesn't (like delegates), a more efficient approach would be direct Kotlin to CLI conversion. 
+
+Could it be considered?
+## [4][Kotlin Design Tutorial For Beginners](https://www.reddit.com/r/Kotlin/comments/jee92u/kotlin_design_tutorial_for_beginners/)
+- url: https://youtu.be/3rO01JsQ_DU
+---
+
+## [5][[Article] Using Mockito in Kotlin projects](https://www.reddit.com/r/Kotlin/comments/jek8zj/article_using_mockito_in_kotlin_projects/)
+- url: https://kotlintesting.com/using-mockito-in-kotlin-projects/?utm_source=reddit&amp;utm_medium=kotlin
+---
+
+## [6][What is Kotlin's strategy for multiplatform UI?](https://www.reddit.com/r/Kotlin/comments/jdxvoe/what_is_kotlins_strategy_for_multiplatform_ui/)
 - url: https://www.reddit.com/r/Kotlin/comments/jdxvoe/what_is_kotlins_strategy_for_multiplatform_ui/
 ---
 I know Jetbrains folks are working with Google on porting the Jetpack compose to Desktop (https://android.googlesource.com/platform/frameworks/support/+/refs/heads/androidx-master-dev/compose/ui/ui/src/desktopMain/kotlin/androidx/compose?autodive=0%2F) and I am curious if Jetbrains/Google have any plans to port the same to Web or making it a multiplatform library?  I am asking here as I asked this question multiple times in the recent Kotlin event and got no answer :)
-## [2][Which JVM version should I target?](https://www.reddit.com/r/Kotlin/comments/jdxr7a/which_jvm_version_should_i_target/)
-- url: https://www.reddit.com/r/Kotlin/comments/jdxr7a/which_jvm_version_should_i_target/
+## [7][Express.js with Kotlin?](https://www.reddit.com/r/Kotlin/comments/je4j3w/expressjs_with_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/je4j3w/expressjs_with_kotlin/
 ---
-Hey there, I‘m relatively new to Kotlin and am still wondering which jvm version I should target with Kotlin. 
-The Kotlin faq says that I can target anything between 8 and 13. why is that? Why not 14 or 15? And I thought it was compatible with Java 6 as well for android development?
+I wrote an API with Express and I have been writing an Android app to work with the API in Kotlin.
 
-Can someone shed some light on this for me? What are the advantages and disadvantages of choosing older or newer versions? If it is performance, are there any numbers how much better it performs on newer jvm versions?
+As I have tested the API I came across weird quirks with JavaScript that caused some bugs.
 
-Thanks in advance!
-## [3][New Dokka plugins](https://www.reddit.com/r/Kotlin/comments/je0np8/new_dokka_plugins/)
+I don't like using JavaScript on the server side. I think Kotlin is a well designed language and I think it would be worth my time to rewrite the API with Kotlin.
+
+&amp;#x200B;
+
+But I need to know will Kotlin have the same quirks as JavaScript? For example if I send a double - 1.0 it truncates the decimal and the 0, but this causes some bugs and I need to work around JavaScript by sending decimal numbers as a String. edit: JavaScript does not give a fuck if I give it a string or a Boolean or anything. So I changed the Android app to send strings and everything seems to be working.
+
+If the Express.js API was written in Kotlin, could I send a Double for example, and have it still be a double, even if there is a 0 after the decimal? Or will Kotlin act like JavaScript does?
+
+&amp;#x200B;
+
+This is one of about 3 quirks JavaScript has that make me uncomfortable. I liked JavaScript at first because it was easy to get up and running but some of these shortcuts that I guess are designed to make it easier to code have caused some bugs. And JavaScript sucks at type.
+
+&amp;#x200B;
+
+Kotlin for Android seems to give me the best of both worlds and I was simply wondering if the language functions the same when it compiles to JavaScript.
+## [8][New Dokka plugins](https://www.reddit.com/r/Kotlin/comments/je0np8/new_dokka_plugins/)
 - url: https://www.reddit.com/r/Kotlin/comments/je0np8/new_dokka_plugins/
 ---
 Dokka team has created a list of community plugins!  
 You can share your plugins with the world [here](https://github.com/Kotlin/dokka/blob/master/docs/src/doc/docs/community/plugins-list.md)
-## [4][I've created a project that shows how you can write Grease-/Tamper-/Violent)-monkey user scripts with KotlinJS](https://www.reddit.com/r/Kotlin/comments/jd0guk/ive_created_a_project_that_shows_how_you_can/)
-- url: https://github.com/Foso/gtvmonkey-scripts#greasetamperviolent-monkey-scripts-with-kotlinjs
+## [9][Production build of Ktor](https://www.reddit.com/r/Kotlin/comments/je3p0f/production_build_of_ktor/)
+- url: https://www.reddit.com/r/Kotlin/comments/je3p0f/production_build_of_ktor/
 ---
-
-## [5][Habilitar Bloque de Anuncios Admob y Android #2 ✅ #kotlin #admob #androi...](https://www.reddit.com/r/Kotlin/comments/jdncx3/habilitar_bloque_de_anuncios_admob_y_android_2/)
-- url: https://www.youtube.com/watch?v=6ixfliKOBZs&amp;feature=share
+Hi, I'm pretty new to Kotlin / JVM. My primary platform is .NET, where I'm used to deploy to IIS. While learning SpringBoot, I deployed war on Tomcat. It was very similar to IIS. Now I'm learning Ktor, where it's recommended to use Netty. I was looking for an installer for Windows, but I didn't find any. How does deploying Ktor on Windows work when I use Netty? Or should I use something else?
+## [10][Naming variable inside let + safe call operator](https://www.reddit.com/r/Kotlin/comments/je3c7a/naming_variable_inside_let_safe_call_operator/)
+- url: https://www.reddit.com/r/Kotlin/comments/je3c7a/naming_variable_inside_let_safe_call_operator/
 ---
+This was bugging me a long time, and since I got the warning inside Android Studio right now again I thought to ask if there is a better way to do what I am doing (no, it's not an Android specific question).
 
-## [6][Making my Kotlin code more "Kotlin-y"](https://www.reddit.com/r/Kotlin/comments/jcyd2s/making_my_kotlin_code_more_kotliny/)
-- url: https://www.reddit.com/r/Kotlin/comments/jcyd2s/making_my_kotlin_code_more_kotliny/
----
-Just a quick question about syntax and the difference from Java.
+Since I am comming from the iOS world in swift it's normal to write:
 
-I've recently written my first actual project in Kotlin and plan to release it to the Play Store, but I'm concerned that, since Kotlin also supports Java syntax, that my code isn't as 'Kotlin-y' as it could be. Is there some service that can scan my code and reformat it to more Kotlin-accurate ssyntax, like how the IntelliJ IDEA converts Java files to Kotlin files? I'd like to see how it should look for the sake of learning. 
+`guard let name = name else {return}` 
 
-Thanks in advance.
-## [7][Kweb 0.7.33 released, Kotlin web framework for backend developers adds support for FileReader / file uploads](https://www.reddit.com/r/Kotlin/comments/jcscyo/kweb_0733_released_kotlin_web_framework_for/)
-- url: https://github.com/kwebio/kweb-core
----
+or
 
-## [8][Resources to learn Kotlin?](https://www.reddit.com/r/Kotlin/comments/jczxx6/resources_to_learn_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/jczxx6/resources_to_learn_kotlin/
----
-I’m mainly a C++ / Haskell developer, plus I know Python and am planning to learn Rust (probably before Kotlin), but I have zero experience with JVM languages.
+`if let name = name {` 
 
-For the purposes of Android development, I want to learn Kotlin. Can you please recommend any good resources to do that (books, free online courses etc.), **preferably without touching Java** (if at all possible)?
-## [9][Sequencias en Kotlin](https://www.reddit.com/r/Kotlin/comments/jdlfdh/sequencias_en_kotlin/)
-- url: https://emanuelpeg.blogspot.com/2020/10/sequencias-en-kotlin.html#.X4yJEnLRL08.reddit
----
+`}` 
 
-## [10][[Academic] Software Development Survey (Software Developers)](https://www.reddit.com/r/Kotlin/comments/jcz9md/academic_software_development_survey_software/)
-- url: /r/SampleSize/comments/jbsju0/academic_software_development_survey_software/
----
+`else {`
 
+ `}`
+
+&amp;#x200B;
+
+I am using the same paradigm inside kotlin too, so I write stuff like:
+
+`name?.let { name -&gt;` 
+
+`}`
+
+&amp;#x200B;
+
+because I don't see a reason to rename my variable into something else just because I checked if it's null.
+
+Android Studio is complaining about shadowing a variable (which I am aware of), but I won't need the nullable type inside the closure, so for me it's fine. Now I was wondering if this is actually a bad practice, and what other people a doing

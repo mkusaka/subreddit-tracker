@@ -31,75 +31,90 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][How do I lose more users than I have ever gained ever? Someone please ELI5](https://www.reddit.com/r/androiddev/comments/jdwvwl/how_do_i_lose_more_users_than_i_have_ever_gained/)
-- url: https://i.redd.it/00br87bf10u51.png
+## [3][AGP 4.1 breaking change for libraries: did it hit you?](https://www.reddit.com/r/androiddev/comments/jekj8e/agp_41_breaking_change_for_libraries_did_it_hit/)
+- url: https://www.reddit.com/r/androiddev/comments/jekj8e/agp_41_breaking_change_for_libraries_did_it_hit/
+---
+The recent release of Android Studio 4.1 and the respective Gradle Plugin update introduce a small but significant [change](https://developer.android.com/studio/releases/gradle-plugin#version_properties_removed_from_buildconfig_class_in_library_projects) for library modules.  
+
+
+&gt;**Version properties removed from BuildConfig class in library projects**  
+&gt;  
+&gt;For library projects only, the `BuildConfig.VERSION_NAME` and `BuildConfig.VERSION_CODE` properties have been removed from the generated `BuildConfig` class because these static values did not reflect the final values of the application’s version code and name, and were therefore misleading. Additionally, these values were discarded during manifest merging.
+
+For myself, this breaks code of some of the libraries that I have built in the past few years for different projects and different companies. They will need to change this code when they upgrade to the new AGP. Luckily, a workaround is [available](https://issuetracker.google.com/issues/154275579):
+
+`android.defaultConfig.buildConfigField "String", "VERSION_NAME", "\"$versionName\""`
+
+Unfortunately, the Android team [do not plan](https://issuetracker.google.com/issues/154275579#comment10) to introduce an alternative versioning convention, and instead they suggest *'to create something adhoc'.*
+
+Do you think this is the proper way to handle the library version reporting? Or you believe that the approach of Cocoa Touch frameworks with its auto-generated `ExampleFWVersionNumber` is preferrable?
+
+Note that in the near future you will need to change your **build.gradle** even if you do not rely on the `versionCode`
+
+&gt;In a future version of Android Gradle plugin, the `versionName` and `versionCode` properties will also be removed from the DSL for libraries.
+## [4][🍭🚀💗 Tutorials about animations with Animators, Animated Vector Drawables, Shared Transitions, and more](https://www.reddit.com/r/androiddev/comments/je8qq8/tutorials_about_animations_with_animators/)
+- url: https://github.com/SmartToolFactory/Animation-Tutorials
 ---
 
-## [4][A Gradle plugin to generate R class from your strings.json](https://www.reddit.com/r/androiddev/comments/jdxgrc/a_gradle_plugin_to_generate_r_class_from_your/)
-- url: https://www.reddit.com/r/androiddev/comments/jdxgrc/a_gradle_plugin_to_generate_r_class_from_your/
----
-In this article, i mentioned how you can use a gradle plugin to generate class for you. You can use this idea, if you want to make something similar.
-
-Medium: Android Devs! Let’s generate our own strings json with a Gradle Plugin
-
-[https://medium.com/@volsahin/android-devs-lets-generate-our-own-strings-json-with-a-gradle-plugin-ecab36beb4a](https://medium.com/@volsahin/android-devs-lets-generate-our-own-strings-json-with-a-gradle-plugin-ecab36beb4a)
-
-Github repo
-
-[https://github.com/volsahin/string-generator-plugin](https://github.com/volsahin/string-generator-plugin)
-## [5][Here is my custom prototype version of DOOM running on an android headunit...in a car!](https://www.reddit.com/r/androiddev/comments/jdeix0/here_is_my_custom_prototype_version_of_doom/)
-- url: https://youtu.be/5mmiPT2avrY
+## [5][Very Simple Preview-only Camera2 Example](https://www.reddit.com/r/androiddev/comments/jenyxb/very_simple_previewonly_camera2_example/)
+- url: https://gist.github.com/jbendtsen/a1c7fca87444621cb065fcb94a89d820
 ---
 
-## [6][Hey guys! I made a fun app. Its a simple test to see if you are a Karen.](https://www.reddit.com/r/androiddev/comments/je11f1/hey_guys_i_made_a_fun_app_its_a_simple_test_to/)
-- url: https://www.reddit.com/r/androiddev/comments/je11f1/hey_guys_i_made_a_fun_app_its_a_simple_test_to/
+## [6][Automation bot for Android emulating the human actions?](https://www.reddit.com/r/androiddev/comments/jeos92/automation_bot_for_android_emulating_the_human/)
+- url: https://www.reddit.com/r/androiddev/comments/jeos92/automation_bot_for_android_emulating_the_human/
 ---
-I can't afford Google app store's registering fee but here are links of the sites i could host the apk:
+I need an automation bot for performing repetitive actions inside multiple apps, copy/paste text, creating multiple accounts etc, what options there are available?
 
-Github: [https://github.com/ArcaneWalt73/Karen-test](https://github.com/ArcaneWalt73/Karen-test)
-
-Amazon app store: [https://www.amazon.com/dp/B08LCJ3ZKB/ref=sr\_1\_10?dchild=1&amp;keywords=karen+test&amp;qid=1603111375&amp;sr=8-10](https://www.amazon.com/dp/B08LCJ3ZKB/ref=sr_1_10?dchild=1&amp;keywords=karen+test&amp;qid=1603111375&amp;sr=8-10)
-
-I hope you enjoy it!
-## [7][Support in-app updates](https://www.reddit.com/r/androiddev/comments/je09dj/support_inapp_updates/)
-- url: https://www.reddit.com/r/androiddev/comments/je09dj/support_inapp_updates/
+Thanks
+## [7][Admob alternative?](https://www.reddit.com/r/androiddev/comments/jeopr5/admob_alternative/)
+- url: https://www.reddit.com/r/androiddev/comments/jeopr5/admob_alternative/
 ---
-Don't know if this is the place but anyone played with [in-app updates](https://developer.android.com/guide/playcore/in-app-updates). For testing they say on step 3  **On the test device, only click the internal app-sharing link for the updated version of your app and do not install.**  Why is this step necessary and should I suppose when I upload it to prod that users will click on the app page and not click update to be shown this dialog?
-## [8][Would a curated developer newsletter be helpful?](https://www.reddit.com/r/androiddev/comments/jdy3j9/would_a_curated_developer_newsletter_be_helpful/)
-- url: https://www.reddit.com/r/androiddev/comments/jdy3j9/would_a_curated_developer_newsletter_be_helpful/
+I am an android developer and I cant use AdMob because it's still saying "your account is being verified" I created the AdMob in September! and still verifying, and I cant communicate with google it has bad support, so the question now, what are the best AdMob alternative to using, except Facebook
+## [8][Google makes changes to Android faster than any solo dev or user can ever keep up with. Apple does this too with iOS. Their SF echo chamber causes this and outside SF people are very confused.](https://www.reddit.com/r/androiddev/comments/jeofk2/google_makes_changes_to_android_faster_than_any/)
+- url: https://www.reddit.com/r/androiddev/comments/jeofk2/google_makes_changes_to_android_faster_than_any/
 ---
-Do you guys love to get a Weekly newsletter that curates great developer articles, tutorials, Blogs, and events? 
-
-For example, here is [an issue of my weekly newsletter](https://mobiledeveloperscafe.substack.com/p/mdc-weekly-blend-edition-10) which curates articles from great developers around the world. 
-
-Do you think this curation would be helpful for you guys? 
-
-Apart from the curated articles, blogs, Dev tools, events, and open source libraries, do you think any other information should be helpful?
-## [9]["Account being assessed" poll (AdMob)](https://www.reddit.com/r/androiddev/comments/jdxxjl/account_being_assessed_poll_admob/)
-- url: https://www.reddit.com/r/androiddev/comments/jdxxjl/account_being_assessed_poll_admob/
+I watch my wife constantly guessing about which new swipe feature her apps are using and not being able to do something that should just be a button on the screen. I have the same issue and I'm a full time android dev. It is impossible to keep up with the changes to Android for both users and developers . Google needs to slow down and let people digest what they've done in the last five years. New versions of android should not break apps that are targeting one version older. I'm sure you guys can come up with tons of other stuff too. Discuss.
+## [9][Best practices for developing with feature flags](https://www.reddit.com/r/androiddev/comments/jeeqlr/best_practices_for_developing_with_feature_flags/)
+- url: https://www.reddit.com/r/androiddev/comments/jeeqlr/best_practices_for_developing_with_feature_flags/
 ---
-Hi there. Just want to make a little poll about AdMob "Account being assessed" issue. 
+Hello all,
 
-How long did it take google to "assess" your account?
+I've been looking at ways to speed up development and testing via feature flags, and would love guidance from the broader community here on how everyone does it.
 
-[View Poll](https://www.reddit.com/poll/jdxxjl)
-## [10][What are some interesting topics in androiddev but avarege devs don't know about it?](https://www.reddit.com/r/androiddev/comments/jdotgu/what_are_some_interesting_topics_in_androiddev/)
-- url: https://www.reddit.com/r/androiddev/comments/jdotgu/what_are_some_interesting_topics_in_androiddev/
+I've come across this neat little library with support for local and remote feature flags, which dynamically generates a UI around your features which you can drive tests from : https://github.com/JeroenMols/FeatureFlagExample
+
+(The UK NHS COVID app is actually using this library!) 
+
+Would love to hear people's approaches and/or recommended libraries you've used successfully to speed up testing with feature flags.
+## [10][Videoview not playing](https://www.reddit.com/r/androiddev/comments/jekktn/videoview_not_playing/)
+- url: https://www.reddit.com/r/androiddev/comments/jekktn/videoview_not_playing/
 ---
-I'm a student and curious about Android. But I would like to learn some not so popular topics too which are good to know when you are an android dev.
-## [11][Work Manager is my favourite API in android! And I'm back with another post on this :P](https://www.reddit.com/r/androiddev/comments/jdvm9p/work_manager_is_my_favourite_api_in_android_and/)
-- url: https://ayusch.com/using-work-manager-in-android-with-example/
+Hi. I´m having some problem with my videoView in a  recycleView. The video won´t play unless I call **binding**.**vvDiscoverDetail**.setZOrderOnTop(**true**). I have some texts on top of the view so I can´t really set it to top on Z axis. Does anyone know what might be the problem?
+
+**val** uri = Uri.parse(item?.**video**)  
+**binding**.**vvDiscoverDetail**.setMediaController(**null**)  
+**binding**.**vvDiscoverDetail**.setVideoURI(uri)  
+**binding**.**vvDiscoverDetail**.requestFocus()  
+**binding**.**vvDiscoverDetail**.setZOrderOnTop(**true**)  
+**binding**.**vvDiscoverDetail**.start()
+## [11][Is there any scalable, customizable order management system for universal purpose (e.g. restaurant business; car wash business)](https://www.reddit.com/r/androiddev/comments/jemt2a/is_there_any_scalable_customizable_order/)
+- url: https://www.reddit.com/r/androiddev/comments/jemt2a/is_there_any_scalable_customizable_order/
 ---
+I'm an app dev and recently I built two apps that have the same module in their core.
 
-## [12][Create a google play account for the company instead of individual](https://www.reddit.com/r/androiddev/comments/jdctrb/create_a_google_play_account_for_the_company/)
-- url: https://www.reddit.com/r/androiddev/comments/jdctrb/create_a_google_play_account_for_the_company/
+1. Private app for a single restaurant for customers to place orders. Payments via app. Separate admin app to accept, decline, view and manage orders, etc. Feedback about the order. Order history
+2. Private app for a car wash company, allowing users to select their vehicle location and place an order to have an employee arrive and wash their car. Payments via app. Also separate admin app to accept, decline, view and manage orders, etc. Feedback about the order. Order history
+
+For backend I used firebase, firestore and some google cloud functions written in python. However, my question is, I wonder if I could have used instead some kind of a  3rd party order management system to integrate with, so that I wouldn't have to write the order placement and management backend code myself.
+
+It should not be tied to a specific industry, should be customizable and allow to perform many  integrations (e.g. via API)
+
+Is there anything good for this kind of purpose?
+
+I don't even know if "order management system" is the right keyword for this, CRM also sounds like something of at least a partial fit for this.
+
+I only found Hydra OMS, which from the first sight looks like it’s what I'm looking for, however, it doesn't seem widely known and I can barely find any referenced on the internet about it. Any alternative suggestions? Maybe an ecommerce platform would work for this?
+## [12][Open source android development](https://www.reddit.com/r/androiddev/comments/jejydk/open_source_android_development/)
+- url: https://www.reddit.com/r/androiddev/comments/jejydk/open_source_android_development/
 ---
- 
-
-Hello,
-
-I'm having some difficulties trying to register a google play account for my company. I've started by creating a new google account by selecting "To manage my business" and after that I've selected payment method and added a new card. This has automatically created a payment profile with the account type as individual with no option to change it to business. 
-
-I looked over different help sections and from what I saw, I should have seen an option to chose from individual/business when creating the payment profile. I deleted the payment profile and create it again several times and couldn't see any option.
-
-Did someone else had the same problem and could provide some exact steps on how can I create a payment profile with the account type as business?
+I am a computer science student and i have a passion about android development. I have never done open source before i want to know which organisation should i choose as i also want to be a part of google summer of code next year how can i start making  contributions and what all skill set do i need before starting this ?

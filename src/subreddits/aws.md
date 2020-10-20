@@ -27,111 +27,126 @@ AWS always releases a bunch of features, sometimes everyday or atleast once a we
 10: More features in App Mesh(Circuit breaker, Rate Limiting)
 
 P.S: Not sure if some features are already available, but if something is missing, please feel free to add
-## [2][Is it possible to replicate an entire environment? Or copy every setting from every service?](https://www.reddit.com/r/aws/comments/je0thd/is_it_possible_to_replicate_an_entire_environment/)
-- url: https://www.reddit.com/r/aws/comments/je0thd/is_it_possible_to_replicate_an_entire_environment/
+## [2][Week of Oct 19th - What have you learned recently about AWS?](https://www.reddit.com/r/aws/comments/je2wmx/week_of_oct_19th_what_have_you_learned_recently/)
+- url: https://www.reddit.com/r/aws/comments/je2wmx/week_of_oct_19th_what_have_you_learned_recently/
 ---
-Essentially I have an environment setup with every service I need, (VPCs / subnets / code pipeline / code build / subnets / DNS etc etc) and I want a QA environment with the exact same settings.
-
-Is there a known way to do this?
-## [3][S3 replicate](https://www.reddit.com/r/aws/comments/je1a1j/s3_replicate/)
-- url: https://www.reddit.com/r/aws/comments/je1a1j/s3_replicate/
+Weekly Discussion post   
+Sharing is caring
+## [3][How to SAML federate your AWS account with G Suite](https://www.reddit.com/r/aws/comments/jencr5/how_to_saml_federate_your_aws_account_with_g_suite/)
+- url: https://blog.pethron.me/how-to-saml-federate-your-aws-account-with-g-suite
 ---
-Hi devs,
 
-I using S3 with a PHP system. Has some way to make a "backup" from the production bucket? Replicate it to new bucket with diferent type - like glacier - could be a good option?
-## [4][SNS automated statistics via email(?)](https://www.reddit.com/r/aws/comments/jdzzbt/sns_automated_statistics_via_email/)
-- url: https://www.reddit.com/r/aws/comments/jdzzbt/sns_automated_statistics_via_email/
+## [4][Is there a way to output all the security groups and NACLs to something like a spreadsheet?](https://www.reddit.com/r/aws/comments/jednxz/is_there_a_way_to_output_all_the_security_groups/)
+- url: https://www.reddit.com/r/aws/comments/jednxz/is_there_a_way_to_output_all_the_security_groups/
+---
+The only script I have dumps me out a json file that is like 15,000 lines. I just want something more easily read by a human.
+## [5][Should I one put their Application Load Balancer behind CloudFront?](https://www.reddit.com/r/aws/comments/jelo7r/should_i_one_put_their_application_load_balancer/)
+- url: https://www.reddit.com/r/aws/comments/jelo7r/should_i_one_put_their_application_load_balancer/
+---
+Is it a best practice to put an Application Load Balancer behind CloudFront as a dynamic origin? Are there factors one should consider?
+
+Also, if one were to serve a webapp at `www.site.com` backed by S3 and wanted to serve the api at `api.site.com` backed by a server behind a load balancer, that would entail two separate CloudFront distributions right? Because I couldn't find how to keep it on just one with a behavior that chose the origin based on the hostname. Are there considerations to keep in mind from creating two?
+## [6][Nginx logs into cloudwatch not appearing](https://www.reddit.com/r/aws/comments/jenfcr/nginx_logs_into_cloudwatch_not_appearing/)
+- url: https://www.reddit.com/r/aws/comments/jenfcr/nginx_logs_into_cloudwatch_not_appearing/
+---
+I am trying to load the nginx error logs and access logs into cloudwatch. I have atatched an IAM role to the EC2 instance, installed cloudwatch agent &amp; ran the cloudwatch wizard which has stored the cloudwatch agent config in SSM Parameter store. Also restarted the cloudwatch agent + nginx service. Cloudwatch appears to be 'recognized' as I have new Metrics available (disk\_used\_percent). Problem is, it hasn't created any logs, log groups or streams. Any suggestions much appreciated. First part of the cloudwatch config.json file below:
+
+`{ "agent": {` 
+
+`"metrics_collection_interval": 60,` 
+
+`"run_as_user": "root"` 
+
+`},` 
+
+`"logs":` 
+
+`{ "logs_collected": {` 
+
+`"files": {` 
+
+`"collect_list": [` 
+
+`{` 
+
+`"file_path": "/var/log/nginx/error.log",` 
+
+`"log_group_name": "nginx error.log",` 
+
+`"log_stream_name": "{instance_id}"` 
+
+`},` 
+
+`{` 
+
+`"file_path": "/var/log/nginx/access.log",` 
+
+`"log_group_name": "nginx access.log",`
+
+`"log_stream_name": "{instance_id}" }`
+## [7][which rds should i use?](https://www.reddit.com/r/aws/comments/jem836/which_rds_should_i_use/)
+- url: https://www.reddit.com/r/aws/comments/jem836/which_rds_should_i_use/
+---
+The project I am working on requires me to have a relational database for a small business. But the requests made to the database is very low somedays none. Which form of rds will be the most helpful to keep the prices as low as possible.
+## [8][s3fs gets unmounted when files pushed to its directory](https://www.reddit.com/r/aws/comments/jeozu1/s3fs_gets_unmounted_when_files_pushed_to_its/)
+- url: https://www.reddit.com/r/aws/comments/jeozu1/s3fs_gets_unmounted_when_files_pushed_to_its/
+---
+Mounted a s3 bucket using s3fs in a SUSE Linux machine, we have a sap system there that pushes files to that directory which then gets uploaded in the s3 bucket. Whenever we push these files, the s3 gets unmounted and it fails. Any other solution for this scenario since s3fs seems unreliable.
+## [9][Web hook strategies](https://www.reddit.com/r/aws/comments/jeo07n/web_hook_strategies/)
+- url: https://www.reddit.com/r/aws/comments/jeo07n/web_hook_strategies/
+---
+Hi all, my company is embarking on moving stuff from our DC into AWS. Dipping our toes in the water, one of the first things we want to do is move our mass mailing structures partially into AWS.
+
+We are looking at upgrading our email sending (via SendGrid) from approx 10 emails per second to probably on the order of 1000+ per second. For those familiar with ESPs you’ll know they return data in real time by having you provide a callback webhook URL where they dump json events/status updates.
+
+Currently we handle this by having a load balanced local website that just drops the request to disk and then another device asynchronously processes the result an distributes them to where’ve customer database it belongs to.
+
+Our current thoughts are to use API gateway and then deliver the payloads into SQS, we would then continue to asynchronously process the results like we do today.
+
+For the purpose of this upgrade, we just want to make sure we aren’t ‘losing’ we hook requests or overloading our servers with capacity, we aren’t yet moving the db’s to the cloud nor attempting to containerise the processing logic or something like that, just baby steps.
+
+Are the 2 services (API gateway and SQS) the right tools for this job?
+## [10][Need help determining why AWS SAM Hello World app does not deploy in ap-southeast-1](https://www.reddit.com/r/aws/comments/jeo017/need_help_determining_why_aws_sam_hello_world_app/)
+- url: https://www.reddit.com/r/aws/comments/jeo017/need_help_determining_why_aws_sam_hello_world_app/
+---
+I am following the instructions outlined by AWS [here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-hello-world.html) to deploy the AWS SAM Hello World (Python 3.8) template in ap-southeast-1. However, when I try to access the API, I am greeted with the following:
+
+    {"message":"Forbidden"}
+
+I have tried deploying in us-east-1 as well as ap-northeast-1 and the API returns the hello world message as expected. 
+
+
+AWS documentation shows that SAM is supported in ap-southeast-1. I have also checked the deployed configs on API Gateway and Lambda to be the same in all regions.
+
+
+I am turning to this sub now as I am at wits end trying to understand why I get a Forbidden message on ap-southeast-1 when everything was deployed successfully. Thank you in advance for any advice!
+## [11][API Gateway blocks CORS requests, but still invokes Lambda integration](https://www.reddit.com/r/aws/comments/jenzqx/api_gateway_blocks_cors_requests_but_still/)
+- url: https://www.reddit.com/r/aws/comments/jenzqx/api_gateway_blocks_cors_requests_but_still/
+---
+Hey, I have a simple contact form setup on my personal website. I have API Gateway CORS configured to only take requests from my site. Everything seems to be working, when I try to send something from my local network, Chrome tells me:
+
+    Access to fetch at 'xxx' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
+
+So everything seems good, but yet the Lambda is still invoked and I wind up getting the email anyway. Am I misunderstanding something about how this works?
+## [12][ELB: Trailing slash (/) issue :: without slash(/) site not resolving](https://www.reddit.com/r/aws/comments/jenqts/elb_trailing_slash_issue_without_slash_site_not/)
+- url: https://www.reddit.com/r/aws/comments/jenqts/elb_trailing_slash_issue_without_slash_site_not/
 ---
 Hi,
 
-We use an SNS Topic to send out SMS to customers on a daily basis.
+***Scenario:***
 
-I wanted to know if there is a way to get an automated statistics summary/report sent via email - to save users having to sign in and navigate to the S3 bucket where the daily usage reports are? (not much of a hardship I know)
+* My website resolves to Aws ELB with 443 listener 
+* Backend Target group is an EC2 instance with apache running on port 8080
 
-Would also mean we don't have to create Users in IAM for those that just wanted to see stats.
+***Problem***:
 
-Thanks!
-## [5][Can I host a JavaScript website using S3?](https://www.reddit.com/r/aws/comments/jdj2ox/can_i_host_a_javascript_website_using_s3/)
-- url: https://www.reddit.com/r/aws/comments/jdj2ox/can_i_host_a_javascript_website_using_s3/
----
-Hi I am completely new to AWS and found [this](https://cloudirregular.substack.com/p/the-cloud-resume-challenge) resume challenge that I want to try. I also have very limited knowledge of web dev so this might be a dumb question. I read that S3 can only host "Static" web pages. Does that mean JavaScript and/or React is out of the question? I want to make my resume page have some minor CSS animations if possible.
-## [6][Cognito: resend MFA code (Java)](https://www.reddit.com/r/aws/comments/jdxkyz/cognito_resend_mfa_code_java/)
-- url: https://www.reddit.com/r/aws/comments/jdxkyz/cognito_resend_mfa_code_java/
----
-This was asked for JavaScript library, but no solution was provided. 
+* If I miss the trailing slash, the website does not resolve and when i put the trailing slash (/) everything works fine.
+* [www.example.com/foldername](https://www.example.com/folder)  &lt;-- ***Does not work***, returns url [www.example.com:8080/foldername/](http://sg-test.pushtrack.co:8080/TwoClickDemo/) and resolution fails
+* [www.example.com/foldername](https://www.example.com/folder)/   &lt;-- Does Works fine
+*  To check if everything fine on the backend I queried the EC2 instance IP on port 8080 with and without /
+* http://ec2\_ip:8080/foldername  and  http://ec2\_ip:8080/foldername/   
+*  Above both url with instance ip worked as expected
 
-Scenario:
+I'm guessing something fails between ELB and EC2 instance 
 
-1. user signs in with MFA enabled
-2. SMS is sent and user needs to confirm challenge
-3. for whatever reason user didn’t receive SMS
-
-Is there any possibility to resend SMS without log in again?
-## [7][Where do I even begin?](https://www.reddit.com/r/aws/comments/jdzdvo/where_do_i_even_begin/)
-- url: https://www.reddit.com/r/aws/comments/jdzdvo/where_do_i_even_begin/
----
-It’s become apparent that all of a sudden the business I work for is moving at breakneck speed up into the cloud. Everything that used to sit on bare-metal in a giant CAR (Central Apparatus Room) is going up into AWS. We have S3 buckets, EC2 instances, an RDS database supporting it and all manor of other things, and full disclosure... I am entirely lost on what it is, what it all means, how to work within it and therefore how to work, period.
-
-I am terrified that if I don’t get a mastery of the basics soon, this will entirely pass me by and before I know it I will no longer be able to do my job and subsequently won’t be able to call myself an Engineer in the new world we have been forced to create.
-
-Where do I start with this stuff? How do I work my way through it from the very basics?
-
-TLDR; I’m old and new things scare me. Help.
-## [8][Intermittently unable to reach web server over VPN tunnel](https://www.reddit.com/r/aws/comments/jdvz8h/intermittently_unable_to_reach_web_server_over/)
-- url: https://www.reddit.com/r/aws/comments/jdvz8h/intermittently_unable_to_reach_web_server_over/
----
-Hi, I have some machines running an application/website in ec2, which accesses a filestore located on premise. In order to access this filestore I have created a VPN tunnel.
-
-Occasionally - for seemingly no reason, I am unable to hit my website from on premise. At the same time I will be able to hit it from off-premise, and every other network function still works on premise.
-
-Is there some basic traffic I have forgotten to tunnel?
-
-&amp;#x200B;
-
-Thanks
-## [9][Why would a connection from an EC2 instance to Aurora serverless in the same VPC / subnet group be in a totally different CIDR?](https://www.reddit.com/r/aws/comments/jdu75w/why_would_a_connection_from_an_ec2_instance_to/)
-- url: https://www.reddit.com/r/aws/comments/jdu75w/why_would_a_connection_from_an_ec2_instance_to/
----
-My VPC subnet is CIDR 172.31.0.0/16 and Aurora Serverless DB and an EC2 instance are both assigned to the same subnet group within it. The EC2 instance has a 172.31.x.x IP address as expected.
-
-However when I connect from the EC2 instance the Aurora DB sees the connection as coming from 10.1.10.181 ?!? 
-
-Has anyone encountered this before? Why is this happening?
-## [10][Cloudfront + S3 static-site DNS question](https://www.reddit.com/r/aws/comments/jdp6bj/cloudfront_s3_staticsite_dns_question/)
-- url: https://www.reddit.com/r/aws/comments/jdp6bj/cloudfront_s3_staticsite_dns_question/
----
-Hey everyone,
-I apologize that this is likely more of a failure in understanding of DNS than an issue with AWS, but I could also be wrong.
-
-I have a Cloudfront served static-site with S3 origin, an AWS generated SSL certificate, and use a NameCheap domain.
-
-Issue:
-
-With my current configuration:
-*domain*.com and www.*domain*.com are directed to https://www.*domain*.com where my content is rendered. 
-https://*domain*.com, however returns a 'This site cannot provide a secure connection' error.
-
-
-My DNS configuration:
-
-CNAME Record, @, *mycloudfronturl*
-
-CNAME Record, www, *mycloudfronturl*
-
-CNAME Record,*www ssl record name*, *www ssl record value*
-
-CNAME Record,*non-www ssl record name*, *non-www ssl record name*
-
-
-
-According to AWS Certificate Manager, both the *domain*.com and www.*domain*.com domains have been validated, and is in use by Cloudfront.
-
-Please let me know if there is anything else I can supply that might help.
-## [11][Is possibile that AWS SES notify of MX DNS errors.](https://www.reddit.com/r/aws/comments/jdoc3d/is_possibile_that_aws_ses_notify_of_mx_dns_errors/)
-- url: https://www.reddit.com/r/aws/comments/jdoc3d/is_possibile_that_aws_ses_notify_of_mx_dns_errors/
----
-I was testing SES events by sending some bad emails.
-
-When sending an email to nonexistent domain SES does not notify about it.
-
-Does this type of failure counts to email quota?
+Has anyone faced similar issue before?

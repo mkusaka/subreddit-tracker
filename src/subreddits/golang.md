@@ -1,88 +1,83 @@
 # golang
-## [1][Learn Go test-first with 'For the Love of Go: Fundamentals'](https://www.reddit.com/r/golang/comments/jelx8o/learn_go_testfirst_with_for_the_love_of_go/)
+## [1][Announcing the 2020 Go Developer Survey](https://www.reddit.com/r/golang/comments/jeuosg/announcing_the_2020_go_developer_survey/)
+- url: https://blog.golang.org/survey2020
+---
+
+## [2][NSQTracer to watch published NSQ messages](https://www.reddit.com/r/golang/comments/jf97h3/nsqtracer_to_watch_published_nsq_messages/)
+- url: https://www.reddit.com/r/golang/comments/jf97h3/nsqtracer_to_watch_published_nsq_messages/
+---
+I thought it would be good if I share some of my CLI based utility for tracing **NSQ** messages built with Golang here. In case someone needs it.
+
+&amp;#x200B;
+
+[Github Preview](https://preview.redd.it/lmhfnnmpveu51.png?width=1113&amp;format=png&amp;auto=webp&amp;s=2f4ef1bb502b17fa578c46a6fa9933eaa17c394c)
+
+[https://github.com/slaveofcode/nsqtracer](https://github.com/slaveofcode/nsqtracer)
+## [3][Represent Message Length as a 2-byte binary](https://www.reddit.com/r/golang/comments/jf9xkk/represent_message_length_as_a_2byte_binary/)
+- url: https://www.reddit.com/r/golang/comments/jf9xkk/represent_message_length_as_a_2byte_binary/
+---
+Am doing integration with a third party and the communication is being done over TCP sockets. They have this requirement(**Message variable length indicator**) where am supposed to represent the XML message length as a 2 binary byte message length.
+
+For example, my message is 1024 in length. How do I represent 1024 as binary two-bytes?
+
+&amp;#x200B;
+
+Here is a similar issue in ruby [https://stackoverflow.com/questions/13794817/ruby-how-to-represent-message-length-as-2-binary-bytes](https://stackoverflow.com/questions/13794817/ruby-how-to-represent-message-length-as-2-binary-bytes)
+## [4][A simple helper to restart Docker containers with newer versions of images pulled from registry.](https://www.reddit.com/r/golang/comments/jfcus1/a_simple_helper_to_restart_docker_containers_with/)
+- url: https://www.reddit.com/r/golang/comments/jfcus1/a_simple_helper_to_restart_docker_containers_with/
+---
+Helps k8s-less provisioning and updating to the newer version of a stateless container without pains of recalling the command-line options used to start the container.
+
+[https://github.com/jdevelop/repull](https://github.com/jdevelop/repull)
+## [5][Best golang framework for REST API?](https://www.reddit.com/r/golang/comments/jf9ih7/best_golang_framework_for_rest_api/)
+- url: https://www.reddit.com/r/golang/comments/jf9ih7/best_golang_framework_for_rest_api/
+---
+Hello everyone, I'm new to golang. The question is in the title. Right now I settled on the Iris framework [https://www.iris-go.com/](https://www.iris-go.com/) because it is the newest and seems to be powerful. What do you use in commercial projects and what do you like the most?
+## [6][Go and GUI, what to do?](https://www.reddit.com/r/golang/comments/jeywfv/go_and_gui_what_to_do/)
+- url: https://www.reddit.com/r/golang/comments/jeywfv/go_and_gui_what_to_do/
+---
+I'm toying with the idea of writing a GUI for a terminal application I've created in the past year - what are the best current options for creating a GUI with Go today?
+## [7][A golang tool —- for fast generating icon for MacOS App](https://www.reddit.com/r/golang/comments/jf9hu9/a_golang_tool_for_fast_generating_icon_for_macos/)
+- url: https://github.com/scott-x/icns
+---
+
+## [8][Learn Go test-first with 'For the Love of Go: Fundamentals'](https://www.reddit.com/r/golang/comments/jelx8o/learn_go_testfirst_with_for_the_love_of_go/)
 - url: https://bitfieldconsulting.com/books/fundamentals
 ---
 
-## [2][What is the most production ready GraphQL server library written for Golang?](https://www.reddit.com/r/golang/comments/jemm91/what_is_the_most_production_ready_graphql_server/)
-- url: https://www.reddit.com/r/golang/comments/jemm91/what_is_the_most_production_ready_graphql_server/
+## [9][hashicorp/waypoint: A tool to build, deploy, and release any application on any platform](https://www.reddit.com/r/golang/comments/jeq7c6/hashicorpwaypoint_a_tool_to_build_deploy_and/)
+- url: https://github.com/hashicorp/waypoint
 ---
 
-## [3][We're Hiring Remotely @Spacelift! 🚀](https://www.reddit.com/r/golang/comments/je3qug/were_hiring_remotely_spacelift/)
-- url: https://www.reddit.com/r/golang/comments/je3qug/were_hiring_remotely_spacelift/
+## [10][Luks.go: pure-Golang implementation of LUKS partition manager](https://www.reddit.com/r/golang/comments/jey9fq/luksgo_puregolang_implementation_of_luks/)
+- url: https://www.reddit.com/r/golang/comments/jey9fq/luksgo_puregolang_implementation_of_luks/
 ---
-Hey, we’re hiring at [spacelift.io](https://spacelift.io)!
+Hi folks,
 
-100% Remote (office in Warsaw if you fancy, but we’re working in a remote-first fashion). We’re looking for developers in Europe, which are available most of the working day in CET.
+I would like to present my project that I was working on for the last couple of months. Luks.go - a pure-Golang library to manage partitions encrypted with LUKS [https://github.com/anatol/luks.go](https://github.com/anatol/luks.go)
 
-$50-120k per annum  
-Mid-Senior
+If you need to deal with LUKS partition in your golang application then luks.go is your friend. Luks.go allows you to unlock a LUKS partition without using system dynamic libraries or standalone tools like cryptsetup. Pulling such system dependencies is a PITA especially if your tool needs to work across different OS versions.
 
-We’re a VC-funded startup building an automation platform for Infrastructure-as-Code, adding a Policy-as-Code layer above it, in order to make IaC usable in bigger companies, where you have to take care of state consistency, selective permissions, a usable git flow, etc.
+Currently luks.go supports unlocking only. In the future it might contain operations that modify luks metadata (e.g. adding/removing keyslots). Though this functionality is more dangerous and requires more time for development and testing.
 
-On the backend we’re using 100% Go with AWS primitives.  
-We’re looking for developers who like doing DevOps’ish stuff sometimes (because in a way it’s the spirit of our company) , though that’s not required. Ideally you’d have experience working with an IaC tool, i.e. Terraform, Ansible, CloudFormation, or SaltStack.
-
-Overall we have a deeply technical product, trying to build something customers love to use, and already have multiple happy and satisfied potential clients.
-
-We promise interesting work, the ability to open source parts of the project which don’t give us a business advantage, as well as sane working hours.
-
-If that sounds like fun to you, or you have any questions, send me a private message with your email, and I’ll get back to you! You can also directly email me at kubam at spacelift dot io.
-
-PS: Fear not, no whiteboarding!
-## [4][Determine prominent colors in a picture, your first AWS Lambda in Go](https://www.reddit.com/r/golang/comments/jem8ri/determine_prominent_colors_in_a_picture_your/)
-- url: https://buddy.works/tutorials/determine-prominent-colors-in-a-picture-your-first-aws-lambda-in-go
+This work has been sponsored by my employer - Twitter. The project has been started as a part of Twitter hackathon week. I want to say thanks to my company and my manager for supporting me in my open-source work.
+## [11][Rare realtime log aggregator released 0.1.27 with bug fixes and better histogram support](https://www.reddit.com/r/golang/comments/jf482g/rare_realtime_log_aggregator_released_0127_with/)
+- url: https://www.reddit.com/r/golang/comments/jf482g/rare_realtime_log_aggregator_released_0127_with/
 ---
+[https://github.com/zix99/rare](https://github.com/zix99/rare)
 
-## [5][BigBro: An extensible monitoring tool for user defined services and protocols](https://www.reddit.com/r/golang/comments/je8rfd/bigbro_an_extensible_monitoring_tool_for_user/)
-- url: https://www.reddit.com/r/golang/comments/je8rfd/bigbro_an_extensible_monitoring_tool_for_user/
----
-Hi everyone, I would share this beta project that can be used to monitoring services (and different protocols).
+This is a golang project I've been working on off-and-on for a while.  Originally, it was to help suite my needs to analyze massive amounts of log files (gigabytes+) and get incremental output, rather than waiting for something like \`zcat | uniq\` to run.  I still use it from time to time, but wanted to share with you all
 
-The tool is lightweight and therefore it can be used also in embedded devices, such as Raspberry Pi (zero to 4) or similar.
+Here's an example of analyzing nginx log files for statuses:
 
-In addition, the tool is extensible in terms of custom services/protocols implementation.
+    ./rare histo -m '" (\d{3})' -e "{bucket {1} 100}" -xz testdata/*
+    400                 5,807,761  [69.4%] ||||||||||||||||||||||||||
+    200                 2,565,032  [30.6%] |||||||||||
+    300                 535        [ 0.0%] 
+    
+    
+    Matched: 8,373,328 / 8,383,717 (Groups: 3)
 
-The project is actually divided in two parts:
+It supports a range of features similar to other programs you're already used to: gunzipping, regex search, simple handlebars-like expressions, ignore patterns, etc.
 
-* BigBro ([https://github.com/bigbroproject/BigBro](https://github.com/bigbroproject/BigBro)) - is the main tool and provides an user interface via webserver and it is based on BigBroCore
-* BigBroCore ([https://github.com/bigbroproject/BigBroCore](https://github.com/bigbroproject/BigBroCore)) - is the core of the project, basically is BigBro without user interface.
-
-Let us know about suggestions, issues or anything about the project!
-## [6][What is a "sentinel" element?](https://www.reddit.com/r/golang/comments/jehceb/what_is_a_sentinel_element/)
-- url: https://www.reddit.com/r/golang/comments/jehceb/what_is_a_sentinel_element/
----
-Hey! I'm looking at the source code of the `container/list` package in the standard library and came across [this line](https://golang.org/src/container/list/list.go#L49).
-
-I'm curious about the idea behind this implementation where we keep track of an element that's not actually an element in the linked list. Can someone explain?
-## [7][Golang library for Google Analytics](https://www.reddit.com/r/golang/comments/jedg5u/golang_library_for_google_analytics/)
-- url: https://www.reddit.com/r/golang/comments/jedg5u/golang_library_for_google_analytics/
----
-Hey folks! I threw together a quick library that supports sending metrics to Google Analytics from Go applications as well as generating URLs that you can embed in emails and other applications. No more needing to remember or look up the parameters. Just put in your information and go...
-
-Let me know what you think!
-
-[https://github.com/mjpitz/go-ga](https://github.com/mjpitz/go-ga)
-## [8][VSCode Debugging](https://www.reddit.com/r/golang/comments/jej4rp/vscode_debugging/)
-- url: https://www.reddit.com/r/golang/comments/jej4rp/vscode_debugging/
----
-Delve doesn't seem to work for me on my Ubuntu virtual machine (not WSL, an actual VM).
-
-I get a "Failed to continue" error, and my debug console says "exit status 2, Process exiting with code: 1"
-
-The program executes fine without the debugger.
-
-I tried looking at the following [https://github.com/golang/vscode-go/blob/master/docs/debugging.md](https://github.com/golang/vscode-go/blob/master/docs/debugging.md)
-
-Ran the following in terminal: go get github.com/go-delve/delve/cmd/dlv
-
-And then updated dlv from the command palette, but it's still not working. I should also say, I do have the Go extension installed.
-
-Has anyone ever experienced something similar? I'm not getting any substantial error messages, so I have not been able to find much by just googling.
-## [9][Implementing fast lightweight containers in Go with bst and btrfs (Part 1)](https://www.reddit.com/r/golang/comments/je1kwx/implementing_fast_lightweight_containers_in_go/)
-- url: https://snai.pe/posts/lightweight-containers-part-1
----
-
-## [10][Rewrite Raspberry Pi Python project in Go? (GPIO)](https://www.reddit.com/r/golang/comments/je38sl/rewrite_raspberry_pi_python_project_in_go_gpio/)
-- url: https://www.reddit.com/r/golang/comments/je38sl/rewrite_raspberry_pi_python_project_in_go_gpio/
----
-I'm thinking about rewriting an application in Go, that I built with Python and PyQt for the Raspberry Pi. It needs to access the GPIO pins and has a GUI to control them. Is this generally a good idea? I would use Go because of the easier use of concurrency and because I just like the language. For the GUI I would use fyne, but which library should I use for the GPIOs? I've seen a lot of different ones, some of them aren't maintained anymore, so which GPIO library would you recommend?
+Hope you like my project.  Always happy to take feedback!  I went through great pains to optimize this, and learned a lot about go in the process.

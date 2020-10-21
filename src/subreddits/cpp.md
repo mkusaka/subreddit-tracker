@@ -56,85 +56,76 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Qt 6.0 Beta Released](https://www.reddit.com/r/cpp/comments/jelc9l/qt_60_beta_released/)
+## [2][Ridiculously fast unicode (UTF-8) validation](https://www.reddit.com/r/cpp/comments/jf0tx4/ridiculously_fast_unicode_utf8_validation/)
+- url: https://lemire.me/blog/2020/10/20/ridiculously-fast-unicode-utf-8-validation/
+---
+
+## [3][json_dto-0.2.11: custom formatters added to an easy to use wrapper around RapidJSON](https://www.reddit.com/r/cpp/comments/jf82ka/json_dto0211_custom_formatters_added_to_an_easy/)
+- url: https://eao197.blogspot.com/2020/10/progc-jsondto-0211-released.html
+---
+
+## [4][2020-10 C++ Committee Mailing](https://www.reddit.com/r/cpp/comments/jf4wsw/202010_c_committee_mailing/)
+- url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-10
+---
+
+## [5][What to use for writing large documentations?](https://www.reddit.com/r/cpp/comments/jexkdk/what_to_use_for_writing_large_documentations/)
+- url: https://www.reddit.com/r/cpp/comments/jexkdk/what_to_use_for_writing_large_documentations/
+---
+This is not strictly CPP, but hey, I like you guys.
+
+I'm planning some projects and will need to have quite large and extensive documentation.
+
+Immediately I thought I'd just make a git repo full of markdown files for documentation as it's not going to be about specific functions but instead overviews of technology and systems (It will be updated before code so I wasn't worried about it being out of date).  
+If I did that I could just host it with a github IO page or even just leave it as a repo.
+
+Then I thought a little further and decided maybe I should use an actual system to track it since it would be handy to have more automatic references and such. Some documentation tracker / generator.
+
+So do you guys have any suggestions for writing docs for large systems? Repos, doc generators, a CMS?
+
+
+
+A little further clarification:  
+The code itself will be commented like usual and I'll use Doxygen or something to generate that data.  
+The documentation I need to write is more of an overview of the whole code. End users are not touching the code for the project, just using it. So it will not be "this function does X", rather it's "Press this button to do Y".  
+That's why I'm not worried about one being out of date, they are separate pieces of data (implementation vs behavior).
+
+Edit:
+The documentation is going to be very technical, just not actual code.  
+I also think I would prefer for the documentation to be in git not in a database.
+## [6][Does anybody use std::list?](https://www.reddit.com/r/cpp/comments/jf3dwo/does_anybody_use_stdlist/)
+- url: https://www.reddit.com/r/cpp/comments/jf3dwo/does_anybody_use_stdlist/
+---
+I have never used std::list the last 15 years,  mainly for performance reasons. If I need to store large objects, I use a vector of pointers. Does anybody have a use case that can share? 
+Thanks!
+## [7][Performance of std::pmr](https://www.reddit.com/r/cpp/comments/jf0dse/performance_of_stdpmr/)
+- url: https://www.reddit.com/r/cpp/comments/jf0dse/performance_of_stdpmr/
+---
+I tried to experiment a bit by replacing several container types with their pmr:: counterparts on a medium-sized project. This change alone made the performance drop substantially. From around ~~180~~158 fps to 145 fps.
+
+I am really surprised by this. With no additional changes, it should still delegate to new/delete, but does so via a virtual call. Could this indirection be the source of the overhead? Or could it be the extra pointer which is needed in all the containers?
+
+This library is mainly single-threaded, so I replaced the default memory resource with an [unsynchronized pool](https://en.cppreference.com/w/cpp/memory/unsynchronized_pool_resource), and then the performance was back up again closer to the original 180 fps. I was hoping to see something much better here when I started, but it seems that the gain is completely eaten up by the overhead.
+
+Does anyone have any experience using the polymorphic allocators on a larger codebase? Any idea what is going on here?
+
+Edit: In the process, I accidentally changed out a non-std unordered map with `std::pmr::unordered_map`. This turned out to be the largest part of the performance drop, the `std::unordered_map` is just a whole lot slower. After correcting this, there is still a 10-15 fps performance drop purely due to using the pmr containers.
+## [8][Warrior1: A Performance Sanitizer for C++](https://www.reddit.com/r/cpp/comments/jeqgvu/warrior1_a_performance_sanitizer_for_c/)
+- url: https://arxiv.org/abs/2010.09583
+---
+
+## [9][Qt 6.0 Beta Released](https://www.reddit.com/r/cpp/comments/jelc9l/qt_60_beta_released/)
 - url: https://www.qt.io/blog/qt-6.0-beta-released
 ---
 
-## [3][[update] CodingCards.org did some improvements as suggested by the C++/reddit community](https://www.reddit.com/r/cpp/comments/jek7xg/update_codingcardsorg_did_some_improvements_as/)
-- url: https://CodingCards.org
+## [10][I got "me knickers in a twist" while trying to compile and link using VS Code and clang that is part of Visual Studio 2019. But I was cool calm and collected and this is my story.](https://www.reddit.com/r/cpp/comments/jfa1x2/i_got_me_knickers_in_a_twist_while_trying_to/)
+- url: https://github.com/dbj-data/bench/tree/main/.vscode/readme
 ---
 
-## [4][Should c++ just standardize an interpreted step for compilation?](https://www.reddit.com/r/cpp/comments/jee26l/should_c_just_standardize_an_interpreted_step_for/)
-- url: https://www.reddit.com/r/cpp/comments/jee26l/should_c_just_standardize_an_interpreted_step_for/
+## [11][macOS performance tester wanted (eCAL)](https://www.reddit.com/r/cpp/comments/jf9vmq/macos_performance_tester_wanted_ecal/)
+- url: https://www.reddit.com/r/cpp/comments/jf9vmq/macos_performance_tester_wanted_ecal/
 ---
-Constexpr is your compiler, interpreting your code.  
-Right now it's weakness is it's inability and "Platformness" as described in a recent post.   
-But an interpreter step would solve that and many more problems.  
-  
-How about actual macro system, that's not just a fancy find and replace.  
-Just run a for loop the types you want declared, no need for fancy template tricks.  
-Or how about that enum to string,  string to enum generator.  
-Or automatic struct printing, serializing, deserializing.  
-\#embed? How about you just open a file and generate whatever you need with it.  
-  
-It could allow for a powerful reflection step, if we let actual code touch our code.  
-Perhaps the @ symbol could mark areas for interpretation, just like # marks the pre processor.  
-  
-C++ just has to run compiled, nothing says we can't interpret some code before hand.  
-  
-So what are some problems this would fix for you today?  
-  
-  
-Also I guess i just came up with https://github.com/seanbaxter/circle.   
-I just remembered it last sentence, I wonder how that's going.
-## [5][Join the online C++ job fair by Meeting C++ now (live event link)](https://www.reddit.com/r/cpp/comments/jeo38i/join_the_online_c_job_fair_by_meeting_c_now_live/)
-- url: https://live.remo.co/e/meeting-c-online-job-fair
----
+For our pub/sub middleware we are looking for a performance tester for macOS. I will spend a bottle of one of the best local beer in Frankfurt Rhein Main area (shipping world wide), maybe two ;-)
 
-## [6][Migrating C and C++ applications from Red Hat Enterprise Linux version 7 to version 8 - Red Hat Developer](https://www.reddit.com/r/cpp/comments/jeklip/migrating_c_and_c_applications_from_red_hat/)
-- url: https://developers.redhat.com/blog/2020/10/08/migrating-c-and-c-applications-from-red-hat-enterprise-linux-version-7-to-version-8/
----
+[Taunus Naturtrueb](https://imgur.com/YwchS0H)
 
-## [7][Dependency Graph Generator?](https://www.reddit.com/r/cpp/comments/jemlr9/dependency_graph_generator/)
-- url: https://www.reddit.com/r/cpp/comments/jemlr9/dependency_graph_generator/
----
-Hi, I have this huge project with multiple folders several layers deep. I need to start paring the thing down and getting rid of dependencies I don't need anymore. Can anyone point me to a good dependency graph generator I can use to arrange the source and header files in a fashion where I can understand how they interact and know where to cut? 
-
-I'm working on Linux. I prefer something ready to go as possible with has little monkeying around and compiling but I'll accept it if its the best way.
-## [8][A design pattern for running a lot of low priority periodic functions](https://www.reddit.com/r/cpp/comments/jeepyl/a_design_pattern_for_running_a_lot_of_low/)
-- url: https://www.reddit.com/r/cpp/comments/jeepyl/a_design_pattern_for_running_a_lot_of_low/
----
-Hi guys,
-
-I'm a python programmer, so I have some biases on how I would do this in python, but was wondering how people would solve this problem in C++.
-
-&amp;#x200B;
-
-Sometimes in an application, you have to run a lot of low priority periodic tasks like the following:
-
-1. Every second, broadcast X on this IO.
-2. Every 0.5 seconds, take a camera image and save it.
-3. Every 10 seconds, see if a file exists.
-4. Every 0.2 seconds XYZ
-
-This is all stuff that happens alongside a main program, which is cpu/timing intensive and should be prioritized.
-
-&amp;#x200B;
-
-If I wanted to do the above in python, I can just spawn a separate process and make it launch a thread for each one of the above. I would provide some API to users to submit their monitoring job to this process (which would just pickle the method they would like my proces to run at a certain Hz). Since each thread runs on the same process, I don't have to worry about this thing consuming too much cpu besides on the one it is assigned. I can also do this via asyncio but that would require some more effort from the user.
-
-&amp;#x200B;
-
-So how would one do this in the world of C++? In C++ each thread is much more powerful than in Python, since each thread can run on a separate CPU. So launching a separate thread for each of these low priority jobs especially since all of them would be sleeping most of the time seems kinda wasteful. I'm sure people have solved this problem before so I want to get some inspiration before I cook anything up.
-## [9][constexpr is a Platform](https://www.reddit.com/r/cpp/comments/je3me7/constexpr_is_a_platform/)
-- url: https://foonathan.net/2020/10/constexpr-platform/
----
-
-## [10][17 Smaller but Handy C++17 Features](https://www.reddit.com/r/cpp/comments/jdx37j/17_smaller_but_handy_c17_features/)
-- url: https://www.bfilipek.com/2019/08/17smallercpp17features.html
----
-
-## [11][Initialization in C++ is Seriously Bonkers](https://www.reddit.com/r/cpp/comments/jdz5cx/initialization_in_c_is_seriously_bonkers/)
-- url: http://mikelui.io/2019/01/03/seriously-bonkers.html
----
-
+What we would like to have is a performance measuring on a native Mac following these [instructions](https://continental.github.io/ecal/advanced/performance.html). The dmg darwin image you can find [here](https://github.com/continental/ecal/releases). Happy testing !

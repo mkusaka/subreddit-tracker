@@ -1,11 +1,5 @@
 # javascript
-## [1][Showoff Saturday (October 17, 2020)](https://www.reddit.com/r/javascript/comments/jctr6g/showoff_saturday_october_17_2020/)
-- url: https://www.reddit.com/r/javascript/comments/jctr6g/showoff_saturday_october_17_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][Your /r/javascript recap for the week of October 12 - October 18](https://www.reddit.com/r/javascript/comments/jdy9gw/your_rjavascript_recap_for_the_week_of_october_12/)
+## [1][Your /r/javascript recap for the week of October 12 - October 18](https://www.reddit.com/r/javascript/comments/jdy9gw/your_rjavascript_recap_for_the_week_of_october_12/)
 - url: https://www.reddit.com/r/javascript/comments/jdy9gw/your_rjavascript_recap_for_the_week_of_october_12/
 ---
 **Monday, October 12 - Sunday, October 18**
@@ -85,49 +79,53 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][I created a twitter bot that posts dogs that are up for adoption! Check out all the good dogs.](https://www.reddit.com/r/javascript/comments/jecjwp/i_created_a_twitter_bot_that_posts_dogs_that_are/)
-- url: https://github.com/dwkoss/dogbot
+## [2][Node.js v15.0.0 is here!](https://www.reddit.com/r/javascript/comments/jes44j/nodejs_v1500_is_here/)
+- url: https://medium.com/@nodejs/node-js-v15-0-0-is-here-deb00750f278
 ---
 
-## [4][[AskJS] Why hasn't the null type bug been fixed?](https://www.reddit.com/r/javascript/comments/jenrel/askjs_why_hasnt_the_null_type_bug_been_fixed/)
-- url: https://www.reddit.com/r/javascript/comments/jenrel/askjs_why_hasnt_the_null_type_bug_been_fixed/
+## [3][[AskJS] Yarn workspaces vs importing from (aliased) directory](https://www.reddit.com/r/javascript/comments/jfa11j/askjs_yarn_workspaces_vs_importing_from_aliased/)
+- url: https://www.reddit.com/r/javascript/comments/jfa11j/askjs_yarn_workspaces_vs_importing_from_aliased/
 ---
-    typeof null === 'object'; // true 
+Hello :)
 
-The rationale I've heard is that it's too late to fix this one becaus an update to a null type would break a lot of old programs.
+I'm trying to wrap my head around what the best approach for organizing code in a monorepo is.
 
-Ok, so why don't we allow this as a default, but then add the null type if a version check indicates ES2020 or later? I think that could be implement with a top of file statement similar to strict mode.
+Let's  say I have a \`landing-page\`, \`app\`, and \`blog\` folders which all  contain code for the respective sites. I also have a \`common\` folder  where I put utilities which I use across all the three sites.
 
-Only answer I can think of is that everyone is used to it, so it isn't a priority.
-## [5][Microsoft adds option to disable JScript in Internet Explorer](https://www.reddit.com/r/javascript/comments/jdy6rr/microsoft_adds_option_to_disable_jscript_in/)
-- url: https://www.zdnet.com/article/microsoft-adds-option-to-disable-jscript-in-internet-explorer/
+My  current approach is that I use expressions like \`import {formatDate}  from 'common/date'\` to import code from the \`common\` folder into the  \`landing-page\`, \`app\`, or \`blog\` directories. (I use Webpack aliases to  be able to use \`import ... from 'common/date\` rather than \`import ...  from '../../../common'\`
+
+I'd like  to know, however, what benefits would using a tool like Yarn Workspaces  bring? In what way it is better to turn my \`landing-page\`, \`app\`,  \`blog\`, and \`common\` folders into "installable" npm packages which I  would import from each other?
+
+To  me, it seems like a lot more boilerplate than my current approach and I  don't see the benefit of using it. However, it's possible that something  just didn't click with me as for why I should use Yarn Workspaces. So  I'd love to hear from you.
+## [4][React v17.0.0 released!](https://www.reddit.com/r/javascript/comments/jey85k/react_v1700_released/)
+- url: https://github.com/facebook/react/blob/46ed2684718d160b06cf6e4f5f5ecf70c7b8974c/CHANGELOG.md#1700-october-20-2020
 ---
 
-## [6][Rich Harris: Futuristic Web Development [Svelte Summit 2020]](https://www.reddit.com/r/javascript/comments/jeagp1/rich_harris_futuristic_web_development_svelte/)
-- url: https://www.youtube.com/watch?v=qSfdtmcZ4d0
+## [5][Why does package-lock.json exist, and how does it work?](https://www.reddit.com/r/javascript/comments/jf7c3j/why_does_packagelockjson_exist_and_how_does_it/)
+- url: https://lucasfcosta.com/2020/10/17/lockfile-guide.html
 ---
 
-## [7][Ever Been Confused by Regular Expressions? I Made a Video about Building a Regex Engine from Scratch, In Pure JS, with Zero Dependencies](https://www.reddit.com/r/javascript/comments/jeowkm/ever_been_confused_by_regular_expressions_i_made/)
+## [6][Ever Been Confused by Regular Expressions? I Made a Video about Building a Regex Engine from Scratch, In Pure JS, with Zero Dependencies](https://www.reddit.com/r/javascript/comments/jeowkm/ever_been_confused_by_regular_expressions_i_made/)
 - url: https://www.youtube.com/watch?v=u01jb8YN2Lw
 ---
 
-## [8][Vue Hooks Form: Building forms with Vue composition API.](https://www.reddit.com/r/javascript/comments/jelzii/vue_hooks_form_building_forms_with_vue/)
-- url: https://github.com/beizhedenglong/vue-hooks-form
+## [7][Garbage Collection in JavaScript](https://www.reddit.com/r/javascript/comments/jfbznu/garbage_collection_in_javascript/)
+- url: https://blog.appsignal.com/2020/10/21/garbage-collection-in-javascript.html
 ---
 
-## [9][Method Chaining and JavaScript](https://www.reddit.com/r/javascript/comments/jeklle/method_chaining_and_javascript/)
-- url: https://medium.com/@laflamablanc/method-chaining-and-javascript-7d840d6e3687
+## [8][An advanced Full-screen CLI for pnpm](https://www.reddit.com/r/javascript/comments/jf6cf9/an_advanced_fullscreen_cli_for_pnpm/)
+- url: https://github.com/terminal-junkies/pnpmx
 ---
 
-## [10][Dissecting A Dweet #9: City Sunset - Tiny JavaScript Analysis](https://www.reddit.com/r/javascript/comments/jedwu1/dissecting_a_dweet_9_city_sunset_tiny_javascript/)
-- url: http://frankforce.com/dissecting-a-dweet-9-city-sunset/?1
+## [9][Node.js v15.0.0 released](https://www.reddit.com/r/javascript/comments/jerrg9/nodejs_v1500_released/)
+- url: https://nodejs.org/en/blog/release/v15.0.0/
 ---
 
-## [11][What I learned about WebSockets by building a real-time chat application using Socket.IO.](https://www.reddit.com/r/javascript/comments/jejgru/what_i_learned_about_websockets_by_building_a/)
-- url: https://medium.com/@jamesbrown5292/what-i-learned-about-websockets-by-building-a-real-time-chat-application-using-socket-io-3d9e163e504
+## [10][I created a twitter bot that posts dogs that are up for adoption! Check out all the good dogs.](https://www.reddit.com/r/javascript/comments/jecjwp/i_created_a_twitter_bot_that_posts_dogs_that_are/)
+- url: https://github.com/dwkoss/dogbot
 ---
 
-## [12][Build a To Do List App with Web Components](https://www.reddit.com/r/javascript/comments/jeeteq/build_a_to_do_list_app_with_web_components/)
-- url: https://dev.to/jleeson/build-a-to-do-list-app-with-jolt-57bp
+## [11][Coming through with Firefox 82](https://www.reddit.com/r/javascript/comments/jexegs/coming_through_with_firefox_82/)
+- url: https://hacks.mozilla.org/2020/10/coming-through-with-firefox-82/
 ---
 

@@ -70,122 +70,100 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Anyone else refuse to do technical assessments or take-home tests when interviewing?](https://www.reddit.com/r/reactjs/comments/jedwv4/anyone_else_refuse_to_do_technical_assessments_or/)
-- url: https://www.reddit.com/r/reactjs/comments/jedwv4/anyone_else_refuse_to_do_technical_assessments_or/
----
-I'm not actively looking for a job, but I've passively thrown out resumes recently just for interviewing practice and had a bite today. They said they 'loved my experience', and then proceed to tell me that I have to complete a 2 hour technical assessment - wait for it...
-
-... *Before* I have an interview with a human.
-
-WTF?
-
-* I have a portfolio packed with 12 real-world projects spanning over 8 years of professional experience. Reference that.
-* I have a github with even more projects, most with production code. Again - reference that.
-* I have eight years of experience. Not trying to be cocky or anything, but come on.
-* I don't have the time. I have a full time job and a family.
-
-Anyway I've never encountered this before, so this was my response: 
-
-"Hi guy,
-
-Thanks very much for getting back to me.
-
-I'm very busy with my work schedule as well as raising a toddler to find time for a technical test. You can find professional code in my github on my resume.
-
-A phone interview would help solidify my abilities.
-
-Thanks!
-Me"
-
-Who knows what'll happen but I can't believe this is the norm, if it is. Any job, including my most recent where I got it last year, did not have a test. They all followed one formula:
-
-- In person. Non technical and technical talk, shooting the shit. See if I'm a fit.
-- Offer
-
-That was it. For every job I've ever had in the past eight years.
-
-Does anyone else agree to these tests? I've also heard of so many devs take these test, and get ghosted. Screw that.
-## [4][ES6 Promises are not cancellable - what to do?](https://www.reddit.com/r/reactjs/comments/jeoy4q/es6_promises_are_not_cancellable_what_to_do/)
-- url: https://www.reddit.com/r/reactjs/comments/jeoy4q/es6_promises_are_not_cancellable_what_to_do/
----
-I've been using native ES6 Promises on a project, until I saw an error in the console; turns out the component is unmounting while the promise is still pending. The suggested React warning is : "To fix, cancel all subscriptions and asynchronous tasks in the componentWillUnmount method."
-
-Ok, but then I find out ES6 Promises are not cancellable.  what the ?
-
-What do you React gurus do? (Ideas please, too lazy to Google for hours on end)
-
-**NB**: question is not related to ajax or server-side fetching.
-## [5][Tutorial: What Are Higher-Order Components in React? (w/ Examples + CodeSandboxes)](https://www.reddit.com/r/reactjs/comments/jedi88/tutorial_what_are_higherorder_components_in_react/)
-- url: https://www.aleksandrhovhannisyan.com/blog/dev/higher-order-components/
+## [3][React v17.0.0 released!](https://www.reddit.com/r/reactjs/comments/jey6az/react_v1700_released/)
+- url: https://github.com/facebook/react/blob/46ed2684718d160b06cf6e4f5f5ecf70c7b8974c/CHANGELOG.md#1700-october-20-2020
 ---
 
-## [6][Material-UI Builder - React editor for busy developers](https://www.reddit.com/r/reactjs/comments/jdzdug/materialui_builder_react_editor_for_busy/)
-- url: https://mui.dev
+## [4][New Moderators at /r/Reactjs!](https://www.reddit.com/r/reactjs/comments/jeqeo9/new_moderators_at_rreactjs/)
+- url: https://www.reddit.com/r/reactjs/comments/jeqeo9/new_moderators_at_rreactjs/
+---
+Hello! We launched our first-ever [moderator applications](https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/) 2 weeks ago (in consultation with /u/nextdoorNabors from the Core Team) and dozens of you applied!
+
+I'm excited to introduce our 4 new mods (note that some are newer accounts created for more "professional use"):
+
+- /u/CodeGeeek is a UI Architect from Bengaluru, India 🇮🇳 with &gt;10yrs experience in frontend. We've enjoyed [her talks](https://youtu.be/2so479wrHNk)! She's interested in adding more FAQs, reference material, and news recaps to our content mix.
+- /u/Lashuel is a Sr. Software Eng from Sanaa, Yemen 🇾🇪 who has given some cool [React](https://hooks-kyan.ayox.now.sh/) [talks](https://prod-talk.ayox.now.sh/). He's keen on organizing monthly challenges/activities for folks to stretch their React skills together.
+- /u/ZenosGarcia is a fullstack engineer from California, USA 🐻 who was a Deputy District Attorney(!) before changing careers to webdev. As a bootcamp grad (like me!) she's keen on helping beginners understand React, feel welcome and not be intimidated.
+- /u/Nutlope is originally from Morocco 🇲🇦 and is now in his final year in CS at Drexel. He has [run a large gaming community](https://www.quora.com/profile/Hassan-El-Mghari-1) on the side. He's interested in starting a mentorship program here on /r/Reactjs and running more AMAs from key figures in our community.
+
+They'll join the current active mod roster of /u/acemarke, /u/dance2die, /u/timmonsjg, /u/Charles_Stover from today. Thank you to the rest who applied - we couldn't accept everyone but we might grow again in future. Your suggestions will be shared with the mod team. Those who are interested in being considered in future can still [fill out our form](https://docs.google.com/forms/d/e/1FAIpQLSfoP-n06uTmPouq2EOTQ5TD9vFH_jp7glG9hh4rpEZV1EHzSg/viewform?usp=pp_url).
+
+Moderating is 100% volunteer community service, and Reddit gives mods only very limited powers to shape the culture of this community. Ultimately the most important elements here - from quality content to quality discussion to inclusiveness - comes from you, our members. Thank you for making /r/reactjs what it is today - now let's make it better :)
+## [5][Revamped GitHub Jobs Website Using Design From Frontend Mentor](https://www.reddit.com/r/reactjs/comments/jfb13n/revamped_github_jobs_website_using_design_from/)
+- url: https://blog.bhanuteja.dev/i-revamped-github-jobs-website-using-design-from-frontend-mentor
 ---
 
-## [7]["React Epic" by Kent Dodds worth it?](https://www.reddit.com/r/reactjs/comments/jenm9w/react_epic_by_kent_dodds_worth_it/)
-- url: https://www.reddit.com/r/reactjs/comments/jenm9w/react_epic_by_kent_dodds_worth_it/
+## [6][Client redirect trough server: CORS error.](https://www.reddit.com/r/reactjs/comments/jfbudv/client_redirect_trough_server_cors_error/)
+- url: https://www.reddit.com/r/reactjs/comments/jfbudv/client_redirect_trough_server_cors_error/
 ---
-Has anyone bought the React Epic Course/Workshop by Kent Dodds ([https://epicreact.dev/](https://epicreact.dev/))?
+I try to redirect the user from my client trough my Express API to another page. The reason for this is once the user hits the POST 'auth/login' endpoint with success (and valid data) he/she will be redirected to the home page.
 
-I wonder if it's worth the money and the time for a developer that is using react for 3+ years. So would really appreciate some independent valuations.
+That gives me the following error:
 
-Thanks
+&gt;Access to XMLHttpRequest at '[http://localhost:3000/](http://localhost:3000/)' (redirected from '[http://localhost:4000/auth/login](http://localhost:4000/auth/login)') from origin '[http://localhost:3000](http://localhost:3000)' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
 &amp;#x200B;
 
-!approve
-## [8][How to create React Notifications/Toasts with 0 dependencies (except React 🙄)](https://www.reddit.com/r/reactjs/comments/jemxia/how_to_create_react_notificationstoasts_with_0/)
-- url: https://tinloof.com/blog/how-to-create-react-notifications-with-0-dependencies/
+I assume this has something to do with handling CORS on the frontend, since my Express API is already using the following middleware:
+
+    app.use(
+      cors({
+        origin: "http://localhost:3000",
+        methods: "GET,PUT,PATCH,POST,DELETE",
+        credentials: true
+      })
+    );
+
+&amp;#x200B;
+## [7][I created this tool. Feedbacks are welcome](https://www.reddit.com/r/reactjs/comments/jf7kpj/i_created_this_tool_feedbacks_are_welcome/)
+- url: https://resume-builder-react.netlify.app/
 ---
 
-## [9][5 ways to create a self-documenting React component](https://www.reddit.com/r/reactjs/comments/jelcx6/5_ways_to_create_a_selfdocumenting_react_component/)
-- url: https://blog.whereisthemouse.com/5-ways-to-create-a-self-documenting-react-component
+## [8][I've created a compiler that turns a JS module into a back-end](https://www.reddit.com/r/reactjs/comments/jfa2gr/ive_created_a_compiler_that_turns_a_js_module/)
+- url: https://www.reddit.com/r/reactjs/comments/jfa2gr/ive_created_a_compiler_that_turns_a_js_module/
+---
+The idea is to create a microservice with no Node nor Express knowledge. the main purpose is to give front-end guys a way to build apps and consume APIs without the trouble of creating a proxy.
+
+The JS module is built and deployed in a cloud (Google functions as of today) and called with a generated wrapper. 
+
+=&gt; link to the website: [**split.to/GyTPku4**](http://split.to/GyTPku4)
+
+Here's the doc: [warpjs.dev](https://warpjs.dev/)
+## [9][18 months ago I published a React book in German. You can now read the translated version for free online!](https://www.reddit.com/r/reactjs/comments/jfa2gn/18_months_ago_i_published_a_react_book_in_german/)
+- url: https://learn.react-js.dev/
 ---
 
-## [10][Understanding when to use useMemo](https://www.reddit.com/r/reactjs/comments/jekl6r/understanding_when_to_use_usememo/)
-- url: https://maxrozen.com/understanding-when-use-usememo/
+## [10][React India Slack Group](https://www.reddit.com/r/reactjs/comments/jf9u2e/react_india_slack_group/)
+- url: https://join.slack.com/t/reactindiacommunity/shared_invite/zt-ieup2mk3-pAmQz4G1DxUvf0rCb7vLfQ
 ---
 
-## [11][Material Ui Lists conditional rendering](https://www.reddit.com/r/reactjs/comments/jeot4r/material_ui_lists_conditional_rendering/)
-- url: https://www.reddit.com/r/reactjs/comments/jeot4r/material_ui_lists_conditional_rendering/
+## [11][Socket io with async operations](https://www.reddit.com/r/reactjs/comments/jf9skn/socket_io_with_async_operations/)
+- url: https://www.reddit.com/r/reactjs/comments/jf9skn/socket_io_with_async_operations/
 ---
-Hi guys,
+Hey guys, I want socket to wait for my Async operation to finish before emitting, but it's not executing the last two lines at all.
 
-I’m trying to hide one ListItem (item 1) depending if a variable is 0 or 1.
+How should I approach this?
 
-and It’s a long list, is there a way to conditionally render so I don’t have to type the list twice?
-so basically—
-vairable === 0 include item 1 if not hide item 1
+`socket.on('passengers', async (id) =&gt; {`
 
+`Logger.info('Passengers', id);`
 
-&lt;List&gt;
-  &lt;ListItem&gt;
-    item 1
-&lt;ListItem/&gt;
+`const bus = await (await Bus.query().findById(id))`
 
-&lt;ListItem&gt;
-    item 2
-&lt;ListItem&gt;
+`.$relatedQuery('passengers')`
 
-&lt;ListItem&gt;
-    item 3
-&lt;ListItem&gt;
+`.select('id', 'username', 'phone', 'location');`
 
-&lt;ListItem&gt;
-    item 4
-&lt;ListItem&gt;
+&amp;#x200B;
 
-so on...
+`Logger.info('passengersBack', bus);`
 
-&lt;/List&gt;
-## [12][Online Discussion Forum (Beginner React Project)](https://www.reddit.com/r/reactjs/comments/jeo6dk/online_discussion_forum_beginner_react_project/)
-- url: https://www.reddit.com/r/reactjs/comments/jeo6dk/online_discussion_forum_beginner_react_project/
+`socket.emit('passengersback', bus);`
+
+`});`
+
+&amp;#x200B;
+## [12][In React, component controls you!](https://www.reddit.com/r/reactjs/comments/jf9jd7/in_react_component_controls_you/)
+- url: https://dev.to/poeticgeek/in-react-component-controls-you-4ed8
 ---
-I made an Online Discussion Forum with ReactJS.
 
-Take a look if interested.
-
-[Live Demo](https://narutovps-techtalk.herokuapp.com)
-
-[Code ](https://github.com/NarutoVPS/TechTalk/blob/main/gifs/cropped-min.gif)

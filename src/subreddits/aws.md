@@ -32,121 +32,140 @@ P.S: Not sure if some features are already available, but if something is missin
 ---
 Weekly Discussion post   
 Sharing is caring
-## [3][How to SAML federate your AWS account with G Suite](https://www.reddit.com/r/aws/comments/jencr5/how_to_saml_federate_your_aws_account_with_g_suite/)
-- url: https://blog.pethron.me/how-to-saml-federate-your-aws-account-with-g-suite
+## [3][A Kubernetes operator to sync secrets from AWS Secrets Manager](https://www.reddit.com/r/aws/comments/jfa4lz/a_kubernetes_operator_to_sync_secrets_from_aws/)
+- url: https://www.contentful.com/blog/2020/10/20/open-source-kube-secret-syncer/
 ---
 
-## [4][Is there a way to output all the security groups and NACLs to something like a spreadsheet?](https://www.reddit.com/r/aws/comments/jednxz/is_there_a_way_to_output_all_the_security_groups/)
-- url: https://www.reddit.com/r/aws/comments/jednxz/is_there_a_way_to_output_all_the_security_groups/
+## [4][New – Use AWS PrivateLink to Access AWS Lambda Over Private AWS Network](https://www.reddit.com/r/aws/comments/jexzcu/new_use_aws_privatelink_to_access_aws_lambda_over/)
+- url: https://aws.amazon.com/blogs/aws/new-use-aws-privatelink-to-access-aws-lambda-over-private-aws-network/
 ---
-The only script I have dumps me out a json file that is like 15,000 lines. I just want something more easily read by a human.
-## [5][Should I one put their Application Load Balancer behind CloudFront?](https://www.reddit.com/r/aws/comments/jelo7r/should_i_one_put_their_application_load_balancer/)
-- url: https://www.reddit.com/r/aws/comments/jelo7r/should_i_one_put_their_application_load_balancer/
+
+## [5][A Cost-Benefit Analysis of VPC Interface Endpoints](https://www.reddit.com/r/aws/comments/jfclgq/a_costbenefit_analysis_of_vpc_interface_endpoints/)
+- url: https://www.sentiatechblog.com/a-cost-benefit-analysis-of-vpc-interface-endpoints?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=cost_benefit_privatelink
 ---
-Is it a best practice to put an Application Load Balancer behind CloudFront as a dynamic origin? Are there factors one should consider?
 
-Also, if one were to serve a webapp at `www.site.com` backed by S3 and wanted to serve the api at `api.site.com` backed by a server behind a load balancer, that would entail two separate CloudFront distributions right? Because I couldn't find how to keep it on just one with a behavior that chose the origin based on the hostname. Are there considerations to keep in mind from creating two?
-## [6][Nginx logs into cloudwatch not appearing](https://www.reddit.com/r/aws/comments/jenfcr/nginx_logs_into_cloudwatch_not_appearing/)
-- url: https://www.reddit.com/r/aws/comments/jenfcr/nginx_logs_into_cloudwatch_not_appearing/
+## [6][how to enable cors in AWS api gateway and only allow access from specific websites/origins for GET Requests?](https://www.reddit.com/r/aws/comments/jfa9g3/how_to_enable_cors_in_aws_api_gateway_and_only/)
+- url: https://www.reddit.com/r/aws/comments/jfa9g3/how_to_enable_cors_in_aws_api_gateway_and_only/
 ---
-I am trying to load the nginx error logs and access logs into cloudwatch. I have atatched an IAM role to the EC2 instance, installed cloudwatch agent &amp; ran the cloudwatch wizard which has stored the cloudwatch agent config in SSM Parameter store. Also restarted the cloudwatch agent + nginx service. Cloudwatch appears to be 'recognized' as I have new Metrics available (disk\_used\_percent). Problem is, it hasn't created any logs, log groups or streams. Any suggestions much appreciated. First part of the cloudwatch config.json file below:
+Hey guys I enabled CORS for get request and I only want the system to allow requests that come in from the following domain:  "toi.lightning.force.com"
 
-`{ "agent": {` 
+&amp;#x200B;
 
-`"metrics_collection_interval": 60,` 
+As seen in the screenshot, during the response, I adjust the access-control-allow-origin.
 
-`"run_as_user": "root"` 
+&amp;#x200B;
 
-`},` 
+What I am finding, is that the GET request still accepts from any place I access the link. Pretty much I was hoping that CORS would block people from accessing the API if they weren't coming from this specific domain.
 
-`"logs":` 
+&amp;#x200B;
 
-`{ "logs_collected": {` 
+Let me know if I am missing something!
 
-`"files": {` 
+https://preview.redd.it/wq51kq4ybfu51.png?width=1964&amp;format=png&amp;auto=webp&amp;s=71c482521579a223a16c6e64a9868f080c0073bb
 
-`"collect_list": [` 
+&amp;#x200B;
 
-`{` 
+&amp;#x200B;
 
-`"file_path": "/var/log/nginx/error.log",` 
+&amp;#x200B;
 
-`"log_group_name": "nginx error.log",` 
+Thank you in advance.
 
-`"log_stream_name": "{instance_id}"` 
+&amp;#x200B;
 
-`},` 
+&amp;#x200B;
 
-`{` 
+EDIT:
 
-`"file_path": "/var/log/nginx/access.log",` 
-
-`"log_group_name": "nginx access.log",`
-
-`"log_stream_name": "{instance_id}" }`
-## [7][which rds should i use?](https://www.reddit.com/r/aws/comments/jem836/which_rds_should_i_use/)
-- url: https://www.reddit.com/r/aws/comments/jem836/which_rds_should_i_use/
+**CORS does not do server-side blocking of request**
+## [7][Need Ideas For Survey Website](https://www.reddit.com/r/aws/comments/jf7qar/need_ideas_for_survey_website/)
+- url: https://www.reddit.com/r/aws/comments/jf7qar/need_ideas_for_survey_website/
 ---
-The project I am working on requires me to have a relational database for a small business. But the requests made to the database is very low somedays none. Which form of rds will be the most helpful to keep the prices as low as possible.
-## [8][s3fs gets unmounted when files pushed to its directory](https://www.reddit.com/r/aws/comments/jeozu1/s3fs_gets_unmounted_when_files_pushed_to_its/)
-- url: https://www.reddit.com/r/aws/comments/jeozu1/s3fs_gets_unmounted_when_files_pushed_to_its/
+Hello, My fiancé needs a website with the ability to store answers to 3 questions, It's for a class and will only be up for a month. Students would simply click on a link, see 3 questions, each with a text box that would allow them to type a 100 char response. 
+
+Since I already have the domain on Route 53 + S3, I figured I might as well implement a full AWS solution. Any one have an idea on how I could do this? 
+
+My idea was to host a Windows server, but then I saw that price tag...
+
+PS. I do realize Survey monkey is a solution but I've been interested in the possibilities of AWS. Figured this is the best way to get my feet wet.
+## [8][Does the AWSCLI S3 SYNC or COPY command copy data to the local machine?](https://www.reddit.com/r/aws/comments/jfctg0/does_the_awscli_s3_sync_or_copy_command_copy_data/)
+- url: https://www.reddit.com/r/aws/comments/jfctg0/does_the_awscli_s3_sync_or_copy_command_copy_data/
 ---
-Mounted a s3 bucket using s3fs in a SUSE Linux machine, we have a sap system there that pushes files to that directory which then gets uploaded in the s3 bucket. Whenever we push these files, the s3 gets unmounted and it fails. Any other solution for this scenario since s3fs seems unreliable.
-## [9][Web hook strategies](https://www.reddit.com/r/aws/comments/jeo07n/web_hook_strategies/)
-- url: https://www.reddit.com/r/aws/comments/jeo07n/web_hook_strategies/
+I am trying to copy objects from an S3 bucket in one region to a bucket in another region and I came across the aws s3 sync and cp commands. Do these commands copy the data to my local machine or is it completely done on aws? I would prefer that this is done without copying the data to my local machine and I was trying to find more details about this in the documentation, but did not find this mentioned anywhere.
+## [9][How to change the handles in SES template data dynamically?](https://www.reddit.com/r/aws/comments/jfcrai/how_to_change_the_handles_in_ses_template_data/)
+- url: https://www.reddit.com/r/aws/comments/jfcrai/how_to_change_the_handles_in_ses_template_data/
 ---
-Hi all, my company is embarking on moving stuff from our DC into AWS. Dipping our toes in the water, one of the first things we want to do is move our mass mailing structures partially into AWS.
+I was trying to send mail via Lambda using SES, and I created a Template, with two handles
 
-We are looking at upgrading our email sending (via SendGrid) from approx 10 emails per second to probably on the order of 1000+ per second. For those familiar with ESPs you’ll know they return data in real time by having you provide a callback webhook URL where they dump json events/status updates.
+&amp;#x200B;
 
-Currently we handle this by having a load balanced local website that just drops the request to disk and then another device asynchronously processes the result an distributes them to where’ve customer database it belongs to.
+[{{name}}, name of the owner of an instance and the instance status {{status}}](https://preview.redd.it/sjnpcujf8gu51.png?width=943&amp;format=png&amp;auto=webp&amp;s=ad6b5eaabded6c0c1beed4fa1c3d7c8dc2a96a5d)
 
-Our current thoughts are to use API gateway and then deliver the payloads into SQS, we would then continue to asynchronously process the results like we do today.
+I'm getting these two values via a Boto call and I need to pass those values to the template data.
 
-For the purpose of this upgrade, we just want to make sure we aren’t ‘losing’ we hook requests or overloading our servers with capacity, we aren’t yet moving the db’s to the cloud nor attempting to containerise the processing logic or something like that, just baby steps.
+&amp;#x200B;
 
-Are the 2 services (API gateway and SQS) the right tools for this job?
-## [10][Need help determining why AWS SAM Hello World app does not deploy in ap-southeast-1](https://www.reddit.com/r/aws/comments/jeo017/need_help_determining_why_aws_sam_hello_world_app/)
-- url: https://www.reddit.com/r/aws/comments/jeo017/need_help_determining_why_aws_sam_hello_world_app/
+[This is the block of code where I'm sending the template](https://preview.redd.it/5gfem4sx8gu51.png?width=850&amp;format=png&amp;auto=webp&amp;s=aed5b60e55e9b9c963128a361ab75b2dd199e9e3)
+
+I'm getting the below error - 
+
+"Unable to parse template data (invalid JSON)."
+
+&amp;#x200B;
+
+Any idea how to solve this?
+## [10][How to switch role to an organization member account from root account?](https://www.reddit.com/r/aws/comments/jfcman/how_to_switch_role_to_an_organization_member/)
+- url: https://www.reddit.com/r/aws/comments/jfcman/how_to_switch_role_to_an_organization_member/
 ---
-I am following the instructions outlined by AWS [here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-getting-started-hello-world.html) to deploy the AWS SAM Hello World (Python 3.8) template in ap-southeast-1. However, when I try to access the API, I am greeted with the following:
-
-    {"message":"Forbidden"}
-
-I have tried deploying in us-east-1 as well as ap-northeast-1 and the API returns the hello world message as expected. 
-
-
-AWS documentation shows that SAM is supported in ap-southeast-1. I have also checked the deployed configs on API Gateway and Lambda to be the same in all regions.
+Any help is highly appreciated, 
+One of the employees left and he had a member account in our organization, 
+- He created some resources before and now we can't access his account to delete it and 
+- He didn't complete all fields required in his account so we can't delete his account either.
 
 
-I am turning to this sub now as I am at wits end trying to understand why I get a Forbidden message on ap-southeast-1 when everything was deployed successfully. Thank you in advance for any advice!
-## [11][API Gateway blocks CORS requests, but still invokes Lambda integration](https://www.reddit.com/r/aws/comments/jenzqx/api_gateway_blocks_cors_requests_but_still/)
-- url: https://www.reddit.com/r/aws/comments/jenzqx/api_gateway_blocks_cors_requests_but_still/
+I tried the following from AWS docs with no luck.
+- Create IAM user with full administration policy
+- Create a role of type user and enter the employee ID in it and give it a specific name
+- Create a policy with service STS (assume) and give it the employee ID and role created from previous step
+- Create a group and attach that policy to it, then add the IAM user to this group
+
+Expected behavior: 
+- Choose switch role from the upright account menu
+- enter employee account ID and role name, I should be granted access to his account
+But in this step it fails while stating one of the two fields are not correct
+## [11][Aws training](https://www.reddit.com/r/aws/comments/jfcaun/aws_training/)
+- url: https://www.reddit.com/r/aws/comments/jfcaun/aws_training/
 ---
-Hey, I have a simple contact form setup on my personal website. I have API Gateway CORS configured to only take requests from my site. Everything seems to be working, when I try to send something from my local network, Chrome tells me:
-
-    Access to fetch at 'xxx' from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
-
-So everything seems good, but yet the Lambda is still invoked and I wind up getting the email anyway. Am I misunderstanding something about how this works?
-## [12][ELB: Trailing slash (/) issue :: without slash(/) site not resolving](https://www.reddit.com/r/aws/comments/jenqts/elb_trailing_slash_issue_without_slash_site_not/)
-- url: https://www.reddit.com/r/aws/comments/jenqts/elb_trailing_slash_issue_without_slash_site_not/
+I wrote whole code locally, data is 5giga, I want to train it online since i got no nvidia, what is proper way of doining, i want to run scripts notebook
+## [12][Server Side Blocking using API Gateway and Authrizer](https://www.reddit.com/r/aws/comments/jfax5i/server_side_blocking_using_api_gateway_and/)
+- url: https://www.reddit.com/r/aws/comments/jfax5i/server_side_blocking_using_api_gateway_and/
 ---
-Hi,
+I am looking to block requests on the server-side using API Gateway + Authorizer (lambda function). 
 
-***Scenario:***
+I pretty much want to grab the HTTP Origin and say "Yup, this is allowed" or "No, I do not know this origin"
 
-* My website resolves to Aws ELB with 443 listener 
-* Backend Target group is an EC2 instance with apache running on port 8080
+&amp;#x200B;
 
-***Problem***:
+Origin grabs something like "example.com"
 
-* If I miss the trailing slash, the website does not resolve and when i put the trailing slash (/) everything works fine.
-* [www.example.com/foldername](https://www.example.com/folder)  &lt;-- ***Does not work***, returns url [www.example.com:8080/foldername/](http://sg-test.pushtrack.co:8080/TwoClickDemo/) and resolution fails
-* [www.example.com/foldername](https://www.example.com/folder)/   &lt;-- Does Works fine
-*  To check if everything fine on the backend I queried the EC2 instance IP on port 8080 with and without /
-* http://ec2\_ip:8080/foldername  and  http://ec2\_ip:8080/foldername/   
-*  Above both url with instance ip worked as expected
+&amp;#x200B;
 
-I'm guessing something fails between ELB and EC2 instance 
+I know you can put this in your mapping template and it will grab the associated header information:
 
-Has anyone faced similar issue before?
+    { 
+    "origin" : "$input.params('origin')", 
+    "referer" : "$input.params('referer')" 
+    }
+    
+
+Unfortunately, I have no way of passing in body mapping templates or accessing the origin of the request from the Authorizer.
+
+&amp;#x200B;
+
+Below is a screenshot of the authorizer, but the Origin variable isn't taking it from the actual origin of the HTTP request. It sees origin as a custom header. I want to be able to find the actual Origin from the HTTP Header.
+
+&amp;#x200B;
+
+https://preview.redd.it/v0dqqhb0mfu51.png?width=940&amp;format=png&amp;auto=webp&amp;s=8e8a3ec026e353b2a5680068681a4fb52ff922d5
+
+How can I pass in the actual HTTP Header to the authorizer?

@@ -31,90 +31,88 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][AGP 4.1 breaking change for libraries: did it hit you?](https://www.reddit.com/r/androiddev/comments/jekj8e/agp_41_breaking_change_for_libraries_did_it_hit/)
-- url: https://www.reddit.com/r/androiddev/comments/jekj8e/agp_41_breaking_change_for_libraries_did_it_hit/
----
-The recent release of Android Studio 4.1 and the respective Gradle Plugin update introduce a small but significant [change](https://developer.android.com/studio/releases/gradle-plugin#version_properties_removed_from_buildconfig_class_in_library_projects) for library modules.  
-
-
-&gt;**Version properties removed from BuildConfig class in library projects**  
-&gt;  
-&gt;For library projects only, the `BuildConfig.VERSION_NAME` and `BuildConfig.VERSION_CODE` properties have been removed from the generated `BuildConfig` class because these static values did not reflect the final values of the application’s version code and name, and were therefore misleading. Additionally, these values were discarded during manifest merging.
-
-For myself, this breaks code of some of the libraries that I have built in the past few years for different projects and different companies. They will need to change this code when they upgrade to the new AGP. Luckily, a workaround is [available](https://issuetracker.google.com/issues/154275579):
-
-`android.defaultConfig.buildConfigField "String", "VERSION_NAME", "\"$versionName\""`
-
-Unfortunately, the Android team [do not plan](https://issuetracker.google.com/issues/154275579#comment10) to introduce an alternative versioning convention, and instead they suggest *'to create something adhoc'.*
-
-Do you think this is the proper way to handle the library version reporting? Or you believe that the approach of Cocoa Touch frameworks with its auto-generated `ExampleFWVersionNumber` is preferrable?
-
-Note that in the near future you will need to change your **build.gradle** even if you do not rely on the `versionCode`
-
-&gt;In a future version of Android Gradle plugin, the `versionName` and `versionCode` properties will also be removed from the DSL for libraries.
-## [4][🍭🚀💗 Tutorials about animations with Animators, Animated Vector Drawables, Shared Transitions, and more](https://www.reddit.com/r/androiddev/comments/je8qq8/tutorials_about_animations_with_animators/)
-- url: https://github.com/SmartToolFactory/Animation-Tutorials
+## [3][The US government has filed antitrust charges against Google](https://www.reddit.com/r/androiddev/comments/jf6b8n/the_us_government_has_filed_antitrust_charges/)
+- url: https://www.theverge.com/2020/10/20/21454192/google-monopoly-antitrust-case-lawsuit-filed-us-doj-department-of-justice
 ---
 
-## [5][Very Simple Preview-only Camera2 Example](https://www.reddit.com/r/androiddev/comments/jenyxb/very_simple_previewonly_camera2_example/)
-- url: https://gist.github.com/jbendtsen/a1c7fca87444621cb065fcb94a89d820
+## [4][Check out my new pal :)](https://www.reddit.com/r/androiddev/comments/jf8sqy/check_out_my_new_pal/)
+- url: https://i.redd.it/tscwa1jfoeu51.jpg
 ---
 
-## [6][Automation bot for Android emulating the human actions?](https://www.reddit.com/r/androiddev/comments/jeos92/automation_bot_for_android_emulating_the_human/)
-- url: https://www.reddit.com/r/androiddev/comments/jeos92/automation_bot_for_android_emulating_the_human/
+## [5][🔥 Quickly distribute your app with Firebase App Distribution using GitHub Actions + Fastlane 🚀 | by Shreyas Patil | Firebase Developers | Oct, 2020](https://www.reddit.com/r/androiddev/comments/jf9r6w/quickly_distribute_your_app_with_firebase_app/)
+- url: https://medium.com/firebase-developers/quickly-distribute-app-with-firebase-app-distribution-using-github-actions-fastlane-c7d8eca18ee0
 ---
-I need an automation bot for performing repetitive actions inside multiple apps, copy/paste text, creating multiple accounts etc, what options there are available?
 
-Thanks
-## [7][Admob alternative?](https://www.reddit.com/r/androiddev/comments/jeopr5/admob_alternative/)
-- url: https://www.reddit.com/r/androiddev/comments/jeopr5/admob_alternative/
+## [6][kotlin-android-extensions plugin will be deprecated by the next Kotlin release](https://www.reddit.com/r/androiddev/comments/jetvoa/kotlinandroidextensions_plugin_will_be_deprecated/)
+- url: https://www.reddit.com/r/androiddev/comments/jetvoa/kotlinandroidextensions_plugin_will_be_deprecated/
 ---
-I am an android developer and I cant use AdMob because it's still saying "your account is being verified" I created the AdMob in September! and still verifying, and I cant communicate with google it has bad support, so the question now, what are the best AdMob alternative to using, except Facebook
-## [8][Google makes changes to Android faster than any solo dev or user can ever keep up with. Apple does this too with iOS. Their SF echo chamber causes this and outside SF people are very confused.](https://www.reddit.com/r/androiddev/comments/jeofk2/google_makes_changes_to_android_faster_than_any/)
-- url: https://www.reddit.com/r/androiddev/comments/jeofk2/google_makes_changes_to_android_faster_than_any/
+As you can see from this ticket: [https://youtrack.jetbrains.com/issue/KT-42121](https://youtrack.jetbrains.com/issue/KT-42121)  
+
+
+So you should stop using kotlinx.android.synthetic if you haven't already and switch to View Binding. The Parcelize feature will be moved into a separate plugin.
+## [7][Android 11 and storage strategies](https://www.reddit.com/r/androiddev/comments/jfbdnc/android_11_and_storage_strategies/)
+- url: https://www.reddit.com/r/androiddev/comments/jfbdnc/android_11_and_storage_strategies/
 ---
-I watch my wife constantly guessing about which new swipe feature her apps are using and not being able to do something that should just be a button on the screen. I have the same issue and I'm a full time android dev. It is impossible to keep up with the changes to Android for both users and developers . Google needs to slow down and let people digest what they've done in the last five years. New versions of android should not break apps that are targeting one version older. I'm sure you guys can come up with tons of other stuff too. Discuss.
-## [9][Best practices for developing with feature flags](https://www.reddit.com/r/androiddev/comments/jeeqlr/best_practices_for_developing_with_feature_flags/)
-- url: https://www.reddit.com/r/androiddev/comments/jeeqlr/best_practices_for_developing_with_feature_flags/
+With Android 11 and it's compulsory restrictions on storage, I was trying to read the documents Google has released as guidance.  However the roadmap seems weak at best - even though some flexibility seems to have been shown - on use of fopen() in native code etc.
+
+But these words are just an indication - there is no overtly obvious guarantee things will behave as the Google webpages seem to suggest.  That is, it depends on interpretation and essentially every developer will have to do their own testing of the hazy API changes to establish what the reality of the changes is.  And even that could change - roadmap has been fluid - which for something as basic as storage injects uncertainty.
+
+For now, one path we are exploring is to use "maxSdkVersion" set to 29 in build.gradle, so that apps are not downloaded by Android 11 users.
+
+And then use the requestLegacyExternalStorage flag set to true in AndroidManifest.xml to allow continuation of old behavior for Android 10 (API 29) at least, and set targetSdkVersion to 29 in build.gradle.
+
+The reason for limiting use to below Android 11 is because Android 11 changes behavior dramatically.
+
+Some of the transition suggests Google is giving is for developers to move the directory that the app saves audio recording etc to one of the "shared storage" places - which I assume means saving to Music.  This will supposedly allow those files to be readable by File Manager etc and such apps.
+
+There is also an indication that requestLegacyExternalStorage set to true has some effect in Android 11 as well - allows for transitioning from old to new Music folder etc.
+
+But I havent seen actual working code provided by Google which accomplishes all these tasks - if the same research/testing/behavior is going to be done by thousands of developers, it makes sense for Google to shoulder some of that effort and provide pre-tested methods to do this stuff reliably.  Otherwise there will be a lot repetition of effort.
+
+
+Another thing I am not too comfortable in gauging is just how popular Android 11 will become.
+
+I am half anticipating some resistance as some of the reduction in features and breaking down of compatibility between apps starts becoming known to users.  Previously they have taken Google's word for it that everything is better on Android 11 - but when they use it the reality will become apparent.
+
+Anecdotally you do hear of users saying "I am never going to update to Android 11", but how prevalent is that - will it mean just addressing below Android 11 market could be a viable gameplan for developers.
+
+Because we have little interest in spending the effort to update many of our more complex apps to comply with an android roadmap that is unclear whether it will change.
+
+
+So are there any guesses how popular Android 11 is expected to get ?
+
+
+In one of the Google medium posts they say use of SAF will not be restricted.  If the new iteration of SAF only limits by preventing writing to top folder - how is this preventing malware.
+
+
+Wouldnt the whole exercise have been simpler if Google had just stopped the old APIs from working on top level folder.
+
+Why all this complicated mess ?
+## [8][Developer tips and guides: Common policy violations and how you can avoid them](https://www.reddit.com/r/androiddev/comments/jf8gya/developer_tips_and_guides_common_policy/)
+- url: https://android-developers.googleblog.com/2020/10/developer-tips-and-guides-common-policy.html
 ---
-Hello all,
 
-I've been looking at ways to speed up development and testing via feature flags, and would love guidance from the broader community here on how everyone does it.
-
-I've come across this neat little library with support for local and remote feature flags, which dynamically generates a UI around your features which you can drive tests from : https://github.com/JeroenMols/FeatureFlagExample
-
-(The UK NHS COVID app is actually using this library!) 
-
-Would love to hear people's approaches and/or recommended libraries you've used successfully to speed up testing with feature flags.
-## [10][Videoview not playing](https://www.reddit.com/r/androiddev/comments/jekktn/videoview_not_playing/)
-- url: https://www.reddit.com/r/androiddev/comments/jekktn/videoview_not_playing/
+## [9][At what point to I create a business?](https://www.reddit.com/r/androiddev/comments/jes1i3/at_what_point_to_i_create_a_business/)
+- url: https://www.reddit.com/r/androiddev/comments/jes1i3/at_what_point_to_i_create_a_business/
 ---
-Hi. I´m having some problem with my videoView in a  recycleView. The video won´t play unless I call **binding**.**vvDiscoverDetail**.setZOrderOnTop(**true**). I have some texts on top of the view so I can´t really set it to top on Z axis. Does anyone know what might be the problem?
+Hello,
 
-**val** uri = Uri.parse(item?.**video**)  
-**binding**.**vvDiscoverDetail**.setMediaController(**null**)  
-**binding**.**vvDiscoverDetail**.setVideoURI(uri)  
-**binding**.**vvDiscoverDetail**.requestFocus()  
-**binding**.**vvDiscoverDetail**.setZOrderOnTop(**true**)  
-**binding**.**vvDiscoverDetail**.start()
-## [11][Is there any scalable, customizable order management system for universal purpose (e.g. restaurant business; car wash business)](https://www.reddit.com/r/androiddev/comments/jemt2a/is_there_any_scalable_customizable_order/)
-- url: https://www.reddit.com/r/androiddev/comments/jemt2a/is_there_any_scalable_customizable_order/
+I'm (one person making an app as a hobby) currently working on an app that is going to use a tiered subscription. I was looking at some of the options for monetization in the Google play console and I was looking at setting up a payment profile. It was asking for a business name. Does this have to be a *real* business? Should I go start the process of getting an LLC? (Or some other business type? (Recommendations and reasons are appreciated) if it doesn't have to be a real business, is there any pros or cons to having an actual business vs not having an actual business? I'm not that new to app development, but all I've made before were simple free games for fun, I never really tried monetizing any of it, so any help/suggestions/advice is very appreciated!
+
+Thank you
+## [10][ServerSocket on android?](https://www.reddit.com/r/androiddev/comments/jfawq4/serversocket_on_android/)
+- url: https://www.reddit.com/r/androiddev/comments/jfawq4/serversocket_on_android/
 ---
-I'm an app dev and recently I built two apps that have the same module in their core.
+Can i host Server on android OS(I am doing it on Emui but it same API so nevermind ) ?
 
-1. Private app for a single restaurant for customers to place orders. Payments via app. Separate admin app to accept, decline, view and manage orders, etc. Feedback about the order. Order history
-2. Private app for a car wash company, allowing users to select their vehicle location and place an order to have an employee arrive and wash their car. Payments via app. Also separate admin app to accept, decline, view and manage orders, etc. Feedback about the order. Order history
+If so do i have to(and how to) port forwarded port on phone?
 
-For backend I used firebase, firestore and some google cloud functions written in python. However, my question is, I wonder if I could have used instead some kind of a  3rd party order management system to integrate with, so that I wouldn't have to write the order placement and management backend code myself.
-
-It should not be tied to a specific industry, should be customizable and allow to perform many  integrations (e.g. via API)
-
-Is there anything good for this kind of purpose?
-
-I don't even know if "order management system" is the right keyword for this, CRM also sounds like something of at least a partial fit for this.
-
-I only found Hydra OMS, which from the first sight looks like it’s what I'm looking for, however, it doesn't seem widely known and I can barely find any referenced on the internet about it. Any alternative suggestions? Maybe an ecommerce platform would work for this?
-## [12][Open source android development](https://www.reddit.com/r/androiddev/comments/jejydk/open_source_android_development/)
-- url: https://www.reddit.com/r/androiddev/comments/jejydk/open_source_android_development/
+Or does it follow Ruter ?
+## [11][AppCompat 1.2 Lint Checks - AppCompatResources or ContextCompat or ResourcesCompat](https://www.reddit.com/r/androiddev/comments/jfaodh/appcompat_12_lint_checks_appcompatresources_or/)
+- url: https://saurabharora.dev/2020-10-20-appcompatresources-vs-contextcompat-resourcescompat/
 ---
-I am a computer science student and i have a passion about android development. I have never done open source before i want to know which organisation should i choose as i also want to be a part of google summer of code next year how can i start making  contributions and what all skill set do i need before starting this ?
+
+## [12][Android Studio 4.2 Canary 14 available](https://www.reddit.com/r/androiddev/comments/jetqp9/android_studio_42_canary_14_available/)
+- url: https://androidstudio.googleblog.com/2020/10/android-studio-42-canary-14-available.html
+---
+

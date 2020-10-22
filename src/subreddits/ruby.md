@@ -3,11 +3,21 @@
 - url: https://metaredux.com/posts/2020/10/21/rubocop-1-0.html
 ---
 
-## [2][Explaining magic behind popular Ruby code](https://www.reddit.com/r/ruby/comments/jekiry/explaining_magic_behind_popular_ruby_code/)
+## [2][RoR Shrine Filesystem](https://www.reddit.com/r/ruby/comments/jfqgun/ror_shrine_filesystem/)
+- url: https://www.reddit.com/r/ruby/comments/jfqgun/ror_shrine_filesystem/
+---
+Hello Everyone,
+
+I'm trying to create a csv upload system within a form. I've done this with shrine and saved it locally with shrine filesystem, but I have a question about it. when I enter the form, is it possible to edit the file before submitting it? Following a shrine tutorial by [Gorails](https://gorails.com/episodes/file-uploading-with-shrine), Chris does an example around min 20:00 and as an example he submits the form with an error and then the file loads. Is this possible without doing the submit and just loading the file? My goal is to be able to edit the csv before the user submits the file with javascript.
+## [3][Running a file in VSC](https://www.reddit.com/r/ruby/comments/jfo1fi/running_a_file_in_vsc/)
+- url: https://www.reddit.com/r/ruby/comments/jfo1fi/running_a_file_in_vsc/
+---
+Hi, I just got ruby and was wondering, how would I run a ruby file in VSC? Can someone send me a step by step process to running a file on VSC?
+## [4][Explaining magic behind popular Ruby code](https://www.reddit.com/r/ruby/comments/jekiry/explaining_magic_behind_popular_ruby_code/)
 - url: https://longliveruby.com/articles/the-magic-behind-ruby-code
 ---
 
-## [3][How to ship a ruby gem/library with an external custom native library as a dependency?](https://www.reddit.com/r/ruby/comments/jeou5f/how_to_ship_a_ruby_gemlibrary_with_an_external/)
+## [5][How to ship a ruby gem/library with an external custom native library as a dependency?](https://www.reddit.com/r/ruby/comments/jeou5f/how_to_ship_a_ruby_gemlibrary_with_an_external/)
 - url: https://www.reddit.com/r/ruby/comments/jeou5f/how_to_ship_a_ruby_gemlibrary_with_an_external/
 ---
 I'm building a library/gem in Ruby that calls some functions from a native **custom** library written in C++. A C++ library, in a pre-compiled form, is available for Windows, Linux and MacOS, and, of course, they're 3 different files.
@@ -23,7 +33,7 @@ Should I put them into a subdirectory of my gem? Then, how would I allow a user 
 &amp;#x200B;
 
 Or require a user to download it on its own? Then how would get a path to that library, how would a user pass it into my gem?
-## [4][How to create a wrapper for a function that returns a result in a callback (block or proc)?](https://www.reddit.com/r/ruby/comments/jel38y/how_to_create_a_wrapper_for_a_function_that/)
+## [6][How to create a wrapper for a function that returns a result in a callback (block or proc)?](https://www.reddit.com/r/ruby/comments/jel38y/how_to_create_a_wrapper_for_a_function_that/)
 - url: https://www.reddit.com/r/ruby/comments/jel38y/how_to_create_a_wrapper_for_a_function_that/
 ---
 I have a third-party library, in which there's a function that returns \`void\` directly, but has a block that's used as a callback:
@@ -80,7 +90,7 @@ I want it to be something like this:
 P.S.
 
 I've found out that that I have to use **Thread.new** because otherwise, it'll hang when I run it as "ruby my\_script1.rb", probably due to GIL. In \`irb\` it won't, though.
-## [5][What are your guys thoughts on Crystal and Elixir?](https://www.reddit.com/r/ruby/comments/je90yt/what_are_your_guys_thoughts_on_crystal_and_elixir/)
+## [7][What are your guys thoughts on Crystal and Elixir?](https://www.reddit.com/r/ruby/comments/je90yt/what_are_your_guys_thoughts_on_crystal_and_elixir/)
 - url: https://www.reddit.com/r/ruby/comments/je90yt/what_are_your_guys_thoughts_on_crystal_and_elixir/
 ---
 Hi everyone, hoping to get some insights into what you think of the two languages that seem to be popular with Rubyists.
@@ -92,7 +102,7 @@ For me I really like Crystal but is in a very new state and not even 1.0 so is a
 Elixir on the other hand goes into the functional world which we are all told is better but I still have issues not explaining concepts in terms of objects and state not being held closely to those objects. I love [Brian Goetz's talk on OOP vs FP](https://www.youtube.com/watch?v=HSk5fdKbd3o) where he thinks we should be object orientated on the outside and functional within.
 
 What do you guys think? Anyone have experience with them?
-## [6][Ruby code hangs when run in the terminal via "ruby script.rb", whereas in Irb it doesn't hang](https://www.reddit.com/r/ruby/comments/jenlag/ruby_code_hangs_when_run_in_the_terminal_via_ruby/)
+## [8][Ruby code hangs when run in the terminal via "ruby script.rb", whereas in Irb it doesn't hang](https://www.reddit.com/r/ruby/comments/jenlag/ruby_code_hangs_when_run_in_the_terminal_via_ruby/)
 - url: https://www.reddit.com/r/ruby/comments/jenlag/ruby_code_hangs_when_run_in_the_terminal_via_ruby/
 ---
 A simplied version of the code I have is this:
@@ -115,71 +125,11 @@ I've heard that ruby code can behave different in such a case.
 &amp;#x200B;
 
 What can be an issue or cause?
-## [7][Better Git diff output for Ruby, Python, Elixir, Go and more](https://www.reddit.com/r/ruby/comments/je09u7/better_git_diff_output_for_ruby_python_elixir_go/)
+## [9][Better Git diff output for Ruby, Python, Elixir, Go and more](https://www.reddit.com/r/ruby/comments/je09u7/better_git_diff_output_for_ruby_python_elixir_go/)
 - url: https://tekin.co.uk/2020/10/better-git-diff-output-for-ruby-python-elixir-and-more?src=twitter
 ---
 
-## [8][How to Estimate The Size of a Rails Application](https://www.reddit.com/r/ruby/comments/je718a/how_to_estimate_the_size_of_a_rails_application/)
+## [10][How to Estimate The Size of a Rails Application](https://www.reddit.com/r/ruby/comments/je718a/how_to_estimate_the_size_of_a_rails_application/)
 - url: https://www.fastruby.io/blog/rails/code-quality/how-we-estimate-rails-application-size.html
 ---
 
-## [9][tutor/mentor for ruby](https://www.reddit.com/r/ruby/comments/jedvcc/tutormentor_for_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/jedvcc/tutormentor_for_ruby/
----
-Hi,
-
-Looking for someone who is an expert in Ruby who would like to be my tutor/mentor. Currently working a cli/api project, and reading "Practical Object-Oriented Design" by Sandi Metz. In need of someone to talk to about everything and get some help. Thanks :)
-## [10][OpenAPI generator in Ruby, client code](https://www.reddit.com/r/ruby/comments/jebsyw/openapi_generator_in_ruby_client_code/)
-- url: https://www.reddit.com/r/ruby/comments/jebsyw/openapi_generator_in_ruby_client_code/
----
-Hello Reddit crowd!
-
-I couldn't find explanation about this, so I try my luck here!
-
-I'm trying the `openapi-generator` (4.3.1). It generates models from the API description file. 
-
-For instance, it generates this:
-
-    module OpenapiClient
-      class Thing
-        attr_accessor :id
-        attr_accessor :description
-    
-        # Attribute mapping from ruby-style variable name to JSON key.
-        def self.attribute_map
-          {
-            :'id' =&gt; :'id',
-            :'description' =&gt; :'description'
-          }
-        end
-    
-        # Attribute type mapping.
-        def self.openapi_types
-          {
-            :'id' =&gt; :'Integer',
-            :'description' =&gt; :'String'
-          }
-        end
-    
-        # ...
-      end
-    end
-
-This behaves as expected:
-
-    # All this is expected:
-    t = OpenapiClient::Thing.new(id: 1)
-    t.valid?
-    =&gt; false
-    t.list_invalid_properties
-    =&gt; ["invalid value for \"description\", description cannot be nil."]
-
-But **this does not behave as expected**:
-
-    t = OpenapiClient::Thing.new(id: "abc", description: 3)
-    t.valid?
-    =&gt; true
-
-`id` should be int and `description` a string, so it fails to check the type. Is there anything I'm doing wrong?
-
-🙏

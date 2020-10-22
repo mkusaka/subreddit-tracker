@@ -3,81 +3,144 @@
 - url: https://blog.golang.org/survey2020
 ---
 
-## [2][NSQTracer to watch published NSQ messages](https://www.reddit.com/r/golang/comments/jf97h3/nsqtracer_to_watch_published_nsq_messages/)
-- url: https://www.reddit.com/r/golang/comments/jf97h3/nsqtracer_to_watch_published_nsq_messages/
+## [2][A Go unikernel running on x86 bare metal](https://www.reddit.com/r/golang/comments/jfuusy/a_go_unikernel_running_on_x86_bare_metal/)
+- url: https://github.com/icexin/eggos
 ---
-I thought it would be good if I share some of my CLI based utility for tracing **NSQ** messages built with Golang here. In case someone needs it.
 
-&amp;#x200B;
-
-[Github Preview](https://preview.redd.it/lmhfnnmpveu51.png?width=1113&amp;format=png&amp;auto=webp&amp;s=2f4ef1bb502b17fa578c46a6fa9933eaa17c394c)
-
-[https://github.com/slaveofcode/nsqtracer](https://github.com/slaveofcode/nsqtracer)
-## [3][Represent Message Length as a 2-byte binary](https://www.reddit.com/r/golang/comments/jf9xkk/represent_message_length_as_a_2byte_binary/)
-- url: https://www.reddit.com/r/golang/comments/jf9xkk/represent_message_length_as_a_2byte_binary/
+## [3][Anyone using go-migrate with a team?](https://www.reddit.com/r/golang/comments/jfvwtg/anyone_using_gomigrate_with_a_team/)
+- url: https://www.reddit.com/r/golang/comments/jfvwtg/anyone_using_gomigrate_with_a_team/
 ---
-Am doing integration with a third party and the communication is being done over TCP sockets. They have this requirement(**Message variable length indicator**) where am supposed to represent the XML message length as a 2 binary byte message length.
+So we are using go-migrate and we have an issue with versions. Say dev A creates a new set of migrations (via cli) like:
 
-For example, my message is 1024 in length. How do I represent 1024 as binary two-bytes?
 
-&amp;#x200B;
+    20201022081817_foobar.up.sql
+    20201022081817_foobar.down.sql
 
-Here is a similar issue in ruby [https://stackoverflow.com/questions/13794817/ruby-how-to-represent-message-length-as-2-binary-bytes](https://stackoverflow.com/questions/13794817/ruby-how-to-represent-message-length-as-2-binary-bytes)
-## [4][A simple helper to restart Docker containers with newer versions of images pulled from registry.](https://www.reddit.com/r/golang/comments/jfcus1/a_simple_helper_to_restart_docker_containers_with/)
+
+At dev B creates a set of migrations in another branch like:
+
+
+    20201020081917_baz.up.sql
+    20201020081917_baz.down.sql
+
+
+Now the migration tool cant migrate depending on whats run first.
+
+Now dev A cant run dev B migrations, and vice-versa. This is because go-migrate only knows about the latest migration, and does not track previous ones. Its turned out to be a real PITA so handle these every time database changes happen.
+
+TLDR
+
+If you merge a branch with "older" migrations these cant be run with pg-migrate because it does not "know" they where not already run.
+
+Im just wondering if there is a good way of managing these cases, or maybe another library that can track previous migrations and know what to apply when running up.
+## [4][When Too Much Concurrency Slows You Down (Golang)](https://www.reddit.com/r/golang/comments/jfi21j/when_too_much_concurrency_slows_you_down_golang/)
+- url: https://medium.com/@_orcaman/when-too-much-concurrency-slows-you-down-golang-9c144ca305a
+---
+
+## [5][If I use ioutil.ReadAll, and then set a struct member to some small part of that file, does the entire file remain in memory?](https://www.reddit.com/r/golang/comments/jfy9vq/if_i_use_ioutilreadall_and_then_set_a_struct/)
+- url: https://www.reddit.com/r/golang/comments/jfy9vq/if_i_use_ioutilreadall_and_then_set_a_struct/
+---
+Once upon a time, I thought I read a post explaining why loading an entire file in memory, and then referencing parts of that file, can be dangerous, because it keeps the entire file in memory. I can't seem to find that post, so I'm asking my question here. 
+
+Use case: I have thousands of compressed CSV files (each hundreds of MB uncompressed) in cloud storage. I created a utility function that downloads the file, unzips it, and loads it in memory, returning the entire file contents as a string. 
+
+Then my code usually takes that string and slaps a CSV reader on it, and parses it. In some of my parsing code, I'll do something like:
+
+`myStruct.Member = rec[0]`
+
+Where `rec[0]` is one field from one CSV record. 
+
+The thing that has me concerned: does this mean my program will *always* retain the entire file in memory, because I have created a reference to it in this way?
+
+And if so, how do I copy the value without retaining a reference to the file?
+## [6][My Six Years of Experience of as a Go Programming Language Mentor in India](https://www.reddit.com/r/golang/comments/jfwrav/my_six_years_of_experience_of_as_a_go_programming/)
+- url: https://shijuvar.medium.com/my-six-years-of-experience-of-as-a-go-programming-language-mentor-in-india-67854dcf1b95
+---
+
+## [7][PSA: Think of the Less/less functions in the sort package as actually being ComesBefore](https://www.reddit.com/r/golang/comments/jfei3w/psa_think_of_the_lessless_functions_in_the_sort/)
+- url: https://www.reddit.com/r/golang/comments/jfei3w/psa_think_of_the_lessless_functions_in_the_sort/
+---
+As in `less(i,j)` means *item i comes-before item j*, which I think is more helpful than "less" which doesn't really tell you where it'll end up in the list, per se, and makes it more obvious how to sort a list in "reverse" order, or any arbitrary multi-dimensional order.
+## [8][Multi-source file server: serve from 15TB files on baremetal + google cloud storage (public url) via single link](https://www.reddit.com/r/golang/comments/jfv67u/multisource_file_server_serve_from_15tb_files_on/)
+- url: https://github.com/codenoid/file-server
+---
+
+## [9][A Cloud Native Distributed Streaming Network Telemetry](https://www.reddit.com/r/golang/comments/jff8t1/a_cloud_native_distributed_streaming_network/)
+- url: https://github.com/yahoo/panoptes-stream
+---
+
+## [10][A simple helper to restart Docker containers with newer versions of images pulled from registry.](https://www.reddit.com/r/golang/comments/jfcus1/a_simple_helper_to_restart_docker_containers_with/)
 - url: https://www.reddit.com/r/golang/comments/jfcus1/a_simple_helper_to_restart_docker_containers_with/
 ---
 Helps k8s-less provisioning and updating to the newer version of a stateless container without pains of recalling the command-line options used to start the container.
 
 [https://github.com/jdevelop/repull](https://github.com/jdevelop/repull)
-## [5][Best golang framework for REST API?](https://www.reddit.com/r/golang/comments/jf9ih7/best_golang_framework_for_rest_api/)
-- url: https://www.reddit.com/r/golang/comments/jf9ih7/best_golang_framework_for_rest_api/
+## [11][program that adds the percentage (decided by the user) of a number (decided by the user) to that number, which added several times with itself gives me another number (decided by the user) added to its percentage (the one decided at the beginning)](https://www.reddit.com/r/golang/comments/jfnt3e/program_that_adds_the_percentage_decided_by_the/)
+- url: https://www.reddit.com/r/golang/comments/jfnt3e/program_that_adds_the_percentage_decided_by_the/
 ---
-Hello everyone, I'm new to golang. The question is in the title. Right now I settled on the Iris framework [https://www.iris-go.com/](https://www.iris-go.com/) because it is the newest and seems to be powerful. What do you use in commercial projects and what do you like the most?
-## [6][Go and GUI, what to do?](https://www.reddit.com/r/golang/comments/jeywfv/go_and_gui_what_to_do/)
-- url: https://www.reddit.com/r/golang/comments/jeywfv/go_and_gui_what_to_do/
----
-I'm toying with the idea of writing a GUI for a terminal application I've created in the past year - what are the best current options for creating a GUI with Go today?
-## [7][A golang tool —- for fast generating icon for MacOS App](https://www.reddit.com/r/golang/comments/jf9hu9/a_golang_tool_for_fast_generating_icon_for_macos/)
-- url: https://github.com/scott-x/icns
----
+Hi, I'm a new user and (I've also just started University) and I'm already having problems coding...
 
-## [8][Learn Go test-first with 'For the Love of Go: Fundamentals'](https://www.reddit.com/r/golang/comments/jelx8o/learn_go_testfirst_with_for_the_love_of_go/)
-- url: https://bitfieldconsulting.com/books/fundamentals
----
+I'll give an example and paste my code:
 
-## [9][hashicorp/waypoint: A tool to build, deploy, and release any application on any platform](https://www.reddit.com/r/golang/comments/jeq7c6/hashicorpwaypoint_a_tool_to_build_deploy_and/)
-- url: https://github.com/hashicorp/waypoint
----
+&amp;#x200B;
 
-## [10][Luks.go: pure-Golang implementation of LUKS partition manager](https://www.reddit.com/r/golang/comments/jey9fq/luksgo_puregolang_implementation_of_luks/)
-- url: https://www.reddit.com/r/golang/comments/jey9fq/luksgo_puregolang_implementation_of_luks/
----
-Hi folks,
+example:
 
-I would like to present my project that I was working on for the last couple of months. Luks.go - a pure-Golang library to manage partitions encrypted with LUKS [https://github.com/anatol/luks.go](https://github.com/anatol/luks.go)
+20 (number decided) \* 15/100 (percentage decided) + 20 = 23 (the number I want to reach by adding a certain number of my choice plus the percentage decided before \[15/100\])
 
-If you need to deal with LUKS partition in your golang application then luks.go is your friend. Luks.go allows you to unlock a LUKS partition without using system dynamic libraries or standalone tools like cryptsetup. Pulling such system dependencies is a PITA especially if your tool needs to work across different OS versions.
+&amp;#x200B;
 
-Currently luks.go supports unlocking only. In the future it might contain operations that modify luks metadata (e.g. adding/removing keyslots). Though this functionality is more dangerous and requires more time for development and testing.
+For example, let's take the number 2 as the number to add (with the for cycle):
 
-This work has been sponsored by my employer - Twitter. The project has been started as a part of Twitter hackathon week. I want to say thanks to my company and my manager for supporting me in my open-source work.
-## [11][Rare realtime log aggregator released 0.1.27 with bug fixes and better histogram support](https://www.reddit.com/r/golang/comments/jf482g/rare_realtime_log_aggregator_released_0127_with/)
-- url: https://www.reddit.com/r/golang/comments/jf482g/rare_realtime_log_aggregator_released_0127_with/
----
-[https://github.com/zix99/rare](https://github.com/zix99/rare)
+&amp;#x200B;
 
-This is a golang project I've been working on off-and-on for a while.  Originally, it was to help suite my needs to analyze massive amounts of log files (gigabytes+) and get incremental output, rather than waiting for something like \`zcat | uniq\` to run.  I still use it from time to time, but wanted to share with you all
+2+2\*15/100=2.30 (the first print)
 
-Here's an example of analyzing nginx log files for statuses:
+2+2\*15/100=2.30+2.30=4.60 (second print)
 
-    ./rare histo -m '" (\d{3})' -e "{bucket {1} 100}" -xz testdata/*
-    400                 5,807,761  [69.4%] ||||||||||||||||||||||||||
-    200                 2,565,032  [30.6%] |||||||||||
-    300                 535        [ 0.0%] 
+...
+
+&amp;#x200B;
+
+until you reach the last print that would be 23.
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+My try (completely wrong as I don't know how to proceed/change it in a way that would work):
+
+    package main
     
+    import "fmt"
     
-    Matched: 8,373,328 / 8,383,717 (Groups: 3)
+    func main() {
+      var n, i, accumulatore float64
+      var percentuale int
+      fmt.Println("")
+      fmt.Print("Inserire valore: ")
+      fmt.Scan(&amp;n)
+      fmt.Print("Inserire percentuale (int): ")
+      fmt.Scan(&amp;percentuale)
+    
+      aumento := n*((percentuale/100)+1)
+      accumulatore = aumento
+    
+      fmt.Println("")
+      fmt.Println(aumento)
+      fmt.Println("")
+      
+      if (n+(n*15/100))%aumento == 0 {
+        for i=0; i&lt;n; i++{
+        fmt.Println(accumulatore)
+        accumulatore += aumento
+        for accumulatore == n/aumento {
+          break
+        }
+      }
+      
+    }
+    
+    }
 
-It supports a range of features similar to other programs you're already used to: gunzipping, regex search, simple handlebars-like expressions, ignore patterns, etc.
-
-Hope you like my project.  Always happy to take feedback!  I went through great pains to optimize this, and learned a lot about go in the process.
+could someone kindly help me?

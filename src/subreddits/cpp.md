@@ -56,19 +56,103 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Ridiculously fast unicode (UTF-8) validation](https://www.reddit.com/r/cpp/comments/jf0tx4/ridiculously_fast_unicode_utf8_validation/)
+## [2][Fast, typo tolerant instant search engine written in C++](https://www.reddit.com/r/cpp/comments/jfddui/fast_typo_tolerant_instant_search_engine_written/)
+- url: https://github.com/typesense/typesense
+---
+
+## [3][clang-tidy support in VSCode is possible](https://www.reddit.com/r/cpp/comments/jfktsf/clangtidy_support_in_vscode_is_possible/)
+- url: https://www.reddit.com/r/cpp/comments/jfktsf/clangtidy_support_in_vscode_is_possible/
+---
+if you're an exceptionally attractive individual like me, the only things preventing you from retiring clion and adopting vscode (for everything) are **clang-tidy** and **cppcheck**. we can get clang-tidy by upvoting this feature request for adding clang-tidy support to the cpp extension for vscode: [https://github.com/microsoft/vscode-cpptools/issues/2908](https://github.com/microsoft/vscode-cpptools/issues/2908)
+
+clang-tidy good. more clang-tidy.
+## [4][Qt and idiomatic smart pointer usage](https://www.reddit.com/r/cpp/comments/jfoeht/qt_and_idiomatic_smart_pointer_usage/)
+- url: https://www.reddit.com/r/cpp/comments/jfoeht/qt_and_idiomatic_smart_pointer_usage/
+---
+One of the projects I work on is a gui application based on a c++ library which is written in c++17 style. The gui use Qt, but the library itself doesn't use any Qt classes at all except for optional model objects which inherit QAbstractItemModel. Any pointers that are part of the library api are std::unique_ptr or (rarely) std::shared_ptr.
+
+This creates some friction because Qt's ownership model doesn't mesh very well with modern coding styles. Even though other patterns are grudgingly tolerated, Qt wants you to create widget objects on the stack with new and pass in a parent pointer which will take ownership of the object. This feels like a major step backwards when the non-gui parts of the project have successfully eliminated usage of raw new / delete usage.
+
+The solution we came up with is based on a helper class called ScopeGuard (*):
+
+    class ScopeGuard
+    {
+    public:
+        using Callback = std::function&lt;void()&gt;;
+
+        ScopeGuard(Callback cb) noexcept;
+            : cb_(cb)
+        {
+        }
+        ~ScopeGuard()
+        {
+            if (cb_) { cb_(); }
+        }
+
+    private:
+        const SimpleCallback cb_;
+    };
+
+With that class available, it's possible to write code for creating and displaying a modal dialog that looks like this:
+
+    {
+        ...
+        auto dialog = std::make_unique&lt;MyDialog&gt;(this);
+        auto postcondition = ScopeGuard{[&amp;]() {
+            dialog-&gt;deleteLater();
+            dialog.release();
+        }};
+        connect(dialog.get(), &amp;MyDialog::signal, this, &amp;MyType::slot)
+        ...
+        dialog-&gt;exec();
+    }
+
+Using this pattern I still allow Qt to control object lifetime on its own terms. In particular I don't need to worry about whether the signal/slot connections will be cleaned up before the dialog object.
+
+At the same time, raw usage of new is avoided and the owership semantics are more clearly conveyed to anyone reading the code. Any coder looking at this function may not realize **why** ownership of the object is being given up in this way, but it is clear that what is happening is deliberate even to someone unfamiliar with Qt's ownership model.
+
+(*) It's probably obvious but the class name "ScopeGuard" was invented by a team member who is a fan of Dlang.
+## [5][Ridiculously fast unicode (UTF-8) validation](https://www.reddit.com/r/cpp/comments/jf0tx4/ridiculously_fast_unicode_utf8_validation/)
 - url: https://lemire.me/blog/2020/10/20/ridiculously-fast-unicode-utf-8-validation/
 ---
 
-## [3][json_dto-0.2.11: custom formatters added to an easy to use wrapper around RapidJSON](https://www.reddit.com/r/cpp/comments/jf82ka/json_dto0211_custom_formatters_added_to_an_easy/)
-- url: https://eao197.blogspot.com/2020/10/progc-jsondto-0211-released.html
+## [6][Learning C before C++](https://www.reddit.com/r/cpp/comments/jfjdzy/learning_c_before_c/)
+- url: https://www.reddit.com/r/cpp/comments/jfjdzy/learning_c_before_c/
 ---
+Is there any benefit in learning C before C++? Is C lower level than C++, meaning I would learn more about how computers work (on a lower level)? I am planning on taking CS50 soon, which I believe teaches C too, so if there is benefits in learning C before C++, I would learn it there and could afterwards directly start C++, or should I learn C in more depth?
 
-## [4][2020-10 C++ Committee Mailing](https://www.reddit.com/r/cpp/comments/jf4wsw/202010_c_committee_mailing/)
+I am mostly interested in cybersecurity, AI, game development, simulations, and more.
+
+What are the advantages of C over C++ in general, as in what kind of programs is C more suited for than C++?
+## [7][I created a technical tutorial demonstrating how to design a language-agnostic cross-platform computer Vision SDK (written in C++).](https://www.reddit.com/r/cpp/comments/jfn1a8/i_created_a_technical_tutorial_demonstrating_how/)
+- url: https://www.reddit.com/r/cpp/comments/jfn1a8/i_created_a_technical_tutorial_demonstrating_how/
+---
+In the tutorial, I explain how to:
+
+* Build a basic computer vision library in C++
+* Compile and cross-compile the library for AMD64, ARM64, and ARM32
+* Package the library and all the dependencies as a single static library
+* Automate unit testing
+* Set up a continuous integration (CI) pipeline
+* Write python bindings for our library
+* Generate documentation directly from our API
+
+The tutorial has a corresponding video explanation and all the code is open source an available on github. 
+
+Check it out, I'm open to any feedback or suggestions too.
+
+Hope it helps you get started with your next big C++ project!
+
+[https://medium.com/trueface-ai/how-to-design-a-language-agnostic-cross-platform-computer-vision-sdk-e437ecac8b4e](https://medium.com/trueface-ai/how-to-design-a-language-agnostic-cross-platform-computer-vision-sdk-e437ecac8b4e)
+## [8][2020-10 C++ Committee Mailing](https://www.reddit.com/r/cpp/comments/jf4wsw/202010_c_committee_mailing/)
 - url: http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2020/#mailing2020-10
 ---
 
-## [5][What to use for writing large documentations?](https://www.reddit.com/r/cpp/comments/jexkdk/what_to_use_for_writing_large_documentations/)
+## [9][json_dto-0.2.11: custom formatters added to an easy to use wrapper around RapidJSON](https://www.reddit.com/r/cpp/comments/jf82ka/json_dto0211_custom_formatters_added_to_an_easy/)
+- url: https://eao197.blogspot.com/2020/10/progc-jsondto-0211-released.html
+---
+
+## [10][What to use for writing large documentations?](https://www.reddit.com/r/cpp/comments/jexkdk/what_to_use_for_writing_large_documentations/)
 - url: https://www.reddit.com/r/cpp/comments/jexkdk/what_to_use_for_writing_large_documentations/
 ---
 This is not strictly CPP, but hey, I like you guys.
@@ -92,40 +176,8 @@ That's why I'm not worried about one being out of date, they are separate pieces
 Edit:
 The documentation is going to be very technical, just not actual code.  
 I also think I would prefer for the documentation to be in git not in a database.
-## [6][Does anybody use std::list?](https://www.reddit.com/r/cpp/comments/jf3dwo/does_anybody_use_stdlist/)
+## [11][Does anybody use std::list?](https://www.reddit.com/r/cpp/comments/jf3dwo/does_anybody_use_stdlist/)
 - url: https://www.reddit.com/r/cpp/comments/jf3dwo/does_anybody_use_stdlist/
 ---
 I have never used std::list the last 15 years,  mainly for performance reasons. If I need to store large objects, I use a vector of pointers. Does anybody have a use case that can share? 
 Thanks!
-## [7][Performance of std::pmr](https://www.reddit.com/r/cpp/comments/jf0dse/performance_of_stdpmr/)
-- url: https://www.reddit.com/r/cpp/comments/jf0dse/performance_of_stdpmr/
----
-I tried to experiment a bit by replacing several container types with their pmr:: counterparts on a medium-sized project. This change alone made the performance drop substantially. From around ~~180~~158 fps to 145 fps.
-
-I am really surprised by this. With no additional changes, it should still delegate to new/delete, but does so via a virtual call. Could this indirection be the source of the overhead? Or could it be the extra pointer which is needed in all the containers?
-
-This library is mainly single-threaded, so I replaced the default memory resource with an [unsynchronized pool](https://en.cppreference.com/w/cpp/memory/unsynchronized_pool_resource), and then the performance was back up again closer to the original 180 fps. I was hoping to see something much better here when I started, but it seems that the gain is completely eaten up by the overhead.
-
-Does anyone have any experience using the polymorphic allocators on a larger codebase? Any idea what is going on here?
-
-Edit: In the process, I accidentally changed out a non-std unordered map with `std::pmr::unordered_map`. This turned out to be the largest part of the performance drop, the `std::unordered_map` is just a whole lot slower. After correcting this, there is still a 10-15 fps performance drop purely due to using the pmr containers.
-## [8][Warrior1: A Performance Sanitizer for C++](https://www.reddit.com/r/cpp/comments/jeqgvu/warrior1_a_performance_sanitizer_for_c/)
-- url: https://arxiv.org/abs/2010.09583
----
-
-## [9][Qt 6.0 Beta Released](https://www.reddit.com/r/cpp/comments/jelc9l/qt_60_beta_released/)
-- url: https://www.qt.io/blog/qt-6.0-beta-released
----
-
-## [10][I got "me knickers in a twist" while trying to compile and link using VS Code and clang that is part of Visual Studio 2019. But I was cool calm and collected and this is my story.](https://www.reddit.com/r/cpp/comments/jfa1x2/i_got_me_knickers_in_a_twist_while_trying_to/)
-- url: https://github.com/dbj-data/bench/tree/main/.vscode/readme
----
-
-## [11][macOS performance tester wanted (eCAL)](https://www.reddit.com/r/cpp/comments/jf9vmq/macos_performance_tester_wanted_ecal/)
-- url: https://www.reddit.com/r/cpp/comments/jf9vmq/macos_performance_tester_wanted_ecal/
----
-For our pub/sub middleware we are looking for a performance tester for macOS. I will spend a bottle of one of the best local beer in Frankfurt Rhein Main area (shipping world wide), maybe two ;-)
-
-[Taunus Naturtrueb](https://imgur.com/YwchS0H)
-
-What we would like to have is a performance measuring on a native Mac following these [instructions](https://continental.github.io/ecal/advanced/performance.html). The dmg darwin image you can find [here](https://github.com/continental/ecal/releases). Happy testing !

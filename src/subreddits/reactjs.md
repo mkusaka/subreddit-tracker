@@ -70,100 +70,97 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][React v17.0.0 released!](https://www.reddit.com/r/reactjs/comments/jey6az/react_v1700_released/)
-- url: https://github.com/facebook/react/blob/46ed2684718d160b06cf6e4f5f5ecf70c7b8974c/CHANGELOG.md#1700-october-20-2020
+## [3][I created a free landing page template using React and Tailwind CSS](https://www.reddit.com/r/reactjs/comments/jfg480/i_created_a_free_landing_page_template_using/)
+- url: https://v.redd.it/chvcrk5r4hu51
 ---
 
-## [4][New Moderators at /r/Reactjs!](https://www.reddit.com/r/reactjs/comments/jeqeo9/new_moderators_at_rreactjs/)
-- url: https://www.reddit.com/r/reactjs/comments/jeqeo9/new_moderators_at_rreactjs/
----
-Hello! We launched our first-ever [moderator applications](https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/) 2 weeks ago (in consultation with /u/nextdoorNabors from the Core Team) and dozens of you applied!
-
-I'm excited to introduce our 4 new mods (note that some are newer accounts created for more "professional use"):
-
-- /u/CodeGeeek is a UI Architect from Bengaluru, India 🇮🇳 with &gt;10yrs experience in frontend. We've enjoyed [her talks](https://youtu.be/2so479wrHNk)! She's interested in adding more FAQs, reference material, and news recaps to our content mix.
-- /u/Lashuel is a Sr. Software Eng from Sanaa, Yemen 🇾🇪 who has given some cool [React](https://hooks-kyan.ayox.now.sh/) [talks](https://prod-talk.ayox.now.sh/). He's keen on organizing monthly challenges/activities for folks to stretch their React skills together.
-- /u/ZenosGarcia is a fullstack engineer from California, USA 🐻 who was a Deputy District Attorney(!) before changing careers to webdev. As a bootcamp grad (like me!) she's keen on helping beginners understand React, feel welcome and not be intimidated.
-- /u/Nutlope is originally from Morocco 🇲🇦 and is now in his final year in CS at Drexel. He has [run a large gaming community](https://www.quora.com/profile/Hassan-El-Mghari-1) on the side. He's interested in starting a mentorship program here on /r/Reactjs and running more AMAs from key figures in our community.
-
-They'll join the current active mod roster of /u/acemarke, /u/dance2die, /u/timmonsjg, /u/Charles_Stover from today. Thank you to the rest who applied - we couldn't accept everyone but we might grow again in future. Your suggestions will be shared with the mod team. Those who are interested in being considered in future can still [fill out our form](https://docs.google.com/forms/d/e/1FAIpQLSfoP-n06uTmPouq2EOTQ5TD9vFH_jp7glG9hh4rpEZV1EHzSg/viewform?usp=pp_url).
-
-Moderating is 100% volunteer community service, and Reddit gives mods only very limited powers to shape the culture of this community. Ultimately the most important elements here - from quality content to quality discussion to inclusiveness - comes from you, our members. Thank you for making /r/reactjs what it is today - now let's make it better :)
-## [5][Revamped GitHub Jobs Website Using Design From Frontend Mentor](https://www.reddit.com/r/reactjs/comments/jfb13n/revamped_github_jobs_website_using_design_from/)
-- url: https://blog.bhanuteja.dev/i-revamped-github-jobs-website-using-design-from-frontend-mentor
+## [4][Followup on my previous post: made my portfolio public and did a little bit of cleaning, feel free to use the code from the repo (links in the comment)](https://www.reddit.com/r/reactjs/comments/jfhuyd/followup_on_my_previous_post_made_my_portfolio/)
+- url: https://v.redd.it/9an2f07ikhu51
 ---
 
-## [6][Client redirect trough server: CORS error.](https://www.reddit.com/r/reactjs/comments/jfbudv/client_redirect_trough_server_cors_error/)
-- url: https://www.reddit.com/r/reactjs/comments/jfbudv/client_redirect_trough_server_cors_error/
+## [5][100 Days of Code](https://www.reddit.com/r/reactjs/comments/jfw9a5/100_days_of_code/)
+- url: https://www.reddit.com/r/reactjs/comments/jfw9a5/100_days_of_code/
 ---
-I try to redirect the user from my client trough my Express API to another page. The reason for this is once the user hits the POST 'auth/login' endpoint with success (and valid data) he/she will be redirected to the home page.
+I'm planning to commit to the "100 days of code" challenge and for each day, I'm thinking of creating a web app from scratch. This will, obviously, be time-consuming but would be greatly beneficial. However, I can't come up with enough ideas to last the 100-day span. Would love to hear you suggestions and app-ideas for each day. This is what I'm looking to get out of this challenge:
+1. Improve my UI/UX skills
+2. Get better at ReactJS, specifically testing
 
-That gives me the following error:
+It would be awesome if you can help me find ideas for this challenge.
 
-&gt;Access to XMLHttpRequest at '[http://localhost:3000/](http://localhost:3000/)' (redirected from '[http://localhost:4000/auth/login](http://localhost:4000/auth/login)') from origin '[http://localhost:3000](http://localhost:3000)' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+**UPDATE 1**
+- Thanks a ton for all the great suggestions.
+- After reading through the comments, I've decided to ditch the idea of one-project-a-day and instead develop one big project in 100 days.
+## [6][Collaborate!](https://www.reddit.com/r/reactjs/comments/jfn03v/collaborate/)
+- url: https://www.reddit.com/r/reactjs/comments/jfn03v/collaborate/
+---
+I'm an aspiring Full Stack developer based in California. I'm trying to find Junior roles but sadly it's extremely hard because of Covid and feeling really down not getting any bites.
 
-&amp;#x200B;
+I'm 2 months in React and have been grinding daily, I love it. I've also been learning Redux, and then Node &amp;  MongoDB as a backend but not that comfortable with it yet but getting there.
 
-I assume this has something to do with handling CORS on the frontend, since my Express API is already using the following middleware:
+Trying to find like minded individuals so we could cheer each other on and maybe we could collaborate with something :)
 
-    app.use(
-      cors({
-        origin: "http://localhost:3000",
-        methods: "GET,PUT,PATCH,POST,DELETE",
-        credentials: true
-      })
+I love designing too! If anyone wants to collaborate we could build projects together that would be great!
+
+my github
+
+[https://github.com/isabelchua](https://github.com/isabelchua)
+
+my simple website
+
+[https://isabelchua.github.io/](https://isabelchua.github.io/)
+## [7][☁ REALAYERS - Layer Components for React: Dialogs, Drawers, Tooltips, Popovers](https://www.reddit.com/r/reactjs/comments/jfyhet/realayers_layer_components_for_react_dialogs/)
+- url: https://www.npmjs.com/package/realayers
+---
+
+## [8][A Timeline component for React with multiple layout modes (Horizontal, Vertical , Tree), slideshow and support for embedding images &amp; videos.](https://www.reddit.com/r/reactjs/comments/jfi99v/a_timeline_component_for_react_with_multiple/)
+- url: https://v.redd.it/w37bwprvnhu51
+---
+
+## [9][Making a 2D RPG game with react-tree-fiber](https://www.reddit.com/r/reactjs/comments/jfuumz/making_a_2d_rpg_game_with_reacttreefiber/)
+- url: https://dev.to/flagrede/making-a-2d-rpg-game-with-react-tree-fiber-4af1
+---
+
+## [10][For Beginners: If you are getting "object are not valid as a react child" error.](https://www.reddit.com/r/reactjs/comments/jfzj1v/for_beginners_if_you_are_getting_object_are_not/)
+- url: https://www.reddit.com/r/reactjs/comments/jfzj1v/for_beginners_if_you_are_getting_object_are_not/
+---
+A student came to me with this error and I remembered the time when I was creating my first project and encountered the same problem.
+
+It happens most when we are calling data from server and using it directly in JSX. Since the format of data is not clearly visible in frontend code, we make mistakes.
+
+Objects are not valid react children but arrays are. So for example, in this code -
+
+    const jsobj = {"website": "reddit"};
+    return (
+         &lt;div&gt;{jsobj}&lt;/div&gt;
     );
 
-&amp;#x200B;
-## [7][I created this tool. Feedbacks are welcome](https://www.reddit.com/r/reactjs/comments/jf7kpj/i_created_this_tool_feedbacks_are_welcome/)
-- url: https://resume-builder-react.netlify.app/
+we will get error but if we change it to array then -
+
+    const jsarr = ["website", "reddit"];
+    return (
+         &lt;div&gt;{jsarr}&lt;/div&gt;
+    );
+
+It's perfectly valid. In fact we can use JSX as elements of array. That's why we could use map function directly in our JSX code.
+## [11][CodeHelp Discord Server!](https://www.reddit.com/r/reactjs/comments/jfyxpq/codehelp_discord_server/)
+- url: https://www.reddit.com/r/reactjs/comments/jfyxpq/codehelp_discord_server/
 ---
+**CodeHelp** is a new community-driven Discord server, comprised of developers, designers, and marketers of all skill levels. Our goal is to create a fun, helpful discord based group where people can get the development and programming support they need. Some of the development and marketing areas in the group include:
 
-## [8][I've created a compiler that turns a JS module into a back-end](https://www.reddit.com/r/reactjs/comments/jfa2gr/ive_created_a_compiler_that_turns_a_js_module/)
-- url: https://www.reddit.com/r/reactjs/comments/jfa2gr/ive_created_a_compiler_that_turns_a_js_module/
----
-The idea is to create a microservice with no Node nor Express knowledge. the main purpose is to give front-end guys a way to build apps and consume APIs without the trouble of creating a proxy.
+* HTML / CSS
+* JavaScript (including libraries and frameworks)
+* PHP
+* Python
+* Java
+* Design
+* SEO
+* PPC
+* and much more.
 
-The JS module is built and deployed in a cloud (Google functions as of today) and called with a generated wrapper. 
+**We're currently looking for adept developers for assisting with some of the various channels we currently have.**
 
-=&gt; link to the website: [**split.to/GyTPku4**](http://split.to/GyTPku4)
-
-Here's the doc: [warpjs.dev](https://warpjs.dev/)
-## [9][18 months ago I published a React book in German. You can now read the translated version for free online!](https://www.reddit.com/r/reactjs/comments/jfa2gn/18_months_ago_i_published_a_react_book_in_german/)
-- url: https://learn.react-js.dev/
----
-
-## [10][React India Slack Group](https://www.reddit.com/r/reactjs/comments/jf9u2e/react_india_slack_group/)
-- url: https://join.slack.com/t/reactindiacommunity/shared_invite/zt-ieup2mk3-pAmQz4G1DxUvf0rCb7vLfQ
----
-
-## [11][Socket io with async operations](https://www.reddit.com/r/reactjs/comments/jf9skn/socket_io_with_async_operations/)
-- url: https://www.reddit.com/r/reactjs/comments/jf9skn/socket_io_with_async_operations/
----
-Hey guys, I want socket to wait for my Async operation to finish before emitting, but it's not executing the last two lines at all.
-
-How should I approach this?
-
-`socket.on('passengers', async (id) =&gt; {`
-
-`Logger.info('Passengers', id);`
-
-`const bus = await (await Bus.query().findById(id))`
-
-`.$relatedQuery('passengers')`
-
-`.select('id', 'username', 'phone', 'location');`
-
-&amp;#x200B;
-
-`Logger.info('passengersBack', bus);`
-
-`socket.emit('passengersback', bus);`
-
-`});`
-
-&amp;#x200B;
-## [12][In React, component controls you!](https://www.reddit.com/r/reactjs/comments/jf9jd7/in_react_component_controls_you/)
-- url: https://dev.to/poeticgeek/in-react-component-controls-you-4ed8
+**👉 Feel free to join us on Discord via** [**https://discord.gg/KntFa9p**](https://discord.gg/KntFa9p) **👈**
+## [12][⌨️ React Hotkeys Hook](https://www.reddit.com/r/reactjs/comments/jfykrt/react_hotkeys_hook/)
+- url: https://www.npmjs.com/package/reakeys
 ---
 

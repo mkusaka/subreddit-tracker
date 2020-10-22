@@ -27,145 +27,171 @@ AWS always releases a bunch of features, sometimes everyday or atleast once a we
 10: More features in App Mesh(Circuit breaker, Rate Limiting)
 
 P.S: Not sure if some features are already available, but if something is missing, please feel free to add
-## [2][Week of Oct 19th - What have you learned recently about AWS?](https://www.reddit.com/r/aws/comments/je2wmx/week_of_oct_19th_what_have_you_learned_recently/)
-- url: https://www.reddit.com/r/aws/comments/je2wmx/week_of_oct_19th_what_have_you_learned_recently/
+## [2][Presgined URL'S vs static hosting](https://www.reddit.com/r/aws/comments/jfxsny/presgined_urls_vs_static_hosting/)
+- url: https://www.reddit.com/r/aws/comments/jfxsny/presgined_urls_vs_static_hosting/
 ---
-Weekly Discussion post   
-Sharing is caring
-## [3][A Kubernetes operator to sync secrets from AWS Secrets Manager](https://www.reddit.com/r/aws/comments/jfa4lz/a_kubernetes_operator_to_sync_secrets_from_aws/)
-- url: https://www.contentful.com/blog/2020/10/20/open-source-kube-secret-syncer/
+I am developing an application with users and photos. 
+
+Currently, my implementation is, that I have a one-to-many relationship between users and photos.
+
+When I serve the images I use the AWS-SDK to generate the resigned URL's and it works great!
+
+&amp;#x200B;
+
+My issue now is that I need to load the user photos relatively fast, and when I retrieve users.
+
+Right now I have the photos and users and separate endpoints (this is the client can load conditionally if the presigned URLs are not generated yet or vice versa if the user data is not fetched yet).
+
+&amp;#x200B;
+
+But the operation quickly becomes very expensive because it may have to generate 50 resigned URLs at once (10 users \* 5 images), and now I'm considering just hosting static images (or static private images). 
+
+&amp;#x200B;
+
+What is you guys' input on this? Should I stick with presigned URLs?
+
+Furthermore is it necessary to have photos and users on two separate endpoints?
+## [3][Public Preview – AWS Distro for OpenTelemetry](https://www.reddit.com/r/aws/comments/jfg2il/public_preview_aws_distro_for_opentelemetry/)
+- url: https://aws.amazon.com/blogs/aws/public-preview-aws-distro-open-telemetry/
 ---
 
-## [4][New – Use AWS PrivateLink to Access AWS Lambda Over Private AWS Network](https://www.reddit.com/r/aws/comments/jexzcu/new_use_aws_privatelink_to_access_aws_lambda_over/)
-- url: https://aws.amazon.com/blogs/aws/new-use-aws-privatelink-to-access-aws-lambda-over-private-aws-network/
+## [4][Lightsail Instance vanished - No technical support available](https://www.reddit.com/r/aws/comments/jfx5ps/lightsail_instance_vanished_no_technical_support/)
+- url: https://www.reddit.com/r/aws/comments/jfx5ps/lightsail_instance_vanished_no_technical_support/
 ---
+I am not sure Amazon will let me complain on their board so here it is:
 
-## [5][A Cost-Benefit Analysis of VPC Interface Endpoints](https://www.reddit.com/r/aws/comments/jfclgq/a_costbenefit_analysis_of_vpc_interface_endpoints/)
-- url: https://www.sentiatechblog.com/a-cost-benefit-analysis-of-vpc-interface-endpoints?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=cost_benefit_privatelink
+&amp;#x200B;
+
+ I tried building a wordpress website using AWS lightsail.  
+
+
+This is the sequence of events.  
+
+
+(1) At about 2 PM on Oct 21, while I was editing my wordpress site, it stopped getting updated  
+(2) I login in to console, my AWS instance is gone, DNS is gone, static ip is gone, just nothing there and my site is not working either  
+(3) I scramble around and try to get some technical support, they ask me to $29.99 else all I get is to talk to banking associates who don't understand static ip and namerservers.  
+Those associate keep telling me that I never had created anything on AWS ever even though I have nameserver and static ip from AWS.  
+(4) At about 8PM, my site is suddenly live again  
+(5) I go to AWS console, I still don't have an instance  
+(6) I was able to login using SSH and FileZila and started downloading files  
+(7) Today at 5AM on OCt 22, the instance is still on available on console but I am able to SSH into my instance  
+
+
+And AWS wants to still charge me $29.99 to give me support else all I get is talk to banking associates. 
+
+This was my first time working with AWS. What kind of platform it is where things break and there is no one to help even though I am a paid client.
+## [5][Alternative to AWS Lambda for data processing](https://www.reddit.com/r/aws/comments/jfwrnr/alternative_to_aws_lambda_for_data_processing/)
+- url: https://www.reddit.com/r/aws/comments/jfwrnr/alternative_to_aws_lambda_for_data_processing/
 ---
+Hi all,
 
-## [6][how to enable cors in AWS api gateway and only allow access from specific websites/origins for GET Requests?](https://www.reddit.com/r/aws/comments/jfa9g3/how_to_enable_cors_in_aws_api_gateway_and_only/)
-- url: https://www.reddit.com/r/aws/comments/jfa9g3/how_to_enable_cors_in_aws_api_gateway_and_only/
+I've been running some Lambda functions which are dealt and created from a queue. It's a python job which loads a couple of layers, imports some data, does some analytics/transforms, then pushes the output to another place on AWS.
+
+I've got a feeling I could be using something better and that Lambda functions aren't really designed for this type of thing? I've been looking at Glue. Maybe Batch?
+
+If anyone has any insight into this, I'd love to hear it!
+## [6][How private is the traffic within for example VPC or within a single subnet?](https://www.reddit.com/r/aws/comments/jfzjmr/how_private_is_the_traffic_within_for_example_vpc/)
+- url: https://www.reddit.com/r/aws/comments/jfzjmr/how_private_is_the_traffic_within_for_example_vpc/
 ---
-Hey guys I enabled CORS for get request and I only want the system to allow requests that come in from the following domain:  "toi.lightning.force.com"
+This questions should be looked with encryption between services in mind. The reason for asking this is that we have an application that cannot support TLS (dont ask........) but it is critical for the big feature itself. There will be a solution later but right now no TLS support.
 
-&amp;#x200B;
+So I am trying to understand the risks and how private the traffic really is in the three scenarios below:  
 
-As seen in the screenshot, during the response, I adjust the access-control-allow-origin.
 
-&amp;#x200B;
+1. Traffic between two services WITHIN same subnet. What are the risks?
+2. Traffic between two services between two subnets? What are the risks?
+3. Traffic between two subnets in two different AZs?
 
-What I am finding, is that the GET request still accepts from any place I access the link. Pretty much I was hoping that CORS would block people from accessing the API if they weren't coming from this specific domain.
+In my head I think "between AZs it will pass multiple physical and logical routers, switches, racks, machine and if something along that infrastructure is poisioned they can extract the data".   
+For the same subnet communication my instinctive thoughts are "that should be quite safe".
 
-&amp;#x200B;
+But I cannot find any information on the nitty gritty details of how things actually work, mainly best practices and AWS logical views which doesnt help much.
 
-Let me know if I am missing something!
-
-https://preview.redd.it/wq51kq4ybfu51.png?width=1964&amp;format=png&amp;auto=webp&amp;s=71c482521579a223a16c6e64a9868f080c0073bb
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-Thank you in advance.
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-EDIT:
-
-**CORS does not do server-side blocking of request**
-## [7][Need Ideas For Survey Website](https://www.reddit.com/r/aws/comments/jf7qar/need_ideas_for_survey_website/)
-- url: https://www.reddit.com/r/aws/comments/jf7qar/need_ideas_for_survey_website/
+Thanks for any input or comments.
+## [7][You can configure CloudWatch dashboard sharing from the console, but NOT from the cli/SDK. WTF?](https://www.reddit.com/r/aws/comments/jfwiwl/you_can_configure_cloudwatch_dashboard_sharing/)
+- url: https://www.reddit.com/r/aws/comments/jfwiwl/you_can_configure_cloudwatch_dashboard_sharing/
 ---
-Hello, My fiancé needs a website with the ability to store answers to 3 questions, It's for a class and will only be up for a month. Students would simply click on a link, see 3 questions, each with a text box that would allow them to type a 100 char response. 
+Don't AWS always say that they eat their own dogfood? That the console is just a web page using the same public API as customers?
 
-Since I already have the domain on Route 53 + S3, I figured I might as well implement a full AWS solution. Any one have an idea on how I could do this? 
+Why can't I share a dashboard using the cli/SDK? What API does the console use to do this, if not *the* AWS API?
 
-My idea was to host a Windows server, but then I saw that price tag...
-
-PS. I do realize Survey monkey is a solution but I've been interested in the possibilities of AWS. Figured this is the best way to get my feet wet.
-## [8][Does the AWSCLI S3 SYNC or COPY command copy data to the local machine?](https://www.reddit.com/r/aws/comments/jfctg0/does_the_awscli_s3_sync_or_copy_command_copy_data/)
-- url: https://www.reddit.com/r/aws/comments/jfctg0/does_the_awscli_s3_sync_or_copy_command_copy_data/
+Are there any other services/features like this? I can't think of any.
+## [8][Getting a simple Reservation report on all regions from the command line](https://www.reddit.com/r/aws/comments/jfzhti/getting_a_simple_reservation_report_on_all/)
+- url: https://www.reddit.com/r/aws/comments/jfzhti/getting_a_simple_reservation_report_on_all/
 ---
-I am trying to copy objects from an S3 bucket in one region to a bucket in another region and I came across the aws s3 sync and cp commands. Do these commands copy the data to my local machine or is it completely done on aws? I would prefer that this is done without copying the data to my local machine and I was trying to find more details about this in the documentation, but did not find this mentioned anywhere.
-## [9][How to change the handles in SES template data dynamically?](https://www.reddit.com/r/aws/comments/jfcrai/how_to_change_the_handles_in_ses_template_data/)
-- url: https://www.reddit.com/r/aws/comments/jfcrai/how_to_change_the_handles_in_ses_template_data/
+I've just added a cool command to get the account reservation status.
+
+Just simply run `awsctl get ri --region all`
+
+[https://github.com/omerh/awsctl/releases/tag/v0.0.8](https://github.com/omerh/awsctl/releases/tag/v0.0.8)
+
+Report looks like this:
+
+Reservation status in eu-west-2 (Only for running instances  
+=================================================================  
+\- You have 7 t3.medium with a resevation of 9  
+\- You have 9 m5.large with a resevation of 8  
+\- You have 1 t3.small with a resevation of 0
+
+Appreciate the feedbacks
+## [9][IAM Roles with AWS SSO](https://www.reddit.com/r/aws/comments/jfzh9f/iam_roles_with_aws_sso/)
+- url: https://www.reddit.com/r/aws/comments/jfzh9f/iam_roles_with_aws_sso/
 ---
-I was trying to send mail via Lambda using SES, and I created a Template, with two handles
+We are currently evaluating, if we should use AWS SSO with PermissionSets or IAM users and roles to grant access to AWS accounts in our AWS Organization.
 
 &amp;#x200B;
 
-[{{name}}, name of the owner of an instance and the instance status {{status}}](https://preview.redd.it/sjnpcujf8gu51.png?width=943&amp;format=png&amp;auto=webp&amp;s=ad6b5eaabded6c0c1beed4fa1c3d7c8dc2a96a5d)
+Previously we had an identity account that held all our IAM users and allowed different groups to assume roles in different accounts we had.
 
-I'm getting these two values via a Boto call and I need to pass those values to the template data.
+We now migrated these accounts into a single AWS Organization using AWS ControlTower and created some AWS SSO Users with the predefined PermissionSets AWS SSO was configured with.
 
-&amp;#x200B;
-
-[This is the block of code where I'm sending the template](https://preview.redd.it/5gfem4sx8gu51.png?width=850&amp;format=png&amp;auto=webp&amp;s=aed5b60e55e9b9c963128a361ab75b2dd199e9e3)
-
-I'm getting the below error - 
-
-"Unable to parse template data (invalid JSON)."
+We are using Terraform to provision our infrastructure (where possible.... looking at you AWS SSO).
 
 &amp;#x200B;
 
-Any idea how to solve this?
-## [10][How to switch role to an organization member account from root account?](https://www.reddit.com/r/aws/comments/jfcman/how_to_switch_role_to_an_organization_member/)
-- url: https://www.reddit.com/r/aws/comments/jfcman/how_to_switch_role_to_an_organization_member/
+How is the AWS SSO model supposed to work with custom policies in each account. Let's say, we have a Frontend-Developer Role that needs access to CloudFront and S3 in some of our accounts. Previously I could create an IAM role that was specific to a set of ressources in an account and deploy that to the accounts holding those ressources. Now with SSO I'd have to create an SSO PermissionSet using the Console (API support was just released I believe) with the specific resources, right? That gets quite messy when we do that for each role in each type of account we have. On the other hand having the comfort of the SSO portal would be great.
+
+How do you others handle this?
+## [10][Anyone have experience setting up Cognito Hosted UI with Authorization Code Grant?](https://www.reddit.com/r/aws/comments/jfzffl/anyone_have_experience_setting_up_cognito_hosted/)
+- url: https://www.reddit.com/r/aws/comments/jfzffl/anyone_have_experience_setting_up_cognito_hosted/
 ---
-Any help is highly appreciated, 
-One of the employees left and he had a member account in our organization, 
-- He created some resources before and now we can't access his account to delete it and 
-- He didn't complete all fields required in his account so we can't delete his account either.
+MY goal is to setup the Cognito Hosted UI to validate users after login. I have followed the steps laid out in the OAuth2 blog here: [https://developer.okta.com/blog/2018/04/10/oauth-authorization-code-grant-type](https://developer.okta.com/blog/2018/04/10/oauth-authorization-code-grant-type)
 
+&amp;#x200B;
 
-I tried the following from AWS docs with no luck.
-- Create IAM user with full administration policy
-- Create a role of type user and enter the employee ID in it and give it a specific name
-- Create a policy with service STS (assume) and give it the employee ID and role created from previous step
-- Create a group and attach that policy to it, then add the IAM user to this group
+My steps are as follows.
 
-Expected behavior: 
-- Choose switch role from the upright account menu
-- enter employee account ID and role name, I should be granted access to his account
-But in this step it fails while stating one of the two fields are not correct
-## [11][Aws training](https://www.reddit.com/r/aws/comments/jfcaun/aws_training/)
-- url: https://www.reddit.com/r/aws/comments/jfcaun/aws_training/
+&amp;#x200B;
+
+1. User logs into the AWS provided login screen.
+
+2. It redirects to my website and I pull down the authorization code in Angular.
+
+3. I send the code as part of my headers to the backend Nodejs
+
+4. I use the code to get a token and then validate the token
+
+&amp;#x200B;
+
+This stream works but then what? I want to validate the AWS token for each API call but I have no idea how to access the token.
+
+&amp;#x200B;
+
+I am guessing that I am either missing the point of this procedure or that the token is somewhere I am unaware of. 
+
+&amp;#x200B;
+
+Any help would be greatly appreciated.
+## [11][From AWS noob to AWS Specialist? - Data Analytics and Machine Learning](https://www.reddit.com/r/aws/comments/jfzd7q/from_aws_noob_to_aws_specialist_data_analytics/)
+- url: https://www.reddit.com/r/aws/comments/jfzd7q/from_aws_noob_to_aws_specialist_data_analytics/
 ---
-I wrote whole code locally, data is 5giga, I want to train it online since i got no nvidia, what is proper way of doining, i want to run scripts notebook
-## [12][Server Side Blocking using API Gateway and Authrizer](https://www.reddit.com/r/aws/comments/jfax5i/server_side_blocking_using_api_gateway_and/)
-- url: https://www.reddit.com/r/aws/comments/jfax5i/server_side_blocking_using_api_gateway_and/
----
-I am looking to block requests on the server-side using API Gateway + Authorizer (lambda function). 
+Completely new to AWS but considering pursuing specialist qualifications for AWS Data Analytics and Machine Learning. I'm aware I'll have to go through other stages but wanted to know the recommended approach and resources. I'm aware there is also recommended experience but I read up on it a bit and it's possible to clear the certification without it. 
 
-I pretty much want to grab the HTTP Origin and say "Yup, this is allowed" or "No, I do not know this origin"
+I'd appreciate if anyone could offer some insights as to how long it could approximately take from Foundational to Specialist and how much financial investment is required for studying materials and the exams. I understand learning speed is different for each individual but knowing estimated learning hours would help me balance other responsibilities as I already work and study. 
 
-&amp;#x200B;
+Also, besides the training tutorials, what other resources/courses could I use to aid learning for the different certifications?
 
-Origin grabs something like "example.com"
+I'm UK based, if it helps.
 
-&amp;#x200B;
-
-I know you can put this in your mapping template and it will grab the associated header information:
-
-    { 
-    "origin" : "$input.params('origin')", 
-    "referer" : "$input.params('referer')" 
-    }
-    
-
-Unfortunately, I have no way of passing in body mapping templates or accessing the origin of the request from the Authorizer.
-
-&amp;#x200B;
-
-Below is a screenshot of the authorizer, but the Origin variable isn't taking it from the actual origin of the HTTP request. It sees origin as a custom header. I want to be able to find the actual Origin from the HTTP Header.
-
-&amp;#x200B;
-
-https://preview.redd.it/v0dqqhb0mfu51.png?width=940&amp;format=png&amp;auto=webp&amp;s=8e8a3ec026e353b2a5680068681a4fb52ff922d5
-
-How can I pass in the actual HTTP Header to the authorizer?
+Please let me know if there are any questions.

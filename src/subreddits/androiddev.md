@@ -31,88 +31,88 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][The US government has filed antitrust charges against Google](https://www.reddit.com/r/androiddev/comments/jf6b8n/the_us_government_has_filed_antitrust_charges/)
-- url: https://www.theverge.com/2020/10/20/21454192/google-monopoly-antitrust-case-lawsuit-filed-us-doj-department-of-justice
+## [3][Got Mail From Google “Your app(s) are vulnerable to Intent Redirection” but cannot find vulnerability](https://www.reddit.com/r/androiddev/comments/jfx18a/got_mail_from_google_your_apps_are_vulnerable_to/)
+- url: https://www.reddit.com/r/androiddev/comments/jfx18a/got_mail_from_google_your_apps_are_vulnerable_to/
 ---
+When I update my app then I got a mail from google showing
 
-## [4][Check out my new pal :)](https://www.reddit.com/r/androiddev/comments/jf8sqy/check_out_my_new_pal/)
+Hello Google Play Developer,
+
+We reviewed your app and found that your app uses software that contains security vulnerabilities for users. Apps with these vulnerabilities can expose user information or damage a user’s device, and may be considered to be in violation of our Malicious Behavior policy.
+
+Vulnerability - **Your app(s) are vulnerable to Intent Redirection.**
+
+But I am not doing any intent extraction or redirection. After searching a little bit I apply some solution like `android:exported="false"`  
+ but none of them works.
+
+Now, I think some third party plugin is responsible for the vulnerability. How to find that vulnerability in my code?
+
+Below is my build.gradle file
+
+    apply plugin: 'com.android.application' apply plugin: 'com.google.gms.google-services' apply plugin: 'com.google.firebase.crashlytics'  android {     compileSdkVersion 29     defaultConfig {         minSdkVersion 21         targetSdkVersion 29         renderscriptTargetApi 18         renderscriptSupportModeEnabled true         multiDexEnabled true         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"         resConfigs "en"      }     buildTypes {         debug {             firebaseCrashlytics {                 mappingFileUploadEnabled false             }         }         release {             minifyEnabled true             shrinkResources true             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'         }     }     compileOptions {         sourceCompatibility = '1.8'         targetCompatibility = '1.8'     }     externalNativeBuild {         ndkBuild {             path 'src/main/jni/Android.mk'         }     }     dependencies {         androidTestImplementation('androidx.test.espresso:espresso-core:3.1.1', {             exclude group: 'com.android.support', module: 'support-annotations'         })         testImplementation 'junit:junit:4.12'         implementation 'androidx.multidex:multidex:2.0.1'         implementation fileTree(dir: 'libs', include: ['*.jar'])          implementation 'androidx.appcompat:appcompat:1.2.0'         implementation 'androidx.constraintlayout:constraintlayout:2.0.2'         implementation 'androidx.legacy:legacy-support-v4:1.0.0'         implementation 'androidx.recyclerview:recyclerview:1.1.0'         implementation 'androidx.cardview:cardview:1.0.0'         implementation "androidx.viewpager2:viewpager2:1.0.0"         implementation 'com.github.bumptech.glide:glide:4.11.0'         annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'         implementation 'com.google.android.material:material:1.3.0-alpha03'         //fix         implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'         implementation 'com.google.android.gms:play-services-basement:17.5.0'          //Firebase         implementation platform('com.google.firebase:firebase-bom:25.12.0')         implementation 'com.google.firebase:firebase-auth'         implementation 'com.google.firebase:firebase-database'         implementation 'com.google.firebase:firebase-storage'         implementation 'com.google.firebase:firebase-firestore'         implementation 'com.google.firebase:firebase-messaging'         implementation 'com.google.firebase:firebase-config'         implementation 'com.google.firebase:firebase-analytics'         implementation 'com.google.firebase:firebase-crashlytics'         implementation 'com.google.firebase:firebase-inappmessaging-display'         implementation 'com.firebaseui:firebase-ui-auth:6.3.0'          // Google Sign In SDK (only required for Google Sign In)         implementation 'com.google.android.gms:play-services-auth:18.1.0'         implementation 'com.google.android.gms:play-services-identity:17.0.0'          // Facebook Android SDK (only required for Facebook Login)         implementation 'androidx.browser:browser:1.2.0'         implementation 'com.facebook.android:facebook-android-sdk:7.1.0'          //retrofit         implementation 'com.squareup.retrofit2:retrofit:2.2.0'         implementation 'com.squareup.retrofit2:converter-gson:2.2.0'         implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'          //json utilities         implementation 'com.fasterxml.jackson.core:jackson-core:2.10.1'         implementation 'com.fasterxml.jackson.core:jackson-annotations:2.10.1'         implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.1'          //Paytm All-in-one SDK Payment Gateway         implementation'com.paytm.appinvokesdk:appinvokesdk:1.5'         //Circular ImageView         implementation 'de.hdodenhof:circleimageview:2.2.0'         //Number Picker         implementation 'com.shawnlin:number-picker:2.4.7'         //Version Compare         implementation 'com.g00fy2:versioncompare:1.3.2'         //Seekbar         implementation 'com.github.warkiz.widget:indicatorseekbar:2.1.2'         //country picker         implementation 'com.hbb20:ccp:2.3.1'         //TrueTime         implementation 'com.github.instacart.truetime-android:library:3.4'         //facebook ads         implementation 'com.facebook.android:audience-network-sdk:6.1.0'         //shimmer         implementation 'com.facebook.shimmer:shimmer:0.5.0'         //Loading Animation         implementation 'com.wang.avi:library:2.1.3'         //likeButton         implementation 'com.github.varunest:sparkbutton:1.0.6'     }      configurations.all {         resolutionStrategy.force 'com.android.support:support-annotations:28.0.0'     }  }
+## [4][Help: Mass spam and doxxing in play store reviews, no action taken by Google](https://www.reddit.com/r/androiddev/comments/jfycgb/help_mass_spam_and_doxxing_in_play_store_reviews/)
+- url: https://www.reddit.com/r/androiddev/comments/jfycgb/help_mass_spam_and_doxxing_in_play_store_reviews/
+---
+A month back we started a Discord group for my app to build a community and get user feedback. It's a gamification app where users get vouchers for some tasks. But soon, Discord became a channel for users to blackmail us for vouchers.  
+
+
+Few days back one user spammed 1 star reviews to "bargain" for a voucher he didn't earn. After banning him, he doxxed our identity in a review. The review is not removed by Google for supposedly not violating the "[Google Play Comment posting policy](https://play.google.com/about/comment-posting-policy/)". What can be done?  
+
+
+[Doxxed- this does not violate Google Play comment posting policy](https://preview.redd.it/qx2e0xoiymu51.png?width=922&amp;format=png&amp;auto=webp&amp;s=0e8bdd3eaf80cc90672a939fabc74b4b02f8f27d)
+
+[1 star spam- no action taken](https://preview.redd.it/gytzia0rxmu51.png?width=367&amp;format=png&amp;auto=webp&amp;s=68755a188fd315028484b4d7deaf4c1afdc81a57)
+## [5][Will there be much performance impact from me developing from a USB stick as opposed to having the files on my computer?](https://www.reddit.com/r/androiddev/comments/jfxwl3/will_there_be_much_performance_impact_from_me/)
+- url: https://www.reddit.com/r/androiddev/comments/jfxwl3/will_there_be_much_performance_impact_from_me/
+---
+Apologies if I've explained that terribly. 
+
+Basically, if I open my Android project from my USB stick as opposed to opening it from the SSD inside my computer, will it affect load times all that much?
+## [6][Streaming API returning multiple type objects](https://www.reddit.com/r/androiddev/comments/jfqqxe/streaming_api_returning_multiple_type_objects/)
+- url: https://www.reddit.com/r/androiddev/comments/jfqqxe/streaming_api_returning_multiple_type_objects/
+---
+I'm working with the lichess.org API. It has some methods that stream events, each event having a different fields in their JSON representation ( the only common field "type" representing the type of event ). How should I deal with this ? I want to convert each event to a java object. 
+
+ I'm using java and retrofit for network calls, any library or framework is welcome.
+## [7][Help me with some research: we want to create a better monetisation option for app developers.](https://www.reddit.com/r/androiddev/comments/jfzaiq/help_me_with_some_research_we_want_to_create_a/)
+- url: https://www.reddit.com/r/androiddev/comments/jfzaiq/help_me_with_some_research_we_want_to_create_a/
+---
+Hey! If you have ever used ads to monetize your app, we would love to hear from you. We want to create a better option for app developers to monetize their hard work, but first we need to learn some more. If you can spare &lt;2 minutes to answer 5 short questions, it would be appreciated! 🙏🏼
+https://docs.google.com/forms/d/e/1FAIpQLSfWblwaigbavrAN5_k5vCmWtJE1AGt09u-Tqve55KNZqrHIXw/viewform
+
+Thanks so much for your help.
+## [8][Feedback on blog post - Network request and battery drain](https://www.reddit.com/r/androiddev/comments/jfz26q/feedback_on_blog_post_network_request_and_battery/)
+- url: https://www.reddit.com/r/androiddev/comments/jfz26q/feedback_on_blog_post_network_request_and_battery/
+---
+Hi guys,
+
+Ive just started blogging on medium. This is my second blog post that post about why network calls affect device battery.
+
+[https://anirudhmenon.medium.com/android-network-requests-and-battery-drain-2af7283f48ec](https://anirudhmenon.medium.com/android-network-requests-and-battery-drain-2af7283f48ec)
+
+I'd appreciate feedback. Thank you so much. :)
+## [9][Developer Option: Stay awake while USB debugging is connected](https://www.reddit.com/r/androiddev/comments/jfz1g3/developer_option_stay_awake_while_usb_debugging/)
+- url: https://www.reddit.com/r/androiddev/comments/jfz1g3/developer_option_stay_awake_while_usb_debugging/
+---
+I use my own phone for development and I find it convenient to enable the stay awake while I'm working. The issue is that I constantly forget to disable when I'm done working. Later, when I go to bed and charge my phone, I'll get some notification and my screen stays on all night (probably not the best for my hardware). Wouldn't it be better if the stay awake option only applied while the USB debugger was connected? It could even be an alternative option. I think I could sleep more soundly if I didn't have to worry about my screen being on all night.
+
+Are there any other options that you use or could see being part of the developer options?
+## [10][Check out my new pal :)](https://www.reddit.com/r/androiddev/comments/jf8sqy/check_out_my_new_pal/)
 - url: https://i.redd.it/tscwa1jfoeu51.jpg
 ---
 
-## [5][🔥 Quickly distribute your app with Firebase App Distribution using GitHub Actions + Fastlane 🚀 | by Shreyas Patil | Firebase Developers | Oct, 2020](https://www.reddit.com/r/androiddev/comments/jf9r6w/quickly_distribute_your_app_with_firebase_app/)
-- url: https://medium.com/firebase-developers/quickly-distribute-app-with-firebase-app-distribution-using-github-actions-fastlane-c7d8eca18ee0
+## [11][How can I underline bottom navigation bar items?](https://www.reddit.com/r/androiddev/comments/jfxhuq/how_can_i_underline_bottom_navigation_bar_items/)
+- url: https://www.reddit.com/r/androiddev/comments/jfxhuq/how_can_i_underline_bottom_navigation_bar_items/
 ---
+Exactly like in the image, but I have also text below icons.  
+I want to change the color &amp; width &amp; height of the underline so spannable didn't help.  iOS equivalent is  
 
-## [6][kotlin-android-extensions plugin will be deprecated by the next Kotlin release](https://www.reddit.com/r/androiddev/comments/jetvoa/kotlinandroidextensions_plugin_will_be_deprecated/)
-- url: https://www.reddit.com/r/androiddev/comments/jetvoa/kotlinandroidextensions_plugin_will_be_deprecated/
----
-As you can see from this ticket: [https://youtrack.jetbrains.com/issue/KT-42121](https://youtrack.jetbrains.com/issue/KT-42121)  
+    tabBar.selectionIndicatorImage
 
+&amp;#x200B;
 
-So you should stop using kotlinx.android.synthetic if you haven't already and switch to View Binding. The Parcelize feature will be moved into a separate plugin.
-## [7][Android 11 and storage strategies](https://www.reddit.com/r/androiddev/comments/jfbdnc/android_11_and_storage_strategies/)
-- url: https://www.reddit.com/r/androiddev/comments/jfbdnc/android_11_and_storage_strategies/
----
-With Android 11 and it's compulsory restrictions on storage, I was trying to read the documents Google has released as guidance.  However the roadmap seems weak at best - even though some flexibility seems to have been shown - on use of fopen() in native code etc.
-
-But these words are just an indication - there is no overtly obvious guarantee things will behave as the Google webpages seem to suggest.  That is, it depends on interpretation and essentially every developer will have to do their own testing of the hazy API changes to establish what the reality of the changes is.  And even that could change - roadmap has been fluid - which for something as basic as storage injects uncertainty.
-
-For now, one path we are exploring is to use "maxSdkVersion" set to 29 in build.gradle, so that apps are not downloaded by Android 11 users.
-
-And then use the requestLegacyExternalStorage flag set to true in AndroidManifest.xml to allow continuation of old behavior for Android 10 (API 29) at least, and set targetSdkVersion to 29 in build.gradle.
-
-The reason for limiting use to below Android 11 is because Android 11 changes behavior dramatically.
-
-Some of the transition suggests Google is giving is for developers to move the directory that the app saves audio recording etc to one of the "shared storage" places - which I assume means saving to Music.  This will supposedly allow those files to be readable by File Manager etc and such apps.
-
-There is also an indication that requestLegacyExternalStorage set to true has some effect in Android 11 as well - allows for transitioning from old to new Music folder etc.
-
-But I havent seen actual working code provided by Google which accomplishes all these tasks - if the same research/testing/behavior is going to be done by thousands of developers, it makes sense for Google to shoulder some of that effort and provide pre-tested methods to do this stuff reliably.  Otherwise there will be a lot repetition of effort.
-
-
-Another thing I am not too comfortable in gauging is just how popular Android 11 will become.
-
-I am half anticipating some resistance as some of the reduction in features and breaking down of compatibility between apps starts becoming known to users.  Previously they have taken Google's word for it that everything is better on Android 11 - but when they use it the reality will become apparent.
-
-Anecdotally you do hear of users saying "I am never going to update to Android 11", but how prevalent is that - will it mean just addressing below Android 11 market could be a viable gameplan for developers.
-
-Because we have little interest in spending the effort to update many of our more complex apps to comply with an android roadmap that is unclear whether it will change.
-
-
-So are there any guesses how popular Android 11 is expected to get ?
-
-
-In one of the Google medium posts they say use of SAF will not be restricted.  If the new iteration of SAF only limits by preventing writing to top folder - how is this preventing malware.
-
-
-Wouldnt the whole exercise have been simpler if Google had just stopped the old APIs from working on top level folder.
-
-Why all this complicated mess ?
-## [8][Developer tips and guides: Common policy violations and how you can avoid them](https://www.reddit.com/r/androiddev/comments/jf8gya/developer_tips_and_guides_common_policy/)
-- url: https://android-developers.googleblog.com/2020/10/developer-tips-and-guides-common-policy.html
----
-
-## [9][At what point to I create a business?](https://www.reddit.com/r/androiddev/comments/jes1i3/at_what_point_to_i_create_a_business/)
-- url: https://www.reddit.com/r/androiddev/comments/jes1i3/at_what_point_to_i_create_a_business/
----
-Hello,
-
-I'm (one person making an app as a hobby) currently working on an app that is going to use a tiered subscription. I was looking at some of the options for monetization in the Google play console and I was looking at setting up a payment profile. It was asking for a business name. Does this have to be a *real* business? Should I go start the process of getting an LLC? (Or some other business type? (Recommendations and reasons are appreciated) if it doesn't have to be a real business, is there any pros or cons to having an actual business vs not having an actual business? I'm not that new to app development, but all I've made before were simple free games for fun, I never really tried monetizing any of it, so any help/suggestions/advice is very appreciated!
-
-Thank you
-## [10][ServerSocket on android?](https://www.reddit.com/r/androiddev/comments/jfawq4/serversocket_on_android/)
-- url: https://www.reddit.com/r/androiddev/comments/jfawq4/serversocket_on_android/
----
-Can i host Server on android OS(I am doing it on Emui but it same API so nevermind ) ?
-
-If so do i have to(and how to) port forwarded port on phone?
-
-Or does it follow Ruter ?
-## [11][AppCompat 1.2 Lint Checks - AppCompatResources or ContextCompat or ResourcesCompat](https://www.reddit.com/r/androiddev/comments/jfaodh/appcompat_12_lint_checks_appcompatresources_or/)
-- url: https://saurabharora.dev/2020-10-20-appcompatresources-vs-contextcompat-resourcescompat/
----
-
-## [12][Android Studio 4.2 Canary 14 available](https://www.reddit.com/r/androiddev/comments/jetqp9/android_studio_42_canary_14_available/)
-- url: https://androidstudio.googleblog.com/2020/10/android-studio-42-canary-14-available.html
+https://preview.redd.it/2p88i8uynmu51.png?width=696&amp;format=png&amp;auto=webp&amp;s=1c0bc4cf8416ea1bc5d50a051f1235bf8610cbfe
+## [12][The US government has filed antitrust charges against Google](https://www.reddit.com/r/androiddev/comments/jf6b8n/the_us_government_has_filed_antitrust_charges/)
+- url: https://www.theverge.com/2020/10/20/21454192/google-monopoly-antitrust-case-lawsuit-filed-us-doj-department-of-justice
 ---
 

@@ -27,7 +27,64 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Same base project in three different instances. What do you suggest?](https://www.reddit.com/r/rails/comments/jfa5h0/same_base_project_in_three_different_instances/)
+## [3][Introducing Stimulus components with a first class support for Rails](https://www.reddit.com/r/rails/comments/jfvgem/introducing_stimulus_components_with_a_first/)
+- url: https://www.reddit.com/r/rails/comments/jfvgem/introducing_stimulus_components_with_a_first/
+---
+Stimulus deserves to have a big and qualitative ecosystem with plug'n'play controllers like in other modern JS frameworks. 
+
+More info here 👉 [https://guillaumebriday.fr/introducing-stimulus-components](https://guillaumebriday.fr/introducing-stimulus-components)
+
+All the available controllers are here 👉 [https://github.com/stimulus-components](https://github.com/stimulus-components)
+
+Feel free to open PRs and issues 🥳
+## [4][Ruby on Rails: templates and generators in 2020](https://www.reddit.com/r/rails/comments/jfmas5/ruby_on_rails_templates_and_generators_in_2020/)
+- url: https://www.reddit.com/r/rails/comments/jfmas5/ruby_on_rails_templates_and_generators_in_2020/
+---
+2020 is a being a very rich year for Rails **boilerplates and generators**. I've written a short article describing the most prominent ones: [https://blog.corsego.com/2020/10/ruby-on-rails-templates-and-generators.html](https://blog.corsego.com/2020/10/ruby-on-rails-templates-and-generators.html)
+
+Hope you find it useful :)
+## [5][Simple question I'm losing it](https://www.reddit.com/r/rails/comments/jfv6qz/simple_question_im_losing_it/)
+- url: https://www.reddit.com/r/rails/comments/jfv6qz/simple_question_im_losing_it/
+---
+I have a table with a "status" string column where the values are either "pending" or "complete" and I'd like to know if there is a way to basically display two tables where each iterates each "status" value
+
+EDIT: 
+Only thing I've tried is:
+
+model.where("column" =&gt; 'string') do 
+end
+
+EDIT 2: 
+Okay I figured it out, all i dead was put the .each at the end
+## [6][Anyone using Svelte,Elm or anything more obscure?How's your experience?](https://www.reddit.com/r/rails/comments/jfwvu2/anyone_using_svelteelm_or_anything_more/)
+- url: https://www.reddit.com/r/rails/comments/jfwvu2/anyone_using_svelteelm_or_anything_more/
+---
+
+## [7][Hosting / Deployment Advice for Very Low Traffic Application](https://www.reddit.com/r/rails/comments/jfmy30/hosting_deployment_advice_for_very_low_traffic/)
+- url: https://www.reddit.com/r/rails/comments/jfmy30/hosting_deployment_advice_for_very_low_traffic/
+---
+Hello good people,  
+
+
+Having read through this post from yesterday and today:  
+[https://www.reddit.com/r/rails/comments/jeo0xy/where\_do\_people\_host\_their\_rails\_6\_apps\_in\_2020/](https://www.reddit.com/r/rails/comments/jeo0xy/where_do_people_host_their_rails_6_apps_in_2020/)  
+
+
+I thought I would pose a similar question, I run a website ([https://www.marincricketclub.com/](https://www.marincricketclub.com/)) for a sports club I'm a part of, our website lays mostly dormant for 5 months a year and the rest of the year, we would be lucky if we got 500 hits a month.   
+
+
+We are a non profit so any way I can reduce cost is great! We use Heroku Hobby dyno's at $7 per month and they have been more than adequate for our use case and been zero hassle as well.  
+
+
+But, after reading the above thread and having done some other research on my own, I believe I can save us some money by moving to the Digital Ocean App Marketplace (probably $5 per month) or Google Cloud Services which based on our use case, should be free or worst case scenario maybe cost $1 a month and this would include our attached storage bucket.   
+
+
+I'm about to rebuild the existing site and have put together a (mostly) static site to serve as a place holder until the next season gets closer. Going forward, the app will send email, have an active storage solution and I want to get the deploy situation sorted now.  
+
+
+So any advice, ideas or suggestions are very appreciated!  
+Red
+## [8][Same base project in three different instances. What do you suggest?](https://www.reddit.com/r/rails/comments/jfa5h0/same_base_project_in_three_different_instances/)
 - url: https://www.reddit.com/r/rails/comments/jfa5h0/same_base_project_in_three_different_instances/
 ---
 Let's say you have the project X which is a simple Rails app. It's open source in github. 
@@ -43,7 +100,89 @@ The use case is that I've build an app and I want to try and see If it gets any 
 Should I keep the same *Core* and build everything else on top of gems and engines ? Or is there any other common solution I am missing ?
 
 Thanks in advance!
-## [4][Issue with unpermitted parameter](https://www.reddit.com/r/rails/comments/jfbvgm/issue_with_unpermitted_parameter/)
+## [9][Anyone know how to retrieve nested attributes with Grape?](https://www.reddit.com/r/rails/comments/jfmfqh/anyone_know_how_to_retrieve_nested_attributes/)
+- url: https://www.reddit.com/r/rails/comments/jfmfqh/anyone_know_how_to_retrieve_nested_attributes/
+---
+I'm setting up my API, and its only returning one table -- when it should be including the nested relationships between my models. There are at least 6 different other relationships that I want to include with my initial api request. The are nested attributes for the provider\_form.
+
+**api.rb**
+
+&amp;#x200B;
+
+`require 'grape-entity'`
+
+`module Sims`
+
+`class API &lt; Grape::API`
+
+   `format :json`
+
+   `prefix :api`
+
+  `version 'v1', :path`
+
+ `mount Sims::V1::ProviderForms`
+
+ `end`
+
+`end`
+
+&amp;#x200B;
+
+**provider\_form.rb**
+
+`module Sims`
+
+ `module V1`
+
+  `class ProviderForms &lt; Sims::API`
+
+  `include Grape::Kamari`
+
+ `params do` 
+
+   `use :pagination, per_page: 20, max_per_page: 30`
+
+ `resources :provider_forms do`
+
+ `desc 'return provider forms'` 
+
+ `get do`
+
+`present paginate(ProviderForm.all), with: PersonalInfoEntity`
+
+`end` 
+
+`end`
+
+&amp;#x200B;
+
+**personal\_info\_entity.rb**
+
+`class PersonalInfoEntity &lt; Grape::Entity`
+
+`expose :personal_info do`
+
+`expose :first_name`
+
+`expose :last_name`
+
+  `end`
+
+`end`
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+**provider\_form.rb**
+
+`has_one :personal_info, dependent: :destroy`
+
+**personal\_info.rb**
+
+`belongs_to :provider_form`
+## [10][Issue with unpermitted parameter](https://www.reddit.com/r/rails/comments/jfbvgm/issue_with_unpermitted_parameter/)
 - url: https://www.reddit.com/r/rails/comments/jfbvgm/issue_with_unpermitted_parameter/
 ---
 I am trying to build a stripped down version of a spree type application to learn. In my product form I want to be able to attached option\_types to it. I do this by having a select field that has select2 on it. I choose the option types needed from the list and it adds them in as a sort of tags type text field. I think it should come out in the form params as a comma delimited field based on how I have it set up. 
@@ -284,7 +423,7 @@ product \_form
         &lt;% end %&gt;
       &lt;/div&gt;
       &lt;% end %&gt;
-## [5][Find a Trending user on the basis of recently 3 days score](https://www.reddit.com/r/rails/comments/jfb8fj/find_a_trending_user_on_the_basis_of_recently_3/)
+## [11][Find a Trending user on the basis of recently 3 days score](https://www.reddit.com/r/rails/comments/jfb8fj/find_a_trending_user_on_the_basis_of_recently_3/)
 - url: https://www.reddit.com/r/rails/comments/jfb8fj/find_a_trending_user_on_the_basis_of_recently_3/
 ---
 Hi, guys hope you are fine,
@@ -295,7 +434,7 @@ I'm implementing an  API in which against certain actions user win some points a
 but now I want to get the trending user who wins the maximum score recently in 3 days.
 
 can anyone please guide me ?
-## [6][New rails project postgres issue](https://www.reddit.com/r/rails/comments/jf2n05/new_rails_project_postgres_issue/)
+## [12][New rails project postgres issue](https://www.reddit.com/r/rails/comments/jf2n05/new_rails_project_postgres_issue/)
 - url: https://www.reddit.com/r/rails/comments/jf2n05/new_rails_project_postgres_issue/
 ---
  As the default configuration, a user called postgres is made and the user postgres has full superadmin access to the entire PostgreSQL instance running on your OS.The default Postgres user is postgres and a password is not required for authentication. Thus, to add a password, we must first login and connect as the postgres user   
@@ -306,64 +445,3 @@ In a new rails project, whenever I perform rake db it either tells me:
  `peer authentication failed for user 'postgres'` or `no password supplied for postgres`
 
 I shouldnt have to necessarily touch `pg_hba.conf` file or \password
-## [7][Where do people host their Rails 6 apps in 2020?](https://www.reddit.com/r/rails/comments/jeo0xy/where_do_people_host_their_rails_6_apps_in_2020/)
-- url: https://www.reddit.com/r/rails/comments/jeo0xy/where_do_people_host_their_rails_6_apps_in_2020/
----
-I’m a returning Rails developer from the 4.2 days. Been out a couple years. 
-
-I used to use AWS Elastic Beanstalk, because we had other AWS resources that our app used.
-
-But here I am in October 2020, trying to get even the Rails 6 “yay you’re on Rails” default app running on Beanstalk, and it’s an endless slog of deploy, fail, check the logs, google the error, try a fix, repeat.
-
-Is Beanstalk the wrong solution now? How do people host Rails apps on AWS? I’ve never used containers - is that the approach I should take?
-## [8][ask Rails: Where are these routes coming from?](https://www.reddit.com/r/rails/comments/jf187e/ask_rails_where_are_these_routes_coming_from/)
-- url: https://www.reddit.com/r/rails/comments/jf187e/ask_rails_where_are_these_routes_coming_from/
----
-Ran `rake routes` and this  
-
-[https://i.imgur.com/ZzJKiv7.png](https://i.imgur.com/ZzJKiv7.png)  
-
-Its a new project and I only used `rails g scaffold` to create some model   
-
-I did nothing with action_mailbox, rails conductor, active_storage yet there a bunch of routes showing. presumably I expected them not to appear
-## [9][Upgrading from rails 4.2.0 to 5.0.0 and Ruby from 2.2.4 to 2.5.8 - Circular dependency detected while autoloading constant](https://www.reddit.com/r/rails/comments/jew20l/upgrading_from_rails_420_to_500_and_ruby_from_224/)
-- url: https://www.reddit.com/r/rails/comments/jew20l/upgrading_from_rails_420_to_500_and_ruby_from_224/
----
-So I'm upgrading from 4.2 to 5.0.0 and it's not going so well.
-
-Here's the stackoverflow question I posted: https://stackoverflow.com/questions/64428360/upgrading-from-rails-4-2-0-to-5-0-0-and-ruby-from-2-2-4-to-2-5-8-circular-depe
-
-If anyone has any idea what I'm doing wrong I would be forever in your debt.
-
-Basically I need to upgrade my ruby/rails version before heroku EOLs their 14.04 stack. I've follow guides on how to upgrade, but I'm obviously missing something and I can start a server, but it throws an exception about a circular dependency...and I have no idea how to solve it.
-
-Thanks in advance.
-## [10][Setting up a dev environment database to work on app locally?](https://www.reddit.com/r/rails/comments/jekdzx/setting_up_a_dev_environment_database_to_work_on/)
-- url: https://www.reddit.com/r/rails/comments/jekdzx/setting_up_a_dev_environment_database_to_work_on/
----
-Say you join a project and you need to set up your local dev environment. You install Rails, bundle install etc., but how exactly does the database portion work?
-
-What I mean is, there's a production database that's pretty large with a couple dozen tables. When I work on the app locally, it won't run without connecting to a database for logins etc. Should I clone the whole production database and reproduce it locally, or what is the best practice here?
-## [11][data model for charting stock-prices/changes?](https://www.reddit.com/r/rails/comments/jedezf/data_model_for_charting_stockpriceschanges/)
-- url: https://www.reddit.com/r/rails/comments/jedezf/data_model_for_charting_stockpriceschanges/
----
-Stocks are often charted out with prices and their given date of change. 
-
-IF you have a single stock and wanted to show the price changing over time, how would you model that in your database? 
-
-Sounds like TONS of data...
-
-**edit!** 
-
-Thanks for the comments. I ended up doing basically what u/UwRandom had recommended!
-
-Main table has generic/aggregate information and a separate table stores the price changes.
-## [12][Question: What are you guys using for centralized logging that is not papertrail app](https://www.reddit.com/r/rails/comments/jehhqd/question_what_are_you_guys_using_for_centralized/)
-- url: https://www.reddit.com/r/rails/comments/jehhqd/question_what_are_you_guys_using_for_centralized/
----
-Looking for an open sources solution to collect logs (centralize logging). Please suggest if you are using something in production. What has worked out well for you. 
-
-\- graylog  
-\- logstash  
-\- fluend  
-\- something else (hopefully)

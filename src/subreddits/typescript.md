@@ -22,7 +22,130 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][View the API exposed by a given module](https://www.reddit.com/r/typescript/comments/jf4c4t/view_the_api_exposed_by_a_given_module/)
+## [2][How can I get the keys from a Map.keys() iterator as a type?](https://www.reddit.com/r/typescript/comments/jfzkor/how_can_i_get_the_keys_from_a_mapkeys_iterator_as/)
+- url: https://www.reddit.com/r/typescript/comments/jfzkor/how_can_i_get_the_keys_from_a_mapkeys_iterator_as/
+---
+```
+const entities = new Map&lt;string, []&gt;([
+  ["hero", []],
+  ["zombies", []],
+  ["bullets", []],
+  ["text", []],
+]);
+
+const mapIter = entities.keys();
+
+for (const keys of mapIter) {
+  console.log(keys); // hero, zombies, bullets text
+}
+```
+I want to generate `type EntityKeys = "hero" | "zombies" | "bullets" | "text";` programatically. 
+
+I want to use `entities.get("hero")` and have `"hero"` type-checked, which won't work with `Map&lt;string, []&gt;`. I can use `new Map&lt;EntityKeys, Entity[]&gt;` using `type EntityKeys =...` but then it is not dynamic and I have to create `type EntityKeys` manually.
+
+Cheers!
+## [3][TypeScript JSX transform vs Babel JSX transform - pros and cons](https://www.reddit.com/r/typescript/comments/jffysy/typescript_jsx_transform_vs_babel_jsx_transform/)
+- url: https://www.reddit.com/r/typescript/comments/jffysy/typescript_jsx_transform_vs_babel_jsx_transform/
+---
+I'm building a project with both TypeScript and Babel (and React) and I see that both TypeScript and Babel support the same JSX transform step. Either TypeScript can emit transformed JSX in JS code directly, or it can preserve the JSX in JSX files so Babel can handle it.
+
+It looks like each compiler has their own spec compliant implementation of this transformation. I cannot find any details as to which one is better to use and why. There must be some differences (speed, reliability, spec compliance, support, bug fixes, type checking, etc) but I cannot seem to identify any.
+
+Given the little information I have, it seems like Babel is the "canonical" JSX transformer as React specifically works with Babel to implement the spec. From the TS JSX PR I see that they are just trying to copy what Babel implemented. This leads me to believe that I should use the TS JSX preserve setting and let Babel handle it as it'll likely be more spec complainant and more stable.
+
+Does anyone have any additional information to add here or know of anything which I should consider in making this decision? Thanks!
+
+----
+
+Edit: Follow up. After tons of very helpful comments I figured I'd share what I decided on. I am now using `babel` for all TypeScript compiling needs. `@babel/preset-env`, `@babel/preset-typescript` and `@babel/preset-react` specifically. To get builds to fail due to type errors and to see errors in the console during development, I'm using [fork-ts-checker-webpack-plugin](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin). I now no longer need `tsc` for production or development at all and am only using it for debugging if I purely want to run a command to quickly see all type errors in the project.
+## [4][Matching a destructured type based on transformation of argument type](https://www.reddit.com/r/typescript/comments/jfpy8t/matching_a_destructured_type_based_on/)
+- url: https://www.reddit.com/r/typescript/comments/jfpy8t/matching_a_destructured_type_based_on/
+---
+I've been using typescript for a little while but haven't had the real need to dive into anything past simple typing until now. Basically, I have a function that takes in an obj map of promises and want the typing to understand it returns a new map of the resolved types.
+
+The closest I've come is getting it to return the relevant keys where each is a union of the resolved promise types.
+
+    type Unpromised&lt;T&gt; = T extends Promise&lt;infer R&gt; ? R : T;
+    type ValueOf&lt;T&gt; = T[keyof T];
+    type PromiseObjRet&lt;T&gt; = { [field: string]: Unpromised&lt;ValueOf&lt;T&gt;&gt;; // how can we make this respective?
+
+    async function handlePromiseObj&lt;T&gt;(obj: T): Promise&lt;PromiseObjRet&lt;T&gt;&gt; {
+        ... // resolves promises as a batch and maps them back to an obj by the original obj key
+    }
+
+I'm looking for:
+
+    const { a, b } = handlePromiseObj({ a: Promise.resolve('hi'), b: Promise.resolve(6) });
+
+to have a: string, b: number. 
+
+Right now I'm getting a: string | number, b: | number.
+
+In short, I'm looking to have types setup to be able to transform via typing 
+    {
+        a: Promise&lt;string&gt;,
+        b: Promise&lt;number&gt;
+    }
+
+to
+
+    {
+        a: string,
+        b: number
+    }
+## [5][Possible to get typeof generic type parameter?](https://www.reddit.com/r/typescript/comments/jfq79i/possible_to_get_typeof_generic_type_parameter/)
+- url: https://www.reddit.com/r/typescript/comments/jfq79i/possible_to_get_typeof_generic_type_parameter/
+---
+I am writing a simple de/serializer that works for any type of \`State\`. Is there any way to get the concrete types of a generic type parameter T? Code sample is shown below.
+
+[https://pastebin.com/84YabPtS](https://pastebin.com/84YabPtS)
+
+ps: The code does not render in reddit, so have to post it somewhere else.
+## [6][How can I resolve my async function so &lt;Promise&gt;Zombie becomes Zombie?](https://www.reddit.com/r/typescript/comments/jfhglw/how_can_i_resolve_my_async_function_so/)
+- url: https://www.reddit.com/r/typescript/comments/jfhglw/how_can_i_resolve_my_async_function_so/
+---
+I am stuck, my `init` static method insists I return `Promise&lt;Zombie&gt;`, but it is meant to be `Zombie`, it should be resolved by the `awaitPromise.all`? The consumers of the class all throw errors now as it is no longer a `Zombie`
+
+I think there is some 'gotcha' I am not seeing here? Cheers!
+
+https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABAGzgQwCYEkC2aDmApgBTAzKEAKaUAFgFyIDOUATjGPgJSOWtw4YTQgB4AEgBUAsgBlcBQgFEKOQmCgA+RAG8AUIkQQELRDDxFlhVesQBeRGEIB3RPKLEuAbn2nzSlWpQAHRMrBB2iGQU1HTeBqyEUCCsSI4ufAJCopKybv5WgRrExAlMcMgAboQANIgJAFaE0Fx2WnoGBmYKltbBCKiYER6tdYRllSRdFgHqXj6dfj2BQQiErPysEQ1NUHGIAL5z+7q6hAAeAA5wrFCGyGhMTIgAWgIARjCEOj5ThHtgaFU3h8RjALFYIGg12Iv0YOTkixmUFqANUjHBHG43w6iDoQiCvwivz2BjxTCCqK+9kpe2OPhYNBg4QeAE9IKYwDAoB5ePxBMIRK8cB9CG15oZjLcANoAL3enzyAF0ImgnGguYgMvzCEE0MhkMQpeKDANsH5iAAiB7CKBMAD0cuFnwAbAAWAC0ZAByCCF04Fq41XFirm4oSSRSDmcL3lJEdIrytQttDUrBZAdpujpoEgsAQhgSNEIQpFPJjTq+7QlYNu8c+ERLnwJnO5c3iiWSSDrfyzJ1B4x1qHwxAghagxdjHjmQA
+
+```typescript
+function loadImage(filePath: string): Promise&lt;HTMLImageElement&gt; {
+  const imageElement = new Image();
+  imageElement.src = filePath;
+  return new Promise&lt;HTMLImageElement&gt;((resolve, reject) =&gt; {
+    imageElement.onload = () =&gt; resolve(imageElement);
+    imageElement.onerror = reject;
+  });
+}
+
+export class Zombie {
+  image;
+  name;
+
+  constructor(image: HTMLImageElement, name: string) {
+    this.image = image;
+    this.name = name;
+  }
+
+  static async init(): Promise&lt;Zombie&gt; {
+    const [zombieImage] = await Promise.all([
+      loadImage("assets/zombie64-final.png"),
+    ]);
+
+    return new Zombie(zombieImage, "henry");
+  }
+}
+
+function createZombie(): Zombie {
+  const zombie = Zombie.init();
+  return zombie;
+}
+
+console.log(createZombie());
+```
+## [7][View the API exposed by a given module](https://www.reddit.com/r/typescript/comments/jf4c4t/view_the_api_exposed_by_a_given_module/)
 - url: https://www.reddit.com/r/typescript/comments/jf4c4t/view_the_api_exposed_by_a_given_module/
 ---
 Is there a tool or convention to view/document the API exposed by a given module?
@@ -66,7 +189,7 @@ For example, the above would expose a very small public API, consisting of:
 - `VERSION`
 
 Are TypeScript definition files what I'm looking for?
-## [3][InversifyJS - How can I use container.get in an object literal?](https://www.reddit.com/r/typescript/comments/jf4axz/inversifyjs_how_can_i_use_containerget_in_an/)
+## [8][InversifyJS - How can I use container.get in an object literal?](https://www.reddit.com/r/typescript/comments/jf4axz/inversifyjs_how_can_i_use_containerget_in_an/)
 - url: https://www.reddit.com/r/typescript/comments/jf4axz/inversifyjs_how_can_i_use_containerget_in_an/
 ---
 I'm not sure if this is the place to ask this, but it's the best place I could find. I'm new to dependency injection with TS but did use it in C# once. When I try doing this:
@@ -75,12 +198,15 @@ I'm not sure if this is the place to ask this, but it's the best place I could f
         "join": container.get&lt;ChannelJoiner&gt;(TYPES.ChannelJoiner)
     }
 
-I get a runtime error that "get" is not defined. What am I doing wrong? Am I allowed to do this? I can send other related files if necessary.
-## [4][Good book or other resource for learning how to define your models?](https://www.reddit.com/r/typescript/comments/jex71u/good_book_or_other_resource_for_learning_how_to/)
+I get a runtime error that "get" is not defined. What am I doing wrong? Am I allowed to do this? I can send other related files if necessary.  
+
+
+Edit: I believe I have found the problem, but I am still unsure on how to fix it. The object above gets initialized before the container. Is there any way I can force the container to be initialized first?
+## [9][Good book or other resource for learning how to define your models?](https://www.reddit.com/r/typescript/comments/jex71u/good_book_or_other_resource_for_learning_how_to/)
 - url: https://www.reddit.com/r/typescript/comments/jex71u/good_book_or_other_resource_for_learning_how_to/
 ---
 I’m comming from a c# background and currently have a huge model that is hard to understand and does nothing else but set the types. My model is a huge collection of classes inside classes that don’t have anything else but some properties(no constructor, methods getters or setters). I’m trying to learn how to improve this but can’t seem to find a good book or article
-## [5][How to map an interface to another one](https://www.reddit.com/r/typescript/comments/jexpj2/how_to_map_an_interface_to_another_one/)
+## [10][How to map an interface to another one](https://www.reddit.com/r/typescript/comments/jexpj2/how_to_map_an_interface_to_another_one/)
 - url: https://www.reddit.com/r/typescript/comments/jexpj2/how_to_map_an_interface_to_another_one/
 ---
 I'm sorry if this is improperly formatted, I copied this from another subreddit I posted it.
@@ -115,136 +241,9 @@ customFields: ICustomFields; }
     Now, I've created a class for each type that queries that server and returns a `Category`, `Product`, ..etc (GraphQL format). and I want them to be mapped to the other format (The theme format, `ICategory, ...) so that I don't remove or alter the theme interfaces except as little as possible, details are in stackoverflow link.
     
     Thanks in advance.
-## [6][Generate Google Presentation from Wikipedia article](https://www.reddit.com/r/typescript/comments/je6qg8/generate_google_presentation_from_wikipedia/)
+## [11][Generate Google Presentation from Wikipedia article](https://www.reddit.com/r/typescript/comments/je6qg8/generate_google_presentation_from_wikipedia/)
 - url: https://www.reddit.com/r/typescript/comments/je6qg8/generate_google_presentation_from_wikipedia/
 ---
 [GSlides Maker](https://github.com/vilmacio/gslides-maker) is a open-source project for create google presentations from wikipedia content like a robot. Try it [CLI version](https://github.com/vilmacio/gslides-maker) and help me with the [web application](https://gslidesmaker.com/). I hope you like it.
 
 https://preview.redd.it/98yuu3ceb3u51.png?width=681&amp;format=png&amp;auto=webp&amp;s=5259f69c148faeab52c9a10af6490d366bfec5c5
-## [7][Is this an appropriate time to assert? (Array concat overload mismatch)](https://www.reddit.com/r/typescript/comments/je8q40/is_this_an_appropriate_time_to_assert_array/)
-- url: https://www.reddit.com/r/typescript/comments/je8q40/is_this_an_appropriate_time_to_assert_array/
----
-.flat seems not to work in my project so I have been concating 2d arrays to flatten them. In this case I think an assertion might be needed:
-
-      const flattened: ITask[] = [].concat(...resolvedTasks);
-    
-    /*
-    const resolvedTasks: ITask[][]
-    No overload matches this call.
-      Overload 1 of 2, '(...items: ConcatArray&lt;never&gt;[]): never[]', gave the following error.
-        Argument of type 'ITask[]' is not assignable to parameter of type 'ConcatArray&lt;never&gt;'.
-          The types returned by 'slice(...)' are incompatible between these types.
-            Type 'ITask[]' is not assignable to type 'never[]'.
-              Type 'ITask' is not assignable to type 'never'.
-    */
-    
-    // but this passes lint
-      const flattened: ITask[] = ([] as ITask[]).concat(...resolvedTasks);
-
-Can someone break down what `ConcatArray&lt;never&gt;` means and whether my assertion should suit this type? My best read is it representations a type `ConcatArray`. But the `never` type argument negates its transformed concrete type value. Which is hard for me to understand.
-## [8][How to make ConstructorParameters&lt;typeof Test&gt;[0] generic?](https://www.reddit.com/r/typescript/comments/je6kpb/how_to_make_constructorparameterstypeof_test0/)
-- url: https://www.reddit.com/r/typescript/comments/je6kpb/how_to_make_constructorparameterstypeof_test0/
----
-```
-type TestParams = ConstructorParameters&lt;typeof Test&gt;[0];
-
-class Test {
-  x;
-  y;
-  constructor({ x, y }: { x: number; y: number }) {
-    this.x = x;
-    this.y = y;
-  }
-}
-
-const factory = (numberOf: number, { x, y }: TestParams) =&gt; {
-  console.log(numberOf);
-  return new Test({ x, y });
-};
-
-factory(5, { x: 2, y: 11 });
-```
-I would like to make `TestParams` generic for other factory function, but:
-
-```
-type TestParams&lt;T&gt; = ConstructorParameters&lt;typeof T&gt;[0];
-const factory = (numberOf: number, { x, y }: TestParams&lt;Test&gt;) =&gt; {...
-
-```
-or any permutation of it does not seem to work. Any ideas?
-
-https://www.typescriptlang.org/play?#code/C4TwDgpgBAKhDOwAKBDATigtvKBeKAwgPYB2iaArgMbBFqoaYTARrwA8okRAZrAsAB8AbQAMAXQDcAWABQcqgBsU8HHERQA3nKhQAHjNm6Qh3VVLlqtNAApN+gDRQQUAL4AuLfs8kKmAEasks4+foFobgCUWjq6UMAAFgCW8AB0enj6pnGJKaku+CaxrnIl8rLmZMBQPCg0dAVQNr4BrADyPKGtaE72ek4uHvyIDFjw0biCMUZQlfBEihCpikQA5s1h7TyR2WjMFGgkUCQQAO7DwHaOzlGGroZytfVoIDYArL3eUABMA54AjP9bnIgA
-## [9][Resolve out union types?](https://www.reddit.com/r/typescript/comments/je3n3i/resolve_out_union_types/)
-- url: https://www.reddit.com/r/typescript/comments/je3n3i/resolve_out_union_types/
----
-I'm trying to write some code where I start off possibly accepting a union, but if the instance is not of a specific type, I then resolve it so it is. Specifically, I pass in an object of a sequelize model type, say `Post`, which might be an actual post model, or it might be the object required to create a new post.
-
-This is used for generating content - so I can arbitrarily create a new comment in testing, and optionally have it create a new post to put the comment on.
-
-this is documented essentially like this.
-
-    export const createTestComment = async (comment: CommentData, post: Post | PostData) : Promise&lt;Comment&gt; {
-      if (!(post instanceof Post)) post = await createTestPost(post);
-      return await post.createComment(comment);
-    } 
-
-The above doesn't work. Even though this is set so that post can NO LONGER BE of type PostData, typescript refuses to allow it because the type of the instance is still a union. Is it possible to change the type programatically to remove the union? I tried `createPost(post) as Post` but it didn't help. 
-
-Am I better off creating a new variable without the type ambiguity?
-## [10][Type check if return object is response object or error object](https://www.reddit.com/r/typescript/comments/jdhr9x/type_check_if_return_object_is_response_object_or/)
-- url: https://www.reddit.com/r/typescript/comments/jdhr9x/type_check_if_return_object_is_response_object_or/
----
-So I have an API service that returns either data object in case of success, or an object containing error object.
-
-Which means returned object can have two different types, depending on success. Is there a way to make typescript recognise which one it is with an if statement?
-
-    const getStuff = async () =&gt; {
-      try {
-        return (await axios.get('url')).data as { title: 'title' }
-      } catch (e) {
-        return { error: e, status: 400 }
-      }
-    }
-    
-    const returnedObject = await getStuff()
-    
-    returnedObject.status // maybe undefined, maybe 400
-    
-    if (returnedObject.error){
-      returnedObject.status // 400
-    } else {
-      returnedObject.title // 'whatever'
-      returnedObject.status // error, status doesn't exists on returnedObject
-    }
-## [11][TypeORM Sucks!! Something I wanted to talk about since long!](https://www.reddit.com/r/typescript/comments/jcw28f/typeorm_sucks_something_i_wanted_to_talk_about/)
-- url: https://www.reddit.com/r/typescript/comments/jcw28f/typeorm_sucks_something_i_wanted_to_talk_about/
----
-Let's address it, TypeORM sucks but the community doesn't seem to do anything about it!! So I would like to take the step forward:
-
-1. Querybuilder is very bad, chaotic
-
-2. Relational query is not supported - subquery on relation etc
-
-3. Eager loading is not supported
-
-4. Cannot extend query builder
-
-5. Repository is just sugar coating over bad querybuilder
-
-6. Migration is super ugly and bad, have to write raw alter table queries 50% of the times, don't run migrations in batch
-
-7. Seeders are not supported
-
-8. Documentation asks to enable the db-model syncronization in development, but says to create migrations for production - What the hell?
-
-9. Entity Manager is of no use
-
-10. Polymorphic relations not supported
-
-11. ORM cannot spot basic difference between where() and andWhere()
-
-&amp;#x200B;
-
-Thesre are my two cents! Your feedbacks are most welcome! 
-
-We need better alternative ORM in typescript!

@@ -1,135 +1,98 @@
 # ruby
-## [1][RuboCop 1.0](https://www.reddit.com/r/ruby/comments/jfaxse/rubocop_10/)
+## [1][Understanding create_or_find_by vs find_or_create_by one could be 4X faster, with benchmarks](https://www.reddit.com/r/ruby/comments/jg9mbm/understanding_create_or_find_by_vs_find_or_create/)
+- url: https://www.mayerdan.com/ruby/2020/10/22/ar-find_or_create
+---
+
+## [2][flow-lite gem - a lite workflow engine; let's you define your workflow steps in Flowfiles; incl. the flow command line tool](https://www.reddit.com/r/ruby/comments/jgmdmd/flowlite_gem_a_lite_workflow_engine_lets_you/)
+- url: https://github.com/rubycoco/git/tree/master/flow-lite
+---
+
+## [3][Rails 6.1 supports order DESC for find_each, find_in_batches, and in_batches | BigBinary Blog](https://www.reddit.com/r/ruby/comments/jg6rgs/rails_61_supports_order_desc_for_find_each_find/)
+- url: https://blog.bigbinary.com/2020/10/22/rails-6-1-supports-order-desc-for-find_each-find_in_batches-and-in_batches.html
+---
+
+## [4][Object#deep_freeze(skip_shareable: false) and shareable pragma proposals](https://www.reddit.com/r/ruby/comments/jg1e8w/objectdeep_freezeskip_shareable_false_and/)
+- url: https://www.reddit.com/r/ruby/comments/jg1e8w/objectdeep_freezeskip_shareable_false_and/
+---
+Exciting work by Koichi, Nobu and others to make Ractors more usable.
+
+Object#deep\_freeze(skip\_shareable: false)
+
+    a = ['s', Ractor.new{}].deep_freeze(skip_shareable: true)
+    a[0].frozen? # =&gt; true    
+    a[1].frozen? # =&gt; false
+    
+    Ractor.new do
+      p a
+    end.take
+
+[https://github.com/ruby/ruby/pull/3669](https://github.com/ruby/ruby/pull/3669)
+
+The shareable pragma proposal allows you to avoid having to call freeze on every object:
+
+    # shareable_constant_value: true
+    
+    A = [1, [2, [3, 4]]]
+    H = {a: "a"}
+    
+    Ractor.new do
+      p A
+      p H
+    end.take
+
+[https://bugs.ruby-lang.org/issues/17273](https://bugs.ruby-lang.org/issues/17273)
+## [5][How I set up a Rails application for testing](https://www.reddit.com/r/ruby/comments/jg50p8/how_i_set_up_a_rails_application_for_testing/)
+- url: https://www.codewithjason.com/set-rails-application-testing/
+---
+
+## [6][Create Toast Notifications on Rails 6 application using Yarn](https://www.reddit.com/r/ruby/comments/jgfzl0/create_toast_notifications_on_rails_6_application/)
+- url: https://www.youtube.com/watch?v=XWtP9RSIbLo
+---
+
+## [7][Strange Rubocop behaviour](https://www.reddit.com/r/ruby/comments/jgbt9n/strange_rubocop_behaviour/)
+- url: https://www.reddit.com/r/ruby/comments/jgbt9n/strange_rubocop_behaviour/
+---
+Can anyone explain this for me, please.
+
+* I'm working in a gem project directory.
+* Gemfile.lock specifies rubocop 0.50.0
+* OS - x86_64 Linux
+* shell - zsh
+* ruby -v 2.6.6 (managed by rbenv)
+
+If I run `bundle exec rubocop` it uses the `.rubocop.yml` from my `$HOME` directory.
+
+If I run `bundle exec rubocop --config .rubocop.yml` it uses the `.rubocop.yml` from the project root directory.
+
+Why am I having to pass the `--config` flag to force rubocop to use the project specific configuration file? I thought rubocop was supposed to use the first config file it found?
+
+*edit:*
+
+A little more info, after discovering the `--debug` flag:
+
+Without the `--config` flag, the local config file is being used and `AllCops/Exclude configuration` being taken from `$HOME` config. This is as per documented behaviour. My issue was that the config in `$HOME` specified `TargetRubyVersion: "2.6"` which is not recognized by rubocop 0.50.0 resulting in 
+
+    Error: Unknown Ruby version 2.6 found in `TargetRubyVersion` parameter (in /home/442401/.rubocop.yml).
+    Known versions: 1.9, 2.0, 2.1, 2.2, 2.3, 2.4
+## [8][Can my_hash1.delete(123) be unsafe multithreading-wise?](https://www.reddit.com/r/ruby/comments/jg3y56/can_my_hash1delete123_be_unsafe_multithreadingwise/)
+- url: https://www.reddit.com/r/ruby/comments/jg3y56/can_my_hash1delete123_be_unsafe_multithreadingwise/
+---
+Even if multiple threads try to delete a key with the same number from hash
+
+    my_hash1.delete(123)
+
+it won't be matter because deletion from a hash an item with a certain key can only change a state of hash once. Calling \`delete(key)\` multiple times, or from multiple threads won't cause any issue.  
+
+Therefore, **my\_hash1.delete(key)** always thread-safe, correct?
+
+&amp;#x200B;
+## [9][RuboCop 1.0](https://www.reddit.com/r/ruby/comments/jfaxse/rubocop_10/)
 - url: https://metaredux.com/posts/2020/10/21/rubocop-1-0.html
 ---
 
-## [2][RoR Shrine Filesystem](https://www.reddit.com/r/ruby/comments/jfqgun/ror_shrine_filesystem/)
+## [10][RoR Shrine Filesystem](https://www.reddit.com/r/ruby/comments/jfqgun/ror_shrine_filesystem/)
 - url: https://www.reddit.com/r/ruby/comments/jfqgun/ror_shrine_filesystem/
 ---
 Hello Everyone,
 
 I'm trying to create a csv upload system within a form. I've done this with shrine and saved it locally with shrine filesystem, but I have a question about it. when I enter the form, is it possible to edit the file before submitting it? Following a shrine tutorial by [Gorails](https://gorails.com/episodes/file-uploading-with-shrine), Chris does an example around min 20:00 and as an example he submits the form with an error and then the file loads. Is this possible without doing the submit and just loading the file? My goal is to be able to edit the csv before the user submits the file with javascript.
-## [3][Running a file in VSC](https://www.reddit.com/r/ruby/comments/jfo1fi/running_a_file_in_vsc/)
-- url: https://www.reddit.com/r/ruby/comments/jfo1fi/running_a_file_in_vsc/
----
-Hi, I just got ruby and was wondering, how would I run a ruby file in VSC? Can someone send me a step by step process to running a file on VSC?
-## [4][Explaining magic behind popular Ruby code](https://www.reddit.com/r/ruby/comments/jekiry/explaining_magic_behind_popular_ruby_code/)
-- url: https://longliveruby.com/articles/the-magic-behind-ruby-code
----
-
-## [5][How to ship a ruby gem/library with an external custom native library as a dependency?](https://www.reddit.com/r/ruby/comments/jeou5f/how_to_ship_a_ruby_gemlibrary_with_an_external/)
-- url: https://www.reddit.com/r/ruby/comments/jeou5f/how_to_ship_a_ruby_gemlibrary_with_an_external/
----
-I'm building a library/gem in Ruby that calls some functions from a native **custom** library written in C++. A C++ library, in a pre-compiled form, is available for Windows, Linux and MacOS, and, of course, they're 3 different files.
-
-&amp;#x200B;
-
-**Questions**:
-
-how should I go about shipping my gem with with 1 or all 3 at once C++ libraries? 
-
-Should I put them into a subdirectory of my gem? Then, how would I allow a user to download a gem with a C++ library that's been pre-compiled for his OS rather than including all 3 at once?
-
-&amp;#x200B;
-
-Or require a user to download it on its own? Then how would get a path to that library, how would a user pass it into my gem?
-## [6][How to create a wrapper for a function that returns a result in a callback (block or proc)?](https://www.reddit.com/r/ruby/comments/jel38y/how_to_create_a_wrapper_for_a_function_that/)
-- url: https://www.reddit.com/r/ruby/comments/jel38y/how_to_create_a_wrapper_for_a_function_that/
----
-I have a third-party library, in which there's a function that returns \`void\` directly, but has a block that's used as a callback:
-
-        def my_get_data1(arg1)
-          Thread.new do
-            ExternalLib.get_data_by_block("arg1") do |a, b, c|
-              # [ result of computation and some other data comes here ]
-            end
-          end
-        end
-
-&amp;#x200B;
-
-And there's the same kind of function that accepts a \`proc\` instead, and they both work identically:
-
-&amp;#x200B;
-
-        MyProc = Proc.new do |a, b, c|
-            # [ result of computation and some other data comes here ]
-        end
-    
-        def my_get_data2(arg1)
-          Thread.new do
-            ExternalLib.get_data_by_proc(arg1, MyProc)
-          end
-        end
-
-&amp;#x200B;
-
-**my\_get\_data1()** and **my\_get\_data2()** serve the purpose of an interface or wrapper of \`ExternalLib.get\_data()\` for the end user, this is what I need.
-
-&amp;#x200B;
-
-Q: How can I actually allow a user to get access to the result of the computation -- to what's inside of the \`block\` or \`proc\`?
-
-&amp;#x200B;
-
-I want it to be something like this:
-
-        p1 = Proc.new do |a|
-          # [ user will access result here, via a]
-        end
-    
-        my_get_data1(arg1, p1)
-    
-    
-        my_get_data2(arg1) do do |a|
-          # [ user will access result here, via a]
-        end
-
-&amp;#x200B;
-
-P.S.
-
-I've found out that that I have to use **Thread.new** because otherwise, it'll hang when I run it as "ruby my\_script1.rb", probably due to GIL. In \`irb\` it won't, though.
-## [7][What are your guys thoughts on Crystal and Elixir?](https://www.reddit.com/r/ruby/comments/je90yt/what_are_your_guys_thoughts_on_crystal_and_elixir/)
-- url: https://www.reddit.com/r/ruby/comments/je90yt/what_are_your_guys_thoughts_on_crystal_and_elixir/
----
-Hi everyone, hoping to get some insights into what you think of the two languages that seem to be popular with Rubyists.
-
-No judgement just interested to see if anyone has experience with them and what they think about them.
-
-For me I really like Crystal but is in a very new state and not even 1.0 so is a long time away from will pick up any major steam in terms of libs (complete personal opinion however!). 
-
-Elixir on the other hand goes into the functional world which we are all told is better but I still have issues not explaining concepts in terms of objects and state not being held closely to those objects. I love [Brian Goetz's talk on OOP vs FP](https://www.youtube.com/watch?v=HSk5fdKbd3o) where he thinks we should be object orientated on the outside and functional within.
-
-What do you guys think? Anyone have experience with them?
-## [8][Ruby code hangs when run in the terminal via "ruby script.rb", whereas in Irb it doesn't hang](https://www.reddit.com/r/ruby/comments/jenlag/ruby_code_hangs_when_run_in_the_terminal_via_ruby/)
-- url: https://www.reddit.com/r/ruby/comments/jenlag/ruby_code_hangs_when_run_in_the_terminal_via_ruby/
----
-A simplied version of the code I have is this:
-
-        def my_get_data1(arg1)
-          Thread.new do
-            ExternalLib.get_data_by_block("arg1") do |a, b, c|
-              # [ result of computation and some other data comes here ]
-            end
-          end
-        end
-    
-
-I behaves differently in the terminal and in Irb. When run as a ruby script in the terminal - \`ruby ./script1.rb\` it hangs. When I copy the code of \`script1.rb\` into Irb and thus run it, it doesn't hang and returns a result.
-
-&amp;#x200B;
-
-I've heard that ruby code can behave different in such a case.
-
-&amp;#x200B;
-
-What can be an issue or cause?
-## [9][Better Git diff output for Ruby, Python, Elixir, Go and more](https://www.reddit.com/r/ruby/comments/je09u7/better_git_diff_output_for_ruby_python_elixir_go/)
-- url: https://tekin.co.uk/2020/10/better-git-diff-output-for-ruby-python-elixir-and-more?src=twitter
----
-
-## [10][How to Estimate The Size of a Rails Application](https://www.reddit.com/r/ruby/comments/je718a/how_to_estimate_the_size_of_a_rails_application/)
-- url: https://www.fastruby.io/blog/rails/code-quality/how-we-estimate-rails-application-size.html
----
-

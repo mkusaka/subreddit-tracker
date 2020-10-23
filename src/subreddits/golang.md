@@ -3,144 +3,87 @@
 - url: https://blog.golang.org/survey2020
 ---
 
-## [2][A Go unikernel running on x86 bare metal](https://www.reddit.com/r/golang/comments/jfuusy/a_go_unikernel_running_on_x86_bare_metal/)
+## [2][The Nuances of Constants in Go; Go Isn't JavaScript - Qvault](https://www.reddit.com/r/golang/comments/jgk659/the_nuances_of_constants_in_go_go_isnt_javascript/)
+- url: https://qvault.io/2020/10/22/constants-in-go-vs-javascript-and-when-to-use-them/
+---
+
+## [3][Clean Architecture - Sorry but here we go again about same old question](https://www.reddit.com/r/golang/comments/jg9irs/clean_architecture_sorry_but_here_we_go_again/)
+- url: https://www.reddit.com/r/golang/comments/jg9irs/clean_architecture_sorry_but_here_we_go_again/
+---
+Hello i'm noob at Go Lang, but in deep love with Go!  
+  
+First will start to say i'm trying to learn more about Go and Clean Architecture, because why not?! Also want to said, sorry, because, i know this question time to time pop up over here.  
+
+I'm tired to search on google, youtube and reddit, on every search, got more doubt about Clean Architecture. Have several questions:  
+  
+ 1. Clean Architecture is a real thing or myth? Because what read in go, you are better without it.      
+ 2. If is real, can any one show a good example, well implemented? With interactor, presenter, etc. Because every article, example i found, can detect right away a bad implementation of Clean Architecture.    
+ 3. It's true that Robert Martin. (a.k.a. Uncle Bob) is trying selling his ideia?  
+ 4. In some video saw in other day, Uncle Bob said that Databases is a bad thing in general, and Relation Databases is dying.   
+ 5. Why Uncle Bob always said bad thing about "SQL"? What and why that bad? I'm like 12 year's of programming and acknowledge that Database is a good thing to have on architecture thing.    
+
+I'm here with open mind, i'm not trying to be bad or anything. Only post here, because is the only place i've know of.  
+
+P.s.: Don't be so hard on me, i'm not english native. So, if you find some typo or incorrect setence, sorry!
+## [4][Livecoding a Terraform provider today on Twitch - updating data sources in this ep - twitch.tv/bobbytables @ 5pm on Thu's](https://www.reddit.com/r/golang/comments/jg8287/livecoding_a_terraform_provider_today_on_twitch/)
+- url: https://i.redd.it/qy8x8pq5jpu51.gif
+---
+
+## [5][A Go unikernel running on x86 bare metal](https://www.reddit.com/r/golang/comments/jfuusy/a_go_unikernel_running_on_x86_bare_metal/)
 - url: https://github.com/icexin/eggos
 ---
 
-## [3][Anyone using go-migrate with a team?](https://www.reddit.com/r/golang/comments/jfvwtg/anyone_using_gomigrate_with_a_team/)
-- url: https://www.reddit.com/r/golang/comments/jfvwtg/anyone_using_gomigrate_with_a_team/
+## [6][A simple REST API for checking for disposable e-mail addresses](https://www.reddit.com/r/golang/comments/jgj56d/a_simple_rest_api_for_checking_for_disposable/)
+- url: https://www.reddit.com/r/golang/comments/jgj56d/a_simple_rest_api_for_checking_for_disposable/
 ---
-So we are using go-migrate and we have an issue with versions. Say dev A creates a new set of migrations (via cli) like:
+Hi fellow gophers,
 
+I have been wanting get my hands dirty with go for a while. Yesterday I decided to build a very simple REST API for checking if an e-mail address is disposable or not. It's not much but I wanted to share the first thing I built with go here 🙃
 
-    20201022081817_foobar.up.sql
-    20201022081817_foobar.down.sql
-
-
-At dev B creates a set of migrations in another branch like:
-
-
-    20201020081917_baz.up.sql
-    20201020081917_baz.down.sql
-
-
-Now the migration tool cant migrate depending on whats run first.
-
-Now dev A cant run dev B migrations, and vice-versa. This is because go-migrate only knows about the latest migration, and does not track previous ones. Its turned out to be a real PITA so handle these every time database changes happen.
-
-TLDR
-
-If you merge a branch with "older" migrations these cant be run with pg-migrate because it does not "know" they where not already run.
-
-Im just wondering if there is a good way of managing these cases, or maybe another library that can track previous migrations and know what to apply when running up.
-## [4][When Too Much Concurrency Slows You Down (Golang)](https://www.reddit.com/r/golang/comments/jfi21j/when_too_much_concurrency_slows_you_down_golang/)
-- url: https://medium.com/@_orcaman/when-too-much-concurrency-slows-you-down-golang-9c144ca305a
+[https://github.com/th0th/is-email-disposable](https://github.com/th0th/is-email-disposable)
+## [7][Goph v0.9.0 Released](https://www.reddit.com/r/golang/comments/jg0j5c/goph_v090_released/)
+- url: https://www.reddit.com/r/golang/comments/jg0j5c/goph_v090_released/
 ---
+Hi all,
 
-## [5][If I use ioutil.ReadAll, and then set a struct member to some small part of that file, does the entire file remain in memory?](https://www.reddit.com/r/golang/comments/jfy9vq/if_i_use_ioutilreadall_and_then_set_a_struct/)
-- url: https://www.reddit.com/r/golang/comments/jfy9vq/if_i_use_ioutilreadall_and_then_set_a_struct/
----
-Once upon a time, I thought I read a post explaining why loading an entire file in memory, and then referencing parts of that file, can be dangerous, because it keeps the entire file in memory. I can't seem to find that post, so I'm asking my question here. 
+I'm pleased to announce Goph 0.9.0!
 
-Use case: I have thousands of compressed CSV files (each hundreds of MB uncompressed) in cloud storage. I created a utility function that downloads the file, unzips it, and loads it in memory, returning the entire file contents as a string. 
+Goph is a lightweight Go SSH client focusing on simplicity!
 
-Then my code usually takes that string and slaps a CSV reader on it, and parses it. In some of my parsing code, I'll do something like:
+## Features
+- Easy to use and simple API.
+- Supports known hosts by default.
+- Supports connections with passwords.
+- Supports connections with private keys.
+- Supports connections with protected private keys with passphrase.
+- Supports upload files from local to remote.
+- Supports download files from remote to local.
+- Supports connections with ssh agent.
+- Supports adding new hosts to known_hosts file.
+- Supports file system operations like: Open, Create, Chmod... via SFTP
 
-`myStruct.Member = rec[0]`
+You can find the full list of features and the docs on the github page:
 
-Where `rec[0]` is one field from one CSV record. 
+https://github.com/melbahja/goph
 
-The thing that has me concerned: does this mean my program will *always* retain the entire file in memory, because I have created a reference to it in this way?
-
-And if so, how do I copy the value without retaining a reference to the file?
-## [6][My Six Years of Experience of as a Go Programming Language Mentor in India](https://www.reddit.com/r/golang/comments/jfwrav/my_six_years_of_experience_of_as_a_go_programming/)
-- url: https://shijuvar.medium.com/my-six-years-of-experience-of-as-a-go-programming-language-mentor-in-india-67854dcf1b95
+Thanks
+## [8][Value Objects in Go :: Victor's Personal Blog](https://www.reddit.com/r/golang/comments/jgiq28/value_objects_in_go_victors_personal_blog/)
+- url: https://victoramartinez.com/posts/value-objects-in-go-and-other-domain-driven-design-stuff/
 ---
 
-## [7][PSA: Think of the Less/less functions in the sort package as actually being ComesBefore](https://www.reddit.com/r/golang/comments/jfei3w/psa_think_of_the_lessless_functions_in_the_sort/)
-- url: https://www.reddit.com/r/golang/comments/jfei3w/psa_think_of_the_lessless_functions_in_the_sort/
+## [9][List of most used libraries](https://www.reddit.com/r/golang/comments/jgi1it/list_of_most_used_libraries/)
+- url: https://www.reddit.com/r/golang/comments/jgi1it/list_of_most_used_libraries/
 ---
-As in `less(i,j)` means *item i comes-before item j*, which I think is more helpful than "less" which doesn't really tell you where it'll end up in the list, per se, and makes it more obvious how to sort a list in "reverse" order, or any arbitrary multi-dimensional order.
-## [8][Multi-source file server: serve from 15TB files on baremetal + google cloud storage (public url) via single link](https://www.reddit.com/r/golang/comments/jfv67u/multisource_file_server_serve_from_15tb_files_on/)
-- url: https://github.com/codenoid/file-server
+Has anyone ever gathered a list of most used libraries in go for each task/topic?
+
+I think since go is a relatively new language it is nice to have a list or reference that developers can find the most used libraries for each topic.
+## [10][Looking for a Golang programmer to help us add things to Kolide](https://www.reddit.com/r/golang/comments/jgjwfn/looking_for_a_golang_programmer_to_help_us_add/)
+- url: https://www.reddit.com/r/golang/comments/jgjwfn/looking_for_a_golang_programmer_to_help_us_add/
+---
+So, i am hoping this is the right place to do :)
+
+I am looking for someone who can help us modify Kolide (opensource osquery manager) and add reporting and alerting to it? More specificly i would like to know how much time this would take?
+## [11][The current logging landscape for Go was lacking -- we wrote our own, Go Logger](https://www.reddit.com/r/golang/comments/jglait/the_current_logging_landscape_for_go_was_lacking/)
+- url: https://dglsparsons.hashnode.dev/go-logger-why-we-wrote-our-own
 ---
 
-## [9][A Cloud Native Distributed Streaming Network Telemetry](https://www.reddit.com/r/golang/comments/jff8t1/a_cloud_native_distributed_streaming_network/)
-- url: https://github.com/yahoo/panoptes-stream
----
-
-## [10][A simple helper to restart Docker containers with newer versions of images pulled from registry.](https://www.reddit.com/r/golang/comments/jfcus1/a_simple_helper_to_restart_docker_containers_with/)
-- url: https://www.reddit.com/r/golang/comments/jfcus1/a_simple_helper_to_restart_docker_containers_with/
----
-Helps k8s-less provisioning and updating to the newer version of a stateless container without pains of recalling the command-line options used to start the container.
-
-[https://github.com/jdevelop/repull](https://github.com/jdevelop/repull)
-## [11][program that adds the percentage (decided by the user) of a number (decided by the user) to that number, which added several times with itself gives me another number (decided by the user) added to its percentage (the one decided at the beginning)](https://www.reddit.com/r/golang/comments/jfnt3e/program_that_adds_the_percentage_decided_by_the/)
-- url: https://www.reddit.com/r/golang/comments/jfnt3e/program_that_adds_the_percentage_decided_by_the/
----
-Hi, I'm a new user and (I've also just started University) and I'm already having problems coding...
-
-I'll give an example and paste my code:
-
-&amp;#x200B;
-
-example:
-
-20 (number decided) \* 15/100 (percentage decided) + 20 = 23 (the number I want to reach by adding a certain number of my choice plus the percentage decided before \[15/100\])
-
-&amp;#x200B;
-
-For example, let's take the number 2 as the number to add (with the for cycle):
-
-&amp;#x200B;
-
-2+2\*15/100=2.30 (the first print)
-
-2+2\*15/100=2.30+2.30=4.60 (second print)
-
-...
-
-&amp;#x200B;
-
-until you reach the last print that would be 23.
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-My try (completely wrong as I don't know how to proceed/change it in a way that would work):
-
-    package main
-    
-    import "fmt"
-    
-    func main() {
-      var n, i, accumulatore float64
-      var percentuale int
-      fmt.Println("")
-      fmt.Print("Inserire valore: ")
-      fmt.Scan(&amp;n)
-      fmt.Print("Inserire percentuale (int): ")
-      fmt.Scan(&amp;percentuale)
-    
-      aumento := n*((percentuale/100)+1)
-      accumulatore = aumento
-    
-      fmt.Println("")
-      fmt.Println(aumento)
-      fmt.Println("")
-      
-      if (n+(n*15/100))%aumento == 0 {
-        for i=0; i&lt;n; i++{
-        fmt.Println(accumulatore)
-        accumulatore += aumento
-        for accumulatore == n/aumento {
-          break
-        }
-      }
-      
-    }
-    
-    }
-
-could someone kindly help me?

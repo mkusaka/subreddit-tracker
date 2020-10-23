@@ -22,7 +22,100 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][How can I get the keys from a Map.keys() iterator as a type?](https://www.reddit.com/r/typescript/comments/jfzkor/how_can_i_get_the_keys_from_a_mapkeys_iterator_as/)
+## [2][Is there any different on this two? var x = foo as any; var x: any = foo;](https://www.reddit.com/r/typescript/comments/jgi10h/is_there_any_different_on_this_two_var_x_foo_as/)
+- url: https://www.reddit.com/r/typescript/comments/jgi10h/is_there_any_different_on_this_two_var_x_foo_as/
+---
+
+## [3][Which language for a blog website: Dart or TypeScript?](https://www.reddit.com/r/typescript/comments/jgmmg0/which_language_for_a_blog_website_dart_or/)
+- url: https://www.reddit.com/r/typescript/comments/jgmmg0/which_language_for_a_blog_website_dart_or/
+---
+&gt; I know this is a biased source. But it's better than not asking...
+
+&gt; [This question was originally posted][original] on r/dartlang.
+
+[My blog][fanaro.com.br] is currently made with WordPress. But I've been wanting to revamp it with a more minimal design and pure code in the backend for quite a while now. The 2 reasons I've been avoiding this were: (1) my own experience as a developer and (2) the technologies I would use. My level of experience with HTML &amp; CSS is ok, but I have only minimal experience with JS and TS. While, with Dart, I think I'm already pretty advanced &amp;mdash; see [this browser extension][youtube_kbd_nav] I've created in the past month.
+
+So I come here to ask if anyone would help me deciding if I could/should go with Dart for revamping my blog website. Is it on par with TS for this purpose? Or should I still go for TS?
+
+From my perspective, most of the website's work will be either content (HTML and text) or the OO design, so, in the end, it wouldn't be too hard to simply rewrite it into another language anyway, though that would be super annoying &amp;mdash; and who knows if I'm gonna accidentally design something that uses a language-specific feature.
+
+There is also Flutter to take into consideration. Even though I think HTML &amp; CSS are more appropriate for this type of static content, maybe Flutter could be the tipping point of the argument for Dart.
+
+Since a blog website is usually very minimal anyway I could use it as an exercise for evaluating the basic differences between Dart and TS. But I don't know if I have the time or energy for that right now.
+
+
+[fanaro.com.br]: https://fanaro.com.br
+[original]: https://www.reddit.com/r/dartlang/comments/jfckso/blog_website_dart_or_typescript/
+[youtube_kbd_nav]: https://github.com/FanaroEngineering/youtube_kbd_nav
+## [4][I need your advices](https://www.reddit.com/r/typescript/comments/jgkyug/i_need_your_advices/)
+- url: https://www.reddit.com/r/typescript/comments/jgkyug/i_need_your_advices/
+---
+I've made a NodeJS library called Graceful Server months ago.
+
+You can find it here : [https://github.com/gquittet/graceful-server](https://github.com/gquittet/graceful-server)
+
+and here : [https://www.npmjs.com/package/@gquittet/graceful-server](https://www.npmjs.com/package/@gquittet/graceful-server)
+
+&amp;#x200B;
+
+What are its goals?
+
+\- Accept HTTP connections on your API only when it's ready
+
+\- Know precisely why your API crashed and shutdown
+
+\- Close all HTTP connections and disconnect your API from all the data sources on shutdown (to avoid to keep opened ghost connections)
+
+\- Give you a liveness and readiness endpoints (useful when you're using Kubernetes)
+
+&amp;#x200B;
+
+I want to know if the documentation is good.
+
+Can you share idea on how to improve the documentation and features you want to have in this library?
+
+Are you interested that I publish the roadmap?
+
+&amp;#x200B;
+
+This post is to thanks my 10k week downloads 💪
+
+&amp;#x200B;
+
+Let's make it evolve together ! 🚀
+## [5][Property does not exist on type](https://www.reddit.com/r/typescript/comments/jgk0qu/property_does_not_exist_on_type/)
+- url: https://www.reddit.com/r/typescript/comments/jgk0qu/property_does_not_exist_on_type/
+---
+Hi.
+
+From my Axios request, my [res.data](https://res.data) looks like this: 
+
+    {"count":1,"next":null,"previous":null,"results":[{"id":1,"name":"The Name","url":"http://somewhere"}]}
+
+I'd like represent this response in Typescript, so I've done this:
+
+    import axios, { AxiosResponse } from "axios";
+    
+    type Results = {
+      results: Array&lt;{}&gt;;
+    };
+    
+    type AxiosResponseData = {
+      data: Results;
+    };
+    
+    let res = &lt;AxiosResponse&gt; await axios.get(url, config);
+    let data = &lt;type.AxiosResponseData&gt;res.data
+    return data.results;
+
+Typescript doesn't like the very last line, which this warning: `Property 'results' does not exist on type 'AxiosResponseData'`.
+
+I'd really appreciate help figuring this out.  'AxiosResponseData'.
+## [6][Noob Question: jsconfig or tsconfig?](https://www.reddit.com/r/typescript/comments/jg1v1x/noob_question_jsconfig_or_tsconfig/)
+- url: https://www.reddit.com/r/typescript/comments/jg1v1x/noob_question_jsconfig_or_tsconfig/
+---
+Hi, just getting started with typescript. Should I be using a jsconfig or tsconfig, or does it even matter?
+## [7][How can I get the keys from a Map.keys() iterator as a type?](https://www.reddit.com/r/typescript/comments/jfzkor/how_can_i_get_the_keys_from_a_mapkeys_iterator_as/)
 - url: https://www.reddit.com/r/typescript/comments/jfzkor/how_can_i_get_the_keys_from_a_mapkeys_iterator_as/
 ---
 ```
@@ -44,7 +137,53 @@ I want to generate `type EntityKeys = "hero" | "zombies" | "bullets" | "text";` 
 I want to use `entities.get("hero")` and have `"hero"` type-checked, which won't work with `Map&lt;string, []&gt;`. I can use `new Map&lt;EntityKeys, Entity[]&gt;` using `type EntityKeys =...` but then it is not dynamic and I have to create `type EntityKeys` manually.
 
 Cheers!
-## [3][TypeScript JSX transform vs Babel JSX transform - pros and cons](https://www.reddit.com/r/typescript/comments/jffysy/typescript_jsx_transform_vs_babel_jsx_transform/)
+## [8][Elegant way of creating multiple types from a single generic](https://www.reddit.com/r/typescript/comments/jg07c8/elegant_way_of_creating_multiple_types_from_a/)
+- url: https://www.reddit.com/r/typescript/comments/jg07c8/elegant_way_of_creating_multiple_types_from_a/
+---
+Hello!
+
+I'm tring to define some kind of "redux store" boilerplate using only ContextAPI
+
+Here's what i have
+
+```
+import { Dispatch, SetStateAction, ReactNode } from 'react'
+
+declare namespace ContextStore {
+
+  export type StateAgent&lt;T&gt; = [T, Dispatch&lt;SetStateAction&lt;T&gt;&gt;]
+
+  export type SetNewState&lt;T&gt; = (newValue: T) =&gt; void
+
+  export type ContextHook&lt;T&gt; = [T, SetNewState&lt;T&gt;]
+
+  export type ContextProviderProps = {
+    children: ReactNode
+  }
+}
+
+export = ContextStore
+export as namespace ContextStore
+```
+
+I imagine there is a better way of outputting these 4 different types by passing only 1 generic argument.
+
+These "T"s are actually the same type.
+
+For example:
+I create a `initialState = { state: true }` and then i use it to create all of the types above instead of having to import each one of them and passing `initialState` as generic, like so:
+
+```
+StateAgent&lt;typeof initialState&gt;
+SetNewState&lt;typeof initialState&gt;
+ContextHook&lt;typeof initialState&gt;
+...
+``` 
+
+Maybe i can build a function that make these types avaiable with the generic built-in?
+
+Thanks in advance
+## [9][TypeScript JSX transform vs Babel JSX transform - pros and cons](https://www.reddit.com/r/typescript/comments/jffysy/typescript_jsx_transform_vs_babel_jsx_transform/)
 - url: https://www.reddit.com/r/typescript/comments/jffysy/typescript_jsx_transform_vs_babel_jsx_transform/
 ---
 I'm building a project with both TypeScript and Babel (and React) and I see that both TypeScript and Babel support the same JSX transform step. Either TypeScript can emit transformed JSX in JS code directly, or it can preserve the JSX in JSX files so Babel can handle it.
@@ -58,7 +197,7 @@ Does anyone have any additional information to add here or know of anything whic
 ----
 
 Edit: Follow up. After tons of very helpful comments I figured I'd share what I decided on. I am now using `babel` for all TypeScript compiling needs. `@babel/preset-env`, `@babel/preset-typescript` and `@babel/preset-react` specifically. To get builds to fail due to type errors and to see errors in the console during development, I'm using [fork-ts-checker-webpack-plugin](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin). I now no longer need `tsc` for production or development at all and am only using it for debugging if I purely want to run a command to quickly see all type errors in the project.
-## [4][Matching a destructured type based on transformation of argument type](https://www.reddit.com/r/typescript/comments/jfpy8t/matching_a_destructured_type_based_on/)
+## [10][Matching a destructured type based on transformation of argument type](https://www.reddit.com/r/typescript/comments/jfpy8t/matching_a_destructured_type_based_on/)
 - url: https://www.reddit.com/r/typescript/comments/jfpy8t/matching_a_destructured_type_based_on/
 ---
 I've been using typescript for a little while but haven't had the real need to dive into anything past simple typing until now. Basically, I have a function that takes in an obj map of promises and want the typing to understand it returns a new map of the resolved types.
@@ -93,7 +232,7 @@ to
         a: string,
         b: number
     }
-## [5][Possible to get typeof generic type parameter?](https://www.reddit.com/r/typescript/comments/jfq79i/possible_to_get_typeof_generic_type_parameter/)
+## [11][Possible to get typeof generic type parameter?](https://www.reddit.com/r/typescript/comments/jfq79i/possible_to_get_typeof_generic_type_parameter/)
 - url: https://www.reddit.com/r/typescript/comments/jfq79i/possible_to_get_typeof_generic_type_parameter/
 ---
 I am writing a simple de/serializer that works for any type of \`State\`. Is there any way to get the concrete types of a generic type parameter T? Code sample is shown below.
@@ -101,149 +240,3 @@ I am writing a simple de/serializer that works for any type of \`State\`. Is the
 [https://pastebin.com/84YabPtS](https://pastebin.com/84YabPtS)
 
 ps: The code does not render in reddit, so have to post it somewhere else.
-## [6][How can I resolve my async function so &lt;Promise&gt;Zombie becomes Zombie?](https://www.reddit.com/r/typescript/comments/jfhglw/how_can_i_resolve_my_async_function_so/)
-- url: https://www.reddit.com/r/typescript/comments/jfhglw/how_can_i_resolve_my_async_function_so/
----
-I am stuck, my `init` static method insists I return `Promise&lt;Zombie&gt;`, but it is meant to be `Zombie`, it should be resolved by the `awaitPromise.all`? The consumers of the class all throw errors now as it is no longer a `Zombie`
-
-I think there is some 'gotcha' I am not seeing here? Cheers!
-
-https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABAGzgQwCYEkC2aDmApgBTAzKEAKaUAFgFyIDOUATjGPgJSOWtw4YTQgB4AEgBUAsgBlcBQgFEKOQmCgA+RAG8AUIkQQELRDDxFlhVesQBeRGEIB3RPKLEuAbn2nzSlWpQAHRMrBB2iGQU1HTeBqyEUCCsSI4ufAJCopKybv5WgRrExAlMcMgAboQANIgJAFaE0Fx2WnoGBmYKltbBCKiYER6tdYRllSRdFgHqXj6dfj2BQQiErPysEQ1NUHGIAL5z+7q6hAAeAA5wrFCGyGhMTIgAWgIARjCEOj5ThHtgaFU3h8RjALFYIGg12Iv0YOTkixmUFqANUjHBHG43w6iDoQiCvwivz2BjxTCCqK+9kpe2OPhYNBg4QeAE9IKYwDAoB5ePxBMIRK8cB9CG15oZjLcANoAL3enzyAF0ImgnGguYgMvzCEE0MhkMQpeKDANsH5iAAiB7CKBMAD0cuFnwAbAAWAC0ZAByCCF04Fq41XFirm4oSSRSDmcL3lJEdIrytQttDUrBZAdpujpoEgsAQhgSNEIQpFPJjTq+7QlYNu8c+ERLnwJnO5c3iiWSSDrfyzJ1B4x1qHwxAghagxdjHjmQA
-
-```typescript
-function loadImage(filePath: string): Promise&lt;HTMLImageElement&gt; {
-  const imageElement = new Image();
-  imageElement.src = filePath;
-  return new Promise&lt;HTMLImageElement&gt;((resolve, reject) =&gt; {
-    imageElement.onload = () =&gt; resolve(imageElement);
-    imageElement.onerror = reject;
-  });
-}
-
-export class Zombie {
-  image;
-  name;
-
-  constructor(image: HTMLImageElement, name: string) {
-    this.image = image;
-    this.name = name;
-  }
-
-  static async init(): Promise&lt;Zombie&gt; {
-    const [zombieImage] = await Promise.all([
-      loadImage("assets/zombie64-final.png"),
-    ]);
-
-    return new Zombie(zombieImage, "henry");
-  }
-}
-
-function createZombie(): Zombie {
-  const zombie = Zombie.init();
-  return zombie;
-}
-
-console.log(createZombie());
-```
-## [7][View the API exposed by a given module](https://www.reddit.com/r/typescript/comments/jf4c4t/view_the_api_exposed_by_a_given_module/)
-- url: https://www.reddit.com/r/typescript/comments/jf4c4t/view_the_api_exposed_by_a_given_module/
----
-Is there a tool or convention to view/document the API exposed by a given module?
-
-```typescript
-/// example/index.ts
-
-export * from "./core";
-export * from "./util";
-```
-
-```typescript
-/// example/core/index.ts
-
-export class Application {
-  private constructor (...args: unknown[]) { … }
-  
-  public get id(): string { … }
-  
-  public async start(): Promise&lt;void&gt; { … }
-  
-  public static create(process: NodeJS.Process): Application {
-    // …
-    
-    return new Application(…);
-  }
-}
-```
-
-```typescript
-/// example/util/index.ts
-
-export const VERSION = "0.0.0" as const;
-```
-
-For example, the above would expose a very small public API, consisting of:
-- `Application`
-- `Application#id`
-- `Application#start()`
-- `Application.create()`
-- `VERSION`
-
-Are TypeScript definition files what I'm looking for?
-## [8][InversifyJS - How can I use container.get in an object literal?](https://www.reddit.com/r/typescript/comments/jf4axz/inversifyjs_how_can_i_use_containerget_in_an/)
-- url: https://www.reddit.com/r/typescript/comments/jf4axz/inversifyjs_how_can_i_use_containerget_in_an/
----
-I'm not sure if this is the place to ask this, but it's the best place I could find. I'm new to dependency injection with TS but did use it in C# once. When I try doing this:
-
-    export let COMMAND_MAP = {
-        "join": container.get&lt;ChannelJoiner&gt;(TYPES.ChannelJoiner)
-    }
-
-I get a runtime error that "get" is not defined. What am I doing wrong? Am I allowed to do this? I can send other related files if necessary.  
-
-
-Edit: I believe I have found the problem, but I am still unsure on how to fix it. The object above gets initialized before the container. Is there any way I can force the container to be initialized first?
-## [9][Good book or other resource for learning how to define your models?](https://www.reddit.com/r/typescript/comments/jex71u/good_book_or_other_resource_for_learning_how_to/)
-- url: https://www.reddit.com/r/typescript/comments/jex71u/good_book_or_other_resource_for_learning_how_to/
----
-I’m comming from a c# background and currently have a huge model that is hard to understand and does nothing else but set the types. My model is a huge collection of classes inside classes that don’t have anything else but some properties(no constructor, methods getters or setters). I’m trying to learn how to improve this but can’t seem to find a good book or article
-## [10][How to map an interface to another one](https://www.reddit.com/r/typescript/comments/jexpj2/how_to_map_an_interface_to_another_one/)
-- url: https://www.reddit.com/r/typescript/comments/jexpj2/how_to_map_an_interface_to_another_one/
----
-I'm sorry if this is improperly formatted, I copied this from another subreddit I posted it.
-Okay folks, Idk where to ask (I got downvoted in [stack](https://stackoverflow.com/questions/64443221/how-to-map-different-interfaces-to-each-other-in-typescript)) but the question is clear there, it's more of a typescript question, I'm working on a store which has \`ICategory\`, \`IProduct\`, ...etc and I generated the GraphQL schema with graphql codegen, the schema has \`Category\`, \`Product\`, ...etc.
-
-The ICategory is on the following format
-
-```
-
-export interface IBaseCategory {
-
-id: string;
-
-type: string;
-
-name: string;
-
-slug: string;
-
-image: string|null;
-
-items?: number;
-
-parent?: this | null;
-
-children?: this\[\];
-
-customFields: ICustomFields; }
-```
-
-    and the GraphQl one is on the format of the server, names of attributes are slightly different, but it has children with has edges which have nodes, etc (GraphQL basic schema).
-    Now, I've created a class for each type that queries that server and returns a `Category`, `Product`, ..etc (GraphQL format). and I want them to be mapped to the other format (The theme format, `ICategory, ...) so that I don't remove or alter the theme interfaces except as little as possible, details are in stackoverflow link.
-    
-    Thanks in advance.
-## [11][Generate Google Presentation from Wikipedia article](https://www.reddit.com/r/typescript/comments/je6qg8/generate_google_presentation_from_wikipedia/)
-- url: https://www.reddit.com/r/typescript/comments/je6qg8/generate_google_presentation_from_wikipedia/
----
-[GSlides Maker](https://github.com/vilmacio/gslides-maker) is a open-source project for create google presentations from wikipedia content like a robot. Try it [CLI version](https://github.com/vilmacio/gslides-maker) and help me with the [web application](https://gslidesmaker.com/). I hope you like it.
-
-https://preview.redd.it/98yuu3ceb3u51.png?width=681&amp;format=png&amp;auto=webp&amp;s=5259f69c148faeab52c9a10af6490d366bfec5c5

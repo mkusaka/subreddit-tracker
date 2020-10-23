@@ -1,9 +1,47 @@
 # Kotlin
-## [1][What are some libraries everyone should be using that would make life easier?](https://www.reddit.com/r/Kotlin/comments/jfk44r/what_are_some_libraries_everyone_should_be_using/)
-- url: https://www.reddit.com/r/Kotlin/comments/jfk44r/what_are_some_libraries_everyone_should_be_using/
+## [1][Choosing the right architecture for a [new] Kotlin Multiplatform, Jetpack Compose and SwiftUI app](https://www.reddit.com/r/Kotlin/comments/jgllev/choosing_the_right_architecture_for_a_new_kotlin/)
+- url: https://www.marcogomiero.com/posts/2020/kmm-shared-app-architecture/
 ---
 
-## [2][Unable to create a simple project following the Spring Guide tutorial](https://www.reddit.com/r/Kotlin/comments/jfyohl/unable_to_create_a_simple_project_following_the/)
+## [2][Kotlin Team AMA session is coming!](https://www.reddit.com/r/Kotlin/comments/jgmvgz/kotlin_team_ama_session_is_coming/)
+- url: https://www.reddit.com/r/Kotlin/comments/jgmvgz/kotlin_team_ama_session_is_coming/
+---
+Hi! The Kotlin team are getting ready to answer your questions on October 26-27. 
+
+During this AMA, we'll also cover some of the unanswered questions from the [Kotlin 1.4 Online Event](https://kotlinlang.org/lp/event-14/). 
+
+Keep an eye on the notifications in this subreddit, we will start at 9:00 am CET on October 26.
+## [3][Kotlin JVM Gradle plugin documentation](https://www.reddit.com/r/Kotlin/comments/jgbscp/kotlin_jvm_gradle_plugin_documentation/)
+- url: https://www.reddit.com/r/Kotlin/comments/jgbscp/kotlin_jvm_gradle_plugin_documentation/
+---
+Suppose I wanted to know what properties are available on the Kotlin object introduced by the Kotlin JVM Gradle plugin. From the [Using Gradle reference](https://kotlinlang.org/docs/reference/using-gradle.html) I can see that kotlin.incremental is a valid property, but is there a real reference of all properties and methods of the kotlin JVM plugin (preferably w/o having to use reflection to find them)?
+## [4][Object and Companion object In Kotlin (For beginners)](https://www.reddit.com/r/Kotlin/comments/jg5pq9/object_and_companion_object_in_kotlin_for/)
+- url: https://rylexr2678.hashnode.dev/object-and-companion-object-in-kotlin-1
+---
+
+## [5][Can we fix the documentation layout? Specifically the standard lib section?](https://www.reddit.com/r/Kotlin/comments/jg3p65/can_we_fix_the_documentation_layout_specifically/)
+- url: https://www.reddit.com/r/Kotlin/comments/jg3p65/can_we_fix_the_documentation_layout_specifically/
+---
+The layout of the STD LIB docs is so shitty it hurts.  There are no collapsable sections once you enter into a package.  Why can't it be laid out like the JavaDocs? Trying to find something on the page requires you to scroll half a mile to find the sub-heading you're even looking for.  Entire sections should be collapsable at least on the subheading
+## [6][trying Kotlin on a new project, but nothing is working, details inside](https://www.reddit.com/r/Kotlin/comments/jfy4o4/trying_kotlin_on_a_new_project_but_nothing_is/)
+- url: https://www.reddit.com/r/Kotlin/comments/jfy4o4/trying_kotlin_on_a_new_project_but_nothing_is/
+---
+I don't know how I bungled it up so badly this morning, but I've managed to get it working.  I suspect I didn't actually select Kotlin and I selected Java with Kotlin as an additional framework... and man I don't know I must have just needed coffee or something.  Thanks for chiming in, I'm finally in business now!
+
+~~So I'm trying to make  anew Kotlin project but there's a problem, I can't even produce a Hello World.  Using intellij 2020.2.3 there appears to be two ways to create a Kotlin project (Either selecting Kotlin directly, or choosing Java and selecting Kotlin/JVM as an additional framework), and neither of them work out of the box, and all of the documentation I can find is seemingly out of date (~~[~~https://kotlinlang.org/docs/tutorials/jvm-get-started.html~~](https://kotlinlang.org/docs/tutorials/jvm-get-started.html) ~~for example, the UI options it walks you through don't exist),~~
+
+~~Once you successfully create a project, it fails to setup because the configuration doesn't work.  I had to update some gradle options to get the correct version of gradle for my version of the JVM. Thankfully I was able to find that solution on Stack Overflow because I would have never figured that out on my own or with the available documentation.  So it downloads the new gradle version, and the example main function created by the IDE has no green Run button in the gutter, and attempting to build the project yielded some 2000 lines of LLVM optimization errors.~~
+
+~~Is there a better "hello world" walkthrough somewhere on the internet?  I'm not really finding a lot of help with all of this, and frankly this is kind of a nightmare compared to pretty much every other environment I've ever worked with.~~
+## [7][Does anyone have any experience with Kotlin and Leaflet JS?](https://www.reddit.com/r/Kotlin/comments/jg3ebc/does_anyone_have_any_experience_with_kotlin_and/)
+- url: https://www.reddit.com/r/Kotlin/comments/jg3ebc/does_anyone_have_any_experience_with_kotlin_and/
+---
+I'd like to create a web and mobile app that uses an interactive [choropleth map](http://en.wikipedia.org/wiki/Choropleth_map).  Since the release of Kotlin Multiplatform, I was thinking about trying to use [https://leafletjs.com/](https://leafletjs.com/), but I'm not sure how well it will work.  Any advice is much appreciated!
+## [8][VCS with Kotlin Multiplatform](https://www.reddit.com/r/Kotlin/comments/jg3lf2/vcs_with_kotlin_multiplatform/)
+- url: https://www.reddit.com/r/Kotlin/comments/jg3lf2/vcs_with_kotlin_multiplatform/
+---
+I just wanted to ask how someone should structure ist Multiplatform Project for Git? With the new Plugin for Android Studio a big Project is created, containing iOS and Android App and Multiplatform code. I think this isn't ideal but isn't this somehow related to the build process and where the framework file is put and how we link the Multiplatform code to the android project? Is it necessary?
+## [9][Unable to create a simple project following the Spring Guide tutorial](https://www.reddit.com/r/Kotlin/comments/jfyohl/unable_to_create_a_simple_project_following_the/)
 - url: https://www.reddit.com/r/Kotlin/comments/jfyohl/unable_to_create_a_simple_project_following_the/
 ---
 This is the tutorial in Java: [https://spring.io/guides/gs/validating-form-input/](https://spring.io/guides/gs/validating-form-input/)
@@ -33,73 +71,7 @@ Origin tutorial screenshots:
 &amp;#x200B;
 
 [from original tutorial in java working fine. ](https://preview.redd.it/575k45iq3nu51.png?width=507&amp;format=png&amp;auto=webp&amp;s=6fd5869033034606ec7c84d55c0cea304aa6f4f9)
-## [3][trying Kotlin on a new project, but nothing is working, details inside](https://www.reddit.com/r/Kotlin/comments/jfy4o4/trying_kotlin_on_a_new_project_but_nothing_is/)
-- url: https://www.reddit.com/r/Kotlin/comments/jfy4o4/trying_kotlin_on_a_new_project_but_nothing_is/
+## [10][Just started BNR’s Book on Kotlin](https://www.reddit.com/r/Kotlin/comments/jg4k0l/just_started_bnrs_book_on_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/jg4k0l/just_started_bnrs_book_on_kotlin/
 ---
-So I'm trying to make  anew Kotlin project but there's a problem, I can't even produce a Hello World.  Using intellij 2020.2.3 there appears to be two ways to create a Kotlin project (Either selecting Kotlin directly, or choosing Java and selecting Kotlin/JVM as an additional framework), and neither of them work out of the box, and all of the documentation I can find is seemingly out of date ([https://kotlinlang.org/docs/tutorials/jvm-get-started.html](https://kotlinlang.org/docs/tutorials/jvm-get-started.html) for example, the UI options it walks you through don't exist),
-
-Once you successfully create a project, it fails to setup because the configuration doesn't work.  I had to update some gradle options to get the correct version of gradle for my version of the JVM. Thankfully I was able to find that solution on Stack Overflow because I would have never figured that out on my own or with the available documentation.  So it downloads the new gradle version, and the example main function created by the IDE has no green Run button in the gutter, and attempting to build the project yielded some 2000 lines of LLVM optimization errors.
-
-Is there a better "hello world" walkthrough somewhere on the internet?  I'm not really finding a lot of help with all of this, and frankly this is kind of a nightmare compared to pretty much every other environment I've ever worked with.
-## [4][Is the IntelliJ experience with Kotlin as good or better than Java in terms of IDE features?](https://www.reddit.com/r/Kotlin/comments/jfj46v/is_the_intellij_experience_with_kotlin_as_good_or/)
-- url: https://www.reddit.com/r/Kotlin/comments/jfj46v/is_the_intellij_experience_with_kotlin_as_good_or/
----
-
-## [5][Ktor create long running API JOB endpoint with status](https://www.reddit.com/r/Kotlin/comments/jfun3f/ktor_create_long_running_api_job_endpoint_with/)
-- url: https://www.reddit.com/r/Kotlin/comments/jfun3f/ktor_create_long_running_api_job_endpoint_with/
----
-I need to create an API endpoint that will create a long running JOB managed through a coroutine and return the use a JOB ID through which the user can poll for status. JOB normally lasts between 5 to 15 minutes and its OK if this JOB is not shared between instances.
-
-Is there anything available already or i should write my own JOB queue class?
-## [6][Should I learn Kotlin?](https://www.reddit.com/r/Kotlin/comments/jfmdjs/should_i_learn_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/jfmdjs/should_i_learn_kotlin/
----
-I’ve just finished my 1st Semester of Java on my way to a Computer Science degree.
-
-Very impressed with Java and will continue to become proficient in it through further study.
-
-Have also heard a lot about Kotlin and wondering if all the enthusiasm for it was before the latest changes in Java from Java 8 to Java 15?
-
-I have a lot of other other languages to learn, plus the front end, so would like an honest opinion if I should just continue to do a deep dive with Java or also take in Kotlin.
-
-Would appreciate if you could provide any reasons why, when comparing Kotlin to Java 15. Of relevance is that I am a fan of JetBrains and IntelliJ Idea and believe Kotlin was originally developed by JetBrains?
-
-Thanks, very much appreciated!
-## [7][Announcing mapneat - my second Kotlin project attempt](https://www.reddit.com/r/Kotlin/comments/jfk9w0/announcing_mapneat_my_second_kotlin_project/)
-- url: https://www.reddit.com/r/Kotlin/comments/jfk9w0/announcing_mapneat_my_second_kotlin_project/
----
-After writing a small project called **serverneat** a few months back, my adventure in kotlin-land continues with [https://github.com/nomemory/mapneat](https://github.com/nomemory/mapneat).
-
-As the rest of us here, I simply love the language, and I cannot stop writing code in it. So my intention is to practice it in non-trivial hello world examples.
-
-\-----
-
-**MapNeat** is a Kotlin DSL / library that simplifies JSON to JSON, XML to JSON and POJO to JSON transformations.
-
-It can be particularly useful when you plan to use it inside an integration layer that converts data from one format to another, creating DTOs, etc.
-
-For the moment the library is not Maven Central, because it's not yet covered by tests or in a final state.
-
-Any feedback is very much appreciated (in terms of features, making the API more friendly, etc.);
-
-Code review would be also good - my Kotlin experience is limited, so I tend to still write Kotlin with a Java mindset.
-
-Contributors always wanted.
-
-Cheers!
-## [8][Kotlin and Spring boot rest api with Google oauth](https://www.reddit.com/r/Kotlin/comments/jffwfp/kotlin_and_spring_boot_rest_api_with_google_oauth/)
-- url: https://www.reddit.com/r/Kotlin/comments/jffwfp/kotlin_and_spring_boot_rest_api_with_google_oauth/
----
-Is there any good article on implementing spring boot rest api with Google oauth in kotlin/java? I would like to use Google access token via Android app and verify details from spring boot server via rest api.
-## [9][How to run Kotlin Multiplatform Web Application in continous mode](https://www.reddit.com/r/Kotlin/comments/jex6ej/how_to_run_kotlin_multiplatform_web_application/)
-- url: https://www.reddit.com/r/Kotlin/comments/jex6ej/how_to_run_kotlin_multiplatform_web_application/
----
-I started a project using the default Kotlin Multiplatform Full-Stack Web Application. (Ktor + Kotlin React with styled components)
-
-Can I somehow run the entire application in continous mode, so that the website gets refreshed automatically whenever I change either the front end or the back end?
-
-Edit: I use the gradle wrapper in version 6.7.
-## [10][jOOQ 3.14 includes support for kotlin code generation, among other features](https://www.reddit.com/r/Kotlin/comments/jeortf/jooq_314_includes_support_for_kotlin_code/)
-- url: https://blog.jooq.org/2020/10/20/jooq-3-14-released-with-sql-xml-and-sql-json-support/
----
-
+I’ve been having a hard time staying focused and disciplined trying to learn Kotlin. I’ve read the first two chapters I want to read at least a chapter a day and spend some time with the challenges and the read more section. Has anyone completed the book? The book is just ok Kotlin I want to try to get into Android Development but since Kotlin has sooooo many different uses I will be experimenting. If anyone has read the book did you like it and did you feel comfortable with Kotlin and your ability to problem solve after?

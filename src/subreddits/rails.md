@@ -27,7 +27,19 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Introducing Stimulus components with a first class support for Rails](https://www.reddit.com/r/rails/comments/jfvgem/introducing_stimulus_components_with_a_first/)
+## [3][5 ways to fix the latest-comment n+1 problem](https://www.reddit.com/r/rails/comments/jgam27/5_ways_to_fix_the_latestcomment_n1_problem/)
+- url: https://www.reddit.com/r/rails/comments/jgam27/5_ways_to_fix_the_latestcomment_n1_problem/
+---
+Hi, 
+
+I wrote a little guide with 5 ways to fix a kind "n+1 queries" problem, that I called the "latest-comment".
+
+I called it that way because one example/instance of the problem, is when you want a list of posts with the last comment, but it can also be extrapolated to "the last review in a list of products", or "the cheapest price", etc..
+
+[https://bhserna.com/5-ways-to-fix-the-latest-comment-n-1-problem.html](https://bhserna.com/5-ways-to-fix-the-latest-comment-n-1-problem.html)
+
+I hope it can be useful for someone :)
+## [4][Introducing Stimulus components with a first class support for Rails](https://www.reddit.com/r/rails/comments/jfvgem/introducing_stimulus_components_with_a_first/)
 - url: https://www.reddit.com/r/rails/comments/jfvgem/introducing_stimulus_components_with_a_first/
 ---
 Stimulus deserves to have a big and qualitative ecosystem with plug'n'play controllers like in other modern JS frameworks. 
@@ -37,411 +49,203 @@ More info here 👉 [https://guillaumebriday.fr/introducing-stimulus-components]
 All the available controllers are here 👉 [https://github.com/stimulus-components](https://github.com/stimulus-components)
 
 Feel free to open PRs and issues 🥳
-## [4][Ruby on Rails: templates and generators in 2020](https://www.reddit.com/r/rails/comments/jfmas5/ruby_on_rails_templates_and_generators_in_2020/)
+## [5][What serializers do you use in rails API?](https://www.reddit.com/r/rails/comments/jg2he7/what_serializers_do_you_use_in_rails_api/)
+- url: https://www.reddit.com/r/rails/comments/jg2he7/what_serializers_do_you_use_in_rails_api/
+---
+I was looking at [https://github.com/procore/blueprinter](https://github.com/procore/blueprinter) over ActiveModel Serializer but I'm not sure of any best practices when implementing this in a large project. I like the idea of its view and having multiple views in a single file to use for the required API.   
+
+
+I have two questions, 
+
+1. Do you have any ideas from your usage of blueprinter for JSON serialization?
+2. Also, do you know of any public repo on GitHub that uses this so I can skim its code to understand how they use it?
+## [6][No method error](https://www.reddit.com/r/rails/comments/jggb6t/no_method_error/)
+- url: https://www.reddit.com/r/rails/comments/jggb6t/no_method_error/
+---
+I am following a tutorial that consumes a google translate API and allows the app to translate from one language to another. Everything is going fine until I try to run the code in the controller. Then I get "NoMethodError in TranslationsController#index"
+
+        undefined method `[]' for nil:NilClass
+        Extracted source (around line #37):
+
+
+        languages = api_request('language/translate/v2/languages')
+
+        keys = languages['data']['languages'].map { |l| l['language'].upcase }
+
+        I18nData
+        .languages
+
+
+This is my controller code:
+
+    class TranslationsController &lt; ApplicationController
+    before_action :set_defaults
+
+    def index
+    end
+
+    def translate
+    end
+
+    private
+
+    def set_defaults
+      @languages = fetch_languages
+    end
+
+    def api_request(path, method: :get, body: nil)
+      params = {
+        headers: {
+          'x-rapidapi-key': 'YOUR_API_KEY',
+          'content-type': 'application/x-www-form-urlencoded'
+        }
+      }
+
+     params[:body] = body if body
+
+      response = Excon.send(method,
+        "https://google-translate1.p.rapidapi.com/#{path}",
+        params
+      )
+
+    JSON.parse(response.body)
+    end
+
+    def fetch_languages
+      languages = api_request('language/translate/v2/languages')
+
+     keys = languages['data']['languages'].map { |l| l['language'].upcase }
+
+      I18nData
+        .languages
+        .slice(*keys)
+        .each_with_object([]) do |(iso, name), memo|
+          memo &lt;&lt; [name, iso]
+        end
+      end
+    end
+
+
+
+
+
+I don't know what I'm doing wrong.
+## [7][How do you validate your model ? Simple Active Record validation, or dry-rb, or equivalent ?](https://www.reddit.com/r/rails/comments/jg5gx0/how_do_you_validate_your_model_simple_active/)
+- url: https://www.reddit.com/r/rails/comments/jg5gx0/how_do_you_validate_your_model_simple_active/
+---
+For example if you use dry-rb, do you still use Active Record validations ? I try to find the way to validates models elegantly enough, without over-engineer everything. Thanks for your thoughts !
+## [8][Rspec stub current user on a request spec for a rails engine with no access to Devise](https://www.reddit.com/r/rails/comments/jg3j7y/rspec_stub_current_user_on_a_request_spec_for_a/)
+- url: https://www.reddit.com/r/rails/comments/jg3j7y/rspec_stub_current_user_on_a_request_spec_for_a/
+---
+I am working on a rails engine. I have no access to Devise or its helper methods since those are in the host application. We also don't have a user model so we have to mock the model
+
+&amp;#x200B;
+
+I have a controller defined as
+
+&amp;#x200B;
+
+\`\`\`
+
+    require_dependency "sample/application_controller"
+    
+    module Sample
+     class ExampleController &lt; ApplicationController
+      def list_estates
+        if current_user.has_access_to?(:communities)
+           u/estates = Estate.all
+        end
+      end
+     end
+    end
+
+\`\`\`
+
+&amp;#x200B;
+
+I would like to test that the method actually performs xyz if current\_user has access to communities.
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+\`\`\`
+
+    require 'rails_helper'
+    module PremierSaAgreementSigning
+    class User
+    
+    	attr\_reader :email, :password
+    
+    	def initialize(email, password)
+    
+    		u/email = email
+    
+    		u/password = password
+    
+    	end
+    
+    end
+
+&amp;#x200B;
+
+    describe ExampleController, type: :request do
+      context 'user is signed in' do
+        let(:user) { [User.new](https://User.new)('test@example.com', 'password') }
+        let(:estate) { create(:estate) }
+    
+         before do
+            ActionView::Base.any_instance.stub(:current_user) { user }
+         end
+    
+    
+         it 'returns a list of estates' do
+            get "/sample/example/list_estates"
+            expect(assigns(:estates)).to include(estate)
+         end
+       end
+    end
+
+\`\`\`
+
+&amp;#x200B;
+
+Since I have no access to devise or a user model.
+
+How do I get \`current\_user\` instance on the \`ExampleController\` to be equal to the user I have created here. Then how do I get the now new current\_user to mock the \`has\_access\_to?\` method which is also not defined in this engine.
+
+&amp;#x200B;
+
+My method above returns
+
+    `ActionView::Base does not implement #current_user`
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+Please note that I do not need to create or expose any session/login logic here as that is handled on the host application and not required on the engine.
+
+    I just need to mock the `current_user` object and run another fake method..`has_access_to?` on this object
+
+How can I do this. I am a beginner and this has been quite challenging
+## [9][Anyone using Svelte,Elm or anything more obscure?How's your experience?](https://www.reddit.com/r/rails/comments/jfwvu2/anyone_using_svelteelm_or_anything_more/)
+- url: https://www.reddit.com/r/rails/comments/jfwvu2/anyone_using_svelteelm_or_anything_more/
+---
+
+## [10][Active Admin](https://www.reddit.com/r/rails/comments/jg4coy/active_admin/)
+- url: https://www.reddit.com/r/rails/comments/jg4coy/active_admin/
+---
+Is Active Admin a free-to-use tool? I barely came across it and since I'm working on an application for a company it looks like it would help a lot
+## [11][Ruby on Rails: templates and generators in 2020](https://www.reddit.com/r/rails/comments/jfmas5/ruby_on_rails_templates_and_generators_in_2020/)
 - url: https://www.reddit.com/r/rails/comments/jfmas5/ruby_on_rails_templates_and_generators_in_2020/
 ---
 2020 is a being a very rich year for Rails **boilerplates and generators**. I've written a short article describing the most prominent ones: [https://blog.corsego.com/2020/10/ruby-on-rails-templates-and-generators.html](https://blog.corsego.com/2020/10/ruby-on-rails-templates-and-generators.html)
 
 Hope you find it useful :)
-## [5][Simple question I'm losing it](https://www.reddit.com/r/rails/comments/jfv6qz/simple_question_im_losing_it/)
-- url: https://www.reddit.com/r/rails/comments/jfv6qz/simple_question_im_losing_it/
+## [12][Do you use Spree to sell digital products?](https://www.reddit.com/r/rails/comments/jg39nc/do_you_use_spree_to_sell_digital_products/)
+- url: https://www.reddit.com/r/rails/comments/jg39nc/do_you_use_spree_to_sell_digital_products/
 ---
-I have a table with a "status" string column where the values are either "pending" or "complete" and I'd like to know if there is a way to basically display two tables where each iterates each "status" value
+Is anyone doing this? I'm building a site where multiple vendors will be able to sell digital products. Seems like Spree is more for physical products. Wondering if I should try to customize it or use something else entirely. 
 
-EDIT: 
-Only thing I've tried is:
-
-model.where("column" =&gt; 'string') do 
-end
-
-EDIT 2: 
-Okay I figured it out, all i dead was put the .each at the end
-## [6][Anyone using Svelte,Elm or anything more obscure?How's your experience?](https://www.reddit.com/r/rails/comments/jfwvu2/anyone_using_svelteelm_or_anything_more/)
-- url: https://www.reddit.com/r/rails/comments/jfwvu2/anyone_using_svelteelm_or_anything_more/
----
-
-## [7][Hosting / Deployment Advice for Very Low Traffic Application](https://www.reddit.com/r/rails/comments/jfmy30/hosting_deployment_advice_for_very_low_traffic/)
-- url: https://www.reddit.com/r/rails/comments/jfmy30/hosting_deployment_advice_for_very_low_traffic/
----
-Hello good people,  
-
-
-Having read through this post from yesterday and today:  
-[https://www.reddit.com/r/rails/comments/jeo0xy/where\_do\_people\_host\_their\_rails\_6\_apps\_in\_2020/](https://www.reddit.com/r/rails/comments/jeo0xy/where_do_people_host_their_rails_6_apps_in_2020/)  
-
-
-I thought I would pose a similar question, I run a website ([https://www.marincricketclub.com/](https://www.marincricketclub.com/)) for a sports club I'm a part of, our website lays mostly dormant for 5 months a year and the rest of the year, we would be lucky if we got 500 hits a month.   
-
-
-We are a non profit so any way I can reduce cost is great! We use Heroku Hobby dyno's at $7 per month and they have been more than adequate for our use case and been zero hassle as well.  
-
-
-But, after reading the above thread and having done some other research on my own, I believe I can save us some money by moving to the Digital Ocean App Marketplace (probably $5 per month) or Google Cloud Services which based on our use case, should be free or worst case scenario maybe cost $1 a month and this would include our attached storage bucket.   
-
-
-I'm about to rebuild the existing site and have put together a (mostly) static site to serve as a place holder until the next season gets closer. Going forward, the app will send email, have an active storage solution and I want to get the deploy situation sorted now.  
-
-
-So any advice, ideas or suggestions are very appreciated!  
-Red
-## [8][Same base project in three different instances. What do you suggest?](https://www.reddit.com/r/rails/comments/jfa5h0/same_base_project_in_three_different_instances/)
-- url: https://www.reddit.com/r/rails/comments/jfa5h0/same_base_project_in_three_different_instances/
----
-Let's say you have the project X which is a simple Rails app. It's open source in github. 
-
-Then you decide you will host the project on a custom VPS with capistrano for example and sell it to people as a SaaS. 
-
-And then, you build another instance with small differences and sell it as a business app on a different domain. 
-
-What is the right way to accomplish that without going crazy? 
-
-The use case is that I've build an app and I want to try and see If it gets any customers. It will have two plans, a personal and a business one. Obviously, the differences with the open source app would be to have extra models as `subscriptions` and more security. 
-
-Should I keep the same *Core* and build everything else on top of gems and engines ? Or is there any other common solution I am missing ?
-
-Thanks in advance!
-## [9][Anyone know how to retrieve nested attributes with Grape?](https://www.reddit.com/r/rails/comments/jfmfqh/anyone_know_how_to_retrieve_nested_attributes/)
-- url: https://www.reddit.com/r/rails/comments/jfmfqh/anyone_know_how_to_retrieve_nested_attributes/
----
-I'm setting up my API, and its only returning one table -- when it should be including the nested relationships between my models. There are at least 6 different other relationships that I want to include with my initial api request. The are nested attributes for the provider\_form.
-
-**api.rb**
-
-&amp;#x200B;
-
-`require 'grape-entity'`
-
-`module Sims`
-
-`class API &lt; Grape::API`
-
-   `format :json`
-
-   `prefix :api`
-
-  `version 'v1', :path`
-
- `mount Sims::V1::ProviderForms`
-
- `end`
-
-`end`
-
-&amp;#x200B;
-
-**provider\_form.rb**
-
-`module Sims`
-
- `module V1`
-
-  `class ProviderForms &lt; Sims::API`
-
-  `include Grape::Kamari`
-
- `params do` 
-
-   `use :pagination, per_page: 20, max_per_page: 30`
-
- `resources :provider_forms do`
-
- `desc 'return provider forms'` 
-
- `get do`
-
-`present paginate(ProviderForm.all), with: PersonalInfoEntity`
-
-`end` 
-
-`end`
-
-&amp;#x200B;
-
-**personal\_info\_entity.rb**
-
-`class PersonalInfoEntity &lt; Grape::Entity`
-
-`expose :personal_info do`
-
-`expose :first_name`
-
-`expose :last_name`
-
-  `end`
-
-`end`
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-**provider\_form.rb**
-
-`has_one :personal_info, dependent: :destroy`
-
-**personal\_info.rb**
-
-`belongs_to :provider_form`
-## [10][Issue with unpermitted parameter](https://www.reddit.com/r/rails/comments/jfbvgm/issue_with_unpermitted_parameter/)
-- url: https://www.reddit.com/r/rails/comments/jfbvgm/issue_with_unpermitted_parameter/
----
-I am trying to build a stripped down version of a spree type application to learn. In my product form I want to be able to attached option\_types to it. I do this by having a select field that has select2 on it. I choose the option types needed from the list and it adds them in as a sort of tags type text field. I think it should come out in the form params as a comma delimited field based on how I have it set up. 
-
-When I update a product after I have selected some option types the product updates but I am getting the following error on an unpermitted parameter:
-
-&amp;#x200B;
-
-https://preview.redd.it/zc3a48ojyfu51.png?width=2509&amp;format=png&amp;auto=webp&amp;s=c7ad26b2e9b688d14497e61ccc97620ac8f91104
-
-I've tried everything and can't figure out why that is happening. Any thoughts on what the issue is based on the info below?
-
-product controller:
-
-    class ProductsController &lt; ApplicationController
-      before_action :set_product, only: [:show, :edit, :update, :destroy]
-      before_action :load_data
-      # GET /products
-      # GET /products.json
-      def index
-        u/products = Product.all
-        u/option_types = OptionType.all.map{|c| [ c.name, c.id ] }
-      end
-    
-      # GET /products/1
-      # GET /products/1.json
-      def show
-        puts params.inspect
-      end
-    
-      # GET /products/new
-      def new
-        u/product = Product.new
-        u/product.option_types.new
-        u/categories = Category.all.map{|c| [ c.title, c.id ] }
-        u/variants = Variant.all.map{|c| [ c.name, c.id ] }
-      end
-    
-      # GET /products/1/edit
-      def edit
-        u/categories = Category.all.map{|c| [ c.title, c.id ] }
-        u/option_types = u/product.option_types
-        u/product.option_types.new
-      end
-    
-      # POST /products
-      # POST /products.json
-      def create
-        u/product = Product.new(product_params)
-        u/product.user_id = current_user.id
-        u/product.category_id = params[:category_id]
-        respond_to do |format|
-          if u/product.save
-            format.html { redirect_to u/product, notice: 'Product was successfully created.' }
-            format.json { render :show, status: :created, location: u/product }
-          else
-            format.html { render :new }
-            format.json { render json: u/product.errors, status: :unprocessable_entity }
-          end
-        end
-      end
-    
-      # PATCH/PUT /products/1
-      # PATCH/PUT /products/1.json
-      def update
-        u/product.category_id = params[:category_id]
-    
-        if u/product.option_types.present?
-          u/product.option_types = u/product.option_types.split(',')
-        end
-    
-        respond_to do |format|
-          if u/product.update(product_params)
-            format.html { redirect_to u/product, notice: 'Product was successfully updated.' }
-            format.json { render :show, status: :ok, location: u/product }
-          else
-            format.html { render :edit }
-            format.json { render json: u/product.errors, status: :unprocessable_entity }
-          end
-        end
-      end
-    
-      # DELETE /products/1
-      # DELETE /products/1.json
-      def destroy
-        u/product.destroy
-        respond_to do |format|
-          format.html { redirect_to products_url, notice: 'Product was successfully destroyed.' }
-          format.json { head :no_content }
-        end
-      end
-    
-      private
-        # Use callbacks to share common setup or constraints between actions.
-        def set_product
-          u/product = Product.find(params[:id])
-        end
-    
-        def load_data
-          u/option_types = OptionType.order(:name)
-        end
-    
-        # Only allow a list of trusted parameters through.
-        def product_params
-          params.require(:product).permit(:name, :description, :stock, :available_on, :price, :user_id, :main_image, :option_type_ids, :option_type_id, option_type_attributes: [:id, :presentation])
-        end
-    end
-
-product model:
-
-    class Product &lt; ApplicationRecord
-      belongs_to :user
-      belongs_to :category
-      has_one_attached :main_image, dependent: :destroy
-      has_many_attached :images, dependent: :destroy
-    
-      has_many :product_option_types, dependent: :destroy
-      has_many :option_types, through: :product_option_types
-    
-      accepts_nested_attributes_for :option_types, allow_destroy: true
-    
-      has_many :variants, inverse_of: :product
-    
-    end
-    
-
-option\_types model:
-
-    class OptionType &lt; ApplicationRecord
-      with_options dependent: :destroy, inverse_of: :option_type do
-        has_many :option_values, -&gt; { order(:position) }
-        has_many :product_option_types
-      end
-    
-      accepts_nested_attributes_for :option_values, reject_if: :all_blank, allow_destroy: true
-    
-      has_many :products, through: :product_option_types
-    end
-    
-
-product\_option\_types model:
-
-    class ProductOptionType &lt; ApplicationRecord
-      with_options inverse_of: :product_option_types do
-          belongs_to :product
-          belongs_to :option_type
-      end
-    
-      validates :product, :option_type, presence: true
-      validates :product_id, uniqueness: { scope: :option_type_id }, allow_nil: true
-    end
-    
-
-product \_form
-
-    &lt;%= form_with(model: product, local: true) do |form| %&gt;
-      &lt;div class="row"&gt;
-        &lt;div class="col-md-9"&gt;
-    
-      &lt;% if product.errors.any? %&gt;
-        &lt;div id="error_explanation"&gt;
-          &lt;h2&gt;&lt;%= pluralize(product.errors.count, "error") %&gt; prohibited this product from being saved:&lt;/h2&gt;
-    
-          &lt;ul&gt;
-          &lt;% product.errors.full_messages.each do |message| %&gt;
-            &lt;li&gt;&lt;%= message %&gt;&lt;/li&gt;
-          &lt;% end %&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-      &lt;% end %&gt;
-    
-      &lt;div class="form-group"&gt;
-        &lt;%= form.label :name %&gt;
-        &lt;%= form.text_field :name, class: 'form-control' %&gt;
-      &lt;/div&gt;
-    
-      &lt;div class="form-group"&gt;
-        &lt;%= form.label :description %&gt;
-        &lt;%= form.text_area :description, class: 'form-control' %&gt;
-      &lt;/div&gt;
-    
-      &lt;div class="form-group"&gt;
-        &lt;%= form.label :stock %&gt;
-        &lt;%= form.text_field :stock, class: 'form-control' %&gt;
-      &lt;/div&gt;
-    
-      &lt;div class="form-group"&gt;
-        &lt;%= form.label :available_on %&gt;
-        &lt;%= form.text_field :available_on, class: 'form-control', data: { behavior: "flatpickr" } %&gt;
-      &lt;/div&gt;
-    
-      &lt;div class="form-group"&gt;
-        &lt;%= form.label :price %&gt;
-        &lt;%= form.text_field :price, class: 'form-control' %&gt;
-      &lt;/div&gt;
-    
-      &lt;div class="form-group"&gt;
-        &lt;%= form.label 'Category' %&gt;
-      &lt;%= select_tag(:category_id, options_for_select(@categories, u/product.category_id), class: 'form-control', :prompt =&gt; 'Select category') %&gt;
-      &lt;/div&gt;
-    
-      &lt;div class="form-group" data-controller='select2'&gt;
-        &lt;%= form.label :option_type_ids %&gt;
-    
-        &lt;%= form.select :option_type_id, OptionType.all.map { |type| type.presentation }, {include_blank: false}, class: 'form-control content-search', multiple: 'multiple' %&gt;
-    
-      &lt;/div&gt;
-    
-        &lt;hr&gt;
-        &lt;div class="form-group"&gt;
-        &lt;%= form.submit class: 'btn btn-primary' %&gt;
-    
-        &lt;% if product.persisted? %&gt;
-        &lt;div class="float-right"&gt;
-          &lt;%= link_to 'Destroy', product, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %&gt;
-        &lt;/div&gt;
-          &lt;%= link_to "Cancel", product, class: "btn btn-link" %&gt;
-        &lt;% else %&gt;
-          &lt;%= link_to "Cancel", products_path, class: "btn btn-link" %&gt;
-        &lt;% end %&gt;
-    
-      &lt;/div&gt;
-    &lt;/div&gt;
-    
-    &lt;div class="col-md-3"&gt;
-      &lt;div class="form-group"&gt;
-        &lt;%= form.label 'Main Product Image' %&gt;
-        &lt;%= form.file_field :main_image, classs: 'form-control' %&gt;
-      &lt;/div&gt;
-    
-      &lt;% if product.persisted? %&gt;
-    
-          &lt;div class="form-group"&gt;
-              &lt;%= link_to "Manage Variants", product_variants_path(@product), class: "btn btn-link" %&gt;
-          &lt;/div&gt;
-    
-        &lt;/div&gt;
-        &lt;% end %&gt;
-      &lt;/div&gt;
-      &lt;% end %&gt;
-## [11][Find a Trending user on the basis of recently 3 days score](https://www.reddit.com/r/rails/comments/jfb8fj/find_a_trending_user_on_the_basis_of_recently_3/)
-- url: https://www.reddit.com/r/rails/comments/jfb8fj/find_a_trending_user_on_the_basis_of_recently_3/
----
-Hi, guys hope you are fine,
-
-I'm implementing an  API in which against certain actions user win some points and these points are saving in a column in User table &gt; Score.  by `user.score += 100`    
-
-
-but now I want to get the trending user who wins the maximum score recently in 3 days.
-
-can anyone please guide me ?
-## [12][New rails project postgres issue](https://www.reddit.com/r/rails/comments/jf2n05/new_rails_project_postgres_issue/)
-- url: https://www.reddit.com/r/rails/comments/jf2n05/new_rails_project_postgres_issue/
----
- As the default configuration, a user called postgres is made and the user postgres has full superadmin access to the entire PostgreSQL instance running on your OS.The default Postgres user is postgres and a password is not required for authentication. Thus, to add a password, we must first login and connect as the postgres user   
-
-
-In a new rails project, whenever I perform rake db it either tells me: 
-
- `peer authentication failed for user 'postgres'` or `no password supplied for postgres`
-
-I shouldnt have to necessarily touch `pg_hba.conf` file or \password
+Thanks!

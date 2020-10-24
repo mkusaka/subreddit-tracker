@@ -27,61 +27,134 @@ AWS always releases a bunch of features, sometimes everyday or atleast once a we
 10: More features in App Mesh(Circuit breaker, Rate Limiting)
 
 P.S: Not sure if some features are already available, but if something is missing, please feel free to add
-## [2][Introducing Amazon SNS FIFO – First-In-First-Out Pub/Sub Messaging](https://www.reddit.com/r/aws/comments/jg99wv/introducing_amazon_sns_fifo_firstinfirstout/)
-- url: https://aws.amazon.com/blogs/aws/introducing-amazon-sns-fifo-first-in-first-out-pub-sub-messaging/
+## [2][[QUESTION] Best course/way to understand dynamoDB modeling and how to structure your tables keys etc?](https://www.reddit.com/r/aws/comments/jgzave/question_best_courseway_to_understand_dynamodb/)
+- url: https://www.reddit.com/r/aws/comments/jgzave/question_best_courseway_to_understand_dynamodb/
+---
+Do you guys know of any course or tutorials that explain data structures in dynamo db using real life scenarios? I watched every video in youtube but still I dont quite feel like I understand it?
+## [3][Introducing the AWS Load Balancer Controller](https://www.reddit.com/r/aws/comments/jh07g7/introducing_the_aws_load_balancer_controller/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/10/introducing-aws-load-balancer-controller/
 ---
 
-## [3][Finally! Amazon CloudFront announces support for public key management through IAM user permissions for signed URLs and signed cookies](https://www.reddit.com/r/aws/comments/jgdb37/finally_amazon_cloudfront_announces_support_for/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/10/cloudfront-iam-signed-url/
+## [4][Infra App (v0.42) - Simplest Kubernetes desktop client now supports all resources](https://www.reddit.com/r/aws/comments/jh3447/infra_app_v042_simplest_kubernetes_desktop_client/)
+- url: https://www.reddit.com/r/aws/comments/jh3447/infra_app_v042_simplest_kubernetes_desktop_client/
+---
+Hey everyone!
+
+Thanks to all your feedback and supporting us, we've made a big release this week to include support for all Kubernetes resources in Infra App. Now you can use Infra App to check on a secret or see a configuration of a CRD, and much more.
+
+More on the update here: [https://infra.app/blog/v0-42-biggest-update-yet-all-resources-now-available](https://infra.app/blog/v0-42-biggest-update-yet-all-resources-now-available)
+
+For others who haven't heard about Infra App, my co-founder and I have been building this app with the goal of creating a simple and easy to use Kubernetes desktop client. Some of the notable features are
+
+* Live tailing of logs / aggregating related logs for you so you can filter and search them
+* CPU / Memory metrics directly from your cluster (provided you have metrics-server)
+* Displaying the relationship of your related sources
+* All this is local to your computer, we don't send your cluster information to us (it's the reason why we're building this as a desktop app)
+
+You can find more about Infra App at [https://infra.app](https://infra.app/)
+
+We're just super passionate about this space and want to create a great sustainable app.
+
+It's available on Windows / Mac / Linux.
+
+&amp;#x200B;
+
+https://preview.redd.it/t66c6soj4zu51.png?width=3072&amp;format=png&amp;auto=webp&amp;s=c70cae8e4c3bf39815b324b22c3427fe6252d276
+
+https://preview.redd.it/fpzpl6mq4zu51.png?width=1387&amp;format=png&amp;auto=webp&amp;s=74ae03ab9d8bb500fecbce2cefcdda20a8cbfb7f
+
+https://preview.redd.it/3ypux0wl4zu51.png?width=1387&amp;format=png&amp;auto=webp&amp;s=b1ea5c13c3faba321fd9ad21cb3d10f9f69eed0c
+## [5][Did speed test for transfer acceleration... if something is “Infinity% Faster,” does it already exist before I transfer? Does the transfer happen backwards in time?](https://www.reddit.com/r/aws/comments/jgs11a/did_speed_test_for_transfer_acceleration_if/)
+- url: https://i.redd.it/l7c7d52utvu51.jpg
 ---
 
-## [4][Amazon Prime Day 2020 – Powered by AWS](https://www.reddit.com/r/aws/comments/jg55ig/amazon_prime_day_2020_powered_by_aws/)
-- url: https://aws.amazon.com/blogs/aws/amazon-prime-day-2020-powered-by-aws/
+## [6][How to join AWS slack community](https://www.reddit.com/r/aws/comments/jh6195/how_to_join_aws_slack_community/)
+- url: https://www.reddit.com/r/aws/comments/jh6195/how_to_join_aws_slack_community/
 ---
+Hi, i am not able join 
 
-## [5][AWS CloudFormation now supports increased limits on five service quotas](https://www.reddit.com/r/aws/comments/jg8x9t/aws_cloudformation_now_supports_increased_limits/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/10/aws-cloudformation-now-supports-increased-limits-on-five-service-quotas/
+[https://og-aws.slack.com/#](https://og-aws.slack.com/#)
+
+[https://awsdevelopers.slack.com/#](https://awsdevelopers.slack.com/#)
+
+these 2 slack channel, if anyone know how to join please helm.
+
+Thanks
+## [7][CloudFormation Team Public Roadmap](https://www.reddit.com/r/aws/comments/jgxmx0/cloudformation_team_public_roadmap/)
+- url: https://www.reddit.com/r/aws/comments/jgxmx0/cloudformation_team_public_roadmap/
 ---
+Disclaimer: I work at AWS. But nowhere near the CloudFormation service team. Most of our visibility on upcoming features of CFN come from this roadmap. 
 
-## [6][rain - A development workflow tool for working with AWS CloudFormation](https://www.reddit.com/r/aws/comments/jg37gs/rain_a_development_workflow_tool_for_working_with/)
-- url: https://github.com/aws-cloudformation/rain
+I was reminded of this when I saw the announcement about the service limit increase. 
+
+
+
+https://github.com/aws-cloudformation/aws-cloudformation-coverage-roadmap
+## [8][Should public and private objects placed in same or different S3 bucket?](https://www.reddit.com/r/aws/comments/jh5zsa/should_public_and_private_objects_placed_in_same/)
+- url: https://www.reddit.com/r/aws/comments/jh5zsa/should_public_and_private_objects_placed_in_same/
 ---
+I’m working on a SaaS application. Currently we’re only storing public uploads in a bucket. For a new feature I need to store private files only accessible for specific users.
 
-## [7][Introducing Amazon SNS FIFO – First-In-First-Out Pub/Sub Messaging](https://www.reddit.com/r/aws/comments/jg8uoh/introducing_amazon_sns_fifo_firstinfirstout/)
-- url: https://aws.amazon.com/blogs/aws/introducing-amazon-sns-fifo-first-in-first-out-pub-sub-messaging/
+What would you say is best practice, having a separate bucket for all private objects or just one bucket with only specific folders/objects that are public?
+## [9][AWS CloudFormation now supports increased limits on five service quotas](https://www.reddit.com/r/aws/comments/jgnlbh/aws_cloudformation_now_supports_increased_limits/)
+- url: https://www.reddit.com/r/aws/comments/jgnlbh/aws_cloudformation_now_supports_increased_limits/
 ---
-
-## [8][Amazon Prime Day 2020 – Powered by AWS](https://www.reddit.com/r/aws/comments/jg5auh/amazon_prime_day_2020_powered_by_aws/)
-- url: https://aws.amazon.com/blogs/aws/amazon-prime-day-2020-powered-by-aws/
+https://aws.amazon.com/about-aws/whats-new/2020/10/aws-cloudformation-now-supports-increased-limits-on-five-service-quotas/
+## [10][Dumb S3 newbie, learning my lesson about Rclone &amp; GDA Early Deletion Fees](https://www.reddit.com/r/aws/comments/jh0g3q/dumb_s3_newbie_learning_my_lesson_about_rclone/)
+- url: https://www.reddit.com/r/aws/comments/jh0g3q/dumb_s3_newbie_learning_my_lesson_about_rclone/
 ---
+Apologies in advance for the dumb questions, but I have a video production company that wants to use Glacier Deep Archive as a replacement for our redundant offsite LTO backups of raw camera footage.
 
-## [9][OCR for consistently structured ID cards](https://www.reddit.com/r/aws/comments/jgm6x6/ocr_for_consistently_structured_id_cards/)
-- url: https://www.reddit.com/r/aws/comments/jgm6x6/ocr_for_consistently_structured_id_cards/
+I used Rclone to upload a 4 TB archive directly to GDA, which was all fine and dandy.
+
+This was the command line I used:
+
+`rclone sync --verbose --progress --s3-upload-concurrency 16 --s3-chunk-size 16M --s3-disable-checksum --log-file=rclone.log --exclude '.*' --bwlimit "07:30,13M 18:00,off" /ArchiveDrive/Footage remote:example.bucket`
+
+Well, as it turns out, when I tried to add additional files to the bucket (from another archive drive) using "rclone sync", it ended up deleting almost everything I had already uploaded to GDA, because I was too stupid to not realize that I should have been using "rclone *copy*" instead of "rclone sync"!
+
+As a result, I am being charged $50 a month for the next 90 days for the accidental early deletion (sadface)
+
+Now that I've learned my lesson about rclone, I would like to confirm with all the S3 veterans here this would be a better/safer/correct way to do this:
+
+1. Change my rclone config to use ONEZONE\_IA the default storage class, instead of DEEP\_ARCHIVE
+2. Use "rclone copy" to upload my archives to my S3 bucket, with OneZone-IA as the storage class
+3. Set a Lifecycle policy on that bucket to move everything to GDA after 1 day
+
+Am I correct that uploading to OneZone-IA would prevent me being charged for early deletion fees in the event that I make a mistake with Rclone, while minimizing as much cost as possible for daily storage of the archive before it gets moved to GDA?
+
+Seems to me that uploading directly to Glacier or GDA is a "don't try this at home" option best left to the experts?
+## [11][Question: How access server files via webbrowser?](https://www.reddit.com/r/aws/comments/jh78hf/question_how_access_server_files_via_webbrowser/)
+- url: https://www.reddit.com/r/aws/comments/jh78hf/question_how_access_server_files_via_webbrowser/
 ---
-My application needs to extract information from customer ID cards. We're only operating in one geography and so I know exactly the format of the information (coordinates of where all the text fields are, etc).
+Hi There,
 
-I've had a look at Textract which isn't bad, but I think performance could be improved if I could somehow feed in the domain knowledge about the ID card structure. Is there a way to do that, or should I be looking at other solutions? I'd rather avoid having to do the image manipulation/normalisation ourselves if possible.
-## [10][AWS RDS - Move from one master cluster to multiple master cluster.](https://www.reddit.com/r/aws/comments/jgm0i2/aws_rds_move_from_one_master_cluster_to_multiple/)
-- url: https://www.reddit.com/r/aws/comments/jgm0i2/aws_rds_move_from_one_master_cluster_to_multiple/
----
-Hi, currently at work we use a simple cluster of Mysql with AWS RDS, which has one master only. Now because of business requirement (we want more "write" instances, we have write-heavy database) . Is there any way to reconfigure our existing cluster ? Or do we have to create a new cluster with multiple masters and migrate the data to there ?
-## [11][Origin and Referrer request header key-value pairs not working properly - Is this standard?](https://www.reddit.com/r/aws/comments/jglyfp/origin_and_referrer_request_header_keyvalue_pairs/)
-- url: https://www.reddit.com/r/aws/comments/jglyfp/origin_and_referrer_request_header_keyvalue_pairs/
----
-When I check the chrome developer tools to understand the request header key-value pairs are being sent with my requests, I notice that sometimes Referrer displays and Origin never displays.
+&amp;#x200B;
 
-For my API I need the Origin and Referrer Headers to always display for the GET request. Is there a specific reason why this is happening?
+I have an EC2 instance, and I have uploaded some files into it (script).
 
-For Example - 
+I must now access these files, to be exactly install.php, via webbrowser, to install the script.
 
-I access example.com/get/resource from salesforce.com/abc
+\[ex: publicdns/home/install.php\]
 
-What I am expecting in the header request is:
+&amp;#x200B;
 
-origin: salesforce.com
+As it comes, I only have a public DNS adress (or public IP), no domain name.
 
-Referrer: salesforce.com/abc
+&amp;#x200B;
 
-For some reason, origin does not display in the chrome developer tools and referrer fails to show up when I load the website from a new tab.
+When I type in the public DNS adress / or IP in my webbrowser, it just throws me the message:
 
-Is this expected? I ask, because I want to use either of these fields in my authorizer function.
+Not able to connect, etc.
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+So, what can I do here to access my files via webbrowser and install my script?!
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+Thanks

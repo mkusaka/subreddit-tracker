@@ -56,7 +56,27 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Has a release() method for std::vector been proposed?](https://www.reddit.com/r/cpp/comments/jgilit/has_a_release_method_for_stdvector_been_proposed/)
+## [2][Feedback on OpenGL Walkthrough &amp; Design](https://www.reddit.com/r/cpp/comments/jh0fmp/feedback_on_opengl_walkthrough_design/)
+- url: https://www.reddit.com/r/cpp/comments/jh0fmp/feedback_on_opengl_walkthrough_design/
+---
+I was thinking about doing a weekly or semi weekly series were I detail my progress through OpenGL using modern C++ features and design.
+
+I wanted to ask the community if they would be interested in such a series where I incorporate their feedback. Things ranging from C++ optimizations, code layout, design patterns, file structure, and of course graphics. 
+
+If the community would be interested in such a concept, I would definitely love to try it and have you critique it.
+## [3][std::once_flag is a glass hill](https://www.reddit.com/r/cpp/comments/jh7ogb/stdonce_flag_is_a_glass_hill/)
+- url: https://quuxplusone.github.io/blog/2020/10/23/once-flag/
+---
+
+## [4][Version 0.6.0 of the simdjson C++ library is released](https://www.reddit.com/r/cpp/comments/jgnweb/version_060_of_the_simdjson_c_library_is_released/)
+- url: https://github.com/simdjson/simdjson/releases/tag/v0.6.0
+---
+
+## [5][Parallelizing GPU-intensive Workloads via Multi-Queue Operations (2x+ Performance Improvements on a Single Graphics Card)](https://www.reddit.com/r/cpp/comments/jh8zq8/parallelizing_gpuintensive_workloads_via/)
+- url: https://towardsdatascience.com/parallelizing-heavy-gpu-workloads-via-multi-queue-operations-50a38b15a1dc
+---
+
+## [6][Has a release() method for std::vector been proposed?](https://www.reddit.com/r/cpp/comments/jgilit/has_a_release_method_for_stdvector_been_proposed/)
 - url: https://www.reddit.com/r/cpp/comments/jgilit/has_a_release_method_for_stdvector_been_proposed/
 ---
 A method akin to
@@ -72,27 +92,36 @@ Has anything like this been proposed? If yes, has it been rejected due to drawba
 Edit:
 
 Returning `unique_ptr` instead of the raw pointer, is to be explicit about ownership transfer, and ensure safety until something else adopts ownership over the memory.
-## [3][Modern C++ Features - a few features that you may know from Python or JavaScript that you can use in C++ too! (For beginners)](https://www.reddit.com/r/cpp/comments/jg5oip/modern_c_features_a_few_features_that_you_may/)
-- url: https://blog.yuvv.xyz/modern-cpp-features
+
+Edit II:
+
+## Given the constructive commments bellow
+
+The main use-case for `release()` would be, so one can use the convenience of `vector` in the construction of data, which is than adopted by a third-party library. But when the third-party  does so through a raw pointer (and not a `unique_ptr`)
+
+    auto u_ptr = vec.release();
+    // ...
+    auto obj = lib::some_adopting_t(u_ptr.release(), size);
+
+this would require that the pointer be deletable by `operator delete[]`, which is not the case even when default allocator is used. Hence `obj` would be deleting the memory in a non-valid way.
+
+The above could still be achieved by using a custom allocator, which allocates in an appropriate way. But this would still leave us without the ability to use other third-party libraries that return `vector`s (using the default allocator) for constructing the data to be adopted (as `obj` above). So it seems the payoff is too small for this to be considered.
+
+Thank you for your comments
+## [7][Dealing with very large numbers (primality test)](https://www.reddit.com/r/cpp/comments/jgsgmh/dealing_with_very_large_numbers_primality_test/)
+- url: https://www.reddit.com/r/cpp/comments/jgsgmh/dealing_with_very_large_numbers_primality_test/
 ---
 
-## [4][CppCast: Programming History, JIT Compilations and Generic Algorithms](https://www.reddit.com/r/cpp/comments/jgfz75/cppcast_programming_history_jit_compilations_and/)
-- url: https://cppcast.com/ben-deane-jit-history/
----
+I just learned about Fermat’s primality test and was wondering how it would be implemented with large numbers on a computer. 
 
-## [5][A live chrome demo! C++, ncnnRay ported to HTML / Webassembly via emscripten](https://www.reddit.com/r/cpp/comments/jgm54o/a_live_chrome_demo_c_ncnnray_ported_to_html/)
-- url: https://www.reddit.com/r/cpp/comments/jgm54o/a_live_chrome_demo_c_ncnnray_ported_to_html/
----
- Finally a live demo in Chrome! 
+Using an unsigned long long variable in C++ would allow you to deal with numbers up to 2^64 - 1, but since Fermat’s theorem uses the term a^(n-1), wouldn’t this mean that it cannot be used to evaluate the primality of any number bigger than 64? As in, if you tried to pass 65, the value stored in the variable would simply default to 0 since 2^64 &gt; 2^64 - 1 (the maximum possible stored value in a ULL variable)?
 
-Written in C++, u/ncnn \+ u/emscripten \+ u/WASM ported to u/HTML / u/Webassembly. The AI models are memory eaters, so be careful ... the best thing to do is to upload a face and click "RETINAF" which is the fastest model there. 
+Using that same logic, even if you created a variable to store a 128-bit number, isn’t it true that you would still only be able to evaluate relatively small prime numbers (up to 128)?
 
-[A live demo](https://reddit.com/link/jgm54o/video/iqtwe3cg8uu51/player)
+This puzzles me because Fermat Primality Test is sometimes used to deal with unimaginably large numbers (in RSA for example) .... right? 
 
-[https://quantscientist.github.io/ncnnRay/](https://quantscientist.github.io/ncnnRay/)
-
-u/AI u/vulkan u/machinelearning  u/generativeart u/deeplearning  u/raylib
-## [6][I've rewritten the compiler for my programming language into C++](https://www.reddit.com/r/cpp/comments/jglz0x/ive_rewritten_the_compiler_for_my_programming/)
+I feel like I am misunderstanding something here.
+## [8][I've rewritten the compiler for my programming language into C++](https://www.reddit.com/r/cpp/comments/jglz0x/ive_rewritten_the_compiler_for_my_programming/)
 - url: https://www.reddit.com/r/cpp/comments/jglz0x/ive_rewritten_the_compiler_for_my_programming/
 ---
 My largest C++ project, by far, is the new compiler for my programming language (called AEC), targeting WebAssembly: [https://github.com/FlatAssembler/AECforWebAssembly](https://github.com/FlatAssembler/AECforWebAssembly)
@@ -104,152 +133,25 @@ The specification for my programming language is available here: [https://flatas
 The example program I like the most is the Analog Clock in AEC: [https://flatassembler.github.io/analogClock.html](https://flatassembler.github.io/analogClock.html)
 
 So, what do you think about my work?
-## [7][Fast, typo tolerant instant search engine written in C++](https://www.reddit.com/r/cpp/comments/jfddui/fast_typo_tolerant_instant_search_engine_written/)
-- url: https://github.com/typesense/typesense
+## [9][Modern C++ Features - a few features that you may know from Python or JavaScript that you can use in C++ too! (For beginners)](https://www.reddit.com/r/cpp/comments/jg5oip/modern_c_features_a_few_features_that_you_may/)
+- url: https://blog.yuvv.xyz/modern-cpp-features
 ---
 
-## [8][clang-tidy support in VSCode is possible](https://www.reddit.com/r/cpp/comments/jfktsf/clangtidy_support_in_vscode_is_possible/)
-- url: https://www.reddit.com/r/cpp/comments/jfktsf/clangtidy_support_in_vscode_is_possible/
+## [10][CppCast: Programming History, JIT Compilations and Generic Algorithms](https://www.reddit.com/r/cpp/comments/jgfz75/cppcast_programming_history_jit_compilations_and/)
+- url: https://cppcast.com/ben-deane-jit-history/
 ---
-if you're an exceptionally attractive individual like me, the only things preventing you from retiring clion and adopting vscode (for everything) are **clang-tidy** and **cppcheck**. we can get clang-tidy by upvoting this feature request for adding clang-tidy support to the cpp extension for vscode: [https://github.com/microsoft/vscode-cpptools/issues/2908](https://github.com/microsoft/vscode-cpptools/issues/2908)
 
-clang-tidy good. more clang-tidy.
-## [9][Should I bother proposing that shared_ptr gets this ‘Next’ constructor argument for a future C++ standard?](https://www.reddit.com/r/cpp/comments/jg5jdp/should_i_bother_proposing_that_shared_ptr_gets/)
-- url: https://www.reddit.com/r/cpp/comments/jg5jdp/should_i_bother_proposing_that_shared_ptr_gets/
+## [11][How to boost my learning journey with cpp - currently intermediate level](https://www.reddit.com/r/cpp/comments/jgnmzp/how_to_boost_my_learning_journey_with_cpp/)
+- url: https://www.reddit.com/r/cpp/comments/jgnmzp/how_to_boost_my_learning_journey_with_cpp/
 ---
-I have an idea for a proposal. I want to try a reddit post that can get quickly shot down before putting effort into anything formal that will get instantly shredded by the committee.
+Hello, I promise you I am not asking about things I can find online.
 
-Motivating example:
+I am working on my cpp skills currently and I am studying Bjarne Stroustrup books “programming: principles and practice using C++” (finished) and “The C++ Programming language” (currently).
 
-Say I have a linked list connected by shared_ptr/atomic&lt;shared_ptr&gt;. Calling the destructor for the list’s head pointer deletes the objects *recursively* causing stack overflow. 
+I am trying to have more practice oriented approach by trying to apply what I learn on simple ideas. However, I feel that I can’t reach a good point of understanding if I don’t work on actual projects or have a resource that discuss real programming situations and applications. I am studying C++ for more hardware related applications.
 
-Shared pointers therefore can’t generally be used for pointer based data structures. Sub-optimal hacks like while(pop()) plaster over the cracks, otherwise we’re back to using new/delete.
+I would appreciate any advice, useful resources, possible opportunities, and/or tips to get the most out of my learning journey. 
 
-A solution:
+My goal is to fully grasp most of the C++ concepts and be able to integrate them.
 
-    struct node {
-        T data;
-        shared_ptr&lt;node&gt; ptr_next_node;
-    };
-
-If shared_ptr&lt;node&gt; was aware that ‘node’ had the member ‘ptr_next_node’, it could delete chained nodes *iteratively*.
-
-My idea is to have a Next argument, similar to the Deleter and Allocator arguments, a concept requiring the member function:
-
-    shared_ptr&lt;node&gt;* next() noexcept;
-
-In my example, this returns a pointer to ptr_next_node.
-
-The destructor of shared_ptr can now call next() iteratively:
-    
-    auto next_ptr = next();
-    delete this-&gt;ptr;
-    delete this-&gt;control_block;
-    while(next_ptr &amp;&amp; next_ptr-&gt;use_count == 1) {
-         auto temp = next_ptr-&gt;next();
-         delete next_ptr-&gt;ptr;
-         delete next_ptr-&gt;control_block;
-         next_ptr = temp;
-    }
-
-Problems:
-
-What if a node has multiple children?
-
-The implementation above needs a rework and the return type of next() changes to:
-
-    std::vector&lt;shared_ptr&lt;node&gt;&gt; next();
-
-The implementation would involve a loop of depth first searches picking the first non-nullptr shared_ptr at each node until everything was nullptr. This involves no allocations or recursion. Cycles are impossible because one node in a cycle must have a use_count() of at least 2.
-
-What if there are circular references?
-
-Now that we can iterate around the data structure with next() this problem is solvable but hard. For now cycles leak. A further proposal can include an overload of next() with the argument tag std::delete_cycles_v.
-
-    std::vector&lt;shared_ptr&lt;node&gt;*&gt; next(std::delete_cycles_t);
-
-What if different nodes in a data structure have different types?
-
-I think it’s reasonable to require they share a base class with a virtual destructor if anyone really needs nodes of different types.
-
-What if nodes have different allocators?
-
-I would want to see a reasonable data structure where different nodes required different allocators before considering this a problem. std::vector treats specialisations with different allocators as essentially unrelated types.
-
-What about reflection?
-
-With reflection, a shared_ptr could generate its own Next argument. Would this be an ABI break? We could define a std::iterative_next object of type Next that uses reflection to infer which objects in a node are of type shared_ptr&lt;node&gt;. You could then just call
-
-     std::shared_ptr&lt;T&gt; sp = make_shared_iterative&lt;T&gt;(args...);
-
-What about weak_ptr?
-
-Awkward. Control blocks would need their own copy of the next pointers.
-
-Roast me.
-## [10][Qt and idiomatic smart pointer usage](https://www.reddit.com/r/cpp/comments/jfoeht/qt_and_idiomatic_smart_pointer_usage/)
-- url: https://www.reddit.com/r/cpp/comments/jfoeht/qt_and_idiomatic_smart_pointer_usage/
----
-One of the projects I work on is a gui application based on a c++ library which is written in c++17 style. The gui use Qt, but the library itself doesn't use any Qt classes at all except for optional model objects which inherit QAbstractItemModel. Any pointers that are part of the library api are std::unique_ptr or (rarely) std::shared_ptr.
-
-This creates some friction because Qt's ownership model doesn't mesh very well with modern coding styles. Even though other patterns are grudgingly tolerated, Qt wants you to create widget objects on the stack with new and pass in a parent pointer which will take ownership of the object. This feels like a major step backwards when the non-gui parts of the project have successfully eliminated usage of raw new / delete usage.
-
-The solution we came up with is based on a helper class called ScopeGuard (*):
-
-    class ScopeGuard
-    {
-    public:
-        using Callback = std::function&lt;void()&gt;;
-
-        ScopeGuard(Callback cb) noexcept;
-            : cb_(cb)
-        {
-        }
-        ~ScopeGuard()
-        {
-            if (cb_) { cb_(); }
-        }
-
-    private:
-        const SimpleCallback cb_;
-    };
-
-With that class available, it's possible to write code for creating and displaying a modal dialog that looks like this:
-
-    {
-        ...
-        auto dialog = std::make_unique&lt;MyDialog&gt;(this);
-        auto postcondition = ScopeGuard{[&amp;]() {
-            dialog-&gt;deleteLater();
-            dialog.release();
-        }};
-        connect(dialog.get(), &amp;MyDialog::signal, this, &amp;MyType::slot)
-        ...
-        dialog-&gt;exec();
-    }
-
-Using this pattern I still allow Qt to control object lifetime on its own terms. In particular I don't need to worry about whether the signal/slot connections will be cleaned up before the dialog object.
-
-At the same time, raw usage of new is avoided and the owership semantics are more clearly conveyed to anyone reading the code. Any coder looking at this function may not realize **why** ownership of the object is being given up in this way, but it is clear that what is happening is deliberate even to someone unfamiliar with Qt's ownership model.
-
-(*) It's probably obvious but the class name "ScopeGuard" was invented by a team member who is a fan of Dlang.
-## [11][I created a technical tutorial demonstrating how to design a language-agnostic cross-platform computer Vision SDK (written in C++).](https://www.reddit.com/r/cpp/comments/jfn1a8/i_created_a_technical_tutorial_demonstrating_how/)
-- url: https://www.reddit.com/r/cpp/comments/jfn1a8/i_created_a_technical_tutorial_demonstrating_how/
----
-In the tutorial, I explain how to:
-
-* Build a basic computer vision library in C++
-* Compile and cross-compile the library for AMD64, ARM64, and ARM32
-* Package the library and all the dependencies as a single static library
-* Automate unit testing
-* Set up a continuous integration (CI) pipeline
-* Write python bindings for our library
-* Generate documentation directly from our API
-
-The tutorial has a corresponding video explanation and all the code is open source an available on github. 
-
-Check it out, I'm open to any feedback or suggestions too.
-
-Hope it helps you get started with your next big C++ project!
-
-[https://medium.com/trueface-ai/how-to-design-a-language-agnostic-cross-platform-computer-vision-sdk-e437ecac8b4e](https://medium.com/trueface-ai/how-to-design-a-language-agnostic-cross-platform-computer-vision-sdk-e437ecac8b4e)
+Thank you so much 😊

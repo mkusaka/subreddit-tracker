@@ -22,32 +22,57 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Is there any different on this two? var x = foo as any; var x: any = foo;](https://www.reddit.com/r/typescript/comments/jgi10h/is_there_any_different_on_this_two_var_x_foo_as/)
+## [2][Proper way to have @throws {FooBar} satisfy TSC and ESLINT?](https://www.reddit.com/r/typescript/comments/jh23jy/proper_way_to_have_throws_foobar_satisfy_tsc_and/)
+- url: https://www.reddit.com/r/typescript/comments/jh23jy/proper_way_to_have_throws_foobar_satisfy_tsc_and/
+---
+Lets say I have the following in the comment block (along with the usual params, returns, etc) on a method on an interface,
+
+ `@throws {FooBar} When you do the bad` ,
+
+I get eslint complaining that  FooBar is undefined. The thing is this is an interface - I am not actually throwing FooBar here  - the implementation is separate.
+
+If I import FooBar, eslint stops complaining - now I define FooBar. But now typescript is complaining - I am not actually using FooBar.
+
+How do I get these two idiots to work together?
+## [3][esfx - A collection of high quality packages written by a Senior SDE at Microsoft](https://www.reddit.com/r/typescript/comments/jgppge/esfx_a_collection_of_high_quality_packages/)
+- url: https://www.reddit.com/r/typescript/comments/jgppge/esfx_a_collection_of_high_quality_packages/
+---
+I came across a TypeScript project called [esfx](https://github.com/esfx/esfx) a few weeks ago and only recently got the time to look closer at what it was. Brought to you by the developer behind the Metadata Reflection API ([`reflect-metadata`](https://github.com/rbuckton/reflect-metadata)) we all know and love, esfx contains a pretty significant assortment of useful constructs.
+
+Treat yourself and take a look. Words cannot describe how extraordinary it is.
+## [4][Is there any different on this two? var x = foo as any; var x: any = foo;](https://www.reddit.com/r/typescript/comments/jgi10h/is_there_any_different_on_this_two_var_x_foo_as/)
 - url: https://www.reddit.com/r/typescript/comments/jgi10h/is_there_any_different_on_this_two_var_x_foo_as/
 ---
 
-## [3][Which language for a blog website: Dart or TypeScript?](https://www.reddit.com/r/typescript/comments/jgmmg0/which_language_for_a_blog_website_dart_or/)
-- url: https://www.reddit.com/r/typescript/comments/jgmmg0/which_language_for_a_blog_website_dart_or/
+## [5][Property does not exist on type](https://www.reddit.com/r/typescript/comments/jgk0qu/property_does_not_exist_on_type/)
+- url: https://www.reddit.com/r/typescript/comments/jgk0qu/property_does_not_exist_on_type/
 ---
-&gt; I know this is a biased source. But it's better than not asking...
+Hi.
 
-&gt; [This question was originally posted][original] on r/dartlang.
+From my Axios request, my [res.data](https://res.data) looks like this: 
 
-[My blog][fanaro.com.br] is currently made with WordPress. But I've been wanting to revamp it with a more minimal design and pure code in the backend for quite a while now. The 2 reasons I've been avoiding this were: (1) my own experience as a developer and (2) the technologies I would use. My level of experience with HTML &amp; CSS is ok, but I have only minimal experience with JS and TS. While, with Dart, I think I'm already pretty advanced &amp;mdash; see [this browser extension][youtube_kbd_nav] I've created in the past month.
+    {"count":1,"next":null,"previous":null,"results":[{"id":1,"name":"The Name","url":"http://somewhere"}]}
 
-So I come here to ask if anyone would help me deciding if I could/should go with Dart for revamping my blog website. Is it on par with TS for this purpose? Or should I still go for TS?
+I'd like represent this response in Typescript, so I've done this:
 
-From my perspective, most of the website's work will be either content (HTML and text) or the OO design, so, in the end, it wouldn't be too hard to simply rewrite it into another language anyway, though that would be super annoying &amp;mdash; and who knows if I'm gonna accidentally design something that uses a language-specific feature.
+    import axios, { AxiosResponse } from "axios";
+    
+    type Results = {
+      results: Array&lt;{}&gt;;
+    };
+    
+    type AxiosResponseData = {
+      data: Results;
+    };
+    
+    let res = &lt;AxiosResponse&gt; await axios.get(url, config);
+    let data = &lt;type.AxiosResponseData&gt;res.data
+    return data.results;
 
-There is also Flutter to take into consideration. Even though I think HTML &amp; CSS are more appropriate for this type of static content, maybe Flutter could be the tipping point of the argument for Dart.
+Typescript doesn't like the very last line, which this warning: `Property 'results' does not exist on type 'AxiosResponseData'`.
 
-Since a blog website is usually very minimal anyway I could use it as an exercise for evaluating the basic differences between Dart and TS. But I don't know if I have the time or energy for that right now.
-
-
-[fanaro.com.br]: https://fanaro.com.br
-[original]: https://www.reddit.com/r/dartlang/comments/jfckso/blog_website_dart_or_typescript/
-[youtube_kbd_nav]: https://github.com/FanaroEngineering/youtube_kbd_nav
-## [4][I need your advices](https://www.reddit.com/r/typescript/comments/jgkyug/i_need_your_advices/)
+I'd really appreciate help figuring this out.  'AxiosResponseData'.
+## [6][I need your advices](https://www.reddit.com/r/typescript/comments/jgkyug/i_need_your_advices/)
 - url: https://www.reddit.com/r/typescript/comments/jgkyug/i_need_your_advices/
 ---
 I've made a NodeJS library called Graceful Server months ago.
@@ -83,39 +108,32 @@ This post is to thanks my 10k week downloads 💪
 &amp;#x200B;
 
 Let's make it evolve together ! 🚀
-## [5][Property does not exist on type](https://www.reddit.com/r/typescript/comments/jgk0qu/property_does_not_exist_on_type/)
-- url: https://www.reddit.com/r/typescript/comments/jgk0qu/property_does_not_exist_on_type/
+## [7][Which language for a blog website: Dart or TypeScript?](https://www.reddit.com/r/typescript/comments/jgmmg0/which_language_for_a_blog_website_dart_or/)
+- url: https://www.reddit.com/r/typescript/comments/jgmmg0/which_language_for_a_blog_website_dart_or/
 ---
-Hi.
+&gt; I know this is a biased source. But it's better than not asking...
 
-From my Axios request, my [res.data](https://res.data) looks like this: 
+&gt; [This question was originally posted][original] on r/dartlang.
 
-    {"count":1,"next":null,"previous":null,"results":[{"id":1,"name":"The Name","url":"http://somewhere"}]}
+[My blog][fanaro.com.br] is currently made with WordPress. But I've been wanting to revamp it with a more minimal design and pure code in the backend for quite a while now. The 2 reasons I've been avoiding this were: (1) my own experience as a developer and (2) the technologies I would use. My level of experience with HTML &amp; CSS is ok, but I have only minimal experience with JS and TS. While, with Dart, I think I'm already pretty advanced &amp;mdash; see [this browser extension][youtube_kbd_nav] I've created in the past month.
 
-I'd like represent this response in Typescript, so I've done this:
+So I come here to ask if anyone would help me deciding if I could/should go with Dart for revamping my blog website. Is it on par with TS for this purpose? Or should I still go for TS?
 
-    import axios, { AxiosResponse } from "axios";
-    
-    type Results = {
-      results: Array&lt;{}&gt;;
-    };
-    
-    type AxiosResponseData = {
-      data: Results;
-    };
-    
-    let res = &lt;AxiosResponse&gt; await axios.get(url, config);
-    let data = &lt;type.AxiosResponseData&gt;res.data
-    return data.results;
+From my perspective, most of the website's work will be either content (HTML and text) or the OO design, so, in the end, it wouldn't be too hard to simply rewrite it into another language anyway, though that would be super annoying &amp;mdash; and who knows if I'm gonna accidentally design something that uses a language-specific feature.
 
-Typescript doesn't like the very last line, which this warning: `Property 'results' does not exist on type 'AxiosResponseData'`.
+There is also Flutter to take into consideration. Even though I think HTML &amp; CSS are more appropriate for this type of static content, maybe Flutter could be the tipping point of the argument for Dart.
 
-I'd really appreciate help figuring this out.  'AxiosResponseData'.
-## [6][Noob Question: jsconfig or tsconfig?](https://www.reddit.com/r/typescript/comments/jg1v1x/noob_question_jsconfig_or_tsconfig/)
+Since a blog website is usually very minimal anyway I could use it as an exercise for evaluating the basic differences between Dart and TS. But I don't know if I have the time or energy for that right now.
+
+
+[fanaro.com.br]: https://fanaro.com.br
+[original]: https://www.reddit.com/r/dartlang/comments/jfckso/blog_website_dart_or_typescript/
+[youtube_kbd_nav]: https://github.com/FanaroEngineering/youtube_kbd_nav
+## [8][Noob Question: jsconfig or tsconfig?](https://www.reddit.com/r/typescript/comments/jg1v1x/noob_question_jsconfig_or_tsconfig/)
 - url: https://www.reddit.com/r/typescript/comments/jg1v1x/noob_question_jsconfig_or_tsconfig/
 ---
 Hi, just getting started with typescript. Should I be using a jsconfig or tsconfig, or does it even matter?
-## [7][How can I get the keys from a Map.keys() iterator as a type?](https://www.reddit.com/r/typescript/comments/jfzkor/how_can_i_get_the_keys_from_a_mapkeys_iterator_as/)
+## [9][How can I get the keys from a Map.keys() iterator as a type?](https://www.reddit.com/r/typescript/comments/jfzkor/how_can_i_get_the_keys_from_a_mapkeys_iterator_as/)
 - url: https://www.reddit.com/r/typescript/comments/jfzkor/how_can_i_get_the_keys_from_a_mapkeys_iterator_as/
 ---
 ```
@@ -137,7 +155,7 @@ I want to generate `type EntityKeys = "hero" | "zombies" | "bullets" | "text";` 
 I want to use `entities.get("hero")` and have `"hero"` type-checked, which won't work with `Map&lt;string, []&gt;`. I can use `new Map&lt;EntityKeys, Entity[]&gt;` using `type EntityKeys =...` but then it is not dynamic and I have to create `type EntityKeys` manually.
 
 Cheers!
-## [8][Elegant way of creating multiple types from a single generic](https://www.reddit.com/r/typescript/comments/jg07c8/elegant_way_of_creating_multiple_types_from_a/)
+## [10][Elegant way of creating multiple types from a single generic](https://www.reddit.com/r/typescript/comments/jg07c8/elegant_way_of_creating_multiple_types_from_a/)
 - url: https://www.reddit.com/r/typescript/comments/jg07c8/elegant_way_of_creating_multiple_types_from_a/
 ---
 Hello!
@@ -183,7 +201,7 @@ ContextHook&lt;typeof initialState&gt;
 Maybe i can build a function that make these types avaiable with the generic built-in?
 
 Thanks in advance
-## [9][TypeScript JSX transform vs Babel JSX transform - pros and cons](https://www.reddit.com/r/typescript/comments/jffysy/typescript_jsx_transform_vs_babel_jsx_transform/)
+## [11][TypeScript JSX transform vs Babel JSX transform - pros and cons](https://www.reddit.com/r/typescript/comments/jffysy/typescript_jsx_transform_vs_babel_jsx_transform/)
 - url: https://www.reddit.com/r/typescript/comments/jffysy/typescript_jsx_transform_vs_babel_jsx_transform/
 ---
 I'm building a project with both TypeScript and Babel (and React) and I see that both TypeScript and Babel support the same JSX transform step. Either TypeScript can emit transformed JSX in JS code directly, or it can preserve the JSX in JSX files so Babel can handle it.
@@ -197,46 +215,3 @@ Does anyone have any additional information to add here or know of anything whic
 ----
 
 Edit: Follow up. After tons of very helpful comments I figured I'd share what I decided on. I am now using `babel` for all TypeScript compiling needs. `@babel/preset-env`, `@babel/preset-typescript` and `@babel/preset-react` specifically. To get builds to fail due to type errors and to see errors in the console during development, I'm using [fork-ts-checker-webpack-plugin](https://github.com/TypeStrong/fork-ts-checker-webpack-plugin). I now no longer need `tsc` for production or development at all and am only using it for debugging if I purely want to run a command to quickly see all type errors in the project.
-## [10][Matching a destructured type based on transformation of argument type](https://www.reddit.com/r/typescript/comments/jfpy8t/matching_a_destructured_type_based_on/)
-- url: https://www.reddit.com/r/typescript/comments/jfpy8t/matching_a_destructured_type_based_on/
----
-I've been using typescript for a little while but haven't had the real need to dive into anything past simple typing until now. Basically, I have a function that takes in an obj map of promises and want the typing to understand it returns a new map of the resolved types.
-
-The closest I've come is getting it to return the relevant keys where each is a union of the resolved promise types.
-
-    type Unpromised&lt;T&gt; = T extends Promise&lt;infer R&gt; ? R : T;
-    type ValueOf&lt;T&gt; = T[keyof T];
-    type PromiseObjRet&lt;T&gt; = { [field: string]: Unpromised&lt;ValueOf&lt;T&gt;&gt;; // how can we make this respective?
-
-    async function handlePromiseObj&lt;T&gt;(obj: T): Promise&lt;PromiseObjRet&lt;T&gt;&gt; {
-        ... // resolves promises as a batch and maps them back to an obj by the original obj key
-    }
-
-I'm looking for:
-
-    const { a, b } = handlePromiseObj({ a: Promise.resolve('hi'), b: Promise.resolve(6) });
-
-to have a: string, b: number. 
-
-Right now I'm getting a: string | number, b: | number.
-
-In short, I'm looking to have types setup to be able to transform via typing 
-    {
-        a: Promise&lt;string&gt;,
-        b: Promise&lt;number&gt;
-    }
-
-to
-
-    {
-        a: string,
-        b: number
-    }
-## [11][Possible to get typeof generic type parameter?](https://www.reddit.com/r/typescript/comments/jfq79i/possible_to_get_typeof_generic_type_parameter/)
-- url: https://www.reddit.com/r/typescript/comments/jfq79i/possible_to_get_typeof_generic_type_parameter/
----
-I am writing a simple de/serializer that works for any type of \`State\`. Is there any way to get the concrete types of a generic type parameter T? Code sample is shown below.
-
-[https://pastebin.com/84YabPtS](https://pastebin.com/84YabPtS)
-
-ps: The code does not render in reddit, so have to post it somewhere else.

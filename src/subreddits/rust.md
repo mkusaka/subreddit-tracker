@@ -23,91 +23,59 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/10/21/this-week-in-rust-361/
 ---
 
-## [3][usethe.computer - XMHell: Handling 38GB of UTF-16 XML with Rust](https://www.reddit.com/r/rust/comments/jgixsy/usethecomputer_xmhell_handling_38gb_of_utf16_xml/)
+## [3][Blog Post: Introducing Ungrammar](https://www.reddit.com/r/rust/comments/jh69jx/blog_post_introducing_ungrammar/)
+- url: https://rust-analyzer.github.io/blog/2020/10/24/introducing-ungrammar.html
+---
+
+## [4][`Box` will have custom allocator support soon (tm)](https://www.reddit.com/r/rust/comments/jgxgpu/box_will_have_custom_allocator_support_soon_tm/)
+- url: https://github.com/rust-lang/rust/pull/77187
+---
+
+## [5][5x Faster Rust Docker Builds with cargo-chef](https://www.reddit.com/r/rust/comments/jgy0ao/5x_faster_rust_docker_builds_with_cargochef/)
+- url: https://www.lpalmieri.com/posts/fast-rust-docker-builds/
+---
+
+## [6][Core team membership changes](https://www.reddit.com/r/rust/comments/jgpkof/core_team_membership_changes/)
+- url: https://blog.rust-lang.org/inside-rust/2020/10/23/Core-team-membership.html
+---
+
+## [7][Fast XML to JSON converter crate revived and improved.](https://www.reddit.com/r/rust/comments/jh60t8/fast_xml_to_json_converter_crate_revived_and/)
+- url: https://crates.io/crates/quickxml_to_serde
+---
+
+## [8][Assimilation has begun](https://www.reddit.com/r/rust/comments/jgwv37/assimilation_has_begun/)
+- url: https://www.reddit.com/r/rust/comments/jgwv37/assimilation_has_begun/
+---
+I had a breakthrough: On a side project at work (CTF scenario) my first reflex was, "I know how I'd write this in Rust." 
+
+Historically, this has been, "I know how I'd script this in Ruby" when I want to whip up some quick-and-dirty, throw-away code.
+
+I've been playing in Rust long enough for it to become comfortable and even my preferred tool.
+## [9][Category Theory formalized in Avalog V0.3.3 - An experimental implementation of Avatar Logic with a Prolog-like syntax, written in Rust](https://www.reddit.com/r/rust/comments/jh8c1f/category_theory_formalized_in_avalog_v033_an/)
+- url: https://github.com/advancedresearch/avalog/blob/master/source/category.txt
+---
+
+## [10][Contributing to the Intellij-Rust plugin: Introduce constant refactoring](https://www.reddit.com/r/rust/comments/jgq9zk/contributing_to_the_intellijrust_plugin_introduce/)
+- url: https://kobzol.github.io/rust/intellij/2020/10/19/contributing-4-introduce-constant-refactoring.html
+---
+
+## [11][Doing math stuff](https://www.reddit.com/r/rust/comments/jgzmzo/doing_math_stuff/)
+- url: https://www.reddit.com/r/rust/comments/jgzmzo/doing_math_stuff/
+---
+Hi,
+
+I just got back to programming and knows not much at all about Rust for sure. Yet, I'm really excited about trying to actually improve my programming skills and my math skills. And why I think it's unique? Because I want to try doing stuff from scratch, I feel most open source code I find about math/scientific stuff it's so library dependent, full of optimizations that makes the math SO UNCLEAR. I want to create a BOTTOM-UP approach, and create a clear library of correct, very-precise math implementations from scratch. Like you will solve a problem in an applied math class in 2nd year of university, or in a 2nd year physics/physical chemistry/pick your favorite class. First, am I somewhat too ambitious? And who wants to help, because I can multiply matrices, integrate stuff on paper but SURELY will get lost in translation to Rust code. 
+
+&amp;#x200B;
+
+P.S. : I wanted to explain that I chose Rust for this project because:
+
+1. It's fast- I think it's ridiculous to multiply matrices in a slow language.
+2. It's not extremely strict like Haskell (I feel I'll have a slight headache and abandon the project- so sorry I really wanted to like it, only my personal feel right now). But it's strict enough.
+3. It feels like the kind of thing you could really use everywhere, like C code(maybe I'm wrong\*)
+
+Ron
+## [12][usethe.computer - XMHell: Handling 38GB of UTF-16 XML with Rust](https://www.reddit.com/r/rust/comments/jgixsy/usethecomputer_xmhell_handling_38gb_of_utf16_xml/)
 - url: http://usethe.computer/posts/14-xmhell.html
----
-
-## [4][Why I created a package and project manager for C (in Rust ofc !)](https://www.reddit.com/r/rust/comments/jgl1rz/why_i_created_a_package_and_project_manager_for_c/)
-- url: https://www.reddit.com/r/rust/comments/jgl1rz/why_i_created_a_package_and_project_manager_for_c/
----
-A few months ago, I was wondering why we hoard Makefiles and why it is so painful to use an external library in a C project.
-
-So I had this idea : Creating a project manager &amp; build tool for the C programming language.
-
-I started to write a piece of code in C and it was not functionning properly (Cause I'm one of the worst C developers in this world) but i continued 'till we cannot run that thing.
-
-At the same time, I was learning [Rust](https://rust-lang.org) ; so, I decided to try to rewrite the whole project in that language.
-
-After a few weeks of rewriting, I had a correct product. The 08/10/2020, Wanager 1.0 was released. It had only a few features : project creation and reinitializing, project build and run and header creation. 
-
-At that point, someone called Lockeer told me that it will be cool if we can manage libraries. 
-
-So I wrote a simple system to install libraries hosted on my vps, with a submission system based on mailing. It was working, but limited because of vps bandwidth and the complexity of submiting by email.
-
-So SuperFola poped up :
-
-https://user-images.githubusercontent.com/61330081/96449113-aa418a80-1214-11eb-97e8-32c7afd86ff8.png
-
-At first time, I decided, as he advised me, to use the github api that produces a tar archive of the repo. 
-I stucked on that for weeks because the command I was running was producing a corrupted file. 
-
-After raging on that problem, I realised that I'll gain some portability and time with cloning directly with a git command. 
-
-It worked good, so, everything is fine !
-
-But Il_totore opened an issue :
-
-https://user-images.githubusercontent.com/61330081/96449715-8df21d80-1215-11eb-9a22-588c77ce9870.png
-
-So I made python support for build scripts with minimal version of 3.5.x and allowed path specification.
-
-After that, on his advice, I made kind of Python API to have nice build scripts and it produced that :
-
-```py
-from wngbuild import * # Import all from wngbuild module
-
-build = BuildProfile(files="src/*.c",output="build/custom/prog.exe" ) # setup a build profile that will compile all files in src/ and place the binary in build/custom/prog.exe
-build.cc = "C:\\MinGW\\bin\\gcc.exe" # Setup the compiler (optional, by default "gcc")
-build.flags = "-W -Wall -Werror -Wextra" # Setup the flags that the command will be run with (optional)
-
-build.run() # Run the compilation command
-build.runOutput() # Run the binary produced by the compilation command (Will raise an error if the compilation command fails)
-```
-
-https://github.com/Wmanage/wng
-
-It is still WIP, there are loads of features that I can add to it but I will be more very happy to answer your questions or help you use it.
-
-Thanks for reading and have a nice day.
-## [5][Introducing rust-gpu v0.1 🐉 · EmbarkStudios/rust-gpu](https://www.reddit.com/r/rust/comments/jg056t/introducing_rustgpu_v01_embarkstudiosrustgpu/)
-- url: https://github.com/EmbarkStudios/rust-gpu/releases/tag/v0.1
----
-
-## [6][Microsoft is hiring for a position "focused on delivering Rust compiler improvements"](https://www.reddit.com/r/rust/comments/jg11lq/microsoft_is_hiring_for_a_position_focused_on/)
-- url: https://careers.microsoft.com/us/en/job/917051/Senior-Software-Engineer
----
-
-## [7][Knurling-rs changelog #3](https://www.reddit.com/r/rust/comments/jgmh6d/knurlingrs_changelog_3/)
-- url: https://ferrous-systems.com/blog/knurling-changelog-3/
----
-
-## [8][The future of RLSL](https://www.reddit.com/r/rust/comments/jg08jb/the_future_of_rlsl/)
-- url: https://maikklein.github.io/rlsl-update3/
----
-
-## [9][Announcing Stability: stability attribute macros for library authors](https://www.reddit.com/r/rust/comments/jgc7hy/announcing_stability_stability_attribute_macros/)
-- url: https://github.com/sagebind/stability
----
-
-## [10][mock-io: Mock IO listener and stream for Rust](https://www.reddit.com/r/rust/comments/jgjj0y/mockio_mock_io_listener_and_stream_for_rust/)
-- url: https://www.reddit.com/r/rust/comments/jgjj0y/mockio_mock_io_listener_and_stream_for_rust/
----
-[https://crates.io/crates/mock-io](https://crates.io/crates/mock-io)
-## [11][Why I Wrote zeroconf-rs: A cross-platform wrapper around Bonjour and Avahi](https://www.reddit.com/r/rust/comments/jg42ph/why_i_wrote_zeroconfrs_a_crossplatform_wrapper/)
-- url: https://windy1.github.io/posts/2020/10/22/why-i-wrote-zeroconf-rs.html
----
-
-## [12][CRUD with Rocket and Sled](https://www.reddit.com/r/rust/comments/jgdrj5/crud_with_rocket_and_sled/)
-- url: https://mbuffett.com/posts/rocket-sled-tutorial/
 ---
 

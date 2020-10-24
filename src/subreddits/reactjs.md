@@ -70,177 +70,83 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Sony revamped their PS Store using React](https://www.reddit.com/r/reactjs/comments/jg44hc/sony_revamped_their_ps_store_using_react/)
-- url: https://store.playstation.com/en-gb/latest
+## [3][Create React App 4.0 is published](https://www.reddit.com/r/reactjs/comments/jgp4wi/create_react_app_40_is_published/)
+- url: https://github.com/facebook/create-react-app/blob/master/CHANGELOG.md
 ---
 
-## [4][Where to start for workout project](https://www.reddit.com/r/reactjs/comments/jgloeq/where_to_start_for_workout_project/)
-- url: https://www.reddit.com/r/reactjs/comments/jgloeq/where_to_start_for_workout_project/
----
-Hi, I have learned the basics of react and redux and now I want to make a workout planner with a range of exercise lists.
-
-However, I didn't find a good workout API that has a lot of exercises.
-So I was wondering how I could make my own API which would consists of the picture of the exercise,which muscle it works and a short description on how to execute it.
-
-Is a MERN stack suitable? Where can I store the pictures and information?
-
-I have nearly no experience on Full Stack development, only a few tutorials so I'm sorry if this is a stupid question
-## [5][Wrapping JSX elements: &lt;fragment&gt; or &lt;&gt; &lt;/&gt;?](https://www.reddit.com/r/reactjs/comments/jgkz3w/wrapping_jsx_elements_fragment_or/)
-- url: https://www.reddit.com/r/reactjs/comments/jgkz3w/wrapping_jsx_elements_fragment_or/
----
-When wrapping multiple JSX elements is there any difference, or preference even, between using &lt;fragment&gt; or &lt;&gt; &lt;/&gt;?
-
- Appreciate any help.
-## [6][Main reasons why JSX named after XML and not html?](https://www.reddit.com/r/reactjs/comments/jgmn72/main_reasons_why_jsx_named_after_xml_and_not_html/)
-- url: https://www.reddit.com/r/reactjs/comments/jgmn72/main_reasons_why_jsx_named_after_xml_and_not_html/
----
-I don't know much about XML but the similarity in appearance between JSX and HTML just leads me to wonder why HTML was not included in the name in JSX, and why XML?
-## [7][How to use update Zustand state outside React component?](https://www.reddit.com/r/reactjs/comments/jgn79s/how_to_use_update_zustand_state_outside_react/)
-- url: https://www.reddit.com/r/reactjs/comments/jgn79s/how_to_use_update_zustand_state_outside_react/
----
-**EDIT: sorry for the typo in the title, Reddit doesn't allow me to change it after posting.**
-
-Hi,
-
-I'm interested in Zustand because I could update my global state directly in my api service, outside of any React component. Zustand works well in a React component, but how to update it outside of them?
-
-Here is my store:
-
-    import create from "zustand";
-    
-    export const userStore = create((set) =&gt; ({
-      name: "Joe",
-      age: 35,
-      hobbies: ["fishing", "eating salmon"],
-      details: {
-        isCool: true,
-        car: "porsche"
-      },
-      updateUser: (data) =&gt; set((user) =&gt; ({ ...user, ...data }))
-    }));
-
-Here is a component that call a dummy external function fetchUser():
-
-    import React from "react";
-    import { userStore } from "./stores/user";
-    import { fetchUser } from "./utils/fetchUser";
-    
-    export default function Test() {
-      const { name } = userStore();
-      return (
-        &lt;&gt;
-          &lt;h1&gt;hello {name}&lt;/h1&gt;
-          &lt;button onClick={() =&gt; fetchUser()}&gt;fetch User&lt;/button&gt;
-        &lt;/&gt;
-      );
-    }
-
-And the fetchUser() function:
-
-    import { userStore } from "../stores/user";
-    
-    export function fetchUser() {
-      const user = userStore();
-      const result = { name: "John", details: { car: "ferrari", isCool: false } };
-      return user.setState(result);
-    }
-
-I receive the following error: "Invalid hook call". How to fix this?
-
-Here is a sandbox to test the mini-app: [https://codesandbox.io/s/react-zustand-forked-uqgum?file=/src/utils/fetchUser.js](https://codesandbox.io/s/react-zustand-forked-uqgum?file=/src/utils/fetchUser.js)
-## [8][Introducing Beautiful Gatsby Blog Starter Template I developed!](https://www.reddit.com/r/reactjs/comments/jgn28g/introducing_beautiful_gatsby_blog_starter/)
-- url: https://www.reddit.com/r/reactjs/comments/jgn28g/introducing_beautiful_gatsby_blog_starter/
----
-I worked really hard to make it, but there are no users 😭, so I'm promoting it to Reddit.
-
-I tried ui design to give the Apple Big sur feel.
-
-A detailed description of the features can be found in Github README.md.
-
-&amp;#x200B;
-
-Live Demo : [https://gatsby-starter-apple.netlify.app](https://gatsby-starter-apple.netlify.app/)
-
-Github : [https://github.com/sungik-choi/gatsby-starter-apple](https://github.com/sungik-choi/gatsby-starter-apple)
-
-Desktop :
-
-https://reddit.com/link/jgn28g/video/94gd9extiuu51/player
-
-Mobile :
-
-https://reddit.com/link/jgn28g/video/8s6ok4qqiuu51/player
-
-If you like it, please try it and let me know if there are any improvements or bugs.
-
-Happy blogging!
-## [9][Made a simple package that helps establish single-source-of-truth for routes in your application](https://www.reddit.com/r/reactjs/comments/jgmt7p/made_a_simple_package_that_helps_establish/)
-- url: https://github.com/Tyrrrz/route-descriptor
+## [4][My portfolio developed in react js along with sass and a few NPM packages, my third ever react application](https://www.reddit.com/r/reactjs/comments/jh6z4s/my_portfolio_developed_in_react_js_along_with/)
+- url: https://lukeet-webdev.com/
 ---
 
-## [10][Is there a solution for implementing transitions like react-native-shared-element for web apps ?](https://www.reddit.com/r/reactjs/comments/jgmpt6/is_there_a_solution_for_implementing_transitions/)
-- url: https://www.reddit.com/r/reactjs/comments/jgmpt6/is_there_a_solution_for_implementing_transitions/
+## [5][Do You Know Any Other Ways to Optimize the Performance of React Applications Except These Ones?](https://www.reddit.com/r/reactjs/comments/jh4yux/do_you_know_any_other_ways_to_optimize_the/)
+- url: https://www.reddit.com/r/reactjs/comments/jh4yux/do_you_know_any_other_ways_to_optimize_the/
 ---
-I want to implement Shared Element transitions when switching between routes on a web app. 
-Is there any library out there for achieving this or any known approach ?
-## [11][Need Help with routing and UseParams](https://www.reddit.com/r/reactjs/comments/jgmgvu/need_help_with_routing_and_useparams/)
-- url: https://www.reddit.com/r/reactjs/comments/jgmgvu/need_help_with_routing_and_useparams/
+The way web applications are created has changed since the creation of React.
+
+By operating on a virtual DOM instead of the real one, it makes updating UI extremely fast and manageable.
+
+It seems that all tools are set up from the beginning, so how is it possible that React apps still have poor performance and delays?
+
+Actually, the way people use the library is no less important.
+
+https://vhudyma-blog.eu/top-7-ways-to-optimize-the-performance-of-react-applications/
+## [6][Any noteworthy React tutorial in the last 3 months?](https://www.reddit.com/r/reactjs/comments/jh2k6h/any_noteworthy_react_tutorial_in_the_last_3_months/)
+- url: https://www.reddit.com/r/reactjs/comments/jh2k6h/any_noteworthy_react_tutorial_in_the_last_3_months/
 ---
-Building an app, i created a homepage (component) that displays some of the user information in cards
-
-when i click on the button it should navigate to another page (component) showing more information about that user, but struggling to implement that
-
-Here's the code that displays all users:
-
- export default class FetchUser extends React.Component {  
- constructor() {  
- super();  
- this.state = { data: \[\] };  
-  }  
-  clickMe(el){  
-alert('test')  
-console.log(el);  
-  };  
- async componentDidMount() {  
- const response = await fetch(\`https://jsonplaceholder.typicode.com/users\`);  
- const json = await response.json();  
- this.setState({ data: json });  
-  }  
-  render() {  
- return (  
- &lt;div className="row"&gt;  
- &lt;Router&gt;  
- {this.state.data.map((el) =&gt; (  
- &lt;div className="cardDiv" key={el.id}&gt;  
- &lt;Card style={{ width: "18rem" }}&gt;  
- &lt;Card.Img variant="top" /&gt;  
- &lt;Card.Body&gt;  
- &lt;Card.Title&gt;  
- &lt;h1 className="contactName"&gt;{el.name\[0\]}&lt;/h1&gt;  
- &lt;/Card.Title&gt;  
- &lt;Card.Text&gt;  
- &lt;strong&gt;{el.name}&lt;/strong&gt;  
- &lt;/Card.Text&gt;  
- &lt;Card.Text&gt;@{el.username}&lt;/Card.Text&gt;  
- &lt;Card.Text&gt;  
- &lt;a href="#"&gt;  
- &lt;u&gt;{el.email}&lt;/u&gt;  
- &lt;/a&gt;  
- &lt;/Card.Text&gt;  
- &lt;button className="btnCard" onClick={this.clickMe.bind(this,el)}&gt;MORE DETAILS&lt;/button&gt;  
- &lt;/Card.Body&gt;  
- &lt;/Card&gt;  
-   
- &lt;/div&gt;  
-        ))}  
- &lt;/Router&gt;  
- &lt;/div&gt;  
-    );  
-  }  
-}  
-Essentially, the button click should link to a path /about with the specific id of a user. what I've done so far is to log the object to the console.
-## [12][Question: How does reactjs re-render components?](https://www.reddit.com/r/reactjs/comments/jglv6c/question_how_does_reactjs_rerender_components/)
-- url: https://www.reddit.com/r/reactjs/comments/jglv6c/question_how_does_reactjs_rerender_components/
+Looking to look into a fairly complex project tutorial. Not an ecommerce, and not necessarily a big app, but something that involves complex technologies/techniques if possible.
+## [7][How to make a real time “time ago” function](https://www.reddit.com/r/reactjs/comments/jh4vxi/how_to_make_a_real_time_time_ago_function/)
+- url: https://www.reddit.com/r/reactjs/comments/jh4vxi/how_to_make_a_real_time_time_ago_function/
 ---
-Hi,
-I'm new to reactjs. I'm going through their docs to understand how react works. So it was mentioned that when state/props/setState() changes/called, react rerenders the entire component. Also I read that react elements are immutable and they are rendered only when there is a change. So when react tries to render a component it actually traverses through all the elements checks for differences and renders only those elements whose data is changed. It won't simply re-render the entire component. Am I right regarding this? Or is my understanding wrong?
+Im currently making a full stack application and its a blog type website that has a post and comments. 
+
+Basically I want to tell the user when was the comment added. Like added just now, added two hours ago, added yesterday and so on.
+
+And also i want to update it. Lets say you commented on a post and it says “added just now”, and lets say 5mins has passed without the user refreshing the page I would want to to update and say “added a few mins ago” or so. 
+
+Thank you!
+## [8][How to secure a Client Secret ID with create-react-app hosted on Netlify](https://www.reddit.com/r/reactjs/comments/jh8sg7/how_to_secure_a_client_secret_id_with/)
+- url: https://www.reddit.com/r/reactjs/comments/jh8sg7/how_to_secure_a_client_secret_id_with/
+---
+Hello,
+
+I have limited web dev experience. I built a create-react-app, which essentially pulls back data from [http://strava.com](http://strava.com/). Part of the authorization process of getting data from strava is passing a Client Secret ID; something I want to keep secure.
+
+I have a .env file where I store this Client Secret ID value i.e. REACT\_APP\_CLIENT\_SECRET=1234567890 and my .env file resides in .gitignore so it is not exposed my Git Repo.
+
+My app is hosted on Netlify where I then stored the Client Secret ID in a Netlify environment variable under Build and Deploy settings.
+
+I set up a Lambda function to handle the Axios call that passes the Client Secret ID to strava (intended to make the call on the server thus securing my client secret). This all works great.
+
+What I didn’t expect however was that the Client Secret ID is still accessible in source source through the client. 
+
+I've since discovered that no environment variables can be accessed from create-react-app dynamically from the browser when hosted on Netlify since they must be accessed at build time to be used in the static site. Hence why they are bundled into the client source code.
+
+So I am unsure of how to handle this. What are options for keeping this Client Secret ID secure?
+
+Thanks in advance, I hope I have explained this properly.
+## [9][Which is the real impact of npm libraries on the bundle size?](https://www.reddit.com/r/reactjs/comments/jh5yer/which_is_the_real_impact_of_npm_libraries_on_the/)
+- url: https://www.reddit.com/r/reactjs/comments/jh5yer/which_is_the_real_impact_of_npm_libraries_on_the/
+---
+I'm building an app that needs a dual range slider &amp; an image caroussel. Some npm librairies are perfect to achieve great results in a short amount of time (rc-slider &amp; react-slick for example), but their combined weight is almost 1mb, which is huge.
+
+If I use Terser plugin in my webpack config, will all the module's weight will have to be downloaded by the user? If I add images, scripts &amp; co on top of this, a page would weight 3 to 4mb, which is pure folly.
+## [10][Help for freemeals.uk](https://www.reddit.com/r/reactjs/comments/jh865e/help_for_freemealsuk/)
+- url: https://www.reddit.com/r/reactjs/comments/jh865e/help_for_freemealsuk/
+---
+Hi all, I'm working on freemeals.uk, part of the campaign by Marcus Rashford to get UK schoolchildren free meals over the UK half term, who might otherwise go hungry. I've been doing this since 11am yesterday and now really need some support. If you're a React or JS developer and have some time today to help, please let me know! You don't necessarily have to be from the UK, btw.
+
+The github repo is [here](https://github.com/tomoakley/freemeals.uk) - please don't judge the code! The great Andy Clarke, [@malarkey](https://twitter.com/malarkey) on Twitter, is [working on the design](https://twitter.com/Malarkey/status/1319969646188122112) right now. I'm currently working on geolocating the user to provide more relevant results. 
+
+Thanks!
+## [11][How to test React Context](https://www.reddit.com/r/reactjs/comments/jh0h29/how_to_test_react_context/)
+- url: https://www.samdawson.dev/article/react-context-testing
+---
+
+## [12][I want to start freelancing to earn extra money while working. Is React good for freelancing?](https://www.reddit.com/r/reactjs/comments/jh1uye/i_want_to_start_freelancing_to_earn_extra_money/)
+- url: https://www.reddit.com/r/reactjs/comments/jh1uye/i_want_to_start_freelancing_to_earn_extra_money/
+---
+Hi! I'm a software developer where I mainly use Java/Kotlin. Although I have a job, It is not enough because it is my first job and I have a low salary (Philippines). I'm now thinking of doing freelancing. I know a lot about React, Node/Express, MongoDB/SQL, basically MERN Stack, but is it enough for freelancing? 
+
+I really don't know where to start and I saw a thread where they said React sucks for freelancing due to SEO. I'm thinking of learning Gatsby/Next but it might take me some time to learn because I have a 9-5 job weekdays.
+
+Thanks for listening.

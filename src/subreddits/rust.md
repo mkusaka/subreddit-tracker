@@ -23,59 +23,98 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/10/21/this-week-in-rust-361/
 ---
 
-## [3][Blog Post: Introducing Ungrammar](https://www.reddit.com/r/rust/comments/jh69jx/blog_post_introducing_ungrammar/)
+## [3][VTracer is a raster to vector graphics converter implemented in Rust. I am one of the authors, questions and comments welcome!](https://www.reddit.com/r/rust/comments/jhppai/vtracer_is_a_raster_to_vector_graphics_converter/)
+- url: https://www.visioncortex.org/vtracer/
+---
+
+## [4][Three open source Sonos projects: efficient embedded development in Rust](https://www.reddit.com/r/rust/comments/jhhyvo/three_open_source_sonos_projects_efficient/)
+- url: https://tech-blog.sonos.com/posts/three-open-source-sonos-projects-in-rust/
+---
+
+## [5][libffi-rs (Rust bindings to libffi) 1.0.0 is released](https://www.reddit.com/r/rust/comments/jhkrgl/libffirs_rust_bindings_to_libffi_100_is_released/)
+- url: https://yorickpeterse.com/articles/libffi-rs-100/
+---
+
+## [6][Writing our own simple AWS Lambda Custom Runtime in Rust](https://www.reddit.com/r/rust/comments/jht8z5/writing_our_own_simple_aws_lambda_custom_runtime/)
+- url: http://jamesmcm.github.io/blog/2020/10/24/lambda-runtime/#en
+---
+
+## [7][Send files to trash?](https://www.reddit.com/r/rust/comments/jhrmol/send_files_to_trash/)
+- url: https://www.reddit.com/r/rust/comments/jhrmol/send_files_to_trash/
+---
+Does anyone know about a (cross-platform) crate that allows sending files to the trash/recycle bin?
+
+Something similar to Python's [https://github.com/arsenetar/send2trash](https://github.com/arsenetar/send2trash), but for Rust
+## [8][Debugging for dummies - how to?](https://www.reddit.com/r/rust/comments/jhpliq/debugging_for_dummies_how_to/)
+- url: https://www.reddit.com/r/rust/comments/jhpliq/debugging_for_dummies_how_to/
+---
+Hi folks
+
+I'm comming from Python and I have a simple question. How do you debug your app?
+
+In Python:
+User runs the app and hits a critical line - I get traceback in console/logfile. I find the line and put something like `ipdb.set_trace()` and run the app again. Once Python interpreter hits the line it kicks off interactive and nifty debugging console. I can easily debug production apps like that.
+
+In Rust:
+Since Rust is compiled when a problem occurs the app just exits and I see literally nothing. If I know where the problem is I use prints. I also tried gdb - not bad but it feels like it's debugging tool from 80's.
+
+My understanding is to have extensive logging thru whole app (to simulate Python tracebacks). I debug with `println("{:?}", ...)` which seems lame to me. So how do you guys debug small CLI or big apps?
+## [9][Callbacks On Traits.](https://www.reddit.com/r/rust/comments/jhm12j/callbacks_on_traits/)
+- url: https://www.reddit.com/r/rust/comments/jhm12j/callbacks_on_traits/
+---
+Sorry for what seems like such a basic question, but I can't seem to find anything on this subject in Rust. I'm looking at re-writing some C++ code into Rust. One of the core functionalities is the storage of a collection of interface pointers which we can arbitrarily bind to a member function and perform a callback. (Like a C# delegate).
+
+E.g. https://godbolt.org/z/8aqnd3
+
+Is there some way of doing the same thing as 'invoke' in Rust with a collection of Traits?
+## [10][Blog Post: Introducing Ungrammar](https://www.reddit.com/r/rust/comments/jh69jx/blog_post_introducing_ungrammar/)
 - url: https://rust-analyzer.github.io/blog/2020/10/24/introducing-ungrammar.html
 ---
 
-## [4][`Box` will have custom allocator support soon (tm)](https://www.reddit.com/r/rust/comments/jgxgpu/box_will_have_custom_allocator_support_soon_tm/)
-- url: https://github.com/rust-lang/rust/pull/77187
+## [11][Need help with concurrency in Rust](https://www.reddit.com/r/rust/comments/jhpv5x/need_help_with_concurrency_in_rust/)
+- url: https://www.reddit.com/r/rust/comments/jhpv5x/need_help_with_concurrency_in_rust/
 ---
+I have tried learning about concurrent programming in Rust, I have read the official documentation as well as some tutorials on Youtube, but I am still unable to accomplish a very basic task.
 
-## [5][5x Faster Rust Docker Builds with cargo-chef](https://www.reddit.com/r/rust/comments/jgy0ao/5x_faster_rust_docker_builds_with_cargochef/)
-- url: https://www.lpalmieri.com/posts/fast-rust-docker-builds/
+I have a vector of some numbers, and I want to create as many threads as there are elements in this vector and do some operations on those elements (for the sake of example, lets say my program wants to square all elements of the vector). Here is what I have tried:
+
+    use std::thread;
+    
+    // this function seems pointless since I could just square inside a closure, but its just for example
+    fn square(s: i32) -&gt; i32 {
+        s * s
+    }
+    
+    // for vector of size N, produces N threads that together process N elements simultaneously
+    fn process_parallel(mut v: &amp;Vec&lt;i32&gt;) {
+        let mut handles = vec![];
+        for i in 0..(v.len()) {
+            let h = thread::spawn(move || {
+                square(v[i])
+            });
+            handles.push(h);
+        }
+        for h in handles {
+            h.join().unwrap();
+        }
+    }
+    
+    fn main() {
+        let mut v = vec![1, 2, 3, 4, 5];
+        process_parallel(&amp;mut v);
+        // 'v' should countain [1, 4, 9, 16, 25] now
+    }
+
+This gives me an error that `v` needs to have static lifetime (which I am not sure is possible). I have also tried wrapping the vector in `std::sync::Arc` but the lifetime requirement still seems to persist. Whats the correct way to accomplish this task?
+
+I know there are powerful external crates for concurrency such as `rayon`, which has method `par_iter_mut()` that would essentially allow me to accomplish this in a single line, but I want to learn about concurrency in Rust and how to write small tasks such as this on my own, so I don't want to move away from `std` for now. 
+
+Any help would be appreciated.
+## [12][Is there a way to traverse all `impl`s for a trait?](https://www.reddit.com/r/rust/comments/jhqnum/is_there_a_way_to_traverse_all_impls_for_a_trait/)
+- url: https://www.reddit.com/r/rust/comments/jhqnum/is_there_a_way_to_traverse_all_impls_for_a_trait/
 ---
+Hi, everyone,
 
-## [6][Core team membership changes](https://www.reddit.com/r/rust/comments/jgpkof/core_team_membership_changes/)
-- url: https://blog.rust-lang.org/inside-rust/2020/10/23/Core-team-membership.html
----
+I’m new to Rust (I usually use other languages), but I found it a good fit for some new project of mine. Now the problem is that said project requires applying different functions to different input, and the most elegant way would be to use traits as far as I can see. (Imagine the standard example of `Animal` and `feed()` must differ according to which animal it actually is...)
 
-## [7][Fast XML to JSON converter crate revived and improved.](https://www.reddit.com/r/rust/comments/jh60t8/fast_xml_to_json_converter_crate_revived_and/)
-- url: https://crates.io/crates/quickxml_to_serde
----
-
-## [8][Assimilation has begun](https://www.reddit.com/r/rust/comments/jgwv37/assimilation_has_begun/)
-- url: https://www.reddit.com/r/rust/comments/jgwv37/assimilation_has_begun/
----
-I had a breakthrough: On a side project at work (CTF scenario) my first reflex was, "I know how I'd write this in Rust." 
-
-Historically, this has been, "I know how I'd script this in Ruby" when I want to whip up some quick-and-dirty, throw-away code.
-
-I've been playing in Rust long enough for it to become comfortable and even my preferred tool.
-## [9][Category Theory formalized in Avalog V0.3.3 - An experimental implementation of Avatar Logic with a Prolog-like syntax, written in Rust](https://www.reddit.com/r/rust/comments/jh8c1f/category_theory_formalized_in_avalog_v033_an/)
-- url: https://github.com/advancedresearch/avalog/blob/master/source/category.txt
----
-
-## [10][Contributing to the Intellij-Rust plugin: Introduce constant refactoring](https://www.reddit.com/r/rust/comments/jgq9zk/contributing_to_the_intellijrust_plugin_introduce/)
-- url: https://kobzol.github.io/rust/intellij/2020/10/19/contributing-4-introduce-constant-refactoring.html
----
-
-## [11][Doing math stuff](https://www.reddit.com/r/rust/comments/jgzmzo/doing_math_stuff/)
-- url: https://www.reddit.com/r/rust/comments/jgzmzo/doing_math_stuff/
----
-Hi,
-
-I just got back to programming and knows not much at all about Rust for sure. Yet, I'm really excited about trying to actually improve my programming skills and my math skills. And why I think it's unique? Because I want to try doing stuff from scratch, I feel most open source code I find about math/scientific stuff it's so library dependent, full of optimizations that makes the math SO UNCLEAR. I want to create a BOTTOM-UP approach, and create a clear library of correct, very-precise math implementations from scratch. Like you will solve a problem in an applied math class in 2nd year of university, or in a 2nd year physics/physical chemistry/pick your favorite class. First, am I somewhat too ambitious? And who wants to help, because I can multiply matrices, integrate stuff on paper but SURELY will get lost in translation to Rust code. 
-
-&amp;#x200B;
-
-P.S. : I wanted to explain that I chose Rust for this project because:
-
-1. It's fast- I think it's ridiculous to multiply matrices in a slow language.
-2. It's not extremely strict like Haskell (I feel I'll have a slight headache and abandon the project- so sorry I really wanted to like it, only my personal feel right now). But it's strict enough.
-3. It feels like the kind of thing you could really use everywhere, like C code(maybe I'm wrong\*)
-
-Ron
-## [12][usethe.computer - XMHell: Handling 38GB of UTF-16 XML with Rust](https://www.reddit.com/r/rust/comments/jgixsy/usethecomputer_xmhell_handling_38gb_of_utf16_xml/)
-- url: http://usethe.computer/posts/14-xmhell.html
----
-
+Now the number of possible implementations is really huge. Does `main.rs` need to know all of them explicitly - that would certainly increase the code size - or is there a way to loop through all available `impl`s until one matches certain criteria (e.g. `where(animal.name == args.name)`?

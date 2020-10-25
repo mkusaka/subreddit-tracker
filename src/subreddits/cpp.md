@@ -56,7 +56,46 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Feedback on OpenGL Walkthrough &amp; Design](https://www.reddit.com/r/cpp/comments/jh0fmp/feedback_on_opengl_walkthrough_design/)
+## [2][SFML / C++ Game Engine for Web (HTML), Android &amp; PC (Windows / Linux)](https://www.reddit.com/r/cpp/comments/jhlkmk/sfml_c_game_engine_for_web_html_android_pc/)
+- url: https://www.reddit.com/r/cpp/comments/jhlkmk/sfml_c_game_engine_for_web_html_android_pc/
+---
+ Hi everyone, I hope you’re doing well.
+
+I would like to share with a **C++ / SFML framework (is::Engine)** which allows you to develop **games and multimedia applications** on **Android, Web (HTML - CSS) and PC (Windows / Linux)**.
+
+You can also use it with **Android Studio, Visual Studio Code, CMake and Code::Blocks**.
+
+It also integrates **Admob** which allows you to **monetize** your games / applications.
+
+► [Game Engine Link](https://github.com/Is-Daouda/is-Engine)
+
+Here is the demo of the framework: This game was created to celebrate the **35 years of Super Mario Bros Nes**.
+
+► [Game Engine Demo Link](https://github.com/Is-Daouda/is-Engine-Demo)
+
+Here is another game (**I Can Transform**) available on **Android** which was created with the framework.
+
+► [Google Play](https://play.google.com/store/apps/details?id=com.isdaouda.icantransform&amp;hl=En)
+
+Your feedback or questions will be welcome.
+
+Have a good day.
+## [3][Carpal/Cubital Tunnel Syndrome](https://www.reddit.com/r/cpp/comments/jhrsp0/carpalcubital_tunnel_syndrome/)
+- url: https://www.reddit.com/r/cpp/comments/jhrsp0/carpalcubital_tunnel_syndrome/
+---
+Hi. 
+    Unfortunately I have cubital tunnel syndrome on both hands. I'm due to start my very first job as a C++ software engineer in 1 month. I am so worried. This shit is painful. I thought several times about leaving this job but Its a really good job.
+
+Has anyone dealt with this before? And how did you manage it?
+## [4][Parallelizing GPU-intensive Workloads via Multi-Queue Operations (2x+ Performance Improvements on a Single Graphics Card)](https://www.reddit.com/r/cpp/comments/jh8zq8/parallelizing_gpuintensive_workloads_via/)
+- url: https://towardsdatascience.com/parallelizing-heavy-gpu-workloads-via-multi-queue-operations-50a38b15a1dc
+---
+
+## [5][std::once_flag is a glass hill](https://www.reddit.com/r/cpp/comments/jh7ogb/stdonce_flag_is_a_glass_hill/)
+- url: https://quuxplusone.github.io/blog/2020/10/23/once-flag/
+---
+
+## [6][Feedback on OpenGL Walkthrough &amp; Design](https://www.reddit.com/r/cpp/comments/jh0fmp/feedback_on_opengl_walkthrough_design/)
 - url: https://www.reddit.com/r/cpp/comments/jh0fmp/feedback_on_opengl_walkthrough_design/
 ---
 I was thinking about doing a weekly or semi weekly series were I detail my progress through OpenGL using modern C++ features and design.
@@ -64,19 +103,15 @@ I was thinking about doing a weekly or semi weekly series were I detail my progr
 I wanted to ask the community if they would be interested in such a series where I incorporate their feedback. Things ranging from C++ optimizations, code layout, design patterns, file structure, and of course graphics. 
 
 If the community would be interested in such a concept, I would definitely love to try it and have you critique it.
-## [3][std::once_flag is a glass hill](https://www.reddit.com/r/cpp/comments/jh7ogb/stdonce_flag_is_a_glass_hill/)
-- url: https://quuxplusone.github.io/blog/2020/10/23/once-flag/
----
-
-## [4][Version 0.6.0 of the simdjson C++ library is released](https://www.reddit.com/r/cpp/comments/jgnweb/version_060_of_the_simdjson_c_library_is_released/)
+## [7][Version 0.6.0 of the simdjson C++ library is released](https://www.reddit.com/r/cpp/comments/jgnweb/version_060_of_the_simdjson_c_library_is_released/)
 - url: https://github.com/simdjson/simdjson/releases/tag/v0.6.0
 ---
 
-## [5][Parallelizing GPU-intensive Workloads via Multi-Queue Operations (2x+ Performance Improvements on a Single Graphics Card)](https://www.reddit.com/r/cpp/comments/jh8zq8/parallelizing_gpuintensive_workloads_via/)
-- url: https://towardsdatascience.com/parallelizing-heavy-gpu-workloads-via-multi-queue-operations-50a38b15a1dc
+## [8][[BLOG] C calls in type and memory safe C++ containers using enums and templates](https://www.reddit.com/r/cpp/comments/jhdv0u/blog_c_calls_in_type_and_memory_safe_c_containers/)
+- url: https://biq.medium.com/abstracting-c-platform-query-calls-in-type-and-memory-safe-c-containers-a-k-a-4b71ddbb8c32
 ---
 
-## [6][Has a release() method for std::vector been proposed?](https://www.reddit.com/r/cpp/comments/jgilit/has_a_release_method_for_stdvector_been_proposed/)
+## [9][Has a release() method for std::vector been proposed?](https://www.reddit.com/r/cpp/comments/jgilit/has_a_release_method_for_stdvector_been_proposed/)
 - url: https://www.reddit.com/r/cpp/comments/jgilit/has_a_release_method_for_stdvector_been_proposed/
 ---
 A method akin to
@@ -108,7 +143,7 @@ this would require that the pointer be deletable by `operator delete[]`, which i
 The above could still be achieved by using a custom allocator, which allocates in an appropriate way. But this would still leave us without the ability to use other third-party libraries that return `vector`s (using the default allocator) for constructing the data to be adopted (as `obj` above). So it seems the payoff is too small for this to be considered.
 
 Thank you for your comments
-## [7][Dealing with very large numbers (primality test)](https://www.reddit.com/r/cpp/comments/jgsgmh/dealing_with_very_large_numbers_primality_test/)
+## [10][Dealing with very large numbers (primality test)](https://www.reddit.com/r/cpp/comments/jgsgmh/dealing_with_very_large_numbers_primality_test/)
 - url: https://www.reddit.com/r/cpp/comments/jgsgmh/dealing_with_very_large_numbers_primality_test/
 ---
 
@@ -121,7 +156,7 @@ Using that same logic, even if you created a variable to store a 128-bit number,
 This puzzles me because Fermat Primality Test is sometimes used to deal with unimaginably large numbers (in RSA for example) .... right? 
 
 I feel like I am misunderstanding something here.
-## [8][I've rewritten the compiler for my programming language into C++](https://www.reddit.com/r/cpp/comments/jglz0x/ive_rewritten_the_compiler_for_my_programming/)
+## [11][I've rewritten the compiler for my programming language into C++](https://www.reddit.com/r/cpp/comments/jglz0x/ive_rewritten_the_compiler_for_my_programming/)
 - url: https://www.reddit.com/r/cpp/comments/jglz0x/ive_rewritten_the_compiler_for_my_programming/
 ---
 My largest C++ project, by far, is the new compiler for my programming language (called AEC), targeting WebAssembly: [https://github.com/FlatAssembler/AECforWebAssembly](https://github.com/FlatAssembler/AECforWebAssembly)
@@ -133,25 +168,3 @@ The specification for my programming language is available here: [https://flatas
 The example program I like the most is the Analog Clock in AEC: [https://flatassembler.github.io/analogClock.html](https://flatassembler.github.io/analogClock.html)
 
 So, what do you think about my work?
-## [9][Modern C++ Features - a few features that you may know from Python or JavaScript that you can use in C++ too! (For beginners)](https://www.reddit.com/r/cpp/comments/jg5oip/modern_c_features_a_few_features_that_you_may/)
-- url: https://blog.yuvv.xyz/modern-cpp-features
----
-
-## [10][CppCast: Programming History, JIT Compilations and Generic Algorithms](https://www.reddit.com/r/cpp/comments/jgfz75/cppcast_programming_history_jit_compilations_and/)
-- url: https://cppcast.com/ben-deane-jit-history/
----
-
-## [11][How to boost my learning journey with cpp - currently intermediate level](https://www.reddit.com/r/cpp/comments/jgnmzp/how_to_boost_my_learning_journey_with_cpp/)
-- url: https://www.reddit.com/r/cpp/comments/jgnmzp/how_to_boost_my_learning_journey_with_cpp/
----
-Hello, I promise you I am not asking about things I can find online.
-
-I am working on my cpp skills currently and I am studying Bjarne Stroustrup books “programming: principles and practice using C++” (finished) and “The C++ Programming language” (currently).
-
-I am trying to have more practice oriented approach by trying to apply what I learn on simple ideas. However, I feel that I can’t reach a good point of understanding if I don’t work on actual projects or have a resource that discuss real programming situations and applications. I am studying C++ for more hardware related applications.
-
-I would appreciate any advice, useful resources, possible opportunities, and/or tips to get the most out of my learning journey. 
-
-My goal is to fully grasp most of the C++ concepts and be able to integrate them.
-
-Thank you so much 😊

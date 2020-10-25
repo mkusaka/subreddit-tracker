@@ -27,134 +27,139 @@ AWS always releases a bunch of features, sometimes everyday or atleast once a we
 10: More features in App Mesh(Circuit breaker, Rate Limiting)
 
 P.S: Not sure if some features are already available, but if something is missing, please feel free to add
-## [2][[QUESTION] Best course/way to understand dynamoDB modeling and how to structure your tables keys etc?](https://www.reddit.com/r/aws/comments/jgzave/question_best_courseway_to_understand_dynamodb/)
-- url: https://www.reddit.com/r/aws/comments/jgzave/question_best_courseway_to_understand_dynamodb/
+## [2][Many many MySQL Aurora database issues. Anyone else?](https://www.reddit.com/r/aws/comments/jhi0yi/many_many_mysql_aurora_database_issues_anyone_else/)
+- url: https://www.reddit.com/r/aws/comments/jhi0yi/many_many_mysql_aurora_database_issues_anyone_else/
 ---
-Do you guys know of any course or tutorials that explain data structures in dynamo db using real life scenarios? I watched every video in youtube but still I dont quite feel like I understand it?
-## [3][Introducing the AWS Load Balancer Controller](https://www.reddit.com/r/aws/comments/jh07g7/introducing_the_aws_load_balancer_controller/)
-- url: https://aws.amazon.com/about-aws/whats-new/2020/10/introducing-aws-load-balancer-controller/
+We've had a frustrating few months with AWS Aurora (various version up to 2.08.2) . Some issues we've had:
+
+- Under heavy loads, database returns incorrect response (response was supposed to be delivered to a different connection for a different query). Mismatched responses to requests.
+Workaround: we found we had an expensive recursive query for circular dependencies existed. Pulling this data from the database would cause the database or Aurora proxy to become confused, and return incorrect responses for small random percentage of various queries moving forward. Fix would be to restart the database or failover between the master and replica.
+
+- Refuses connections even though the database is only using 200 out of 2,000 allowed (XLarge instance). Database metrics across the board (CPU %, Memory %, Disk Space) are all within 10% of actual capacity
+Seems to happen where we are creating a high number of connections (and then releasing them after). Seems to be a bug where Aurora or the Aurora proxy believes it has a higher number of connections than it actually has. Aurora dashboard reports a very low number of connections. Could be related to the proxy/load balancer Aurora automatically configures between our application servers and the database server.
+
+- Locks on table rows being acquired and never being released
+Every few weeks the database would be unable to acquire a row lock for one of our tables we were using to increment a counter in a thread-safe way. Simple query "SELECT col FROM table WHERE &lt;bool&gt; FOR UPDATE;" which is supposed to lock a single row and implicitly unlock at the end of transaction did not appear to happen. in these times, "SHOW ENGINE INNODB STATUS" would show zero deadlocks.
+
+We never had these problems with a plain-vanilla MySQL 5.7 Community Edition.  It's frustrating that we cannot find anyone with similar experiences to us on the internet. Seems large companies with presumably more traffic are using Aurora without any issues. A lot of these issue do sound like they could be related to the proxy between our application servers and the Aurora database, has anyone had anything at all similar?
+
+We have not tried updating to 2.09.0 yet, since we are at the end of our rope, and looking to move back to either RDS or our own hosted version of MySQL but I see it fixes an [extensive list of deadlock issues](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.2090.html) which makes me feel we cannot be the only ones
+## [3][Suggestions AutoScalingGroup to serve as little 50x errors as possible](https://www.reddit.com/r/aws/comments/jht18t/suggestions_autoscalinggroup_to_serve_as_little/)
+- url: https://www.reddit.com/r/aws/comments/jht18t/suggestions_autoscalinggroup_to_serve_as_little/
 ---
+Hi, hope someone can give me some suggestions please.
 
-## [4][Infra App (v0.42) - Simplest Kubernetes desktop client now supports all resources](https://www.reddit.com/r/aws/comments/jh3447/infra_app_v042_simplest_kubernetes_desktop_client/)
-- url: https://www.reddit.com/r/aws/comments/jh3447/infra_app_v042_simplest_kubernetes_desktop_client/
+I try to set up an AutoScalingGroup in order to serve as little 50x errors as possible when scaling aggressively to accommodate huge spikes of traffic, for example -thousands of users online within a couple of minutes.
+## [4][Slack outage Oct 5, 2020 CoE?](https://www.reddit.com/r/aws/comments/jhswuc/slack_outage_oct_5_2020_coe/)
+- url: https://www.reddit.com/r/aws/comments/jhswuc/slack_outage_oct_5_2020_coe/
 ---
-Hey everyone!
+Why do neither Slack nor AWS offer a root cause of the performance issues [1] on Oct 5, 2020? Was it something Slack misconfigured or did AWS drop the ball? Since Slack is “all in” on AWS, this is disconcerting. 
 
-Thanks to all your feedback and supporting us, we've made a big release this week to include support for all Kubernetes resources in Infra App. Now you can use Infra App to check on a secret or see a configuration of a CRD, and much more.
+[1] https://www.cnn.com/2020/10/05/tech/slack-down-today/index.html
+## [5][Organization’s dns server via transit gateway is not resolving AmazonAWS.com addresses](https://www.reddit.com/r/aws/comments/jhsw8h/organizations_dns_server_via_transit_gateway_is/)
+- url: https://www.reddit.com/r/aws/comments/jhsw8h/organizations_dns_server_via_transit_gateway_is/
+---
+As part of AWS organizations, my IT setup my dhcp options sets to to have my company’s dns servers. However I cannot resolve amazonaws.com addresses with these Name servers. While the issue could be my IT, I want to make sure I’ve done all i can on my end. 
 
-More on the update here: [https://infra.app/blog/v0-42-biggest-update-yet-all-resources-now-available](https://infra.app/blog/v0-42-biggest-update-yet-all-resources-now-available)
-
-For others who haven't heard about Infra App, my co-founder and I have been building this app with the goal of creating a simple and easy to use Kubernetes desktop client. Some of the notable features are
-
-* Live tailing of logs / aggregating related logs for you so you can filter and search them
-* CPU / Memory metrics directly from your cluster (provided you have metrics-server)
-* Displaying the relationship of your related sources
-* All this is local to your computer, we don't send your cluster information to us (it's the reason why we're building this as a desktop app)
-
-You can find more about Infra App at [https://infra.app](https://infra.app/)
-
-We're just super passionate about this space and want to create a great sustainable app.
-
-It's available on Windows / Mac / Linux.
-
+Can I modify resolv.conf to be able to use both my orgs dns servers and Amazon provided dns servers ? Or something with route 53?
+## [6][AWS AppSync + WAF + Cognito + DynamoDB (CDK + CF)](https://www.reddit.com/r/aws/comments/jhrcgu/aws_appsync_waf_cognito_dynamodb_cdk_cf/)
+- url: https://www.reddit.com/r/aws/comments/jhrcgu/aws_appsync_waf_cognito_dynamodb_cdk_cf/
+---
 &amp;#x200B;
 
-https://preview.redd.it/t66c6soj4zu51.png?width=3072&amp;format=png&amp;auto=webp&amp;s=c70cae8e4c3bf39815b324b22c3427fe6252d276
+https://preview.redd.it/7gzmkp3iz7v51.jpg?width=5616&amp;format=pjpg&amp;auto=webp&amp;s=f63dd95aadda9b372e3b8ac0467d7fe856b5d236
 
-https://preview.redd.it/fpzpl6mq4zu51.png?width=1387&amp;format=png&amp;auto=webp&amp;s=74ae03ab9d8bb500fecbce2cefcdda20a8cbfb7f
+Hi Again,
 
-https://preview.redd.it/3ypux0wl4zu51.png?width=1387&amp;format=png&amp;auto=webp&amp;s=b1ea5c13c3faba321fd9ad21cb3d10f9f69eed0c
-## [5][Did speed test for transfer acceleration... if something is “Infinity% Faster,” does it already exist before I transfer? Does the transfer happen backwards in time?](https://www.reddit.com/r/aws/comments/jgs11a/did_speed_test_for_transfer_acceleration_if/)
-- url: https://i.redd.it/l7c7d52utvu51.jpg
+AWS announced support for WAF with AppSync this month so I thought it would be a good time for a write up. There are very few AppSync CDK examples so I've also put a bit of effort into this one to provide a decent example.
+
+If you don't know what AppSync is it is a managed GraphQL API, it's gaining popularity in the mobile app dev space with support for iOS.
+
+The CDK stack is open source on github and for those who just want to deploy the example there is a deploy stack button to get started in a single click.
+
+High-level overview:
+
+* AppSync
+   * Basic graphQL API
+   * Cognito enabled
+   * WAF enabled
+* WAF
+   * Associated to AppSync endpoint
+   * Three rules, Geo, Rate, Core
+* DynamoDB
+   * As a datasource with our AppSync app
+* Cognito
+   * Local cognito users, no guest logins
+
+Access the gitub repo here:
+
+[https://github.com/talkncloud/aws/tree/main/appsync-waf](https://github.com/talkncloud/aws/tree/main/appsync-waf)
+
+If you want to read about this stack with more detail on AppSync you can here, if you're deploying WAF to AppSync check it out because the core rule set denies AppSync requests:
+
+[https://www.talkncloud.com/aws-appsync-with-waf-wooo-cdk-cf/](https://www.talkncloud.com/aws-appsync-with-waf-wooo-cdk-cf/)
+
+Keen for feedback and to hear how others are tackling AppSync with CDK and/or CF.
+## [7][EC2 Request Ticket always denied or can't be processed](https://www.reddit.com/r/aws/comments/jhr8d4/ec2_request_ticket_always_denied_or_cant_be/)
+- url: https://www.reddit.com/r/aws/comments/jhr8d4/ec2_request_ticket_always_denied_or_cant_be/
 ---
-
-## [6][How to join AWS slack community](https://www.reddit.com/r/aws/comments/jh6195/how_to_join_aws_slack_community/)
-- url: https://www.reddit.com/r/aws/comments/jh6195/how_to_join_aws_slack_community/
+Title, I'm pretty much requesting one GPU instance to do my deep learning and work on, but it either gets denied, or can't be processed. I've been sending tickets for over a month now, what do I do?
+## [8][Reasons for different Cloudfront distributions for different S3 buckets](https://www.reddit.com/r/aws/comments/jhqqqw/reasons_for_different_cloudfront_distributions/)
+- url: https://www.reddit.com/r/aws/comments/jhqqqw/reasons_for_different_cloudfront_distributions/
 ---
-Hi, i am not able join 
+Hi, 
 
-[https://og-aws.slack.com/#](https://og-aws.slack.com/#)
-
-[https://awsdevelopers.slack.com/#](https://awsdevelopers.slack.com/#)
-
-these 2 slack channel, if anyone know how to join please helm.
-
-Thanks
-## [7][CloudFormation Team Public Roadmap](https://www.reddit.com/r/aws/comments/jgxmx0/cloudformation_team_public_roadmap/)
-- url: https://www.reddit.com/r/aws/comments/jgxmx0/cloudformation_team_public_roadmap/
+What are some reason why you would (or  wouldn't) have multiple cloudfront distributions for different buckets? Part of our business have multiple buckets served by the same CloudFront distribution working fine but would rather have them split out but can't really come up with a reason why.
+## [9][AWS Amplify JavaScript/iOS Resources](https://www.reddit.com/r/aws/comments/jhqeig/aws_amplify_javascriptios_resources/)
+- url: https://www.reddit.com/r/aws/comments/jhqeig/aws_amplify_javascriptios_resources/
 ---
-Disclaimer: I work at AWS. But nowhere near the CloudFormation service team. Most of our visibility on upcoming features of CFN come from this roadmap. 
+Hey everyone, I’ve been working with AWS Amplify quite a bit and decided to help people that are interested in creating an app or web app with an AWS backend get started.
 
-I was reminded of this when I saw the announcement about the service limit increase. 
+Initializing an AWS Amplify project can be a little confusing, but once you get it it all works! I’ve made a JavaScript and iOS tutorial linked below for free!
 
+Let me know if you need help. If you found it useful please like, comment, and subscribe!
 
+Thanks guys. 
 
-https://github.com/aws-cloudformation/aws-cloudformation-coverage-roadmap
-## [8][Should public and private objects placed in same or different S3 bucket?](https://www.reddit.com/r/aws/comments/jh5zsa/should_public_and_private_objects_placed_in_same/)
-- url: https://www.reddit.com/r/aws/comments/jh5zsa/should_public_and_private_objects_placed_in_same/
+JavaScript - https://youtu.be/JzU_U3QEP7o
+
+iOS - https://youtu.be/XvhQkXNv1_I
+## [10][What does AWS EventBridge mean to ISV?](https://www.reddit.com/r/aws/comments/jhoa1s/what_does_aws_eventbridge_mean_to_isv/)
+- url: https://www.reddit.com/r/aws/comments/jhoa1s/what_does_aws_eventbridge_mean_to_isv/
 ---
-I’m working on a SaaS application. Currently we’re only storing public uploads in a bucket. For a new feature I need to store private files only accessible for specific users.
+I read people saying AWS EventBridge is as revolutionary as Lambda (btw, I do agree lambda is revolutionary in cloud software development) [https://www.trek10.com/blog/amazon-eventbridge/](https://www.trek10.com/blog/amazon-eventbridge/)
 
-What would you say is best practice, having a separate bucket for all private objects or just one bucket with only specific folders/objects that are public?
-## [9][AWS CloudFormation now supports increased limits on five service quotas](https://www.reddit.com/r/aws/comments/jgnlbh/aws_cloudformation_now_supports_increased_limits/)
-- url: https://www.reddit.com/r/aws/comments/jgnlbh/aws_cloudformation_now_supports_increased_limits/
+Then, it begs a question whether that means some good opportunities for ISVs? For example, does that mean it's easier to develop a cloud service like Zapier or ITFFF?
+## [11][AWS IAM Policy based on EC2 tag](https://www.reddit.com/r/aws/comments/jhnzru/aws_iam_policy_based_on_ec2_tag/)
+- url: https://www.reddit.com/r/aws/comments/jhnzru/aws_iam_policy_based_on_ec2_tag/
 ---
-https://aws.amazon.com/about-aws/whats-new/2020/10/aws-cloudformation-now-supports-increased-limits-on-five-service-quotas/
-## [10][Dumb S3 newbie, learning my lesson about Rclone &amp; GDA Early Deletion Fees](https://www.reddit.com/r/aws/comments/jh0g3q/dumb_s3_newbie_learning_my_lesson_about_rclone/)
-- url: https://www.reddit.com/r/aws/comments/jh0g3q/dumb_s3_newbie_learning_my_lesson_about_rclone/
----
-Apologies in advance for the dumb questions, but I have a video production company that wants to use Glacier Deep Archive as a replacement for our redundant offsite LTO backups of raw camera footage.
+I created an IAM Role with the following Permissions policy
 
-I used Rclone to upload a 4 TB archive directly to GDA, which was all fine and dandy.
+    {
+        "Version": "2012-10-17",
+        "Statement": [
+            {
+                "Sid": "VisualEditor0",
+                "Effect": "Allow",
+                "Action": "ec2:DescribeInstances",
+                "Resource": "*",
+                "Condition": {
+                    "StringEquals": {
+                        "aws:ResourceTag/Project": "Phoenix"
+                    }
+                }        
+            }
+        ]
+    }
 
-This was the command line I used:
+* A 3rd party App uses the Role ARN associated with the IAM Policy to describe EC2 instances. 
 
-`rclone sync --verbose --progress --s3-upload-concurrency 16 --s3-chunk-size 16M --s3-disable-checksum --log-file=rclone.log --exclude '.*' --bwlimit "07:30,13M 18:00,off" /ArchiveDrive/Footage remote:example.bucket`
+* The objective is for the App to only be allowed describing EC2 instances tagged Project=Phoenix. 
 
-Well, as it turns out, when I tried to add additional files to the bucket (from another archive drive) using "rclone sync", it ended up deleting almost everything I had already uploaded to GDA, because I was too stupid to not realize that I should have been using "rclone *copy*" instead of "rclone sync"!
+* The issue is the App gets an error "AWS credentials have insufficient permission to perform action" so no EC2 are described at all. There are 2 instances with the matching tag.
 
-As a result, I am being charged $50 a month for the next 90 days for the accidental early deletion (sadface)
+* If I remove the Condition from the policy, DescribeInstances works but the App gets all EC2 from any specified AWS Region. I need to limit the list of EC2 returned to only instances tagged Project=Phoenix.
 
-Now that I've learned my lesson about rclone, I would like to confirm with all the S3 veterans here this would be a better/safer/correct way to do this:
+* Also tried tagging the IAM Role with Project=Phoenix as a test but same error.
 
-1. Change my rclone config to use ONEZONE\_IA the default storage class, instead of DEEP\_ARCHIVE
-2. Use "rclone copy" to upload my archives to my S3 bucket, with OneZone-IA as the storage class
-3. Set a Lifecycle policy on that bucket to move everything to GDA after 1 day
-
-Am I correct that uploading to OneZone-IA would prevent me being charged for early deletion fees in the event that I make a mistake with Rclone, while minimizing as much cost as possible for daily storage of the archive before it gets moved to GDA?
-
-Seems to me that uploading directly to Glacier or GDA is a "don't try this at home" option best left to the experts?
-## [11][Question: How access server files via webbrowser?](https://www.reddit.com/r/aws/comments/jh78hf/question_how_access_server_files_via_webbrowser/)
-- url: https://www.reddit.com/r/aws/comments/jh78hf/question_how_access_server_files_via_webbrowser/
----
-Hi There,
-
-&amp;#x200B;
-
-I have an EC2 instance, and I have uploaded some files into it (script).
-
-I must now access these files, to be exactly install.php, via webbrowser, to install the script.
-
-\[ex: publicdns/home/install.php\]
-
-&amp;#x200B;
-
-As it comes, I only have a public DNS adress (or public IP), no domain name.
-
-&amp;#x200B;
-
-When I type in the public DNS adress / or IP in my webbrowser, it just throws me the message:
-
-Not able to connect, etc.
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-So, what can I do here to access my files via webbrowser and install my script?!
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-Thanks
+Am I using &amp; configuring the IAM Role and Policy correctly for the objective? What do I need to adjust?

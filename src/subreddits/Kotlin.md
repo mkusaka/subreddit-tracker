@@ -1,9 +1,71 @@
 # Kotlin
-## [1][Kotlin multiplatform API client abstraction](https://www.reddit.com/r/Kotlin/comments/jh8mhk/kotlin_multiplatform_api_client_abstraction/)
-- url: https://github.com/eduayuso/konet
+## [1][Choosing the right architecture for a [new] Kotlin Multiplatform, Jetpack Compose and SwiftUI app](https://www.reddit.com/r/Kotlin/comments/jh9xk2/choosing_the_right_architecture_for_a_new_kotlin/)
+- url: https://www.marcogomiero.com/posts/2020/kmm-shared-app-architecture
 ---
 
-## [2][Kotlin Team AMA session is coming!](https://www.reddit.com/r/Kotlin/comments/jgmvgz/kotlin_team_ama_session_is_coming/)
+## [2][Trying to get property reference from a type given by function receiver](https://www.reddit.com/r/Kotlin/comments/jhr1au/trying_to_get_property_reference_from_a_type/)
+- url: https://www.reddit.com/r/Kotlin/comments/jhr1au/trying_to_get_property_reference_from_a_type/
+---
+I'm making a builder for any class. It's based on KProperty reflections and it works well for now, but I want to improve an interface of it. Here is an example of current usage:  
+
+
+    data class Data(
+        val nonDef: String,
+        val defValue: String = "DEF_VALUE",
+        val copyValue: String = nonDef,
+        val nonDef2: String,
+        val aMap: Map&lt;String, String&gt; = emptyMap(),
+)
+    val builtData = Builder&lt;Data&gt;()
+        .assign(Data::aMap, mapOf("key" to "value"))
+        .assign(Data::nonDef2, "10")
+        .assign(Data::nonDef, "10")
+        .build()
+
+I don't like, that I have to specify Data:: receiver for every property reference in assign method. Data class is already given as generic for Builder, so I can pass only reference with receiving Data class.
+
+So, I want to make new function prettyAssign() with callable argument, where class reference receiver  is passed as function receiver for callable, so I could address ::aMap, ::nonDef and ::nonDef2 to implicit 'this'. Here how it would look like:
+
+    class Builder&lt;T : Any&gt;(val kClass: KClass&lt;T&gt;) {
+        fun &lt;K&gt; assign(prop: KProperty1&lt;T, K&gt;, value: K)
+            : Builder&lt;T&gt; = TODO("doing all reflection magic here")
+            
+        fun &lt;K&gt; prettyAssign(call: KClass&lt;T&gt;.() -&gt; Pair&lt;KProperty1&lt;T, K&gt;, K&gt;) {
+            val (prop, value) = call(kClass)
+            return assign(prop, value)
+        }
+    }
+    
+    val builtData = DataBuilder&lt;Data&gt;()
+        .prettyAssign { ::aMap to mapOf("key" to "value") }
+        .prettyAssign { ::nonDef2 to "10" }
+        .prettyAssign { ::nonDef to "10" }
+        .build()
+
+In that approach it doesn't work, because KClass&lt;T&gt; doesn't have references to T properties.
+
+So, I don't understand, is there a way to make prettyAssign() working
+## [3][How to create a fat jar for Kotlin Multiplatform project without main class?](https://www.reddit.com/r/Kotlin/comments/jhh0hc/how_to_create_a_fat_jar_for_kotlin_multiplatform/)
+- url: https://www.reddit.com/r/Kotlin/comments/jhh0hc/how_to_create_a_fat_jar_for_kotlin_multiplatform/
+---
+ Hello! 
+
+I'm trying to create fat jar for my kotlin multiplatform project which will then be used as a dependency on another project. When I'm trying to use the class defined in the multiplatform project on the other project, it's not able to find/import it. However, when I opened the created jar, I can see it's there (along with all the dependencies).
+
+There is a [stackoverflow post](https://stackoverflow.com/a/62770101) that I found on how to build a fat jar for multiplatform project and I pretty much just followed that. Correct me if I'm wrong, since my multiplatform project doesn't have a main class, I do not need to include the part where it adds the main class to the attributes.
+
+I have been having hard time to get this to work. Most of the examples online are for multiplatform projects with main class. Is there any tutorial on how to build a fat jar for a multiplatform project that doesn't have main class? Any help is greatly appreciated!
+
+Thanks in advance! 
+## [4][How to handle keyboard input in windows floating over other apps on Android?](https://www.reddit.com/r/Kotlin/comments/jhbocw/how_to_handle_keyboard_input_in_windows_floating/)
+- url: https://vaclavhodek.com/6-floating-windows-on-android-keyboard-input
+---
+
+## [5][Can't Run Kotlin Project IntelliJ](https://www.reddit.com/r/Kotlin/comments/jhkzaa/cant_run_kotlin_project_intellij/)
+- url: https://www.reddit.com/r/Kotlin/comments/jhkzaa/cant_run_kotlin_project_intellij/
+---
+Just started using Kotlin and intelli j like last week. First time I used it I had no problems but today idk if there was a recent update or something but the UI changed when creating a project. I right clicked on the src folder and created a new kotlin file but I can't run it at all Idk what happened. Can someone please help
+## [6][Kotlin Team AMA session is coming!](https://www.reddit.com/r/Kotlin/comments/jgmvgz/kotlin_team_ama_session_is_coming/)
 - url: https://www.reddit.com/r/Kotlin/comments/jgmvgz/kotlin_team_ama_session_is_coming/
 ---
 Hi! The Kotlin team are getting ready to answer your questions on October 26-27. 
@@ -11,41 +73,19 @@ Hi! The Kotlin team are getting ready to answer your questions on October 26-27.
 During this AMA, we'll also cover some of the unanswered questions from the [Kotlin 1.4 Online Event](https://kotlinlang.org/lp/event-14/). 
 
 Keep an eye on the notifications in this subreddit, we will start at 9:00 am CET on October 26.
-## [3][Choosing the right architecture for a [new] Kotlin Multiplatform, Jetpack Compose and SwiftUI app](https://www.reddit.com/r/Kotlin/comments/jgllev/choosing_the_right_architecture_for_a_new_kotlin/)
+## [7][Choosing the right architecture for a [new] Kotlin Multiplatform, Jetpack Compose and SwiftUI app](https://www.reddit.com/r/Kotlin/comments/jgllev/choosing_the_right_architecture_for_a_new_kotlin/)
 - url: https://www.marcogomiero.com/posts/2020/kmm-shared-app-architecture/
 ---
 
-## [4][A good game library for Kotlin?](https://www.reddit.com/r/Kotlin/comments/jgr4wz/a_good_game_library_for_kotlin/)
+## [8][A good game library for Kotlin?](https://www.reddit.com/r/Kotlin/comments/jgr4wz/a_good_game_library_for_kotlin/)
 - url: https://www.reddit.com/r/Kotlin/comments/jgr4wz/a_good_game_library_for_kotlin/
 ---
 Hey, does someone know a good game library for Kotlin (for JVM, native, script/js or wasm)?
-## [5][JUnit 4.12 to 4.13.1: assertThrows deprecates @Test(expected) and @Rule ExpectedException](https://www.reddit.com/r/Kotlin/comments/jgpx4d/junit_412_to_4131_assertthrows_deprecates/)
+## [9][JUnit 4.12 to 4.13.1: assertThrows deprecates @Test(expected) and @Rule ExpectedException](https://www.reddit.com/r/Kotlin/comments/jgpx4d/junit_412_to_4131_assertthrows_deprecates/)
 - url: https://www.youtube.com/watch?v=qsPDdlL-iqA
 ---
 
-## [6][Kotlin JVM Gradle plugin documentation](https://www.reddit.com/r/Kotlin/comments/jgbscp/kotlin_jvm_gradle_plugin_documentation/)
+## [10][Kotlin JVM Gradle plugin documentation](https://www.reddit.com/r/Kotlin/comments/jgbscp/kotlin_jvm_gradle_plugin_documentation/)
 - url: https://www.reddit.com/r/Kotlin/comments/jgbscp/kotlin_jvm_gradle_plugin_documentation/
 ---
 Suppose I wanted to know what properties are available on the Kotlin object introduced by the Kotlin JVM Gradle plugin. From the [Using Gradle reference](https://kotlinlang.org/docs/reference/using-gradle.html) I can see that kotlin.incremental is a valid property, but is there a real reference of all properties and methods of the kotlin JVM plugin (preferably w/o having to use reflection to find them)?
-## [7][Object and Companion object In Kotlin (For beginners)](https://www.reddit.com/r/Kotlin/comments/jg5pq9/object_and_companion_object_in_kotlin_for/)
-- url: https://rylexr2678.hashnode.dev/object-and-companion-object-in-kotlin-1
----
-
-## [8][Can we fix the documentation layout? Specifically the standard lib section?](https://www.reddit.com/r/Kotlin/comments/jg3p65/can_we_fix_the_documentation_layout_specifically/)
-- url: https://www.reddit.com/r/Kotlin/comments/jg3p65/can_we_fix_the_documentation_layout_specifically/
----
-The layout of the STD LIB docs is so shitty it hurts.  There are no collapsable sections once you enter into a package.  Why can't it be laid out like the JavaDocs? Trying to find something on the page requires you to scroll half a mile to find the sub-heading you're even looking for.  Entire sections should be collapsable at least on the subheading
-## [9][trying Kotlin on a new project, but nothing is working, details inside](https://www.reddit.com/r/Kotlin/comments/jfy4o4/trying_kotlin_on_a_new_project_but_nothing_is/)
-- url: https://www.reddit.com/r/Kotlin/comments/jfy4o4/trying_kotlin_on_a_new_project_but_nothing_is/
----
-I don't know how I bungled it up so badly this morning, but I've managed to get it working.  I suspect I didn't actually select Kotlin and I selected Java with Kotlin as an additional framework... and man I don't know I must have just needed coffee or something.  Thanks for chiming in, I'm finally in business now!
-
-~~So I'm trying to make  anew Kotlin project but there's a problem, I can't even produce a Hello World.  Using intellij 2020.2.3 there appears to be two ways to create a Kotlin project (Either selecting Kotlin directly, or choosing Java and selecting Kotlin/JVM as an additional framework), and neither of them work out of the box, and all of the documentation I can find is seemingly out of date (~~[~~https://kotlinlang.org/docs/tutorials/jvm-get-started.html~~](https://kotlinlang.org/docs/tutorials/jvm-get-started.html) ~~for example, the UI options it walks you through don't exist),~~
-
-~~Once you successfully create a project, it fails to setup because the configuration doesn't work.  I had to update some gradle options to get the correct version of gradle for my version of the JVM. Thankfully I was able to find that solution on Stack Overflow because I would have never figured that out on my own or with the available documentation.  So it downloads the new gradle version, and the example main function created by the IDE has no green Run button in the gutter, and attempting to build the project yielded some 2000 lines of LLVM optimization errors.~~
-
-~~Is there a better "hello world" walkthrough somewhere on the internet?  I'm not really finding a lot of help with all of this, and frankly this is kind of a nightmare compared to pretty much every other environment I've ever worked with.~~
-## [10][Does anyone have any experience with Kotlin and Leaflet JS?](https://www.reddit.com/r/Kotlin/comments/jg3ebc/does_anyone_have_any_experience_with_kotlin_and/)
-- url: https://www.reddit.com/r/Kotlin/comments/jg3ebc/does_anyone_have_any_experience_with_kotlin_and/
----
-I'd like to create a web and mobile app that uses an interactive [choropleth map](http://en.wikipedia.org/wiki/Choropleth_map).  Since the release of Kotlin Multiplatform, I was thinking about trying to use [https://leafletjs.com/](https://leafletjs.com/), but I'm not sure how well it will work.  Any advice is much appreciated!

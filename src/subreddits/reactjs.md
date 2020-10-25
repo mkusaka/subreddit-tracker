@@ -70,83 +70,202 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Create React App 4.0 is published](https://www.reddit.com/r/reactjs/comments/jgp4wi/create_react_app_40_is_published/)
-- url: https://github.com/facebook/create-react-app/blob/master/CHANGELOG.md
+## [3][React-linky is a React component to find links in text and turn them into html links](https://www.reddit.com/r/reactjs/comments/jhpig0/reactlinky_is_a_react_component_to_find_links_in/)
+- url: https://github.com/SlashArash/react-linky
 ---
 
-## [4][My portfolio developed in react js along with sass and a few NPM packages, my third ever react application](https://www.reddit.com/r/reactjs/comments/jh6z4s/my_portfolio_developed_in_react_js_along_with/)
-- url: https://lukeet-webdev.com/
+## [4][This codepen is beautiful. How would I do this in React with react-three-fibre?](https://www.reddit.com/r/reactjs/comments/jhqx19/this_codepen_is_beautiful_how_would_i_do_this_in/)
+- url: https://codepen.io/vcomics/pen/djqNrm
 ---
 
-## [5][Do You Know Any Other Ways to Optimize the Performance of React Applications Except These Ones?](https://www.reddit.com/r/reactjs/comments/jh4yux/do_you_know_any_other_ways_to_optimize_the/)
-- url: https://www.reddit.com/r/reactjs/comments/jh4yux/do_you_know_any_other_ways_to_optimize_the/
+## [5][Interesting portfolio website design ideas using reactjs](https://www.reddit.com/r/reactjs/comments/jh93gw/interesting_portfolio_website_design_ideas_using/)
+- url: https://www.reddit.com/r/reactjs/comments/jh93gw/interesting_portfolio_website_design_ideas_using/
 ---
-The way web applications are created has changed since the creation of React.
+Hey everyone, so I recently decided to build my portfolio website using react. I soon realised that my design was a top nav bar with content below just like every other website on the Internet.
 
-By operating on a virtual DOM instead of the real one, it makes updating UI extremely fast and manageable.
+That's why I'm here asking for some inspiration. Which portfolio websites have you come across that are great and different from what we usually see.
 
-It seems that all tools are set up from the beginning, so how is it possible that React apps still have poor performance and delays?
-
-Actually, the way people use the library is no less important.
-
-https://vhudyma-blog.eu/top-7-ways-to-optimize-the-performance-of-react-applications/
-## [6][Any noteworthy React tutorial in the last 3 months?](https://www.reddit.com/r/reactjs/comments/jh2k6h/any_noteworthy_react_tutorial_in_the_last_3_months/)
-- url: https://www.reddit.com/r/reactjs/comments/jh2k6h/any_noteworthy_react_tutorial_in_the_last_3_months/
+Put your portfolio websites below and we all can have a look!
+## [6][Opensourced my portfolio!](https://www.reddit.com/r/reactjs/comments/jhcvvw/opensourced_my_portfolio/)
+- url: https://www.reddit.com/r/reactjs/comments/jhcvvw/opensourced_my_portfolio/
 ---
-Looking to look into a fairly complex project tutorial. Not an ecommerce, and not necessarily a big app, but something that involves complex technologies/techniques if possible.
-## [7][How to make a real time “time ago” function](https://www.reddit.com/r/reactjs/comments/jh4vxi/how_to_make_a_real_time_time_ago_function/)
-- url: https://www.reddit.com/r/reactjs/comments/jh4vxi/how_to_make_a_real_time_time_ago_function/
----
-Im currently making a full stack application and its a blog type website that has a post and comments. 
+Hey, React js community, earlier I posted my [portfolio website](https://karanpratapsingh.com/) in [this thread], thanks for all the good words it was inspired by a friend. After a lot of DMs I decided to immediately opensource it.
 
-Basically I want to tell the user when was the comment added. Like added just now, added two hours ago, added yesterday and so on.
+Website: https://karanpratapsingh.com
 
-And also i want to update it. Lets say you commented on a post and it says “added just now”, and lets say 5mins has passed without the user refreshing the page I would want to to update and say “added a few mins ago” or so. 
+Github: https://github.com/karanpratapsingh/portfolio
 
-Thank you!
-## [8][How to secure a Client Secret ID with create-react-app hosted on Netlify](https://www.reddit.com/r/reactjs/comments/jh8sg7/how_to_secure_a_client_secret_id_with/)
-- url: https://www.reddit.com/r/reactjs/comments/jh8sg7/how_to_secure_a_client_secret_id_with/
----
-Hello,
+Hope this helps, it is fully configurable via configs so it should be easy to make it your own.
 
-I have limited web dev experience. I built a create-react-app, which essentially pulls back data from [http://strava.com](http://strava.com/). Part of the authorization process of getting data from strava is passing a Client Secret ID; something I want to keep secure.
+As always feedback is welcome, and my DMs are open if you have any questions or wanna work with me.
 
-I have a .env file where I store this Client Secret ID value i.e. REACT\_APP\_CLIENT\_SECRET=1234567890 and my .env file resides in .gitignore so it is not exposed my Git Repo.
-
-My app is hosted on Netlify where I then stored the Client Secret ID in a Netlify environment variable under Build and Deploy settings.
-
-I set up a Lambda function to handle the Axios call that passes the Client Secret ID to strava (intended to make the call on the server thus securing my client secret). This all works great.
-
-What I didn’t expect however was that the Client Secret ID is still accessible in source source through the client. 
-
-I've since discovered that no environment variables can be accessed from create-react-app dynamically from the browser when hosted on Netlify since they must be accessed at build time to be used in the static site. Hence why they are bundled into the client source code.
-
-So I am unsure of how to handle this. What are options for keeping this Client Secret ID secure?
-
-Thanks in advance, I hope I have explained this properly.
-## [9][Which is the real impact of npm libraries on the bundle size?](https://www.reddit.com/r/reactjs/comments/jh5yer/which_is_the_real_impact_of_npm_libraries_on_the/)
-- url: https://www.reddit.com/r/reactjs/comments/jh5yer/which_is_the_real_impact_of_npm_libraries_on_the/
----
-I'm building an app that needs a dual range slider &amp; an image caroussel. Some npm librairies are perfect to achieve great results in a short amount of time (rc-slider &amp; react-slick for example), but their combined weight is almost 1mb, which is huge.
-
-If I use Terser plugin in my webpack config, will all the module's weight will have to be downloaded by the user? If I add images, scripts &amp; co on top of this, a page would weight 3 to 4mb, which is pure folly.
-## [10][Help for freemeals.uk](https://www.reddit.com/r/reactjs/comments/jh865e/help_for_freemealsuk/)
-- url: https://www.reddit.com/r/reactjs/comments/jh865e/help_for_freemealsuk/
----
-Hi all, I'm working on freemeals.uk, part of the campaign by Marcus Rashford to get UK schoolchildren free meals over the UK half term, who might otherwise go hungry. I've been doing this since 11am yesterday and now really need some support. If you're a React or JS developer and have some time today to help, please let me know! You don't necessarily have to be from the UK, btw.
-
-The github repo is [here](https://github.com/tomoakley/freemeals.uk) - please don't judge the code! The great Andy Clarke, [@malarkey](https://twitter.com/malarkey) on Twitter, is [working on the design](https://twitter.com/Malarkey/status/1319969646188122112) right now. I'm currently working on geolocating the user to provide more relevant results. 
-
-Thanks!
-## [11][How to test React Context](https://www.reddit.com/r/reactjs/comments/jh0h29/how_to_test_react_context/)
-- url: https://www.samdawson.dev/article/react-context-testing
+Have a great day!
+## [7][Useful Hooks for Tired React Developers](https://www.reddit.com/r/reactjs/comments/jhsqeb/useful_hooks_for_tired_react_developers/)
+- url: https://medium.com/javascript-in-plain-english/useful-custom-hooks-for-tired-react-devs-f2f602dc754f
 ---
 
-## [12][I want to start freelancing to earn extra money while working. Is React good for freelancing?](https://www.reddit.com/r/reactjs/comments/jh1uye/i_want_to_start_freelancing_to_earn_extra_money/)
-- url: https://www.reddit.com/r/reactjs/comments/jh1uye/i_want_to_start_freelancing_to_earn_extra_money/
+## [8][I wrote a pagination library for React!](https://www.reddit.com/r/reactjs/comments/jhj9la/i_wrote_a_pagination_library_for_react/)
+- url: https://www.npmjs.com/package/@impedans/usepagination
 ---
-Hi! I'm a software developer where I mainly use Java/Kotlin. Although I have a job, It is not enough because it is my first job and I have a low salary (Philippines). I'm now thinking of doing freelancing. I know a lot about React, Node/Express, MongoDB/SQL, basically MERN Stack, but is it enough for freelancing? 
 
-I really don't know where to start and I saw a thread where they said React sucks for freelancing due to SEO. I'm thinking of learning Gatsby/Next but it might take me some time to learn because I have a 9-5 job weekdays.
+## [9][Why svgr loads a string instead of the actual svg?](https://www.reddit.com/r/reactjs/comments/jhpwji/why_svgr_loads_a_string_instead_of_the_actual_svg/)
+- url: https://www.reddit.com/r/reactjs/comments/jhpwji/why_svgr_loads_a_string_instead_of_the_actual_svg/
+---
+I have added svgr to my webpack config. When importing a svg in a component, I have a string: `a8ef8eeaa76ec666d9b8ee7e93eea4c4.svg` instead of the actual svg. How to fix this?
 
-Thanks for listening.
+Here is the webpack config with svgr:
+
+    module: {
+          rules: [
+            {
+              test: /\.(ts|js)x?$/,
+              exclude: /node_modules/,
+              use: { loader: "babel-loader" },
+            },
+            { test: /\.css$/, use: ["style-loader", "css-loader"] },
+            { test: /\.(png|jpg|gif)$/, use: ["file-loader"] },
+            {
+              test: /\.svg$/,
+              use: ["@svgr/webpack"],
+            },
+          ],
+        },
+    
+
+And the component:
+
+    import React from "react";
+    import Upload from "../../assets/svg/upload.svg";
+    
+    export default function Icon() {
+      return &lt;div&gt;{Upload}&lt;/div&gt;;
+    }
+## [10][An easy React 17 + TypeScript + Tailwind CSS + NextJS setup](https://www.reddit.com/r/reactjs/comments/jhteuu/an_easy_react_17_typescript_tailwind_css_nextjs/)
+- url: https://blog.codechem.com/an-easy-react-17-typescript-tailwind-css-nextjs-setup
+---
+
+## [11][How to test redux state change in UI?](https://www.reddit.com/r/reactjs/comments/jhtcp3/how_to_test_redux_state_change_in_ui/)
+- url: https://www.reddit.com/r/reactjs/comments/jhtcp3/how_to_test_redux_state_change_in_ui/
+---
+I'm writing tests for my react components and run into some questions which I couldn't find anywhere.
+
+So I have this `Dropdown` button which uses `react-redux` state:
+
+    const Dropdown = (option, dispatch) =&gt; {
+        ...
+        return (
+            ...
+            &lt;button&gt;{ option }&lt;/button&gt;
+            &lt;div id="dropdown-menu"&gt;
+                &lt;a onClick={ selectOption }&gt;Some option&lt;/a&gt; // selectOption dispatches an action which select the option and updates the button's text
+                ...
+            &lt;/div&gt;
+            ...
+        );
+    }
+    
+    const mapState = (state) =&gt; {
+        return {option: state.option};
+    }
+
+I will omit `redux` 's boiler-plates like `action` and `reducer` because they are pretty straightforward in my case. I wrap the root component in `Provider` and pass the `store` to it.
+
+I'm testing this component with `redux-mock-store` and so far I can test whether my dispatched actions are in the mocked `store` or not. Since the `store` is mocked it does not update the component. What I like to test is the updated text on the button when I choose an option like `expect(wrapper.find("button").text()).toEqual("Changed text")` with `enzyme`.
+
+So how do I test this case? Should I use the actual store instead of mocking this? Is this a bad practice? Should I even be testing the updated UI? Please give me some advice on this. Thanks.
+## [12][Need help regarding structure of page build](https://www.reddit.com/r/reactjs/comments/jhsurl/need_help_regarding_structure_of_page_build/)
+- url: https://www.reddit.com/r/reactjs/comments/jhsurl/need_help_regarding_structure_of_page_build/
+---
+I'm struggle a little bit on how to proceed to create an easy "page builder" . All components are already done but the struggle now is how the structure is going to be loaded. 
+
+My tough is to  store a object called layout which then will be loaded from the back-end and then do a map function when the component and object are loaded. I tough it would be possible to somehow sort all objects in the row array so it will be displayed in correct order during loading.
+
+Its for a web shop maybe good to mention so my idea is that the user that ownes the web-shop, login as admin then can create different layouts based on pre-defined components which i build.  Then based on the location add it to the right container in the UI.
+
+I wonder if there is a another solution to do this or if this is even a good way of solve it? Below is the structure I was thinking or at least something similar. Is a good or bad approach?
+
+Not sure if this makes sense at all so please feel free to provide me with feedback, thanks for the support of all the other threads during my learning period of react :)
+
+    const designs = [{
+        id: '1',
+        name: 'Christmas design',
+        activation_date: '2020-11-30',
+        rows: [{
+            id: '2',
+            location: 'top-content',
+            content: [{
+                id: '1',
+                name: '',
+                sort_order: '1',
+                type: "component type",
+                value: [{
+                    id: 1,
+                    name: "Product list",
+                    products: [{
+                        id: '1',
+                        name: 'Skateboard',
+                        price: '80',
+                        image: 'link to image',
+                    }]
+                }]
+            },
+            {
+                id: '1',
+                name: 'middle',
+                sort_order: '2',
+                type: "component type",
+                value: [{
+                    id: 1,
+                    name: "",
+                    products: [{
+                        id: '1',
+                        name: 'Skateboard',
+                        price: '80',
+                        image: 'link to image',
+                    }]
+                }]
+            }]
+        },
+        {
+            id: '2',
+            location: 'middle-content',
+            content: [{
+                id: '1',
+                name: 'Popular Products',
+                sort_order: '1',
+                type: "component type",
+                value: [{
+                    id: 1,
+                    name: "Product list",
+                    products: [{
+                        id: '1',
+                        name: 'Skateboard',
+                        price: '80',
+                        image: 'link to image',
+                    }]
+                }]
+            },
+            {
+                id: '1',
+                name: 'Recent products',
+                sort_order: '2',
+                type: "component type",
+                value: [{
+                    id: 1,
+                    name: "",
+                    products: [{
+                        id: '1',
+                        name: 'Skateboard',
+                        price: '80',
+                        image: 'link to image',
+                    },
+                    {
+                        id: '1',
+                        name: 'Skateboard wheels',
+                        price: '20',
+                        image: 'link to image',
+                    }]
+                }]
+            }]
+        }]
+    }]

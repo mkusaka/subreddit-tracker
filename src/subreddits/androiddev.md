@@ -40,7 +40,88 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I want to revise and relearn the android development after working 4 years as a Android developer.](https://www.reddit.com/r/androiddev/comments/jh4z3r/i_want_to_revise_and_relearn_the_android/)
+## [3][Just published a new Android library. A simple screen that is shown when your app crashes that includes the crash details instead of the normal crash dialog. It's very similar to the one in Flutter.](https://www.reddit.com/r/androiddev/comments/jhjfzu/just_published_a_new_android_library_a_simple/)
+- url: https://github.com/mlegy/red-screen-of-death
+---
+
+## [4][Android Debugging Intervieww](https://www.reddit.com/r/androiddev/comments/jho52p/android_debugging_intervieww/)
+- url: https://www.reddit.com/r/androiddev/comments/jho52p/android_debugging_intervieww/
+---
+I have a final stage Android interview coming up. One of the rounds will be a "bug squash" session where you're given an existing repo, and are supposed to resolve some bugs. If anyone has experience with these kinds of interviews, I'd appreciate some tips or best practices for approaching it. My strategy going in was just to rely on logcat and profiler to detect memory leaks or blocked ui thread/other issues.
+## [5][Rescue View Sanity in Recycler View !](https://www.reddit.com/r/androiddev/comments/jhoxy7/rescue_view_sanity_in_recycler_view/)
+- url: https://www.reddit.com/r/androiddev/comments/jhoxy7/rescue_view_sanity_in_recycler_view/
+---
+More than 90% of apps have recycler views in it and 100% of them have listeners attached to it. If you don't follow the technique, you will go insane debugging your recycler views
+
+Check out my first tech article, feedbacks &amp; suggestions are always welcome :)
+
+[https://pooja-srivs.medium.com/rescue-view-sanity-in-recycler-329ce32b1613](https://pooja-srivs.medium.com/rescue-view-sanity-in-recycler-329ce32b1613)
+## [6][Emulate an Android Studio app in Genymotion or any 3rd party emulator](https://www.reddit.com/r/androiddev/comments/jhssa6/emulate_an_android_studio_app_in_genymotion_or/)
+- url: https://www.reddit.com/r/androiddev/comments/jhssa6/emulate_an_android_studio_app_in_genymotion_or/
+---
+So I started using Android Studio on my Linux PC (8GB ram, i5). When I run the app the default emulator, it shows the google icon after 2-3 minutes, freezes itself and every other app. Laptop is not functional anymore. I have to hold the power button down.
+
+So I wanted to try Genymotion as many people said it was fast. But I couldn't find any Genymotion plugin in the marketplace. What is the solution? Or is there some other method. Can I run that app in genymotion from outside android studio (I think you can)? 
+
+I want to get done with this as soon as possible as its for a project. I don't even like doing this.
+
+Thanks in advance!!
+## [7][WindowInsetsController in compat versions?](https://www.reddit.com/r/androiddev/comments/jhsh03/windowinsetscontroller_in_compat_versions/)
+- url: https://www.reddit.com/r/androiddev/comments/jhsh03/windowinsetscontroller_in_compat_versions/
+---
+Hey, im starting to use keyboard animation and following this tutorial
+
+[https://medium.com/androiddevelopers/animating-your-keyboard-fb776a8fb66d](https://medium.com/androiddevelopers/animating-your-keyboard-fb776a8fb66d)
+
+&amp;#x200B;
+
+But i realized this is not possible to api under 30. There is a version to cmopat versions, or not possible yet and we still have to use globalobserver?
+## [8][18 — 24 October Android Newsletter](https://www.reddit.com/r/androiddev/comments/jhra9w/18_24_october_android_newsletter/)
+- url: https://www.reddit.com/r/androiddev/comments/jhra9w/18_24_october_android_newsletter/
+---
+Stay up to date with Android development, in this week's edition:  
+🗄️ Jetpack DataStore  
+🔬 Benchmark your builds  
+📊 Compare image libraries  
+🏎️ Android Studio productivity tips  
+and much more!
+
+Read it here 👉 [https://vladsonkin.com/android-newsletter-17/](https://vladsonkin.com/android-newsletter-17/)  
+What's your favorite one?
+
+🔥Featuring [@SelfFormat](https://twitter.com/SelfFormat) [@HugoMatGom](https://twitter.com/HugoMatGom) [@AbhishekBansal](https://twitter.com/AbhishekBansal) [@arezaiyan](https://twitter.com/arezaiyan) [@imShreyasPatil](https://twitter.com/imShreyasPatil) [@chethaase](https://twitter.com/chethaase) [@SHKM9](https://twitter.com/SHKM9) [@marcoGomier](https://twitter.com/marcoGomier) [@saurabh\_arora90](https://twitter.com/saurabh_arora90) and many other great authors!
+
+💚 Subscribe and receive new editions directly to your email. Weekly, no spam, unsub anytime.   
+Here is an example: [https://mailchi.mp/7e797c10d3c7/android-newsletter-17](https://mailchi.mp/7e797c10d3c7/android-newsletter-17)
+## [9][Alarm manager not launching on time](https://www.reddit.com/r/androiddev/comments/jhqars/alarm_manager_not_launching_on_time/)
+- url: https://www.reddit.com/r/androiddev/comments/jhqars/alarm_manager_not_launching_on_time/
+---
+ `Intent deleteIntent=new Intent(getApplicationContext(),intentService.class);`
+
+  
+`// deleteIntent.putExtra(newPath,Intent.EXTRA_TEXT);`
+
+  
+ `PendingIntent` 
+
+`pendingIntent=PendingIntent.getService(getApplicationContext(),1002,deleteIntent,PendingIntent.FLAG_ONE_SHOT);`
+
+  
+ `AlarmManager alarmManager=(AlarmManager)getSystemService(Context.ALARM_SERVICE);`
+
+  
+ `alarmManager.set(AlarmManager.ELAPSED_REALTIME_WAKEUP, 1000*6, pendingIntent);`
+
+as you can see this is a simple alarm manager with a pending intent but instead of launching after 1 minute of time it gets launched as the program runs without waiting for the time passed
+## [10][I think Google should give Google Play Billing api the similar treatment they gave to Camera 2 with CameraX](https://www.reddit.com/r/androiddev/comments/jh934k/i_think_google_should_give_google_play_billing/)
+- url: https://www.reddit.com/r/androiddev/comments/jh934k/i_think_google_should_give_google_play_billing/
+---
+I don't know about you, but looking at Billing library, it is a whole lot of too many stages, too many setups, too many listeners just to process a freaking transaction. I wish they simplify it further to cover 90% of uses cases, just like they did away with CameraX.
+## [11][Found system app named false in Android tv. What does it do?](https://www.reddit.com/r/androiddev/comments/jhpjyq/found_system_app_named_false_in_android_tv_what/)
+- url: https://i.redd.it/shxekicr27v51.jpg
+---
+
+## [12][I want to revise and relearn the android development after working 4 years as a Android developer.](https://www.reddit.com/r/androiddev/comments/jh4z3r/i_want_to_revise_and_relearn_the_android/)
 - url: https://www.reddit.com/r/androiddev/comments/jh4z3r/i_want_to_revise_and_relearn_the_android/
 ---
 Hello,
@@ -52,150 +133,3 @@ so i want to relearn everything and go in depth of everything. I wanna know ever
 Now i need your suggestion. Please suggest me which things i should learn to be a good android developer and save me from my frustration? Please guide me. 
 
 Thank you.
-## [4][Improving TextView &amp; Spannable Performance](https://www.reddit.com/r/androiddev/comments/jh7k2f/improving_textview_spannable_performance/)
-- url: https://androidexplained.github.io/android/ui/2020/10/12/improving-spannable-performance.html
----
-
-## [5][Legitimacy of a post that claims: Aarogya Setu app, the covid 19 tracking app of India is recording video while in background.](https://www.reddit.com/r/androiddev/comments/jgwrwm/legitimacy_of_a_post_that_claims_aarogya_setu_app/)
-- url: https://www.reddit.com/r/androiddev/comments/jgwrwm/legitimacy_of_a_post_that_claims_aarogya_setu_app/
----
-Hi all, while my usual reddit scrolling, I found a post on r/India claiming that the Aarogya Setu app, the covid 19 tracking app of India is recording video while in background.
-
-Here's the link to post : https://www.reddit.com/r/india/comments/jgrbt1/the_aarogya_setu_app_on_my_moms_phone_was/?utm_medium=android_app&amp;utm_source=share
-
-Here's my comment on the same post :
-https://www.reddit.com/r/india/comments/jgrbt1/the_aarogya_setu_app_on_my_moms_phone_was/g9sz2zg?utm_medium=android_app&amp;utm_source=share&amp;context=3
-
-What are your thoughts? This feels somewhat important as it can totally be a fake news and people are overreacting to it. Or at the same time, something really messed up is happening.
-## [6][Observations of "requestLegacyExternalStorage" behavior on Android 10 and Android 11](https://www.reddit.com/r/androiddev/comments/jh5uif/observations_of_requestlegacyexternalstorage/)
-- url: https://www.reddit.com/r/androiddev/comments/jh5uif/observations_of_requestlegacyexternalstorage/
----
-I have tested an app on emulator running Android 10 (API 29) and Android 11 (API 30), with the addition of the line:
-
-AndroidManifest.xml:
-
-&gt;android:requestLegacyExternalStorage="true"
-
-This is the method suggested by Google to allow apps to continue to work as before (avoiding the new "scoped storage" restrictions in Android 10 and Android 11).
-
-----
-
-**Results on Android 10 (API 29)**
-
-When the app is targeting Android 10 (API 29) - i.e. using build.gradle:
-
-&gt;compileSdkVersion 30
-&gt;
-&gt;targetSdkVersion 29
-
-then the app works as before (legacy behavior) on BOTH Android 10 and Android 11:
-
-- emulator running Android 10 (API 29)
-
-- emulator running Android 11 (API 30)
-
-That is, the files your app creates in a top level folder on internal storage ARE created correctly.
-
-The app can also delete/rename files as well.
-
-AND these files remain visible and accessible when you try to view them using the built-in Files app (file manager).
-
-This means if you choose to transition to one of the "shared storage" folders like Music or Downloads - you will be able to copy over files there, and you will be able to delete the files from the old location.
-
-----
-
-**Results on Android 11 (API 30)**
-
-However, when you target Android 11 - i.e. using build.gradle:
-
-&gt;compileSdkVersion 30
-&gt;
-&gt;targetSdkVersion 30
-
-
-then the app works as before (legacy behavior) on Android 10 (API 29):
-
-- emulator running Android 10 (API 29)
-
-
-but does NOT work as before on Android 11 (API 30):
-
-- emulator running Android 11 (API 30)
-
-
-i.e. on Android 11, it no longer supports the legacy behavior fully - details:
-
-- the app can read the files it had created before
-
-- but the app cannot write files in the old location
-
-- the app cannot delete/rename files in the old location
-
-
-Essentially the app retains access to the old top level folder in read-only mode only.
-
-This means that once you target Android 11 (API 30) - you will be able to copy over the old files (to the Music or Downloads "shared storage" folder using MediaStore methods), but you will NOT be able to clean up the old files (since  will not have write access).
-
-----
-
-**Conclusion**
-
-This means there IS a way to make your app work as before for storage (legacy behavior) - on Android 10, and on Android 11.
-
-Just target Android 10 (API 29) - with build.gradle:
-
-&gt;compileSdkVersion 30
-&gt;
-&gt;targetSdkVersion 29
-
-This will cover devs up to late 2021 or thereabouts - at which point they will be forced by Google to start targeting Android 11 (just as they are being forced to target Android 10 by Nov 2020).
-
-And as described above, if you choose to target Android 11 (API 30), your app will not fully support legacy behavior for storage.
-
-- the app will still be able to read old files
-
-- but will not be able to create new files, or delete the files it created before
-
-
-----
-
-**For those thinking of transitioning files to a MediaStore location**
-
-This means if an app wants to transition from old location to new "shared storage" locations (like Music or Downloads using MediaStore methods) - it will be able to copy the files even if it starts targeting Android 11 (API 30).
-
-But if it wants to also cleanup (delete) the old files - it will only be able to do so while it is still targeting Android 10 (API 29) - not once it starts targeting Android 11 (API 30).
-
-----
-
-**Questions**
-
-Android 11 emulator did demonstrate bad behaviors - sluggish notifications (not disappearing when they should) - this issue has also been reported by others on stackoverflow.
-
-Same app targeting Android 11 misbehaves when run on Android 11 emulator - widgets misbehave (perhaps this requires some change to code for this to work on Android 11).
-## [7][Free messaging for Android app](https://www.reddit.com/r/androiddev/comments/jh71u8/free_messaging_for_android_app/)
-- url: https://www.reddit.com/r/androiddev/comments/jh71u8/free_messaging_for_android_app/
----
-Is there any service which gives you ACTUALLY free messaging for your app?  What I mean by this is not having the *indirect* costs of Firebase.
-## [8][Curated UDACITY free course A-Z Android Development](https://www.reddit.com/r/androiddev/comments/jh5knl/curated_udacity_free_course_az_android_development/)
-- url: https://docs.google.com/document/d/1sF2z3XEkKM9h-mL-v96_MwdxFJFWXEk7FlehUUJgBvI/edit?usp=drivesdk
----
-
-## [9][Material icons seem to be down?](https://www.reddit.com/r/androiddev/comments/jh0b66/material_icons_seem_to_be_down/)
-- url: https://material.io/resources/icons
----
-
-## [10][“Custom column types” in SQLDelight: Android](https://www.reddit.com/r/androiddev/comments/jh54s0/custom_column_types_in_sqldelight_android/)
-- url: https://developerkp16.medium.com/custom-column-types-in-sqldelight-android-a6f166635464
----
-
-## [11][How to keep foreground service running even if i kill the app manually?](https://www.reddit.com/r/androiddev/comments/jh4d1h/how_to_keep_foreground_service_running_even_if_i/)
-- url: https://www.reddit.com/r/androiddev/comments/jh4d1h/how_to_keep_foreground_service_running_even_if_i/
----
-I have created a foreground service which works on main thread i.e Service and not Intend service and it is working fine if i open all of my phone app. The service keeps running in background but as soon as i kill the app from task bar it get stopped. So how do i keep the serving running even if i kill the app manually.
-(now some of you may say after android O, services can't run in background but im using foreground service and user is being notified through notification that service of X app is running in background)
-## [12][3 Practical Steps To Master Android DataStore](https://www.reddit.com/r/androiddev/comments/jh70xg/3_practical_steps_to_master_android_datastore/)
-- url: https://www.reddit.com/r/androiddev/comments/jh70xg/3_practical_steps_to_master_android_datastore/
----
-3 practical steps with migration: a brief story of how we implemented Jetpack DataStore in Dott.  
-Do you use it in your project? 😊  
-[https://vladsonkin.com/3-practical-steps-to-master-android-datastore/](https://vladsonkin.com/3-practical-steps-to-master-android-datastore/)

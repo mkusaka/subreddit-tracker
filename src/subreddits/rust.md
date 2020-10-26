@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (43/2020)!](https://www.reddit.com/r/rust/comments/jdwuis/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/jdwuis/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (44/2020)!](https://www.reddit.com/r/rust/comments/ji8ukt/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/ji8ukt/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,105 +16,117 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last weeks' thread](https://reddit.com/r/rust/comments/j9l01t/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last weeks' thread](https://reddit.com/r/rust/comments/jdwuis/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 361](https://www.reddit.com/r/rust/comments/jg7hkt/this_week_in_rust_361/)
-- url: https://this-week-in-rust.org/blog/2020/10/21/this-week-in-rust-361/
+## [2][What's everyone working on this week (44/2020)?](https://www.reddit.com/r/rust/comments/ji8vgk/whats_everyone_working_on_this_week_442020/)
+- url: https://www.reddit.com/r/rust/comments/ji8vgk/whats_everyone_working_on_this_week_442020/
+---
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-44-2020/50643?u=llogiq)!
+## [3][What are some of Rust’s weaknesses as a language?](https://www.reddit.com/r/rust/comments/jia2xn/what_are_some_of_rusts_weaknesses_as_a_language/)
+- url: https://www.reddit.com/r/rust/comments/jia2xn/what_are_some_of_rusts_weaknesses_as_a_language/
+---
+I’ve been looking into Rust a lot recently as I become more interested in lower-level programming (coming from C#). Safe to say, there’s a *very fair* share of praise for Rust as a language. While I’m inclined to trust the opinions of some professionals, I think it’s also important to define what weaknesses a language has when considering learning it.
+
+If instead of a long-form comment you have a nice article, I certainly welcome those. I do love me some tech articles.
+
+And as a sort-of general note, I don’t use multiple languages. I’ve used near-exclusively C# for about 6 years, but I’m interesting in delving into a language that’s a little bit (more) portable, and gives finer control.
+
+Thanks.
+## [4][Pueue - v0.8.0. Manage your commandline. Now with unix-sockets, wiki and lots of fixes](https://www.reddit.com/r/rust/comments/jhy803/pueue_v080_manage_your_commandline_now_with/)
+- url: https://github.com/Nukesor/pueue
 ---
 
-## [3][VTracer is a raster to vector graphics converter implemented in Rust. I am one of the authors, questions and comments welcome!](https://www.reddit.com/r/rust/comments/jhppai/vtracer_is_a_raster_to_vector_graphics_converter/)
-- url: https://www.visioncortex.org/vtracer/
+## [5][Is it a good idea to learn Rust and C++ at the same time?](https://www.reddit.com/r/rust/comments/ji8zra/is_it_a_good_idea_to_learn_rust_and_c_at_the_same/)
+- url: https://www.reddit.com/r/rust/comments/ji8zra/is_it_a_good_idea_to_learn_rust_and_c_at_the_same/
+---
+Hello everyone. Im about to go to university and looking forward to do software development/engineering in the future but here is the problem - what language should I use? I think most people will answer "learn c++, it's fast, modern and etc." but I have recently discovered Rust, and on paper it looks even better than c++. I read some posts about this specific topic (c++ or Rust) and indeed, Rust looks really promising but I'm still wondering if C++ is still worth learning, so I decided to ask this, is it worth learning both c++ and Rust at the same time? What are the disadvantages of this approach? I know there are many people here who switched from C++ to Rust, can you please tell me why you did this, and how has your life as a programmer changed since then? Thanks in advance.
+## [6][hrtf - a crate for binaural sound processing](https://www.reddit.com/r/rust/comments/jhz3p6/hrtf_a_crate_for_binaural_sound_processing/)
+- url: https://www.reddit.com/r/rust/comments/jhz3p6/hrtf_a_crate_for_binaural_sound_processing/
+---
+I released [hrtf](https://crates.io/crates/hrtf) crate which helps to emulate binaural sound using Head-Related Transfer Function (HRTF). Check source code on [github](https://github.com/mrDIMAS/hrtf).
+## [7][A global schedule for RustFest Global](https://www.reddit.com/r/rust/comments/jicp5p/a_global_schedule_for_rustfest_global/)
+- url: https://blog.rustfest.eu/a-global-schedule
 ---
 
-## [4][Three open source Sonos projects: efficient embedded development in Rust](https://www.reddit.com/r/rust/comments/jhhyvo/three_open_source_sonos_projects_efficient/)
-- url: https://tech-blog.sonos.com/posts/three-open-source-sonos-projects-in-rust/
+## [8][Code search - a search engine for code, written in Rust](https://www.reddit.com/r/rust/comments/jidv73/code_search_a_search_engine_for_code_written_in/)
+- url: https://medium.com/@colin353/code-search-74a6a0a74789
 ---
 
-## [5][libffi-rs (Rust bindings to libffi) 1.0.0 is released](https://www.reddit.com/r/rust/comments/jhkrgl/libffirs_rust_bindings_to_libffi_100_is_released/)
-- url: https://yorickpeterse.com/articles/libffi-rs-100/
+## [9][a crate to type with your own letter](https://www.reddit.com/r/rust/comments/jhxs3m/a_crate_to_type_with_your_own_letter/)
+- url: https://www.reddit.com/r/rust/comments/jhxs3m/a_crate_to_type_with_your_own_letter/
 ---
-
-## [6][Writing our own simple AWS Lambda Custom Runtime in Rust](https://www.reddit.com/r/rust/comments/jht8z5/writing_our_own_simple_aws_lambda_custom_runtime/)
-- url: http://jamesmcm.github.io/blog/2020/10/24/lambda-runtime/#en
+Hi folks, I've been working on this crate for quite some time, it's my first crate. It let you use a image that contains your own handwritten letter to write anything. I've made this to improve my Rust skills, you can found all about it at [https://crates.io/crates/handmade](https://crates.io/crates/handmade), hope you all enjoy it! The documentation is under construction, but the code is straight forward, and there is an exemple at Readme to help you use this. Please post your results or questions here! I'll be glad to help.
+## [10][audiotags: Parse common metadata in most audio file formats with ease](https://www.reddit.com/r/rust/comments/ji2nns/audiotags_parse_common_metadata_in_most_audio/)
+- url: https://www.reddit.com/r/rust/comments/ji2nns/audiotags_parse_common_metadata_in_most_audio/
 ---
+There are different crates dedicated for parsing metadata in different file formats: [id3](https://crates.io/crates/id3), [mp4ameta](https://crates.io/crates/mp4ameta), [metaflac](https://crates.io/crates/metaflac). While they each provide comprehensive support for the type of metadata they specialize at, their API is not quite consistent and it can be difficult to parse a heterogeneous set of audio files.
 
-## [7][Send files to trash?](https://www.reddit.com/r/rust/comments/jhrmol/send_files_to_trash/)
-- url: https://www.reddit.com/r/rust/comments/jhrmol/send_files_to_trash/
----
-Does anyone know about a (cross-platform) crate that allows sending files to the trash/recycle bin?
+I created the [audiotags](https://crates.io/crates/audiotags) crate ([GitHub](https://github.com/TianyiShi2001/audiotags)) which targets most real-world use cases where the audio files are heterogeneous and the metadata we're interested in are limited (we rarely need to parse the 'remixer' or 'performer webpage', for example (they are rarely documented in files in the first place)). With **audiotags**, you can read the most common and useful metadata (e.g. title, album) with a unified, simple API, like this (showing how to read tags from mp3, m4a, and flac files, modify them and write them to files ):
 
-Something similar to Python's [https://github.com/arsenetar/send2trash](https://github.com/arsenetar/send2trash), but for Rust
-## [8][Debugging for dummies - how to?](https://www.reddit.com/r/rust/comments/jhpliq/debugging_for_dummies_how_to/)
-- url: https://www.reddit.com/r/rust/comments/jhpliq/debugging_for_dummies_how_to/
----
-Hi folks
-
-I'm comming from Python and I have a simple question. How do you debug your app?
-
-In Python:
-User runs the app and hits a critical line - I get traceback in console/logfile. I find the line and put something like `ipdb.set_trace()` and run the app again. Once Python interpreter hits the line it kicks off interactive and nifty debugging console. I can easily debug production apps like that.
-
-In Rust:
-Since Rust is compiled when a problem occurs the app just exits and I see literally nothing. If I know where the problem is I use prints. I also tried gdb - not bad but it feels like it's debugging tool from 80's.
-
-My understanding is to have extensive logging thru whole app (to simulate Python tracebacks). I debug with `println("{:?}", ...)` which seems lame to me. So how do you guys debug small CLI or big apps?
-## [9][Callbacks On Traits.](https://www.reddit.com/r/rust/comments/jhm12j/callbacks_on_traits/)
-- url: https://www.reddit.com/r/rust/comments/jhm12j/callbacks_on_traits/
----
-Sorry for what seems like such a basic question, but I can't seem to find anything on this subject in Rust. I'm looking at re-writing some C++ code into Rust. One of the core functionalities is the storage of a collection of interface pointers which we can arbitrarily bind to a member function and perform a callback. (Like a C# delegate).
-
-E.g. https://godbolt.org/z/8aqnd3
-
-Is there some way of doing the same thing as 'invoke' in Rust with a collection of Traits?
-## [10][Blog Post: Introducing Ungrammar](https://www.reddit.com/r/rust/comments/jh69jx/blog_post_introducing_ungrammar/)
-- url: https://rust-analyzer.github.io/blog/2020/10/24/introducing-ungrammar.html
----
-
-## [11][Need help with concurrency in Rust](https://www.reddit.com/r/rust/comments/jhpv5x/need_help_with_concurrency_in_rust/)
-- url: https://www.reddit.com/r/rust/comments/jhpv5x/need_help_with_concurrency_in_rust/
----
-I have tried learning about concurrent programming in Rust, I have read the official documentation as well as some tutorials on Youtube, but I am still unable to accomplish a very basic task.
-
-I have a vector of some numbers, and I want to create as many threads as there are elements in this vector and do some operations on those elements (for the sake of example, lets say my program wants to square all elements of the vector). Here is what I have tried:
-
-    use std::thread;
-    
-    // this function seems pointless since I could just square inside a closure, but its just for example
-    fn square(s: i32) -&gt; i32 {
-        s * s
-    }
-    
-    // for vector of size N, produces N threads that together process N elements simultaneously
-    fn process_parallel(mut v: &amp;Vec&lt;i32&gt;) {
-        let mut handles = vec![];
-        for i in 0..(v.len()) {
-            let h = thread::spawn(move || {
-                square(v[i])
-            });
-            handles.push(h);
-        }
-        for h in handles {
-            h.join().unwrap();
-        }
-    }
-    
+    use audiotags;
     fn main() {
-        let mut v = vec![1, 2, 3, 4, 5];
-        process_parallel(&amp;mut v);
-        // 'v' should countain [1, 4, 9, 16, 25] now
+        const MP3: &amp;'static str = "お願い！シンデレラ.mp3";
+        let mut tags = audiotags::read_from_path(MP3).unwrap();
+        println!("Title: {:?}", tags.title());
+        println!("Artist: {:?}", tags.artist());
+        tags.set_album_artist("CINDERELLA PROJECT");
+        let album = tags.album().unwrap();
+        println!("Album title and artist: {:?}", (album.title, album.artist));
+        println!("Track: {:?}", tags.track());
+        tags.write_to_path(MP3).unwrap();
+        // Title: Some("お願い！シンデレラ")
+        // Artist: Some("高垣楓、城ヶ崎美嘉、小日向美穂、十時愛梨、川島瑞樹、日野茜、輿水幸子、佐久間まゆ、白坂小梅")
+        // Album title and artist: ("THE IDOLM@STER CINDERELLA GIRLS ANIMATION PROJECT 01 Star!!", Some("CINDERELLA PROJECT"))
+        // Track: (Some(2), Some(4))
+        const M4A: &amp;'static str = "ふわふわ時間.m4a";
+        let mut tags = audiotags::read_from_path(M4A).unwrap();
+        // without this crate you would call mp4ameta::Tag::read_from_path()
+        println!("Title: {:?}", tags.title());
+        println!("Artist: {:?}", tags.artist());
+        let album = tags.album().unwrap();
+        println!("Album title and artist: {:?}", (album.title, album.artist));
+        tags.set_total_tracks(4);
+        println!("Track: {:?}", tags.track());
+        tags.write_to_path(M4A).unwrap();
+        // Title: Some("ふわふわ時間")
+        // Artist: Some("桜高軽音部 [平沢唯・秋山澪・田井中律・琴吹紬(CV:豊崎愛生、日笠陽子、佐藤聡美、寿美菜子)]")
+        // Album title and artist: ("ふわふわ時間", Some("桜高軽音部 [平沢唯・秋山澪・田井中律・琴吹紬(CV:豊崎愛生、日笠陽子、佐藤聡美、寿美菜子)]"))
+        // Track: (Some(1), Some(4))
+        const FLAC: &amp;'static str = "意味-無-ジュニーク・ニコール.flac";
+        let mut tags = audiotags::read_from_path(FLAC).unwrap();
+        // without this crate you would call metaflac::Tag::read_from_path()
+        println!("Title: {:?}", tags.title());
+        println!("Artist: {:?}", tags.artist());
+        let album = tags.album().unwrap();
+        println!("Album title and artist: {:?}", (album.title, album.artist));
+        tags.set_year(2017);
+        println!("Year: {:?}", tags.year());
+        tags.write_to_path(FLAC).unwrap();
+        // Title: Some("意味/無/ジュニーク・ニコール")
+        // Artist: Some("岡部啓一")
+        // Album title and artist: ("NieR:Automata Original Soundtrack", Some("SQUARE ENIX"))
+        // Year: Some(2017)
     }
 
-This gives me an error that `v` needs to have static lifetime (which I am not sure is possible). I have also tried wrapping the vector in `std::sync::Arc` but the lifetime requirement still seems to persist. Whats the correct way to accomplish this task?
-
-I know there are powerful external crates for concurrency such as `rayon`, which has method `par_iter_mut()` that would essentially allow me to accomplish this in a single line, but I want to learn about concurrency in Rust and how to write small tasks such as this on my own, so I don't want to move away from `std` for now. 
-
-Any help would be appreciated.
-## [12][Is there a way to traverse all `impl`s for a trait?](https://www.reddit.com/r/rust/comments/jhqnum/is_there_a_way_to_traverse_all_impls_for_a_trait/)
-- url: https://www.reddit.com/r/rust/comments/jhqnum/is_there_a_way_to_traverse_all_impls_for_a_trait/
+Currently this crate is not stable. I post it here to check whether I am re-inventing the wheel. If it is considered valuable, I will continue developing it. I don't have much experience in Rust, so feel free to open an issue or submit a PR to correct by bad design!
+## [11][Building a Recipe Manager - Part 3 - Parsing and more Druid](https://www.reddit.com/r/rust/comments/jie6oo/building_a_recipe_manager_part_3_parsing_and_more/)
+- url: https://bheisler.github.io/post/recipe-manager-part-3-parsing-and-more-druid/
 ---
-Hi, everyone,
 
-I’m new to Rust (I usually use other languages), but I found it a good fit for some new project of mine. Now the problem is that said project requires applying different functions to different input, and the most elegant way would be to use traits as far as I can see. (Imagine the standard example of `Animal` and `feed()` must differ according to which animal it actually is...)
+## [12][IDE experience with rust-analyzer on VSCode vs. Vim](https://www.reddit.com/r/rust/comments/ji342x/ide_experience_with_rustanalyzer_on_vscode_vs_vim/)
+- url: https://www.reddit.com/r/rust/comments/ji342x/ide_experience_with_rustanalyzer_on_vscode_vs_vim/
+---
+I'm very much a beginner when it comes to IDE backends and tooling. I am hoping I can gain some education and enlightenment regarding a few questions I had:
 
-Now the number of possible implementations is really huge. Does `main.rs` need to know all of them explicitly - that would certainly increase the code size - or is there a way to loop through all available `impl`s until one matches certain criteria (e.g. `where(animal.name == args.name)`?
+1. I am curious what is the feature behind rust-analyzer's integration with VSCode that allows me to see "background info" of types on each line e.g.
+
+[This is particularly nice when chaining multiple lines of combinators with a bunch of types I am less familiar with.](https://preview.redd.it/0doaxil5lbv51.png?width=950&amp;format=png&amp;auto=webp&amp;s=6b30d453fdb3bd7ff3f859b0f1c8e55f5a124b8a)
+
+Edit for 1: These are called "inlay hints" apparently and are covered in [https://www.reddit.com/r/rust/comments/hh6cue/any\_way\_to\_make\_vim\_do\_this\_for\_rust/](https://www.reddit.com/r/rust/comments/hh6cue/any_way_to_make_vim_do_this_for_rust/)
+
+2.  Is there a way to enable such functionality in Vim? And which Vim setups for Rust have people found the most success with (code-completion, goto, linting, formatting, etc.)? I have found that rust-analyzer + VSCode is surprisingly powerful on its own.
+
+Edit for 2: I have looked at/attempted a couple different setups/guides. The functionality I was referencing was specifically for that type highlighting feature that appears on VS Code pretty seamlessly. My latter question is regarding the experience people have had integrating Rust support for Vim (possibly in comparison to VSCode).
+
+Thank you in advance for your responses!

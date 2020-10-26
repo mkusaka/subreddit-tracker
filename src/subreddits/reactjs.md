@@ -70,202 +70,140 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][React-linky is a React component to find links in text and turn them into html links](https://www.reddit.com/r/reactjs/comments/jhpig0/reactlinky_is_a_react_component_to_find_links_in/)
-- url: https://github.com/SlashArash/react-linky
+## [3][Keeping up with React Libraries](https://www.reddit.com/r/reactjs/comments/jicfxg/keeping_up_with_react_libraries/)
+- url: https://maxrozen.com/keeping-up-with-react-libraries/
 ---
 
-## [4][This codepen is beautiful. How would I do this in React with react-three-fibre?](https://www.reddit.com/r/reactjs/comments/jhqx19/this_codepen_is_beautiful_how_would_i_do_this_in/)
-- url: https://codepen.io/vcomics/pen/djqNrm
+## [4][I was able get copying cells from my react-virtualized grid to excel working! Here's how...](https://www.reddit.com/r/reactjs/comments/jieg9k/i_was_able_get_copying_cells_from_my/)
+- url: https://v.redd.it/npexh5w9xfv51
 ---
 
-## [5][Interesting portfolio website design ideas using reactjs](https://www.reddit.com/r/reactjs/comments/jh93gw/interesting_portfolio_website_design_ideas_using/)
-- url: https://www.reddit.com/r/reactjs/comments/jh93gw/interesting_portfolio_website_design_ideas_using/
----
-Hey everyone, so I recently decided to build my portfolio website using react. I soon realised that my design was a top nav bar with content below just like every other website on the Internet.
-
-That's why I'm here asking for some inspiration. Which portfolio websites have you come across that are great and different from what we usually see.
-
-Put your portfolio websites below and we all can have a look!
-## [6][Opensourced my portfolio!](https://www.reddit.com/r/reactjs/comments/jhcvvw/opensourced_my_portfolio/)
-- url: https://www.reddit.com/r/reactjs/comments/jhcvvw/opensourced_my_portfolio/
----
-Hey, React js community, earlier I posted my [portfolio website](https://karanpratapsingh.com/) in [this thread], thanks for all the good words it was inspired by a friend. After a lot of DMs I decided to immediately opensource it.
-
-Website: https://karanpratapsingh.com
-
-Github: https://github.com/karanpratapsingh/portfolio
-
-Hope this helps, it is fully configurable via configs so it should be easy to make it your own.
-
-As always feedback is welcome, and my DMs are open if you have any questions or wanna work with me.
-
-Have a great day!
-## [7][Useful Hooks for Tired React Developers](https://www.reddit.com/r/reactjs/comments/jhsqeb/useful_hooks_for_tired_react_developers/)
+## [5][Useful Hooks for Tired React Developers](https://www.reddit.com/r/reactjs/comments/jhsqeb/useful_hooks_for_tired_react_developers/)
 - url: https://medium.com/javascript-in-plain-english/useful-custom-hooks-for-tired-react-devs-f2f602dc754f
 ---
 
-## [8][I wrote a pagination library for React!](https://www.reddit.com/r/reactjs/comments/jhj9la/i_wrote_a_pagination_library_for_react/)
-- url: https://www.npmjs.com/package/@impedans/usepagination
+## [6][Unit Testing React App with Jest/Enzyme](https://www.reddit.com/r/reactjs/comments/jidb1e/unit_testing_react_app_with_jestenzyme/)
+- url: https://www.reddit.com/r/reactjs/comments/jidb1e/unit_testing_react_app_with_jestenzyme/
 ---
+Hey folks,
 
-## [9][Why svgr loads a string instead of the actual svg?](https://www.reddit.com/r/reactjs/comments/jhpwji/why_svgr_loads_a_string_instead_of_the_actual_svg/)
-- url: https://www.reddit.com/r/reactjs/comments/jhpwji/why_svgr_loads_a_string_instead_of_the_actual_svg/
----
-I have added svgr to my webpack config. When importing a svg in a component, I have a string: `a8ef8eeaa76ec666d9b8ee7e93eea4c4.svg` instead of the actual svg. How to fix this?
+Hope you are doing great. 
 
-Here is the webpack config with svgr:
+I have recently started exploring unit testing. I am a bit confused that what kind of tests should I write.
 
-    module: {
-          rules: [
-            {
-              test: /\.(ts|js)x?$/,
-              exclude: /node_modules/,
-              use: { loader: "babel-loader" },
-            },
-            { test: /\.css$/, use: ["style-loader", "css-loader"] },
-            { test: /\.(png|jpg|gif)$/, use: ["file-loader"] },
-            {
-              test: /\.svg$/,
-              use: ["@svgr/webpack"],
-            },
-          ],
-        },
+Example: Counter App has three buttons Increment/Decrement and a Reset button.
+
+Should I write a test that checks whether a display field is present or not, because its obvious that it should be there.
+
+I have written some tests for Counter App. Please have a look at it and let me know if I am going in the right direction  
+
+
+Note: I am newbie
+
+    describe('Counter', () =&gt; {
+      it('renders Counter component without crashing', () =&gt; {
+        shallow(&lt;Counter /&gt;);
+      });
     
-
-And the component:
-
-    import React from "react";
-    import Upload from "../../assets/svg/upload.svg";
+      it('contains a helpful text which explains our App', () =&gt; {
+        const title = 'This is a Counter App. Use - button to decrease value and + button to increase value.';
+        const wrapper = shallow(&lt;Counter /&gt;);
+        expect(wrapper.contains(title)).toBe(true);
+      });
     
-    export default function Icon() {
-      return &lt;div&gt;{Upload}&lt;/div&gt;;
-    }
-## [10][An easy React 17 + TypeScript + Tailwind CSS + NextJS setup](https://www.reddit.com/r/reactjs/comments/jhteuu/an_easy_react_17_typescript_tailwind_css_nextjs/)
-- url: https://blog.codechem.com/an-easy-react-17-typescript-tailwind-css-nextjs-setup
----
-
-## [11][How to test redux state change in UI?](https://www.reddit.com/r/reactjs/comments/jhtcp3/how_to_test_redux_state_change_in_ui/)
-- url: https://www.reddit.com/r/reactjs/comments/jhtcp3/how_to_test_redux_state_change_in_ui/
----
-I'm writing tests for my react components and run into some questions which I couldn't find anywhere.
-
-So I have this `Dropdown` button which uses `react-redux` state:
-
-    const Dropdown = (option, dispatch) =&gt; {
-        ...
-        return (
-            ...
-            &lt;button&gt;{ option }&lt;/button&gt;
-            &lt;div id="dropdown-menu"&gt;
-                &lt;a onClick={ selectOption }&gt;Some option&lt;/a&gt; // selectOption dispatches an action which select the option and updates the button's text
-                ...
-            &lt;/div&gt;
-            ...
-        );
-    }
+      it('checks if inc/dec buttons are there', () =&gt; {
+        const wrapper = shallow(&lt;Counter /&gt;);
+        const incButton = wrapper.find('#increment').dive().text();
+        const decButton = wrapper.find('#decrement').dive().text();
+        expect(incButton).toEqual('+');
+        expect(decButton).toEqual('-');
+      });
     
-    const mapState = (state) =&gt; {
-        return {option: state.option};
-    }
-
-I will omit `redux` 's boiler-plates like `action` and `reducer` because they are pretty straightforward in my case. I wrap the root component in `Provider` and pass the `store` to it.
-
-I'm testing this component with `redux-mock-store` and so far I can test whether my dispatched actions are in the mocked `store` or not. Since the `store` is mocked it does not update the component. What I like to test is the updated text on the button when I choose an option like `expect(wrapper.find("button").text()).toEqual("Changed text")` with `enzyme`.
-
-So how do I test this case? Should I use the actual store instead of mocking this? Is this a bad practice? Should I even be testing the updated UI? Please give me some advice on this. Thanks.
-## [12][Need help regarding structure of page build](https://www.reddit.com/r/reactjs/comments/jhsurl/need_help_regarding_structure_of_page_build/)
-- url: https://www.reddit.com/r/reactjs/comments/jhsurl/need_help_regarding_structure_of_page_build/
+      it('checks if initial value of counter is zero', () =&gt; {
+        const wrapper = shallow(&lt;Counter /&gt;);
+        const counter = wrapper.find('#counter-input').props().value;
+        expect(counter).toBe(0);
+      });
+    
+      it('checks if Increment button increases value by 1', () =&gt; {
+        const wrapper = shallow(&lt;Counter /&gt;);
+    
+        const incButton = wrapper.find('#increment');
+        incButton.simulate('click');
+    
+        const counter = wrapper.find('#counter-input').props().value;
+        expect(counter).toBe(1);
+      });
+    
+      it('checks if Decrement button decreases value by 1', () =&gt; {
+        const wrapper = shallow(&lt;Counter /&gt;);
+    
+        const incButton = wrapper.find('#decrement');
+        incButton.simulate('click');
+    
+        const counter = wrapper.find('#counter-input').props().value;
+        expect(counter).toBe(-1);
+      });
+    
+      it('checks Reset button functionality', () =&gt; {
+        const wrapper = shallow(&lt;Counter /&gt;);
+    
+        const incButton = wrapper.find('#increment');
+        incButton.simulate('click');
+    
+        const counter = wrapper.find('#counter-input').prop('value');
+        expect(counter).toBe(1);
+    
+        wrapper.find('.reset-btn').simulate('click');
+        expect(wrapper.find('#counter-input').prop('value')).toBe(0);
+      });
+    });
+## [7][Is it tough to get projects as a freelancer in React Js ?](https://www.reddit.com/r/reactjs/comments/jidlhv/is_it_tough_to_get_projects_as_a_freelancer_in/)
+- url: https://www.reddit.com/r/reactjs/comments/jidlhv/is_it_tough_to_get_projects_as_a_freelancer_in/
 ---
-I'm struggle a little bit on how to proceed to create an easy "page builder" . All components are already done but the struggle now is how the structure is going to be loaded. 
+I have studied react js for the past 3 months and got myself convenient in every topic of React as well as its libraries and redux.
+I have designed and developed a covid tracker, food delivery app and a shopping app using react. 
+Will it be difficult for me to start freelancing in React although if I have a good looking portfolio with my projects hosted on the server for the client to refer ?
 
-My tough is to  store a object called layout which then will be loaded from the back-end and then do a map function when the component and object are loaded. I tough it would be possible to somehow sort all objects in the row array so it will be displayed in correct order during loading.
+Any advice will be appreciated.
+## [8][Estimating an UI application](https://www.reddit.com/r/reactjs/comments/ji7ain/estimating_an_ui_application/)
+- url: https://www.reddit.com/r/reactjs/comments/ji7ain/estimating_an_ui_application/
+---
+How do you usually arrive at estimates? I have always faced backlashes on my gut feel estimates. Do we have any easy/ scientific way of estimating so that gut feel estimates can be more accurate. 
 
-Its for a web shop maybe good to mention so my idea is that the user that ownes the web-shop, login as admin then can create different layouts based on pre-defined components which i build.  Then based on the location add it to the right container in the UI.
 
-I wonder if there is a another solution to do this or if this is even a good way of solve it? Below is the structure I was thinking or at least something similar. Is a good or bad approach?
+Consider this for a UI application based on react.
+## [9][Using React with Parcel.js](https://www.reddit.com/r/reactjs/comments/ji9zph/using_react_with_parceljs/)
+- url: https://www.reddit.com/r/reactjs/comments/ji9zph/using_react_with_parceljs/
+---
+So I've been interested in trying out Parcel and finally had some motivation. I've set my project us and I'm having problems with Parcel not reloading and seemingly not watching my files correctly.
 
-Not sure if this makes sense at all so please feel free to provide me with feedback, thanks for the support of all the other threads during my learning period of react :)
+I'm not doing anything crazy, I think.. I have a `src` folder with an `index.html` and `index.tsx` and my root `style.scss`. Whenever I save these they are immediately shown in my browser.
 
-    const designs = [{
-        id: '1',
-        name: 'Christmas design',
-        activation_date: '2020-11-30',
-        rows: [{
-            id: '2',
-            location: 'top-content',
-            content: [{
-                id: '1',
-                name: '',
-                sort_order: '1',
-                type: "component type",
-                value: [{
-                    id: 1,
-                    name: "Product list",
-                    products: [{
-                        id: '1',
-                        name: 'Skateboard',
-                        price: '80',
-                        image: 'link to image',
-                    }]
-                }]
-            },
-            {
-                id: '1',
-                name: 'middle',
-                sort_order: '2',
-                type: "component type",
-                value: [{
-                    id: 1,
-                    name: "",
-                    products: [{
-                        id: '1',
-                        name: 'Skateboard',
-                        price: '80',
-                        image: 'link to image',
-                    }]
-                }]
-            }]
-        },
-        {
-            id: '2',
-            location: 'middle-content',
-            content: [{
-                id: '1',
-                name: 'Popular Products',
-                sort_order: '1',
-                type: "component type",
-                value: [{
-                    id: 1,
-                    name: "Product list",
-                    products: [{
-                        id: '1',
-                        name: 'Skateboard',
-                        price: '80',
-                        image: 'link to image',
-                    }]
-                }]
-            },
-            {
-                id: '1',
-                name: 'Recent products',
-                sort_order: '2',
-                type: "component type",
-                value: [{
-                    id: 1,
-                    name: "",
-                    products: [{
-                        id: '1',
-                        name: 'Skateboard',
-                        price: '80',
-                        image: 'link to image',
-                    },
-                    {
-                        id: '1',
-                        name: 'Skateboard wheels',
-                        price: '20',
-                        image: 'link to image',
-                    }]
-                }]
-            }]
-        }]
-    }]
+Inside src, I have a `components` and `scenes` file. When I import my `Home` component (from the `scenes` directory), this is immediately shown. However, if I make any changes to `Home` or any components in the `components` directory, nothing is ever updated which is really annoying and I can't work out what I'm doing wrong. 
+
+The styles are changes in the components are updated if I stop and start the watcher (`yarn dev`) but otherwise nothing really updates.
+
+Am I doing something wrong with my config?
+## [10][Hosting images](https://www.reddit.com/r/reactjs/comments/jib3dr/hosting_images/)
+- url: https://www.reddit.com/r/reactjs/comments/jib3dr/hosting_images/
+---
+Hi im currently making a full stack website using the MERN stack. I have a profile component which lets you upload an image and crop it like in twitter but im having trouble on where and how to store it. 
+
+I read something suggesting using base64 but people said that is was slow.  Is there any other alternatives?
+## [11][Write your React App with Fast Refresh in Deno.](https://www.reddit.com/r/reactjs/comments/jid8zt/write_your_react_app_with_fast_refresh_in_deno/)
+- url: https://www.reddit.com/r/reactjs/comments/jid8zt/write_your_react_app_with_fast_refresh_in_deno/
+---
+Hi, let me introduce you to [Aleph.js](https://alephjs.org/), a React Framework in [Deno](https://deno.land), inspired by [Next.js](https://nextjs.org).
+
+https://reddit.com/link/jid8zt/video/3hs8jzqjifv51/player
+
+[https://alephjs.org](https://alephjs.org/)
+## [12][I'm looking for a fullscreen carousel with pinch/pan/zoom features](https://www.reddit.com/r/reactjs/comments/jid5wv/im_looking_for_a_fullscreen_carousel_with/)
+- url: https://www.reddit.com/r/reactjs/comments/jid5wv/im_looking_for_a_fullscreen_carousel_with/
+---
+I used to implement the carousel mysel and use react-zoom-pan-pinch on the pictures displayed.
+
+Are there any more convenients solutions?
+
+Thx

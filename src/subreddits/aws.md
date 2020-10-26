@@ -27,139 +27,98 @@ AWS always releases a bunch of features, sometimes everyday or atleast once a we
 10: More features in App Mesh(Circuit breaker, Rate Limiting)
 
 P.S: Not sure if some features are already available, but if something is missing, please feel free to add
-## [2][Many many MySQL Aurora database issues. Anyone else?](https://www.reddit.com/r/aws/comments/jhi0yi/many_many_mysql_aurora_database_issues_anyone_else/)
-- url: https://www.reddit.com/r/aws/comments/jhi0yi/many_many_mysql_aurora_database_issues_anyone_else/
+## [2][CodePipeline with multiple branches seems absurdly complex](https://www.reddit.com/r/aws/comments/ji5gql/codepipeline_with_multiple_branches_seems/)
+- url: https://www.reddit.com/r/aws/comments/ji5gql/codepipeline_with_multiple_branches_seems/
 ---
-We've had a frustrating few months with AWS Aurora (various version up to 2.08.2) . Some issues we've had:
+[https://aws.amazon.com/blogs/devops/multi-branch-codepipeline-strategy-with-event-driven-architecture/](https://aws.amazon.com/blogs/devops/multi-branch-codepipeline-strategy-with-event-driven-architecture/)
 
-- Under heavy loads, database returns incorrect response (response was supposed to be delivered to a different connection for a different query). Mismatched responses to requests.
-Workaround: we found we had an expensive recursive query for circular dependencies existed. Pulling this data from the database would cause the database or Aurora proxy to become confused, and return incorrect responses for small random percentage of various queries moving forward. Fix would be to restart the database or failover between the master and replica.
+We are considering moving to CodePipeline and we use GitFlow as our release methodology in which we deploy "release branches" which are branches cut off develop when we decide new features and fixes are ready. GitFlow seems like a time and battle tested strategy for organizations that want to have deliberate releases.
 
-- Refuses connections even though the database is only using 200 out of 2,000 allowed (XLarge instance). Database metrics across the board (CPU %, Memory %, Disk Space) are all within 10% of actual capacity
-Seems to happen where we are creating a high number of connections (and then releasing them after). Seems to be a bug where Aurora or the Aurora proxy believes it has a higher number of connections than it actually has. Aurora dashboard reports a very low number of connections. Could be related to the proxy/load balancer Aurora automatically configures between our application servers and the database server.
+Its crazy to me that CodePipeline doesn't have native support for GitFlow which is a multi-branch deploy workflow. The solution provided by the link above suggests using lambda to create CloudFormation stacks. This seems crazy and an abuse of what CloudFormation is designed for. The CloudFormation interface isn't designed for thousands of stacks. Creating a stack for every branch will add an incredible amount of noise to the interface if you use Cfn for standard infrastructure-as-code uses.
 
-- Locks on table rows being acquired and never being released
-Every few weeks the database would be unable to acquire a row lock for one of our tables we were using to increment a counter in a thread-safe way. Simple query "SELECT col FROM table WHERE &lt;bool&gt; FOR UPDATE;" which is supposed to lock a single row and implicitly unlock at the end of transaction did not appear to happen. in these times, "SHOW ENGINE INNODB STATUS" would show zero deadlocks.
+Am I missing something?
 
-We never had these problems with a plain-vanilla MySQL 5.7 Community Edition.  It's frustrating that we cannot find anyone with similar experiences to us on the internet. Seems large companies with presumably more traffic are using Aurora without any issues. A lot of these issue do sound like they could be related to the proxy between our application servers and the Aurora database, has anyone had anything at all similar?
+Further, I'm not sure if there is a language barrier issue in the article, but the following paragraph seems very passive aggressive:
 
-We have not tried updating to 2.09.0 yet, since we are at the end of our rope, and looking to move back to either RDS or our own hosted version of MySQL but I see it fixes an [extensive list of deadlock issues](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.2090.html) which makes me feel we cannot be the only ones
-## [3][Suggestions AutoScalingGroup to serve as little 50x errors as possible](https://www.reddit.com/r/aws/comments/jht18t/suggestions_autoscalinggroup_to_serve_as_little/)
-- url: https://www.reddit.com/r/aws/comments/jht18t/suggestions_autoscalinggroup_to_serve_as_little/
+&gt;It’s important to note that trunk-based is, by far, the best strategy for taking full advantage of a DevOps approach; this is the branching strategy that AWS recommends to its customers. On the other hand, many customers like to work with multiple branches and believe it justifies the effort and complexity in dealing with branching merges. This solution is for these customers.
+
+It's as if they are saying, if you're not using trunk based workflow, you're inferior and overly complicating things. When in reality, it feels like AWS is overly complicating the workflow necessary to support a very standard methodology.
+
+Anyone with me on this?  
+Are there other GitFlow users out there who use CodePipeline?  
+Are there other GitFlow users out there who use something else to release to AWS?
+## [3][Failing over with falling over - Stack Overflow Blog](https://www.reddit.com/r/aws/comments/jibnsu/failing_over_with_falling_over_stack_overflow_blog/)
+- url: https://stackoverflow.blog/2020/10/23/adrian-cockcroft-aws-failover-chaos-engineering-fault-tolerance-distaster-recovery/
 ---
-Hi, hope someone can give me some suggestions please.
 
-I try to set up an AutoScalingGroup in order to serve as little 50x errors as possible when scaling aggressively to accommodate huge spikes of traffic, for example -thousands of users online within a couple of minutes.
-## [4][Slack outage Oct 5, 2020 CoE?](https://www.reddit.com/r/aws/comments/jhswuc/slack_outage_oct_5_2020_coe/)
-- url: https://www.reddit.com/r/aws/comments/jhswuc/slack_outage_oct_5_2020_coe/
+## [4][Need SMB shared folder on AWS](https://www.reddit.com/r/aws/comments/jienh1/need_smb_shared_folder_on_aws/)
+- url: https://www.reddit.com/r/aws/comments/jienh1/need_smb_shared_folder_on_aws/
 ---
-Why do neither Slack nor AWS offer a root cause of the performance issues [1] on Oct 5, 2020? Was it something Slack misconfigured or did AWS drop the ball? Since Slack is “all in” on AWS, this is disconcerting. 
+Hello,
 
-[1] https://www.cnn.com/2020/10/05/tech/slack-down-today/index.html
-## [5][Organization’s dns server via transit gateway is not resolving AmazonAWS.com addresses](https://www.reddit.com/r/aws/comments/jhsw8h/organizations_dns_server_via_transit_gateway_is/)
-- url: https://www.reddit.com/r/aws/comments/jhsw8h/organizations_dns_server_via_transit_gateway_is/
+Like the title says, I need to provide a shared folder (SMB) hosted on AWS, it will be accesible from a local LAN. I don't know which option is better: S3 Bucket with AWS Appliance? Amazon FSx? Or I missing something? Help please.
+## [5][AWS IAM Introduction](https://www.reddit.com/r/aws/comments/jhu004/aws_iam_introduction/)
+- url: https://www.reddit.com/r/aws/comments/jhu004/aws_iam_introduction/
 ---
-As part of AWS organizations, my IT setup my dhcp options sets to to have my company’s dns servers. However I cannot resolve amazonaws.com addresses with these Name servers. While the issue could be my IT, I want to make sure I’ve done all i can on my end. 
+Hey everyone - thought I'd post a brief overview of IAM that I initially wrote for work on here. 
 
-Can I modify resolv.conf to be able to use both my orgs dns servers and Amazon provided dns servers ? Or something with route 53?
-## [6][AWS AppSync + WAF + Cognito + DynamoDB (CDK + CF)](https://www.reddit.com/r/aws/comments/jhrcgu/aws_appsync_waf_cognito_dynamodb_cdk_cf/)
-- url: https://www.reddit.com/r/aws/comments/jhrcgu/aws_appsync_waf_cognito_dynamodb_cdk_cf/
+Typically IAM is something devs learn "on the way" to building things, but I figure a brief rundown could be useful for a lot of people:
+
+[https://towardsdatascience.com/aws-iam-introduction-20c1f017c43](https://towardsdatascience.com/aws-iam-introduction-20c1f017c43)
+## [6][AWS Inspector HELP!!!! Plz....](https://www.reddit.com/r/aws/comments/jieha9/aws_inspector_help_plz/)
+- url: https://www.reddit.com/r/aws/comments/jieha9/aws_inspector_help_plz/
 ---
+Greetings community
+
+Does anyone know how Amazon inspector actually works?
+
+Looking at the results for a Linux instance it had Windows CVEs on it and vise versa.
+
+My instances are at the latest patch level but still showing 500+ vulnerabilities?!?
+
+Any help graciously accepted :)
+## [7][Rest API on AWS: Will It Bankrupt Me?](https://www.reddit.com/r/aws/comments/jidckk/rest_api_on_aws_will_it_bankrupt_me/)
+- url: https://www.reddit.com/r/aws/comments/jidckk/rest_api_on_aws_will_it_bankrupt_me/
+---
+I'm building a SAAS product. Its not overly complicated but for the sake of brevity on this post:
+
+It will allow users to create projects and within each project create "Diaries". In simple terms its a daily record of events which include time, description + images and video. In return visualisations and reports can be created using the collected data.
+
+I'm considering using AWS Lambdas + API Gateway as the backend. I don't expect each user to generate more than a million requests per month with an entry subscription price of approx. $300 per user (I know it very high but there's very good reason for it  as I've worked in the target market industry for several years).
+
+The simplicity of user authentication and setup of such as a system on AWS is too attractive to ignore as opposed to using Node or Flask for my backend.
+
+Has anyone had experience with such a setup? It seems that a lot of posts here are warning me about the AWS bill but is it really that expensive??
+## [8][CDK best practice for CI/CD with stages+config+env](https://www.reddit.com/r/aws/comments/jialp1/cdk_best_practice_for_cicd_with_stagesconfigenv/)
+- url: https://www.reddit.com/r/aws/comments/jialp1/cdk_best_practice_for_cicd_with_stagesconfigenv/
+---
+Hi everyone, I'm new to CDK but I'm used to serverless-framework. Our current approach is to have a git repository for each project and each repository has at least 2 main branches: 
+
+* master for production env on AWS
+* staging for staging env on AWS
+
+Every env we have a different configuration (account and region) + specific config for what we are going to deploy, for example, a different domain/subdomain based on the env.
+
+Is there a best practice that allows me to push to a branch, load automatically the config (account+region) + env variables and deploy on that specific AWS env?
+
+I've tried to look for that best practice on the official documentation, forums, and slack channels but to be honest, I never found something official.
+## [9][Force Workspaces to only show up on 2 of the 3 monitors](https://www.reddit.com/r/aws/comments/ji5hkh/force_workspaces_to_only_show_up_on_2_of_the_3/)
+- url: https://www.reddit.com/r/aws/comments/ji5hkh/force_workspaces_to_only_show_up_on_2_of_the_3/
+---
+I've been trying to research this, but I cannot find a solution, nor a 3rd party application that can give me what I need. Basically, I need to prevent AWS WorkSpaces from showing up on 1 of my 3 monitors, but I'd like it to be on the other 2. I cannot adjust the display settings within the workspaces application to try and "disconnect" one of the displays, so that isn't going to work. Essentially, the reason is I need 2 of my screens dedicated to running certain work software and my 3rd monitor to be running other software, such as Outlook, Teams, etc.
+
 &amp;#x200B;
 
-https://preview.redd.it/7gzmkp3iz7v51.jpg?width=5616&amp;format=pjpg&amp;auto=webp&amp;s=f63dd95aadda9b372e3b8ac0467d7fe856b5d236
-
-Hi Again,
-
-AWS announced support for WAF with AppSync this month so I thought it would be a good time for a write up. There are very few AppSync CDK examples so I've also put a bit of effort into this one to provide a decent example.
-
-If you don't know what AppSync is it is a managed GraphQL API, it's gaining popularity in the mobile app dev space with support for iOS.
-
-The CDK stack is open source on github and for those who just want to deploy the example there is a deploy stack button to get started in a single click.
-
-High-level overview:
-
-* AppSync
-   * Basic graphQL API
-   * Cognito enabled
-   * WAF enabled
-* WAF
-   * Associated to AppSync endpoint
-   * Three rules, Geo, Rate, Core
-* DynamoDB
-   * As a datasource with our AppSync app
-* Cognito
-   * Local cognito users, no guest logins
-
-Access the gitub repo here:
-
-[https://github.com/talkncloud/aws/tree/main/appsync-waf](https://github.com/talkncloud/aws/tree/main/appsync-waf)
-
-If you want to read about this stack with more detail on AppSync you can here, if you're deploying WAF to AppSync check it out because the core rule set denies AppSync requests:
-
-[https://www.talkncloud.com/aws-appsync-with-waf-wooo-cdk-cf/](https://www.talkncloud.com/aws-appsync-with-waf-wooo-cdk-cf/)
-
-Keen for feedback and to hear how others are tackling AppSync with CDK and/or CF.
-## [7][EC2 Request Ticket always denied or can't be processed](https://www.reddit.com/r/aws/comments/jhr8d4/ec2_request_ticket_always_denied_or_cant_be/)
-- url: https://www.reddit.com/r/aws/comments/jhr8d4/ec2_request_ticket_always_denied_or_cant_be/
+Can anyone help me find a solution? I feel like I am all out of ideas and would like to save myself from more pain of figuring this out. Thanks!
+## [10][Having trouble setting up load balancers with HIPAA compliance](https://www.reddit.com/r/aws/comments/ji8k18/having_trouble_setting_up_load_balancers_with/)
+- url: https://www.reddit.com/r/aws/comments/ji8k18/having_trouble_setting_up_load_balancers_with/
 ---
-Title, I'm pretty much requesting one GPU instance to do my deep learning and work on, but it either gets denied, or can't be processed. I've been sending tickets for over a month now, what do I do?
-## [8][Reasons for different Cloudfront distributions for different S3 buckets](https://www.reddit.com/r/aws/comments/jhqqqw/reasons_for_different_cloudfront_distributions/)
-- url: https://www.reddit.com/r/aws/comments/jhqqqw/reasons_for_different_cloudfront_distributions/
+Forst of all, I'm pretty new to AWS and I started with this quick start here: https://aws.amazon.com/quickstart/architecture/compliance-hipaa/
+
+The issue I'm having is getting the public proxy server load balancer to redirect to the internal app server load balancer. It just times out. The quickstart used nginx on the proxy server so. I completely replaced the app server EC2 instance so it can work with our app. It's using Django on Ubuntu instead of wordpress on Amazon Linux that the quickstart used. I'm not sure if something is not configured properly with the subnets, security groups or something else. I'm pretty sure I set everything to be open as much as possible but still no luck. Is there a way I can pinpoint the exact cause of the issue? Nginx logs just shows that the connection was closed. Any help or tips would be appreciated!
+## [11][Cloud formation manually?](https://www.reddit.com/r/aws/comments/ji6eyn/cloud_formation_manually/)
+- url: https://www.reddit.com/r/aws/comments/ji6eyn/cloud_formation_manually/
 ---
-Hi, 
+I’m kind of new to AWS, but a long time C++ developer. Trying to find out best practices in terms of development process beyond just using the console for everything. 
 
-What are some reason why you would (or  wouldn't) have multiple cloudfront distributions for different buckets? Part of our business have multiple buckets served by the same CloudFront distribution working fine but would rather have them split out but can't really come up with a reason why.
-## [9][AWS Amplify JavaScript/iOS Resources](https://www.reddit.com/r/aws/comments/jhqeig/aws_amplify_javascriptios_resources/)
-- url: https://www.reddit.com/r/aws/comments/jhqeig/aws_amplify_javascriptios_resources/
----
-Hey everyone, I’ve been working with AWS Amplify quite a bit and decided to help people that are interested in creating an app or web app with an AWS backend get started.
-
-Initializing an AWS Amplify project can be a little confusing, but once you get it it all works! I’ve made a JavaScript and iOS tutorial linked below for free!
-
-Let me know if you need help. If you found it useful please like, comment, and subscribe!
-
-Thanks guys. 
-
-JavaScript - https://youtu.be/JzU_U3QEP7o
-
-iOS - https://youtu.be/XvhQkXNv1_I
-## [10][What does AWS EventBridge mean to ISV?](https://www.reddit.com/r/aws/comments/jhoa1s/what_does_aws_eventbridge_mean_to_isv/)
-- url: https://www.reddit.com/r/aws/comments/jhoa1s/what_does_aws_eventbridge_mean_to_isv/
----
-I read people saying AWS EventBridge is as revolutionary as Lambda (btw, I do agree lambda is revolutionary in cloud software development) [https://www.trek10.com/blog/amazon-eventbridge/](https://www.trek10.com/blog/amazon-eventbridge/)
-
-Then, it begs a question whether that means some good opportunities for ISVs? For example, does that mean it's easier to develop a cloud service like Zapier or ITFFF?
-## [11][AWS IAM Policy based on EC2 tag](https://www.reddit.com/r/aws/comments/jhnzru/aws_iam_policy_based_on_ec2_tag/)
-- url: https://www.reddit.com/r/aws/comments/jhnzru/aws_iam_policy_based_on_ec2_tag/
----
-I created an IAM Role with the following Permissions policy
-
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Sid": "VisualEditor0",
-                "Effect": "Allow",
-                "Action": "ec2:DescribeInstances",
-                "Resource": "*",
-                "Condition": {
-                    "StringEquals": {
-                        "aws:ResourceTag/Project": "Phoenix"
-                    }
-                }        
-            }
-        ]
-    }
-
-* A 3rd party App uses the Role ARN associated with the IAM Policy to describe EC2 instances. 
-
-* The objective is for the App to only be allowed describing EC2 instances tagged Project=Phoenix. 
-
-* The issue is the App gets an error "AWS credentials have insufficient permission to perform action" so no EC2 are described at all. There are 2 instances with the matching tag.
-
-* If I remove the Condition from the policy, DescribeInstances works but the App gets all EC2 from any specified AWS Region. I need to limit the list of EC2 returned to only instances tagged Project=Phoenix.
-
-* Also tried tagging the IAM Role with Project=Phoenix as a test but same error.
-
-Am I using &amp; configuring the IAM Role and Policy correctly for the objective? What do I need to adjust?
+How are you all creating your cloud formation templates?  Are you writing the YAML by hand, googling syntax and pasting in stuff. Are you using some sort of cloud formation designer, or are you using the AWS toolkit built into VSCode?

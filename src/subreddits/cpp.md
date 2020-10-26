@@ -56,115 +56,60 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][SFML / C++ Game Engine for Web (HTML), Android &amp; PC (Windows / Linux)](https://www.reddit.com/r/cpp/comments/jhlkmk/sfml_c_game_engine_for_web_html_android_pc/)
-- url: https://www.reddit.com/r/cpp/comments/jhlkmk/sfml_c_game_engine_for_web_html_android_pc/
----
- Hi everyone, I hope you’re doing well.
-
-I would like to share with a **C++ / SFML framework (is::Engine)** which allows you to develop **games and multimedia applications** on **Android, Web (HTML - CSS) and PC (Windows / Linux)**.
-
-You can also use it with **Android Studio, Visual Studio Code, CMake and Code::Blocks**.
-
-It also integrates **Admob** which allows you to **monetize** your games / applications.
-
-► [Game Engine Link](https://github.com/Is-Daouda/is-Engine)
-
-Here is the demo of the framework: This game was created to celebrate the **35 years of Super Mario Bros Nes**.
-
-► [Game Engine Demo Link](https://github.com/Is-Daouda/is-Engine-Demo)
-
-Here is another game (**I Can Transform**) available on **Android** which was created with the framework.
-
-► [Google Play](https://play.google.com/store/apps/details?id=com.isdaouda.icantransform&amp;hl=En)
-
-Your feedback or questions will be welcome.
-
-Have a good day.
-## [3][Carpal/Cubital Tunnel Syndrome](https://www.reddit.com/r/cpp/comments/jhrsp0/carpalcubital_tunnel_syndrome/)
-- url: https://www.reddit.com/r/cpp/comments/jhrsp0/carpalcubital_tunnel_syndrome/
----
-Hi. 
-    Unfortunately I have cubital tunnel syndrome on both hands. I'm due to start my very first job as a C++ software engineer in 1 month. I am so worried. This shit is painful. I thought several times about leaving this job but Its a really good job.
-
-Has anyone dealt with this before? And how did you manage it?
-## [4][Parallelizing GPU-intensive Workloads via Multi-Queue Operations (2x+ Performance Improvements on a Single Graphics Card)](https://www.reddit.com/r/cpp/comments/jh8zq8/parallelizing_gpuintensive_workloads_via/)
-- url: https://towardsdatascience.com/parallelizing-heavy-gpu-workloads-via-multi-queue-operations-50a38b15a1dc
+## [2][I made this ASCII Terrain generator with Parallax effect in C++, I'll share my code here soon.](https://www.reddit.com/r/cpp/comments/jibs2z/i_made_this_ascii_terrain_generator_with_parallax/)
+- url: https://youtu.be/ZJsgidL1lWs
 ---
 
-## [5][std::once_flag is a glass hill](https://www.reddit.com/r/cpp/comments/jh7ogb/stdonce_flag_is_a_glass_hill/)
-- url: https://quuxplusone.github.io/blog/2020/10/23/once-flag/
+## [3][C++20 Ranges, Projections, std::invoke and if constexpr](https://www.reddit.com/r/cpp/comments/jib2wl/c20_ranges_projections_stdinvoke_and_if_constexpr/)
+- url: https://www.bfilipek.com/2020/10/understanding-invoke.html
 ---
 
-## [6][Feedback on OpenGL Walkthrough &amp; Design](https://www.reddit.com/r/cpp/comments/jh0fmp/feedback_on_opengl_walkthrough_design/)
-- url: https://www.reddit.com/r/cpp/comments/jh0fmp/feedback_on_opengl_walkthrough_design/
----
-I was thinking about doing a weekly or semi weekly series were I detail my progress through OpenGL using modern C++ features and design.
-
-I wanted to ask the community if they would be interested in such a series where I incorporate their feedback. Things ranging from C++ optimizations, code layout, design patterns, file structure, and of course graphics. 
-
-If the community would be interested in such a concept, I would definitely love to try it and have you critique it.
-## [7][Version 0.6.0 of the simdjson C++ library is released](https://www.reddit.com/r/cpp/comments/jgnweb/version_060_of_the_simdjson_c_library_is_released/)
-- url: https://github.com/simdjson/simdjson/releases/tag/v0.6.0
+## [4][Work has begun to support Qbs in VScode.](https://www.reddit.com/r/cpp/comments/ji9yi9/work_has_begun_to_support_qbs_in_vscode/)
+- url: https://www.reddit.com/r/QtFramework/comments/ji9wr9/work_has_begun_to_support_qbs_in_vscode/
 ---
 
-## [8][[BLOG] C calls in type and memory safe C++ containers using enums and templates](https://www.reddit.com/r/cpp/comments/jhdv0u/blog_c_calls_in_type_and_memory_safe_c_containers/)
-- url: https://biq.medium.com/abstracting-c-platform-query-calls-in-type-and-memory-safe-c-containers-a-k-a-4b71ddbb8c32
+## [5][Highway to hell: C++ enums and bitfields](https://www.reddit.com/r/cpp/comments/jhwxw6/highway_to_hell_c_enums_and_bitfields/)
+- url: https://walac.github.io/curious-bug-enum-bitfield/
 ---
 
-## [9][Has a release() method for std::vector been proposed?](https://www.reddit.com/r/cpp/comments/jgilit/has_a_release_method_for_stdvector_been_proposed/)
-- url: https://www.reddit.com/r/cpp/comments/jgilit/has_a_release_method_for_stdvector_been_proposed/
+## [6][OpenGL Walkthrough &amp; Design: Part 1 - Creating a Basic Window](https://www.reddit.com/r/cpp/comments/jicjbi/opengl_walkthrough_design_part_1_creating_a_basic/)
+- url: https://www.reddit.com/r/cpp/comments/jicjbi/opengl_walkthrough_design_part_1_creating_a_basic/
 ---
-A method akin to
+Here's part 1 of this walkthrough series where I go through OpenGL and have the community critique my approach, and I incorporate their feedback. 
 
-    auto std::vector&lt;T, Alloc&gt;::release() -&gt; std::unique_ptr&lt;T[], _deleter_t&gt;;
+* Link to the pull request (PR): [https://github.com/Nick0412/ModernOpenGL/pull/1](https://github.com/Nick0412/ModernOpenGL/pull/1).
+   * This PR appears large only because of all the dependencies added.
+* Summary of additions made in this PR
+   * Added GLFW library for window creation.
+   * Added Glad library for loading OpenGL functions.
+   * Initialized CMake project.
+   * Creating a GLFW wrapper class to abstract some of the functions.
+   * Created a minimum working example window.
+* Things to consider in future PRs
+   * Draw minimal graphics to a window.
+   * Abstract vertex array objects (VAO) and vertex buffer objects (VBO) into an appropriate API.
+   * Abstract shaders into their own class with an appropriate API.
+   * Add doxygen to improve documentation.
+   * Add googletest (or other unit test software) to test functionality.
 
-where `_deteter_t` is a deleter, that destructs in an appropriate way. The state of the vector after a call to release would be, as if it was moved from.
-
-One often works with libraries that adopt raw pointers on construction of their internals. When coding the algorithms constructing the data to be handed over, `vector` is a convenient class to use, with the api it provides. Moreover, often one uses other libraries for said construction, and they do return a `vector`. But currently, one has to copy the data over to a new pointer before handing it over to be adopted by another structure. Such a `release` method would allow easier data transfer in described situations. Of course, when the `_deleter_t` does something special, one still could not simply hand the pointer over, but this would be implied by returning a `unique_ptr`.
-
-Has anything like this been proposed? If yes, has it been rejected due to drawbacks? If no, is this a method deemed not useful by most?
-
-Edit:
-
-Returning `unique_ptr` instead of the raw pointer, is to be explicit about ownership transfer, and ensure safety until something else adopts ownership over the memory.
-
-Edit II:
-
-## Given the constructive commments bellow
-
-The main use-case for `release()` would be, so one can use the convenience of `vector` in the construction of data, which is than adopted by a third-party library. But when the third-party  does so through a raw pointer (and not a `unique_ptr`)
-
-    auto u_ptr = vec.release();
-    // ...
-    auto obj = lib::some_adopting_t(u_ptr.release(), size);
-
-this would require that the pointer be deletable by `operator delete[]`, which is not the case even when default allocator is used. Hence `obj` would be deleting the memory in a non-valid way.
-
-The above could still be achieved by using a custom allocator, which allocates in an appropriate way. But this would still leave us without the ability to use other third-party libraries that return `vector`s (using the default allocator) for constructing the data to be adopted (as `obj` above). So it seems the payoff is too small for this to be considered.
-
-Thank you for your comments
-## [10][Dealing with very large numbers (primality test)](https://www.reddit.com/r/cpp/comments/jgsgmh/dealing_with_very_large_numbers_primality_test/)
-- url: https://www.reddit.com/r/cpp/comments/jgsgmh/dealing_with_very_large_numbers_primality_test/
+If you have some time and are interested, please feel free to review the pull request I listed above and comment on it. Thank you and be on the lookout for part 2 sometime in the middle of this week.
+## [7][Jason Turner and Rob Irving join Meeting C++ 2020 for an shared AMA](https://www.reddit.com/r/cpp/comments/jic5xu/jason_turner_and_rob_irving_join_meeting_c_2020/)
+- url: https://meetingcpp.com/meetingcpp/news/items/Jason-Turner-and-Rob-Irving-join-Meeting-Cpp-2020-for-an-shared-AMA.html
 ---
 
-I just learned about Fermat’s primality test and was wondering how it would be implemented with large numbers on a computer. 
-
-Using an unsigned long long variable in C++ would allow you to deal with numbers up to 2^64 - 1, but since Fermat’s theorem uses the term a^(n-1), wouldn’t this mean that it cannot be used to evaluate the primality of any number bigger than 64? As in, if you tried to pass 65, the value stored in the variable would simply default to 0 since 2^64 &gt; 2^64 - 1 (the maximum possible stored value in a ULL variable)?
-
-Using that same logic, even if you created a variable to store a 128-bit number, isn’t it true that you would still only be able to evaluate relatively small prime numbers (up to 128)?
-
-This puzzles me because Fermat Primality Test is sometimes used to deal with unimaginably large numbers (in RSA for example) .... right? 
-
-I feel like I am misunderstanding something here.
-## [11][I've rewritten the compiler for my programming language into C++](https://www.reddit.com/r/cpp/comments/jglz0x/ive_rewritten_the_compiler_for_my_programming/)
-- url: https://www.reddit.com/r/cpp/comments/jglz0x/ive_rewritten_the_compiler_for_my_programming/
+## [8][Lithium C++ High Performance HTTP Server documentation](https://www.reddit.com/r/cpp/comments/jiejzv/lithium_c_high_performance_http_server/)
+- url: https://matt-42.github.io/lithium/
 ---
-My largest C++ project, by far, is the new compiler for my programming language (called AEC), targeting WebAssembly: [https://github.com/FlatAssembler/AECforWebAssembly](https://github.com/FlatAssembler/AECforWebAssembly)
 
-My  previous compiler was targeting x86 and was written in JavaScript.  However, I got a bit dissatisfied with JavaScript. When programming in  JavaScript, you spend a lot of your time debugging errors that, in most  other programming languages, would have been caught by the compiler and  the compiler would issue a warning (or refuse to compile the program).  For instance, in JavaScript, even in the strict mode, if you mistype the  name of a property of some object, no syntax error or reference error  would happen, your program will just continue to go and probably  misbehave in hard-to-debug ways. Dynamic typing, while it can make your  code shorter sometimes, opens a room for a whole class of bugs. In most  programming languages, supplying a different number of arguments to a  function than a function expects will lead to a compile-time warning or  even an error. In JavaScript, the JIT-compiler compiles your code into  something that crashes in hard-to-debug ways. In fact, it will even  accept obviously wrong code such as  \`functions\_that\_returns\_an\_integer()()\` (and, of course, produce  assembly code that crashes). I knew C++ has improved a lot since the  time I first learned it. In old versions of C++, for example, you needed  to write lots of code to convert a number to string, while today there  is a \`std::to\_string\` template function. So, I decided to write my new  compiler in C++. One of the things I like about C++ is that it makes it  very easy to do deep copying, which is something you need a lot when  writing a compiler, and you don't want to waste time thinking about how  you will do that (or so I thought, C++ has some surprising undefined behaviors regarding the default copy constructors: [https://stackoverflow.com/questions/63951270/using-default-copy-constructor-corrupts-a-tree-in-c](https://stackoverflow.com/questions/63951270/using-default-copy-constructor-corrupts-a-tree-in-c)). I knew about Rust, however, in my experience, Rust is  annoying in that it often refuses to compile code in the name of safety,  and sometimes there is no obvious way to do what you want in the way  Rust would consider safe. Rust has many false positives when trying to  detect semantically invalid code, JavaScript has many false negatives.  C++ appears, to me, to be the best in that regard.
+## [9][I made command line parser library a long time ago, now I decided to share it with the world.](https://www.reddit.com/r/cpp/comments/jiease/i_made_command_line_parser_library_a_long_time/)
+- url: https://gitlab.com/mildlyparallel/dashh
+---
 
-The specification for my programming language is available here: [https://flatassembler.github.io/AEC\_specification.html](https://flatassembler.github.io/AEC_specification.html)
+## [10][range_ref&lt;T&gt; - a fast, non-owning view on a range](https://www.reddit.com/r/cpp/comments/jhtso1/range_reft_a_fast_nonowning_view_on_a_range/)
+- url: https://artificial-mind.net/blog/2020/10/24/range_ref
+---
 
-The example program I like the most is the Analog Clock in AEC: [https://flatassembler.github.io/analogClock.html](https://flatassembler.github.io/analogClock.html)
-
-So, what do you think about my work?
+## [11][Looking for a paper "A Style for Writing C++ Classes" by Peter A. Kirslis](https://www.reddit.com/r/cpp/comments/jicpml/looking_for_a_paper_a_style_for_writing_c_classes/)
+- url: https://www.reddit.com/r/cpp/comments/jicpml/looking_for_a_paper_a_style_for_writing_c_classes/
+---
+Kirslis Peter A., "A Style for Writing C++ Classes," Proceedings of the USENIX C++ Workshop. Santa Fe: USENIX Association Publishers (November 1987).

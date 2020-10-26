@@ -3,215 +3,117 @@
 - url: https://blog.golang.org/survey2020
 ---
 
-## [2][imgcat - a tool to output images as RGB ANSI graphics on the terminal](https://www.reddit.com/r/golang/comments/jhms24/imgcat_a_tool_to_output_images_as_rgb_ansi/)
+## [2][distribyted/distribyted: Torrent client with on-demand file downloading as a filesystem in Go](https://www.reddit.com/r/golang/comments/ji9zcb/distribyteddistribyted_torrent_client_with/)
+- url: https://github.com/distribyted/distribyted
+---
+
+## [3][kboard: a terminal game to practice keyboard typing](https://www.reddit.com/r/golang/comments/jid5l4/kboard_a_terminal_game_to_practice_keyboard_typing/)
+- url: https://github.com/CamiloGarciaLaRotta/kboard
+---
+
+## [4][go-echarts: the adorable charts library for Golang](https://www.reddit.com/r/golang/comments/jhu7xv/goecharts_the_adorable_charts_library_for_golang/)
+- url: https://www.reddit.com/r/golang/comments/jhu7xv/goecharts_the_adorable_charts_library_for_golang/
+---
+Hi, every gopher, project recommendation!
+
+In the Golang ecosystem, there are not many choices for data visualizing libraries. The development of [go-echarts](https://github.com/go-echarts/go-echarts) aims to provide a simple yet powerful data visualizing library for Golang. [Echarts](https://echarts.apache.org/) is an outstanding charting and visualizing library opensourced by Baidu, it supports adorable chart types and various interactive features. There are many language bindings for Echarts, for example, [pyecharts](https://github.com/pyecharts/pyecharts). go-echarts learns from pyecharts and has evolved a lot.
+
+
+go-echarts is easy to use and extend,  in this example, we create a simple bar chart with only a few lines of code.
+
+
+```golang
+package main
+
+import (
+	"math/rand"
+	"os"
+
+	"github.com/go-echarts/go-echarts/v2/charts"
+	"github.com/go-echarts/go-echarts/v2/opts"
+)
+
+// generate random data for bar chart
+func generateBarItems() []opts.BarData {
+	items := make([]opts.BarData, 0)
+	for i := 0; i &lt; 7; i++ {
+		items = append(items, opts.BarData{Value: rand.Intn(300)})
+	}
+	return items
+}
+
+func main() {
+	// create a new bar instance
+	bar := charts.NewBar()
+
+	// set some global options like Title/Legend/ToolTip or anything else
+	bar.SetGlobalOptions(
+		charts.WithTitleOpts(opts.Title{
+			Title:    "Bar-basic-example",
+			Subtitle: "This is the subtitle.",
+		}),
+	)
+
+	// iowriter
+	f, err := os.Create("bar.html")
+	if err != nil {
+		panic(err)
+	}
+
+	// Put some data in instance
+	bar.SetXAxis([]string{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"}).
+		AddSeries("Category A", generateBarItems()).
+		AddSeries("Category B", generateBarItems())
+
+	// Where the magic happens
+	bar.Render(f)
+}
+```
+
+And the generated bar.html is rendered as below
+
+[bar.png](https://user-images.githubusercontent.com/19553554/97107442-85f91880-1702-11eb-8b73-d0d8daedf549.png)
+
+For more information, please refer to [go-echarts/examples](https://github.com/go-echarts/examples) and the [GoDoc](https://pkg.go.dev/github.com/go-echarts/go-echarts/v2).
+
+Project link: https://github.com/go-echarts/go-echarts
+## [5][Using Golang to upload and download files in pcloud using cmd](https://www.reddit.com/r/golang/comments/jiacsd/using_golang_to_upload_and_download_files_in/)
+- url: https://www.reddit.com/r/golang/comments/jiacsd/using_golang_to_upload_and_download_files_in/
+---
+Hello gophers,
+
+I am trying to use [https://github.com/yanmhlv/pcloud](https://github.com/yanmhlv/pcloud) project to upload and download files.With this i can upload my files but downloading is not working.Also when using this i can upload small size of files but when it is more than 50mb it is taking more time.
+
+Is there any other method by using golang to connect to pcloud in cmd.Can anybody help me ?
+## [6][Generics in Go](https://www.reddit.com/r/golang/comments/jiehkx/generics_in_go/)
+- url: https://youtu.be/F8Gl8-3ZW0E
+---
+
+## [7][Quick question: Go syntax changes since Go 1.0](https://www.reddit.com/r/golang/comments/jhzjno/quick_question_go_syntax_changes_since_go_10/)
+- url: https://www.reddit.com/r/golang/comments/jhzjno/quick_question_go_syntax_changes_since_go_10/
+---
+For a presentation about Go's simplicity, I would like to know what changes/additions happened to the language/syntax since Go 1.0 (up until Go 1.15).
+
+The only thing I know of is:  
+* Type aliasing: `type T1 = T2`
+## [8][Reactive planing in Golang. Reach a desired number adding and subtracting random numbers](https://www.reddit.com/r/golang/comments/jicwdt/reactive_planing_in_golang_reach_a_desired_number/)
+- url: https://gianarb.it/blog/reactive-plan-golang-example
+---
+
+## [9][Am I wrong to use gRPC for this project?](https://www.reddit.com/r/golang/comments/ji9cfs/am_i_wrong_to_use_grpc_for_this_project/)
+- url: https://www.reddit.com/r/golang/comments/ji9cfs/am_i_wrong_to_use_grpc_for_this_project/
+---
+Is gRPC only for microservice for you ?? I plan to use gRPC or GraphQL here but if I use GraphQL I should install many dependency in the Front End and would read more documentation for each dependency , but if I use gRPC web , it was generated code and I should follow the rules how to use it and not too much to configuration things for their dependency on the FE 
+
+Also I was looking how to deploy gRPC to production, and many articles using Kurbenest for the case , I have no idea about Kubernestes :( , that is my problem if I stick with gRPC , can I deploy my go gRPC like usual project using only docker container and run that by docker ?
+
+What you think about gRPC only for microservice ? Should I avoid to gRPC for this ? 
+But so far I don't use for bi-direction on gRPC, and might use unary alot for so far
+## [10][imgcat - a tool to output images as RGB ANSI graphics on the terminal](https://www.reddit.com/r/golang/comments/jhms24/imgcat_a_tool_to_output_images_as_rgb_ansi/)
 - url: https://github.com/trashhalo/imgcat
 ---
 
-## [3][Lightweight UI library recommendation](https://www.reddit.com/r/golang/comments/jhr4ft/lightweight_ui_library_recommendation/)
-- url: https://www.reddit.com/r/golang/comments/jhr4ft/lightweight_ui_library_recommendation/
----
-I am building very simple UI app to run on Raspberry Pi Zero.  The UI showcases static infographics operable(zoom, scroll) through IR remote.
-
-Which Golang UI library will you recommend?
-
-* [Fyne](https://fyne.io/) 11k
-* [Qt](https://therecipe.github.io/qt/) 7.9k
-* [webview](https://github.com/webview/webview) 7k
-* [Gio](https://gioui.org/) 
-* [Lorca](https://github.com/zserge/lorca) 5.9k
-* [go-astilectron](https://github.com/asticode/go-astilectron) 3.5k
-* [wails](https://github.com/wailsapp/wails) 2.6k
-* [gotk3](https://github.com/gotk3/gotk3) 1.3k
-## [4][Dagger - A zero dependency, concurrency safe, in-memory directed graph database](https://www.reddit.com/r/golang/comments/jhk1ti/dagger_a_zero_dependency_concurrency_safe/)
-- url: https://www.reddit.com/r/golang/comments/jhk1ti/dagger_a_zero_dependency_concurrency_safe/
----
-Godoc: [https://godoc.org/github.com/autom8ter/dagger](https://godoc.org/github.com/autom8ter/dagger)
-
-Github: [https://github.com/autom8ter/dagger](https://github.com/autom8ter/dagger)
-
-    import "github.com/autom8ter/dagger"
-
-&amp;#x200B;
-
-[Directed Graph](https://preview.redd.it/4fle7kx835v51.png?width=128&amp;format=png&amp;auto=webp&amp;s=cc83217afbfab3f805c259f4c4a6dc2d8ef1cd0b)
-
-[What is a directed Graph?](https://en.wikipedia.org/wiki/Directed_graph)
-
-## Design:
-
-* flexibility
-* global state
-   * see [primitive](https://godoc.org/github.com/autom8ter/dagger/primitive) to manage graph state manually
-* concurrency safe
-* high performance
-* simple api
-
-## Features
-
-* \[x\] native graph objects(nodes/edges)
-* \[x\] typed graph objects(ex: user/pet)
-* \[x\] labelled nodes &amp; edges
-* \[x\] depth first search
-* \[x\] breadth first search
-* \[x\] concurrency safe
-* \[ \] import graph from JSON blob
-* \[ \] export graph to JSON blob
-
-## Example
-
-       coleman = dagger.NewNode("user", fmt.Sprintf("cword_%v", time.Now().UnixNano()), map[string]interface{}{
-       		"name": "coleman",
-       	})
-       	tyler = dagger.NewNode("user", fmt.Sprintf("twash_%v", time.Now().UnixNano()), map[string]interface{}{
-       		"name": "tyler",
-       	})
-       	sarah = dagger.NewNode("user", fmt.Sprintf("swash_%v", time.Now().UnixNano()), map[string]interface{}{
-       		"name": "sarah",
-       	})
-       	lacee = dagger.NewNode("user", fmt.Sprintf("ljans_%v", time.Now().UnixNano()), map[string]interface{}{
-       		"name": "lacee",
-       	})
-       	// random id will be generated if one isn't provided
-       	charlie = dagger.NewNode("dog", "", map[string]interface{}{
-       		"name":   "charlie",
-       		"weight": 25,
-       	})
-       
-       	if err := coleman.Connect(tyler, "friend", true); err != nil {
-       		exitErr(err)
-       	}
-       	if err := sarah.Connect(lacee, "friend", true); err != nil {
-       		exitErr(err)
-       	}
-       	if err := coleman.Connect(lacee, "fiance", true); err != nil {
-       		exitErr(err)
-       	}
-       	if err := tyler.Connect(sarah, "wife", true); err != nil {
-       		exitErr(err)
-       	}
-       	if err := coleman.Connect(charlie, "pet", false); err != nil {
-       		exitErr(err)
-       	}
-       	if err := lacee.Connect(charlie, "pet", false); err != nil {
-       		exitErr(err)
-       	}
-       	if err := charlie.Connect(lacee, "owner", false); err != nil {
-       		exitErr(err)
-       	}
-       	if err := charlie.Connect(coleman, "owner", false); err != nil {
-       		exitErr(err)
-       	}
-       	charlie.Patch(map[string]interface{}{
-       		"weight": 19,
-       	})
-       	if charlie.GetInt("weight") != 19 {
-       		exit("expected charlie's weight to be 19!")
-       	}
-       	// check to make sure edge is patched
-       	coleman.EdgesFrom(func(e *dagger.Edge) bool {
-       		if e.Type() == "pet" &amp;&amp; e.GetString("name") == "charlie" {
-       			if e.To().GetInt("weight") != 19 {
-       				exit("failed to patch charlie's weight")
-       			}
-       		}
-       		return true
-       	})
-       	if coleman.GetString("name") != "coleman" {
-       		exit("expected name to be coleman")
-       	}
-       	// remove from graph
-       	charlie.Remove()
-       	// no longer in graph
-       	if dagger.HasNode(charlie) {
-       		exit("failed to delete node - (charlie)")
-       	}
-       	// check to make sure edge no longer exists(cascade)
-       	coleman.EdgesFrom(func(e *dagger.Edge) bool {
-       		if e.Type() == "pet" &amp;&amp; e.GetString("name") == "charlie" {
-       			exit("failed to delete node - (charlie)")
-       		}
-       		return true
-       	})
-       	// check to make sure edge no longer exists(cascade)
-       	lacee.EdgesFrom(func(e *dagger.Edge) bool {
-       		if e.Type() == "pet" &amp;&amp; e.GetString("name") == "charlie" {
-       			exit("failed to delete node - (charlie)")
-       		}
-       		return true
-       	})
-       	fmt.Printf("registered node types = %v", dagger.NodeTypes())
-       	fmt.Printf("registered edge types = %v", dagger.EdgeTypes())
-       	dagger.RangeNodes(func(n *dagger.Node) bool {
-       		bits, err := n.JSON()
-       		if err != nil {
-       			exitErr(err)
-       		}
-       		fmt.Printf("\nfound node = %v\n", string(bits))
-       		n.EdgesFrom(func(e *dagger.Edge) bool {
-       			bits, err := e.JSON()
-       			if err != nil {
-       				exitErr(err)
-       			}
-       			fmt.Println(string(bits))
-       			return true
-       		})
-       		n.EdgesTo(func(e *dagger.Edge) bool {
-       			bits, err := e.JSON()
-       			if err != nil {
-       				exitErr(err)
-       			}
-       			fmt.Println(string(bits))
-       			return true
-       		})
-       		return true
-       	}
-## [5][Go Proxy built with Cloudflare Workers](https://www.reddit.com/r/golang/comments/jhixs6/go_proxy_built_with_cloudflare_workers/)
-- url: https://www.reddit.com/r/golang/comments/jhixs6/go_proxy_built_with_cloudflare_workers/
----
-Would anyone be willing to help me test out a Go Proxy? I built it using Cloudflare Workers so it should be fast. The domain also uses Argo, which should help with cache hits. 
-
-https://goproxy.dev/
-
-https://workers.cloudflare.com/
-
-https://www.cloudflare.com/network/
-
-Thanks!
-## [6][Discussing the browser compatibility of WASM produced by the official Go compiler](https://www.reddit.com/r/golang/comments/jhqltd/discussing_the_browser_compatibility_of_wasm/)
-- url: https://www.reddit.com/r/golang/comments/jhqltd/discussing_the_browser_compatibility_of_wasm/
----
-There currently is an open discussion on browser compatibility for Go-based WASM that I believe could use a wider audience: [https://github.com/golang/go/issues/28360](https://github.com/golang/go/issues/28360). It could have a big impact on the usefulness of Go for targeting the future web (such as supporting the Safari web browser, or not). So please feel free to write down your thoughts and ideas!
-## [7][Wide Go Snippets Extension for VS Code 😋 based vim-go](https://www.reddit.com/r/golang/comments/jhl7ot/wide_go_snippets_extension_for_vs_code_based_vimgo/)
-- url: https://marketplace.visualstudio.com/items?itemName=umutbasal.go-snippets-vscode
----
-
-## [8][taskflow - Create your build pipeline in Go](https://www.reddit.com/r/golang/comments/jhsksy/taskflow_create_your_build_pipeline_in_go/)
-- url: https://github.com/pellared/taskflow
----
-
-## [9][Implementing a b-tree and being to clever](https://www.reddit.com/r/golang/comments/jhrtjn/implementing_a_btree_and_being_to_clever/)
-- url: https://www.reddit.com/r/golang/comments/jhrtjn/implementing_a_btree_and_being_to_clever/
----
-Hey,
-
-I started working on a persistent key-value store named [keyver](https://github.com/j0holo/keyver). Just as a hobby project.
-
-Currently I'm working on implementing a b-tree for indexing, but I have trouble implementing it. [As you can see in the code](https://github.com/j0holo/keyver/blob/master/cmd/server/b_tree.go) I tried to be clever (too clever?) by creating an interface which is implemented by nodes that contains the pointers and the nodes that hold the actual values.
-
-How [Wikipedia](https://en.wikipedia.org/wiki/B-tree#Performance) describes the implementation is somewhat clear but at the same time I don't understand how I can "easily" translate this to code.
-
-btw, I know about [https://github.com/google/btree](https://github.com/google/btree) but they use a lot of reflection, I only need to store strings for both the key and value.
-
-Am I being too clever? How should I approach this?
-## [10][What’s the best way to learn Go?](https://www.reddit.com/r/golang/comments/jhrska/whats_the_best_way_to_learn_go/)
-- url: https://www.reddit.com/r/golang/comments/jhrska/whats_the_best_way_to_learn_go/
----
-I’ve finished my final college semester and I’ve got some some spare time that I’m looking to invest in learning Go
-
-What’s the best resoucres or projects you found useful when developing your go knowledge ? 
-
-Anything you wish you could’ve told your yourself when you were learning ?
-## [11][ion-sfu: simple, scalable webrtc sessions](https://www.reddit.com/r/golang/comments/jh9d0s/ionsfu_simple_scalable_webrtc_sessions/)
-- url: https://github.com/pion/ion-sfu
+## [11][A generic task queueing system for Go programs](https://www.reddit.com/r/golang/comments/jhvggg/a_generic_task_queueing_system_for_go_programs/)
+- url: https://git.sr.ht/~sircmpwn/dowork
 ---
 

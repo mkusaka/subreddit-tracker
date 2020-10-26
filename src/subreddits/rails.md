@@ -27,11 +27,228 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][MVP : start with Devise (or equivalent) or auth0 (or equivalent) ?](https://www.reddit.com/r/rails/comments/jhqo9r/mvp_start_with_devise_or_equivalent_or_auth0_or/)
+## [3][How to merge SimpleCov results on SemaphoreCI 2.0](https://www.reddit.com/r/rails/comments/jic8m8/how_to_merge_simplecov_results_on_semaphoreci_20/)
+- url: https://www.reddit.com/r/rails/comments/jic8m8/how_to_merge_simplecov_results_on_semaphoreci_20/
+---
+Original post with images on [https://anonoz.github.io/tech/2020/10/26/simplecov-semaphoreci.html](https://anonoz.github.io/tech/2020/10/26/simplecov-semaphoreci.html)
+
+----
+We have been using [SemaphoreCI](https://semaphoreci.com) for over a year now. 
+
+We like Semaphore a lot because of their bare metal performance and their fair per-second pricing, which is different from other CIs charging by maximum parallelisms.
+
+Having sufficient test coverage has helped us in staying clear of nasty problems along the road, I highly encourage other projects to keep it in check too!
+
+Feel free to copy and paste the following scripts and YAMLs, if there are any error and problems, please contact me and let me know.
+
+## Step 1: Setup SimpleCov
+
+Include it in your `Gemfile`, please find the latest version number and replace it: 
+
+    gem 'simplecov', '~&gt; 0.18.0', require: false
+
+
+To make sure SimpleCov tracks the code coverage in Capybara test, paste this in your `bin/rails` before the existing code:
+
+    #!/usr/bin/env ruby
+    if ENV['RAILS_ENV'] == 'test'
+      require 'simplecov'
+      SimpleCov.start 'rails'
+    end
+    # ^^ Copy Above
+    
+    APP_PATH = File.expand_path('../../config/application', __FILE__)
+    require_relative '../config/boot'
+    require 'rails/commands'
+
+In your `specs/spec_helper.rb`, paste this between all the `require` and other configuration blocks:
+
+    if ENV['CI']
+      SimpleCov.command_name "#{ENV['SEMAPHORE_JOB_ID']}-#{ENV['TEST_ATTEMPT']}"
+    end
+    
+    SimpleCov.start 'rails'
+
+## Step 2: Here are the .yaml and .rb
+
+Paste this in `scripts/simplecov-collate.rb` in your project directory:
+
+    #!/usr/bin/env ruby
+    require 'simplecov'
+    
+    SimpleCov.collate Dir["simplecov-resultset/*/.resultset.json"] do
+      formatter SimpleCov::Formatter::MultiFormatter.new([
+        SimpleCov::Formatter::SimpleFormatter,
+        SimpleCov::Formatter::HTMLFormatter
+      ])
+    end
+
+I assume:
+
+1. You already have SimpleCov gem included and configured in your rspec.
+2. Your project directory is mounted in `/project-mount` in the Docker image that you used to test. SimpleCov somehow uses absolute path inside their result JSON files, and this is the way to make the merge successful.
+3. SemaphoreCI git clones into `~/reponame` when `checkout` command is being run.
+
+Update your `.semaphore/semaphore.yml`:
+
+1. The `epilogue` that runs after every parallel tests, and;
+2. The block that runs after ALL the tests.
+
+.semaphore/semaphore.yml: (something weird with reddit markdown indent)
+
+    # .semaphore/semaphore.yml
+    blocks:
+      - name: 'Run tests'
+        task:
+          jobs:
+            - name: 'E2E Part 1'
+            - name: 'E2E Part 2'
+            - name: 'E2E Part 3'
+            - name: 'Models'
+            - name: 'API'
+          # Copy the commands in the epilogue, this runs after every different test.
+          epilogue:
+            always:
+              commands:
+                - |
+                    if [ -d coverage ]; then
+                      artifact push job --expire-in 3d --force coverage;
+                      COV_DIRNAME=simplecov-resultset/$SEMAPHORE_JOB_ID;
+                      sudo chown -R $USER:$USER coverage/;
+                      mkdir -p simplecov-resultset;
+                      mv coverage $COV_DIRNAME;
+                      artifact push workflow --expire-in 2w --force simplecov-resultset;
+                    fi
+      
+      # Feel free to copy this block below!
+      - name: 'Check codebase quality'
+        task:  
+          jobs:
+            - name: 'Test coverage'
+              commands:
+                - checkout
+                - |
+                    if ! rbenv install -s; then
+                      git -C /home/semaphore/.rbenv/plugins/ruby-build pull &amp;&amp;
+                      rbenv install;
+                    fi
+                - sudo mkdir -p /project-mount
+           date: 2020-10-26
+         - sudo chown -R $USER:$USER /project-mount
+                - cd ~
+                - shopt -s dotglob; mv ~/reponame/* /project-mount
+                - cd /project-mount
+                - artifact pull workflow simplecov-resultset
+                - gem install simplecov
+                - ruby scripts/simplecov-collate.rb
+                - cd coverage/
+                - cd /project-mount
+                - zip -r coverage-$SEMAPHORE_GIT_SHA coverage/
+                - artifact push job --expire-in 2w coverage-$SEMAPHORE_GIT_SHA.zip
+
+Once you are done, commit and push to trigger a CI run.
+
+## Step 3: Get your test coverage!
+
+If the configurations are correct and your test suites pass as usual, this is how you can find your test coverage results.
+
+Go into the workflow for the latest commit, you should see there is a new block at the end after the parallel tests.
+
+Click **Job artifacts** between the console outputs and the job name. That is not the most obvious place, I know. By the time you read this, the UI may have changed again, but it should be somewhere in the page.
+
+Download and unzip it, then open `index.html` file in your browser to view.
+
+Unlike CircleCI, every artifact on SemaphoreCI cannot be viewed directly in the browser, but rather must be downloaded. It is not very convenient.
+
+---
+
+1. **Why `gem install simplecov` separately instead of just using the Docker image I have been using?**
+
+    The Docker images are usually large. Downloading just the gems needed is much quicker than pulling the image all over again. In our case, it takes almost a minute to pull the testing Docker image down, but only 20 seconds to run the whole SimpleCov merging job - from git cloning, to gem install, to uploading artifact.
+
+2. **What if we did not run tests in Docker image?**
+
+    You should be able to replace `/project-mount` with the directory pah the project is git cloned into in previous test jobs.
+
+Please let me know if there are better ideas on how to go about this!
+## [4][Getting a job as a rails developer](https://www.reddit.com/r/rails/comments/ji5n8y/getting_a_job_as_a_rails_developer/)
+- url: https://www.reddit.com/r/rails/comments/ji5n8y/getting_a_job_as_a_rails_developer/
+---
+I'm curious when is a good time to get a job as a rails developer? 
+
+Mainly, I'm wondering how much experience you should have before you can feasibly land a rails gig. 
+
+I've been building websites for 4 years, coding for 2 years, and doing rails for 1 year. I've built a few rails apps at this point, I also work as a software PM where I also do some light coding to contribute to the app we run. 
+
+I still have a lot to learn, but I'm also starting to feel (for the first time ever) confident in my coding skills . I'm good with HTML, CSS, jquery ruby and rails. I've deployed apps using AWS to heroku with mailers and all sorts of fun working features. 
+
+However, when I look up rails jobs, some of them say 2-5 years experience is a must, and that instantly makes me doubt myself. Does my experience sound like I might be able to get a job as a rails developer. 
+
+LIke I said, I am a PM already and I love that position, but I've totally caught the coding bug and I find it's all I ever think about or want to do, wondering if I should try and make the jump to DEV.
+## [5][how does create! method work?](https://www.reddit.com/r/rails/comments/jidiju/how_does_create_method_work/)
+- url: https://www.reddit.com/r/rails/comments/jidiju/how_does_create_method_work/
+---
+Hello, I have a serious situation.
+
+My projects are using rails 5.2.3 with Delayed Job and a job creates a record and then another job perform with find a record by id.
+
+The gap between perform another job and create! method called is maybe within 0.5s.
+
+But sometimes another job could not find a record by id.
+
+So I was wondering create! method does not guarantee that a transaction is committed?
+
+If not, how guarantee after commit?
+## [6][How to sanitize some field values before save?](https://www.reddit.com/r/rails/comments/jicrlg/how_to_sanitize_some_field_values_before_save/)
+- url: https://www.reddit.com/r/rails/comments/jicrlg/how_to_sanitize_some_field_values_before_save/
+---
+Hello, Rails beginner here. 
+
+Is there any built in method in Rails that works like Django model's clean() method?
+
+I'm looking for a way to **sanitize user provided value for a url field**, by removing schema/trailing slash etc.
+
+I'm saving a `Project` model &amp; `Site` models using a nested form. Cleaning it in the controller requires to loop through `params[:sites_attributes].` I can clean the url field in a validation method but it doesn't feel right.
+
+What is the best practice regarding sanitising a single or multiple fields before save? Where should i do it?
+
+\# Project Model
+
+`class Project &lt; ApplicationRecord`
+
+  `has_many :sites`
+
+`end` 
+
+\# Site Model
+
+`class Site &lt; ApplicationRecord`
+
+ `belongs_to :project` 
+
+  `validate :must_be_valid_url`
+
+`end`
+
+\# Controller
+
+`def update`  
+ `@project = Project.find(params[:id])`  
+ `if @project.update(project_params)`  
+`redirect_to edit_project_path(@project)`  
+ `else`  
+`render :edit`  
+ `end`  
+`end`
+
+`def project_params`  
+ `params.require(:project).permit(sites_attributes: [:id, :url, ....])`  
+`end`
+## [7][MVP : start with Devise (or equivalent) or auth0 (or equivalent) ?](https://www.reddit.com/r/rails/comments/jhqo9r/mvp_start_with_devise_or_equivalent_or_auth0_or/)
 - url: https://www.reddit.com/r/rails/comments/jhqo9r/mvp_start_with_devise_or_equivalent_or_auth0_or/
 ---
 If you had to build a MVP for a new startup, will you choose an authentication provider (auth0 or whatever  equivalent), or will you integrate it inside your application (Clearance, Devise, Sorcery...). I have this choice to do and I find it hard to make the right decision. In theory less software is better, but I feel I loose control over what is happening, and the main interest of Rails is precisely ability to integrate anything. Thanks for your thoughts!
-## [4][Help: Good way to handle mail templates stored in database](https://www.reddit.com/r/rails/comments/jhomuk/help_good_way_to_handle_mail_templates_stored_in/)
+## [8][Help: Good way to handle mail templates stored in database](https://www.reddit.com/r/rails/comments/jhomuk/help_good_way_to_handle_mail_templates_stored_in/)
 - url: https://www.reddit.com/r/rails/comments/jhomuk/help_good_way_to_handle_mail_templates_stored_in/
 ---
 Hi all, 
@@ -53,11 +270,15 @@ Therefore, we need someway smart to handle all the mail templates in a user frie
 To spice it, we also need to handle multiple languages, however currently we only support two. 
 
 We are using Rails 6 api only as backend and React as frontend.
-## [5][What are some of the most beautiful rails made websites you've visited?](https://www.reddit.com/r/rails/comments/jhf166/what_are_some_of_the_most_beautiful_rails_made/)
+## [9][What are some of the most beautiful rails made websites you've visited?](https://www.reddit.com/r/rails/comments/jhf166/what_are_some_of_the_most_beautiful_rails_made/)
 - url: https://www.reddit.com/r/rails/comments/jhf166/what_are_some_of_the_most_beautiful_rails_made/
 ---
 
-## [6][Automatically check whether the current user is allowed to modify a record](https://www.reddit.com/r/rails/comments/jhfm2h/automatically_check_whether_the_current_user_is/)
+## [10][Can I use Pundit to shadow ban?](https://www.reddit.com/r/rails/comments/jhozhz/can_i_use_pundit_to_shadow_ban/)
+- url: https://www.reddit.com/r/rails/comments/jhozhz/can_i_use_pundit_to_shadow_ban/
+---
+Can you make me an example to hide the posts only for the shadow banned user using pundit gem?
+## [11][Automatically check whether the current user is allowed to modify a record](https://www.reddit.com/r/rails/comments/jhfm2h/automatically_check_whether_the_current_user_is/)
 - url: https://www.reddit.com/r/rails/comments/jhfm2h/automatically_check_whether_the_current_user_is/
 ---
 Solution: I'm disappointed at myself. It was right in [the docs](https://guides.rubyonrails.org/action_controller_overview.html#filters):
@@ -108,11 +329,7 @@ Using it in an action looks like this:
 ```
 
 Is there any way that I can make this check a before_action filter? This just looks so ugly in my code, ugh. Thanks.
-## [7][Can I use Pundit to shadow ban?](https://www.reddit.com/r/rails/comments/jhozhz/can_i_use_pundit_to_shadow_ban/)
-- url: https://www.reddit.com/r/rails/comments/jhozhz/can_i_use_pundit_to_shadow_ban/
----
-Can you make me an example to hide the posts only for the shadow banned user using pundit gem?
-## [8][Some columns are not created after going to MySQL](https://www.reddit.com/r/rails/comments/jh9oaz/some_columns_are_not_created_after_going_to_mysql/)
+## [12][Some columns are not created after going to MySQL](https://www.reddit.com/r/rails/comments/jh9oaz/some_columns_are_not_created_after_going_to_mysql/)
 - url: https://www.reddit.com/r/rails/comments/jh9oaz/some_columns_are_not_created_after_going_to_mysql/
 ---
 I made a bunch of migrations, and this is my schema :
@@ -209,45 +426,3 @@ First, I'm a bit confused why it didn't ask for port or host, but I assume it's 
 By the way, when I run `rails db:create` and `rails db:migrate` everything seems just fine, but when I create a user, it seems it doesn't care for the *username* field.
 
 This is a [link](https://github.com/prp-e/railstagram) to my project. I need to deploy it tonight and I have this problem with MySQL. My development environment is macOS Catalina.
-## [9][Advice on Application Architecture](https://www.reddit.com/r/rails/comments/jh42dn/advice_on_application_architecture/)
-- url: https://www.reddit.com/r/rails/comments/jh42dn/advice_on_application_architecture/
----
-Hey everyone
-
-I'm building a social-network-like platform with a Rails API and React all on AWS EBS. This isn't a hobby project, so I need to be careful about my design choices and would therefore appreciate some advice.
-
-What's worrying me is how I will introduce realtime functionality. Like most social networks, my app will have a feed, likes, and maybe comments--all of which need to be updated in (near) realtime when something happens in the database. There is also a 1-to-1 chat component.
-
-Because I'm kind of on a ticking clock, I'm thinking about taking the easy way out with the chat and using Firebase for that (chat is not really relevant to my biz logic). From what I'm reading, realtime chat seems to be finicky with Rails and ActionCable. I hypothesize that ActionCable will do the job for all the other realtime stuff. Would you agree?
-
-I've seen alternatives like Pusher and Pubnub and they look great, but they're also quite pricey. Anyone run into a similar situation?
-## [10][Moving a method: :delete in another page](https://www.reddit.com/r/rails/comments/jh7teq/moving_a_method_delete_in_another_page/)
-- url: https://www.reddit.com/r/rails/comments/jh7teq/moving_a_method_delete_in_another_page/
----
-Hi guys,
-
-in the page in view app/view/books/edit.html.erb I have this to delete the page
-
-    &lt;%= link_to "Destroy", book_path(id: @book.slug), method: :delete, data: { confirm: "are you sure?" } %&gt;
-
-I want to move it in a custom popup. So I edited it in this way
-
-    &lt;%= link_to "Destroy", warning_path(:type =&gt; 'delete_book'), remote: true, data: { load_popup: true } %&gt;
-
-and in app/views/warning/index.html.erb I added this
-
-    &lt;% if params[:type] == 'delete_book' %&gt;
-    	&lt;%= link_to "Destroy", book_path(id: @book.slug), method: :delete, data: { confirm: "are you sure?" } %&gt;
-    &lt;% end %&gt;
-
-But I have this error: `Undefined method 'slug' for nil:NilClass`. How to fix?
-## [11][[Help] Rails Server gives error "ERR_CONNECTION_REFUSED" in browser](https://www.reddit.com/r/rails/comments/jgx048/help_rails_server_gives_error_err_connection/)
-- url: https://www.reddit.com/r/rails/comments/jgx048/help_rails_server_gives_error_err_connection/
----
-EDIT: Solved changing port 8000 seemed to do the trick thanks for your help
-
-I'm new to rails development and only have a couple of simple projects. All of my projects are stored in a wsl2 Ubuntu 18.04LTS vm. I have always been able to run \`rails s\` and view my project on localhost:3000. Even last night I was able to view 2 separate projects this way. Now, today when I start rails server everything looks like it works as expected within the terminal (starting on [127.0.0.1:3000](https://127.0.0.1:3000)) but when I try to load in my browser I get \`ERR\_CONNECTION\_REFUSED\`. Other than the message in the browser the server in the terminal looks just like normal and shows no error messages. Any help would be greatly appreciated.
-## [12][Security : Is sending back an invalid password is a good or bad practice ?](https://www.reddit.com/r/rails/comments/jgop0h/security_is_sending_back_an_invalid_password_is_a/)
-- url: https://www.reddit.com/r/rails/comments/jgop0h/security_is_sending_back_an_invalid_password_is_a/
----
-If user wants to register to my app and enter a too short password, is it bad practice to fill again this password in the rendered template ? (Or for a JSON request, show this "bad" password in the JSON response).

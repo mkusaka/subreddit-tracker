@@ -3,117 +3,98 @@
 - url: https://blog.golang.org/survey2020
 ---
 
-## [2][distribyted/distribyted: Torrent client with on-demand file downloading as a filesystem in Go](https://www.reddit.com/r/golang/comments/ji9zcb/distribyteddistribyted_torrent_client_with/)
+## [2][TIL Go support continue statements with labels](https://www.reddit.com/r/golang/comments/jiveet/til_go_support_continue_statements_with_labels/)
+- url: https://relistan.com/continue-statement-with-labels-in-go
+---
+
+## [3][From HTTP to HTTPS with Go (with mTLS)](https://www.reddit.com/r/golang/comments/jiy3eq/from_http_to_https_with_go_with_mtls/)
+- url: https://www.prakharsrivastav.com/posts/from-http-to-https-using-go/
+---
+
+## [4][Creating your own GitHub Action using Go](https://www.reddit.com/r/golang/comments/jijwqb/creating_your_own_github_action_using_go/)
+- url: https://www.youtube.com/watch?v=8IgNY8QT3vk
+---
+
+## [5][Tiny progress bar package](https://www.reddit.com/r/golang/comments/jiz7s4/tiny_progress_bar_package/)
+- url: https://github.com/vardius/progress-go
+---
+
+## [6][awsinventory 0.4.0: Big batch of new AWS services!](https://www.reddit.com/r/golang/comments/jizfbj/awsinventory_040_big_batch_of_new_aws_services/)
+- url: https://www.reddit.com/r/golang/comments/jizfbj/awsinventory_040_big_batch_of_new_aws_services/
+---
+[https://github.com/manywho/awsinventory/releases/tag/0.4.0](https://github.com/manywho/awsinventory/releases/tag/0.4.0)
+
+AWS Inventory is a command line tool written in Go to fetch data from  AWS and use it to generate a FedRAMP compliant inventory of your assets
+
+This release adds a load of new AWS services as well as other fixes and improvements.
+
+The following new services can now be included:
+
+* CloudFront
+* CodeCommit
+* DynamoDB
+* ECR
+* ECS
+* ELBv2 (ALB's &amp; NLB's)
+* ElastiCache
+* Elasticsearch
+* KMS
+* Lambda
+* RDS
+* SQS
+## [7][What do you think about : Qmgo - The MongoDB driver for Go .](https://www.reddit.com/r/golang/comments/jivcm9/what_do_you_think_about_qmgo_the_mongodb_driver/)
+- url: https://www.reddit.com/r/golang/comments/jivcm9/what_do_you_think_about_qmgo_the_mongodb_driver/
+---
+Qmgo - The MongoDB driver for Go . It‘s based on official mongo-go-driver but easier to use like Mgo.  [https://github.com/qiniu/qmgo](https://github.com/qiniu/qmgo)
+
+* Qmgo allow user to use the new features of MongoDBin a more elegant way.
+* Qmgo is the first choice for migrating from mgoto the new MongoDB driverwith minimal code changes.
+
+Current supported features:
+
+* CRUD to documents
+* Sort、limit、count、select、distinct
+* Transactions
+* Hooks
+* Automatically update default and custom fields
+* Predefine operator keys
+## [8][Do more with GitLab from your CLI with the newly released version of glab (v1.11.0). You can now view merge request diffs, view issue boards, and do more with glab from your CLI](https://www.reddit.com/r/golang/comments/jimf12/do_more_with_gitlab_from_your_cli_with_the_newly/)
+- url: https://github.com/profclems/glab/releases/latest
+---
+
+## [9][distribyted/distribyted: Torrent client with on-demand file downloading as a filesystem in Go](https://www.reddit.com/r/golang/comments/ji9zcb/distribyteddistribyted_torrent_client_with/)
 - url: https://github.com/distribyted/distribyted
 ---
 
-## [3][kboard: a terminal game to practice keyboard typing](https://www.reddit.com/r/golang/comments/jid5l4/kboard_a_terminal_game_to_practice_keyboard_typing/)
+## [10][kboard: a terminal game to practice keyboard typing](https://www.reddit.com/r/golang/comments/jid5l4/kboard_a_terminal_game_to_practice_keyboard_typing/)
 - url: https://github.com/CamiloGarciaLaRotta/kboard
 ---
 
-## [4][go-echarts: the adorable charts library for Golang](https://www.reddit.com/r/golang/comments/jhu7xv/goecharts_the_adorable_charts_library_for_golang/)
-- url: https://www.reddit.com/r/golang/comments/jhu7xv/goecharts_the_adorable_charts_library_for_golang/
+## [11][Why is my Middleware being called multiple times?](https://www.reddit.com/r/golang/comments/jitcb2/why_is_my_middleware_being_called_multiple_times/)
+- url: https://www.reddit.com/r/golang/comments/jitcb2/why_is_my_middleware_being_called_multiple_times/
 ---
-Hi, every gopher, project recommendation!
+I am writing a middleware for graphql resolvers and I am using the Chi router. My middleware is running into an issue where it keeps getting called after a request has been made to a resolver. I would expect it to be called only once each time a resolver function is called. What is causing it to keep calling itself indefinitely? 
 
-In the Golang ecosystem, there are not many choices for data visualizing libraries. The development of [go-echarts](https://github.com/go-echarts/go-echarts) aims to provide a simple yet powerful data visualizing library for Golang. [Echarts](https://echarts.apache.org/) is an outstanding charting and visualizing library opensourced by Baidu, it supports adorable chart types and various interactive features. There are many language bindings for Echarts, for example, [pyecharts](https://github.com/pyecharts/pyecharts). go-echarts learns from pyecharts and has evolved a lot.
-
-
-go-echarts is easy to use and extend,  in this example, we create a simple bar chart with only a few lines of code.
-
-
-```golang
-package main
-
-import (
-	"math/rand"
-	"os"
-
-	"github.com/go-echarts/go-echarts/v2/charts"
-	"github.com/go-echarts/go-echarts/v2/opts"
-)
-
-// generate random data for bar chart
-func generateBarItems() []opts.BarData {
-	items := make([]opts.BarData, 0)
-	for i := 0; i &lt; 7; i++ {
-		items = append(items, opts.BarData{Value: rand.Intn(300)})
-	}
-	return items
-}
-
-func main() {
-	// create a new bar instance
-	bar := charts.NewBar()
-
-	// set some global options like Title/Legend/ToolTip or anything else
-	bar.SetGlobalOptions(
-		charts.WithTitleOpts(opts.Title{
-			Title:    "Bar-basic-example",
-			Subtitle: "This is the subtitle.",
-		}),
-	)
-
-	// iowriter
-	f, err := os.Create("bar.html")
-	if err != nil {
-		panic(err)
-	}
-
-	// Put some data in instance
-	bar.SetXAxis([]string{"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"}).
-		AddSeries("Category A", generateBarItems()).
-		AddSeries("Category B", generateBarItems())
-
-	// Where the magic happens
-	bar.Render(f)
-}
-```
-
-And the generated bar.html is rendered as below
-
-[bar.png](https://user-images.githubusercontent.com/19553554/97107442-85f91880-1702-11eb-8b73-d0d8daedf549.png)
-
-For more information, please refer to [go-echarts/examples](https://github.com/go-echarts/examples) and the [GoDoc](https://pkg.go.dev/github.com/go-echarts/go-echarts/v2).
-
-Project link: https://github.com/go-echarts/go-echarts
-## [5][Using Golang to upload and download files in pcloud using cmd](https://www.reddit.com/r/golang/comments/jiacsd/using_golang_to_upload_and_download_files_in/)
-- url: https://www.reddit.com/r/golang/comments/jiacsd/using_golang_to_upload_and_download_files_in/
----
-Hello gophers,
-
-I am trying to use [https://github.com/yanmhlv/pcloud](https://github.com/yanmhlv/pcloud) project to upload and download files.With this i can upload my files but downloading is not working.Also when using this i can upload small size of files but when it is more than 50mb it is taking more time.
-
-Is there any other method by using golang to connect to pcloud in cmd.Can anybody help me ?
-## [6][Generics in Go](https://www.reddit.com/r/golang/comments/jiehkx/generics_in_go/)
-- url: https://youtu.be/F8Gl8-3ZW0E
----
-
-## [7][Quick question: Go syntax changes since Go 1.0](https://www.reddit.com/r/golang/comments/jhzjno/quick_question_go_syntax_changes_since_go_10/)
-- url: https://www.reddit.com/r/golang/comments/jhzjno/quick_question_go_syntax_changes_since_go_10/
----
-For a presentation about Go's simplicity, I would like to know what changes/additions happened to the language/syntax since Go 1.0 (up until Go 1.15).
-
-The only thing I know of is:  
-* Type aliasing: `type T1 = T2`
-## [8][Reactive planing in Golang. Reach a desired number adding and subtracting random numbers](https://www.reddit.com/r/golang/comments/jicwdt/reactive_planing_in_golang_reach_a_desired_number/)
-- url: https://gianarb.it/blog/reactive-plan-golang-example
----
-
-## [9][Am I wrong to use gRPC for this project?](https://www.reddit.com/r/golang/comments/ji9cfs/am_i_wrong_to_use_grpc_for_this_project/)
-- url: https://www.reddit.com/r/golang/comments/ji9cfs/am_i_wrong_to_use_grpc_for_this_project/
----
-Is gRPC only for microservice for you ?? I plan to use gRPC or GraphQL here but if I use GraphQL I should install many dependency in the Front End and would read more documentation for each dependency , but if I use gRPC web , it was generated code and I should follow the rules how to use it and not too much to configuration things for their dependency on the FE 
-
-Also I was looking how to deploy gRPC to production, and many articles using Kurbenest for the case , I have no idea about Kubernestes :( , that is my problem if I stick with gRPC , can I deploy my go gRPC like usual project using only docker container and run that by docker ?
-
-What you think about gRPC only for microservice ? Should I avoid to gRPC for this ? 
-But so far I don't use for bi-direction on gRPC, and might use unary alot for so far
-## [10][imgcat - a tool to output images as RGB ANSI graphics on the terminal](https://www.reddit.com/r/golang/comments/jhms24/imgcat_a_tool_to_output_images_as_rgb_ansi/)
-- url: https://github.com/trashhalo/imgcat
----
-
-## [11][A generic task queueing system for Go programs](https://www.reddit.com/r/golang/comments/jhvggg/a_generic_task_queueing_system_for_go_programs/)
-- url: https://git.sr.ht/~sircmpwn/dowork
----
-
+`type authResponseWriter struct {`  
+`http.ResponseWriter`  
+`}`  
+`func (w *authResponseWriter) Write(b []byte) (int, error) {`  
+ `// some logic to generate token`  
+`http.SetCookie(w, &amp;http.Cookie{`  
+`Name:     "token",`  
+`Value:    string(token),`  
+`HttpOnly: true,`  
+`Path:     "/",`  
+`SameSite: http.SameSiteStrictMode,`  
+`})`  
+ `return w.ResponseWriter.Write(b)`  
+`}`  
+`// Middleware returns the handler for authenticating the user`  
+`func Middleware(next http.Handler) func(http.Handler) http.Handler {`  
+ `return func(next http.Handler) http.Handler {`  
+ `return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {`  
+ `authResponseWriter := &amp;authResponseWriter{w}`  
+`next.ServeHTTP(authResponseWriter, r)`  
+`})`  
+`}`  
+`}`

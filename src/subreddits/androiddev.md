@@ -31,7 +31,39 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Android 11 scoped storage - MediaStore can create sub-directories, delete - but are rename-file/move-file instantaneous as before ?](https://www.reddit.com/r/androiddev/comments/jib3l7/android_11_scoped_storage_mediastore_can_create/)
+## [3][Released an android sdk to reduce video streaming costs by up-to 90%](https://www.reddit.com/r/androiddev/comments/jixujb/released_an_android_sdk_to_reduce_video_streaming/)
+- url: https://www.reddit.com/r/androiddev/comments/jixujb/released_an_android_sdk_to_reduce_video_streaming/
+---
+Hi everyone
+
+I am working on an android sdk which can reduce video streaming costs of CDN by up-to 90% using a hybrid decentralized technology. I have opened it up for beta-access for developers to try it out. Looking for feedback w.r.t the technology and any features you would want to have.
+
+A web demo is available here [https://api.peervadoo.com/test](https://api.peervadoo.com/test) . Click on **Add new peer** to see the tech in action,
+
+Android sdk link :- [https://github.com/vadootvpeer/sdk-android](https://github.com/vadootvpeer/sdk-android)
+
+We are giving free video streaming cdn credits for those interested from here [https://api.peervadoo.com/vadoo\_cdn](https://api.peervadoo.com/vadoo_cdn)
+## [4][Released kotlinx.coroutines 1.4.0](https://www.reddit.com/r/androiddev/comments/jikkvp/released_kotlinxcoroutines_140/)
+- url: https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.4.0
+---
+
+## [5][Navigating with SafeArgs](https://www.reddit.com/r/androiddev/comments/jixmlu/navigating_with_safeargs/)
+- url: https://medium.com/androiddevelopers/navigating-with-safeargs-bf26c17b1269
+---
+
+## [6][Android development material](https://www.reddit.com/r/androiddev/comments/jj0yd2/android_development_material/)
+- url: https://www.reddit.com/r/androiddev/comments/jj0yd2/android_development_material/
+---
+Hello I was an Android developer and stopped developing about 2 years ago I'm still a novice and was when I quit. If I want to get back on track what's a course or material I should study to up my skills and get a better understanding? Thanks!
+## [7][Have you ever heard of undocumented QUICKBOOT_POWERON for boot receiver?](https://www.reddit.com/r/androiddev/comments/jj0cxj/have_you_ever_heard_of_undocumented_quickboot/)
+- url: https://dev.to/localazy/7-floating-windows-on-android-boot-receiver-4flc
+---
+
+## [8][Saving Stack(java.util.Stack) Data on Application](https://www.reddit.com/r/androiddev/comments/jiz4ld/saving_stackjavautilstack_data_on_application/)
+- url: https://www.reddit.com/r/androiddev/comments/jiz4ld/saving_stackjavautilstack_data_on_application/
+---
+Hi! How do you save stack data when you use java.util.Stack? Like say save the stack contents when your app closes and loads it when app reopens?  I'd like to know what concepts should I be looking into. Thanks!
+## [9][Android 11 scoped storage - MediaStore can create sub-directories, delete - but are rename-file/move-file instantaneous as before ?](https://www.reddit.com/r/androiddev/comments/jib3l7/android_11_scoped_storage_mediastore_can_create/)
 - url: https://www.reddit.com/r/androiddev/comments/jib3l7/android_11_scoped_storage_mediastore_can_create/
 ---
 The first video in the references below has a good (non-Google) overview of the issues with MediaStore for Android 11 - and how some apps are having to use a mixture of SAF and MediaStore to cobble things together.
@@ -128,32 +160,7 @@ rough transcript:
 
 https://medium.com/androiddevelopers/android-11-storage-faq-78cefea52b7c
 Android 11 storage FAQ
-## [4][Can't start rollout of an app due to app permissions error](https://www.reddit.com/r/androiddev/comments/ji5y4q/cant_start_rollout_of_an_app_due_to_app/)
-- url: https://www.reddit.com/r/androiddev/comments/ji5y4q/cant_start_rollout_of_an_app_due_to_app/
----
-I'm rolling out a new version of an app but for the first time needed to submit a declaration regarding the location permissions I'm requesting.
-
-I've submitted my declaration (as "no, I'm not accessing location in the background") and the page shows a green tick with a "Submitted" label, but my "Review and release" page is still showing it as an error, and the "Start rollout to production" button is disabled.
-
-I thought the review process was supposed to start by clicking "Start rollout to production"? Or is Google still reviewing the declaration, even though this release is still only a draft? It's been like this since last Friday.
-
-[https://imgur.com/a/hyuRkbb](https://imgur.com/a/hyuRkbb)
-## [5][Android Always On Display api](https://www.reddit.com/r/androiddev/comments/jiavb2/android_always_on_display_api/)
-- url: https://www.reddit.com/r/androiddev/comments/jiavb2/android_always_on_display_api/
----
-Hi, how can I create an AOD app?(using android studio) 
-Anyone know about an android AOD api guide or something?
-## [6][What is READ_EXTERNAL_STORAGE permission needed for?](https://www.reddit.com/r/androiddev/comments/jibvaj/what_is_read_external_storage_permission_needed/)
-- url: https://www.reddit.com/r/androiddev/comments/jibvaj/what_is_read_external_storage_permission_needed/
----
-I noticed that an app is able to access any audio file on a device without having been granted the READ_EXTERNAL_STORAGE permission.
-
-I checked the official Android documentation and it's written in poor English:
-
-https://developer.android.com/reference/android/Manifest.permission#READ_EXTERNAL_STORAGE
-
-I was under the assumption that "External Storage" in Android is any storage that is not specific to your app. Am I wrong in that? Perhaps this permission is only needed to access sd cards?
-## [7][Firebase Crashlytics Integration With Github](https://www.reddit.com/r/androiddev/comments/jie4lc/firebase_crashlytics_integration_with_github/)
+## [10][Firebase Crashlytics Integration With Github](https://www.reddit.com/r/androiddev/comments/jie4lc/firebase_crashlytics_integration_with_github/)
 - url: https://www.reddit.com/r/androiddev/comments/jie4lc/firebase_crashlytics_integration_with_github/
 ---
 Good day guys,
@@ -165,46 +172,19 @@ Can anyone here guild this fellow android developer on how to integrate firebase
 The idea is if there's any major crash on app, it should automatically get issued on our github repository.
 
 Thank you.
-## [8][Android Studio 4.1 now has a SQL database viewer.](https://www.reddit.com/r/androiddev/comments/jid9we/android_studio_41_now_has_a_sql_database_viewer/)
+## [11][Android Studio 4.1 now has a SQL database viewer.](https://www.reddit.com/r/androiddev/comments/jid9we/android_studio_41_now_has_a_sql_database_viewer/)
 - url: https://www.reddit.com/r/androiddev/comments/jid9we/android_studio_41_now_has_a_sql_database_viewer/
 ---
 How do you browse your Android app databases? do you really have to copy the files back and forth?
-## [9][My Play Console says I have a message but nothing is in the inbox. What if this is an app suspension? This is a very bad bug to have.](https://www.reddit.com/r/androiddev/comments/jiafeb/my_play_console_says_i_have_a_message_but_nothing/)
-- url: https://i.redd.it/8fq7psl88ev51.png
+## [12][Can't start rollout of an app due to app permissions error](https://www.reddit.com/r/androiddev/comments/ji5y4q/cant_start_rollout_of_an_app_due_to_app/)
+- url: https://www.reddit.com/r/androiddev/comments/ji5y4q/cant_start_rollout_of_an_app_due_to_app/
 ---
+I'm rolling out a new version of an app but for the first time needed to submit a declaration regarding the location permissions I'm requesting.
 
-## [10][Just published a new Android library. A simple screen that is shown when your app crashes that includes the crash details instead of the normal crash dialog. It's very similar to the one in Flutter.](https://www.reddit.com/r/androiddev/comments/jhjfzu/just_published_a_new_android_library_a_simple/)
-- url: https://github.com/mlegy/red-screen-of-death
----
+I've submitted my declaration (as "no, I'm not accessing location in the background") and the page shows a green tick with a "Submitted" label, but my "Review and release" page is still showing it as an error, and the "Start rollout to production" button is disabled.
 
-## [11][Phone going on Reboot cycle.](https://www.reddit.com/r/androiddev/comments/ji6ybg/phone_going_on_reboot_cycle/)
-- url: https://www.reddit.com/r/androiddev/comments/ji6ybg/phone_going_on_reboot_cycle/
----
-Phone in reboot cycle and it's 4 year old phone.
+I thought the review process was supposed to start by clicking "Start rollout to production"? Or is Google still reviewing the declaration, even though this release is still only a draft? It's been like this since last Friday.
 
-Any help form this short log between reboots - on what is casuing it to reboot often.
+[https://imgur.com/a/hyuRkbb](https://imgur.com/a/hyuRkbb)
 
-1/4 CPU gone bad?
-
-[https://filebin.net/j9astmfteeo1umew/last\_kernel-1026-065243.log?t=1mo4ab3u](https://filebin.net/j9astmfteeo1umew/last_kernel-1026-065243.log?t=1mo4ab3u)
-## [12][apps supporting the full screen size/shape of the pixel 4 and 5](https://www.reddit.com/r/androiddev/comments/jhxbyy/apps_supporting_the_full_screen_sizeshape_of_the/)
-- url: https://www.reddit.com/r/androiddev/comments/jhxbyy/apps_supporting_the_full_screen_sizeshape_of_the/
----
-hi
-
-what do app developers need to do to fully support the screen size/shape of the pixel 5 (and partially the pixel 4)?
-
-i have a pixel 5 (and previously the pixel 4), and some, but not all, apps support using all of the screen, however some apps don't use the very bottom part, and others don't support both the bottom and the  top?
-
-this is very jarring when an app ends up with a black section at the top and bottom of the screen.  
-it's even worse when apps that play video don't support it. prime example being the plex app. i play a video, in landscape mode, and you end up with a black section on the left.
-
-see examples of two apps that have either one or both the "issues".  
-
-
-  
-
-
-https://preview.redd.it/k1g8magw0av51.jpg?width=1080&amp;format=pjpg&amp;auto=webp&amp;s=595cedc86540298c7ea2f779a7a46b5fe4318d12
-
-https://preview.redd.it/1ahrepov0av51.jpg?width=1080&amp;format=pjpg&amp;auto=webp&amp;s=0cffccb4a26e6ddc3af9eaf97289b68556c9ef4d
+EDIT: at the moment, it looks like updating the target version from 28 (Android 9) to 29 or 30 (Android 10/11) makes the Play Console accept it.

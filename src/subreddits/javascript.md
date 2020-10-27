@@ -1,11 +1,5 @@
 # javascript
-## [1][Showoff Saturday (October 24, 2020)](https://www.reddit.com/r/javascript/comments/jh7la5/showoff_saturday_october_24_2020/)
-- url: https://www.reddit.com/r/javascript/comments/jh7la5/showoff_saturday_october_24_2020/
----
-Did you find or create something cool this week in javascript? 
-
-Show us here!
-## [2][Your /r/javascript recap for the week of October 19 - October 25](https://www.reddit.com/r/javascript/comments/jib7yw/your_rjavascript_recap_for_the_week_of_october_19/)
+## [1][Your /r/javascript recap for the week of October 19 - October 25](https://www.reddit.com/r/javascript/comments/jib7yw/your_rjavascript_recap_for_the_week_of_october_19/)
 - url: https://www.reddit.com/r/javascript/comments/jib7yw/your_rjavascript_recap_for_the_week_of_october_19/
 ---
 **Monday, October 19 - Sunday, October 25**
@@ -85,49 +79,57 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][React chat UI library](https://www.reddit.com/r/javascript/comments/ji0s13/react_chat_ui_library/)
-- url: https://github.com/chatscope/chat-ui-kit-react
+## [2][Fixture-based test runner by Microsoft: Folio](https://www.reddit.com/r/javascript/comments/jixmc1/fixturebased_test_runner_by_microsoft_folio/)
+- url: https://github.com/microsoft/folio
 ---
 
-## [4][Half-Life inspired 3D scene with WebGL](https://www.reddit.com/r/javascript/comments/jhtlvl/halflife_inspired_3d_scene_with_webgl/)
-- url: https://oguzeroglu.github.io/ROYGBIV/demo/villneuvedascq/application.html
+## [3][Cypress is an amazing testing framework but I always thought it should be easier to write test setups, so I made cypress-routines](https://www.reddit.com/r/javascript/comments/jigyqq/cypress_is_an_amazing_testing_framework_but_i/)
+- url: https://maxschmitt.me/posts/cypress-routines/
 ---
 
-## [5][React pagination library](https://www.reddit.com/r/javascript/comments/jib9eu/react_pagination_library/)
-- url: https://www.npmjs.com/package/@impedans/usepagination
+## [4][ICYMI: In Node v15, unhandled rejected promises will tear down the process](https://www.reddit.com/r/javascript/comments/jirpje/icymi_in_node_v15_unhandled_rejected_promises/)
+- url: https://www.reddit.com/r/node/comments/jipk9c/icymi_in_node_v15_unhandled_rejected_promises/
 ---
 
-## [6][An intuition for lisp syntax](https://www.reddit.com/r/javascript/comments/jhyhrt/an_intuition_for_lisp_syntax/)
-- url: https://stopa.io/post/265
+## [5][Vanilla-todo: A case study on viable techniques for vanilla web development](https://www.reddit.com/r/javascript/comments/jj10k9/vanillatodo_a_case_study_on_viable_techniques_for/)
+- url: https://github.com/morris/vanilla-todo
 ---
 
-## [7][Show off your games using this tool](https://www.reddit.com/r/javascript/comments/jibq6t/show_off_your_games_using_this_tool/)
-- url: https://dev.to/ananto30/show-off-your-games-using-this-tool-2o65
+## [6][Migrating a JS project from Travis to GitHub Actions](https://www.reddit.com/r/javascript/comments/jiznsz/migrating_a_js_project_from_travis_to_github/)
+- url: https://httptoolkit.tech/blog/migrating-javascript-from-travis-to-github-actions/
 ---
 
-## [8][Opinions on reviewing PRs](https://www.reddit.com/r/javascript/comments/ji8nen/opinions_on_reviewing_prs/)
-- url: https://balavishnuvj.com/blog/effectively-review-pull-requests/?utm_source=twitter
+## [7][[AskJS] Entry Level JS Interview](https://www.reddit.com/r/javascript/comments/jit9xn/askjs_entry_level_js_interview/)
+- url: https://www.reddit.com/r/javascript/comments/jit9xn/askjs_entry_level_js_interview/
+---
+Hey everyone!
+
+I am in the middle of a career change, and picked up programming during the pandemic. I started off by learning Python, followed directly with learning Django. While learning Django, I had a brief stint learning the basics of JS. 
+
+&amp;#x200B;
+
+Long story short, I am lucky enough to have been asked to interview for an entry-level software development position at a medical software development company (I currently work in Health Info Management). I have 1.5 weeks until my live coding interview (I have passed my preliminary coding interview) and am feeling a bit nervous as it is my first coding interview. The main languages I have been asked to choose from for the interview are JS or PHP. I have never tried PHP and have experience with JS of course, and I have read that logic is similar to Python.
+
+&amp;#x200B;
+
+I wanted to reach out and see if anyone thought I was still out of my league to be interviewing for this position, and if anyone had any tips, or focal points to study beforehand. I am going to be studying, practicing, and trying my best to become as fluent as possible in this short amount of time. 
+
+&amp;#x200B;
+
+So, once again, if anyone has any advice, tips, tricks, etc. I would greatly appreciate it.
+## [8][Web scraping with JS](https://www.reddit.com/r/javascript/comments/jihsyg/web_scraping_with_js/)
+- url: https://qoob.cc/web-scraping/?utm_source=rjavascript
 ---
 
-## [9][Speed and accuracy typing test. A new game to test and train your keyboard skills. Become a keyboard ninja and be the best. Any feedback is welcome:)](https://www.reddit.com/r/javascript/comments/ji0ekl/speed_and_accuracy_typing_test_a_new_game_to_test/)
-- url: http://typein.ninja
+## [9][Creating a JavaScript promise from scratch, Part 1: Constructor](https://www.reddit.com/r/javascript/comments/jig7lo/creating_a_javascript_promise_from_scratch_part_1/)
+- url: https://humanwhocodes.com/blog/2020/09/creating-javascript-promise-from-scratch-constructor/
 ---
 
-## [10][[AskJS] Question about React having a 'Virtual DOM'](https://www.reddit.com/r/javascript/comments/jhl8mo/askjs_question_about_react_having_a_virtual_dom/)
-- url: https://www.reddit.com/r/javascript/comments/jhl8mo/askjs_question_about_react_having_a_virtual_dom/
----
-I asked this on /r/react and didn't get any replies, maybe someone here can help here.
-
-I keep reading about how React's Virtual DOM is more efficient than the browser because it 'only updates the parts which need to update'.
-
-Do web browsers in 2020 not do something similar? Surely they don't update the whole DOM and repaint the whole window every time Javascript appends one &lt;li&gt; to a list?
-
-I'm kind of struggling with this point not making sense to me.
-## [11][This week’s open source newsletter just went out! This one had some seriously interesting projects, like a gaming framework written in Typescript released by Microsoft and a timeline component for React!](https://www.reddit.com/r/javascript/comments/jhu624/this_weeks_open_source_newsletter_just_went_out/)
-- url: https://console.substack.com/p/console-24?r=3cbez&amp;utm_campaign=post&amp;utm_medium=web&amp;utm_source=copy
+## [10][A submission form that emulates a code editor](https://www.reddit.com/r/javascript/comments/jiox2f/a_submission_form_that_emulates_a_code_editor/)
+- url: https://sie.doesweb.dev
 ---
 
-## [12][eloquent-ffmpeg - A Node.js media processing library based on FFmpeg command-line tools](https://www.reddit.com/r/javascript/comments/jhc3gx/eloquentffmpeg_a_nodejs_media_processing_library/)
-- url: https://github.com/FedericoCarboni/eloquent-ffmpeg
+## [11][Webpack 5 react boilerplate with typescript support, hmr, css-modules](https://www.reddit.com/r/javascript/comments/jion8e/webpack_5_react_boilerplate_with_typescript/)
+- url: https://github.com/glook/webpack-typescript-react
 ---
 

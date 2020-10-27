@@ -27,98 +27,98 @@ AWS always releases a bunch of features, sometimes everyday or atleast once a we
 10: More features in App Mesh(Circuit breaker, Rate Limiting)
 
 P.S: Not sure if some features are already available, but if something is missing, please feel free to add
-## [2][CodePipeline with multiple branches seems absurdly complex](https://www.reddit.com/r/aws/comments/ji5gql/codepipeline_with_multiple_branches_seems/)
-- url: https://www.reddit.com/r/aws/comments/ji5gql/codepipeline_with_multiple_branches_seems/
+## [2][Week of Sept 26th - AWS Open Discussion](https://www.reddit.com/r/aws/comments/jifk9h/week_of_sept_26th_aws_open_discussion/)
+- url: https://www.reddit.com/r/aws/comments/jifk9h/week_of_sept_26th_aws_open_discussion/
 ---
-[https://aws.amazon.com/blogs/devops/multi-branch-codepipeline-strategy-with-event-driven-architecture/](https://aws.amazon.com/blogs/devops/multi-branch-codepipeline-strategy-with-event-driven-architecture/)
+Doing this for a few reasons. We know some folks are hesitant to create a new post for a small question they may have. Well, this is the place to ask, and discuss. At the same time, with a growing community we find ourselves having to limit the posts that may be off-topic to the primary purpose of the sub.
+## [3][aurora multi master in production anyone?](https://www.reddit.com/r/aws/comments/jizg99/aurora_multi_master_in_production_anyone/)
+- url: https://www.reddit.com/r/aws/comments/jizg99/aurora_multi_master_in_production_anyone/
+---
+Hi, 
 
-We are considering moving to CodePipeline and we use GitFlow as our release methodology in which we deploy "release branches" which are branches cut off develop when we decide new features and fixes are ready. GitFlow seems like a time and battle tested strategy for organizations that want to have deliberate releases.
+I am evaluating a migration on aurora multimaster with a database-based sharding.
 
-Its crazy to me that CodePipeline doesn't have native support for GitFlow which is a multi-branch deploy workflow. The solution provided by the link above suggests using lambda to create CloudFormation stacks. This seems crazy and an abuse of what CloudFormation is designed for. The CloudFormation interface isn't designed for thousands of stacks. Creating a stack for every branch will add an incredible amount of noise to the interface if you use Cfn for standard infrastructure-as-code uses.
+I'd like to hear some real-life experience from someone which is using this setup.
 
-Am I missing something?
+Any tips or gotchas to know before crossing that bridge?
+## [4][How to create a role for clients so that they can access my S3 bucket and simply upload the required folder?](https://www.reddit.com/r/aws/comments/jizl6r/how_to_create_a_role_for_clients_so_that_they_can/)
+- url: https://www.reddit.com/r/aws/comments/jizl6r/how_to_create_a_role_for_clients_so_that_they_can/
+---
+Hi, I am a complete AWS noob, so please excuse my lack of knowledge. I have only started working on AWS3 days ago.
 
-Further, I'm not sure if there is a language barrier issue in the article, but the following paragraph seems very passive aggressive:
-
-&gt;It’s important to note that trunk-based is, by far, the best strategy for taking full advantage of a DevOps approach; this is the branching strategy that AWS recommends to its customers. On the other hand, many customers like to work with multiple branches and believe it justifies the effort and complexity in dealing with branching merges. This solution is for these customers.
-
-It's as if they are saying, if you're not using trunk based workflow, you're inferior and overly complicating things. When in reality, it feels like AWS is overly complicating the workflow necessary to support a very standard methodology.
-
-Anyone with me on this?  
-Are there other GitFlow users out there who use CodePipeline?  
-Are there other GitFlow users out there who use something else to release to AWS?
-## [3][Failing over with falling over - Stack Overflow Blog](https://www.reddit.com/r/aws/comments/jibnsu/failing_over_with_falling_over_stack_overflow_blog/)
-- url: https://stackoverflow.blog/2020/10/23/adrian-cockcroft-aws-failover-chaos-engineering-fault-tolerance-distaster-recovery/
+I have created an S3 Bucket so that my clients can upload their folders to it. What I want is to use a simple third-party client for Amazon S3 so that they can very easily go to my bucket and just drop the folder they wanted to upload and leave, since I believe, accessing the AWS console will confuse them. As I understand, I will have to create a role for them. Can anyone please guide me as to how to create a role for my clients with write-only access? Also what client should I install on the clients machine?
+## [5][The annual “Last Week in AWS” charity t-shirt drive has begun, featuring Route 53](https://www.reddit.com/r/aws/comments/jijfqo/the_annual_last_week_in_aws_charity_tshirt_drive/)
+- url: https://www.lastweekinaws.com/2020-charity-t-shirt/
 ---
 
-## [4][Need SMB shared folder on AWS](https://www.reddit.com/r/aws/comments/jienh1/need_smb_shared_folder_on_aws/)
-- url: https://www.reddit.com/r/aws/comments/jienh1/need_smb_shared_folder_on_aws/
+## [6][Best AWS service for implamenting CI/CD service](https://www.reddit.com/r/aws/comments/jiuf3n/best_aws_service_for_implamenting_cicd_service/)
+- url: https://www.reddit.com/r/aws/comments/jiuf3n/best_aws_service_for_implamenting_cicd_service/
 ---
-Hello,
+I'me creating a \`flutter build\` feature for my service.
 
-Like the title says, I need to provide a shared folder (SMB) hosted on AWS, it will be accesible from a local LAN. I don't know which option is better: S3 Bucket with AWS Appliance? Amazon FSx? Or I missing something? Help please.
-## [5][AWS IAM Introduction](https://www.reddit.com/r/aws/comments/jhu004/aws_iam_introduction/)
-- url: https://www.reddit.com/r/aws/comments/jhu004/aws_iam_introduction/
----
-Hey everyone - thought I'd post a brief overview of IAM that I initially wrote for work on here. 
-
-Typically IAM is something devs learn "on the way" to building things, but I figure a brief rundown could be useful for a lot of people:
-
-[https://towardsdatascience.com/aws-iam-introduction-20c1f017c43](https://towardsdatascience.com/aws-iam-introduction-20c1f017c43)
-## [6][AWS Inspector HELP!!!! Plz....](https://www.reddit.com/r/aws/comments/jieha9/aws_inspector_help_plz/)
-- url: https://www.reddit.com/r/aws/comments/jieha9/aws_inspector_help_plz/
----
-Greetings community
-
-Does anyone know how Amazon inspector actually works?
-
-Looking at the results for a Linux instance it had Windows CVEs on it and vise versa.
-
-My instances are at the latest patch level but still showing 500+ vulnerabilities?!?
-
-Any help graciously accepted :)
-## [7][Rest API on AWS: Will It Bankrupt Me?](https://www.reddit.com/r/aws/comments/jidckk/rest_api_on_aws_will_it_bankrupt_me/)
-- url: https://www.reddit.com/r/aws/comments/jidckk/rest_api_on_aws_will_it_bankrupt_me/
----
-I'm building a SAAS product. Its not overly complicated but for the sake of brevity on this post:
-
-It will allow users to create projects and within each project create "Diaries". In simple terms its a daily record of events which include time, description + images and video. In return visualisations and reports can be created using the collected data.
-
-I'm considering using AWS Lambdas + API Gateway as the backend. I don't expect each user to generate more than a million requests per month with an entry subscription price of approx. $300 per user (I know it very high but there's very good reason for it  as I've worked in the target market industry for several years).
-
-The simplicity of user authentication and setup of such as a system on AWS is too attractive to ignore as opposed to using Node or Flask for my backend.
-
-Has anyone had experience with such a setup? It seems that a lot of posts here are warning me about the AWS bill but is it really that expensive??
-## [8][CDK best practice for CI/CD with stages+config+env](https://www.reddit.com/r/aws/comments/jialp1/cdk_best_practice_for_cicd_with_stagesconfigenv/)
-- url: https://www.reddit.com/r/aws/comments/jialp1/cdk_best_practice_for_cicd_with_stagesconfigenv/
----
-Hi everyone, I'm new to CDK but I'm used to serverless-framework. Our current approach is to have a git repository for each project and each repository has at least 2 main branches: 
-
-* master for production env on AWS
-* staging for staging env on AWS
-
-Every env we have a different configuration (account and region) + specific config for what we are going to deploy, for example, a different domain/subdomain based on the env.
-
-Is there a best practice that allows me to push to a branch, load automatically the config (account+region) + env variables and deploy on that specific AWS env?
-
-I've tried to look for that best practice on the official documentation, forums, and slack channels but to be honest, I never found something official.
-## [9][Force Workspaces to only show up on 2 of the 3 monitors](https://www.reddit.com/r/aws/comments/ji5hkh/force_workspaces_to_only_show_up_on_2_of_the_3/)
-- url: https://www.reddit.com/r/aws/comments/ji5hkh/force_workspaces_to_only_show_up_on_2_of_the_3/
----
-I've been trying to research this, but I cannot find a solution, nor a 3rd party application that can give me what I need. Basically, I need to prevent AWS WorkSpaces from showing up on 1 of my 3 monitors, but I'd like it to be on the other 2. I cannot adjust the display settings within the workspaces application to try and "disconnect" one of the displays, so that isn't going to work. Essentially, the reason is I need 2 of my screens dedicated to running certain work software and my 3rd monitor to be running other software, such as Outlook, Teams, etc.
+Here is the question, Since flutter build requires to install flutter, and then build it, I'm not sure Lambda will be the best choice, It might be overpriced. What other option do i have for performing semi-havy operation per request?
 
 &amp;#x200B;
 
-Can anyone help me find a solution? I feel like I am all out of ideas and would like to save myself from more pain of figuring this out. Thanks!
-## [10][Having trouble setting up load balancers with HIPAA compliance](https://www.reddit.com/r/aws/comments/ji8k18/having_trouble_setting_up_load_balancers_with/)
-- url: https://www.reddit.com/r/aws/comments/ji8k18/having_trouble_setting_up_load_balancers_with/
----
-Forst of all, I'm pretty new to AWS and I started with this quick start here: https://aws.amazon.com/quickstart/architecture/compliance-hipaa/
+It usually takes 5 minutes to install, and build web on local machine.
 
-The issue I'm having is getting the public proxy server load balancer to redirect to the internal app server load balancer. It just times out. The quickstart used nginx on the proxy server so. I completely replaced the app server EC2 instance so it can work with our app. It's using Django on Ubuntu instead of wordpress on Amazon Linux that the quickstart used. I'm not sure if something is not configured properly with the subnets, security groups or something else. I'm pretty sure I set everything to be open as much as possible but still no luck. Is there a way I can pinpoint the exact cause of the issue? Nginx logs just shows that the connection was closed. Any help or tips would be appreciated!
-## [11][Cloud formation manually?](https://www.reddit.com/r/aws/comments/ji6eyn/cloud_formation_manually/)
-- url: https://www.reddit.com/r/aws/comments/ji6eyn/cloud_formation_manually/
----
-I’m kind of new to AWS, but a long time C++ developer. Trying to find out best practices in terms of development process beyond just using the console for everything. 
+&amp;#x200B;
 
-How are you all creating your cloud formation templates?  Are you writing the YAML by hand, googling syntax and pasting in stuff. Are you using some sort of cloud formation designer, or are you using the AWS toolkit built into VSCode?
+&amp;#x200B;
+
+input : source file
+
+process: install flutter, build dist with source file
+
+output: dist as a zip file
+## [7][How do large enterprises manage security in AWS?](https://www.reddit.com/r/aws/comments/jilcqf/how_do_large_enterprises_manage_security_in_aws/)
+- url: https://www.reddit.com/r/aws/comments/jilcqf/how_do_large_enterprises_manage_security_in_aws/
+---
+Imagine you are working in a security role in a very large enterprise with many AWS roles/accounts and they want a central point to manage AWS security and look after API access limits and similar things across the enterprise. Is there any guidance or best practice available for this sort of thing?
+
+Thanks!
+## [8][What AWS Technologies would I want to use?](https://www.reddit.com/r/aws/comments/jizn9x/what_aws_technologies_would_i_want_to_use/)
+- url: https://www.reddit.com/r/aws/comments/jizn9x/what_aws_technologies_would_i_want_to_use/
+---
+Hi Everyone,
+
+Formerly a firebase user looking to start up with AWS for a new project.
+
+The project is simply going to be a web app (possibly server side rendered for speed), sitting on a node.js backend with a MonogoDB server. I also have a java 'app' which on my PC I've been using to run backend data collection tasks. 
+
+In firebase this would be using the firebase cloud store database, and firebase functions.
+
+Is there anything like this on AWS? I don't want to think a ton about scaling for (hopefully) a lot of pageviews. But I'm also willing to do something more custom if its cheaper
+## [9][How secure are pods running on EKS Fargate?](https://www.reddit.com/r/aws/comments/jizduy/how_secure_are_pods_running_on_eks_fargate/)
+- url: https://www.reddit.com/r/aws/comments/jizduy/how_secure_are_pods_running_on_eks_fargate/
+---
+I'm currently evaluating running workloads on EKS Fargate and found this in the [documentation](https://docs.aws.amazon.com/eks/latest/userguide/fargate.html).
+
+&gt;Fargate runs each pod in a VM-isolated environment without sharing resources                                              with other pods. However, because Kubernetes is a single-tenant orchestrator,                                              Fargate cannot guarantee pod-level security isolation. You should run sensitive                                              workloads or untrusted workloads that need complete security isolation using                                              separate Amazon EKS clusters.
+
+What does this mean exactly? My interpretation is that Kubernetes doesn't have a concept of multi-tenancy and since you're sharing infrastructure with other users there's a chance they can access your data? If so, that would pretty heavily limit its use cases from my perspective.
+
+It's a bit vague, it kinda sounds like they're saying "there's isolation between pods so it should be secure" followed by a bit of hand waving and the disclaimer "except for when it's not..."
+
+Is my understanding correct? How great is the risk?
+## [10][Should I create VPCs with IPv6 at this point?](https://www.reddit.com/r/aws/comments/jiqus8/should_i_create_vpcs_with_ipv6_at_this_point/)
+- url: https://www.reddit.com/r/aws/comments/jiqus8/should_i_create_vpcs_with_ipv6_at_this_point/
+---
+Understand that there is still room with IPv4, but would it be a long term play to go with IPv6? Is there any tradeoffs with this?
+## [11][Restrict access to your internal websites on AWS with BeyondCorp (defined with Terraform)](https://www.reddit.com/r/aws/comments/jiqmyp/restrict_access_to_your_internal_websites_on_aws/)
+- url: https://transcend.io/blog/restrict-access-to-internal-websites-with-beyondcorp
+---
+
+## [12][ALB design w/ NLB? Use ALB to handle requests, and NLB to forward data for logging? (Splunk)](https://www.reddit.com/r/aws/comments/jipp9m/alb_design_w_nlb_use_alb_to_handle_requests_and/)
+- url: https://www.reddit.com/r/aws/comments/jipp9m/alb_design_w_nlb_use_alb_to_handle_requests_and/
+---
+Hey all,   
+
+
+I am setting up Splunk Enterprise in AWS. I want to set up ALB for the front end, and an NLB for the backend to send logs to the indexer when necessary for any systems that are SaaS.  
+
+
+Is it possible to route all traffic through the ALB, but should it hit a certain port or rule it directs it to the NLB and begins logging TCP/TLS? I have been putzing around all day trying to get this set up, the only portion I seem to have up and running is ALB w/ Route 53. Just want to be able to point Domain w/ proper ports to Splunk and begin logging (and proper SG of course)  
+
+
+Thanks!

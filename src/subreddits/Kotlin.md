@@ -44,7 +44,27 @@ On October 12–15 we hosted the [Kotlin 1.4 Online Event](https://kotlinlang.or
 Please post your questions as top-level comments to this post.
 
 We look forward to hearing from you!
-## [2][Kotlin tutorials free download](https://www.reddit.com/r/Kotlin/comments/jicji8/kotlin_tutorials_free_download/)
+## [2][Released kotlinx.coroutines 1.4.0](https://www.reddit.com/r/Kotlin/comments/jikkd1/released_kotlinxcoroutines_140/)
+- url: https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.4.0
+---
+
+## [3][I published a small Android library written in Kotlin inspired by the uncaught exception widget from flutter. A screen that is shown when your app crashes and includes the crash details instead of the normal crash dialog. Should be used only in debug builds.](https://www.reddit.com/r/Kotlin/comments/jioz0c/i_published_a_small_android_library_written_in/)
+- url: https://github.com/mlegy/red-screen-of-death
+---
+
+## [4][Android's strings.xml: Deprecated!](https://www.reddit.com/r/Kotlin/comments/jj0yj8/androids_stringsxml_deprecated/)
+- url: https://localazy.com/blog/android-strings-xml-deprecated
+---
+
+## [5][Multiplatform Java/JS examples?](https://www.reddit.com/r/Kotlin/comments/jimrqv/multiplatform_javajs_examples/)
+- url: https://www.reddit.com/r/Kotlin/comments/jimrqv/multiplatform_javajs_examples/
+---
+I am trying to find an ideal example of using the MPP (yes, I know it's alpha) plugin to generate both JVM Maven package output and a NodeJS package of some kind from the same code base. In Gradle KTS format.
+
+I've gone over dozens of projects I've found, and for the life of me can't quite figure out how they generate JS output into the right place, for NPM publishing, and also JVM output and a POM file for Maven publishing.
+
+I do intend to use commonMain, jvmMain and jsMain stuff. Some types need to differ between platforms, etc.
+## [6][Kotlin tutorials free download](https://www.reddit.com/r/Kotlin/comments/jicji8/kotlin_tutorials_free_download/)
 - url: https://www.reddit.com/r/Kotlin/comments/jicji8/kotlin_tutorials_free_download/
 ---
 If anyone can help, I need free download tutorials for Kotlin for beginners , (no torrent please).
@@ -52,15 +72,7 @@ If anyone can help, I need free download tutorials for Kotlin for beginners , (n
 I am learning and I want to create inspection checklist which saves my notes and can add remarks on each item inside list.
 
 Would be great if you could help.
-## [3][𝗟𝗲𝗲𝘁𝗖𝗼𝗱𝗲 #𝟳 - 𝗥𝗲𝘃𝗲𝗿𝘀𝗲 𝗜𝗻𝘁𝗲𝗴𝗲𝗿](https://www.reddit.com/r/Kotlin/comments/jia6yu/𝗟𝗲𝗲𝘁𝗖𝗼𝗱𝗲_𝟳_𝗥𝗲𝘃𝗲𝗿𝘀𝗲_𝗜𝗻𝘁𝗲𝗴𝗲𝗿/)
-- url: https://www.reddit.com/r/Kotlin/comments/jia6yu/𝗟𝗲𝗲𝘁𝗖𝗼𝗱𝗲_𝟳_𝗥𝗲𝘃𝗲𝗿𝘀𝗲_𝗜𝗻𝘁𝗲𝗴𝗲𝗿/
----
-A new blog post discussing the approach and code to solve 𝗥𝗲𝘃𝗲𝗿𝘀𝗲 𝗜𝗻𝘁𝗲𝗴𝗲𝗿 problem on #leetcode [https://redquark.org/leetcode/0007-reverse-integer/](https://redquark.org/leetcode/0007-reverse-integer/)  
-
-Implemented in #Java, #javascript, #Python and #Kotlin  
-
-\#algorithms #datastructures
-## [4][searching for a resource to build Microservices with Kafka server](https://www.reddit.com/r/Kotlin/comments/jhv1y8/searching_for_a_resource_to_build_microservices/)
+## [7][searching for a resource to build Microservices with Kafka server](https://www.reddit.com/r/Kotlin/comments/jhv1y8/searching_for_a_resource_to_build_microservices/)
 - url: https://www.reddit.com/r/Kotlin/comments/jhv1y8/searching_for_a_resource_to_build_microservices/
 ---
 Hi guys,
@@ -74,7 +86,15 @@ I am looking for a good resource, since I have been searching for a while, but n
 &amp;#x200B;
 
 Any help ?
-## [5][Trying to get property reference from a type given by function receiver](https://www.reddit.com/r/Kotlin/comments/jhr1au/trying_to_get_property_reference_from_a_type/)
+## [8][𝗟𝗲𝗲𝘁𝗖𝗼𝗱𝗲 #𝟳 - 𝗥𝗲𝘃𝗲𝗿𝘀𝗲 𝗜𝗻𝘁𝗲𝗴𝗲𝗿](https://www.reddit.com/r/Kotlin/comments/jia6yu/𝗟𝗲𝗲𝘁𝗖𝗼𝗱𝗲_𝟳_𝗥𝗲𝘃𝗲𝗿𝘀𝗲_𝗜𝗻𝘁𝗲𝗴𝗲𝗿/)
+- url: https://www.reddit.com/r/Kotlin/comments/jia6yu/𝗟𝗲𝗲𝘁𝗖𝗼𝗱𝗲_𝟳_𝗥𝗲𝘃𝗲𝗿𝘀𝗲_𝗜𝗻𝘁𝗲𝗴𝗲𝗿/
+---
+A new blog post discussing the approach and code to solve 𝗥𝗲𝘃𝗲𝗿𝘀𝗲 𝗜𝗻𝘁𝗲𝗴𝗲𝗿 problem on #leetcode [https://redquark.org/leetcode/0007-reverse-integer/](https://redquark.org/leetcode/0007-reverse-integer/)  
+
+Implemented in #Java, #javascript, #Python and #Kotlin  
+
+\#algorithms #datastructures
+## [9][Trying to get property reference from a type given by function receiver](https://www.reddit.com/r/Kotlin/comments/jhr1au/trying_to_get_property_reference_from_a_type/)
 - url: https://www.reddit.com/r/Kotlin/comments/jhr1au/trying_to_get_property_reference_from_a_type/
 ---
 I'm making a builder for any class. It's based on KProperty reflections and it works well for now, but I want to improve an interface of it. Here is an example of current usage:
@@ -118,17 +138,11 @@ So, I want to make new function prettyAssign() with callable argument, where cla
 In that approach it doesn't work, because KClass&lt;T&gt; doesn't have references to T properties.
 
 So, I don't understand, is there a way to make prettyAssign() working
-## [6][Choosing the right architecture for a [new] Kotlin Multiplatform, Jetpack Compose and SwiftUI app](https://www.reddit.com/r/Kotlin/comments/jh9xk2/choosing_the_right_architecture_for_a_new_kotlin/)
+## [10][Choosing the right architecture for a [new] Kotlin Multiplatform, Jetpack Compose and SwiftUI app](https://www.reddit.com/r/Kotlin/comments/jh9xk2/choosing_the_right_architecture_for_a_new_kotlin/)
 - url: https://www.marcogomiero.com/posts/2020/kmm-shared-app-architecture
 ---
 
-## [7][Help me haha xd](https://www.reddit.com/r/Kotlin/comments/ji2mmb/help_me_haha_xd/)
-- url: https://www.reddit.com/r/Kotlin/comments/ji2mmb/help_me_haha_xd/
----
-Any of you can help me, how can i cast a edittext  to a double or why when I enter in the activity where I am going to calculate that it takes me out of the application?
-
-https://preview.redd.it/rzbw496tgbv51.png?width=728&amp;format=png&amp;auto=webp&amp;s=cc33b6331c0cf70373ae26b2334959cc5781a85d
-## [8][How to create a fat jar for Kotlin Multiplatform project without main class?](https://www.reddit.com/r/Kotlin/comments/jhh0hc/how_to_create_a_fat_jar_for_kotlin_multiplatform/)
+## [11][How to create a fat jar for Kotlin Multiplatform project without main class?](https://www.reddit.com/r/Kotlin/comments/jhh0hc/how_to_create_a_fat_jar_for_kotlin_multiplatform/)
 - url: https://www.reddit.com/r/Kotlin/comments/jhh0hc/how_to_create_a_fat_jar_for_kotlin_multiplatform/
 ---
  Hello! 
@@ -140,19 +154,3 @@ There is a [stackoverflow post](https://stackoverflow.com/a/62770101) that I fou
 I have been having hard time to get this to work. Most of the examples online are for multiplatform projects with main class. Is there any tutorial on how to build a fat jar for a multiplatform project that doesn't have main class? Any help is greatly appreciated!
 
 Thanks in advance! 
-## [9][How to handle keyboard input in windows floating over other apps on Android?](https://www.reddit.com/r/Kotlin/comments/jhbocw/how_to_handle_keyboard_input_in_windows_floating/)
-- url: https://vaclavhodek.com/6-floating-windows-on-android-keyboard-input
----
-
-## [10][Can't Run Kotlin Project IntelliJ](https://www.reddit.com/r/Kotlin/comments/jhkzaa/cant_run_kotlin_project_intellij/)
-- url: https://www.reddit.com/r/Kotlin/comments/jhkzaa/cant_run_kotlin_project_intellij/
----
-Just started using Kotlin and intelli j like last week. First time I used it I had no problems but today idk if there was a recent update or something but the UI changed when creating a project. I right clicked on the src folder and created a new kotlin file but I can't run it at all Idk what happened. Can someone please help
-## [11][Kotlin Team AMA session is coming!](https://www.reddit.com/r/Kotlin/comments/jgmvgz/kotlin_team_ama_session_is_coming/)
-- url: https://www.reddit.com/r/Kotlin/comments/jgmvgz/kotlin_team_ama_session_is_coming/
----
-Hi! The Kotlin team are getting ready to answer your questions on October 26-27. 
-
-During this AMA, we'll also cover some of the unanswered questions from the [Kotlin 1.4 Online Event](https://kotlinlang.org/lp/event-14/). 
-
-Keep an eye on the notifications in this subreddit, we will start at 9:00 am CET on October 26.

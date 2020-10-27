@@ -70,140 +70,65 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Keeping up with React Libraries](https://www.reddit.com/r/reactjs/comments/jicfxg/keeping_up_with_react_libraries/)
-- url: https://maxrozen.com/keeping-up-with-react-libraries/
+## [3][New version of GraphQL Editor almost 100% in ReactJS](https://www.reddit.com/r/reactjs/comments/jiydfl/new_version_of_graphql_editor_almost_100_in/)
+- url: https://github.com/graphql-editor/graphql-editor
 ---
 
 ## [4][I was able get copying cells from my react-virtualized grid to excel working! Here's how...](https://www.reddit.com/r/reactjs/comments/jieg9k/i_was_able_get_copying_cells_from_my/)
 - url: https://v.redd.it/npexh5w9xfv51
 ---
 
-## [5][Useful Hooks for Tired React Developers](https://www.reddit.com/r/reactjs/comments/jhsqeb/useful_hooks_for_tired_react_developers/)
-- url: https://medium.com/javascript-in-plain-english/useful-custom-hooks-for-tired-react-devs-f2f602dc754f
+## [5][Trap focus in a React component](https://www.reddit.com/r/reactjs/comments/jixsby/trap_focus_in_a_react_component/)
+- url: https://robinvdvleuten.nl/blog/trap-focus-in-a-react-component/
 ---
 
-## [6][Unit Testing React App with Jest/Enzyme](https://www.reddit.com/r/reactjs/comments/jidb1e/unit_testing_react_app_with_jestenzyme/)
-- url: https://www.reddit.com/r/reactjs/comments/jidb1e/unit_testing_react_app_with_jestenzyme/
+## [6][SetState's 'previous State' parameter](https://www.reddit.com/r/reactjs/comments/jj0jms/setstates_previous_state_parameter/)
+- url: https://www.reddit.com/r/reactjs/comments/jj0jms/setstates_previous_state_parameter/
 ---
-Hey folks,
+So far, when we needed to access the previous state of one of our state properties, and update it using this.setState in a class component, we used:
 
-Hope you are doing great. 
+**Example 1:**
 
-I have recently started exploring unit testing. I am a bit confused that what kind of tests should I write.
+    this.setState( (prevState) =&gt; { input: value} )
 
-Example: Counter App has three buttons Increment/Decrement and a Reset button.
+Now I've just seen it written in this way:
 
-Should I write a test that checks whether a display field is present or not, because its obvious that it should be there.
+**Example 2:**
 
-I have written some tests for Counter App. Please have a look at it and let me know if I am going in the right direction  
+    this.setState( ( ) =&gt; { input: value} )
 
+Doesn't `()` i.e. the empty parentheses in example 2 effectively say there are no parameters? Or does React implicitly pass in previous state for you when you leave it empty, so you don't have to explicitly type it in your call as per the first example where you do say  `'prevState'`?
 
-Note: I am newbie
+Also, should I wrap `{ input: value }` with parentheses? Like this:
 
-    describe('Counter', () =&gt; {
-      it('renders Counter component without crashing', () =&gt; {
-        shallow(&lt;Counter /&gt;);
-      });
-    
-      it('contains a helpful text which explains our App', () =&gt; {
-        const title = 'This is a Counter App. Use - button to decrease value and + button to increase value.';
-        const wrapper = shallow(&lt;Counter /&gt;);
-        expect(wrapper.contains(title)).toBe(true);
-      });
-    
-      it('checks if inc/dec buttons are there', () =&gt; {
-        const wrapper = shallow(&lt;Counter /&gt;);
-        const incButton = wrapper.find('#increment').dive().text();
-        const decButton = wrapper.find('#decrement').dive().text();
-        expect(incButton).toEqual('+');
-        expect(decButton).toEqual('-');
-      });
-    
-      it('checks if initial value of counter is zero', () =&gt; {
-        const wrapper = shallow(&lt;Counter /&gt;);
-        const counter = wrapper.find('#counter-input').props().value;
-        expect(counter).toBe(0);
-      });
-    
-      it('checks if Increment button increases value by 1', () =&gt; {
-        const wrapper = shallow(&lt;Counter /&gt;);
-    
-        const incButton = wrapper.find('#increment');
-        incButton.simulate('click');
-    
-        const counter = wrapper.find('#counter-input').props().value;
-        expect(counter).toBe(1);
-      });
-    
-      it('checks if Decrement button decreases value by 1', () =&gt; {
-        const wrapper = shallow(&lt;Counter /&gt;);
-    
-        const incButton = wrapper.find('#decrement');
-        incButton.simulate('click');
-    
-        const counter = wrapper.find('#counter-input').props().value;
-        expect(counter).toBe(-1);
-      });
-    
-      it('checks Reset button functionality', () =&gt; {
-        const wrapper = shallow(&lt;Counter /&gt;);
-    
-        const incButton = wrapper.find('#increment');
-        incButton.simulate('click');
-    
-        const counter = wrapper.find('#counter-input').prop('value');
-        expect(counter).toBe(1);
-    
-        wrapper.find('.reset-btn').simulate('click');
-        expect(wrapper.find('#counter-input').prop('value')).toBe(0);
-      });
-    });
-## [7][Is it tough to get projects as a freelancer in React Js ?](https://www.reddit.com/r/reactjs/comments/jidlhv/is_it_tough_to_get_projects_as_a_freelancer_in/)
-- url: https://www.reddit.com/r/reactjs/comments/jidlhv/is_it_tough_to_get_projects_as_a_freelancer_in/
+    this.setState( ( ) =&gt; ( { input: value} ) )
+
+or is that additonal ( ) optional?
+## [7][React page is showing not found](https://www.reddit.com/r/reactjs/comments/jj03nl/react_page_is_showing_not_found/)
+- url: https://www.reddit.com/r/reactjs/comments/jj03nl/react_page_is_showing_not_found/
 ---
-I have studied react js for the past 3 months and got myself convenient in every topic of React as well as its libraries and redux.
-I have designed and developed a covid tracker, food delivery app and a shopping app using react. 
-Will it be difficult for me to start freelancing in React although if I have a good looking portfolio with my projects hosted on the server for the client to refer ?
-
-Any advice will be appreciated.
-## [8][Estimating an UI application](https://www.reddit.com/r/reactjs/comments/ji7ain/estimating_an_ui_application/)
-- url: https://www.reddit.com/r/reactjs/comments/ji7ain/estimating_an_ui_application/
+I am hosting my mern app on heroku. But whenever i go to a different route and reload the page, it shows not found. It works perfectly on the localhost. I don't know, it's caused by react or heroku. Does anyone know the solution of this problem?
+## [8][Optimize Performance &amp; Render Website Superfast in ReactJS](https://www.reddit.com/r/reactjs/comments/jizzh6/optimize_performance_render_website_superfast_in/)
+- url: https://www.akashmittal.com/optimize-performance-reactjs/
 ---
-How do you usually arrive at estimates? I have always faced backlashes on my gut feel estimates. Do we have any easy/ scientific way of estimating so that gut feel estimates can be more accurate. 
 
-
-Consider this for a UI application based on react.
-## [9][Using React with Parcel.js](https://www.reddit.com/r/reactjs/comments/ji9zph/using_react_with_parceljs/)
-- url: https://www.reddit.com/r/reactjs/comments/ji9zph/using_react_with_parceljs/
+## [9][how to hide password in inspect element](https://www.reddit.com/r/reactjs/comments/jizv2v/how_to_hide_password_in_inspect_element/)
+- url: https://www.reddit.com/r/reactjs/comments/jizv2v/how_to_hide_password_in_inspect_element/
 ---
-So I've been interested in trying out Parcel and finally had some motivation. I've set my project us and I'm having problems with Parcel not reloading and seemingly not watching my files correctly.
-
-I'm not doing anything crazy, I think.. I have a `src` folder with an `index.html` and `index.tsx` and my root `style.scss`. Whenever I save these they are immediately shown in my browser.
-
-Inside src, I have a `components` and `scenes` file. When I import my `Home` component (from the `scenes` directory), this is immediately shown. However, if I make any changes to `Home` or any components in the `components` directory, nothing is ever updated which is really annoying and I can't work out what I'm doing wrong. 
-
-The styles are changes in the components are updated if I stop and start the watcher (`yarn dev`) but otherwise nothing really updates.
-
-Am I doing something wrong with my config?
-## [10][Hosting images](https://www.reddit.com/r/reactjs/comments/jib3dr/hosting_images/)
-- url: https://www.reddit.com/r/reactjs/comments/jib3dr/hosting_images/
+Somebody nit picked my app and claimed that they can see the password which THEY input on the login page when they open Chrome dev tools and inspect the value of the form field. I'm like, duh, well of course you can, smart ass. I'm wondering is this person has a point, though. Should that be a big deal or not? Is there a way to prevent that from happening? Doesn't really make sense to me, but I'm willing to learn.
+## [10][Whats the difference between onchange and onupdate in react? And is there any list of available handlers in react?](https://www.reddit.com/r/reactjs/comments/jiz2ts/whats_the_difference_between_onchange_and/)
+- url: https://www.reddit.com/r/reactjs/comments/jiz2ts/whats_the_difference_between_onchange_and/
 ---
-Hi im currently making a full stack website using the MERN stack. I have a profile component which lets you upload an image and crop it like in twitter but im having trouble on where and how to store it. 
-
-I read something suggesting using base64 but people said that is was slow.  Is there any other alternatives?
-## [11][Write your React App with Fast Refresh in Deno.](https://www.reddit.com/r/reactjs/comments/jid8zt/write_your_react_app_with_fast_refresh_in_deno/)
-- url: https://www.reddit.com/r/reactjs/comments/jid8zt/write_your_react_app_with_fast_refresh_in_deno/
+I saw an answer on SO about onInput and onchange and how is it different from html, I was wondering if there is a specific resource for learning handlers on react? And in some opensource projects people use onUpdate handler, but I couldn't find anything regarding onUpdate online. TIA
+## [11][Protected routes and authentication with React Router v5](https://www.reddit.com/r/reactjs/comments/jih77i/protected_routes_and_authentication_with_react/)
+- url: https://ui.dev/react-router-v5-protected-routes-authentication/
 ---
-Hi, let me introduce you to [Aleph.js](https://alephjs.org/), a React Framework in [Deno](https://deno.land), inspired by [Next.js](https://nextjs.org).
 
-https://reddit.com/link/jid8zt/video/3hs8jzqjifv51/player
-
-[https://alephjs.org](https://alephjs.org/)
-## [12][I'm looking for a fullscreen carousel with pinch/pan/zoom features](https://www.reddit.com/r/reactjs/comments/jid5wv/im_looking_for_a_fullscreen_carousel_with/)
-- url: https://www.reddit.com/r/reactjs/comments/jid5wv/im_looking_for_a_fullscreen_carousel_with/
+## [12][(TypeScript) Reset initial redux state via redux-toolkit - configureStore complaining about my rootReducer type](https://www.reddit.com/r/reactjs/comments/jiw2g1/typescript_reset_initial_redux_state_via/)
+- url: https://www.reddit.com/r/reactjs/comments/jiw2g1/typescript_reset_initial_redux_state_via/
 ---
-I used to implement the carousel mysel and use react-zoom-pan-pinch on the pictures displayed.
+I followed the official redux typescript guide to get started and so far it has worked well: https://redux.js.org/recipes/usage-with-typescript
 
-Are there any more convenients solutions?
+Now I’m following this approach to reset a redux store on logout: https://stackoverflow.com/a/35641992/849231
 
-Thx
+What `rootReducer` return type would satisfy whatever `configureStore` expects? Seems like it should be something generic but I can’t get anything to take

@@ -56,60 +56,64 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][I made this ASCII Terrain generator with Parallax effect in C++, I'll share my code here soon.](https://www.reddit.com/r/cpp/comments/jibs2z/i_made_this_ascii_terrain_generator_with_parallax/)
+## [2][Hi, I'm new to C++. I was just wondering why the Qt framework is more than 1GB but the compiled app is very small.](https://www.reddit.com/r/cpp/comments/jiszf3/hi_im_new_to_c_i_was_just_wondering_why_the_qt/)
+- url: https://www.reddit.com/r/cpp/comments/jiszf3/hi_im_new_to_c_i_was_just_wondering_why_the_qt/
+---
+
+## [3][Semantic requirements in concepts - Andrzej's C++ blog](https://www.reddit.com/r/cpp/comments/jiq75r/semantic_requirements_in_concepts_andrzejs_c_blog/)
+- url: https://akrzemi1.wordpress.com/2020/10/26/semantic-requirements-in-concepts/
+---
+
+## [4][{fmt} 7.1 released with faster floating point formatting, file output, improved chrono and ranges support and more](https://www.reddit.com/r/cpp/comments/jierin/fmt_71_released_with_faster_floating_point/)
+- url: https://github.com/fmtlib/fmt/releases/tag/7.1.0
+---
+
+## [5][I made this ASCII Terrain generator with Parallax effect in C++, I'll share my code here soon.](https://www.reddit.com/r/cpp/comments/jibs2z/i_made_this_ascii_terrain_generator_with_parallax/)
 - url: https://youtu.be/ZJsgidL1lWs
 ---
 
-## [3][C++20 Ranges, Projections, std::invoke and if constexpr](https://www.reddit.com/r/cpp/comments/jib2wl/c20_ranges_projections_stdinvoke_and_if_constexpr/)
+## [6][Why no std::variant or std::tuple .get&lt;T&gt;() member function?](https://www.reddit.com/r/cpp/comments/jifw3w/why_no_stdvariant_or_stdtuple_gett_member_function/)
+- url: https://www.reddit.com/r/cpp/comments/jifw3w/why_no_stdvariant_or_stdtuple_gett_member_function/
+---
+It would just be syntactic sugar, `xx.get&lt;yy&gt;() -&gt; std::get&lt;yy&gt;(xx)`, but it seems inconsistent with most other containers in the standard for accessing a member (its also easier to write if you dont `using std::get`). Its easy to make a wrapper for this but it would be nice if it were in the standard instead.
+## [7][C++20 Ranges, Projections, std::invoke and if constexpr](https://www.reddit.com/r/cpp/comments/jib2wl/c20_ranges_projections_stdinvoke_and_if_constexpr/)
 - url: https://www.bfilipek.com/2020/10/understanding-invoke.html
 ---
 
-## [4][Work has begun to support Qbs in VScode.](https://www.reddit.com/r/cpp/comments/ji9yi9/work_has_begun_to_support_qbs_in_vscode/)
-- url: https://www.reddit.com/r/QtFramework/comments/ji9wr9/work_has_begun_to_support_qbs_in_vscode/
+## [8][Will the default parameter syntax ever be fixed?](https://www.reddit.com/r/cpp/comments/jixfdl/will_the_default_parameter_syntax_ever_be_fixed/)
+- url: https://www.reddit.com/r/cpp/comments/jixfdl/will_the_default_parameter_syntax_ever_be_fixed/
 ---
+int myFunc (int a = 3, int b = 5)
 
-## [5][Highway to hell: C++ enums and bitfields](https://www.reddit.com/r/cpp/comments/jhwxw6/highway_to_hell_c_enums_and_bitfields/)
-- url: https://walac.github.io/curious-bug-enum-bitfield/
+I cant specify b without specifying a. Why cant this syntax just be like this
+
+myFunc(, 4)
+
+Just put a empty comma where you dont want to specify much better and ur not gonna be forced to have all default params in the end and u can specify only specific params
+
+Will it ever be improved?
+## [9][What is the debate between OOP and Functional programming?](https://www.reddit.com/r/cpp/comments/jiua22/what_is_the_debate_between_oop_and_functional/)
+- url: https://www.reddit.com/r/cpp/comments/jiua22/what_is_the_debate_between_oop_and_functional/
 ---
-
-## [6][OpenGL Walkthrough &amp; Design: Part 1 - Creating a Basic Window](https://www.reddit.com/r/cpp/comments/jicjbi/opengl_walkthrough_design_part_1_creating_a_basic/)
-- url: https://www.reddit.com/r/cpp/comments/jicjbi/opengl_walkthrough_design_part_1_creating_a_basic/
+Why have people been saying for the past few years that OOP is becoming obsolete? They seem to be two completely different styles of programming for two completely unrelated tasks, so I'm not sure how one is replacing the other. Is it true that OOP is becoming obsolete? Please provide evidence, lots of people don't like OOP so they say "OOP is obsolete", at least from what I've seen so far on Reddit, similar to how they say that a youtuber, a political party, or a celebrity that they don't like is "losing followers and will die out soon" lol.
+## [10][Roi Barkan will talk about "C++20 Concepts" next Monday, November 2nd](https://www.reddit.com/r/cpp/comments/jipxc6/roi_barkan_will_talk_about_c20_concepts_next/)
+- url: https://www.reddit.com/r/cpp/comments/jipxc6/roi_barkan_will_talk_about_c20_concepts_next/
 ---
-Here's part 1 of this walkthrough series where I go through OpenGL and have the community critique my approach, and I incorporate their feedback. 
+Hi Everyone,
 
-* Link to the pull request (PR): [https://github.com/Nick0412/ModernOpenGL/pull/1](https://github.com/Nick0412/ModernOpenGL/pull/1).
-   * This PR appears large only because of all the dependencies added.
-* Summary of additions made in this PR
-   * Added GLFW library for window creation.
-   * Added Glad library for loading OpenGL functions.
-   * Initialized CMake project.
-   * Creating a GLFW wrapper class to abstract some of the functions.
-   * Created a minimum working example window.
-* Things to consider in future PRs
-   * Draw minimal graphics to a window.
-   * Abstract vertex array objects (VAO) and vertex buffer objects (VBO) into an appropriate API.
-   * Abstract shaders into their own class with an appropriate API.
-   * Add doxygen to improve documentation.
-   * Add googletest (or other unit test software) to test functionality.
+CPPDUG, the Dublin C/C++ Meetup Group, will host an online talk on "C++20 Concepts" by Roi Barkan next Monday, November 2nd. If the topic is of interest to you, please RSVP here: [https://www.meetup.com/cppdug/events/274196059](https://www.meetup.com/cppdug/events/274196059)
 
-If you have some time and are interested, please feel free to review the pull request I listed above and comment on it. Thank you and be on the lookout for part 2 sometime in the middle of this week.
-## [7][Jason Turner and Rob Irving join Meeting C++ 2020 for an shared AMA](https://www.reddit.com/r/cpp/comments/jic5xu/jason_turner_and_rob_irving_join_meeting_c_2020/)
-- url: https://meetingcpp.com/meetingcpp/news/items/Jason-Turner-and-Rob-Irving-join-Meeting-Cpp-2020-for-an-shared-AMA.html
----
+Talk description: C++20 concepts give us a brand new way to specify how our generic libraries and algorithms should be used and allow library users to better understand what is expected of them. However, concepts didn't rise from chaos, and before their adoption C++ library authors had other mechanisms to meet that goal. In this talk I'll briefly discuss concepts, and focus on their pros and cons compared to more mature mechanisms. Special attention will be given to the 'semantic' vs. 'syntactic' nature of concepts, and I'll try to give motivating examples of semantic-only concepts. I'll then explore best practices, and show potential pitfalls in various approaches to the challenge of defining interactions between generic code authors and users.
 
-## [8][Lithium C++ High Performance HTTP Server documentation](https://www.reddit.com/r/cpp/comments/jiejzv/lithium_c_high_performance_http_server/)
-- url: https://matt-42.github.io/lithium/
----
+Talk outline:  
+\- Problem statement, examples of 'concepts in the wild' (iterator traits, trivially-copyable, ordering)  
+\- Brief overview of C++20 concepts - syntax alternatives, common examples  
+\- Pre-concepts typical approaches - mainly type-traits, iterator\_traits, void\_t, enable\_if  
+\- Tricky cases: semantics vs. syntax; common/subtle 'bugs'; explicit call-site override  
+\- 'Philosophical' discussion on core concepts - cheaply-copyable, trivially-copyable
 
-## [9][I made command line parser library a long time ago, now I decided to share it with the world.](https://www.reddit.com/r/cpp/comments/jiease/i_made_command_line_parser_library_a_long_time/)
+Speaker bio: Professional software developer and architect since 2000, Roi's main focus throughout his career was on high performance and distributed systems, implementing complex and innovative algorithms. Roi has been the VP technologies of Istra Research since 2014, where he helps creating low latency financial systems. Prior to working for Istra Research, Roi spent 12 years in software development, architecture and management in the IT Security field. Roi received his B.A in Computer Science with high honors from the Technion in Israel, and his executive MBA from Tel Aviv University.
+## [11][I made command line parser library a long time ago, now I decided to share it with the world.](https://www.reddit.com/r/cpp/comments/jiease/i_made_command_line_parser_library_a_long_time/)
 - url: https://gitlab.com/mildlyparallel/dashh
 ---
 
-## [10][range_ref&lt;T&gt; - a fast, non-owning view on a range](https://www.reddit.com/r/cpp/comments/jhtso1/range_reft_a_fast_nonowning_view_on_a_range/)
-- url: https://artificial-mind.net/blog/2020/10/24/range_ref
----
-
-## [11][Looking for a paper "A Style for Writing C++ Classes" by Peter A. Kirslis](https://www.reddit.com/r/cpp/comments/jicpml/looking_for_a_paper_a_style_for_writing_c_classes/)
-- url: https://www.reddit.com/r/cpp/comments/jicpml/looking_for_a_paper_a_style_for_writing_c_classes/
----
-Kirslis Peter A., "A Style for Writing C++ Classes," Proceedings of the USENIX C++ Workshop. Santa Fe: USENIX Association Publishers (November 1987).

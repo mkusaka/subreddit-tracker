@@ -27,7 +27,53 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][How to merge SimpleCov results on SemaphoreCI 2.0](https://www.reddit.com/r/rails/comments/jic8m8/how_to_merge_simplecov_results_on_semaphoreci_20/)
+## [3][HOWTO: highlight link_to current_page](https://www.reddit.com/r/rails/comments/jiznev/howto_highlight_link_to_current_page/)
+- url: https://www.reddit.com/r/rails/comments/jiznev/howto_highlight_link_to_current_page/
+---
+Short post on how to highlight `link_to` `current_page`: [https://blog.corsego.com/2020/10/ruby-on-rails-highlight-linkto.html](https://blog.corsego.com/2020/10/ruby-on-rails-highlight-linkto.html) I hope you find it useful :)
+
+https://preview.redd.it/awsrnkrnlmv51.png?width=338&amp;format=png&amp;auto=webp&amp;s=05b5ace0671b8a100ada1fb7fe4d7082230fe532
+## [4][Good guides/articles regarding Rails 6 deployment to AWS](https://www.reddit.com/r/rails/comments/jiob7g/good_guidesarticles_regarding_rails_6_deployment/)
+- url: https://www.reddit.com/r/rails/comments/jiob7g/good_guidesarticles_regarding_rails_6_deployment/
+---
+Hello everyone!
+
+I decided to keep all my Rails stuff inside of one service(AWS S3 and hosting on AWS) but I struggle to find a good guide on how to deploy Rails to AWS and that the guide is up to date.
+
+It would be really cool if you could point me towards some good articles about this topic.
+
+Thank you!
+## [5][Any good courses/tutorials for Rails API + Vue out there?](https://www.reddit.com/r/rails/comments/jiozti/any_good_coursestutorials_for_rails_api_vue_out/)
+- url: https://www.reddit.com/r/rails/comments/jiozti/any_good_coursestutorials_for_rails_api_vue_out/
+---
+Hi 
+
+I'd like to get more into working with the combination of a Rails API and Vue, but I'm looking to follow a tutorial or course to get the hang of it some more before I dive into my own project. 
+
+I already followed a [tutorial from WebCrunch](https://web-crunch.com/posts/ruby-on-rails-api-vue-js) but felt like a lot of corners were being cut there. 
+
+Anybody have some up-to-date recommendations for where I could get started? Would really appreciate it!
+## [6][Introducing jQuery in Rails 6 Using Webpacker](https://www.reddit.com/r/rails/comments/jiyqvc/introducing_jquery_in_rails_6_using_webpacker/)
+- url: https://www.reddit.com/r/rails/comments/jiyqvc/introducing_jquery_in_rails_6_using_webpacker/
+---
+Hello Everyone,
+
+First release candidate of Rails 6 is out with exciting features and refinements in existing features. Today we will look into one of those features, which is webpacker. It is now by default in Rails 6 as a Javascript Compiler.
+
+Here’s a detailed blog on [Introducing jQuery in Rails 6 Using Webpacker](https://www.botreetechnologies.com/blog/introducing-jquery-in-rails-6-using-webpacker)
+
+Hope this will be helpful to #railscommunity.
+## [7][Linters](https://www.reddit.com/r/rails/comments/jij648/linters/)
+- url: https://www.reddit.com/r/rails/comments/jij648/linters/
+---
+Hi, guys! Which linter do you use? Rubocop or standardrb? Or other?
+## [8][devise host address](https://www.reddit.com/r/rails/comments/jifjwr/devise_host_address/)
+- url: https://www.reddit.com/r/rails/comments/jifjwr/devise_host_address/
+---
+I have an app and I configured it to send confirmation data using GMail. It works fine, but instead of sending confirmation like "[mysite.com/users/](https://mysite.com/users/)..." it sends it from [gmail.com/users/](https://gmail.com/users/)... . 
+
+How can I fix this? Thanks.
+## [9][How to merge SimpleCov results on SemaphoreCI 2.0](https://www.reddit.com/r/rails/comments/jic8m8/how_to_merge_simplecov_results_on_semaphoreci_20/)
 - url: https://www.reddit.com/r/rails/comments/jic8m8/how_to_merge_simplecov_results_on_semaphoreci_20/
 ---
 Original post with images on [https://anonoz.github.io/tech/2020/10/26/simplecov-semaphoreci.html](https://anonoz.github.io/tech/2020/10/26/simplecov-semaphoreci.html)
@@ -133,7 +179,6 @@ Update your `.semaphore/semaphore.yml`:
                       rbenv install;
                     fi
                 - sudo mkdir -p /project-mount
-           date: 2020-10-26
          - sudo chown -R $USER:$USER /project-mount
                 - cd ~
                 - shopt -s dotglob; mv ~/reponame/* /project-mount
@@ -171,21 +216,7 @@ Unlike CircleCI, every artifact on SemaphoreCI cannot be viewed directly in the 
     You should be able to replace `/project-mount` with the directory pah the project is git cloned into in previous test jobs.
 
 Please let me know if there are better ideas on how to go about this!
-## [4][Getting a job as a rails developer](https://www.reddit.com/r/rails/comments/ji5n8y/getting_a_job_as_a_rails_developer/)
-- url: https://www.reddit.com/r/rails/comments/ji5n8y/getting_a_job_as_a_rails_developer/
----
-I'm curious when is a good time to get a job as a rails developer? 
-
-Mainly, I'm wondering how much experience you should have before you can feasibly land a rails gig. 
-
-I've been building websites for 4 years, coding for 2 years, and doing rails for 1 year. I've built a few rails apps at this point, I also work as a software PM where I also do some light coding to contribute to the app we run. 
-
-I still have a lot to learn, but I'm also starting to feel (for the first time ever) confident in my coding skills . I'm good with HTML, CSS, jquery ruby and rails. I've deployed apps using AWS to heroku with mailers and all sorts of fun working features. 
-
-However, when I look up rails jobs, some of them say 2-5 years experience is a must, and that instantly makes me doubt myself. Does my experience sound like I might be able to get a job as a rails developer. 
-
-LIke I said, I am a PM already and I love that position, but I've totally caught the coding bug and I find it's all I ever think about or want to do, wondering if I should try and make the jump to DEV.
-## [5][how does create! method work?](https://www.reddit.com/r/rails/comments/jidiju/how_does_create_method_work/)
+## [10][how does create! method work?](https://www.reddit.com/r/rails/comments/jidiju/how_does_create_method_work/)
 - url: https://www.reddit.com/r/rails/comments/jidiju/how_does_create_method_work/
 ---
 Hello, I have a serious situation.
@@ -199,7 +230,7 @@ But sometimes another job could not find a record by id.
 So I was wondering create! method does not guarantee that a transaction is committed?
 
 If not, how guarantee after commit?
-## [6][How to sanitize some field values before save?](https://www.reddit.com/r/rails/comments/jicrlg/how_to_sanitize_some_field_values_before_save/)
+## [11][How to sanitize some field values before save?](https://www.reddit.com/r/rails/comments/jicrlg/how_to_sanitize_some_field_values_before_save/)
 - url: https://www.reddit.com/r/rails/comments/jicrlg/how_to_sanitize_some_field_values_before_save/
 ---
 Hello, Rails beginner here. 
@@ -244,185 +275,17 @@ What is the best practice regarding sanitising a single or multiple fields befor
 `def project_params`  
  `params.require(:project).permit(sites_attributes: [:id, :url, ....])`  
 `end`
-## [7][MVP : start with Devise (or equivalent) or auth0 (or equivalent) ?](https://www.reddit.com/r/rails/comments/jhqo9r/mvp_start_with_devise_or_equivalent_or_auth0_or/)
-- url: https://www.reddit.com/r/rails/comments/jhqo9r/mvp_start_with_devise_or_equivalent_or_auth0_or/
+## [12][Getting a job as a rails developer](https://www.reddit.com/r/rails/comments/ji5n8y/getting_a_job_as_a_rails_developer/)
+- url: https://www.reddit.com/r/rails/comments/ji5n8y/getting_a_job_as_a_rails_developer/
 ---
-If you had to build a MVP for a new startup, will you choose an authentication provider (auth0 or whatever  equivalent), or will you integrate it inside your application (Clearance, Devise, Sorcery...). I have this choice to do and I find it hard to make the right decision. In theory less software is better, but I feel I loose control over what is happening, and the main interest of Rails is precisely ability to integrate anything. Thanks for your thoughts!
-## [8][Help: Good way to handle mail templates stored in database](https://www.reddit.com/r/rails/comments/jhomuk/help_good_way_to_handle_mail_templates_stored_in/)
-- url: https://www.reddit.com/r/rails/comments/jhomuk/help_good_way_to_handle_mail_templates_stored_in/
----
-Hi all, 
+I'm curious when is a good time to get a job as a rails developer? 
 
-I have an administration system for customers, where they can control the product we are providing. We need to send emails on different actions, to confirm then changes has been done. 
+Mainly, I'm wondering how much experience you should have before you can feasibly land a rails gig. 
 
-Sometimes it need to sent an email with different content to 3 receptions. 
+I've been building websites for 4 years, coding for 2 years, and doing rails for 1 year. I've built a few rails apps at this point, I also work as a software PM where I also do some light coding to contribute to the app we run. 
 
-* The user who did the action
-* The administrator(s) for the users customer
-* Our administrators (or helpdesk shared email)
+I still have a lot to learn, but I'm also starting to feel (for the first time ever) confident in my coding skills . I'm good with HTML, CSS, jquery ruby and rails. I've deployed apps using AWS to heroku with mailers and all sorts of fun working features. 
 
-The emails contains variables, with data from the execution. 
+However, when I look up rails jobs, some of them say 2-5 years experience is a must, and that instantly makes me doubt myself. Does my experience sound like I might be able to get a job as a rails developer. 
 
-Currently  we are handing it directly in rails. But now we have partners which also have customers, and might want to make changes in the templates. 
-
-Therefore, we need someway smart to handle all the mail templates in a user friendly interface together with the rest of the application. Maybe some markdown support in a simple wysiwyg editor, however that is more a frontend question. First we need the backend to support til mail templates. 
-
-To spice it, we also need to handle multiple languages, however currently we only support two. 
-
-We are using Rails 6 api only as backend and React as frontend.
-## [9][What are some of the most beautiful rails made websites you've visited?](https://www.reddit.com/r/rails/comments/jhf166/what_are_some_of_the_most_beautiful_rails_made/)
-- url: https://www.reddit.com/r/rails/comments/jhf166/what_are_some_of_the_most_beautiful_rails_made/
----
-
-## [10][Can I use Pundit to shadow ban?](https://www.reddit.com/r/rails/comments/jhozhz/can_i_use_pundit_to_shadow_ban/)
-- url: https://www.reddit.com/r/rails/comments/jhozhz/can_i_use_pundit_to_shadow_ban/
----
-Can you make me an example to hide the posts only for the shadow banned user using pundit gem?
-## [11][Automatically check whether the current user is allowed to modify a record](https://www.reddit.com/r/rails/comments/jhfm2h/automatically_check_whether_the_current_user_is/)
-- url: https://www.reddit.com/r/rails/comments/jhfm2h/automatically_check_whether_the_current_user_is/
----
-Solution: I'm disappointed at myself. It was right in [the docs](https://guides.rubyonrails.org/action_controller_overview.html#filters):
-
-```rb
-class BoardsController &lt; ApplicationController
-    before_action :authenticate_user!
-    before_action :must_be_board_owner
-    skip_before_action :must_be_board_owner, only: [:new, :create, :index]
-
-    # ...
-
-    def must_be_board_owner
-        if current_user != Board.find_by(slug: params[:slug]).user
-            redirect_to root_path
-        end
-    end
-end
-```
-
----
-
-Hi. I currently have the following problem:
-On my controllers, I have this before_action filter:
-
-```rb
-# as you can see, I'm using Devise
-before_action :authenticate_user!
-```
-
-This checks whether the user is signed in or not.
-However, I also need to check whether the current user is allowed to see/modify the current record.
-Right now, I have this (horrible) method:
-
-```rb
-    private def redirect_unless_board_owner! owner
-        redirect_to root_path unless current_user == owner
-    end
-```
-
-Using it in an action looks like this:
-
-```rb
-        @board = Board.find_by slug: params[:board_slug]
-        redirect_unless_board_owner! @board.user
-
-        @task = Task.find_by slug: params[:slug]
-```
-
-Is there any way that I can make this check a before_action filter? This just looks so ugly in my code, ugh. Thanks.
-## [12][Some columns are not created after going to MySQL](https://www.reddit.com/r/rails/comments/jh9oaz/some_columns_are_not_created_after_going_to_mysql/)
-- url: https://www.reddit.com/r/rails/comments/jh9oaz/some_columns_are_not_created_after_going_to_mysql/
----
-I made a bunch of migrations, and this is my schema :
-
-    # This file is auto-generated from the current state of the database. Instead
-    # of editing this file, please use the migrations feature of Active Record to
-    # incrementally modify your database, and then regenerate this schema definition.
-    #
-    # This file is the source Rails uses to define your schema when running `rails
-    # db:schema:load`. When creating a new database, `rails db:schema:load` tends to
-    # be faster and is potentially less error prone than running all of your
-    # migrations from scratch. Old migrations may fail to apply correctly if those
-    # migrations use external dependencies or application code.
-    #
-    # It's strongly recommended that you check this file into your version control system.
-    
-    ActiveRecord::Schema.define(version: 2020_10_14_075849) do
-    
-      create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-        t.text "body"
-        t.datetime "created_at", precision: 6, null: false
-        t.datetime "updated_at", precision: 6, null: false
-        t.integer "post_id"
-        t.integer "user_id"
-        t.index ["post_id"], name: "index_comments_on_post_id"
-        t.index ["user_id"], name: "index_comments_on_user_id"
-      end
-    
-      create_table "favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-        t.string "favoritable_type", null: false
-        t.bigint "favoritable_id", null: false
-        t.string "favoritor_type", null: false
-        t.bigint "favoritor_id", null: false
-        t.string "scope", default: "favorite", null: false
-        t.boolean "blocked", default: false, null: false
-        t.datetime "created_at", precision: 6, null: false
-        t.datetime "updated_at", precision: 6, null: false
-        t.index ["blocked"], name: "index_favorites_on_blocked"
-        t.index ["favoritable_id", "favoritable_type"], name: "fk_favoritables"
-        t.index ["favoritable_type", "favoritable_id"], name: "index_favorites_on_favoritable_type_and_favoritable_id"
-        t.index ["favoritor_id", "favoritor_type"], name: "fk_favorites"
-        t.index ["favoritor_type", "favoritor_id"], name: "index_favorites_on_favoritor_type_and_favoritor_id"
-        t.index ["scope"], name: "index_favorites_on_scope"
-      end
-    
-      create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-        t.bigint "post_id", null: false
-        t.bigint "user_id", null: false
-        t.datetime "created_at", precision: 6, null: false
-        t.datetime "updated_at", precision: 6, null: false
-        t.index ["post_id"], name: "index_likes_on_post_id"
-        t.index ["user_id"], name: "index_likes_on_user_id"
-      end
-    
-      create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-        t.string "image"
-        t.text "caption"
-        t.datetime "created_at", precision: 6, null: false
-        t.datetime "updated_at", precision: 6, null: false
-        t.integer "user_id"
-        t.index ["user_id"], name: "index_posts_on_user_id"
-      end
-    
-      create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-        t.string "email", default: "", null: false
-        t.string "encrypted_password", default: "", null: false
-        t.string "reset_password_token"
-        t.datetime "reset_password_sent_at"
-        t.datetime "remember_created_at"
-        t.datetime "created_at", precision: 6, null: false
-        t.datetime "updated_at", precision: 6, null: false
-        t.string "username"
-        t.index ["email"], name: "index_users_on_email", unique: true
-        t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-        t.index ["username"], name: "index_users_on_username", unique: true
-      end
-    
-      add_foreign_key "likes", "posts"
-      add_foreign_key "likes", "users"
-    end
-
-Then, I added this to the `database.yml` file to make it work with MySQL :
-
-    default: &amp;default
-      adapter: mysql2
-      encoding: utf8
-      pool: &lt;%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %&gt;
-      username: railstagram
-      password: 
-      socket: /tmp/mysql.sock
-
-First, I'm a bit confused why it didn't ask for port or host, but I assume it's handled somewhere else.
-
-By the way, when I run `rails db:create` and `rails db:migrate` everything seems just fine, but when I create a user, it seems it doesn't care for the *username* field.
-
-This is a [link](https://github.com/prp-e/railstagram) to my project. I need to deploy it tonight and I have this problem with MySQL. My development environment is macOS Catalina.
+LIke I said, I am a PM already and I love that position, but I've totally caught the coding bug and I find it's all I ever think about or want to do, wondering if I should try and make the jump to DEV.

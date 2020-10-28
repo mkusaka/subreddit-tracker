@@ -1,61 +1,41 @@
 # ruby
-## [1][Counting records with ActiveRecord - the truth about .count, .size and .length methods](https://www.reddit.com/r/ruby/comments/jix711/counting_records_with_activerecord_the_truth/)
+## [1][Database tasks can skip test database with an environment variable | BigBinary Blog](https://www.reddit.com/r/ruby/comments/jji66z/database_tasks_can_skip_test_database_with_an/)
+- url: https://blog.bigbinary.com/2020/10/27/database-tasks-can-skip_test_database-with-an-environment-variable.html
+---
+
+## [2][How to use ActionText and install Trix Editor on Rails 6 Application](https://www.reddit.com/r/ruby/comments/jjgnqw/how_to_use_actiontext_and_install_trix_editor_on/)
+- url: https://www.youtube.com/watch?v=SMsqFRc25gw&amp;t=57s
+---
+
+## [3][4 Mistakes to Avoid as a RoR Engineer](https://www.reddit.com/r/ruby/comments/jjbp7c/4_mistakes_to_avoid_as_a_ror_engineer/)
+- url: https://thepaulo.medium.com/4-mistakes-to-avoid-as-a-ror-engineer-714374df933f
+---
+
+## [4][Squash N+1 queries early with n_plus_one_control test matchers for Ruby and Rails](https://www.reddit.com/r/ruby/comments/jj2ob8/squash_n1_queries_early_with_n_plus_one_control/)
+- url: https://evilmartians.com/chronicles/squash-n-plus-one-queries-early-with-n-plus-one-control-test-matchers-for-ruby-and-rails
+---
+
+## [5][football-to-psql tool - load / read football.txt match datafiles into a postgreSQL database](https://www.reddit.com/r/ruby/comments/jjm8vv/footballtopsql_tool_load_read_footballtxt_match/)
+- url: https://github.com/sportdb/football.db/tree/master/football-to-psql
+---
+
+## [6][Introducing Points: An Open Source blind estimation tool made with Ruby on Rails](https://www.reddit.com/r/ruby/comments/jj33en/introducing_points_an_open_source_blind/)
+- url: https://www.ombulabs.com/blog/open-source/agile/points-blind-estimation-tool.html
+---
+
+## [7][Counting records with ActiveRecord - the truth about .count, .size and .length methods](https://www.reddit.com/r/ruby/comments/jix711/counting_records_with_activerecord_the_truth/)
 - url: https://longliveruby.com/articles/active-record-counting-records
 ---
 
-## [2][The Arguments Forwarding shorthand in Ruby 2.7](https://www.reddit.com/r/ruby/comments/jiwrbh/the_arguments_forwarding_shorthand_in_ruby_27/)
+## [8][Top 10 Most Popular Programming Languages - Statistics and Data](https://www.reddit.com/r/ruby/comments/jjk9ri/top_10_most_popular_programming_languages/)
+- url: https://www.statisticsanddata.org/top-10-most-popular-programming-languages/
+---
+
+## [9][Reloading Rails Partials on Demand with render_async](https://www.reddit.com/r/ruby/comments/jj1k36/reloading_rails_partials_on_demand_with_render/)
+- url: https://pragmaticpineapple.com/reloading-rails-partials-on-demand-with-render-async/
+---
+
+## [10][The Arguments Forwarding shorthand in Ruby 2.7](https://www.reddit.com/r/ruby/comments/jiwrbh/the_arguments_forwarding_shorthand_in_ruby_27/)
 - url: https://medium.com/rubycademy/the-arguments-forwarding-shorthand-in-ruby-2-7-af32d58c223b
----
-
-## [3][Anyone willing to privately help me with my resume?](https://www.reddit.com/r/ruby/comments/jj19iw/anyone_willing_to_privately_help_me_with_my_resume/)
-- url: https://www.reddit.com/r/ruby/comments/jj19iw/anyone_willing_to_privately_help_me_with_my_resume/
----
-I've been writing Ruby professionally for over a decade and I can't get a job interview/phone screen.  I've applied to around 10 jobs and don't even get past the resume screen.
-
-I consider myself to be an expert although I've never done any FFI bindings or the like. I'm confident I can solve the vast majority of problems that might come across my desk, but I'm not a master of edge-case trivia or the like.
-
-One of my bigger projects has the following flog output:
-
-  1683.9: flog total
-
-4.6: flog/method average
-
-I'd love to share my resume with some of you to find out where I'm going wrong.
-
-Since I imagine it will come up, I've never used Ruby on Rails and it's not on my resume. Sinatra has always suited my needs without the need for upgrade cycles and all of the other complexity Rails brings. That said, if a given job/project needs all of that stuff, I'd be happy to learn Rails and don't imagine it's worth not hiring an experienced Rubyist over, right?
-## [4][Running ruby program in git directory](https://www.reddit.com/r/ruby/comments/jis2fd/running_ruby_program_in_git_directory/)
-- url: https://www.reddit.com/r/ruby/comments/jis2fd/running_ruby_program_in_git_directory/
----
- Hey guys I have a program sudoku.rb inside of my working directory(sudoku) that I am trying to run from the git terminal with "ruby sudoku.rb"
-
-However, when I type it in it goes to the nextline with no output, then I cant enter any more commands and have to close the terminal. Its like the program crashes when I type that.
-
-UserA@DESKTOP-BEBI97F MINGW64 \~/OneDrive/Desktop/sudoku (master)
-
-Any ideas?
-
-Thanks
-## [5][Is Ruby enough on it's own?](https://www.reddit.com/r/ruby/comments/jhtkvi/is_ruby_enough_on_its_own/)
-- url: https://www.reddit.com/r/ruby/comments/jhtkvi/is_ruby_enough_on_its_own/
----
-Can I learn ruby without html and css and still get a backend job?
-## [6][Benchable 0.2.0 adds support for memory benchmarks](https://www.reddit.com/r/ruby/comments/jhjefw/benchable_020_adds_support_for_memory_benchmarks/)
-- url: https://i.redd.it/fj6eb1mlq4v51.jpg
----
-
-## [7][Nested each](https://www.reddit.com/r/ruby/comments/jhr2gx/nested_each/)
-- url: https://www.reddit.com/r/ruby/comments/jhr2gx/nested_each/
----
-Hi guys, I’m on day three of learning ruby, I’m trying to use nested each statements to look for matches in two separate arrays and return the matches in a hash with the quantity of each match as the value. I cannot for love nor money get the syntax right. Can someone please give me a hand with how it should look? Tia
-## [8][Tailwind CSS + Rails via webpack](https://www.reddit.com/r/ruby/comments/jhcsjd/tailwind_css_rails_via_webpack/)
-- url: https://www.boringgenerators.com/blog/2020-10-18-install-tailwind/
----
-
-## [9][Stay Up To Date with Ruby on Rails - Automatic PRs in your repo to ease your future Rails upgrade](https://www.reddit.com/r/ruby/comments/jgqsvp/stay_up_to_date_with_ruby_on_rails_automatic_prs/)
-- url: https://www.producthunt.com/posts/stay-up-to-date-with-ruby-on-rails
----
-
-## [10][flow-lite gem - a lite workflow engine; let's you define your workflow steps in Flowfiles; incl. the flow command line tool](https://www.reddit.com/r/ruby/comments/jgmdmd/flowlite_gem_a_lite_workflow_engine_lets_you/)
-- url: https://github.com/rubycoco/git/tree/master/flow-lite
 ---
 

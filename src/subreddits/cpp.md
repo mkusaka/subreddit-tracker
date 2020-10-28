@@ -56,64 +56,79 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Hi, I'm new to C++. I was just wondering why the Qt framework is more than 1GB but the compiled app is very small.](https://www.reddit.com/r/cpp/comments/jiszf3/hi_im_new_to_c_i_was_just_wondering_why_the_qt/)
+## [2][StructLayout: Visual Studio Extension for C++ struct memory layout visualization](https://www.reddit.com/r/cpp/comments/jji9ej/structlayout_visual_studio_extension_for_c_struct/)
+- url: https://github.com/Viladoman/StructLayout
+---
+
+## [3][Qt6 to ship with conan](https://www.reddit.com/r/cpp/comments/jjnqoq/qt6_to_ship_with_conan/)
+- url: https://www.qt.io/blog/qt-6-additional-libraries-via-package-manager
+---
+
+## [4][Fun with Concepts: Do You Even Lift, Bool?](https://www.reddit.com/r/cpp/comments/jj48jm/fun_with_concepts_do_you_even_lift_bool/)
+- url: https://vector-of-bool.github.io/2020/10/26/strong-bool.html
+---
+
+## [5][The new Oat++ version 1.2.0 is finally released!](https://www.reddit.com/r/cpp/comments/jjdk5z/the_new_oat_version_120_is_finally_released/)
+- url: https://github.com/oatpp/oatpp
+---
+
+## [6][Truly cross-platform C++17 GUI development with native GUI on each platform and a WYSIWYG editor?](https://www.reddit.com/r/cpp/comments/jjf97e/truly_crossplatform_c17_gui_development_with/)
+- url: https://www.reddit.com/r/cpp/comments/jjf97e/truly_crossplatform_c17_gui_development_with/
+---
+I have a fair amount of experience developing cross-platform C++ console applications (mostly for scientific computing). I mostly use GCC/G++, and my IDE of choice in the last couple of years has been Visual Studio Code. However, I have no experience developing GUI apps.
+
+I would like to develop a C++ GUI app with the following properties:
+
+1. Can compile binaries for all the popular platforms: **Windows, Mac, Linux, iOS, Android, and web browser (with WebAssembly)**, all with the same code, or at least the same base code with some additional front-end code on top (e.g. the desktop, mobile, and web GUIs will probably have different layouts). 
+
+2. Can compile for all platforms using the **same compiler**, if possible (mostly to ensure that I don't have to rewrite the code for different platforms due to compiler incompatibilities).
+
+3. The compiler must fully support **C++17**.
+
+4. One IDE can be used to develop the code for all platforms, including a **WYSIWYG editor for the GUI**. (I'd love to keep using VS Code, but as far as I can tell it has no WYSIWYG editor... Unless there's some extension I'm not aware of that can do that..?)
+
+5. The development will be take place on Windows, so it's fine if the IDE itself is Windows-only (e.g. Visual Studio).
+
+6. The GUI should have a **native look** on every platform.
+
+Is this a pipe dream? If not, then which **compiler, IDE, and GUI library** will provide this functionality?
+
+Thanks!
+## [7][Refureku 1.3.0 released!](https://www.reddit.com/r/cpp/comments/jjdc5o/refureku_130_released/)
+- url: https://github.com/jsoysouvanh/Refureku
+---
+
+## [8][Tricks with Default Template Arguments](https://www.reddit.com/r/cpp/comments/jj37wo/tricks_with_default_template_arguments/)
+- url: https://foonathan.net/2020/10/tricks-default-template-argument/
+---
+
+## [9][Hi, I'm new to C++. I was just wondering why the Qt framework is more than 1GB but the compiled app is very small.](https://www.reddit.com/r/cpp/comments/jiszf3/hi_im_new_to_c_i_was_just_wondering_why_the_qt/)
 - url: https://www.reddit.com/r/cpp/comments/jiszf3/hi_im_new_to_c_i_was_just_wondering_why_the_qt/
 ---
 
-## [3][Semantic requirements in concepts - Andrzej's C++ blog](https://www.reddit.com/r/cpp/comments/jiq75r/semantic_requirements_in_concepts_andrzejs_c_blog/)
-- url: https://akrzemi1.wordpress.com/2020/10/26/semantic-requirements-in-concepts/
+## [10][C++ Qt Cross-platform productivity software - feedback requested](https://www.reddit.com/r/cpp/comments/jj5pyg/c_qt_crossplatform_productivity_software_feedback/)
+- url: https://www.reddit.com/r/cpp/comments/jj5pyg/c_qt_crossplatform_productivity_software_feedback/
 ---
+ Hey everyone,
 
-## [4][{fmt} 7.1 released with faster floating point formatting, file output, improved chrono and ranges support and more](https://www.reddit.com/r/cpp/comments/jierin/fmt_71_released_with_faster_floating_point/)
-- url: https://github.com/fmtlib/fmt/releases/tag/7.1.0
+Wanted to share a productivity tool called [Zenreader](https://www.zenreader.co.uk/?utm_source=reddit&amp;utm_medium=post&amp;utm_campaign=aw20promo) for students, academics and professionals that I've worked on building over the past few years with C++ - it's in the beta stage.
+
+Zenreader is used for rapidly building a body of knowledge/evidence and drafting papers. It used to take notes, organise these and produce excellent reports quickly.
+
+Looking for feedback to see how we can improve this further! New to reddit - let me know if this should not be posted here.
+## [11][What naming conventions for constants ?](https://www.reddit.com/r/cpp/comments/jj2f1z/what_naming_conventions_for_constants/)
+- url: https://www.reddit.com/r/cpp/comments/jj2f1z/what_naming_conventions_for_constants/
 ---
+It's pretty easy to choose a style for functions, types, variables (snake case everywhere except types in pascal case, for me).  But how do you differentiate constants ?
 
-## [5][I made this ASCII Terrain generator with Parallax effect in C++, I'll share my code here soon.](https://www.reddit.com/r/cpp/comments/jibs2z/i_made_this_ascii_terrain_generator_with_parallax/)
-- url: https://youtu.be/ZJsgidL1lWs
----
+C++ core guidelines says "all caps only for macros" and seems to advocate for snake case for enums.  It makes sense for scoped enums, start to look weird for old-style enum, and gets worse with a simple constexpr int...
 
-## [6][Why no std::variant or std::tuple .get&lt;T&gt;() member function?](https://www.reddit.com/r/cpp/comments/jifw3w/why_no_stdvariant_or_stdtuple_gett_member_function/)
-- url: https://www.reddit.com/r/cpp/comments/jifw3w/why_no_stdvariant_or_stdtuple_gett_member_function/
----
-It would just be syntactic sugar, `xx.get&lt;yy&gt;() -&gt; std::get&lt;yy&gt;(xx)`, but it seems inconsistent with most other containers in the standard for accessing a member (its also easier to write if you dont `using std::get`). Its easy to make a wrapper for this but it would be nice if it were in the standard instead.
-## [7][C++20 Ranges, Projections, std::invoke and if constexpr](https://www.reddit.com/r/cpp/comments/jib2wl/c20_ranges_projections_stdinvoke_and_if_constexpr/)
-- url: https://www.bfilipek.com/2020/10/understanding-invoke.html
----
+    constexpr int block_size = 4096;
+    
+    int SuperParser::read(int size) {
+        ...
+        int size_in_blocks = size / block_size;
+        ...
+    }
 
-## [8][Will the default parameter syntax ever be fixed?](https://www.reddit.com/r/cpp/comments/jixfdl/will_the_default_parameter_syntax_ever_be_fixed/)
-- url: https://www.reddit.com/r/cpp/comments/jixfdl/will_the_default_parameter_syntax_ever_be_fixed/
----
-int myFunc (int a = 3, int b = 5)
-
-I cant specify b without specifying a. Why cant this syntax just be like this
-
-myFunc(, 4)
-
-Just put a empty comma where you dont want to specify much better and ur not gonna be forced to have all default params in the end and u can specify only specific params
-
-Will it ever be improved?
-## [9][What is the debate between OOP and Functional programming?](https://www.reddit.com/r/cpp/comments/jiua22/what_is_the_debate_between_oop_and_functional/)
-- url: https://www.reddit.com/r/cpp/comments/jiua22/what_is_the_debate_between_oop_and_functional/
----
-Why have people been saying for the past few years that OOP is becoming obsolete? They seem to be two completely different styles of programming for two completely unrelated tasks, so I'm not sure how one is replacing the other. Is it true that OOP is becoming obsolete? Please provide evidence, lots of people don't like OOP so they say "OOP is obsolete", at least from what I've seen so far on Reddit, similar to how they say that a youtuber, a political party, or a celebrity that they don't like is "losing followers and will die out soon" lol.
-## [10][Roi Barkan will talk about "C++20 Concepts" next Monday, November 2nd](https://www.reddit.com/r/cpp/comments/jipxc6/roi_barkan_will_talk_about_c20_concepts_next/)
-- url: https://www.reddit.com/r/cpp/comments/jipxc6/roi_barkan_will_talk_about_c20_concepts_next/
----
-Hi Everyone,
-
-CPPDUG, the Dublin C/C++ Meetup Group, will host an online talk on "C++20 Concepts" by Roi Barkan next Monday, November 2nd. If the topic is of interest to you, please RSVP here: [https://www.meetup.com/cppdug/events/274196059](https://www.meetup.com/cppdug/events/274196059)
-
-Talk description: C++20 concepts give us a brand new way to specify how our generic libraries and algorithms should be used and allow library users to better understand what is expected of them. However, concepts didn't rise from chaos, and before their adoption C++ library authors had other mechanisms to meet that goal. In this talk I'll briefly discuss concepts, and focus on their pros and cons compared to more mature mechanisms. Special attention will be given to the 'semantic' vs. 'syntactic' nature of concepts, and I'll try to give motivating examples of semantic-only concepts. I'll then explore best practices, and show potential pitfalls in various approaches to the challenge of defining interactions between generic code authors and users.
-
-Talk outline:  
-\- Problem statement, examples of 'concepts in the wild' (iterator traits, trivially-copyable, ordering)  
-\- Brief overview of C++20 concepts - syntax alternatives, common examples  
-\- Pre-concepts typical approaches - mainly type-traits, iterator\_traits, void\_t, enable\_if  
-\- Tricky cases: semantics vs. syntax; common/subtle 'bugs'; explicit call-site override  
-\- 'Philosophical' discussion on core concepts - cheaply-copyable, trivially-copyable
-
-Speaker bio: Professional software developer and architect since 2000, Roi's main focus throughout his career was on high performance and distributed systems, implementing complex and innovative algorithms. Roi has been the VP technologies of Istra Research since 2014, where he helps creating low latency financial systems. Prior to working for Istra Research, Roi spent 12 years in software development, architecture and management in the IT Security field. Roi received his B.A in Computer Science with high honors from the Technion in Israel, and his executive MBA from Tel Aviv University.
-## [11][I made command line parser library a long time ago, now I decided to share it with the world.](https://www.reddit.com/r/cpp/comments/jiease/i_made_command_line_parser_library_a_long_time/)
-- url: https://gitlab.com/mildlyparallel/dashh
----
-
+Do you have anything better than the Google convention of kCamelCase ?

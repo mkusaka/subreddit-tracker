@@ -22,7 +22,11 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][const _ = this;](https://www.reddit.com/r/typescript/comments/jj0zlr/const_this/)
+## [2][What is late binding?](https://www.reddit.com/r/typescript/comments/jjm0kj/what_is_late_binding/)
+- url: https://www.reddit.com/r/typescript/comments/jjm0kj/what_is_late_binding/
+---
+I only know TS and no other language. Does it make sense to talk about late binding in TS and if yes what is late binding?
+## [3][const _ = this;](https://www.reddit.com/r/typescript/comments/jj0zlr/const_this/)
 - url: https://www.reddit.com/r/typescript/comments/jj0zlr/const_this/
 ---
 .Net background and I need to know why this code exists in some libraries. What good does it do?
@@ -31,7 +35,37 @@ const \_ = this;
 \_.localVariable = &lt;some arbitrary value&gt;;
 
 Would it not be the same as just using this.localVariable?
-## [3][Need help with type-graphql and typegoose](https://www.reddit.com/r/typescript/comments/jiyhvh/need_help_with_typegraphql_and_typegoose/)
+## [4][Easing into Typescript?](https://www.reddit.com/r/typescript/comments/jj3o1q/easing_into_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/jj3o1q/easing_into_typescript/
+---
+Hi Typescript fans,
+
+I have a moderately sized Express app (\~185 files, 8,700 LOC) written in Javascript with a small amount of Babel processing. As it grows in scope, I'd like to get some of the benefits of TypeScript, especially in taking advantage of what VSCode includes in its editor.
+
+I've tried and failed to migrate to Typescript before but had a bunch of configuration headaches and reverted to the (working) Javascript. **Any advice for partially migrating an in-progress project?**
+
+Here are some more details:
+
+* I'm using import rather than require, and babel to transpile the production code. I should transpile Typescript to Javascript for production, right?
+* Can anyone point me toward the most loose configuration possible that just lets me throw typescript when I want, and stick with Any wherever I don't want to get into it? You can tell me why this is a bad idea, but I don't think I have the patience for a full transition to super-strict TS right away.
+* I'll probably be living with JS that I want to use with ESLint rules and prettier, and that needs to be transpiled to run on Node, PLUS TS that will have its own ESLint config and transpile rules. Is this going to burn me out?
+## [5][JSDoc 'as const' equivalent?](https://www.reddit.com/r/typescript/comments/jj58lh/jsdoc_as_const_equivalent/)
+- url: https://www.reddit.com/r/typescript/comments/jj58lh/jsdoc_as_const_equivalent/
+---
+I'm in an old project that is too huge to easily convert to Typescript, so I've been using JSDoc instead. The Typescript feature that I can't figure out how to replicate in JSDoc is using `as const` to fully type the property names **and** values of an object.
+
+```ts
+// In Typescript
+const anObject = {hello: 'world'} as const;
+// (type shows as {hello:'world'} instead of {hello:string}
+```
+
+Is there any equivalent for this in JSDoc? I've been completely unable to find anything that does this, so instead I have to basically copy-paste any static object as a type to be able to properly type these cases, which certainly isn't DRY.
+## [6][Rocketcrab: Party Games for Phones](https://www.reddit.com/r/typescript/comments/jjaapt/rocketcrab_party_games_for_phones/)
+- url: https://rocketcrab.com/
+---
+
+## [7][Need help with type-graphql and typegoose](https://www.reddit.com/r/typescript/comments/jiyhvh/need_help_with_typegraphql_and_typegoose/)
 - url: https://www.reddit.com/r/typescript/comments/jiyhvh/need_help_with_typegraphql_and_typegoose/
 ---
 I'm using `typegoose` with `type-graphql` and when I try to use nested `@InputType()`, the nested object gets converted into `mongoose.Types.ObjectId()`. How do I handle nested InputTypes
@@ -149,11 +183,15 @@ db.child.find():
 ```
 
 How do fix this?
-## [4][Dendron – A Hierarchical Tool for Thought](https://www.reddit.com/r/typescript/comments/jijqyl/dendron_a_hierarchical_tool_for_thought/)
+## [8][Dendron – A Hierarchical Tool for Thought](https://www.reddit.com/r/typescript/comments/jijqyl/dendron_a_hierarchical_tool_for_thought/)
 - url: https://github.com/dendronhq/dendron
 ---
 
-## [5][How can I make an inline assertion?](https://www.reddit.com/r/typescript/comments/jiqo2b/how_can_i_make_an_inline_assertion/)
+## [9][Great method to test execution time of TypeScript code](https://www.reddit.com/r/typescript/comments/jj4wcn/great_method_to_test_execution_time_of_typescript/)
+- url: https://i.redd.it/3jtms5lo3ov51.jpg
+---
+
+## [10][How can I make an inline assertion?](https://www.reddit.com/r/typescript/comments/jiqo2b/how_can_i_make_an_inline_assertion/)
 - url: https://www.reddit.com/r/typescript/comments/jiqo2b/how_can_i_make_an_inline_assertion/
 ---
 My larger question is essentially, what's the best way to get the typing checker to be happy with the following code snippet?
@@ -187,74 +225,7 @@ function foo(param: number | null | undefined): number | null {
 But `param` is still typed as `number | null | undefined` despite the assertion throwing if `param === undefined`.
 
 Does anyone know a better way to call the assertion keeping my constraints I mentioned above? Or a better way to make the typing checker happy?
-## [6][Using Parser5](https://www.reddit.com/r/typescript/comments/jio9h4/using_parser5/)
+## [11][Using Parser5](https://www.reddit.com/r/typescript/comments/jio9h4/using_parser5/)
 - url: https://www.reddit.com/r/typescript/comments/jio9h4/using_parser5/
 ---
 Is there anyway to use parser5 in a typescript project? I noticed that it was written in javascript, and uses const parse5 = require('parse5') to import it. If not is there anything that is very similar to it? I need the parser to keep track of the objects location in the DOM
-## [7][Continuations in TypeScript](https://www.reddit.com/r/typescript/comments/jiapps/continuations_in_typescript/)
-- url: https://medium.com/@wim_jongeneel/continuations-in-typescript-db18402010bc?source=friends_link&amp;sk=207a12570b354ebe74d7bfa220461ea5
----
-
-## [8][This week’s open source newsletter just went out! This one had some seriously interesting projects, like a gaming framework written in Typescript released by Microsoft and a timeline component for React!](https://www.reddit.com/r/typescript/comments/jhu66o/this_weeks_open_source_newsletter_just_went_out/)
-- url: https://console.substack.com/p/console-24?r=3cbez&amp;utm_campaign=post&amp;utm_medium=web&amp;utm_source=copy
----
-
-## [9][How to select a type from a union, using a literal type property of said type?](https://www.reddit.com/r/typescript/comments/jhyf8c/how_to_select_a_type_from_a_union_using_a_literal/)
-- url: https://www.reddit.com/r/typescript/comments/jhyf8c/how_to_select_a_type_from_a_union_using_a_literal/
----
-I have a reducer in react. The action can be one of 8 types, but for simplicity, let's imagine that there's only 2 types
-
-```typescript
-type Add = {
-  type: 'add';
-  id: string;
-  value: string;
-}
-
-type Remove = {
-  type: 'remove';
-  id: string;
-}
-
-type Action = Add | Remove;
-```
-Instead of using a switch case, I'm using an object of handlers, where each handler is a function that handles a specific action
-```typescript
-const handlers = {
-  add: (state, action) =&gt; state,
-  remove: (state, action) =&gt; state,
-  default: (state, action) =&gt; state,
-}
-
-const reducer = (state, action) =&gt; {
-  const handler = handlers[action.type] || handlers.default;
-  return handler(state, action);
-}
-```
-Now I want to type the `handlers` object appropriately. So the handler function should accept an action of type corresponding to its key in the `handlers` object.
-```typescript
-type Handlers = {
-  [key in Action["type"]]: (state: State, action: Action) =&gt; State
-//                                                ↑this here should be the action
-//                                                which has type matching to it's key.
-//                                                So when the key is 'add', it should
-//                                                be of type Add, and so on.
-}
-```
-All I could think of is to explicitly state the key and the matching action type. Is There a way to 'pick' the type from the union, according to the value of the key?
-
-[link to stackoverflow question](https://stackoverflow.com/questions/64527150/in-typescript-how-to-select-a-type-from-a-union-using-a-literal-type-property)
-## [10][Microsoft TileCode](https://www.reddit.com/r/typescript/comments/jhjpq4/microsoft_tilecode/)
-- url: https://github.com/microsoft/tilecode
----
-
-## [11][Best services for RBAC and authorization](https://www.reddit.com/r/typescript/comments/jhk048/best_services_for_rbac_and_authorization/)
-- url: https://www.reddit.com/r/typescript/comments/jhk048/best_services_for_rbac_and_authorization/
----
-Hey guys,
-
-I’m starting work on a project and had some questions about Auth0, Cognito and the likes. 
-
-I understand that they can provide RBAC. But do I have to manually check and prevent if a particular user can edit a resource? Or can I leverage these services?
-
-For example: I have a REST API `/user/:id ` to which you can POST to update information. How do I ensure that (with a JWT or something) the user logged in can only update resources they have access to?

@@ -70,65 +70,83 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][New version of GraphQL Editor almost 100% in ReactJS](https://www.reddit.com/r/reactjs/comments/jiydfl/new_version_of_graphql_editor_almost_100_in/)
-- url: https://github.com/graphql-editor/graphql-editor
+## [3][Next.js Commerce – All-in-one starter kit for high-performance ecommerce sites](https://www.reddit.com/r/reactjs/comments/jj407s/nextjs_commerce_allinone_starter_kit_for/)
+- url: https://nextjs.org/commerce
 ---
 
-## [4][I was able get copying cells from my react-virtualized grid to excel working! Here's how...](https://www.reddit.com/r/reactjs/comments/jieg9k/i_was_able_get_copying_cells_from_my/)
-- url: https://v.redd.it/npexh5w9xfv51
+## [4][how to store jwt in the client side?](https://www.reddit.com/r/reactjs/comments/jjkddv/how_to_store_jwt_in_the_client_side/)
+- url: https://www.reddit.com/r/reactjs/comments/jjkddv/how_to_store_jwt_in_the_client_side/
+---
+Thee solution si know of so far is localStorage (dangerous to store), sessionStorage (good alternative but user might need to log in with every new tab), or use cookies (which i think is good but it doesn't have enough storage for jwt so might need to use a few to store the jwt + its sent with each request so its generating lots of unnecessary traffic"
+
+&amp;#x200B;
+
+so far im thinking storing it in httponly cookies even though it will generate unnecessary traffic and its the old way of doing things.  but i also read here:
+
+[https://snyk.io/blog/is-localstorage-safe-to-use/#:\~:text=Local%20storage%20is%20inherently%20no,the%20use%20of%20local%20storage](https://snyk.io/blog/is-localstorage-safe-to-use/#:~:text=Local%20storage%20is%20inherently%20no,the%20use%20of%20local%20storage). 
+
+that cookies and localstorage are both bad so would it be better to store in localstorage? this is a headache. r there any other ways im not aware of?
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+How do sites like reddit, twitter, and all other websites use for authentication? where do they store in the client?
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+
+
+Edit: I think storing jwt in a httponly cookie and sending it to the client and setting up some flags make cookies very secure + jwt lets me not track sessions which increases response times.
+## [5][Build React website responsive | Beginner React JS From scratch with smooth scroll](https://www.reddit.com/r/reactjs/comments/jjlpf0/build_react_website_responsive_beginner_react_js/)
+- url: https://youtu.be/K7gRndVwu7g
 ---
 
-## [5][Trap focus in a React component](https://www.reddit.com/r/reactjs/comments/jixsby/trap_focus_in_a_react_component/)
-- url: https://robinvdvleuten.nl/blog/trap-focus-in-a-react-component/
+## [6][Why you should choose to learn 'React'?](https://www.reddit.com/r/reactjs/comments/jjl56j/why_you_should_choose_to_learn_react/)
+- url: https://blog.skay.dev/why-you-should-choose-to-learn-react
 ---
 
-## [6][SetState's 'previous State' parameter](https://www.reddit.com/r/reactjs/comments/jj0jms/setstates_previous_state_parameter/)
-- url: https://www.reddit.com/r/reactjs/comments/jj0jms/setstates_previous_state_parameter/
----
-So far, when we needed to access the previous state of one of our state properties, and update it using this.setState in a class component, we used:
-
-**Example 1:**
-
-    this.setState( (prevState) =&gt; { input: value} )
-
-Now I've just seen it written in this way:
-
-**Example 2:**
-
-    this.setState( ( ) =&gt; { input: value} )
-
-Doesn't `()` i.e. the empty parentheses in example 2 effectively say there are no parameters? Or does React implicitly pass in previous state for you when you leave it empty, so you don't have to explicitly type it in your call as per the first example where you do say  `'prevState'`?
-
-Also, should I wrap `{ input: value }` with parentheses? Like this:
-
-    this.setState( ( ) =&gt; ( { input: value} ) )
-
-or is that additonal ( ) optional?
-## [7][React page is showing not found](https://www.reddit.com/r/reactjs/comments/jj03nl/react_page_is_showing_not_found/)
-- url: https://www.reddit.com/r/reactjs/comments/jj03nl/react_page_is_showing_not_found/
----
-I am hosting my mern app on heroku. But whenever i go to a different route and reload the page, it shows not found. It works perfectly on the localhost. I don't know, it's caused by react or heroku. Does anyone know the solution of this problem?
-## [8][Optimize Performance &amp; Render Website Superfast in ReactJS](https://www.reddit.com/r/reactjs/comments/jizzh6/optimize_performance_render_website_superfast_in/)
-- url: https://www.akashmittal.com/optimize-performance-reactjs/
+## [7][Starting to build a new React App - An interesting analysis in the form of a story!](https://www.reddit.com/r/reactjs/comments/jjl9rz/starting_to_build_a_new_react_app_an_interesting/)
+- url: https://blog.reactstory.com/how-to-start-a-react-app
 ---
 
-## [9][how to hide password in inspect element](https://www.reddit.com/r/reactjs/comments/jizv2v/how_to_hide_password_in_inspect_element/)
-- url: https://www.reddit.com/r/reactjs/comments/jizv2v/how_to_hide_password_in_inspect_element/
----
-Somebody nit picked my app and claimed that they can see the password which THEY input on the login page when they open Chrome dev tools and inspect the value of the form field. I'm like, duh, well of course you can, smart ass. I'm wondering is this person has a point, though. Should that be a big deal or not? Is there a way to prevent that from happening? Doesn't really make sense to me, but I'm willing to learn.
-## [10][Whats the difference between onchange and onupdate in react? And is there any list of available handlers in react?](https://www.reddit.com/r/reactjs/comments/jiz2ts/whats_the_difference_between_onchange_and/)
-- url: https://www.reddit.com/r/reactjs/comments/jiz2ts/whats_the_difference_between_onchange_and/
----
-I saw an answer on SO about onInput and onchange and how is it different from html, I was wondering if there is a specific resource for learning handlers on react? And in some opensource projects people use onUpdate handler, but I couldn't find anything regarding onUpdate online. TIA
-## [11][Protected routes and authentication with React Router v5](https://www.reddit.com/r/reactjs/comments/jih77i/protected_routes_and_authentication_with_react/)
-- url: https://ui.dev/react-router-v5-protected-routes-authentication/
+## [8][Next.js 10 is out!](https://www.reddit.com/r/reactjs/comments/jj47tm/nextjs_10_is_out/)
+- url: https://nextjs.org/blog/next-10
 ---
 
-## [12][(TypeScript) Reset initial redux state via redux-toolkit - configureStore complaining about my rootReducer type](https://www.reddit.com/r/reactjs/comments/jiw2g1/typescript_reset_initial_redux_state_via/)
-- url: https://www.reddit.com/r/reactjs/comments/jiw2g1/typescript_reset_initial_redux_state_via/
+## [9][How to use async data received from one function to another function in the same function?](https://www.reddit.com/r/reactjs/comments/jjkxp3/how_to_use_async_data_received_from_one_function/)
+- url: https://www.reddit.com/r/reactjs/comments/jjkxp3/how_to_use_async_data_received_from_one_function/
 ---
-I followed the official redux typescript guide to get started and so far it has worked well: https://redux.js.org/recipes/usage-with-typescript
+[https://gist.github.com/timongll/1ee4b4f303494fcf79c95c855f9d8761#file-gistfile1-txt](https://gist.github.com/timongll/1ee4b4f303494fcf79c95c855f9d8761#file-gistfile1-txt)  
 
-Now I’m following this approach to reset a redux store on logout: https://stackoverflow.com/a/35641992/849231
 
-What `rootReducer` return type would satisfy whatever `configureStore` expects? Seems like it should be something generic but I can’t get anything to take
+getPokemonByOwner gets an array of ints \[0,1,2,3,4,5\] asynchronously (value below was evaluated just now) and getPokemonDetails uses each int.  I get the error(Cannot read property 'getPokemonDetails' of undefined)  
+
+
+If i remove getPokemonByOwner and manually made an array \[0,1,2,3,4,5\] the function would work since theres only one async function. I tried to async twice but it doesnt work. Anyone know how to fix this?
+## [10][How to Make Awesome Buttons Using Lottie Animations in React Native](https://www.reddit.com/r/reactjs/comments/jjiq9y/how_to_make_awesome_buttons_using_lottie/)
+- url: https://www.youtube.com/watch?v=tfT0ZHkU8dc
+---
+
+## [11][Next.js Analytics – Your Real Lighthouse Score](https://www.reddit.com/r/reactjs/comments/jj44fl/nextjs_analytics_your_real_lighthouse_score/)
+- url: https://nextjs.org/analytics
+---
+
+## [12][what's does it do - reportWebVitals](https://www.reddit.com/r/reactjs/comments/jjnvyr/whats_does_it_do_reportwebvitals/)
+- url: https://www.reddit.com/r/reactjs/comments/jjnvyr/whats_does_it_do_reportwebvitals/
+---
+What is this in the new CRA 4 ?
+
+import reportWebVitals from './reportWebVitals';
+
+Is it replacing something that existed in CRA 3 / React 16 ?
+
+&amp;#x200B;
+
+I noticed the new template also does not have:
+
+ registerServiceWorker
+
+What is the replacement for this ?

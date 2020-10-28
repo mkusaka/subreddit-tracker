@@ -79,57 +79,43 @@
 
 
 &amp;nbsp;
-## [2][Fixture-based test runner by Microsoft: Folio](https://www.reddit.com/r/javascript/comments/jixmc1/fixturebased_test_runner_by_microsoft_folio/)
-- url: https://github.com/microsoft/folio
+## [2][What A Yarn Workspace Is, And The Problem It Solves](https://www.reddit.com/r/javascript/comments/jjfrte/what_a_yarn_workspace_is_and_the_problem_it_solves/)
+- url: https://planflow.dev/blog/what-is-a-yarn-workspace
 ---
 
-## [3][Cypress is an amazing testing framework but I always thought it should be easier to write test setups, so I made cypress-routines](https://www.reddit.com/r/javascript/comments/jigyqq/cypress_is_an_amazing_testing_framework_but_i/)
-- url: https://maxschmitt.me/posts/cypress-routines/
+## [3][Deno 1.5 Release Notes](https://www.reddit.com/r/javascript/comments/jjk5x2/deno_15_release_notes/)
+- url: https://deno.land/posts/v1.5
 ---
 
-## [4][ICYMI: In Node v15, unhandled rejected promises will tear down the process](https://www.reddit.com/r/javascript/comments/jirpje/icymi_in_node_v15_unhandled_rejected_promises/)
-- url: https://www.reddit.com/r/node/comments/jipk9c/icymi_in_node_v15_unhandled_rejected_promises/
+## [4][Next.js 10 - automatic Image optimisation and more](https://www.reddit.com/r/javascript/comments/jj45eq/nextjs_10_automatic_image_optimisation_and_more/)
+- url: https://github.com/vercel/next.js/releases/tag/v10.0.0
 ---
 
 ## [5][Vanilla-todo: A case study on viable techniques for vanilla web development](https://www.reddit.com/r/javascript/comments/jj10k9/vanillatodo_a_case_study_on_viable_techniques_for/)
 - url: https://github.com/morris/vanilla-todo
 ---
 
-## [6][Migrating a JS project from Travis to GitHub Actions](https://www.reddit.com/r/javascript/comments/jiznsz/migrating_a_js_project_from_travis_to_github/)
-- url: https://httptoolkit.tech/blog/migrating-javascript-from-travis-to-github-actions/
+## [6][Layout projection: A method for animating browser layouts at 60fps](https://www.reddit.com/r/javascript/comments/jj1rt4/layout_projection_a_method_for_animating_browser/)
+- url: https://mattperry.is/writing-code/layout-projection-animate-browser-layout-60fps
 ---
 
-## [7][[AskJS] Entry Level JS Interview](https://www.reddit.com/r/javascript/comments/jit9xn/askjs_entry_level_js_interview/)
-- url: https://www.reddit.com/r/javascript/comments/jit9xn/askjs_entry_level_js_interview/
----
-Hey everyone!
-
-I am in the middle of a career change, and picked up programming during the pandemic. I started off by learning Python, followed directly with learning Django. While learning Django, I had a brief stint learning the basics of JS. 
-
-&amp;#x200B;
-
-Long story short, I am lucky enough to have been asked to interview for an entry-level software development position at a medical software development company (I currently work in Health Info Management). I have 1.5 weeks until my live coding interview (I have passed my preliminary coding interview) and am feeling a bit nervous as it is my first coding interview. The main languages I have been asked to choose from for the interview are JS or PHP. I have never tried PHP and have experience with JS of course, and I have read that logic is similar to Python.
-
-&amp;#x200B;
-
-I wanted to reach out and see if anyone thought I was still out of my league to be interviewing for this position, and if anyone had any tips, or focal points to study beforehand. I am going to be studying, practicing, and trying my best to become as fluent as possible in this short amount of time. 
-
-&amp;#x200B;
-
-So, once again, if anyone has any advice, tips, tricks, etc. I would greatly appreciate it.
-## [8][Web scraping with JS](https://www.reddit.com/r/javascript/comments/jihsyg/web_scraping_with_js/)
-- url: https://qoob.cc/web-scraping/?utm_source=rjavascript
+## [7][CASL. Pursuing Perfection I: Why?](https://www.reddit.com/r/javascript/comments/jjiynm/casl_pursuing_perfection_i_why/)
+- url: https://dev.to/stalniy/casl-pursuing-perfection-i-why-2j2c
 ---
 
-## [9][Creating a JavaScript promise from scratch, Part 1: Constructor](https://www.reddit.com/r/javascript/comments/jig7lo/creating_a_javascript_promise_from_scratch_part_1/)
-- url: https://humanwhocodes.com/blog/2020/09/creating-javascript-promise-from-scratch-constructor/
+## [8][JavaScript's Memory Management Explained](https://www.reddit.com/r/javascript/comments/jj8jt2/javascripts_memory_management_explained/)
+- url: https://felixgerschau.com/javascript-memory-management/
 ---
 
-## [10][A submission form that emulates a code editor](https://www.reddit.com/r/javascript/comments/jiox2f/a_submission_form_that_emulates_a_code_editor/)
-- url: https://sie.doesweb.dev
+## [9][[AskJS] learning javascript in a week](https://www.reddit.com/r/javascript/comments/jjl66v/askjs_learning_javascript_in_a_week/)
+- url: https://www.reddit.com/r/javascript/comments/jjl66v/askjs_learning_javascript_in_a_week/
+---
+Someone in yt comment section said he learn js in a week, is that possible?
+## [10][Fixture-based test runner by Microsoft: Folio](https://www.reddit.com/r/javascript/comments/jixmc1/fixturebased_test_runner_by_microsoft_folio/)
+- url: https://github.com/microsoft/folio
 ---
 
-## [11][Webpack 5 react boilerplate with typescript support, hmr, css-modules](https://www.reddit.com/r/javascript/comments/jion8e/webpack_5_react_boilerplate_with_typescript/)
-- url: https://github.com/glook/webpack-typescript-react
+## [11][I was able get copying cells from my react-virtualized grid to excel working! Here's how...](https://www.reddit.com/r/javascript/comments/jjfkm3/i_was_able_get_copying_cells_from_my/)
+- url: https://github.com/man-group/dtale/blob/master/docs/RANGE_SELECTION.md
 ---
 

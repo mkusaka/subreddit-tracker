@@ -31,160 +31,110 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Released an android sdk to reduce video streaming costs by up-to 90%](https://www.reddit.com/r/androiddev/comments/jixujb/released_an_android_sdk_to_reduce_video_streaming/)
-- url: https://www.reddit.com/r/androiddev/comments/jixujb/released_an_android_sdk_to_reduce_video_streaming/
----
-Hi everyone
-
-I am working on an android sdk which can reduce video streaming costs of CDN by up-to 90% using a hybrid decentralized technology. I have opened it up for beta-access for developers to try it out. Looking for feedback w.r.t the technology and any features you would want to have.
-
-A web demo is available here [https://api.peervadoo.com/test](https://api.peervadoo.com/test) . Click on **Add new peer** to see the tech in action,
-
-Android sdk link :- [https://github.com/vadootvpeer/sdk-android](https://github.com/vadootvpeer/sdk-android)
-
-We are giving free video streaming cdn credits for those interested from here [https://api.peervadoo.com/vadoo\_cdn](https://api.peervadoo.com/vadoo_cdn)
-## [4][Released kotlinx.coroutines 1.4.0](https://www.reddit.com/r/androiddev/comments/jikkvp/released_kotlinxcoroutines_140/)
-- url: https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.4.0
+## [3][What modern day app looks like](https://www.reddit.com/r/androiddev/comments/jjk9ks/what_modern_day_app_looks_like/)
+- url: https://i.redd.it/wmptdhg5vsv51.jpg
 ---
 
-## [5][Navigating with SafeArgs](https://www.reddit.com/r/androiddev/comments/jixmlu/navigating_with_safeargs/)
-- url: https://medium.com/androiddevelopers/navigating-with-safeargs-bf26c17b1269
+## [4][MIUI 11/12 Uses Custom Dark Theme](https://www.reddit.com/r/androiddev/comments/jjeru8/miui_1112_uses_custom_dark_theme/)
+- url: https://www.reddit.com/r/androiddev/comments/jjeru8/miui_1112_uses_custom_dark_theme/
+---
+Hi,
+
+So I was recently trying to create an App, which involved Switching Theme From Light To Dark And Dark To Light in which I discovered that PocoX2, uses a custom dark theme, and the value of DefaultNightMode was Unspecified i.e. -100 instead of being 2. When using This.
+
+If anyone has managed to build a workaround for this issue, please post it in the **StackOverflow** question below.
+
+So wrapping up my question was, Is this a ROM Specific Issue? And does a solution exist?
+
+Here is a **Stackoverflow** Link.
+
+[MIUI 12 Theme Swtich Problem](https://stackoverflow.com/questions/64565156/miui-11-12-theme-switch-results-in-lifecycleexception-classcastexception)
+## [5][ConstraintLayout 2.0.3](https://www.reddit.com/r/androiddev/comments/jjgzh1/constraintlayout_203/)
+- url: https://androidstudio.googleblog.com/2020/10/constraintlayout-203.html
 ---
 
-## [6][Android development material](https://www.reddit.com/r/androiddev/comments/jj0yd2/android_development_material/)
-- url: https://www.reddit.com/r/androiddev/comments/jj0yd2/android_development_material/
+## [6][Thoughts about custom lock screen app !!!](https://www.reddit.com/r/androiddev/comments/jjns1v/thoughts_about_custom_lock_screen_app/)
+- url: https://www.reddit.com/r/androiddev/comments/jjns1v/thoughts_about_custom_lock_screen_app/
 ---
-Hello I was an Android developer and stopped developing about 2 years ago I'm still a novice and was when I quit. If I want to get back on track what's a course or material I should study to up my skills and get a better understanding? Thanks!
-## [7][Have you ever heard of undocumented QUICKBOOT_POWERON for boot receiver?](https://www.reddit.com/r/androiddev/comments/jj0cxj/have_you_ever_heard_of_undocumented_quickboot/)
-- url: https://dev.to/localazy/7-floating-windows-on-android-boot-receiver-4flc
+Would you rather stick to your default android system lock screen or rather use a third party lock screen app that will provide:
+
+• A lot of customizations and unique themes(each theme will be different with unique designs) 
+• fonts and icon effects which would also support icon packs 
+• will work on top of your android system lock screen and you won't have to unlock your device twice 
+• will work without disabling your system lock screen
+• will allow you to use installed app widgets in the custom lock screen
+• and many more 
+
+So any thoughts?
+## [7][Survey: What do you do with user feedback?](https://www.reddit.com/r/androiddev/comments/jjn1qr/survey_what_do_you_do_with_user_feedback/)
+- url: https://www.reddit.com/r/androiddev/comments/jjn1qr/survey_what_do_you_do_with_user_feedback/
+---
+Hi all, I’m researching how user-feedback is used in software development for VU University Amsterdam. I already interviewed 20 people and now I ‘m sending a survey to get data from a broad audience (small &amp; large companies). I need 100 people that work with user-feedback or know how their company uses user feedback to fill out this survey. 
+
+Would you be able to help and fill out a 7 minute survey (anonymously)? You’d make me so happy. 
+
+[https://survey.sparkchart.com/start/T27j\_2Bpkw\_2BFWcLs5KU83fJAs](https://survey.sparkchart.com/start/T27j_2Bpkw_2BFWcLs5KU83fJAs)
+
+So far I only have a few respondents, I’ll share the progress and results in the comments below!
+## [8][Our counterintuitive fix for Android path normalization](https://www.reddit.com/r/androiddev/comments/jjk683/our_counterintuitive_fix_for_android_path/)
+- url: https://dropbox.tech/mobile/our-counterintuitive-fix-for-android-path-normalization
 ---
 
-## [8][Saving Stack(java.util.Stack) Data on Application](https://www.reddit.com/r/androiddev/comments/jiz4ld/saving_stackjavautilstack_data_on_application/)
-- url: https://www.reddit.com/r/androiddev/comments/jiz4ld/saving_stackjavautilstack_data_on_application/
+## [9][Need some advise with Ad Mediation](https://www.reddit.com/r/androiddev/comments/jjmplv/need_some_advise_with_ad_mediation/)
+- url: https://www.reddit.com/r/androiddev/comments/jjmplv/need_some_advise_with_ad_mediation/
 ---
-Hi! How do you save stack data when you use java.util.Stack? Like say save the stack contents when your app closes and loads it when app reopens?  I'd like to know what concepts should I be looking into. Thanks!
-## [9][Android 11 scoped storage - MediaStore can create sub-directories, delete - but are rename-file/move-file instantaneous as before ?](https://www.reddit.com/r/androiddev/comments/jib3l7/android_11_scoped_storage_mediastore_can_create/)
-- url: https://www.reddit.com/r/androiddev/comments/jib3l7/android_11_scoped_storage_mediastore_can_create/
+Hi there!
+
+i have a few apps in the store and im only using Admob right now. I've tried multiple times to add mediation but never done it completly ( i tried FAN, but i dont know if i dont know how to use it or what, i only make like 15$)
+
+&amp;#x200B;
+
+My fill rate is 95-99% so can anybody tell me if ill have beneficts adding more networks?
+
+which mediation should i use? i do still like Admob, they pay without any problem every month and i receive it from Google Ireland, which is good as a European.
+
+&amp;#x200B;
+
+if the answer is yes, should i use Admob mediation or any other one like Mopub?
+
+If i dont like how it goes, can i redirect all the traffic to admob and it will be as always?
+
+I've like 3M impressions/month (i've no games, so i dont have any video ads or rewarded ads, dont want to annoy my users)
+
+&amp;#x200B;
+
+Also, ive seen something like open bidding ads on admob, its on beta and i do not have access, i thought that mediation worked like that.
+## [10][Emulator taking up too many cpu cycles](https://www.reddit.com/r/androiddev/comments/jjjsl0/emulator_taking_up_too_many_cpu_cycles/)
+- url: https://www.reddit.com/r/androiddev/comments/jjjsl0/emulator_taking_up_too_many_cpu_cycles/
 ---
-The first video in the references below has a good (non-Google) overview of the issues with MediaStore for Android 11 - and how some apps are having to use a mixture of SAF and MediaStore to cobble things together.
-
-
-In this video they suggest keeping your files in your own folder - this way you avoid the 128 persistent permissions issue, as all the files within that folder get permission (if you have permission for that one folder).
-
-Still some issues with System Picker - as varies by manufacturer.
-
-They also resolve one question I had - whether one can create a folder within Music and other "shared storage" areas.
-
-They mention you can delete as well.
-
-We have had experience with MediaStore from some years ago - when it was really kludgy - sometimes a file would appear in MediaStore, sometimes not.
-
-Perhaps it has improved by now.
-
-**Questions:**
-
-- **how easy is it to move a file from your own folder (within Music etc.) - and move it to a further sub-folder there.  Is that instantaneous (as it used to be earlier when both source and destination were on internal storage) ?**
-
-- **when the Android 11 FAQ by Google on medium - https://medium.com/androiddevelopers/android-11-storage-faq-78cefea52b7c - Android 11 storage FAQ - suggests that fopen() can be used now - does that mean you can programmatically deal with file paths strings, adding on a suffix to point to a sub-folder (as you used to do before) ?  That is, can one extract a file path from a Uri that MediaStore returns ?  And then add on a sub-folder to the file path string and use that with fopen() ?**
-
-
-----
-
-**References:**
-
-https://www.youtube.com/watch?v=32Jox0itYKI
-Android 11 #1: Deep Dive into Scoped Storage &amp; Privacy
-Android Academy Global
-July 7, 2020
-
-rough transcript:
-
-&gt;2:19:30 minute mark
-&gt;
-&gt;128 persistent URIs ..
-&gt;
-&gt;when ask for 129 will have issue ..
-&gt;
-&gt;
-&gt;2:21:00 minute mark
-&gt;
-&gt;suggest keep documents inside own folder
-&gt;
-&gt;(so means can do sub-folder etc. !?)
-&gt;
-&gt;
-&gt;can hold permission to directory .. which easier ..
-&gt;
-&gt;
-&gt;can create directory
-&gt;
-&gt;can delete files
-&gt;
-&gt;
-&gt;2:25:00 minute mark
-&gt;
-&gt;migration ..
-&gt;
-&gt;
-&gt;2:28:00 minute mark
-&gt;
-&gt;major problems with SAF
-&gt;
-&gt;
-&gt;system picker provided by manufacturer ..
-&gt;
-&gt;problems with cloud based providers
-&gt;
-&gt;
-&gt;FileProvider for sharing with other apps ..
-&gt;
-&gt;
-&gt;they had issues with files ..
-&gt;
-&gt;migrated to MediaStore .. still have issues ..
-&gt;
-&gt;
-&gt;so still requesting legacy storage ..
-&gt;
-&gt;barrier is getting less ..
-&gt;
-&gt;also using SAF .. still using legacy storage sometimes (!?)
-&gt;
-&gt;
-&gt;1:09:00 - users not found user-friendly
-&gt;
-&gt;so had to use legacy ..
-&gt;
-
-----
-
-https://medium.com/androiddevelopers/android-11-storage-faq-78cefea52b7c
-Android 11 storage FAQ
-## [10][Firebase Crashlytics Integration With Github](https://www.reddit.com/r/androiddev/comments/jie4lc/firebase_crashlytics_integration_with_github/)
-- url: https://www.reddit.com/r/androiddev/comments/jie4lc/firebase_crashlytics_integration_with_github/
+Hi all,
+I have a question about android studio emulator. Do you guys have an issue when android emulator is taking up too many cpu cycles? 
+I have AMD Ryzen cpu wit 8 cores and 16 threads, 32GB of RAM. If I allocate for example four of cpu cores for emulator, their usage is peaking up to 100% at the same time when interacting with emulator. If I give to emulator more than 4, lets say 6 or 8 threads, it isn’t working any better but it is using all the cores and at the same time and again isn’t working very smoothly... AMD plugin is already installed.
+Is it this unoptimized or something else is the problem? Do you have any tips how to make it works better?
+Thanks
+## [11][Is it just me or are layouts still bad?](https://www.reddit.com/r/androiddev/comments/jjl80n/is_it_just_me_or_are_layouts_still_bad/)
+- url: https://www.reddit.com/r/androiddev/comments/jjl80n/is_it_just_me_or_are_layouts_still_bad/
 ---
-Good day guys,
+I feel like I always have to copy paste layout code/files and just modify them, because interface building from scratch is a nightmare and a massive time sink.
 
-Hope you are safe and in good health.
+You're always missing some xml tag on some view somewhere, and it breaks everything so you have to spend 2 hours just debugging why the hell a certain view isn't aligned properly. And you find some question on stackoverflow with 2 upvotes saying "Oh for X layout, you have to use Y tag in combination with Z view, and place it at the bottom of the file, plus add some elevation to just display some basic crap."
 
-Can anyone here guild this fellow android developer on how to integrate firebase Crashlytics with Github.
+The worst ones are dialogs... Can't use this root view or that root view. And if you use a certain root view it has to be in combination with some child view with a, b, c or parameter. And have to programmatically add these 5 lines of code... for a basic freaking dialogue.
 
-The idea is if there's any major crash on app, it should automatically get issued on our github repository.
-
-Thank you.
-## [11][Android Studio 4.1 now has a SQL database viewer.](https://www.reddit.com/r/androiddev/comments/jid9we/android_studio_41_now_has_a_sql_database_viewer/)
-- url: https://www.reddit.com/r/androiddev/comments/jid9we/android_studio_41_now_has_a_sql_database_viewer/
+I have no issues with Android Studio or Android development in terms of business logic/Java or Kotlin, but the GUI is just a nightmare and such a massive waste of time for basic stuff. I feel like Google has to start adding more warnings/compile time checks for building interfaces, instead of having to run your code and waiting to find out your view doesn't show up on screen or it's completely fudged up.
+## [12][The Making of Accessible Android Applications](https://www.reddit.com/r/androiddev/comments/jjl73s/the_making_of_accessible_android_applications/)
+- url: https://www.reddit.com/r/androiddev/comments/jjl73s/the_making_of_accessible_android_applications/
 ---
-How do you browse your Android app databases? do you really have to copy the files back and forth?
-## [12][Can't start rollout of an app due to app permissions error](https://www.reddit.com/r/androiddev/comments/ji5y4q/cant_start_rollout_of_an_app_due_to_app/)
-- url: https://www.reddit.com/r/androiddev/comments/ji5y4q/cant_start_rollout_of_an_app_due_to_app/
----
-I'm rolling out a new version of an app but for the first time needed to submit a declaration regarding the location permissions I'm requesting.
+Hi,
 
-I've submitted my declaration (as "no, I'm not accessing location in the background") and the page shows a green tick with a "Submitted" label, but my "Review and release" page is still showing it as an error, and the "Start rollout to production" button is disabled.
+I'm Andrea Cantone and I'm a Computer Science student at the University of Salerno, Italy.
 
-I thought the review process was supposed to start by clicking "Start rollout to production"? Or is Google still reviewing the declaration, even though this release is still only a draft? It's been like this since last Friday.
+For my thesis work I am working on a study on the respect of accessibility in Android applications. 
 
-[https://imgur.com/a/hyuRkbb](https://imgur.com/a/hyuRkbb)
+I need to collect information from Android developers to understand the problems encountered in implementing accessibility guidelines.
 
-EDIT: at the moment, it looks like updating the target version from 28 (Android 9) to 29 or 30 (Android 10/11) makes the Play Console accept it.
+I ask you to compile this survey and help me to spread it among your contacts. 
+
+[https://docs.google.com/forms/d/e/1FAIpQLSc2lHuDCKcLzn\_gWGpjmiE4a0\_J6-AVH54hh8HNb2CAhfzZdQ/viewform](https://docs.google.com/forms/d/e/1FAIpQLSc2lHuDCKcLzn_gWGpjmiE4a0_J6-AVH54hh8HNb2CAhfzZdQ/viewform)
+
+Thank you for your cooperation.

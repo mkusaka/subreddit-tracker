@@ -2,6 +2,8 @@
 ## [1][Kotlin Team AMA #2: Ask Us Anything](https://www.reddit.com/r/Kotlin/comments/ji9z19/kotlin_team_ama_2_ask_us_anything/)
 - url: https://www.reddit.com/r/Kotlin/comments/ji9z19/kotlin_team_ama_2_ask_us_anything/
 ---
+**UPDATE:** All done, thanks for all the questions! Note that you can always contact us via the Kotlin Slack or Twitter, so if you missed the AMA, feel free to post your questions there. If you’re yet not on Kotlin Slack, please request your invite here: [https://surveys.jetbrains.com/s3/kotlin-slack-sign-up](https://surveys.jetbrains.com/s3/kotlin-slack-sign-up)
+
 Hi everyone! The JetBrains team is here and we will be answering your questions over the next \~36 hours:
 
 * [/u/abreslav](https://www.reddit.com/u/abreslav/), Project Lead for Kotlin
@@ -44,19 +46,102 @@ On October 12–15 we hosted the [Kotlin 1.4 Online Event](https://kotlinlang.or
 Please post your questions as top-level comments to this post.
 
 We look forward to hearing from you!
-## [2][Released kotlinx.coroutines 1.4.0](https://www.reddit.com/r/Kotlin/comments/jikkd1/released_kotlinxcoroutines_140/)
+## [2][What do you think of this little extension function?](https://www.reddit.com/r/Kotlin/comments/jjmgb0/what_do_you_think_of_this_little_extension/)
+- url: https://www.reddit.com/r/Kotlin/comments/jjmgb0/what_do_you_think_of_this_little_extension/
+---
+If you are a fan of chained calls, for example for string manipulation, you are probably sometimes as frustrated as I am because you have to "break the flow". I hit such a case again, but this time I decided to write an extension function so I can comfortably continue the chained call.
+
+I actually don't know if it already exists in some form, but I haven't found it on the first look and it was so little code that it actually doesn't matter. If you actually know that this exists already, let me know.
+
+So, for example let's say you have a filename (taken out of a list, for example) and you want to strip certain file endings (let's just say `.txt`, `.exe` and `.pdf`). But that's not the only thing you want to do. In fact, you already have a chained call with different string manipulations, and as the next step you want to strip the extension if it is one of the mentioned ones. Now the `removeSuffix()` method comes in handy, but the problem is that you don't have a _single_ suffix, but a _collection_ of suffixes. And _for each_ of these suffixes `x`, you need to call `removeSuffix(x)`. Normally this would mean that you have to break your chained call flow from
+
+    string.callA()
+        .callB()
+        .callC()
+        .callD()
+
+To
+
+    var res = string.callA()
+        .callB()
+        .callC()
+        .callD()
+    
+    extensions.forEach {
+        res = res.removeSuffix(it)
+    }
+
+Ugly, right? That's why I just patched together the extension function `forEachOf()`. Basically it is called with an arbitrary object as the receiver, but operates a lambda over every element of a given `Iterable`:
+
+    inline fun &lt;T, U&gt; T.forEachOf(other: Iterable&lt;U&gt;, block: T.(U) -&gt; T): T {
+        var result = this
+        other.forEach {
+            result = result.block(it)
+        }
+        return result
+    }
+
+Now I can perform the desired action without breaking the chained call, I can even continue it afterwards:
+
+    string.callA()
+        .callB()
+        .callC()
+        .callD()
+        .forEachOf(extensions) { removeSuffix(it) }
+        .callE()
+
+Neat, right? Note that the lambda and the `forEachOf()` function (have to) return `T` to 1. be able to continue the chain and 2. deal with immutable classes like `String`.
+
+What do you think? Is it useful? Would you use it? Can you imagine more practical use cases? Or would you improve the extension in some way?
+
+For me it just shows the beauty of the expressiveness and extensibility of Kotlin. A similar problem in Java would be impossible to solve, but with Kotlin you have multiple ways of doing it!
+## [3][Using withContext: is it possible to resume execution on the same thread in the same dispatcher?](https://www.reddit.com/r/Kotlin/comments/jjnuji/using_withcontext_is_it_possible_to_resume/)
+- url: https://www.reddit.com/r/Kotlin/comments/jjnuji/using_withcontext_is_it_possible_to_resume/
+---
+Imagine a suspend function running on `Dispatchers.Default` similar to this one:
+
+    suspend fun doSomething() {
+        pre()
+        withContext(myContext) {
+            // do some heavy stuff here
+            work()
+        }
+        post()
+    }
+
+According to the docs `withContex` will switch to a new thread if a new dispatcher is provided (which is the case here) and resume using the original dispatcher, `Dispatchers.Default`. However, I observe that sometimes it resumes and executes `post()` on a different thread than the one used to execute `pre()`.
+
+This poses a challenge in a problem I need to solve, so I'm wondering whether it is possible to enforce the execution of `post()` and `pre()` on the same thread.
+## [4][Is Coroutines turning into Rx?](https://www.reddit.com/r/Kotlin/comments/jj5lss/is_coroutines_turning_into_rx/)
+- url: https://www.reddit.com/r/Kotlin/comments/jj5lss/is_coroutines_turning_into_rx/
+---
+One of the biggest reasons why Coroutines was so hyped compared with Rx is that it allowed to write async code in a synchronous way. But with recent trend of Flow and Channels, I feel like people are building their apps now heavily around these concepts, adding on top couple of aggregation operators on it. This reminds me all of the early days of Rx, where people used Subjects heavily.
+
+What is the reason for the sudden popularity of flows? And how do they differ from Rx Subjects
+## [5][Kotlin data type](https://www.reddit.com/r/Kotlin/comments/jj6qm8/kotlin_data_type/)
+- url: https://www.reddit.com/r/Kotlin/comments/jj6qm8/kotlin_data_type/
+---
+Hi im new in kotlin and im really confused about float and double
+What is the exact min and max value of float and double can have
+There is so many diffrent value in internet and im confused
+Thanks
+## [6][Released kotlinx.coroutines 1.4.0](https://www.reddit.com/r/Kotlin/comments/jikkd1/released_kotlinxcoroutines_140/)
 - url: https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.4.0
 ---
 
-## [3][I published a small Android library written in Kotlin inspired by the uncaught exception widget from flutter. A screen that is shown when your app crashes and includes the crash details instead of the normal crash dialog. Should be used only in debug builds.](https://www.reddit.com/r/Kotlin/comments/jioz0c/i_published_a_small_android_library_written_in/)
+## [7][Usage of SharedFlow](https://www.reddit.com/r/Kotlin/comments/jj5kr0/usage_of_sharedflow/)
+- url: https://coroutinedispatcher.com/posts/shared-flow/
+---
+
+## [8][Extend your code readability with Kotlin extensions](https://www.reddit.com/r/Kotlin/comments/jj3k1h/extend_your_code_readability_with_kotlin/)
+- url: https://medium.com/androiddevelopers/extend-your-code-readability-with-kotlin-extensions-542bf702aa36
+---
+
+## [9][I published a small Android library written in Kotlin inspired by the uncaught exception widget from flutter. A screen that is shown when your app crashes and includes the crash details instead of the normal crash dialog. Should be used only in debug builds.](https://www.reddit.com/r/Kotlin/comments/jioz0c/i_published_a_small_android_library_written_in/)
 - url: https://github.com/mlegy/red-screen-of-death
 ---
 
-## [4][Android's strings.xml: Deprecated!](https://www.reddit.com/r/Kotlin/comments/jj0yj8/androids_stringsxml_deprecated/)
-- url: https://localazy.com/blog/android-strings-xml-deprecated
----
-
-## [5][Multiplatform Java/JS examples?](https://www.reddit.com/r/Kotlin/comments/jimrqv/multiplatform_javajs_examples/)
+## [10][Multiplatform Java/JS examples?](https://www.reddit.com/r/Kotlin/comments/jimrqv/multiplatform_javajs_examples/)
 - url: https://www.reddit.com/r/Kotlin/comments/jimrqv/multiplatform_javajs_examples/
 ---
 I am trying to find an ideal example of using the MPP (yes, I know it's alpha) plugin to generate both JVM Maven package output and a NodeJS package of some kind from the same code base. In Gradle KTS format.
@@ -64,7 +149,7 @@ I am trying to find an ideal example of using the MPP (yes, I know it's alpha) p
 I've gone over dozens of projects I've found, and for the life of me can't quite figure out how they generate JS output into the right place, for NPM publishing, and also JVM output and a POM file for Maven publishing.
 
 I do intend to use commonMain, jvmMain and jsMain stuff. Some types need to differ between platforms, etc.
-## [6][Kotlin tutorials free download](https://www.reddit.com/r/Kotlin/comments/jicji8/kotlin_tutorials_free_download/)
+## [11][Kotlin tutorials free download](https://www.reddit.com/r/Kotlin/comments/jicji8/kotlin_tutorials_free_download/)
 - url: https://www.reddit.com/r/Kotlin/comments/jicji8/kotlin_tutorials_free_download/
 ---
 If anyone can help, I need free download tutorials for Kotlin for beginners , (no torrent please).
@@ -72,85 +157,3 @@ If anyone can help, I need free download tutorials for Kotlin for beginners , (n
 I am learning and I want to create inspection checklist which saves my notes and can add remarks on each item inside list.
 
 Would be great if you could help.
-## [7][searching for a resource to build Microservices with Kafka server](https://www.reddit.com/r/Kotlin/comments/jhv1y8/searching_for_a_resource_to_build_microservices/)
-- url: https://www.reddit.com/r/Kotlin/comments/jhv1y8/searching_for_a_resource_to_build_microservices/
----
-Hi guys,
-
-I will be joining a new company where we will build a project depends on Microservices Architecture with Kafka server  (we will use Spring Boot as a framework)
-
-&amp;#x200B;
-
-I am looking for a good resource, since I have been searching for a while, but not able to find something that attracts my intention.
-
-&amp;#x200B;
-
-Any help ?
-## [8][𝗟𝗲𝗲𝘁𝗖𝗼𝗱𝗲 #𝟳 - 𝗥𝗲𝘃𝗲𝗿𝘀𝗲 𝗜𝗻𝘁𝗲𝗴𝗲𝗿](https://www.reddit.com/r/Kotlin/comments/jia6yu/𝗟𝗲𝗲𝘁𝗖𝗼𝗱𝗲_𝟳_𝗥𝗲𝘃𝗲𝗿𝘀𝗲_𝗜𝗻𝘁𝗲𝗴𝗲𝗿/)
-- url: https://www.reddit.com/r/Kotlin/comments/jia6yu/𝗟𝗲𝗲𝘁𝗖𝗼𝗱𝗲_𝟳_𝗥𝗲𝘃𝗲𝗿𝘀𝗲_𝗜𝗻𝘁𝗲𝗴𝗲𝗿/
----
-A new blog post discussing the approach and code to solve 𝗥𝗲𝘃𝗲𝗿𝘀𝗲 𝗜𝗻𝘁𝗲𝗴𝗲𝗿 problem on #leetcode [https://redquark.org/leetcode/0007-reverse-integer/](https://redquark.org/leetcode/0007-reverse-integer/)  
-
-Implemented in #Java, #javascript, #Python and #Kotlin  
-
-\#algorithms #datastructures
-## [9][Trying to get property reference from a type given by function receiver](https://www.reddit.com/r/Kotlin/comments/jhr1au/trying_to_get_property_reference_from_a_type/)
-- url: https://www.reddit.com/r/Kotlin/comments/jhr1au/trying_to_get_property_reference_from_a_type/
----
-I'm making a builder for any class. It's based on KProperty reflections and it works well for now, but I want to improve an interface of it. Here is an example of current usage:
-
-    data class Data(
-        val nonDef: String,
-        val defValue: String = "DEF_VALUE",
-        val copyValue: String = nonDef,
-        val nonDef2: String,
-        val aMap: Map&lt;String, String&gt; = emptyMap(),
-    ) 
-    
-    val builtData = Builder&lt;Data&gt;() 
-        .assign(Data::aMap, mapOf("key" to "value")) 
-        .assign(Data::nonDef2, "10") 
-        .assign(Data::nonDef, "10") 
-        .build()
-    
-
-I don't like, that I have to specify Data:: receiver for every property reference in assign method. Data class is already given as generic for Builder, so I can pass only reference with receiving Data class.
-
-So, I want to make new function prettyAssign() with callable argument, where class reference receiver  is passed as function receiver for callable, so I could address ::aMap, ::nonDef and ::nonDef2 to implicit 'this'. Here how it would look like:
-
-    class Builder&lt;T : Any&gt;(val kClass: KClass&lt;T&gt;) {
-        fun &lt;K&gt; assign(prop: KProperty1&lt;T, K&gt;, value: K)
-            : Builder&lt;T&gt; = TODO("doing all reflection magic here")
-            
-        fun &lt;K&gt; prettyAssign(call: KClass&lt;T&gt;.() -&gt; Pair&lt;KProperty1&lt;T, K&gt;, K&gt;) {
-            val (prop, value) = call(kClass)
-            return assign(prop, value)
-        }
-    }
-    
-    val builtData = DataBuilder&lt;Data&gt;()
-        .prettyAssign { ::aMap to mapOf("key" to "value") }
-        .prettyAssign { ::nonDef2 to "10" }
-        .prettyAssign { ::nonDef to "10" }
-        .build()
-    
-
-In that approach it doesn't work, because KClass&lt;T&gt; doesn't have references to T properties.
-
-So, I don't understand, is there a way to make prettyAssign() working
-## [10][Choosing the right architecture for a [new] Kotlin Multiplatform, Jetpack Compose and SwiftUI app](https://www.reddit.com/r/Kotlin/comments/jh9xk2/choosing_the_right_architecture_for_a_new_kotlin/)
-- url: https://www.marcogomiero.com/posts/2020/kmm-shared-app-architecture
----
-
-## [11][How to create a fat jar for Kotlin Multiplatform project without main class?](https://www.reddit.com/r/Kotlin/comments/jhh0hc/how_to_create_a_fat_jar_for_kotlin_multiplatform/)
-- url: https://www.reddit.com/r/Kotlin/comments/jhh0hc/how_to_create_a_fat_jar_for_kotlin_multiplatform/
----
- Hello! 
-
-I'm trying to create fat jar for my kotlin multiplatform project which will then be used as a dependency on another project. When I'm trying to use the class defined in the multiplatform project on the other project, it's not able to find/import it. However, when I opened the created jar, I can see it's there (along with all the dependencies).
-
-There is a [stackoverflow post](https://stackoverflow.com/a/62770101) that I found on how to build a fat jar for multiplatform project and I pretty much just followed that. Correct me if I'm wrong, since my multiplatform project doesn't have a main class, I do not need to include the part where it adds the main class to the attributes.
-
-I have been having hard time to get this to work. Most of the examples online are for multiplatform projects with main class. Is there any tutorial on how to build a fat jar for a multiplatform project that doesn't have main class? Any help is greatly appreciated!
-
-Thanks in advance! 

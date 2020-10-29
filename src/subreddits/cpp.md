@@ -56,79 +56,53 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][StructLayout: Visual Studio Extension for C++ struct memory layout visualization](https://www.reddit.com/r/cpp/comments/jji9ej/structlayout_visual_studio_extension_for_c_struct/)
-- url: https://github.com/Viladoman/StructLayout
+## [2][Is C++ really that hard for beginners?](https://www.reddit.com/r/cpp/comments/jk6jcz/is_c_really_that_hard_for_beginners/)
+- url: https://www.reddit.com/r/cpp/comments/jk6jcz/is_c_really_that_hard_for_beginners/
+---
+hello, i have always heard that "C++ is hard for beginner, manual memory management and stuff...", but is it really that hard after the changes c++ had?, i always avoided c++ (started with it and i got fustrated) but since c++ is the norm for game dev i kinda wanna use it (well maybe now or untill i learn java or something idk...)
+
+and yes i know c++ doesn't have a garbage collection and it has pointers and stuff..
+
+thanks.
+## [3][ewig, an efficient text editor written in C++, using immutable data structures](https://www.reddit.com/r/cpp/comments/jjsx29/ewig_an_efficient_text_editor_written_in_c_using/)
+- url: https://github.com/arximboldi/ewig
 ---
 
-## [3][Qt6 to ship with conan](https://www.reddit.com/r/cpp/comments/jjnqoq/qt6_to_ship_with_conan/)
+## [4][Subscript Assignment Operator?](https://www.reddit.com/r/cpp/comments/jjzy4m/subscript_assignment_operator/)
+- url: https://www.reddit.com/r/cpp/comments/jjzy4m/subscript_assignment_operator/
+---
+I had a random idea recently, which is to have a separate `operator[]=` for assigning to elements of a container. Code like `my_object[my_index] = data`, would result in a call to `operator[]=` instead of `operator[]` and `operator=`.
+
+Currently, container authors (specifically for containers that implicitly create elements in `operator[]`, like `std::map`) need to ensure that `operator[]` returns a non-const reference, so that code like `my_map[my_index] = data;` works. But this then means that code like `auto data = my_map[my_index];` fails to compile when `my_map` is a const reference, which is common for function arguments. In theory the container author could provide a const-qualified overload of `operator[]` that returns a const reference (`std::vector` does this) but in the case of containers with implicit creation, things start to get weird. Code like `auto data = my_map[my_index];` would have different behaviour when `my_index` is not in the map depending on whether `my_map` is const or not. If it's const, an error gets reported (probably via exception), and if not, the item gets inserted. Smells like a footgun.
+
+But if there is a separate `operator[]=`, that problem goes away. `operator[]` can have a const-qualified overload only, it can return a const reference (or a copy depending on the container and stored type), and could even potentially do something like return `std::optional` when the item isn't in the container. Then `operator[]=` can have a non-const overload only, and return a reference to the item, whether newly created or not.
+
+Thoughts? Worth proposing? Any potential issues with this design?
+## [5][while (auto x=y; z)](https://www.reddit.com/r/cpp/comments/jk9i4z/while_auto_xy_z/)
+- url: https://quuxplusone.github.io/blog/2020/10/28/while-with-initializer/
+---
+
+## [6][Qt6 to ship with conan](https://www.reddit.com/r/cpp/comments/jjnqoq/qt6_to_ship_with_conan/)
 - url: https://www.qt.io/blog/qt-6-additional-libraries-via-package-manager
 ---
 
-## [4][Fun with Concepts: Do You Even Lift, Bool?](https://www.reddit.com/r/cpp/comments/jj48jm/fun_with_concepts_do_you_even_lift_bool/)
-- url: https://vector-of-bool.github.io/2020/10/26/strong-bool.html
+## [7][StructLayout: Visual Studio Extension for C++ struct memory layout visualization](https://www.reddit.com/r/cpp/comments/jji9ej/structlayout_visual_studio_extension_for_c_struct/)
+- url: https://github.com/Viladoman/StructLayout
 ---
 
-## [5][The new Oat++ version 1.2.0 is finally released!](https://www.reddit.com/r/cpp/comments/jjdk5z/the_new_oat_version_120_is_finally_released/)
+## [8][Jonathan Boccaras Meeting C++ 2020 opening keynote: meta-polymorphism](https://www.reddit.com/r/cpp/comments/jk72u1/jonathan_boccaras_meeting_c_2020_opening_keynote/)
+- url: https://meetingcpp.com/meetingcpp/news/items/Jonathan-Boccaras-opening-keynote-meta-polymorphism.html
+---
+
+## [9][Multi-Level Break in C++ via IIFE](https://www.reddit.com/r/cpp/comments/jjpgpe/multilevel_break_in_c_via_iife/)
+- url: https://artificial-mind.net/blog/2020/10/28/multi-level-break-iife
+---
+
+## [10][The new Oat++ version 1.2.0 is finally released!](https://www.reddit.com/r/cpp/comments/jjdk5z/the_new_oat_version_120_is_finally_released/)
 - url: https://github.com/oatpp/oatpp
 ---
 
-## [6][Truly cross-platform C++17 GUI development with native GUI on each platform and a WYSIWYG editor?](https://www.reddit.com/r/cpp/comments/jjf97e/truly_crossplatform_c17_gui_development_with/)
-- url: https://www.reddit.com/r/cpp/comments/jjf97e/truly_crossplatform_c17_gui_development_with/
----
-I have a fair amount of experience developing cross-platform C++ console applications (mostly for scientific computing). I mostly use GCC/G++, and my IDE of choice in the last couple of years has been Visual Studio Code. However, I have no experience developing GUI apps.
-
-I would like to develop a C++ GUI app with the following properties:
-
-1. Can compile binaries for all the popular platforms: **Windows, Mac, Linux, iOS, Android, and web browser (with WebAssembly)**, all with the same code, or at least the same base code with some additional front-end code on top (e.g. the desktop, mobile, and web GUIs will probably have different layouts). 
-
-2. Can compile for all platforms using the **same compiler**, if possible (mostly to ensure that I don't have to rewrite the code for different platforms due to compiler incompatibilities).
-
-3. The compiler must fully support **C++17**.
-
-4. One IDE can be used to develop the code for all platforms, including a **WYSIWYG editor for the GUI**. (I'd love to keep using VS Code, but as far as I can tell it has no WYSIWYG editor... Unless there's some extension I'm not aware of that can do that..?)
-
-5. The development will be take place on Windows, so it's fine if the IDE itself is Windows-only (e.g. Visual Studio).
-
-6. The GUI should have a **native look** on every platform.
-
-Is this a pipe dream? If not, then which **compiler, IDE, and GUI library** will provide this functionality?
-
-Thanks!
-## [7][Refureku 1.3.0 released!](https://www.reddit.com/r/cpp/comments/jjdc5o/refureku_130_released/)
-- url: https://github.com/jsoysouvanh/Refureku
+## [11][Fun with Concepts: Do You Even Lift, Bool?](https://www.reddit.com/r/cpp/comments/jj48jm/fun_with_concepts_do_you_even_lift_bool/)
+- url: https://vector-of-bool.github.io/2020/10/26/strong-bool.html
 ---
 
-## [8][Tricks with Default Template Arguments](https://www.reddit.com/r/cpp/comments/jj37wo/tricks_with_default_template_arguments/)
-- url: https://foonathan.net/2020/10/tricks-default-template-argument/
----
-
-## [9][Hi, I'm new to C++. I was just wondering why the Qt framework is more than 1GB but the compiled app is very small.](https://www.reddit.com/r/cpp/comments/jiszf3/hi_im_new_to_c_i_was_just_wondering_why_the_qt/)
-- url: https://www.reddit.com/r/cpp/comments/jiszf3/hi_im_new_to_c_i_was_just_wondering_why_the_qt/
----
-
-## [10][C++ Qt Cross-platform productivity software - feedback requested](https://www.reddit.com/r/cpp/comments/jj5pyg/c_qt_crossplatform_productivity_software_feedback/)
-- url: https://www.reddit.com/r/cpp/comments/jj5pyg/c_qt_crossplatform_productivity_software_feedback/
----
- Hey everyone,
-
-Wanted to share a productivity tool called [Zenreader](https://www.zenreader.co.uk/?utm_source=reddit&amp;utm_medium=post&amp;utm_campaign=aw20promo) for students, academics and professionals that I've worked on building over the past few years with C++ - it's in the beta stage.
-
-Zenreader is used for rapidly building a body of knowledge/evidence and drafting papers. It used to take notes, organise these and produce excellent reports quickly.
-
-Looking for feedback to see how we can improve this further! New to reddit - let me know if this should not be posted here.
-## [11][What naming conventions for constants ?](https://www.reddit.com/r/cpp/comments/jj2f1z/what_naming_conventions_for_constants/)
-- url: https://www.reddit.com/r/cpp/comments/jj2f1z/what_naming_conventions_for_constants/
----
-It's pretty easy to choose a style for functions, types, variables (snake case everywhere except types in pascal case, for me).  But how do you differentiate constants ?
-
-C++ core guidelines says "all caps only for macros" and seems to advocate for snake case for enums.  It makes sense for scoped enums, start to look weird for old-style enum, and gets worse with a simple constexpr int...
-
-    constexpr int block_size = 4096;
-    
-    int SuperParser::read(int size) {
-        ...
-        int size_in_blocks = size / block_size;
-        ...
-    }
-
-Do you have anything better than the Google convention of kCamelCase ?

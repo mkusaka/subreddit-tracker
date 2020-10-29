@@ -41,12 +41,46 @@ Hi everyone! The JetBrains team is here and we will be answering your questions 
 
 We’ll be joined by other developers and team leads from Kotlin, as well as two special guests: Wojtek Kaliciński /u/wkalicinski from Google and Sebastien Deleuze /u/sdeleuze from Spring.
 
-On October 12–15 we hosted the [Kotlin 1.4 Online Event](https://kotlinlang.org/lp/event-14/), and over the course of those four days we received many interesting questions. Since we did not manage to cover all of them due to time constraints, we will answer them in a specific thread under this post.
+On October 12–15 we hosted the Kotlin 1.4 Online Event, and over the course of those four days we received many interesting questions. Since we did not manage to cover all of them due to time constraints, we will answer them in a specific thread under this post.
 
 Please post your questions as top-level comments to this post.
 
 We look forward to hearing from you!
-## [2][What do you think of this little extension function?](https://www.reddit.com/r/Kotlin/comments/jjmgb0/what_do_you_think_of_this_little_extension/)
+## [2][Netflix Android and iOS Studio Apps — now powered by Kotlin Multiplatform](https://www.reddit.com/r/Kotlin/comments/jk0rh5/netflix_android_and_ios_studio_apps_now_powered/)
+- url: https://medium.com/@NetflixTechBlog/netflix-android-and-ios-studio-apps-kotlin-multiplatform-d6d4d8d25d23
+---
+
+## [3][NotyKT is a complete Kotlin-stack application built with Ktor (REST API Backend) + Android](https://www.reddit.com/r/Kotlin/comments/jk9imh/notykt_is_a_complete_kotlinstack_application/)
+- url: https://github.com/PatilShreyas/NotyKT
+---
+
+## [4][LeetCode #9 - Palindrome Number](https://www.reddit.com/r/Kotlin/comments/jk84cu/leetcode_9_palindrome_number/)
+- url: https://www.reddit.com/r/Kotlin/comments/jk84cu/leetcode_9_palindrome_number/
+---
+ New blog post describing how to check for a palindrome number - [https://redquark.org/leetcode/0009-palindrome-number/](https://redquark.org/leetcode/0009-palindrome-number/)
+## [5][Kotlin &amp; Gmail API - listing emails](https://www.reddit.com/r/Kotlin/comments/jjwp8g/kotlin_gmail_api_listing_emails/)
+- url: https://vaclavhodek.com/kotlin-and-gmail-api-listing-emails
+---
+
+## [6][Kotlin &amp; Gmail API - listing emails](https://www.reddit.com/r/Kotlin/comments/jk68jm/kotlin_gmail_api_listing_emails/)
+- url: https://vaclavhodek.com/kotlin-and-gmail-api-listing-emails
+---
+
+## [7][How to use PropertyDelegateProvider](https://www.reddit.com/r/Kotlin/comments/jk67c6/how_to_use_propertydelegateprovider/)
+- url: https://www.reddit.com/r/Kotlin/comments/jk67c6/how_to_use_propertydelegateprovider/
+---
+I've been reading up on Kotlin 1.4, with lots of great stuff (Especially SAM conversions!)
+
+What I can't get my head around though is `PropertyDelegateProvider`. I can't quite work out how it's meant to be used, and I can't find *any* examples of it actually being used in a way that make sense to me.
+
+Can anyone explain? Or, better yet, provide a simple example of it working? Is it simply just how the delegating to other properties works behind the scenes? Or does it, as I think, allow you to delegate a property to a lambda without needing to create a whole new class to support that?
+
+Cheers
+## [8][Kotlin Coroutines Exception Handling Cheat Sheet](https://www.reddit.com/r/Kotlin/comments/jjorn5/kotlin_coroutines_exception_handling_cheat_sheet/)
+- url: https://www.lukaslechner.com/coroutines-exception-handling-cheat-sheet/
+---
+
+## [9][What do you think of this little extension function?](https://www.reddit.com/r/Kotlin/comments/jjmgb0/what_do_you_think_of_this_little_extension/)
 - url: https://www.reddit.com/r/Kotlin/comments/jjmgb0/what_do_you_think_of_this_little_extension/
 ---
 If you are a fan of chained calls, for example for string manipulation, you are probably sometimes as frustrated as I am because you have to "break the flow". I hit such a case again, but this time I decided to write an extension function so I can comfortably continue the chained call.
@@ -95,7 +129,7 @@ Neat, right? Note that the lambda and the `forEachOf()` function (have to) retur
 What do you think? Is it useful? Would you use it? Can you imagine more practical use cases? Or would you improve the extension in some way?
 
 For me it just shows the beauty of the expressiveness and extensibility of Kotlin. A similar problem in Java would be impossible to solve, but with Kotlin you have multiple ways of doing it!
-## [3][Using withContext: is it possible to resume execution on the same thread in the same dispatcher?](https://www.reddit.com/r/Kotlin/comments/jjnuji/using_withcontext_is_it_possible_to_resume/)
+## [10][Using withContext: is it possible to resume execution on the same thread in the same dispatcher?](https://www.reddit.com/r/Kotlin/comments/jjnuji/using_withcontext_is_it_possible_to_resume/)
 - url: https://www.reddit.com/r/Kotlin/comments/jjnuji/using_withcontext_is_it_possible_to_resume/
 ---
 Imagine a suspend function running on `Dispatchers.Default` similar to this one:
@@ -109,51 +143,26 @@ Imagine a suspend function running on `Dispatchers.Default` similar to this one:
         post()
     }
 
-According to the docs `withContex` will switch to a new thread if a new dispatcher is provided (which is the case here) and resume using the original dispatcher, `Dispatchers.Default`. However, I observe that sometimes it resumes and executes `post()` on a different thread than the one used to execute `pre()`.
+According to the docs `withContext` will switch to a new thread if a new dispatcher is provided (which is the case here) and resume using the original dispatcher, `Dispatchers.Default`. However, I observe that sometimes it resumes and executes `post()` on a different thread than the one used to execute `pre()`.
 
 This poses a challenge in a problem I need to solve, so I'm wondering whether it is possible to enforce the execution of `post()` and `pre()` on the same thread.
-## [4][Is Coroutines turning into Rx?](https://www.reddit.com/r/Kotlin/comments/jj5lss/is_coroutines_turning_into_rx/)
-- url: https://www.reddit.com/r/Kotlin/comments/jj5lss/is_coroutines_turning_into_rx/
----
-One of the biggest reasons why Coroutines was so hyped compared with Rx is that it allowed to write async code in a synchronous way. But with recent trend of Flow and Channels, I feel like people are building their apps now heavily around these concepts, adding on top couple of aggregation operators on it. This reminds me all of the early days of Rx, where people used Subjects heavily.
-
-What is the reason for the sudden popularity of flows? And how do they differ from Rx Subjects
-## [5][Kotlin data type](https://www.reddit.com/r/Kotlin/comments/jj6qm8/kotlin_data_type/)
-- url: https://www.reddit.com/r/Kotlin/comments/jj6qm8/kotlin_data_type/
----
-Hi im new in kotlin and im really confused about float and double
-What is the exact min and max value of float and double can have
-There is so many diffrent value in internet and im confused
-Thanks
-## [6][Released kotlinx.coroutines 1.4.0](https://www.reddit.com/r/Kotlin/comments/jikkd1/released_kotlinxcoroutines_140/)
-- url: https://github.com/Kotlin/kotlinx.coroutines/releases/tag/1.4.0
+## [11][Android Kotlin Widget: Click button on widget then get some string from MainActivity then set string text on Widget. How?](https://www.reddit.com/r/Kotlin/comments/jjtgfe/android_kotlin_widget_click_button_on_widget_then/)
+- url: https://www.reddit.com/r/Kotlin/comments/jjtgfe/android_kotlin_widget_click_button_on_widget_then/
 ---
 
-## [7][Usage of SharedFlow](https://www.reddit.com/r/Kotlin/comments/jj5kr0/usage_of_sharedflow/)
-- url: https://coroutinedispatcher.com/posts/shared-flow/
----
 
-## [8][Extend your code readability with Kotlin extensions](https://www.reddit.com/r/Kotlin/comments/jj3k1h/extend_your_code_readability_with_kotlin/)
-- url: https://medium.com/androiddevelopers/extend-your-code-readability-with-kotlin-extensions-542bf702aa36
----
+Hey there :) I am kinda new to Kotlin, but not so new to the programing.
 
-## [9][I published a small Android library written in Kotlin inspired by the uncaught exception widget from flutter. A screen that is shown when your app crashes and includes the crash details instead of the normal crash dialog. Should be used only in debug builds.](https://www.reddit.com/r/Kotlin/comments/jioz0c/i_published_a_small_android_library_written_in/)
-- url: https://github.com/mlegy/red-screen-of-death
----
+I would like to ask for a help. But please... please... only if you  have time and could give me something like a final working code. Those  descriptive answers like: go there and do that.. kinda dont work for me.  Thats the reason why I created this profile... because i am totally  stuck...
 
-## [10][Multiplatform Java/JS examples?](https://www.reddit.com/r/Kotlin/comments/jimrqv/multiplatform_javajs_examples/)
-- url: https://www.reddit.com/r/Kotlin/comments/jimrqv/multiplatform_javajs_examples/
----
-I am trying to find an ideal example of using the MPP (yes, I know it's alpha) plugin to generate both JVM Maven package output and a NodeJS package of some kind from the same code base. In Gradle KTS format.
+So... I would like to have a very very simple (working) example of this: I have a widget. On that widget i have a button with id "buttonASD" and i have textview with id "textviewASD"
 
-I've gone over dozens of projects I've found, and for the life of me can't quite figure out how they generate JS output into the right place, for NPM publishing, and also JVM output and a POM file for Maven publishing.
+I click that button on widget... then widget sends some kind of command to the MainActivity.kt
 
-I do intend to use commonMain, jvmMain and jsMain stuff. Some types need to differ between platforms, etc.
-## [11][Kotlin tutorials free download](https://www.reddit.com/r/Kotlin/comments/jicji8/kotlin_tutorials_free_download/)
-- url: https://www.reddit.com/r/Kotlin/comments/jicji8/kotlin_tutorials_free_download/
----
-If anyone can help, I need free download tutorials for Kotlin for beginners , (no torrent please).
+inside MainActivity.kt lets say that i have some string: stringASD = "blablabla"
 
-I am learning and I want to create inspection checklist which saves my notes and can add remarks on each item inside list.
+so I would like now this stringASD to be shown on the textviewASD which is located on my widget
 
-Would be great if you could help.
+For me, at this point, it doesnt matter if MainActivity.kt will set  text on viewtextASD or it will send that stringASD to the widget, and  then the widget itself will change the text :)
+
+And very important is that I would like this to happen without my main app appearing on screen. Is that possible??

@@ -79,43 +79,53 @@
 
 
 &amp;nbsp;
-## [2][What A Yarn Workspace Is, And The Problem It Solves](https://www.reddit.com/r/javascript/comments/jjfrte/what_a_yarn_workspace_is_and_the_problem_it_solves/)
-- url: https://planflow.dev/blog/what-is-a-yarn-workspace
+## [2][WTF Wednesday (October 28, 2020)](https://www.reddit.com/r/javascript/comments/jjqjlu/wtf_wednesday_october_28_2020/)
+- url: https://www.reddit.com/r/javascript/comments/jjqjlu/wtf_wednesday_october_28_2020/
+---
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
+
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [3][Why npm lockfiles can be a security blindspot for injecting malicious modules](https://www.reddit.com/r/javascript/comments/jk6082/why_npm_lockfiles_can_be_a_security_blindspot_for/)
+- url: https://snyk.io/blog/why-npm-lockfiles-can-be-a-security-blindspot-for-injecting-malicious-modules/
 ---
 
-## [3][Deno 1.5 Release Notes](https://www.reddit.com/r/javascript/comments/jjk5x2/deno_15_release_notes/)
+## [4][CodeSandbox Secures $12.7M Series A Funding!](https://www.reddit.com/r/javascript/comments/jk6nix/codesandbox_secures_127m_series_a_funding/)
+- url: https://codesandbox.io/post/codesandbox-series-a-funding
+---
+
+## [5][Simplest JS paint](https://www.reddit.com/r/javascript/comments/jjpoqf/simplest_js_paint/)
+- url: https://hinty.io/devforth/simplest-js-paint/
+---
+
+## [6][Angular Dashboard with Material](https://www.reddit.com/r/javascript/comments/jjqbjp/angular_dashboard_with_material/)
+- url: https://angular-dashboard.cube.dev/
+---
+
+## [7][Free and Unlimited Image &amp; Video Conversion ENTIRELY in browser using FFMPEG compiled to WebAssembly. No Backend, No Uploads!](https://www.reddit.com/r/javascript/comments/jk8yab/free_and_unlimited_image_video_conversion/)
+- url: https://fileconverter.digital/index.php
+---
+
+## [8][How to Create a Reusable LocalStorage Hook](https://www.reddit.com/r/javascript/comments/jk8j29/how_to_create_a_reusable_localstorage_hook/)
+- url: https://blog.bhanuteja.dev/how-to-create-a-reusable-localstorage-hook
+---
+
+## [9][Show: Hanbi - a lightweight spies/stubs library w/ strong type definitions](https://www.reddit.com/r/javascript/comments/jk7ff1/show_hanbi_a_lightweight_spiesstubs_library_w/)
+- url: https://github.com/43081j/hanbi
+---
+
+## [10][Deno 1.5 Release Notes](https://www.reddit.com/r/javascript/comments/jjk5x2/deno_15_release_notes/)
 - url: https://deno.land/posts/v1.5
 ---
 
-## [4][Next.js 10 - automatic Image optimisation and more](https://www.reddit.com/r/javascript/comments/jj45eq/nextjs_10_automatic_image_optimisation_and_more/)
-- url: https://github.com/vercel/next.js/releases/tag/v10.0.0
+## [11][A First Look at Remix.run](https://www.reddit.com/r/javascript/comments/jjz4qk/a_first_look_at_remixrun/)
+- url: https://dev.to/dabit3/a-first-look-at-remix-run-449a
 ---
 
-## [5][Vanilla-todo: A case study on viable techniques for vanilla web development](https://www.reddit.com/r/javascript/comments/jj10k9/vanillatodo_a_case_study_on_viable_techniques_for/)
-- url: https://github.com/morris/vanilla-todo
+## [12][[AskJS] What would be an interesting twist on a graphing library?](https://www.reddit.com/r/javascript/comments/jk3zau/askjs_what_would_be_an_interesting_twist_on_a/)
+- url: https://www.reddit.com/r/javascript/comments/jk3zau/askjs_what_would_be_an_interesting_twist_on_a/
 ---
+I want to create a graphing library for a school project but one of the requirements is that it needs to have an interesting twist that isn't already out there (or at the very least, in any of the mainstream libraries).
 
-## [6][Layout projection: A method for animating browser layouts at 60fps](https://www.reddit.com/r/javascript/comments/jj1rt4/layout_projection_a_method_for_animating_browser/)
-- url: https://mattperry.is/writing-code/layout-projection-animate-browser-layout-60fps
----
-
-## [7][CASL. Pursuing Perfection I: Why?](https://www.reddit.com/r/javascript/comments/jjiynm/casl_pursuing_perfection_i_why/)
-- url: https://dev.to/stalniy/casl-pursuing-perfection-i-why-2j2c
----
-
-## [8][JavaScript's Memory Management Explained](https://www.reddit.com/r/javascript/comments/jj8jt2/javascripts_memory_management_explained/)
-- url: https://felixgerschau.com/javascript-memory-management/
----
-
-## [9][[AskJS] learning javascript in a week](https://www.reddit.com/r/javascript/comments/jjl66v/askjs_learning_javascript_in_a_week/)
-- url: https://www.reddit.com/r/javascript/comments/jjl66v/askjs_learning_javascript_in_a_week/
----
-Someone in yt comment section said he learn js in a week, is that possible?
-## [10][Fixture-based test runner by Microsoft: Folio](https://www.reddit.com/r/javascript/comments/jixmc1/fixturebased_test_runner_by_microsoft_folio/)
-- url: https://github.com/microsoft/folio
----
-
-## [11][I was able get copying cells from my react-virtualized grid to excel working! Here's how...](https://www.reddit.com/r/javascript/comments/jjfkm3/i_was_able_get_copying_cells_from_my/)
-- url: https://github.com/man-group/dtale/blob/master/docs/RANGE_SELECTION.md
----
-
+Is there anything interesting of this sort you wish your graphing library had?

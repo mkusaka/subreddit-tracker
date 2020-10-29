@@ -1,13 +1,5 @@
 # rails
-## [1][Gimme Gems Thursdays - Found an awesome new gem? Post it here!](https://www.reddit.com/r/rails/comments/jbmadq/gimme_gems_thursdays_found_an_awesome_new_gem/)
-- url: https://www.reddit.com/r/rails/comments/jbmadq/gimme_gems_thursdays_found_an_awesome_new_gem/
----
-Please use this thread to discuss **cool** but relatively **unknown** gems you've found.
-
-You **should not** post popular gems such as [those listed in wiki](https://www.reddit.com/r/rails/wiki/index#wiki_popular_gems) that are already well known.
-
-Please include a **description** and a **link** to the gem's homepage in your comment.
-## [2][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/jfcv1r/personal_projects_show_off_your_own_project_andor/)
+## [1][Personal Projects - Show off your own project and/or ask for advice](https://www.reddit.com/r/rails/comments/jfcv1r/personal_projects_show_off_your_own_project_andor/)
 - url: https://www.reddit.com/r/rails/comments/jfcv1r/personal_projects_show_off_your_own_project_andor/
 ---
 In this thread you can showcase your personal pet project to other redditors.
@@ -27,11 +19,50 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][What are some of the Questions/tests you’ve been asked in technical interviews for Rails positions?](https://www.reddit.com/r/rails/comments/jjj6zi/what_are_some_of_the_questionstests_youve_been/)
+## [2][Audited vs papertrail gem for auditing table changes?](https://www.reddit.com/r/rails/comments/jk9i0y/audited_vs_papertrail_gem_for_auditing_table/)
+- url: https://www.reddit.com/r/rails/comments/jk9i0y/audited_vs_papertrail_gem_for_auditing_table/
+---
+I'm currently looking to use either one of these two for auditing changes made by specific user roles on a rails 6 ecommerce app using mysql. They both seem similar and I'm currently leaning towards papertrail due to the more frequent updates, but I was curious if there is any specific advantage of using one over the other(performance, ease of use...etc) or anyone knows of any pros/cons that stick out.
+
+Would be keen to know if people have used any other gems that seemed good as well.
+## [3][How is github able to provide go to definition and find references while I can't do it in VS Code](https://www.reddit.com/r/rails/comments/jjpqnw/how_is_github_able_to_provide_go_to_definition/)
+- url: https://www.reddit.com/r/rails/comments/jjpqnw/how_is_github_able_to_provide_go_to_definition/
+---
+In VS code I struggle to get something like below to get to work. I have installed solargraph but it takes a long time to find something and most of the time it doesn't work?   
+
+
+Any idea on how this works in github and if it's possible to get this to work in vs code? 
+
+https://preview.redd.it/iuy85bnvruv51.png?width=3096&amp;format=png&amp;auto=webp&amp;s=628207d307a41c12920cf466b5d76b483f520774
+## [4][A Gem for Cloudimage Image Optimizer](https://www.reddit.com/r/rails/comments/jjzf5z/a_gem_for_cloudimage_image_optimizer/)
+- url: https://www.reddit.com/r/rails/comments/jjzf5z/a_gem_for_cloudimage_image_optimizer/
+---
+**Hi! Our tech team at Scaleflex just published a gem for our image optimizer Cloudimage** ([https://www.cloudimage.io/](https://www.cloudimage.io/))-&gt; Discover it here: Cloudimage-gem ([https://rubygems.org/gems/cloudimage](https://rubygems.org/gems/cloudimage))
+
+What you can achieve with this gem:
+
+* supports Ruby 2.4 and above, JRuby, and TruffleRuby
+* on-the-fly resizing of all your images (150+ transformations)
+* image optimization and WebP/AVIF (tba) compression
+* responsive design, progressive/lazy loading
+* worldwide media delivery via CDN
+
+Happy to get your feedback!
+
+Greetings!
+## [5][Techmaker TV YouTube](https://www.reddit.com/r/rails/comments/jjoevj/techmaker_tv_youtube/)
+- url: https://www.reddit.com/r/rails/comments/jjoevj/techmaker_tv_youtube/
+---
+Hey guys, I've been watching the Techmaker TV stuff for Rails on YouTube and the content is fantastic: https://www.youtube.com/c/TechmakerTV/videos
+
+I noticed, though, that there haven't been any videos in over a month and the producer usually created about 2 videos a week.  
+
+Anyone know anything about it?  Just curious if he was still making videos and everything was alright.
+## [6][What are some of the Questions/tests you’ve been asked in technical interviews for Rails positions?](https://www.reddit.com/r/rails/comments/jjj6zi/what_are_some_of_the_questionstests_youve_been/)
 - url: https://www.reddit.com/r/rails/comments/jjj6zi/what_are_some_of_the_questionstests_youve_been/
 ---
 
-## [4][Destroy 1 mil records in a few minutes?](https://www.reddit.com/r/rails/comments/jjmtub/destroy_1_mil_records_in_a_few_minutes/)
+## [7][Destroy 1 mil records in a few minutes?](https://www.reddit.com/r/rails/comments/jjmtub/destroy_1_mil_records_in_a_few_minutes/)
 - url: https://www.reddit.com/r/rails/comments/jjmtub/destroy_1_mil_records_in_a_few_minutes/
 ---
 ```ruby
@@ -39,7 +70,20 @@ Order.where("end_date &lt;= ?", date).in_batches(of: 100).destroy_all
 ```
 
 I tried this code with 1 mil records (500,000 of `orders` and 500,000 of associated records) and it takes over an hour to finish. Is there any better way in ActiveRecord to handle this problem? Can we achieve it in just a few minutes?
-## [5][Rails MODEL.where returns nil, but records exists](https://www.reddit.com/r/rails/comments/jjkehy/rails_modelwhere_returns_nil_but_records_exists/)
+## [8][Formception!?](https://www.reddit.com/r/rails/comments/jjo68f/formception/)
+- url: https://www.reddit.com/r/rails/comments/jjo68f/formception/
+---
+Hi there,  
+
+
+I am relatively new to rails and I am looking to add a form within a form, or simply just two models within the same form. I have plans, which I have a new plan view. And for every-time a user makes a new plan I want them to be able to associate people with that plan. So on creation of the plan, I want the user to also have the option to add any number of people (name, dob, gender etc.)  
+
+
+What would be the best way to do this?  
+
+
+Cheers
+## [9][Rails MODEL.where returns nil, but records exists](https://www.reddit.com/r/rails/comments/jjkehy/rails_modelwhere_returns_nil_but_records_exists/)
 - url: https://www.reddit.com/r/rails/comments/jjkehy/rails_modelwhere_returns_nil_but_records_exists/
 ---
  I have a model with several associations.
@@ -79,13 +123,7 @@ in the console there is 10 elements in the association cache.
 `question_id` does exist and is being passed. If I manually traverse the object tree I can get to the first element in the answers array that this should return. There is nothing being created in the database.
 
 Can someone tell me what I am missing?
-## [6][Error with keys and model relations](https://www.reddit.com/r/rails/comments/jjayr9/error_with_keys_and_model_relations/)
-- url: https://www.reddit.com/r/rails/comments/jjayr9/error_with_keys_and_model_relations/
----
-I have 3 models, a client model, a product model and a catalog model. I basically want the catalog model to have many products and for each client the model changes. I get this error although I think there's more that I'm missing. Any approaches that you guys recommend?
-
-    No route matches {:action=&gt;"new", :controller=&gt;"catalogs"}, missing required keys: [:client_id]
-## [7][Some initializers not working in a Rails 6 app](https://www.reddit.com/r/rails/comments/jjk19o/some_initializers_not_working_in_a_rails_6_app/)
+## [10][Some initializers not working in a Rails 6 app](https://www.reddit.com/r/rails/comments/jjk19o/some_initializers_not_working_in_a_rails_6_app/)
 - url: https://www.reddit.com/r/rails/comments/jjk19o/some_initializers_not_working_in_a_rails_6_app/
 ---
 I am trying to get an initializer working to configure a couple of things in a custom library. This is a fairly recent Rails 6 project, pretty much vanilla stuff.
@@ -96,14 +134,14 @@ Let's start with the module I am trying to configure :
 
     module MyModule
       class &lt;&lt; self
-        attractive_accessor(:configuration)
+        attr_accessor(:configuration)
       end
       def self.configure
         self.configuration || Configuration.new
         yield(configuration)
       end
       class Configuration
-        attractive_accessor :my_setting
+        attr_accessor :my_setting
         def initialize
           @my_setting
         end
@@ -122,52 +160,34 @@ It seems that the initializer is run when the app starts (if I add a `raise Stan
 
 As there been changes around initializer in recent Rails releases that could explain this ?
 
+related posts describing this pattern :
+
+\- [https://www.skcript.com/svr/the-easiest-configuration-block-for-your-ruby-gems/](https://www.skcript.com/svr/the-easiest-configuration-block-for-your-ruby-gems/)
+
+\- [https://www.leighhalliday.com/block-based-configuration](https://www.leighhalliday.com/block-based-configuration)
+
+\- [https://thoughtbot.com/blog/mygem-configure-block](https://thoughtbot.com/blog/mygem-configure-block)
+
+issue on GitHub on this : [https://github.com/rails/rails/issues/37186](https://github.com/rails/rails/issues/37186) ; I also check production vs development env locally and indeed production env works as expected.
+
+&amp;#x200B;
+
 Rails version : [6.0.3.4](https://6.0.3.4)
 
 Ruby version : 2.7.1p83
 
 OS : Linux
-## [8][HOWTO: highlight link_to current_page](https://www.reddit.com/r/rails/comments/jiznev/howto_highlight_link_to_current_page/)
-- url: https://www.reddit.com/r/rails/comments/jiznev/howto_highlight_link_to_current_page/
+
+&amp;#x200B;
+
+update : fix auto correct on attr\_accessor
+
+update2 : related posts
+
+update3 : related issue in Rails' github
+## [11][Error with keys and model relations](https://www.reddit.com/r/rails/comments/jjayr9/error_with_keys_and_model_relations/)
+- url: https://www.reddit.com/r/rails/comments/jjayr9/error_with_keys_and_model_relations/
 ---
-Short post on how to highlight `link_to` `current_page`: [https://blog.corsego.com/2020/10/ruby-on-rails-highlight-linkto.html](https://blog.corsego.com/2020/10/ruby-on-rails-highlight-linkto.html) I hope you find it useful :)
+I have 3 models, a client model, a product model and a catalog model. I basically want the catalog model to have many products and for each client the model changes. I get this error although I think there's more that I'm missing. Any approaches that you guys recommend?
 
-P.S. There's an old gem [active\_link\_to](https://github.com/comfy/active_link_to), but what I offer is a very simple alternative😎
-
-https://preview.redd.it/awsrnkrnlmv51.png?width=338&amp;format=png&amp;auto=webp&amp;s=05b5ace0671b8a100ada1fb7fe4d7082230fe532
-## [9][Using rails engines/plugins in a rails application](https://www.reddit.com/r/rails/comments/jj33dh/using_rails_enginesplugins_in_a_rails_application/)
-- url: https://www.reddit.com/r/rails/comments/jj33dh/using_rails_enginesplugins_in_a_rails_application/
----
-So, I bumped into this for the first time and I'm clueless about how to proceed with it. I've to build a rails plugin/engine and then use it in another application. I've researched and found obsolete videos articles dealing with older versions of rails(they happen to have a different directory structure for plugins). And I'm unable to wrap my head around what's really going on here and What I should be doing to set it up.   
-My main concerns are how to create a plugin and use it in another rails application. Need to figure out which code goes where because they folder structure is very ambiguous and I have no idea about which is the correct folder structure.   
-See my stackoverflow post for details: [https://stackoverflow.com/questions/64555911/how-to-include-a-plugin-engine-in-a-rails-application](https://stackoverflow.com/questions/64555911/how-to-include-a-plugin-engine-in-a-rails-application)
-## [10][Good guides/articles regarding Rails 6 deployment to AWS](https://www.reddit.com/r/rails/comments/jiob7g/good_guidesarticles_regarding_rails_6_deployment/)
-- url: https://www.reddit.com/r/rails/comments/jiob7g/good_guidesarticles_regarding_rails_6_deployment/
----
-Hello everyone!
-
-I decided to keep all my Rails stuff inside of one service(AWS S3 and hosting on AWS) but I struggle to find a good guide on how to deploy Rails to AWS and that the guide is up to date.
-
-It would be really cool if you could point me towards some good articles about this topic.
-
-Thank you!
-## [11][Any good courses/tutorials for Rails API + Vue out there?](https://www.reddit.com/r/rails/comments/jiozti/any_good_coursestutorials_for_rails_api_vue_out/)
-- url: https://www.reddit.com/r/rails/comments/jiozti/any_good_coursestutorials_for_rails_api_vue_out/
----
-Hi 
-
-I'd like to get more into working with the combination of a Rails API and Vue, but I'm looking to follow a tutorial or course to get the hang of it some more before I dive into my own project. 
-
-I already followed a [tutorial from WebCrunch](https://web-crunch.com/posts/ruby-on-rails-api-vue-js) but felt like a lot of corners were being cut there. 
-
-Anybody have some up-to-date recommendations for where I could get started? Would really appreciate it!
-## [12][Introducing jQuery in Rails 6 Using Webpacker](https://www.reddit.com/r/rails/comments/jiyqvc/introducing_jquery_in_rails_6_using_webpacker/)
-- url: https://www.reddit.com/r/rails/comments/jiyqvc/introducing_jquery_in_rails_6_using_webpacker/
----
-Hello Everyone,
-
-First release candidate of Rails 6 is out with exciting features and refinements in existing features. Today we will look into one of those features, which is webpacker. It is now by default in Rails 6 as a Javascript Compiler.
-
-Here’s a detailed blog on [Introducing jQuery in Rails 6 Using Webpacker](https://www.botreetechnologies.com/blog/introducing-jquery-in-rails-6-using-webpacker)
-
-Hope this will be helpful to #railscommunity.
+    No route matches {:action=&gt;"new", :controller=&gt;"catalogs"}, missing required keys: [:client_id]

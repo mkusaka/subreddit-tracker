@@ -23,66 +23,65 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/ji8vgk/whats_everyone_working_on_this_week_442020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-44-2020/50643?u=llogiq)!
-## [3][Here's a fun little crate I made that generates an interactive ASCII globe in the terminal](https://www.reddit.com/r/rust/comments/jj0pde/heres_a_fun_little_crate_i_made_that_generates_an/)
-- url: https://i.redd.it/0qub1980wmv51.gif
+## [3][For Complex Applications, Rust is as Productive as Kotlin](https://www.reddit.com/r/rust/comments/jk8648/for_complex_applications_rust_is_as_productive_as/)
+- url: https://ferrous-systems.com/blog/rust-as-productive-as-kotlin/
 ---
 
-## [4][Pants 2.0.0 released - Generic build system in Rust](https://www.reddit.com/r/rust/comments/jjcbka/pants_200_released_generic_build_system_in_rust/)
-- url: https://blog.pantsbuild.org/introducing-pants-v2/
+## [4][This Week in Rust 362](https://www.reddit.com/r/rust/comments/jk35ha/this_week_in_rust_362/)
+- url: https://this-week-in-rust.org/blog/2020/10/28/this-week-in-rust-362/
 ---
 
-## [5][Any Minecraft fans? Rust and WASM to map minecraft worlds locally](https://www.reddit.com/r/rust/comments/jj6k9b/any_minecraft_fans_rust_and_wasm_to_map_minecraft/)
-- url: https://www.reddit.com/r/rust/comments/jj6k9b/any_minecraft_fans_rust_and_wasm_to_map_minecraft/
----
-[owengage.com/anvil](https://owengage.com/anvil/)
-
-Hi there, I've been working on a crate called [fastnbt](https://github.com/owengage/fastnbt) for several months now in my spare time. It started as just trying to learn Rust by writing a parser for NBT (a data format specific to Minecraft), and ended up with me doing far more with it.
-
-`fastnbt` now lets you parse 'unstructured' NBT with the original parser, but also supports a serde deserializer, specifically allowing you to avoid doing memory allocations in some places (like for strings and arrays of data).
-
-I eventually wanted to show it off and ended up compiling to to WASM and creating what I linked above.
-
-It renders a world entirely in the browser using the File APIs. It never uploads your world to anywhere to do any processing, it's all in the browser.
-
-I was curious if people would enjoy it/find it useful. But also happy to take feature request/code criticism/suggestions etc.
-## [6][LudumDare 47 - The Island](https://www.reddit.com/r/rust/comments/jjet2n/ludumdare_47_the_island/)
-- url: https://blog.kuviman.com/2020/10/18/ludumdare47.html
+## [5][rust-script - run Rust files and expressions as scripts](https://www.reddit.com/r/rust/comments/jjnyv1/rustscript_run_rust_files_and_expressions_as/)
+- url: https://rust-script.org/
 ---
 
-## [7][I've needed a crate like this at work lately, so I thought I'd publish it.](https://www.reddit.com/r/rust/comments/jjby3r/ive_needed_a_crate_like_this_at_work_lately_so_i/)
-- url: https://www.reddit.com/r/rust/comments/jjby3r/ive_needed_a_crate_like_this_at_work_lately_so_i/
+## [6][ELI5: Why do so less people use (A)GPLv3 for their crates?](https://www.reddit.com/r/rust/comments/jk5g20/eli5_why_do_so_less_people_use_agplv3_for_their/)
+- url: https://www.reddit.com/r/rust/comments/jk5g20/eli5_why_do_so_less_people_use_agplv3_for_their/
 ---
-[https://crates.io/crates/is\_not](https://crates.io/crates/is_not)
+I mainly see MIT and Apache licenses around, is (A)GPLv3 too complicated or what is the matter?
 
-is\_not is a simple little crate that allows crates to pick up feature activations of libraries they depend on.
-## [8][Introducing rusteval - add a REPL to your application with a few macros](https://www.reddit.com/r/rust/comments/jj09i8/introducing_rusteval_add_a_repl_to_your/)
-- url: https://docs.rs/rusteval/0.1.0/rusteval/
----
+EDIT: For those who are interested, this is a detailed explanation what (A/L)GPL can and can't do: https://copyleft.org/guide/monolithic/
 
-## [9][Tokio 0.3 to 0.2 compatibility layer.](https://www.reddit.com/r/rust/comments/jj80co/tokio_03_to_02_compatibility_layer/)
-- url: https://github.com/LucioFranco/tokio-compat-02/
+EDIT2: If you need help searching a license for your project you can use this site: https://choosealicense.com/
+## [7][AdvancedResearch Blog: Monotonic-Solver 0.5 Released (A Rust library for Generic Automated Theorem Proving)](https://www.reddit.com/r/rust/comments/jjxye8/advancedresearch_blog_monotonicsolver_05_released/)
+- url: https://advancedresearch.github.io/blog/2020-10-28-monotonic-solver-0.5-released
 ---
 
-## [10][fixed-slice-vec: an Embedded Rust no-std Vector](https://www.reddit.com/r/rust/comments/jj537w/fixedslicevec_an_embedded_rust_nostd_vector/)
-- url: https://blog.auxon.io/2020/10/26/fixed-slice-vec/
+## [8][Simple remote access tool written in Rust with UDP](https://www.reddit.com/r/rust/comments/jk8n9j/simple_remote_access_tool_written_in_rust_with_udp/)
+- url: https://github.com/Wafelack/remote_access_tool
 ---
 
-## [11][Question about this hypothetical [T; N]::into_iter](https://www.reddit.com/r/rust/comments/jjcf20/question_about_this_hypothetical_t_ninto_iter/)
-- url: https://www.reddit.com/r/rust/comments/jjcf20/question_about_this_hypothetical_t_ninto_iter/
+## [9][to_trait, a crate that lets you write `thing.to::&lt;T&gt;()` instead of `Into&lt;T&gt;::into(thing)`](https://www.reddit.com/r/rust/comments/jjsjsh/to_trait_a_crate_that_lets_you_write_thingtot/)
+- url: https://crates.io/crates/to_trait
 ---
-For a while I've been hearing about 3 major issues preventing iterating over native arrays, once constant generics become widely available:
 
-- Weight: an array iterator would entail copying the entire array every time the iterator is moved.
-- Compatibility: array.into_iter() currently falls back to slice iteration; introducing a new meaning could break backwards compatibility.
-- Soundness: an array iterator could be unsound WRT accidental double-frees, especially in the context of potential panics.
-
-My question is about the last one. Where does the potential unsoundness come from? I created a hypothetical simple implementation [here](https://gist.github.com/Lucretiel/477bf0b5b222eca8f3b77e412518a59c). Is there any unsoundness in this implementation? It seems like in the worst case you might end up leaking some data, but I don't think there's a way to actually cause memory unsafety with that design.
-## [12][Github repo of tutorials how to build something in rust lang](https://www.reddit.com/r/rust/comments/jj29ir/github_repo_of_tutorials_how_to_build_something/)
-- url: https://www.reddit.com/r/rust/comments/jj29ir/github_repo_of_tutorials_how_to_build_something/
+## [10][Need help on structuring my project](https://www.reddit.com/r/rust/comments/jk69r6/need_help_on_structuring_my_project/)
+- url: https://www.reddit.com/r/rust/comments/jk69r6/need_help_on_structuring_my_project/
 ---
-Not so long ago I stumbled across this [**build-your-own-x**](https://github.com/danistefanovic/build-your-own-x) repo. I thought that it might be cool to have that one but only specifically for rust. So I took all the rust based links from there and placed them in my [**repo**](https://github.com/strawberrycheeze/build-your-own-x-in-rust). Also I added a lot of projects that I found on my own.   
-I think it might be interesting for anyone who wants to take up rust and try something serious.   
-Anyway, any feedback or advice will be appreciated.  
-Peace  
+Hi everyone,
 
-repo: [https://github.com/strawberrycheeze/build-your-own-x-in-rus](https://github.com/strawberrycheeze/build-your-own-x-in-rust)
+I'm dabbling in Rust and have a question regarding a two-crate workspace project of mine. First, I have a library L which defines a few types and some functionality for it. Second, an application A which imports things from L, notably its structs.
+
+**The problem**: Eventually, A wants to insert instances of L's types into a database, which I'm using diesel for. Since the original types in L do not derive diesel's macros, I cannot use them with a database.
+
+Now, is this already some kind of code smell? I don't really want to add derives to structs in L without actually needing it. But I also don't want to have to map between L's structs and A's domain types and redefine everything. The reason for keeping L a separate library is to use it in future sub-applications within the same workspace.
+
+What do you think is a sensible solution here? I feel like the most pragmatic would be to just derive the required diesel macros on those types. But, maybe there is something I'm not seeing. Thank you very much for your help.
+## [11][IntelliJ Rust: New Functionality for Cargo Features](https://www.reddit.com/r/rust/comments/jka6bn/intellij_rust_new_functionality_for_cargo_features/)
+- url: https://blog.jetbrains.com/clion/2020/10/intellij-rust-new-functionality-for-cargo-features/
+---
+
+## [12][using rustc suggestions to fix all errors](https://www.reddit.com/r/rust/comments/jk9guk/using_rustc_suggestions_to_fix_all_errors/)
+- url: https://www.reddit.com/r/rust/comments/jk9guk/using_rustc_suggestions_to_fix_all_errors/
+---
+Hi,   
+I had a "prelude" file that contained public uses of all types in my crate. However, I want to remove all \`use crate::prelude::\*\` statements in favor of the actual use statements per type.  
+
+
+When I remove the prelude mod, the compiler obviously throws a lot of "cannot find type \* " errors. However it also suggests where to find them. Is there a way to fix those error similar to how \`cargo fix\` can be used to fix warnings?  
+
+
+I don't want to fix those 700 errors by hand :D  
+
+
+Cheers

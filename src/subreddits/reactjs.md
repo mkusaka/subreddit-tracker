@@ -70,83 +70,75 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][Next.js Commerce – All-in-one starter kit for high-performance ecommerce sites](https://www.reddit.com/r/reactjs/comments/jj407s/nextjs_commerce_allinone_starter_kit_for/)
-- url: https://nextjs.org/commerce
+## [3][CodeSandbox Secures $12.7M Series A Funding](https://www.reddit.com/r/reactjs/comments/jk6n6e/codesandbox_secures_127m_series_a_funding/)
+- url: https://codesandbox.io/post/codesandbox-series-a-funding
 ---
 
-## [4][how to store jwt in the client side?](https://www.reddit.com/r/reactjs/comments/jjkddv/how_to_store_jwt_in_the_client_side/)
-- url: https://www.reddit.com/r/reactjs/comments/jjkddv/how_to_store_jwt_in_the_client_side/
+## [4][How to safely store authentication cookies?](https://www.reddit.com/r/reactjs/comments/jjxkfh/how_to_safely_store_authentication_cookies/)
+- url: https://www.reddit.com/r/reactjs/comments/jjxkfh/how_to_safely_store_authentication_cookies/
 ---
-Thee solution si know of so far is localStorage (dangerous to store), sessionStorage (good alternative but user might need to log in with every new tab), or use cookies (which i think is good but it doesn't have enough storage for jwt so might need to use a few to store the jwt + its sent with each request so its generating lots of unnecessary traffic"
+I want to move away from storing my JWTs in local storage since it’s vulnerable to XSS attacks. So I was thinking of storing a refresh token in a cookie, and the session cookie just in memory. 
 
-&amp;#x200B;
+So cookies are vulnerable to CSRF attacks. Is setting the cookie to httpOnly, sameSite, and secure enough to prevent this? Or is there more I have to do? I have been trying to research this but I’m getting conflicting results.
+## [5][Open Sourced Full Websites](https://www.reddit.com/r/reactjs/comments/jk03m2/open_sourced_full_websites/)
+- url: https://www.reddit.com/r/reactjs/comments/jk03m2/open_sourced_full_websites/
+---
+Hi Everyone,
 
-so far im thinking storing it in httponly cookies even though it will generate unnecessary traffic and its the old way of doing things.  but i also read here:
+I'm new to the React world (formally used React Native), and I've been looking around at open source examples. Most of the open source examples out there are barely implemented starter templates or components.
 
-[https://snyk.io/blog/is-localstorage-safe-to-use/#:\~:text=Local%20storage%20is%20inherently%20no,the%20use%20of%20local%20storage](https://snyk.io/blog/is-localstorage-safe-to-use/#:~:text=Local%20storage%20is%20inherently%20no,the%20use%20of%20local%20storage). 
+Does anyone have any recommendations for full open source websites implemented in React JS? I'd just really like to see how things are organized and the correct way of doing this.
 
-that cookies and localstorage are both bad so would it be better to store in localstorage? this is a headache. r there any other ways im not aware of?
+Thanks!
+## [6][A Quick Look at the React Speech Recognition Hook](https://www.reddit.com/r/reactjs/comments/jk9k6i/a_quick_look_at_the_react_speech_recognition_hook/)
+- url: https://www.loginradius.com/engineering/blog/quick-look-at-react-speech-recognition/
+---
 
-&amp;#x200B;
-
-&amp;#x200B;
-
-How do sites like reddit, twitter, and all other websites use for authentication? where do they store in the client?
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-
-
-Edit: I think storing jwt in a httponly cookie and sending it to the client and setting up some flags make cookies very secure + jwt lets me not track sessions which increases response times.
-## [5][Build React website responsive | Beginner React JS From scratch with smooth scroll](https://www.reddit.com/r/reactjs/comments/jjlpf0/build_react_website_responsive_beginner_react_js/)
+## [7][When does it make sense to have a React application with microfrontends?](https://www.reddit.com/r/reactjs/comments/jjzxzm/when_does_it_make_sense_to_have_a_react/)
+- url: https://www.reddit.com/r/reactjs/comments/jjzxzm/when_does_it_make_sense_to_have_a_react/
+---
+Can't you just use React Router? Why would you want to have multiple microfrontends in a CRUD application? What are the pros and cons?
+## [8][Build React website responsive | Beginner React JS From scratch with smooth scroll](https://www.reddit.com/r/reactjs/comments/jjlpf0/build_react_website_responsive_beginner_react_js/)
 - url: https://youtu.be/K7gRndVwu7g
 ---
 
-## [6][Why you should choose to learn 'React'?](https://www.reddit.com/r/reactjs/comments/jjl56j/why_you_should_choose_to_learn_react/)
-- url: https://blog.skay.dev/why-you-should-choose-to-learn-react
+## [9][Is next.js good for a huge project like Reddit or Wikipedia or Medium?](https://www.reddit.com/r/reactjs/comments/jk76b4/is_nextjs_good_for_a_huge_project_like_reddit_or/)
+- url: https://www.reddit.com/r/reactjs/comments/jk76b4/is_nextjs_good_for_a_huge_project_like_reddit_or/
+---
+Hello, Guys. I'm wondering whether NextJS is good enough for a big project like Reddit or Wikipedia or Medium? If not, What are the good alternatives? Our backend is using NodeJS and DynamoDB
+
+Thank you.
+## [10][How to implement "Pay per module" architecture.](https://www.reddit.com/r/reactjs/comments/jk9u3y/how_to_implement_pay_per_module_architecture/)
+- url: https://www.reddit.com/r/reactjs/comments/jk9u3y/how_to_implement_pay_per_module_architecture/
+---
+I'm new to this kind of problem. I'm trying to create a project which will have multiple internal "Modules". By default some modules will be free but I would like to know, how would someone design a structure that allows users to pay a fee to be able to use the extra modules.
+
+It's something like upgrading to a "Pro account" but instead of a binary thing, It only enables the module that the user has paid for.
+
+Also, how would you bundle the app (Electron JS + React in this case)?  Deliver all the code to the all the users or is there any other way to do this. 
+
+I would appreciate any kind of help/guidance to the correct path, literature or resources. 
+
+Thanks in advance.
+## [11][use-dispose: React hook for disposing uncommitted logic](https://www.reddit.com/r/reactjs/comments/jk9p7t/usedispose_react_hook_for_disposing_uncommitted/)
+- url: https://www.reddit.com/r/reactjs/comments/jk9p7t/usedispose_react_hook_for_disposing_uncommitted/
+---
+Hello everyone!
+
+I created this simple hook that performs an asynchronous cleanup for uncommitted logic on React components.
+
+Recently, I just found out that components renders twice on Strict Mode, Blocking Mode and Concurrent Mode before it even gets the chance to commit the changes and run the side-effects, which could lead into unwanted memory leaks such as creating WebWorkers, instanciating WebSocket clients, etc., which occurs often on third-party code that React cannot manage.
+
+`use-dispose` comes into play by guaranteeing that the created, uncommitted object can be disposed during the render phases. The package also includes a hook called `useDisposableMemo` which manages a disposable object automatically throughout the component's lifecycle.
+
+Links:
+
+- NPM: https://www.npmjs.com/package/use-dispose
+
+- Github: https://github.com/LXSMNSYC/use-dispose
+
+Special thanks to Paul Henschel whom I helped and talked to on solving invalidated memoized objects, and to Daishi Kato who originally came up with a cleanup hook.
+## [12][How to Create a Reusable LocalStorage Hook](https://www.reddit.com/r/reactjs/comments/jk68pd/how_to_create_a_reusable_localstorage_hook/)
+- url: https://blog.bhanuteja.dev/how-to-create-a-reusable-localstorage-hook
 ---
 
-## [7][Starting to build a new React App - An interesting analysis in the form of a story!](https://www.reddit.com/r/reactjs/comments/jjl9rz/starting_to_build_a_new_react_app_an_interesting/)
-- url: https://blog.reactstory.com/how-to-start-a-react-app
----
-
-## [8][Next.js 10 is out!](https://www.reddit.com/r/reactjs/comments/jj47tm/nextjs_10_is_out/)
-- url: https://nextjs.org/blog/next-10
----
-
-## [9][How to use async data received from one function to another function in the same function?](https://www.reddit.com/r/reactjs/comments/jjkxp3/how_to_use_async_data_received_from_one_function/)
-- url: https://www.reddit.com/r/reactjs/comments/jjkxp3/how_to_use_async_data_received_from_one_function/
----
-[https://gist.github.com/timongll/1ee4b4f303494fcf79c95c855f9d8761#file-gistfile1-txt](https://gist.github.com/timongll/1ee4b4f303494fcf79c95c855f9d8761#file-gistfile1-txt)  
-
-
-getPokemonByOwner gets an array of ints \[0,1,2,3,4,5\] asynchronously (value below was evaluated just now) and getPokemonDetails uses each int.  I get the error(Cannot read property 'getPokemonDetails' of undefined)  
-
-
-If i remove getPokemonByOwner and manually made an array \[0,1,2,3,4,5\] the function would work since theres only one async function. I tried to async twice but it doesnt work. Anyone know how to fix this?
-## [10][How to Make Awesome Buttons Using Lottie Animations in React Native](https://www.reddit.com/r/reactjs/comments/jjiq9y/how_to_make_awesome_buttons_using_lottie/)
-- url: https://www.youtube.com/watch?v=tfT0ZHkU8dc
----
-
-## [11][Next.js Analytics – Your Real Lighthouse Score](https://www.reddit.com/r/reactjs/comments/jj44fl/nextjs_analytics_your_real_lighthouse_score/)
-- url: https://nextjs.org/analytics
----
-
-## [12][what's does it do - reportWebVitals](https://www.reddit.com/r/reactjs/comments/jjnvyr/whats_does_it_do_reportwebvitals/)
-- url: https://www.reddit.com/r/reactjs/comments/jjnvyr/whats_does_it_do_reportwebvitals/
----
-What is this in the new CRA 4 ?
-
-import reportWebVitals from './reportWebVitals';
-
-Is it replacing something that existed in CRA 3 / React 16 ?
-
-&amp;#x200B;
-
-I noticed the new template also does not have:
-
- registerServiceWorker
-
-What is the replacement for this ?

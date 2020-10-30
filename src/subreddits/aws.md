@@ -1,33 +1,51 @@
 # aws
-## [1][AWS Wish List 2020](https://www.reddit.com/r/aws/comments/jbw85e/aws_wish_list_2020/)
-- url: https://www.reddit.com/r/aws/comments/jbw85e/aws_wish_list_2020/
+## [1][re:Invent registration is now open](https://www.reddit.com/r/aws/comments/jkenu3/reinvent_registration_is_now_open/)
+- url: https://register.virtual.awsevents.com/
 ---
+
+## [2][Like I don't already spend enough hours a day with a headset on, Amazon are offering 3 whole weeks.](https://www.reddit.com/r/aws/comments/jkuid9/like_i_dont_already_spend_enough_hours_a_day_with/)
+- url: https://www.reddit.com/r/aws/comments/jkuid9/like_i_dont_already_spend_enough_hours_a_day_with/
+---
+&gt;"AWS re:Invent is the world's largest, most comprehensive cloud computing event. This year, for the first time ever, [re:Invent is available as a free 3-week virtual event](https://email.awscloud.com/dc/c1xUhc3_T1MSZBn2C4tcV93yFLmM1X2-9yPbcR96HQKjALTzTGSheu047jEXJpODpP9v4g4vAecZhHKUX1Y1eBD271GwFaxuAj7910nLOCcd9D1upskWxTtCObEqfllgruhQrSgOfdI7Px0UcWMqdWvie9DE_Hvu-wjXG3U2_k6veOUsqNSEF7sRhqTxE4pfBimYPPm7WrzRib_dcvlq-6Xy4EuYZn_xTy0FF9vvgJMhP_IcZbQC3llL4iwNZ2eiMFejI97vp91ffNAl8C5-Zv6E8hl1tNDUP56O1gpwY1R9q1eWEnOD8L-Qu_G6f9gF7FwZ1g1d22mh8E_QqjDKaQ==/Emt0T912ZM80k0BM0a0BO01)."
+
 &amp;#x200B;
 
-AWS always releases a bunch of features, sometimes everyday or atleast once a week. Here is my wish list of the features I want to see as a part of AWS infrastructure
+I get fed up of headphones after a few hours on a call. **3 weeks!** I might have to change my audio settings to external speakers. (I am fortunate to be working from home.)
+## [3][Elastic Load Balancing launches gRPC support for Application Load Balancer](https://www.reddit.com/r/aws/comments/jkkwi5/elastic_load_balancing_launches_grpc_support_for/)
+- url: https://www.reddit.com/r/aws/comments/jkkwi5/elastic_load_balancing_launches_grpc_support_for/
+---
+Just like the title says, full support of gRPC as first class protocol. This includes unary, service-side streaming, client-side streaming, and bidirectional RPC. Your target group is gRPC type, and have gRPC health checks.
 
-1: AWS Managed Proxy Server(Rather than spinning own squid server)
+Checkout the blog post:
 
-2: EBS replication across different availability zones(Possible? Legal constraints?)
+https://aws.amazon.com/blogs/aws/new-application-load-balancer-support-for-end-to-end-http-2-and-grpc/
+## [4][New – Application Load Balancer Support for End-to-End HTTP/2 and gRPC](https://www.reddit.com/r/aws/comments/jkjv2c/new_application_load_balancer_support_for/)
+- url: https://aws.amazon.com/blogs/aws/new-application-load-balancer-support-for-end-to-end-http-2-and-grpc/
+---
 
-3: Multi-region VPC(Possible? Legal constraints?)
+## [5][No Secure Nitro Enclave for T3 instances](https://www.reddit.com/r/aws/comments/jkt7w9/no_secure_nitro_enclave_for_t3_instances/)
+- url: https://www.reddit.com/r/aws/comments/jkt7w9/no_secure_nitro_enclave_for_t3_instances/
+---
+Why would this be so?
+## [6][API GW api key per user - solution?](https://www.reddit.com/r/aws/comments/jkut5x/api_gw_api_key_per_user_solution/)
+- url: https://www.reddit.com/r/aws/comments/jkut5x/api_gw_api_key_per_user_solution/
+---
+Hi,
 
-4: UI to debug boot issues(Better then EC2 Get Instance Screenshot and Instance logs)
+I've used the API gateway a bunch for different use cases but i'm having trouble see how to use the API GW with different levels of users. Think of a website that provides an API, you have different tiers, sign up and you get your key. What does that look like in AWS?
 
-5: Support tagging for every individual service(It's improving)
+I know you can have custom keys, is it a matter of something like lamdba, dynamo (track keys) to create, update keys in API GW? This seems like something that would be common, any links to solutions, examples would be good. I've tried searching, not having much luck.
+## [7][Nitro Enclaves lets you use ACM certs directly on EC2 instances!](https://www.reddit.com/r/aws/comments/jkaee1/nitro_enclaves_lets_you_use_acm_certs_directly_on/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/10/announcing-aws-certificate-manager-for-nitro-enclaves/
+---
 
-6: VPC endpoints support for every service (EKS?) 
+## [8][Any current or former TAMs around?](https://www.reddit.com/r/aws/comments/jku3na/any_current_or_former_tams_around/)
+- url: https://www.reddit.com/r/aws/comments/jku3na/any_current_or_former_tams_around/
+---
+Just have a few questions on the role!
 
-7: EC2 instance live migration
-
-8: Display AWS Cli  while resource creation(Similar to GCP)
-
-9: Cost calculation while resource creation(AWS start supporting(for example, RDS) this feature but not for every service
-
-10: More features in App Mesh(Circuit breaker, Rate Limiting)
-
-P.S: Not sure if some features are already available, but if something is missing, please feel free to add
-## [2][Did they JUST make a permanent change to the console UI? I was uploading items to my S3 bucket and I can't find a way to get back the view that it was before. Is there a way to revert back or did they finally get rid of that option? Not seeing any options to do so...](https://www.reddit.com/r/aws/comments/jk9pyi/did_they_just_make_a_permanent_change_to_the/)
+Thanks
+## [9][Did they JUST make a permanent change to the console UI? I was uploading items to my S3 bucket and I can't find a way to get back the view that it was before. Is there a way to revert back or did they finally get rid of that option? Not seeing any options to do so...](https://www.reddit.com/r/aws/comments/jk9pyi/did_they_just_make_a_permanent_change_to_the/)
 - url: https://www.reddit.com/r/aws/comments/jk9pyi/did_they_just_make_a_permanent_change_to_the/
 ---
 &amp;#x200B;
@@ -37,87 +55,21 @@ e.g. back when the buckets looked like this [https://miro.medium.com/max/1050/1\
 I was looking for a quick way to verify MFA delete was enabled in the console. I know I can do this with the CLI.
 
 Thanks!
-## [3][100G networking in AWS, a network performance deep dive](https://www.reddit.com/r/aws/comments/jjsxjn/100g_networking_in_aws_a_network_performance_deep/)
-- url: https://toonk.io/aws-network-performance-deep-dive/
+## [10][Can you get cognito user access token in lambda without user password present?](https://www.reddit.com/r/aws/comments/jkq7an/can_you_get_cognito_user_access_token_in_lambda/)
+- url: https://www.reddit.com/r/aws/comments/jkq7an/can_you_get_cognito_user_access_token_in_lambda/
 ---
+I am working on my user update-email function and when they update their email in my front end app, I am sending them a custom email link to trigger an api gateway call that triggers a lambda function. I would like my user to be able to simply click this link and have their new email verified whether they are currently logged into a browser or not. 
 
-## [4][AWS Nitro Enclaves – Isolated EC2 Environments to Process Confidential Data](https://www.reddit.com/r/aws/comments/jjxvjs/aws_nitro_enclaves_isolated_ec2_environments_to/)
-- url: https://aws.amazon.com/blogs/aws/aws-nitro-enclaves-isolated-ec2-environments-to-process-confidential-data/
+To do so, I was going to use the verifyUserAttribute function from the CognitoIdentityServiceProvider. [https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CognitoIdentityServiceProvider.html#verifyUserAttribute-property](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/CognitoIdentityServiceProvider.html#verifyUserAttribute-property)
+
+However, as you can see in the link, it requires a cognito user access token from a user session. Does anyone know a way to initiate a user session just based off username or email using admin privileges? I thought adminGetUser would work for second but upon examining what it returns, it only holds user attributes and not session information.
+## [11][S3 Bucket for Book Covers?](https://www.reddit.com/r/aws/comments/jkpo9z/s3_bucket_for_book_covers/)
+- url: https://www.reddit.com/r/aws/comments/jkpo9z/s3_bucket_for_book_covers/
 ---
+Hello. I am a noob in the cloud world. I have a Node js app on Heroku and am trying to figure out where to host my images which are mostly book covers.
 
-## [5][Inappropriate "update saved password" window for 2fa](https://www.reddit.com/r/aws/comments/jk64x5/inappropriate_update_saved_password_window_for_2fa/)
-- url: https://www.reddit.com/r/aws/comments/jk64x5/inappropriate_update_saved_password_window_for_2fa/
----
-Hello. My organisation has 2-factor auth turned on, so I have to type in the numbers from my smartphone every time I need to log into AWS consolse. The problem is that whenever I type those numbers and press the submit button, Chrome asks about changing my current AWS password to those numbers, which is mildly annoying. How do I prevent this from happening?
-## [6][How to execute python code from a web app](https://www.reddit.com/r/aws/comments/jk9e7v/how_to_execute_python_code_from_a_web_app/)
-- url: https://www.reddit.com/r/aws/comments/jk9e7v/how_to_execute_python_code_from_a_web_app/
----
-Hello,
+*Back in my day we had one website host and we liked it! \*shakes fist\**
 
-So I have a react web app that makes students submit their code. What I am trying to do is run this python code and check it with test units and return to the students the output of the code. So it's like an online IDE to smth. They don't need to install python locally to run. The web app is deployed on Google Firebase, is there a way I can achieve this functionality with AWS?
-## [7][Does ElastiCache support Redis version 6+?](https://www.reddit.com/r/aws/comments/jk58of/does_elasticache_support_redis_version_6/)
-- url: https://www.reddit.com/r/aws/comments/jk58of/does_elasticache_support_redis_version_6/
----
-There are some version specific features to Redis version 6 that would make my dev experience much easier and faster but I also want to be able to use ElastiCache to enjoy its benefits...
+I am a bit lost in the clouds (sorry). Should I be using an S3 bucket to host all of the images for my website? And if so do I need to set Access control list (ACL) to Everyone (Read/Read) even though it yells at me? (How else would people view the images?)
 
-Does ElastiCache support Redis version 6?
-## [8][Sessions, tokens, cognito and jam stacks!](https://www.reddit.com/r/aws/comments/jjyvw3/sessions_tokens_cognito_and_jam_stacks/)
-- url: https://www.reddit.com/r/aws/comments/jjyvw3/sessions_tokens_cognito_and_jam_stacks/
----
-I’m big on the serverless movement and lately I’ve been trying to migrate my architecture to a jam stack model. The sticking point for me atm is security.
-
-I’ve been playing around with oauth / pkce to create a client side only oauth flow using cognito hosted UI.
-
-There is obviously a risk trade off that you have to decide upon.
-
-In a trusted environment this setup works well.
-
-I thought I was closing in on an acceptable balance, persisting access token only to session storage and if the user indicates ‘remember me’ then persist access token AND refresh token to local storage - which can create a long lived login.
-
-Say access token = 1 hour and refresh = 30 days or whatever.
-
-We know the trade off, access token can never really be invalidated, (and tbf I’ve been struggling to verify that cognito logout (at least to invalidate the refresh) actually works at all!)
-
-But of course it then occurred to me that if the user opted not to be remembered and we discard (or even never issue) the refresh token, then there is no option but for the session to terminate after 1 hour (unlike cookie / server model where we can keep touching the expiry time stamp).
-
-In this mind it seems the refresh token is the more sensitive asset here?
- 
-I’m really keen to understand what security model the aws console implements but I have no idea where I can find this information out.
-
-What I do know is that it always forces a logout after about 12 hours or so, so perhaps it does work like an access token with 12 hour expiry and no refresh token?
-
-There are a lot of considerations, I’m banging my head trying to reinvent what many others must have already settled on as best practices.
-
-I have read the many articles on why jwt tokens should not be used for session tokens, but I’m all for jamstack, oauth and jwt,  it the idea that all api requests have to be routed through some session gateway doesn’t ring true with me.
-
-Do I need to implement a session api endpoint that can ‘touch’ the cookie expiry, and let this api endpoint provide me with the api jwt tokens and store the refresh toke here - server side?
-
-I would be really interested to learn other peoples thoughts and experiences in this domain.
-
-Cheers!
-## [9][Kubernetes Resources and Autoscaling — From Basics to Greatness](https://www.reddit.com/r/aws/comments/jjl7wt/kubernetes_resources_and_autoscaling_from_basics/)
-- url: https://www.reddit.com/r/aws/comments/jjl7wt/kubernetes_resources_and_autoscaling_from_basics/
----
-[In this blog](https://itnext.io/kubernetes-resources-and-autoscaling-from-basics-to-greatness-7cae17fbf27b?source=friends_link&amp;sk=ea2b30df277edaf345dc4868a63ef29b), we will try to describe the building blocks that are used by Kubernetes to implement autoscaling. We will see how Kubernetes collects and use metrics to autoscale pods and nodes. We will use AWS EKS to demonstrate the patterns and best practices used to implement autoscaling both at the pod and node levels.
-## [10][Is there any way to get an url from createPresignedPost function like createPresignedUrl does?](https://www.reddit.com/r/aws/comments/jk4f95/is_there_any_way_to_get_an_url_from/)
-- url: https://www.reddit.com/r/aws/comments/jk4f95/is_there_any_way_to_get_an_url_from/
----
-If not, is there any tutorial for that? Or is there any way I can restrict the file size with createPresignedUrl?
-It's pretty hard to find useful resources for those .
-## [11][buff/cache is high, can i flush?](https://www.reddit.com/r/aws/comments/jk3buc/buffcache_is_high_can_i_flush/)
-- url: https://www.reddit.com/r/aws/comments/jk3buc/buffcache_is_high_can_i_flush/
----
-Hi,  
-
-
-my server buff/cache is high, but checking from [linuxatemyram site](https://www.linuxatemyram.com) says its normal.  
-as this speed up the system, but does not necessarily take away ram.  
-
-
-my question is, would it be safe to run this to an ec2 server (AMI2), to clear cache memory?  
-`echo 3 | sudo tee /proc/sys/vm/drop_caches`  
-this is what the linuxatemyram recommend as a workaround.
-
-&amp;#x200B;
-
-thanks
+If everyone can see how lost I am, maybe there is a nooblier way to host images and static content. I doubt I'll be getting 100 billion downloads a month. Maybe just a few hundred to thousand, and probably mostly just North America.

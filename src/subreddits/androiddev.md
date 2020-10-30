@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/jidusx/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/jidusx/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/jkw00q/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/jkw00q/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - October 26, 2020](https://www.reddit.com/r/androiddev/comments/jicfz7/weekly_questions_thread_october_26_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/jicfz7/weekly_questions_thread_october_26_2020/
 ---
@@ -31,87 +25,99 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Netflix Android and iOS Studio Apps — now powered by Kotlin Multiplatform](https://www.reddit.com/r/androiddev/comments/jk0rur/netflix_android_and_ios_studio_apps_now_powered/)
-- url: https://medium.com/@NetflixTechBlog/netflix-android-and-ios-studio-apps-kotlin-multiplatform-d6d4d8d25d23
+## [3][How can I do custom notch on CardView like this?](https://www.reddit.com/r/androiddev/comments/jksyrl/how_can_i_do_custom_notch_on_cardview_like_this/)
+- url: https://i.redd.it/uncfvma607w51.png
 ---
 
-## [4][What modern day app looks like](https://www.reddit.com/r/androiddev/comments/jjk9ks/what_modern_day_app_looks_like/)
-- url: https://i.redd.it/wmptdhg5vsv51.jpg
+## [4][Leak detection: Android Studio vs LeakCanary](https://www.reddit.com/r/androiddev/comments/jkmcu5/leak_detection_android_studio_vs_leakcanary/)
+- url: https://dev.to/pyricau/leak-detection-android-studio-vs-leakcanary-35j5
 ---
 
-## [5][How do I fill the whole popup menu?, don't want the white in the square.](https://www.reddit.com/r/androiddev/comments/jk6yxg/how_do_i_fill_the_whole_popup_menu_dont_want_the/)
-- url: https://i.redd.it/alq0uqkq60w51.png
+## [5][I made a library alternative to CustomTabs](https://www.reddit.com/r/androiddev/comments/jkr2so/i_made_a_library_alternative_to_customtabs/)
+- url: https://www.reddit.com/r/androiddev/comments/jkr2so/i_made_a_library_alternative_to_customtabs/
+---
+The main reason to develop this was the fact that CustomTabs needs a service provider installed in the device to launch the tabs eg: Chrome, Brave, etc.
+
+So I made my own version of it which uses `WebView` to load pages. Plus, it supports private browsing &amp; dark mode (for API &gt;= 29).
+
+Any suggestions &amp; improvements are most welcome!
+
+[Github](https://github.com/KaustubhPatange/CustomWebviewTabs)
+## [6][ConstraintLayout 2.0.4](https://www.reddit.com/r/androiddev/comments/jkkziq/constraintlayout_204/)
+- url: https://androidstudio.googleblog.com/2020/10/constraintlayout-204.html
 ---
 
-## [6][How can I unit test my view utils functions?](https://www.reddit.com/r/androiddev/comments/jk6xaq/how_can_i_unit_test_my_view_utils_functions/)
-- url: https://www.reddit.com/r/androiddev/comments/jk6xaq/how_can_i_unit_test_my_view_utils_functions/
+## [7][Multiple Ad Banners for every Fragment vs Single Shared Ad Banner. Revenue difference? (AdMob or others)](https://www.reddit.com/r/androiddev/comments/jkw7ri/multiple_ad_banners_for_every_fragment_vs_single/)
+- url: https://www.reddit.com/r/androiddev/comments/jkw7ri/multiple_ad_banners_for_every_fragment_vs_single/
 ---
-I  gathered quite a few utils functions in a library, using kotlin   extension functions to simplify common operations when Android framework   API was too cumbersome. Like in this very simple example:
+So I was curious whether it makes a difference, in terms of revenue, to show a different Ad Banner on every Fragment or if it would get the same results as just showing the same one from the Activity.
 
-    val View.contentWidth: Int get() = width - paddingLeft - paddingRight  
+I'm not sure if I explained myself properly:
 
-I would like to add unit  tests to this library but have no idea how  to test this. I'm new to  unit tests and already read a lot of  documentation on how to getting started but feel a bit lost about it at  the moment and trying to search directly for a solution yielded no result.
-## [7][How much and why is accessibility in Android Apps important for you? What problems do you find in implementing the accessibility guidelines?](https://www.reddit.com/r/androiddev/comments/jk9ist/how_much_and_why_is_accessibility_in_android_apps/)
-- url: https://www.reddit.com/r/androiddev/comments/jk9ist/how_much_and_why_is_accessibility_in_android_apps/
----
+OPTION 1:
 
-## [8][Released integration between the Navigation component and Jetpack Compose as androidx.navigation:navigation-compose:1.0.0-alpha01](https://www.reddit.com/r/androiddev/comments/jjt4b1/released_integration_between_the_navigation/)
-- url: https://developer.android.com/jetpack/compose/navigation
----
+Activity1-&gt;\[no ad banner\]
 
-## [9][Twitter like feed](https://www.reddit.com/r/androiddev/comments/jka41h/twitter_like_feed/)
-- url: https://www.reddit.com/r/androiddev/comments/jka41h/twitter_like_feed/
----
-How to accomplish feed item like twitter where user gets to see not only the like counts but also if he has liked that post or not. The heart is red if he has liked the post.
-## [10][What kind of data type column you use in SQLite, to store LocalDate?](https://www.reddit.com/r/androiddev/comments/jka2ek/what_kind_of_data_type_column_you_use_in_sqlite/)
-- url: https://www.reddit.com/r/androiddev/comments/jka2ek/what_kind_of_data_type_column_you_use_in_sqlite/
----
-Currently, we need to store holidays information in SQLite.
+* Fragment1-&gt;AdBanner1
+* Fragment2-&gt;AdBanner2
+* Fragment3-&gt;AdBanner3
 
-We prefer to use LocalDate in our application code.
+OPTION 2:
 
-As, Christmas always happen on 2020-12-25 doesn't matter the user is from United Kingdom, or from Thailand.
+Activity1-&gt;AdBanner1
 
-In SQLite side, we tend not to store it in INTEGER timestamp, as that requires correct timezone information.
-
-So far, we choose to store it in TEXT.
-
-    public class LocalDateConverter {
-        // 2020-12-25
-        // 2019-11-08
-    
-        private static final ThreadLocal&lt;DateTimeFormatter&gt; threadLocal = ThreadLocal.withInitial(() -&gt; {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd", Locale.US);
-            return formatter;
-        });
-    
-        @TypeConverter
-        public static String toString(LocalDate localDate) {
-            return threadLocal.get().format(localDate);
-        }
-    
-        @TypeConverter
-        public static LocalDate toLocalDate(String string) {
-            return LocalDate.parse(string, threadLocal.get());
-        }
-    }
-
-I was wondering, is that a good approach?
-
-Is there a better data type in SQLite to store LocalDate using Android Room?
-## [11][Which is the security process behind Android Apk signature key and the playstore ?](https://www.reddit.com/r/androiddev/comments/jk9tmv/which_is_the_security_process_behind_android_apk/)
-- url: https://www.reddit.com/r/androiddev/comments/jk9tmv/which_is_the_security_process_behind_android_apk/
----
-Hi :)
-
-When we decide to create our app we create a keystore, we decide the keystore password, the keyAlias and the keyPassword and after that we call assembleRelease.
-
-We go to the play console and we upload our fantastic apk.
-
-But in which way google checks the apk is signed with the correct signature key ? Which is the checks ?
-
-Which is the role of the keystore ?
-## [12][NotyKT is a complete Kotlin-stack application built with Ktor (REST API Backend) + Android](https://www.reddit.com/r/androiddev/comments/jk9i15/notykt_is_a_complete_kotlinstack_application/)
-- url: https://github.com/PatilShreyas/NotyKT
+* Fragment1-&gt;(same AdBanner1)
+* Fragment2-&gt;(same AdBanner1)
+* Fragment3-&gt;(same AdBanner1)
+## [8][Java 9+ support for Android projects is being worked on](https://www.reddit.com/r/androiddev/comments/jkbj97/java_9_support_for_android_projects_is_being/)
+- url: https://issuetracker.google.com/issues/139013660#comment6
 ---
 
+## [9][Scrollytelling on native Android?](https://www.reddit.com/r/androiddev/comments/jkve8a/scrollytelling_on_native_android/)
+- url: https://www.reddit.com/r/androiddev/comments/jkve8a/scrollytelling_on_native_android/
+---
+There are quite a lot of websites out there that use scrolling as an element of storytelling (scrubbing through a video, pinch into images, etc.). A good example for that is this website: AirPods Pro (sorry for the Apple reference).
+
+For a project we're trying to accomplish something similar, but native. I haven't come across many Android related references but came up with a few options:
+
+**Build the website and wrap it in a WebView.**  
+Pro: We could use it for several platforms  
+Contra: I think the UX will suffer quite a bit from that. Also, we need a click interaction to trigger sound.
+
+**Use a list (like RecyclerView) with video players and some custom views**  
+Pro: Native experience  
+Contra: Not sure if this is feasible. f.ex. linking the video progress to scroll is either very hard or not possible after all.
+
+Does anyone of you already accomplished something similar or has some tips how to create such an experience?
+## [10][Google Elevation APIs](https://www.reddit.com/r/androiddev/comments/jkt7iv/google_elevation_apis/)
+- url: https://www.reddit.com/r/androiddev/comments/jkt7iv/google_elevation_apis/
+---
+Hello! We will have our project at Microwave Design, which one of the crucial data we need to get is the ELEVATION.
+
+Fortunately, Google offers such API: [https://developers.google.com/maps/documentation/elevation/overview.](https://developers.google.com/maps/documentation/elevation/overview)
+
+But I don't really get the...
+
+&amp;#x200B;
+
+"**Pay only for what you use.**
+
+Our pricing scales to fit your needs with no commitments, termination fees, or usage limits — and you can use mobile Maps at no charge."
+
+&amp;#x200B;
+
+Does it mean that I will get charged ONLY for every request? or does google will charge me EVERY month?  So it means that my card would not be credited unless the bulk number of requests on API happens?
+
+Since I will be only using this API for around 100 to 500 requests. Thank you!
+
+PS. Im using a python script to extract data.
+## [11][I need ideas for features for a mobile app that teaches programming in Minecraft.](https://www.reddit.com/r/androiddev/comments/jkvgnk/i_need_ideas_for_features_for_a_mobile_app_that/)
+- url: https://www.reddit.com/r/androiddev/comments/jkvgnk/i_need_ideas_for_features_for_a_mobile_app_that/
+---
+What kind of features and functionalities should I integrate into an app that is teaching programming in Minecraft? So far I have quizzes and explanatory videos and I need a lot more.
+## [12][AR Core Android Tutorial without Sceneform?](https://www.reddit.com/r/androiddev/comments/jkp2cs/ar_core_android_tutorial_without_sceneform/)
+- url: https://www.reddit.com/r/androiddev/comments/jkp2cs/ar_core_android_tutorial_without_sceneform/
+---
+Hi everyone! 
+
+I am new to ARCore and it seems that most tutorials I find are related to Sceneform. However, sceneform doesn't seem to be supported in the newer versions of Android Studio ( which can only mean that it is being dropped eventually ). So it would really help me if there were some tutorials on ARCore android development without Sceneform.

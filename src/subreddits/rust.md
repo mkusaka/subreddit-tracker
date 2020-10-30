@@ -19,69 +19,87 @@ The unofficial Rust community Discord: [https://bit.ly/rust-community](https://b
 Also check out [last weeks' thread](https://reddit.com/r/rust/comments/jdwuis/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][What's everyone working on this week (44/2020)?](https://www.reddit.com/r/rust/comments/ji8vgk/whats_everyone_working_on_this_week_442020/)
-- url: https://www.reddit.com/r/rust/comments/ji8vgk/whats_everyone_working_on_this_week_442020/
----
-New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-44-2020/50643?u=llogiq)!
-## [3][For Complex Applications, Rust is as Productive as Kotlin](https://www.reddit.com/r/rust/comments/jk8648/for_complex_applications_rust_is_as_productive_as/)
-- url: https://ferrous-systems.com/blog/rust-as-productive-as-kotlin/
----
-
-## [4][This Week in Rust 362](https://www.reddit.com/r/rust/comments/jk35ha/this_week_in_rust_362/)
+## [2][This Week in Rust 362](https://www.reddit.com/r/rust/comments/jk35ha/this_week_in_rust_362/)
 - url: https://this-week-in-rust.org/blog/2020/10/28/this-week-in-rust-362/
 ---
 
-## [5][rust-script - run Rust files and expressions as scripts](https://www.reddit.com/r/rust/comments/jjnyv1/rustscript_run_rust_files_and_expressions_as/)
-- url: https://rust-script.org/
+## [3][These Weeks In Actix | Sep-Oct '20](https://www.reddit.com/r/rust/comments/jkv5xu/these_weeks_in_actix_sepoct_20/)
+- url: https://www.reddit.com/r/rust/comments/jkv5xu/these_weeks_in_actix_sepoct_20/
+---
+Since the [release of Actix Web v3.0](https://www.reddit.com/r/rust/comments/iqq8k9/announcing_actixweb_v30/) in September, we've been very happy to see the positive response to the numerous internal safety improvements. The uptake of v3 has been swift; over 50% of crate downloads are for the newer versions.
+
+# Notable Changes
+
+## actix-web v3.1 &amp; v3.2
+
+* New `#[route(...)]` multi-method macro.
+* A request-local data extractor `web::ReqData`.
+* Enable access to client TLS certificates and other advanced use cases where extra socket data is needed (via `HttpServer::on_connect` hook).
+* An `exclude_regex` method for the Logger middleware.
+* Register function for custom request-derived logging units.
+
+&gt;[Full Changelog](https://github.com/actix/actix-web/blob/HEAD/CHANGES.md)
+
+&amp;#x200B;
+
+## actix-cors v0.5
+
+On the path to stabilization, v0.5 is being considered a v1.0 beta. Includes a new way to filter allowed origins using closures and a major internal rewrite. Any feedback is appreciated.
+
+&gt;[Full Changelog](https://github.com/actix/actix-extras/blob/HEAD/actix-cors/CHANGES.md)
+
+&amp;#x200B;
+
+# An Official Discord Community
+
+&gt;Server Invite: [https://discord.gg/2Kkkc8ZtzF](https://discord.gg/2Kkkc8ZtzF)
+
+We're still keeping Gitter around as a support channel (and I'm hopeful it will improve more quickly under the Matrix banner).
+## [4][What are the bad practices in rust that should be avoided?](https://www.reddit.com/r/rust/comments/jkortm/what_are_the_bad_practices_in_rust_that_should_be/)
+- url: https://www.reddit.com/r/rust/comments/jkortm/what_are_the_bad_practices_in_rust_that_should_be/
+---
+I am learning rust and I have read that it is not a good practice to use `unwrap()`,  
+
+&amp;#x200B;
+
+What are the bad practices in rust that should be avoided and why?
+## [5][This Week in Veloren #91: Buffs, Alignment, and CI](https://www.reddit.com/r/rust/comments/jkp6kv/this_week_in_veloren_91_buffs_alignment_and_ci/)
+- url: https://veloren.net/devblog-91/
 ---
 
-## [6][ELI5: Why do so less people use (A)GPLv3 for their crates?](https://www.reddit.com/r/rust/comments/jk5g20/eli5_why_do_so_less_people_use_agplv3_for_their/)
-- url: https://www.reddit.com/r/rust/comments/jk5g20/eli5_why_do_so_less_people_use_agplv3_for_their/
----
-I mainly see MIT and Apache licenses around, is (A)GPLv3 too complicated or what is the matter?
-
-EDIT: For those who are interested, this is a detailed explanation what (A/L)GPL can and can't do: https://copyleft.org/guide/monolithic/
-
-EDIT2: If you need help searching a license for your project you can use this site: https://choosealicense.com/
-## [7][AdvancedResearch Blog: Monotonic-Solver 0.5 Released (A Rust library for Generic Automated Theorem Proving)](https://www.reddit.com/r/rust/comments/jjxye8/advancedresearch_blog_monotonicsolver_05_released/)
-- url: https://advancedresearch.github.io/blog/2020-10-28-monotonic-solver-0.5-released
+## [6][http-types v2.7.0 has been released!](https://www.reddit.com/r/rust/comments/jkumqr/httptypes_v270_has_been_released/)
+- url: https://github.com/http-rs/http-types/releases/tag/v2.7.0
 ---
 
-## [8][Simple remote access tool written in Rust with UDP](https://www.reddit.com/r/rust/comments/jk8n9j/simple_remote_access_tool_written_in_rust_with_udp/)
-- url: https://github.com/Wafelack/remote_access_tool
+## [7][For Complex Applications, Rust is as Productive as Kotlin](https://www.reddit.com/r/rust/comments/jk8648/for_complex_applications_rust_is_as_productive_as/)
+- url: https://ferrous-systems.com/blog/rust-as-productive-as-kotlin/
 ---
 
-## [9][to_trait, a crate that lets you write `thing.to::&lt;T&gt;()` instead of `Into&lt;T&gt;::into(thing)`](https://www.reddit.com/r/rust/comments/jjsjsh/to_trait_a_crate_that_lets_you_write_thingtot/)
-- url: https://crates.io/crates/to_trait
----
-
-## [10][Need help on structuring my project](https://www.reddit.com/r/rust/comments/jk69r6/need_help_on_structuring_my_project/)
-- url: https://www.reddit.com/r/rust/comments/jk69r6/need_help_on_structuring_my_project/
----
-Hi everyone,
-
-I'm dabbling in Rust and have a question regarding a two-crate workspace project of mine. First, I have a library L which defines a few types and some functionality for it. Second, an application A which imports things from L, notably its structs.
-
-**The problem**: Eventually, A wants to insert instances of L's types into a database, which I'm using diesel for. Since the original types in L do not derive diesel's macros, I cannot use them with a database.
-
-Now, is this already some kind of code smell? I don't really want to add derives to structs in L without actually needing it. But I also don't want to have to map between L's structs and A's domain types and redefine everything. The reason for keeping L a separate library is to use it in future sub-applications within the same workspace.
-
-What do you think is a sensible solution here? I feel like the most pragmatic would be to just derive the required diesel macros on those types. But, maybe there is something I'm not seeing. Thank you very much for your help.
-## [11][IntelliJ Rust: New Functionality for Cargo Features](https://www.reddit.com/r/rust/comments/jka6bn/intellij_rust_new_functionality_for_cargo_features/)
+## [8][IntelliJ Rust: New Functionality for Cargo Features](https://www.reddit.com/r/rust/comments/jka6bn/intellij_rust_new_functionality_for_cargo_features/)
 - url: https://blog.jetbrains.com/clion/2020/10/intellij-rust-new-functionality-for-cargo-features/
 ---
 
-## [12][using rustc suggestions to fix all errors](https://www.reddit.com/r/rust/comments/jk9guk/using_rustc_suggestions_to_fix_all_errors/)
-- url: https://www.reddit.com/r/rust/comments/jk9guk/using_rustc_suggestions_to_fix_all_errors/
+## [9][Learning C/C++ as a Rustacean?](https://www.reddit.com/r/rust/comments/jkw8dn/learning_cc_as_a_rustacean/)
+- url: https://www.reddit.com/r/rust/comments/jkw8dn/learning_cc_as_a_rustacean/
 ---
-Hi,   
-I had a "prelude" file that contained public uses of all types in my crate. However, I want to remove all \`use crate::prelude::\*\` statements in favor of the actual use statements per type.  
+Hello everyone, I would like to hear from those of you who started Rust as your first low-level programming language and then move on to learn C/C++.
 
+If I search for "C"/"C++" in r/rust, almost all threads are about comparisons between C/C++ and Rust and switching *from C/C++ to Rust*. However, my situation is different. I chose to learn Rust as my first low-level language simply because it has great and easily accessible documentation and tutorials, as well as awesome dependency management. However, soon I realized that to become a qualified computational biologist (that's what I plan to pursue in PhD, although my current major is biochemistry which does not require much programming) I have to learn C/C++ because almost all currently available bioinformatics libraries are written in C/++ (either as standalone C/C++ libraries or Python/R extensions). 
 
-When I remove the prelude mod, the compiler obviously throws a lot of "cannot find type \* " errors. However it also suggests where to find them. Is there a way to fix those error similar to how \`cargo fix\` can be used to fix warnings?  
+I need to learn not only the C/C++ language itself but also how it is used in reality (managing real projects, understanding different ways by which other people manage their projects, idiomatic practices, understanding code that was idiomatic in old standards but not idiomatic anymore in C++20, and understanding why people are re-inventing their own `vec`, `string` and even `bool`).
 
+In addition, I would like to learn best practices for re-writing C/C++ code in Rust  and for replacing part of a complex C/C++ project with Rust (if there are any).
 
-I don't want to fix those 700 errors by hand :D  
+So what's the *least painful* way to learn all these, in November 2020?
+## [10][Advanced Cargo [features] Usage | blog.turbo.fish](https://www.reddit.com/r/rust/comments/jkn4gu/advanced_cargo_features_usage_blogturbofish/)
+- url: https://blog.turbo.fish/cargo-features/
+---
 
-
-Cheers
+## [11][Why did you start learning Rust?](https://www.reddit.com/r/rust/comments/jkj1sn/why_did_you_start_learning_rust/)
+- url: https://www.reddit.com/r/rust/comments/jkj1sn/why_did_you_start_learning_rust/
+---
+I'm a relatively new Rust developer, I started to learn Rust in mid-2020 and I fell in love with the language, I wanted to ask what made YOU take the decision to learn Rust?
+## [12][How heavy is Rc&lt;RefCell&lt;T&gt;?](https://www.reddit.com/r/rust/comments/jkh99u/how_heavy_is_rcrefcellt/)
+- url: https://www.reddit.com/r/rust/comments/jkh99u/how_heavy_is_rcrefcellt/
+---
+Hi all! So i am implementing algorithms for fun in Rust and i am now on graphs and similar, And for mutable data that has references everywhere the only sane way i have found is Rc&lt;RefCell&lt;T&gt;&gt;. Using this however made wonder, how heavy is this reference counting? Or is it basically irrelevant in terms of speed lost? 

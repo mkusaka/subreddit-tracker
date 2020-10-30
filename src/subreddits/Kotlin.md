@@ -46,123 +46,91 @@ On October 12–15 we hosted the Kotlin 1.4 Online Event, and over the course of
 Please post your questions as top-level comments to this post.
 
 We look forward to hearing from you!
-## [2][Netflix Android and iOS Studio Apps — now powered by Kotlin Multiplatform](https://www.reddit.com/r/Kotlin/comments/jk0rh5/netflix_android_and_ios_studio_apps_now_powered/)
+## [2][kotlinx.coroutines 1.4.0: Introducing StateFlow and SharedFlow](https://www.reddit.com/r/Kotlin/comments/jkuyy2/kotlinxcoroutines_140_introducing_stateflow_and/)
+- url: https://blog.jetbrains.com/kotlin/2020/10/kotlinx-coroutines-1-4-0-introducing-stateflow-and-sharedflow/
+---
+
+## [3][Best Way To Learn Kotlin](https://www.reddit.com/r/Kotlin/comments/jks1yh/best_way_to_learn_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/jks1yh/best_way_to_learn_kotlin/
+---
+I am a CS graduate and I have experience with C++, C#.NET and Python. But I have never worked with Java.
+
+I want to learn Kotlin from the ground-up, and not just learn it quickly and without depth.
+
+I REALLY want to know how everything works and how each piece fits in the language. My goal is to become an Android Developer, but after learning Kotlin first.
+
+Are there any resources you would recommend to me? I really prefer resources with plenty of exercies, videos are okay only if they contain exercises as well, and no, *think of something, and build it* is not much of a help, because I have no practical problems that I can currently solve with plain Kotlin on the commandline.
+## [4][Koin automatic injection](https://www.reddit.com/r/Kotlin/comments/jkuhap/koin_automatic_injection/)
+- url: https://www.reddit.com/r/Kotlin/comments/jkuhap/koin_automatic_injection/
+---
+Libraries like Guice or Dagger allow you to inject a dependency, if all of this dependency dependencies are satisfied (through your module definition).
+
+This comes in handy to avoid having huge module definitions and also you can inject classes without dependencies without adding them to the module definition.
+
+Any idea on how to do this on Koin or Kodein?
+## [5][Migrating the deprecated Kotlin Android Extensions compiler plugin to ViewBinding](https://www.reddit.com/r/Kotlin/comments/jkt7up/migrating_the_deprecated_kotlin_android/)
+- url: https://melegy.medium.com/migrating-the-deprecated-kotlin-android-extensions-compiler-plugin-to-viewbinding-d234c691dec7
+---
+
+## [6][Suggestion: an option to add automatic reversals for boolean functions](https://www.reddit.com/r/Kotlin/comments/jkuowv/suggestion_an_option_to_add_automatic_reversals/)
+- url: https://www.reddit.com/r/Kotlin/comments/jkuowv/suggestion_an_option_to_add_automatic_reversals/
+---
+So a way to set an option that will create opposite functions for boolean functions, just like it creates getters and setters.  
+For example:
+
+`class Foo {`  
+`...`  
+`fun isEmpty() = this.amountOfBar == 0`  
+`fun isBig() = this.amountOfBar &gt; 0`  
+`}`  
+It'll then automatically generate these functions:  
+`@Kotlin.internal.InlineOnly inline fun Foo.isNotEmpty() = !this.isEmpty()`  
+`@Kotlin.internal.InlineOnly inline fun Foo.isNotBig() = !this.isBig()`  
+Which will inline on compilation. This will make coding more fluent, so no need to go to the back of the function call to add a `!`.
+## [7][Junior iOS developer looking to expand my skill set !](https://www.reddit.com/r/Kotlin/comments/jkuhoy/junior_ios_developer_looking_to_expand_my_skill/)
+- url: https://www.reddit.com/r/Kotlin/comments/jkuhoy/junior_ios_developer_looking_to_expand_my_skill/
+---
+Hey yall! 
+
+So, i'm a self taught junior iOS developer. I've been learning in the academy of YouTube for for 6 months before i got my first job 3 months ago ( a grand total of 9 months, MASSIVE!)
+
+So, i know there's still a lot for me to learn about iOS, but - at the company i work for right now there aren't any android developers, so the head of development is forced to work as an Android dev. 
+
+That's where i try to come in ! I want to learn Kotlin in order for me to be able to work on our app from both platforms, and have a wider set of skill. 
+
+From what i've seen so far the differences between Swift and Kotlin aren't massive, so i was wondering, is there anyone else here who is an iOS developer as well? If so, how did you go about adapting to Kotlin? What are some good sources to learn for someone with a bit of history? for iOS there's hacking with swift and Angela Yu, are there any equivalencies in Kotlin? 
+
+&amp;#x200B;
+
+Thanks!
+## [8][Is there `decodeFromStringOrNull()` method in kotlinx.serialization](https://www.reddit.com/r/Kotlin/comments/jkln7r/is_there_decodefromstringornull_method_in/)
+- url: https://www.reddit.com/r/Kotlin/comments/jkln7r/is_there_decodefromstringornull_method_in/
+---
+Is there such method or any with other name which supports wrong type as parameter or something not a JSON object as an argument so that it causes result to be null?
+## [9][For Complex Applications, Rust is as Productive as Kotlin](https://www.reddit.com/r/Kotlin/comments/jkcinl/for_complex_applications_rust_is_as_productive_as/)
+- url: https://ferrous-systems.com/blog/rust-as-productive-as-kotlin/
+---
+
+## [10][Netflix Android and iOS Studio Apps — now powered by Kotlin Multiplatform](https://www.reddit.com/r/Kotlin/comments/jk0rh5/netflix_android_and_ios_studio_apps_now_powered/)
 - url: https://medium.com/@NetflixTechBlog/netflix-android-and-ios-studio-apps-kotlin-multiplatform-d6d4d8d25d23
 ---
 
-## [3][NotyKT is a complete Kotlin-stack application built with Ktor (REST API Backend) + Android](https://www.reddit.com/r/Kotlin/comments/jk9imh/notykt_is_a_complete_kotlinstack_application/)
-- url: https://github.com/PatilShreyas/NotyKT
+## [11][Android Developer for Drizly [Remote, US]](https://www.reddit.com/r/Kotlin/comments/jkimpg/android_developer_for_drizly_remote_us/)
+- url: https://www.reddit.com/r/Kotlin/comments/jkimpg/android_developer_for_drizly_remote_us/
 ---
-
-## [4][LeetCode #9 - Palindrome Number](https://www.reddit.com/r/Kotlin/comments/jk84cu/leetcode_9_palindrome_number/)
-- url: https://www.reddit.com/r/Kotlin/comments/jk84cu/leetcode_9_palindrome_number/
----
- New blog post describing how to check for a palindrome number - [https://redquark.org/leetcode/0009-palindrome-number/](https://redquark.org/leetcode/0009-palindrome-number/)
-## [5][Kotlin &amp; Gmail API - listing emails](https://www.reddit.com/r/Kotlin/comments/jjwp8g/kotlin_gmail_api_listing_emails/)
-- url: https://vaclavhodek.com/kotlin-and-gmail-api-listing-emails
----
-
-## [6][Kotlin &amp; Gmail API - listing emails](https://www.reddit.com/r/Kotlin/comments/jk68jm/kotlin_gmail_api_listing_emails/)
-- url: https://vaclavhodek.com/kotlin-and-gmail-api-listing-emails
----
-
-## [7][How to use PropertyDelegateProvider](https://www.reddit.com/r/Kotlin/comments/jk67c6/how_to_use_propertydelegateprovider/)
-- url: https://www.reddit.com/r/Kotlin/comments/jk67c6/how_to_use_propertydelegateprovider/
----
-I've been reading up on Kotlin 1.4, with lots of great stuff (Especially SAM conversions!)
-
-What I can't get my head around though is `PropertyDelegateProvider`. I can't quite work out how it's meant to be used, and I can't find *any* examples of it actually being used in a way that make sense to me.
-
-Can anyone explain? Or, better yet, provide a simple example of it working? Is it simply just how the delegating to other properties works behind the scenes? Or does it, as I think, allow you to delegate a property to a lambda without needing to create a whole new class to support that?
-
-Cheers
-## [8][Kotlin Coroutines Exception Handling Cheat Sheet](https://www.reddit.com/r/Kotlin/comments/jjorn5/kotlin_coroutines_exception_handling_cheat_sheet/)
-- url: https://www.lukaslechner.com/coroutines-exception-handling-cheat-sheet/
----
-
-## [9][What do you think of this little extension function?](https://www.reddit.com/r/Kotlin/comments/jjmgb0/what_do_you_think_of_this_little_extension/)
-- url: https://www.reddit.com/r/Kotlin/comments/jjmgb0/what_do_you_think_of_this_little_extension/
----
-If you are a fan of chained calls, for example for string manipulation, you are probably sometimes as frustrated as I am because you have to "break the flow". I hit such a case again, but this time I decided to write an extension function so I can comfortably continue the chained call.
-
-I actually don't know if it already exists in some form, but I haven't found it on the first look and it was so little code that it actually doesn't matter. If you actually know that this exists already, let me know.
-
-So, for example let's say you have a filename (taken out of a list, for example) and you want to strip certain file endings (let's just say `.txt`, `.exe` and `.pdf`). But that's not the only thing you want to do. In fact, you already have a chained call with different string manipulations, and as the next step you want to strip the extension if it is one of the mentioned ones. Now the `removeSuffix()` method comes in handy, but the problem is that you don't have a _single_ suffix, but a _collection_ of suffixes. And _for each_ of these suffixes `x`, you need to call `removeSuffix(x)`. Normally this would mean that you have to break your chained call flow from
-
-    string.callA()
-        .callB()
-        .callC()
-        .callD()
-
-To
-
-    var res = string.callA()
-        .callB()
-        .callC()
-        .callD()
-    
-    extensions.forEach {
-        res = res.removeSuffix(it)
-    }
-
-Ugly, right? That's why I just patched together the extension function `forEachOf()`. Basically it is called with an arbitrary object as the receiver, but operates a lambda over every element of a given `Iterable`:
-
-    inline fun &lt;T, U&gt; T.forEachOf(other: Iterable&lt;U&gt;, block: T.(U) -&gt; T): T {
-        var result = this
-        other.forEach {
-            result = result.block(it)
-        }
-        return result
-    }
-
-Now I can perform the desired action without breaking the chained call, I can even continue it afterwards:
-
-    string.callA()
-        .callB()
-        .callC()
-        .callD()
-        .forEachOf(extensions) { removeSuffix(it) }
-        .callE()
-
-Neat, right? Note that the lambda and the `forEachOf()` function (have to) return `T` to 1. be able to continue the chain and 2. deal with immutable classes like `String`.
-
-What do you think? Is it useful? Would you use it? Can you imagine more practical use cases? Or would you improve the extension in some way?
-
-For me it just shows the beauty of the expressiveness and extensibility of Kotlin. A similar problem in Java would be impossible to solve, but with Kotlin you have multiple ways of doing it!
-## [10][Using withContext: is it possible to resume execution on the same thread in the same dispatcher?](https://www.reddit.com/r/Kotlin/comments/jjnuji/using_withcontext_is_it_possible_to_resume/)
-- url: https://www.reddit.com/r/Kotlin/comments/jjnuji/using_withcontext_is_it_possible_to_resume/
----
-Imagine a suspend function running on `Dispatchers.Default` similar to this one:
-
-    suspend fun doSomething() {
-        pre()
-        withContext(myContext) {
-            // do some heavy stuff here
-            work()
-        }
-        post()
-    }
-
-According to the docs `withContext` will switch to a new thread if a new dispatcher is provided (which is the case here) and resume using the original dispatcher, `Dispatchers.Default`. However, I observe that sometimes it resumes and executes `post()` on a different thread than the one used to execute `pre()`.
-
-This poses a challenge in a problem I need to solve, so I'm wondering whether it is possible to enforce the execution of `post()` and `pre()` on the same thread.
-## [11][Android Kotlin Widget: Click button on widget then get some string from MainActivity then set string text on Widget. How?](https://www.reddit.com/r/Kotlin/comments/jjtgfe/android_kotlin_widget_click_button_on_widget_then/)
-- url: https://www.reddit.com/r/Kotlin/comments/jjtgfe/android_kotlin_widget_click_button_on_widget_then/
----
+ Drizly is looking for an Android Developer to join our small team (currently a team of 4) to help with our Kotlin Migration. So roughly the work would roughly entail and revolve around large rewrites, feature pushing, reworking some of the technical debt (thats in java) as well as fine tuning some rewrites as well.  
 
 
-Hey there :) I am kinda new to Kotlin, but not so new to the programing.
+Also, we are a start up, its a small mobile team, so if you wanted to branch out to our RoR backend api integrations or even to the swift and iOS side of things, we are happy for someone to go down those paths!  
 
-I would like to ask for a help. But please... please... only if you  have time and could give me something like a final working code. Those  descriptive answers like: go there and do that.. kinda dont work for me.  Thats the reason why I created this profile... because i am totally  stuck...
 
-So... I would like to have a very very simple (working) example of this: I have a widget. On that widget i have a button with id "buttonASD" and i have textview with id "textviewASD"
+So all in all, we are pretty flexible on alot, besides the fact the coding test will be done in kotlin.  
 
-I click that button on widget... then widget sends some kind of command to the MainActivity.kt
 
-inside MainActivity.kt lets say that i have some string: stringASD = "blablabla"
+If you are interested in hearing more about it, feel free to email me. (also please redact any information when you do apply, and if you reach out to me to schedule a call, dont worry we have another way to move you through while trying to remove implicit bias!)  
 
-so I would like now this stringASD to be shown on the textviewASD which is located on my widget
 
-For me, at this point, it doesnt matter if MainActivity.kt will set  text on viewtextASD or it will send that stringASD to the widget, and  then the widget itself will change the text :)
+This role is also a full time remote role, though applicants do have to be based in the US (its a finance thing).  
 
-And very important is that I would like this to happen without my main app appearing on screen. Is that possible??
+
+[kenneth.han@drizly.com](mailto:kenneth.han@drizly.com) or just [apply](https://jobs.lever.co/drizly/22d7f3b6-181d-43df-a9f5-acfc9383db6c?lever-origin=applied&amp;lever-source%5B%5D=reddit)!

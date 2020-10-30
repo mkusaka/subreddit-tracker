@@ -70,75 +70,164 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 - url: https://www.surveymonkey.co.uk/r/T58DPNS
 ---
 
-## [3][CodeSandbox Secures $12.7M Series A Funding](https://www.reddit.com/r/reactjs/comments/jk6n6e/codesandbox_secures_127m_series_a_funding/)
+## [3][Using localStorage with Redux to save favorites.](https://www.reddit.com/r/reactjs/comments/jktk0q/using_localstorage_with_redux_to_save_favorites/)
+- url: https://www.reddit.com/r/reactjs/comments/jktk0q/using_localstorage_with_redux_to_save_favorites/
+---
+ 
+
+Live demo here: [https://moviesearcher-rust.vercel.app/](https://moviesearcher-rust.vercel.app/)  
+Repository here: [https://github.com/wcelery/moviesearcher](https://github.com/wcelery/moviesearcher)  
+What I'm trying to do is save my favorite movies in localStorage by clicking heart icon. First click adds item, second click removes it. The problem is ADD\_TO\_FAVORITES works fine, but REMOVE\_FROM\_FAVORITE crashes my app with Cannot read property 'toString' of undefined  
+ error here:
+
+    23 | case REMOVE_FROM_FAVORITES:
+      24 |   return {
+      25 |     ...state,
+    &gt; 26 |     favorites: Object.keys(state.favorites)
+         | ^  27 |       .filter((item) =&gt; item !== action.payload.id.toString())
+      28 |       .reduce(
+      29 |         (object, item) =&gt; ({ ...object, [item]: state.favorites[item] }),
+
+Code, that handles clicks is in components/Movie.js:
+
+    export default function Movie({ poster, title, id }) {
+      const dispatch = useDispatch();
+      const favorites = useSelector((state) =&gt; state.favoriteStore.favorites);
+    
+      const parse = (poster, title, id) =&gt; {
+        return {
+          poster: poster,
+          title: title,
+          id: id,
+        };
+      };
+      let movie = parse(poster, title, id);
+    
+      let isFavourite = movie.id in favorites;
+    
+      const isStored = (value) =&gt; {
+        if (value) {
+          dispatch(removeFromFavorites(movie));
+        } else {
+          dispatch(addToFavorites(movie));
+        }
+      };
+
+Here's my redux/reducers/favoritesReducer.js:
+
+    import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from "../config";
+    
+    const checkLocalStorage = () =&gt; {
+      return Object.assign(
+        {},
+        ...Object.entries(localStorage).map(([id, value]) =&gt; ({
+          [id]: JSON.parse(value),
+        }))
+      );
+    };
+    
+    const initialState = {
+      favorites: checkLocalStorage(),
+    };
+    
+    export const favoritesReducer = (state = initialState, action) =&gt; {
+      switch (action.type) {
+        case ADD_TO_FAVORITES:
+          //blah blah
+        case REMOVE_FROM_FAVORITES:
+          return {
+            ...state,
+            favorites: Object.keys(state.favorites)
+              .filter((item) =&gt; item !== action.payload.id.toString())
+              .reduce(
+                (object, item) =&gt; ({ ...object, [item]: state.favorites[item] }),
+                {}
+              ),
+          };
+        default:
+          return state;
+      }
+    };
+## [4][Recoil: first 0.1.x release (perf, RN...)](https://www.reddit.com/r/reactjs/comments/jkt6um/recoil_first_01x_release_perf_rn/)
+- url: https://recoiljs.org/blog/2020/10/30/0.1.1-released
+---
+
+## [5][Private, public and restricted routes with React router](https://www.reddit.com/r/reactjs/comments/jkufd1/private_public_and_restricted_routes_with_react/)
+- url: https://dev.to/karanpratapsingh/private-public-and-restricted-routes-in-react-42ff
+---
+
+## [6][Looking for tips for my side project](https://www.reddit.com/r/reactjs/comments/jku8iq/looking_for_tips_for_my_side_project/)
+- url: https://www.reddit.com/r/reactjs/comments/jku8iq/looking_for_tips_for_my_side_project/
+---
+I am a few months old to full-stack, working on a side project looking for advice and guidance. 
+
+Basically, it's a tutoring kind of website.  A person can register as a student or tutor( no payment involved). I want to incorporate a video app so that the user doesn't have to switch to google meet, zoom outside the app. So far what I have planned is
+
+Student registration form
+
+Tutor registration form 
+
+Student gets tutor matches based on their mutual interest. 
+
+The student chooses a volunteer for tutoring
+
+From here I am a little haze on how to execute it further.  My thought was if there is a video chat app on the profile, either the student or tutor can invite each other for the class. 
+
+It would be great if I can track hours spent in learning on video app and any other related metrics. 
+
+Any suggestions and resources are appreciated highly. 
+
+Thank you
+## [7][CodeSandbox Secures $12.7M Series A Funding](https://www.reddit.com/r/reactjs/comments/jk6n6e/codesandbox_secures_127m_series_a_funding/)
 - url: https://codesandbox.io/post/codesandbox-series-a-funding
 ---
 
-## [4][How to safely store authentication cookies?](https://www.reddit.com/r/reactjs/comments/jjxkfh/how_to_safely_store_authentication_cookies/)
-- url: https://www.reddit.com/r/reactjs/comments/jjxkfh/how_to_safely_store_authentication_cookies/
----
-I want to move away from storing my JWTs in local storage since it’s vulnerable to XSS attacks. So I was thinking of storing a refresh token in a cookie, and the session cookie just in memory. 
-
-So cookies are vulnerable to CSRF attacks. Is setting the cookie to httpOnly, sameSite, and secure enough to prevent this? Or is there more I have to do? I have been trying to research this but I’m getting conflicting results.
-## [5][Open Sourced Full Websites](https://www.reddit.com/r/reactjs/comments/jk03m2/open_sourced_full_websites/)
-- url: https://www.reddit.com/r/reactjs/comments/jk03m2/open_sourced_full_websites/
----
-Hi Everyone,
-
-I'm new to the React world (formally used React Native), and I've been looking around at open source examples. Most of the open source examples out there are barely implemented starter templates or components.
-
-Does anyone have any recommendations for full open source websites implemented in React JS? I'd just really like to see how things are organized and the correct way of doing this.
-
-Thanks!
-## [6][A Quick Look at the React Speech Recognition Hook](https://www.reddit.com/r/reactjs/comments/jk9k6i/a_quick_look_at_the_react_speech_recognition_hook/)
-- url: https://www.loginradius.com/engineering/blog/quick-look-at-react-speech-recognition/
+## [8][React component CLI (fast and easy to config)](https://www.reddit.com/r/reactjs/comments/jkvkbg/react_component_cli_fast_and_easy_to_config/)
+- url: https://github.com/coolassassin/reactcci
 ---
 
-## [7][When does it make sense to have a React application with microfrontends?](https://www.reddit.com/r/reactjs/comments/jjzxzm/when_does_it_make_sense_to_have_a_react/)
-- url: https://www.reddit.com/r/reactjs/comments/jjzxzm/when_does_it_make_sense_to_have_a_react/
+## [9][Web Developer in need of job](https://www.reddit.com/r/reactjs/comments/jkwpeq/web_developer_in_need_of_job/)
+- url: https://www.reddit.com/r/reactjs/comments/jkwpeq/web_developer_in_need_of_job/
 ---
-Can't you just use React Router? Why would you want to have multiple microfrontends in a CRUD application? What are the pros and cons?
-## [8][Build React website responsive | Beginner React JS From scratch with smooth scroll](https://www.reddit.com/r/reactjs/comments/jjlpf0/build_react_website_responsive_beginner_react_js/)
-- url: https://youtu.be/K7gRndVwu7g
+Hey everyone I’m a full stack web developer in desperate need of a job, I have experience with react, vue, JavaScript, node, express, mongo, react native, HTML, css and more if you need anyone even for small jobs please consider me.
+
+
+GitHub: www.github.com/haardikg 
+
+LinkedIn: https://ca.linkedin.com/in/haardik-gupta-4661aa187
+## [10][A responsive, composable react charting library with a hand-drawn style.](https://www.reddit.com/r/reactjs/comments/jkvvrp/a_responsive_composable_react_charting_library/)
+- url: https://beizhedenglong.github.io/rough-charts/?path=/docs/roughcharts--page
 ---
 
-## [9][Is next.js good for a huge project like Reddit or Wikipedia or Medium?](https://www.reddit.com/r/reactjs/comments/jk76b4/is_nextjs_good_for_a_huge_project_like_reddit_or/)
-- url: https://www.reddit.com/r/reactjs/comments/jk76b4/is_nextjs_good_for_a_huge_project_like_reddit_or/
+## [11][Can you guys give me feedback about my long complex project?](https://www.reddit.com/r/reactjs/comments/jkn4ye/can_you_guys_give_me_feedback_about_my_long/)
+- url: https://www.reddit.com/r/reactjs/comments/jkn4ye/can_you_guys_give_me_feedback_about_my_long/
 ---
-Hello, Guys. I'm wondering whether NextJS is good enough for a big project like Reddit or Wikipedia or Medium? If not, What are the good alternatives? Our backend is using NodeJS and DynamoDB
+HEADS UP: You will need to create an account
+
+So I've been working on it for about 1 year and half. I learned everything from the groundup,
+
+I've had re-written the back-end logic about 4 times mainly because I knew it could be improved, etc.
+
+This is supposed to be a social network kind of site, it allows users, videos, posts with multiple images, etc. 
+
+The filtering in some pages still needs some improvements; there are a tons of warning of constants not being used, etc but overall they dont mess with the functionality of the website.
+
+Rigth now, my main tasks are to work on the chat, user email/notification preferences and the notification sections
+
+Here it is:
+
+[beFree](https://befree.herokuapp.com/)
+
+The end goal for this is to be a private(the main reason you need to create an account) app for users to publish everything they want; from regular stuff to adult content, as long as there is not violence included and/or childrens.
+
+I'm still working on it and still improving/adding/discarding code so please be nice xD.
 
 Thank you.
-## [10][How to implement "Pay per module" architecture.](https://www.reddit.com/r/reactjs/comments/jk9u3y/how_to_implement_pay_per_module_architecture/)
-- url: https://www.reddit.com/r/reactjs/comments/jk9u3y/how_to_implement_pay_per_module_architecture/
+## [12][e.target.reset(); good or bad?](https://www.reddit.com/r/reactjs/comments/jkva0r/etargetreset_good_or_bad/)
+- url: https://www.reddit.com/r/reactjs/comments/jkva0r/etargetreset_good_or_bad/
 ---
-I'm new to this kind of problem. I'm trying to create a project which will have multiple internal "Modules". By default some modules will be free but I would like to know, how would someone design a structure that allows users to pay a fee to be able to use the extra modules.
+Let's say a user submits a form and we want the input fields to be cleared; there's many ways to achieve this. e.target.reset() is one of them.
 
-It's something like upgrading to a "Pro account" but instead of a binary thing, It only enables the module that the user has paid for.
+&amp;#x200B;
 
-Also, how would you bundle the app (Electron JS + React in this case)?  Deliver all the code to the all the users or is there any other way to do this. 
-
-I would appreciate any kind of help/guidance to the correct path, literature or resources. 
-
-Thanks in advance.
-## [11][use-dispose: React hook for disposing uncommitted logic](https://www.reddit.com/r/reactjs/comments/jk9p7t/usedispose_react_hook_for_disposing_uncommitted/)
-- url: https://www.reddit.com/r/reactjs/comments/jk9p7t/usedispose_react_hook_for_disposing_uncommitted/
----
-Hello everyone!
-
-I created this simple hook that performs an asynchronous cleanup for uncommitted logic on React components.
-
-Recently, I just found out that components renders twice on Strict Mode, Blocking Mode and Concurrent Mode before it even gets the chance to commit the changes and run the side-effects, which could lead into unwanted memory leaks such as creating WebWorkers, instanciating WebSocket clients, etc., which occurs often on third-party code that React cannot manage.
-
-`use-dispose` comes into play by guaranteeing that the created, uncommitted object can be disposed during the render phases. The package also includes a hook called `useDisposableMemo` which manages a disposable object automatically throughout the component's lifecycle.
-
-Links:
-
-- NPM: https://www.npmjs.com/package/use-dispose
-
-- Github: https://github.com/LXSMNSYC/use-dispose
-
-Special thanks to Paul Henschel whom I helped and talked to on solving invalidated memoized objects, and to Daishi Kato who originally came up with a cleanup hook.
-## [12][How to Create a Reusable LocalStorage Hook](https://www.reddit.com/r/reactjs/comments/jk68pd/how_to_create_a_reusable_localstorage_hook/)
-- url: https://blog.bhanuteja.dev/how-to-create-a-reusable-localstorage-hook
----
-
+Would you consider this to be a good or bad practice?

@@ -23,7 +23,90 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/10/28/this-week-in-rust-362/
 ---
 
-## [3][These Weeks In Actix | Sep-Oct '20](https://www.reddit.com/r/rust/comments/jkv5xu/these_weeks_in_actix_sepoct_20/)
+## [3][rkvm - A tool to share keyboard and mouse over the network on Linux machines](https://www.reddit.com/r/rust/comments/jlhga1/rkvm_a_tool_to_share_keyboard_and_mouse_over_the/)
+- url: https://github.com/htrefil/rkvm
+---
+
+## [4][Announcing Octane, a high performance web server modelled after express](https://www.reddit.com/r/rust/comments/jl56nq/announcing_octane_a_high_performance_web_server/)
+- url: https://www.reddit.com/r/rust/comments/jl56nq/announcing_octane_a_high_performance_web_server/
+---
+[https://github.com/OctaneWeb/Octane](https://github.com/OctaneWeb/Octane)  
+
+
+How is octane different?
+
+1. Lightweight HTTP implementation is designed to be fast and correct
+2. 100% safe
+3. A low dependency web server
+4. Is scalable: Octane's architecture allows other crates to integrate with it seamlessly, allowing many custom middleware implementations
+5. Has all the good of express and safety of rust, tries to be very intuitive and easy to use
+6. Features things like extended queries, plain queries, \`path!\` macros out of the box
+7. SSL is easy to set up and easy to switch too, you will not have to change any existing rust code in order to switch between OpenSSL or rustls
+## [5][Announcing colo, a terminal color viewer](https://www.reddit.com/r/rust/comments/jld6cr/announcing_colo_a_terminal_color_viewer/)
+- url: https://www.reddit.com/r/rust/comments/jld6cr/announcing_colo_a_terminal_color_viewer/
+---
+[colo](https://github.com/Aloso/colo) is a small CLI tool that can show colors and convert them between various color spaces. It supports RGB, CMY, CMYK, HSV, HSL, LCH, LUV, CIELAB, Hunter lab, CIE 1931 XYZ and CIE YXY. Big thanks for the [color\_space](https://docs.rs/color_space/0.5.3/color_space/) crate, which is used for the conversions!
+
+https://preview.redd.it/ryoqg2iebdw51.png?width=602&amp;format=png&amp;auto=webp&amp;s=7fa6fc80c1cfe065c2c62d132d826052ba75ae26
+## [6][Beginners - Rust Variables](https://www.reddit.com/r/rust/comments/jlh2y1/beginners_rust_variables/)
+- url: https://www.golangprograms.com/rust-variables.html
+---
+
+## [7][Parse XML with NIF (Using Rust)](https://www.reddit.com/r/rust/comments/jlfy4d/parse_xml_with_nif_using_rust/)
+- url: https://youtu.be/lm_6WzWazjU
+---
+
+## [8][Newbie here: just squashed my first bug, but learned that I don't understand mutable references. Please help me](https://www.reddit.com/r/rust/comments/jlf1vj/newbie_here_just_squashed_my_first_bug_but/)
+- url: https://www.reddit.com/r/rust/comments/jlf1vj/newbie_here_just_squashed_my_first_bug_but/
+---
+I've been following along with *The Rust Programming Language* by Steve Klabnik and Carol Nichols et al, and up until the end of Chapter 3 I was following along really well. Then I tried to make a temperature converter between Fahrenheit and Celcius.
+
+**The Bug:** The program compiles, but only works correctly if the user's input is successfully parsed on the first loop. For instance, entering "46" returns a value of "7.77...8" and then exits the program, which is exactly what I expected. Entering "asdf" prompts the user to retry, but now entering "46" prompts the user to retry *again,* even though it should parse correctly on the second try. This results in an endless loop where the user tries number after number and only ever gets more tries instead of an actual result, all because they messed up the input the first time.
+
+**The Code:**
+
+    let f2c = true;
+    let mut input = String::new();
+
+    loop {
+    if f2c {
+        println!("Current Mode: Fahrenheit to Celcius");
+    }
+    else {
+        println!("Current Mode: Celcius to Fahrenheit");
+    }
+
+    io::stdin().read_line(&amp;mut input)
+        .expect("Could not read line!");
+    let mut temp: f64 = match input.trim().parse() {
+        Ok(num) =&gt; num,
+        Err(_) =&gt; continue,
+    };
+
+    temp = convert(f2c, temp);
+
+    println!("&gt; {}", temp);
+    break;
+    }
+
+**The Patch:** I realized that my variable "input" wasn't being reset at the end of the loop, so I moved its initialization into the body of the loop, just before my io::stdin().read_line...
+
+...and it worked! My code now works properly. The "input" variable now goes out of scope at the end of the loop and is reborn each time the user inputs something. Because it is a "new" variable, my read_line() function can change it. But...
+
+**The Question:** ...why is it that, even though I'm feeding read_line() a mutable reference, it's unable to change it the second time? I read ahead a bit in the book and found out that mutable references can only be changed one time, but the book also says that changing the scope can circumvent that and allow multiple changes (if not simultaneous ones).
+
+Doesn't the loop { } change the scope? If I'm only changing the variable once per loop, doesn't that satisfy both requirements?
+
+This is breaking my brain.
+## [9][Rust Binary Tree: A Refactor](https://www.reddit.com/r/rust/comments/jlgpm1/rust_binary_tree_a_refactor/)
+- url: https://rossketeer.medium.com/rust-binary-tree-a-refactor-1b090a88e24
+---
+
+## [10][Rust Design-for-Testability: a survey](https://www.reddit.com/r/rust/comments/jl2xlg/rust_designfortestability_a_survey/)
+- url: https://alastairreid.github.io/rust-testability/
+---
+
+## [11][These Weeks In Actix | Sep-Oct '20](https://www.reddit.com/r/rust/comments/jkv5xu/these_weeks_in_actix_sepoct_20/)
 - url: https://www.reddit.com/r/rust/comments/jkv5xu/these_weeks_in_actix_sepoct_20/
 ---
 Since the [release of Actix Web v3.0](https://www.reddit.com/r/rust/comments/iqq8k9/announcing_actixweb_v30/) in September, we've been very happy to see the positive response to the numerous internal safety improvements. The uptake of v3 has been swift; over 50% of crate downloads are for the newer versions.
@@ -52,54 +135,13 @@ On the path to stabilization, v0.5 is being considered a v1.0 beta. Includes a n
 
 # An Official Discord Community
 
-&gt;Server Invite: [https://discord.gg/2Kkkc8ZtzF](https://discord.gg/2Kkkc8ZtzF)
+&gt;Server Invite: [https://discord.gg/NWpN5mmg3x](https://discord.gg/NWpN5mmg3x)
 
 We're still keeping Gitter around as a support channel (and I'm hopeful it will improve more quickly under the Matrix banner).
-## [4][What are the bad practices in rust that should be avoided?](https://www.reddit.com/r/rust/comments/jkortm/what_are_the_bad_practices_in_rust_that_should_be/)
-- url: https://www.reddit.com/r/rust/comments/jkortm/what_are_the_bad_practices_in_rust_that_should_be/
+## [12][With the new Sifive Unmatched, Risc-V is within reach of consumers or at least power linux users. What is the status of Rust for risc-v?](https://www.reddit.com/r/rust/comments/jlgkdb/with_the_new_sifive_unmatched_riscv_is_within/)
+- url: https://www.reddit.com/r/rust/comments/jlgkdb/with_the_new_sifive_unmatched_riscv_is_within/
 ---
-I am learning rust and I have read that it is not a good practice to use `unwrap()`,  
+Im thinking about getting a board and help out with testing and or porting. https://youtu.be/VXqQuxmB76M 
 
-&amp;#x200B;
-
-What are the bad practices in rust that should be avoided and why?
-## [5][This Week in Veloren #91: Buffs, Alignment, and CI](https://www.reddit.com/r/rust/comments/jkp6kv/this_week_in_veloren_91_buffs_alignment_and_ci/)
-- url: https://veloren.net/devblog-91/
----
-
-## [6][http-types v2.7.0 has been released!](https://www.reddit.com/r/rust/comments/jkumqr/httptypes_v270_has_been_released/)
-- url: https://github.com/http-rs/http-types/releases/tag/v2.7.0
----
-
-## [7][For Complex Applications, Rust is as Productive as Kotlin](https://www.reddit.com/r/rust/comments/jk8648/for_complex_applications_rust_is_as_productive_as/)
-- url: https://ferrous-systems.com/blog/rust-as-productive-as-kotlin/
----
-
-## [8][IntelliJ Rust: New Functionality for Cargo Features](https://www.reddit.com/r/rust/comments/jka6bn/intellij_rust_new_functionality_for_cargo_features/)
-- url: https://blog.jetbrains.com/clion/2020/10/intellij-rust-new-functionality-for-cargo-features/
----
-
-## [9][Learning C/C++ as a Rustacean?](https://www.reddit.com/r/rust/comments/jkw8dn/learning_cc_as_a_rustacean/)
-- url: https://www.reddit.com/r/rust/comments/jkw8dn/learning_cc_as_a_rustacean/
----
-Hello everyone, I would like to hear from those of you who started Rust as your first low-level programming language and then move on to learn C/C++.
-
-If I search for "C"/"C++" in r/rust, almost all threads are about comparisons between C/C++ and Rust and switching *from C/C++ to Rust*. However, my situation is different. I chose to learn Rust as my first low-level language simply because it has great and easily accessible documentation and tutorials, as well as awesome dependency management. However, soon I realized that to become a qualified computational biologist (that's what I plan to pursue in PhD, although my current major is biochemistry which does not require much programming) I have to learn C/C++ because almost all currently available bioinformatics libraries are written in C/++ (either as standalone C/C++ libraries or Python/R extensions). 
-
-I need to learn not only the C/C++ language itself but also how it is used in reality (managing real projects, understanding different ways by which other people manage their projects, idiomatic practices, understanding code that was idiomatic in old standards but not idiomatic anymore in C++20, and understanding why people are re-inventing their own `vec`, `string` and even `bool`).
-
-In addition, I would like to learn best practices for re-writing C/C++ code in Rust  and for replacing part of a complex C/C++ project with Rust (if there are any).
-
-So what's the *least painful* way to learn all these, in November 2020?
-## [10][Advanced Cargo [features] Usage | blog.turbo.fish](https://www.reddit.com/r/rust/comments/jkn4gu/advanced_cargo_features_usage_blogturbofish/)
-- url: https://blog.turbo.fish/cargo-features/
----
-
-## [11][Why did you start learning Rust?](https://www.reddit.com/r/rust/comments/jkj1sn/why_did_you_start_learning_rust/)
-- url: https://www.reddit.com/r/rust/comments/jkj1sn/why_did_you_start_learning_rust/
----
-I'm a relatively new Rust developer, I started to learn Rust in mid-2020 and I fell in love with the language, I wanted to ask what made YOU take the decision to learn Rust?
-## [12][How heavy is Rc&lt;RefCell&lt;T&gt;?](https://www.reddit.com/r/rust/comments/jkh99u/how_heavy_is_rcrefcellt/)
-- url: https://www.reddit.com/r/rust/comments/jkh99u/how_heavy_is_rcrefcellt/
----
-Hi all! So i am implementing algorithms for fun in Rust and i am now on graphs and similar, And for mutable data that has references everywhere the only sane way i have found is Rc&lt;RefCell&lt;T&gt;&gt;. Using this however made wonder, how heavy is this reference counting? Or is it basically irrelevant in terms of speed lost? 
+What is the status of risc-v support?
+Thanks

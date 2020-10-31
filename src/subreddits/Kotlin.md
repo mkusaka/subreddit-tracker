@@ -46,47 +46,84 @@ On October 12–15 we hosted the Kotlin 1.4 Online Event, and over the course of
 Please post your questions as top-level comments to this post.
 
 We look forward to hearing from you!
-## [2][kotlinx.coroutines 1.4.0: Introducing StateFlow and SharedFlow](https://www.reddit.com/r/Kotlin/comments/jkuyy2/kotlinxcoroutines_140_introducing_stateflow_and/)
+## [2][Lint warning "assignment should be lifted out of if"](https://www.reddit.com/r/Kotlin/comments/jlhm1g/lint_warning_assignment_should_be_lifted_out_of_if/)
+- url: https://www.reddit.com/r/Kotlin/comments/jlhm1g/lint_warning_assignment_should_be_lifted_out_of_if/
+---
+I am sorry if this question is kinda lame.. but i am killing myself last hour or so to figure out what's the issue... In Android Studio Kotlin I want to clean my code based on lint warnings. Cleaned everything except this:
+
+&amp;#x200B;
+
+var myCoolImage = BitmapFactory.decodeFile(myCoolFile.toString())
+
+val hhh = myCoolImage.height
+
+val www = myCoolImage.width
+
+if (hhh &gt; www) myCoolImage = resizeBitmap(myCoolImage,600,400)
+
+else myCoolImage = resizeBitmap(myCoolImage,400,600)
+
+&amp;#x200B;
+
+Simple code to check if photo is horizontal or vertical and to resize it accordingly to that.
+
+This code works but gives warning "assignment should be lifted out of if"
+
+Sooo... Any idea what to do? :)
+## [3][AndroidBites | Java ☕️ Maps 🗺 on the Kotlin.](https://www.reddit.com/r/Kotlin/comments/jle9xu/androidbites_java_maps_on_the_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/jle9xu/androidbites_java_maps_on_the_kotlin/
+---
+Most of the Kotlin developers are migrated from the Java environment, coming to Kotlin the collection framework has some tweaks which makes It so awesome to work with, In Today’s article, let's understand how Kotlin catered to Java Maps in his its colors, and few other concepts that will help you understand stdlib of collection
+
+https://chetan-garg36.medium.com/java-%EF%B8%8F-maps-on-the-kotlin-8930b9f55d8d
+## [4][kotlinx.coroutines 1.4.0: Introducing StateFlow and SharedFlow](https://www.reddit.com/r/Kotlin/comments/jkuyy2/kotlinxcoroutines_140_introducing_stateflow_and/)
 - url: https://blog.jetbrains.com/kotlin/2020/10/kotlinx-coroutines-1-4-0-introducing-stateflow-and-sharedflow/
 ---
 
-## [3][Best Way To Learn Kotlin](https://www.reddit.com/r/Kotlin/comments/jks1yh/best_way_to_learn_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/jks1yh/best_way_to_learn_kotlin/
----
-I am a CS graduate and I have experience with C++, C#.NET and Python. But I have never worked with Java.
-
-I want to learn Kotlin from the ground-up, and not just learn it quickly and without depth.
-
-I REALLY want to know how everything works and how each piece fits in the language. My goal is to become an Android Developer, but after learning Kotlin first.
-
-Are there any resources you would recommend to me? I really prefer resources with plenty of exercies, videos are okay only if they contain exercises as well, and no, *think of something, and build it* is not much of a help, because I have no practical problems that I can currently solve with plain Kotlin on the commandline.
-## [4][Koin automatic injection](https://www.reddit.com/r/Kotlin/comments/jkuhap/koin_automatic_injection/)
-- url: https://www.reddit.com/r/Kotlin/comments/jkuhap/koin_automatic_injection/
----
-Libraries like Guice or Dagger allow you to inject a dependency, if all of this dependency dependencies are satisfied (through your module definition).
-
-This comes in handy to avoid having huge module definitions and also you can inject classes without dependencies without adding them to the module definition.
-
-Any idea on how to do this on Koin or Kodein?
-## [5][Migrating the deprecated Kotlin Android Extensions compiler plugin to ViewBinding](https://www.reddit.com/r/Kotlin/comments/jkt7up/migrating_the_deprecated_kotlin_android/)
-- url: https://melegy.medium.com/migrating-the-deprecated-kotlin-android-extensions-compiler-plugin-to-viewbinding-d234c691dec7
+## [5][We are participating in the development of the international Kotlin Multiplatform community](https://www.reddit.com/r/Kotlin/comments/jkzqc5/we_are_participating_in_the_development_of_the/)
+- url: https://www.reddit.com/r/Kotlin/comments/jkzqc5/we_are_participating_in_the_development_of_the/
 ---
 
-## [6][Suggestion: an option to add automatic reversals for boolean functions](https://www.reddit.com/r/Kotlin/comments/jkuowv/suggestion_an_option_to_add_automatic_reversals/)
-- url: https://www.reddit.com/r/Kotlin/comments/jkuowv/suggestion_an_option_to_add_automatic_reversals/
----
-So a way to set an option that will create opposite functions for boolean functions, just like it creates getters and setters.  
-For example:
+Our specialists at IceRock have contributed to the documentation for the Kotlin Multiplatform Mobile portal (https://kotlinlang.org/lp/mobile/). This has been prepared by the JetBrains team, the creators of the Kotlin programming language. The portal helps programmers who study this language independently and use the multi-platform technology.  
 
-`class Foo {`  
-`...`  
-`fun isEmpty() = this.amountOfBar == 0`  
-`fun isBig() = this.amountOfBar &gt; 0`  
-`}`  
-It'll then automatically generate these functions:  
-`@Kotlin.internal.InlineOnly inline fun Foo.isNotEmpty() = !this.isEmpty()`  
-`@Kotlin.internal.InlineOnly inline fun Foo.isNotBig() = !this.isBig()`  
-Which will inline on compilation. This will make coding more fluent, so no need to go to the back of the function call to add a `!`.
+Android developers are familiar with Kotlin and understand its benefits – it's capacious, secure, and user-friendly. And iOS app developers can easily learn the syntax because it is similar to Swift.
+
+Kotlin Multiplatform Mobile (multi-platform) is a set of tools for developing cross-platform apps. It enables business logic to be written just once for two operating systems, Android and iOS. The multi-platform helps reduce the time spent on writing, testing and debugging apps.
+
+We have been using this technology at IceRock for more than 2 years and have released 14 projects based on it. We will talk about this soon in our business cases.
+Thanks to their experience in Kotlin development, our specialists have participated in writing documentation for the portal. It contains the following information:
+
+●      multi-platform projects and how to get started with them;
+●      the mobile Kotlin multi-platform allowing such projects to be created;
+●      what libraries to use and where to find them;
+●      the business cases that allow the experience of other development teams to be studied. 
+
+It also provides technical documentation and guides for common problem-solving. 
+Several portal sections have been written by our specialists: Vladislav Areshkin @tetraquark_v and Andrey Chernov.
+ 
+Links are provided below. The content is in English.
+
+Organizing the code writing process using the Kotlin mobile multi-platform: https://kotlinlang.org/docs/mobile/organize-process-around-kmm.html
+
+Using the SQLDelight database for the multi-platform: https://kotlinlang.org/docs/mobile/configure-sqldelight-for-data-storage.html
+
+Ktor framework for building an asynchronous client/server architecture that provides high program performance: https://kotlinlang.org/docs/mobile/use-ktor-for-networking.html
+
+The Kotlin Multiplatform language libraries: https://libs.kmp.icerock.dev
+## [6][Struggling with Leet and Kotlin](https://www.reddit.com/r/Kotlin/comments/jl0b8q/struggling_with_leet_and_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/jl0b8q/struggling_with_leet_and_kotlin/
+---
+My first post here, so please forgive me if this is inappropriate.
+
+I have been a professional programmer for a very long time (more than 35 years), and have moved over time from (including others) assembler, to C, to C++, to Java, to Scala, to Kotlin.
+
+To pass the time during "covid lockdown" I decided a couple of weeks ago to flex my Kotlin skills and tackle lots of "programming challenges" on sites like HackerRank and Leet.
+
+Now that I have tackled about 100 such problems, I have noticed that my clean and functional Kotlin code almost always rates "slower than 95% of submissions" or some such, and the only way to get it ranking higher is to go really low-level in the code, doing pointer-based stuff in the style of C (or, specifically, index into arrays using Java-style code).
+
+I do understand that the purpose of functional programming is to write elegant and expressive code, but time and again I end up rewriting my submissions to improve my ranking on these sites.
+
+Of course, in "real life" performance isn't always critical, but at the same time it has me pondering hard on whether my love for "functional" code means I am doomed to writing slow code.
 ## [7][Junior iOS developer looking to expand my skill set !](https://www.reddit.com/r/Kotlin/comments/jkuhoy/junior_ios_developer_looking_to_expand_my_skill/)
 - url: https://www.reddit.com/r/Kotlin/comments/jkuhoy/junior_ios_developer_looking_to_expand_my_skill/
 ---
@@ -103,34 +140,40 @@ From what i've seen so far the differences between Swift and Kotlin aren't massi
 &amp;#x200B;
 
 Thanks!
-## [8][Is there `decodeFromStringOrNull()` method in kotlinx.serialization](https://www.reddit.com/r/Kotlin/comments/jkln7r/is_there_decodefromstringornull_method_in/)
-- url: https://www.reddit.com/r/Kotlin/comments/jkln7r/is_there_decodefromstringornull_method_in/
+## [8][Best Way To Learn Kotlin](https://www.reddit.com/r/Kotlin/comments/jks1yh/best_way_to_learn_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/jks1yh/best_way_to_learn_kotlin/
 ---
-Is there such method or any with other name which supports wrong type as parameter or something not a JSON object as an argument so that it causes result to be null?
-## [9][For Complex Applications, Rust is as Productive as Kotlin](https://www.reddit.com/r/Kotlin/comments/jkcinl/for_complex_applications_rust_is_as_productive_as/)
-- url: https://ferrous-systems.com/blog/rust-as-productive-as-kotlin/
+I am a CS graduate and I have experience with C++, C#.NET and Python. But I have never worked with Java.
+
+I want to learn Kotlin from the ground-up, and not just learn it quickly and without depth.
+
+I REALLY want to know how everything works and how each piece fits in the language. My goal is to become an Android Developer, but after learning Kotlin first.
+
+Are there any resources you would recommend to me? I really prefer resources with plenty of exercies, videos are okay only if they contain exercises as well, and no, *think of something, and build it* is not much of a help, because I have no practical problems that I can currently solve with plain Kotlin on the commandline.
+## [9][Koin automatic injection](https://www.reddit.com/r/Kotlin/comments/jkuhap/koin_automatic_injection/)
+- url: https://www.reddit.com/r/Kotlin/comments/jkuhap/koin_automatic_injection/
+---
+Libraries like Guice or Dagger allow you to inject a dependency, if all of this dependency dependencies are satisfied (through your module definition).
+
+This comes in handy to avoid having huge module definitions and also you can inject classes without dependencies without adding them to the module definition.
+
+Any idea on how to do this on Koin or Kodein?
+## [10][Migrating the deprecated Kotlin Android Extensions compiler plugin to ViewBinding](https://www.reddit.com/r/Kotlin/comments/jkt7up/migrating_the_deprecated_kotlin_android/)
+- url: https://melegy.medium.com/migrating-the-deprecated-kotlin-android-extensions-compiler-plugin-to-viewbinding-d234c691dec7
 ---
 
-## [10][Netflix Android and iOS Studio Apps — now powered by Kotlin Multiplatform](https://www.reddit.com/r/Kotlin/comments/jk0rh5/netflix_android_and_ios_studio_apps_now_powered/)
-- url: https://medium.com/@NetflixTechBlog/netflix-android-and-ios-studio-apps-kotlin-multiplatform-d6d4d8d25d23
+## [11][Suggestion: an option to add automatic reversals for boolean functions](https://www.reddit.com/r/Kotlin/comments/jkuowv/suggestion_an_option_to_add_automatic_reversals/)
+- url: https://www.reddit.com/r/Kotlin/comments/jkuowv/suggestion_an_option_to_add_automatic_reversals/
 ---
+So a way to set an option that will create opposite functions for boolean functions, just like it creates getters and setters.  
+For example:
 
-## [11][Android Developer for Drizly [Remote, US]](https://www.reddit.com/r/Kotlin/comments/jkimpg/android_developer_for_drizly_remote_us/)
-- url: https://www.reddit.com/r/Kotlin/comments/jkimpg/android_developer_for_drizly_remote_us/
----
- Drizly is looking for an Android Developer to join our small team (currently a team of 4) to help with our Kotlin Migration. So roughly the work would roughly entail and revolve around large rewrites, feature pushing, reworking some of the technical debt (thats in java) as well as fine tuning some rewrites as well.  
-
-
-Also, we are a start up, its a small mobile team, so if you wanted to branch out to our RoR backend api integrations or even to the swift and iOS side of things, we are happy for someone to go down those paths!  
-
-
-So all in all, we are pretty flexible on alot, besides the fact the coding test will be done in kotlin.  
-
-
-If you are interested in hearing more about it, feel free to email me. (also please redact any information when you do apply, and if you reach out to me to schedule a call, dont worry we have another way to move you through while trying to remove implicit bias!)  
-
-
-This role is also a full time remote role, though applicants do have to be based in the US (its a finance thing).  
-
-
-[kenneth.han@drizly.com](mailto:kenneth.han@drizly.com) or just [apply](https://jobs.lever.co/drizly/22d7f3b6-181d-43df-a9f5-acfc9383db6c?lever-origin=applied&amp;lever-source%5B%5D=reddit)!
+`class Foo {`  
+`...`  
+`fun isEmpty() = this.amountOfBar == 0`  
+`fun isBig() = this.amountOfBar &gt; 0`  
+`}`  
+It'll then automatically generate these functions:  
+`@Kotlin.internal.InlineOnly inline fun Foo.isNotEmpty() = !this.isEmpty()`  
+`@Kotlin.internal.InlineOnly inline fun Foo.isNotBig() = !this.isBig()`  
+Which will inline on compilation. This will make coding more fluent, so no need to go to the back of the function call to add a `!`.

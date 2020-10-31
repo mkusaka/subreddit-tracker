@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/jkw00q/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/jkw00q/weekly_anything_goes_thread/
+## [1][App Feedback Thread - October 31, 2020](https://www.reddit.com/r/androiddev/comments/jlhjcn/app_feedback_thread_october_31_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/jlhjcn/app_feedback_thread_october_31_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - October 26, 2020](https://www.reddit.com/r/androiddev/comments/jicfz7/weekly_questions_thread_october_26_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/jicfz7/weekly_questions_thread_october_26_2020/
 ---
@@ -25,99 +40,95 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][How can I do custom notch on CardView like this?](https://www.reddit.com/r/androiddev/comments/jksyrl/how_can_i_do_custom_notch_on_cardview_like_this/)
+## [3][Looking for a code review for a small todo-list app using Flows, Channels, DataStore, Hilt, Room, etc.](https://www.reddit.com/r/androiddev/comments/jlgi1h/looking_for_a_code_review_for_a_small_todolist/)
+- url: https://www.reddit.com/r/androiddev/comments/jlgi1h/looking_for_a_code_review_for_a_small_todolist/
+---
+My focus in this small project was to get MVVM right and separate the logic between the fragment and the ViewModel properly. In the past, I've been writing a lot of logic in my fragments and I'm trying to learn how to do that better.
+
+I use Channels converted to Flow to emit events from my ViewModels for my fragments to listen to.
+
+Can someone take a look at this project and give some feedback? Any big mistakes?
+
+[https://github.com/codinginflow/ToDoPrep](https://github.com/codinginflow/ToDoPrep)
+## [4][AndroidBites | Java ☕️ Maps 🗺 on the Kotlin.](https://www.reddit.com/r/androiddev/comments/jle5oc/androidbites_java_maps_on_the_kotlin/)
+- url: https://chetan-garg36.medium.com/java-%EF%B8%8F-maps-on-the-kotlin-8930b9f55d8d
+---
+
+## [5][How do I show a toast just below the Toolbar](https://www.reddit.com/r/androiddev/comments/jl5wcl/how_do_i_show_a_toast_just_below_the_toolbar/)
+- url: https://www.reddit.com/r/androiddev/comments/jl5wcl/how_do_i_show_a_toast_just_below_the_toolbar/
+---
+I need to show a toast just below the toolbar. It is a standard activity with no frills
+
+&amp;#x200B;
+
+&gt;override fun onCreateView(savedInstance: Bundle?) {  
+&gt;  
+&gt;super.onCreateView(savedBundle)  
+&gt;  
+&gt;setContentView(R.layout.my\_layout)  
+&gt;  
+&gt;val toast = Toast(this).apply {  
+&gt;  
+&gt;setGravity(Gravity.***TOP*** | Gravity.***CENTER\_HORIZONTAL***, 0, 0)setDuration(Toast.***LENGTH\_LONG***)  
+&gt;  
+&gt;show(R.string.success\_string)  
+&gt;  
+&gt;}  
+&gt;  
+&gt;. . . . . . . Other code in the function . . . .  
+&gt;  
+&gt;}
+
+&amp;#x200B;
+
+Activity definition in the manifest
+
+&amp;#x200B;
+
+&gt;&lt;**activity android:name=".activities.InputActivity"** /&gt;
+
+&amp;#x200B;
+
+I have  `setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0)`. I know that I can set the y offset but I don't know how the y offset should be calculated. The most relevant article on SO is from 2013. Any suggestions would be gratefully appreciated.
+
+[https://stackoverflow.com/questions/18420445/how-to-show-custom-toast-below-actionbar](https://stackoverflow.com/questions/18420445/how-to-show-custom-toast-below-actionbar)
+## [6][How to fix app:DexBuilderDebug build failed error?](https://www.reddit.com/r/androiddev/comments/jlgryb/how_to_fix_appdexbuilderdebug_build_failed_error/)
+- url: https://www.reddit.com/r/androiddev/comments/jlgryb/how_to_fix_appdexbuilderdebug_build_failed_error/
+---
+This is my second time building an app with android studio. I’m trying to build a currency conversion app that calls an API to do the conversion. However, when I run the app, I get the dexBuilderDebug error. I’m only getting this error after creating the interface and class for retrofit. 
+
+I have my code and errors posted on [stackoverflow ](https://stackoverflow.com/questions/64620823/android-studio-build-failed-task-appdexbuilderdebug-failed). Has anyone ran into the same error before? How did you fix it? I can’t even understand what is causing the error
+## [7][How can I do custom notch on CardView like this?](https://www.reddit.com/r/androiddev/comments/jksyrl/how_can_i_do_custom_notch_on_cardview_like_this/)
 - url: https://i.redd.it/uncfvma607w51.png
 ---
 
-## [4][Leak detection: Android Studio vs LeakCanary](https://www.reddit.com/r/androiddev/comments/jkmcu5/leak_detection_android_studio_vs_leakcanary/)
-- url: https://dev.to/pyricau/leak-detection-android-studio-vs-leakcanary-35j5
+## [8][New android dev, what do I need to know to do C/C++?](https://www.reddit.com/r/androiddev/comments/jlc1tm/new_android_dev_what_do_i_need_to_know_to_do_cc/)
+- url: https://www.reddit.com/r/androiddev/comments/jlc1tm/new_android_dev_what_do_i_need_to_know_to_do_cc/
+---
+Hi, I'm totally new to Android dev. I'm hoping someone can give me a brief roadmap on what I'm going to need to know to work effectively with Android Studio and C++ so I can start reading the right articles and so on. For example, do I need to know "normal" Java android-development for the NDK to make sense? Are there decent resources for learning C++ oriented Android dev that aren't out of date? Are all NDK apps hybrids where at some point I'm dealing with the JNI?
+
+I'm mucking about with JUCE but I'm a big believer in understanding what your framework is doing and not developing more married to the framework than need be, so I feel I should be educating myself outside of just JUCE oriented resources.
+
+Thanks!
+## [9][Avoiding I/O in gradle ?](https://www.reddit.com/r/androiddev/comments/jkyr0v/avoiding_io_in_gradle/)
+- url: https://www.reddit.com/r/androiddev/comments/jkyr0v/avoiding_io_in_gradle/
+---
+I have seen some threads recommending that you avoid I/O during gradle configuration. My company currently does this to get the branch name, build time, and git SHA, into BuildConfig. I'm trying to understand the reasoning of why I should avoid it before I bring it up to my coworkers.
+
+For these specific examples I replaced the git command with a static string, and did `./gradlew assemble* --dry-run --rerun-tasks --profile` and those configuration times dropped from around 3s to 1.5s. that's a nice percentage but not all that significant since that's only for configuration.
+
+What else should I know? I have read some threads alluding to impacting incremental builds but can't find concrete info about why
+## [10][Personal or business gmail address for developer account](https://www.reddit.com/r/androiddev/comments/jlboit/personal_or_business_gmail_address_for_developer/)
+- url: https://www.reddit.com/r/androiddev/comments/jlboit/personal_or_business_gmail_address_for_developer/
+---
+I plan on releasing a paid app to the play store soon. I don’t really expect it to make me much more than beer money, so I’m not incorporating as an LLC or anything. 
+
+I will be getting a separate gmail account though for the developer account. When I sign up for a new gmail address should it be a personal one since I’m just doing business as a sole proprietor (US based) or a business gmail account since I am selling something, which is a business transaction for the little it’ll be worth?
+## [11][Is there a known problem with chrome, and samsung galaxy phones having broken grayscale/black levels?](https://www.reddit.com/r/androiddev/comments/jl702w/is_there_a_known_problem_with_chrome_and_samsung/)
+- url: https://www.reddit.com/r/androiddev/comments/jl702w/is_there_a_known_problem_with_chrome_and_samsung/
+---
+Chrome seems to make almost every video that should have either black become light gray, or a value that should be 100% white becomes grey instead.
+## [12][Mobile Developers Cafe Weekly Issue #12 🎉🎊 is out](https://www.reddit.com/r/androiddev/comments/jlcm71/mobile_developers_cafe_weekly_issue_12_is_out/)
+- url: https://archive.mobiledeveloperscafe.com/p/issue12
 ---
 
-## [5][I made a library alternative to CustomTabs](https://www.reddit.com/r/androiddev/comments/jkr2so/i_made_a_library_alternative_to_customtabs/)
-- url: https://www.reddit.com/r/androiddev/comments/jkr2so/i_made_a_library_alternative_to_customtabs/
----
-The main reason to develop this was the fact that CustomTabs needs a service provider installed in the device to launch the tabs eg: Chrome, Brave, etc.
-
-So I made my own version of it which uses `WebView` to load pages. Plus, it supports private browsing &amp; dark mode (for API &gt;= 29).
-
-Any suggestions &amp; improvements are most welcome!
-
-[Github](https://github.com/KaustubhPatange/CustomWebviewTabs)
-## [6][ConstraintLayout 2.0.4](https://www.reddit.com/r/androiddev/comments/jkkziq/constraintlayout_204/)
-- url: https://androidstudio.googleblog.com/2020/10/constraintlayout-204.html
----
-
-## [7][Multiple Ad Banners for every Fragment vs Single Shared Ad Banner. Revenue difference? (AdMob or others)](https://www.reddit.com/r/androiddev/comments/jkw7ri/multiple_ad_banners_for_every_fragment_vs_single/)
-- url: https://www.reddit.com/r/androiddev/comments/jkw7ri/multiple_ad_banners_for_every_fragment_vs_single/
----
-So I was curious whether it makes a difference, in terms of revenue, to show a different Ad Banner on every Fragment or if it would get the same results as just showing the same one from the Activity.
-
-I'm not sure if I explained myself properly:
-
-OPTION 1:
-
-Activity1-&gt;\[no ad banner\]
-
-* Fragment1-&gt;AdBanner1
-* Fragment2-&gt;AdBanner2
-* Fragment3-&gt;AdBanner3
-
-OPTION 2:
-
-Activity1-&gt;AdBanner1
-
-* Fragment1-&gt;(same AdBanner1)
-* Fragment2-&gt;(same AdBanner1)
-* Fragment3-&gt;(same AdBanner1)
-## [8][Java 9+ support for Android projects is being worked on](https://www.reddit.com/r/androiddev/comments/jkbj97/java_9_support_for_android_projects_is_being/)
-- url: https://issuetracker.google.com/issues/139013660#comment6
----
-
-## [9][Scrollytelling on native Android?](https://www.reddit.com/r/androiddev/comments/jkve8a/scrollytelling_on_native_android/)
-- url: https://www.reddit.com/r/androiddev/comments/jkve8a/scrollytelling_on_native_android/
----
-There are quite a lot of websites out there that use scrolling as an element of storytelling (scrubbing through a video, pinch into images, etc.). A good example for that is this website: AirPods Pro (sorry for the Apple reference).
-
-For a project we're trying to accomplish something similar, but native. I haven't come across many Android related references but came up with a few options:
-
-**Build the website and wrap it in a WebView.**  
-Pro: We could use it for several platforms  
-Contra: I think the UX will suffer quite a bit from that. Also, we need a click interaction to trigger sound.
-
-**Use a list (like RecyclerView) with video players and some custom views**  
-Pro: Native experience  
-Contra: Not sure if this is feasible. f.ex. linking the video progress to scroll is either very hard or not possible after all.
-
-Does anyone of you already accomplished something similar or has some tips how to create such an experience?
-## [10][Google Elevation APIs](https://www.reddit.com/r/androiddev/comments/jkt7iv/google_elevation_apis/)
-- url: https://www.reddit.com/r/androiddev/comments/jkt7iv/google_elevation_apis/
----
-Hello! We will have our project at Microwave Design, which one of the crucial data we need to get is the ELEVATION.
-
-Fortunately, Google offers such API: [https://developers.google.com/maps/documentation/elevation/overview.](https://developers.google.com/maps/documentation/elevation/overview)
-
-But I don't really get the...
-
-&amp;#x200B;
-
-"**Pay only for what you use.**
-
-Our pricing scales to fit your needs with no commitments, termination fees, or usage limits — and you can use mobile Maps at no charge."
-
-&amp;#x200B;
-
-Does it mean that I will get charged ONLY for every request? or does google will charge me EVERY month?  So it means that my card would not be credited unless the bulk number of requests on API happens?
-
-Since I will be only using this API for around 100 to 500 requests. Thank you!
-
-PS. Im using a python script to extract data.
-## [11][I need ideas for features for a mobile app that teaches programming in Minecraft.](https://www.reddit.com/r/androiddev/comments/jkvgnk/i_need_ideas_for_features_for_a_mobile_app_that/)
-- url: https://www.reddit.com/r/androiddev/comments/jkvgnk/i_need_ideas_for_features_for_a_mobile_app_that/
----
-What kind of features and functionalities should I integrate into an app that is teaching programming in Minecraft? So far I have quizzes and explanatory videos and I need a lot more.
-## [12][AR Core Android Tutorial without Sceneform?](https://www.reddit.com/r/androiddev/comments/jkp2cs/ar_core_android_tutorial_without_sceneform/)
-- url: https://www.reddit.com/r/androiddev/comments/jkp2cs/ar_core_android_tutorial_without_sceneform/
----
-Hi everyone! 
-
-I am new to ARCore and it seems that most tutorials I find are related to Sceneform. However, sceneform doesn't seem to be supported in the newer versions of Android Studio ( which can only mean that it is being dropped eventually ). So it would really help me if there were some tutorials on ARCore android development without Sceneform.

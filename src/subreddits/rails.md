@@ -19,7 +19,65 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Clueless about how to fetch data from an API gem](https://www.reddit.com/r/rails/comments/jkt9ab/clueless_about_how_to_fetch_data_from_an_api_gem/)
+## [2][How to reference new active storage file after save in model?](https://www.reddit.com/r/rails/comments/jlbpt1/how_to_reference_new_active_storage_file_after/)
+- url: https://www.reddit.com/r/rails/comments/jlbpt1/how_to_reference_new_active_storage_file_after/
+---
+I am trying to read meta information from mp3s uploaded using taglib-ruby gem. It doesn't seem to be finding the file to read in though. My active storage is set up to store in public/uploads. How would I reference the recently uploaded file in this model?
+
+    class Song &lt; ApplicationRecord
+      belongs_to :band
+      has_one_attached :file, dependent: :destroy
+    
+      after_save :set_id3_tags_in_database
+    
+      require 'taglib'
+    
+      def set_id3_tags_in_database
+      TagLib::MPEG::File.open(file.filename) do |file|
+         tag = file.id3v2_tag
+         tag.title
+         tag.album
+         tag.artist
+       end
+      end
+    end
+
+Not even sure if I should put that in the model or in the controller either.
+
+&amp;#x200B;
+
+Any thoughts are appreciated.
+## [3][What are your dislikes about the "rails new" command ?](https://www.reddit.com/r/rails/comments/jkwpxr/what_are_your_dislikes_about_the_rails_new_command/)
+- url: https://www.reddit.com/r/rails/comments/jkwpxr/what_are_your_dislikes_about_the_rails_new_command/
+---
+The "rails new" command is very handy when you have to test something in complete isolation. Here are my complains about that command :
+
+\* Too much things included. It would have been better to start with raw defaults and then only include  actual needs.
+
+\* To the contrary, very basic things (or things that I consider very basic) are missing : env var, code coverage, http mocking... I know there are gems for this, but I find it weird that ActionText is a default, but env var not.
+
+\* Webpacker seems unfinished feature so far. Webpack manage JS, but Sprockets others assets.
+
+\* I miss a default HomeController or WelcomeController. Same can be said for the view.
+
+\* .gitignore is not bad but still miss a few lines
+
+\* No auto-refresh of the browser when coding the view (or backend) part.
+
+\* sqlite by default. I don't know a Rails coders who uses it.
+
+\* sassc is too slow to install. Defaut compilation (without tweaking) of webpacker assets are also too slow.
+
+Bottom line : a **very big thank you** to Rails contributors, too much is better than not enough, and there are good ways to start with better defaults that match your needs anyway. Just wanted to share my thoughts with the community. Do you have also things you dislike about the Rails default tools ?
+## [4][New article: saving address as a hash with serialization](https://www.reddit.com/r/rails/comments/jl4eco/new_article_saving_address_as_a_hash_with/)
+- url: https://www.reddit.com/r/rails/comments/jl4eco/new_article_saving_address_as_a_hash_with/
+---
+I don't like having separate columns for `city`, `state`, `street_address_1` etc...So here's how I store them as a hash and *edit them in a form*: [https://blog.corsego.com/2020/10/ruby-on-rails-serialization-saving.html](https://blog.corsego.com/2020/10/ruby-on-rails-serialization-saving.html) **But... do you think this approach makes sence?**
+## [5][devise_ldap_authenticatable API Based](https://www.reddit.com/r/rails/comments/jl00hg/devise_ldap_authenticatable_api_based/)
+- url: https://www.reddit.com/r/rails/comments/jl00hg/devise_ldap_authenticatable_api_based/
+---
+Does anyone know how to use devise\_ldap\_authenticatable as a bare bones API?
+## [6][Clueless about how to fetch data from an API gem](https://www.reddit.com/r/rails/comments/jkt9ab/clueless_about_how_to_fetch_data_from_an_api_gem/)
 - url: https://www.reddit.com/r/rails/comments/jkt9ab/clueless_about_how_to_fetch_data_from_an_api_gem/
 ---
 Hi, I want to start utilizing APIs in my Rails apps but I am completely lost on how to actually get data from APIs when using a gem.
@@ -45,29 +103,7 @@ search = GiantBomb::Search.new().query(:query)
 I'm not sure what to do beyond this or even if it's right (my search is not working so I assume the latter).
 
 Any tips or guides? I've googled for API guides but most seem to be fetching data via an API key and now on how to use an API gem.
-## [3][What are your dislikes about the "rails new" command ?](https://www.reddit.com/r/rails/comments/jkwpxr/what_are_your_dislikes_about_the_rails_new_command/)
-- url: https://www.reddit.com/r/rails/comments/jkwpxr/what_are_your_dislikes_about_the_rails_new_command/
----
-The "rails new" command is very handy when you have to test something in complete isolation. Here are my complains about that command :
-
-\* Too much things included. It would have been better to start with raw defaults and then only include  actual needs.
-
-\* To the contrary, very basic things (or things that I consider very basic) are missing : env var, code coverage, http mocking... I know there are gems for this, but I find it weird that ActionText is a default, but env var not.
-
-\* Webpacker seems unfinished feature so far. Webpack manage JS, but Sprockets others assets.
-
-\* I miss a default HomeController or WelcomeController. Same can be said for the view.
-
-\* .gitignore is not bad but still miss a few lines
-
-\* No auto-refresh of the browser when coding the view (or backend) part.
-
-\* sqlite by default. I don't know a Rails coders who uses it.
-
-\* sassc is too slow to install. Defaut compilation (without tweaking) of webpacker assets are also too slow.
-
-Bottom line : a **very big thank you** to Rails contributors, too much is better than not enough, and there are good ways to start with better defaults that match your needs anyway. Just wanted to share my thoughts with the community. Do you have also things you dislike about the Rails default tools ?
-## [4][Unused methods slow down rspec?](https://www.reddit.com/r/rails/comments/jknjzu/unused_methods_slow_down_rspec/)
+## [7][Unused methods slow down rspec?](https://www.reddit.com/r/rails/comments/jknjzu/unused_methods_slow_down_rspec/)
 - url: https://www.reddit.com/r/rails/comments/jknjzu/unused_methods_slow_down_rspec/
 ---
 I've been working on upgrading an old large Rails 4.2 project to 5.2 and hit this debugging some stuff... if I leave the last two methods (descendants/debug) uncommented, rspec tests take 3-4 times longer than if these methods are commented out. The methods aren't called anywhere (I only use this in console) ... any idea why that is? I wonder if I'm doing this unintentionally in other places.  
@@ -91,7 +127,7 @@ class ApplicationRecord &lt; ActiveRecord::Base
   end
 end
 ```
-## [5][[Help] Using Hstore in Form](https://www.reddit.com/r/rails/comments/jknjx7/help_using_hstore_in_form/)
+## [8][[Help] Using Hstore in Form](https://www.reddit.com/r/rails/comments/jknjx7/help_using_hstore_in_form/)
 - url: https://www.reddit.com/r/rails/comments/jknjx7/help_using_hstore_in_form/
 ---
 I have a **emails** field in my **contacts** table which is a hstore: `t.hstore :emails` . My goal is to store key value pairs of label and email. For example if a use has 2 emails:
@@ -103,7 +139,7 @@ How do I go about making a form where a user can select the label from a select 
 I would also need to permit the emails param in the controller which is giving me issues.
 
 Thanks
-## [6][Read this medium post about "devise-jwt" and some question popped in my head.](https://www.reddit.com/r/rails/comments/jkm7gt/read_this_medium_post_about_devisejwt_and_some/)
+## [9][Read this medium post about "devise-jwt" and some question popped in my head.](https://www.reddit.com/r/rails/comments/jkm7gt/read_this_medium_post_about_devisejwt_and_some/)
 - url: https://www.reddit.com/r/rails/comments/jkm7gt/read_this_medium_post_about_devisejwt_and_some/
 ---
 I was searching for a good API authentication way in rails and I found this medium article: 
@@ -115,13 +151,13 @@ It really explained the implementation phase very well, but I have a question, h
 These are unsolved for me. 
 
 P.S : Haven't implemented what I read yet. I may do it in a better time (It's almost 4 A.M in my zone! and I'm too sleepy!)
-## [7][Audited vs papertrail gem for auditing table changes?](https://www.reddit.com/r/rails/comments/jk9i0y/audited_vs_papertrail_gem_for_auditing_table/)
+## [10][Audited vs papertrail gem for auditing table changes?](https://www.reddit.com/r/rails/comments/jk9i0y/audited_vs_papertrail_gem_for_auditing_table/)
 - url: https://www.reddit.com/r/rails/comments/jk9i0y/audited_vs_papertrail_gem_for_auditing_table/
 ---
 I'm currently looking to use either one of these two for auditing changes made by specific user roles on a rails 6 ecommerce app using mysql. They both seem similar and I'm currently leaning towards papertrail due to the more frequent gem updates, but I was curious if there is any specific advantage of using one over the other(performance, ease of use...etc) or anyone knows of any pros/cons that stick out.
 
 Would be keen to know if people have used any other gems that seemed good as well.
-## [8][How can I make this fetch?](https://www.reddit.com/r/rails/comments/jkbozb/how_can_i_make_this_fetch/)
+## [11][How can I make this fetch?](https://www.reddit.com/r/rails/comments/jkbozb/how_can_i_make_this_fetch/)
 - url: https://www.reddit.com/r/rails/comments/jkbozb/how_can_i_make_this_fetch/
 ---
 Hey Rails stars,
@@ -174,32 +210,3 @@ Am working with ActiveAdmin and I have a custom page am calling "Approvals" with
 With that, am getting the error "PG::UndefinedColumn: ERROR:  column approval\_items.approval\_request\_id does not exist.."
 
 So where could I be missing it? Thanks.
-## [9][Designed a simple rails app that communicates with Google Drive API.](https://www.reddit.com/r/rails/comments/jkb9uk/designed_a_simple_rails_app_that_communicates/)
-- url: https://www.reddit.com/r/rails/comments/jkb9uk/designed_a_simple_rails_app_that_communicates/
----
-[https://github.com/AbhishekSinhaCoder/Ruby-on-Rails-Challenge](https://github.com/AbhishekSinhaCoder/Ruby-on-Rails-Challenge)
-## [10][How is github able to provide go to definition and find references while I can't do it in VS Code](https://www.reddit.com/r/rails/comments/jjpqnw/how_is_github_able_to_provide_go_to_definition/)
-- url: https://www.reddit.com/r/rails/comments/jjpqnw/how_is_github_able_to_provide_go_to_definition/
----
-In VS code I struggle to get something like below to get to work. I have installed solargraph but it takes a long time to find something and most of the time it doesn't work?   
-
-
-Any idea on how this works in github and if it's possible to get this to work in vs code? 
-
-https://preview.redd.it/iuy85bnvruv51.png?width=3096&amp;format=png&amp;auto=webp&amp;s=628207d307a41c12920cf466b5d76b483f520774
-## [11][A Gem for Cloudimage Image Optimizer](https://www.reddit.com/r/rails/comments/jjzf5z/a_gem_for_cloudimage_image_optimizer/)
-- url: https://www.reddit.com/r/rails/comments/jjzf5z/a_gem_for_cloudimage_image_optimizer/
----
-**Hi! Our tech team at Scaleflex just published a gem for our image optimizer Cloudimage** ([https://www.cloudimage.io/](https://www.cloudimage.io/))-&gt; Discover it here: Cloudimage-gem ([https://rubygems.org/gems/cloudimage](https://rubygems.org/gems/cloudimage))
-
-What you can achieve with this gem:
-
-* supports Ruby 2.4 and above, JRuby, and TruffleRuby
-* on-the-fly resizing of all your images (150+ transformations)
-* image optimization and WebP/AVIF (tba) compression
-* responsive design, progressive/lazy loading
-* worldwide media delivery via CDN
-
-Happy to get your feedback!
-
-Greetings!

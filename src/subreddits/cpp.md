@@ -56,7 +56,34 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Forbidden C++](https://www.reddit.com/r/cpp/comments/jks8f3/forbidden_c/)
+## [2][Inbal Levi - Exploration of C++20 Meta Programming - Meeting C++ online](https://www.reddit.com/r/cpp/comments/jlfkq8/inbal_levi_exploration_of_c20_meta_programming/)
+- url: https://www.youtube.com/watch?v=4Jy-85lukZ0
+---
+
+## [3][mltype - Typing practice for C++ and other languages](https://www.reddit.com/r/cpp/comments/jlh74e/mltype_typing_practice_for_c_and_other_languages/)
+- url: https://www.reddit.com/r/cpp/comments/jlh74e/mltype_typing_practice_for_c_and_other_languages/
+---
+**What is it?**
+
+Command line tool that uses a character-level LSTM model to generate text that resembles a real language (including programming languages). One can both train a network from scratch or download a pretrained one (C++, Go, JavaScript, C, Python,..).
+
+**Motivation**
+
+I recently switched to touch typing and I realized that there is basically no way to practise typing of programming languages (other than actually programming). Additionally, I revisited the famous blog post [http://karpathy.github.io/2015/05/21/rnn-effectiveness/](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) and thought it would be cool to use a model like this to generate infinite amount of custom text to type.
+
+&amp;#x200B;
+
+https://reddit.com/link/jlh74e/video/rd36ae447fw51/player
+
+**Links**
+
+* docs: [https://mltype.readthedocs.io/en/latest/](https://mltype.readthedocs.io/en/latest/)
+* github: [https://github.com/jankrepl/mltype](https://github.com/jankrepl/mltype)
+## [4][How to build dependencies as Meson subprojects using SDL as an example](https://www.reddit.com/r/cpp/comments/jl6jlq/how_to_build_dependencies_as_meson_subprojects/)
+- url: https://nibblestew.blogspot.com/2020/10/how-to-build-dependencies-as-meson.html
+---
+
+## [5][Forbidden C++](https://www.reddit.com/r/cpp/comments/jks8f3/forbidden_c/)
 - url: https://www.reddit.com/r/cpp/comments/jks8f3/forbidden_c/
 ---
 I have Just watched this entertaining video on Forbidden C++.  Its aimed at beginners but thought i would post it here just for the intro alone!
@@ -64,11 +91,7 @@ I have Just watched this entertaining video on Forbidden C++.  Its aimed at begi
 [https://youtu.be/j0\_u26Vpb4w](https://youtu.be/j0_u26Vpb4w)
 
 The video is just a small list but as we all know, with every newer release of C++ we get better ways of doing things.  Hence the darker side of C++ will continue to grow!
-## [3][std::visit is everything wrong with modern C++](https://www.reddit.com/r/cpp/comments/jkiqkz/stdvisit_is_everything_wrong_with_modern_c/)
-- url: https://bitbashing.io/std-visit.html
----
-
-## [4][Strings in switch statements using constexp hashing](https://www.reddit.com/r/cpp/comments/jkw84k/strings_in_switch_statements_using_constexp/)
+## [6][Strings in switch statements using constexp hashing](https://www.reddit.com/r/cpp/comments/jkw84k/strings_in_switch_statements_using_constexp/)
 - url: https://www.reddit.com/r/cpp/comments/jkw84k/strings_in_switch_statements_using_constexp/
 ---
 I have a question which might be dumb.
@@ -119,23 +142,29 @@ So lets say we have a program like this:
 Would that be something bad to do. I don't really know a use case for now, but am interested if this would be OKish to do.
 
 Edit: The edits were for making the code look like it should
-## [5][CppCast: ThinLTO](https://www.reddit.com/r/cpp/comments/jkp9sx/cppcast_thinlto/)
+## [7][std::visit is everything wrong with modern C++](https://www.reddit.com/r/cpp/comments/jkiqkz/stdvisit_is_everything_wrong_with_modern_c/)
+- url: https://bitbashing.io/std-visit.html
+---
+
+## [8][Polymorphic Casting from void](https://www.reddit.com/r/cpp/comments/jl6918/polymorphic_casting_from_void/)
+- url: https://www.reddit.com/r/cpp/comments/jl6918/polymorphic_casting_from_void/
+---
+Yes, from the title alone all alarm bells should go off. I just came across this [StackOverflow post](https://stackoverflow.com/questions/54024018/polymorphic-casting-from-void) where somebody showed off a working solution to wrap a pointer, do type erasure and later try and cast it back to seemingly arbitrary polymorphic types.
+
+`class void_ptr { void* obj; void (*discover_type)(void*); template&lt;typename T&gt; static void throw_typed_object(void* obj) { T* t = static_cast&lt;T*&gt;(obj); throw t; } public: void_ptr() : obj(0) {} template&lt;typename T&gt; void_ptr(T* t) : obj(t), discover_type(throw_typed_object&lt;T&gt;) { } template&lt;typename T&gt; T* cast() const { try { discover_type(obj); } catch (T* t) { return t; } catch (...) { } return 0; } };`
+
+Aside from the fact that this looks absolutely disgusting, it seems to work fine. I tried it with an unrelated polymorphic type and I got nullptr as expected. How reliable and portable is this? There does not seem to be anything about it that would not be portable in my eyes?
+
+$edit: Reddit ate my formatting. Wellp, the code stays the same...
+## [9][CppCast: ThinLTO](https://www.reddit.com/r/cpp/comments/jkp9sx/cppcast_thinlto/)
 - url: https://cppcast.com/teresa-johnson-thinlto/
 ---
 
-## [6][A tale of a build system bug](https://www.reddit.com/r/cpp/comments/jkc1bf/a_tale_of_a_build_system_bug/)
+## [10][A tale of a build system bug](https://www.reddit.com/r/cpp/comments/jkc1bf/a_tale_of_a_build_system_bug/)
 - url: https://gist.github.com/Som1Lse/2fbb0e22cb59a158bb8e09bf6f527f7e
 ---
 
-## [7][Is C++ really that hard for beginners?](https://www.reddit.com/r/cpp/comments/jk6jcz/is_c_really_that_hard_for_beginners/)
-- url: https://www.reddit.com/r/cpp/comments/jk6jcz/is_c_really_that_hard_for_beginners/
----
-hello, i have always heard that "C++ is hard for beginner, manual memory management and stuff...", but is it really that hard after the changes c++ had?, i always avoided c++ (started with it and i got fustrated) but since c++ is the norm for game dev i kinda wanna use it (well maybe now or untill i learn java or something idk...)
-
-and yes i know c++ doesn't have a garbage collection and it has pointers and stuff..
-
-thanks.
-## [8][Colony v6 released](https://www.reddit.com/r/cpp/comments/jkikj4/colony_v6_released/)
+## [11][Colony v6 released](https://www.reddit.com/r/cpp/comments/jkikj4/colony_v6_released/)
 - url: https://www.reddit.com/r/cpp/comments/jkikj4/colony_v6_released/
 ---
 More details [here](https://plflib.org/blog.htm#colonyv6),
@@ -150,73 +179,3 @@ Main features/changes:
 \* performance improvements to lots of stuff  
 \* assign!  
 \* Misc!
-## [9][atomicDEX Desktop 0.3.0: A C++ 17 Open-Source decentralized cryptocurrency exchange/wallet](https://www.reddit.com/r/cpp/comments/jkiphk/atomicdex_desktop_030_a_c_17_opensource/)
-- url: https://www.reddit.com/r/cpp/comments/jkiphk/atomicdex_desktop_030_a_c_17_opensource/
----
-[https://github.com/KomodoPlatform/atomicDEX-Desktop/releases](https://github.com/KomodoPlatform/atomicDEX-Desktop/releases)
-
-[https://github.com/KomodoPlatform/atomicDEX-Desktop/wiki](https://github.com/KomodoPlatform/atomicDEX-Desktop/wiki)
-
-build with: boost, spdlog, entt, fmt, nlohmann\_json, cpprestsdk, taskflow, reproc, Qt, doctest
-
-I'm also the author of:
-
-[https://github.com/KomodoPlatform/antara-gaming-sdk](https://github.com/KomodoPlatform/antara-gaming-sdk)
-
-which was previously: [https://github.com/Milerius/shiva](https://github.com/Milerius/shiva)
-
-Discord link of the project: [https://discord.gg/FR96rQh](https://discord.gg/FR96rQh)
-
-One of the challenges of the project was to mix the elegance of the boost libraries with the power of the Qt framework for the user interface, we always try to use the open-source C++ libraries which allow us to provide you with a coherent and safe project. , the dependencies are managed by Conan / VCPKG through our forks (for vcpkg)
-
-[https://i.imgur.com/KN4i6XS.gif](https://i.imgur.com/KN4i6XS.gif)
-## [10][vcpkg and github actions are a nightmare](https://www.reddit.com/r/cpp/comments/jkgapv/vcpkg_and_github_actions_are_a_nightmare/)
-- url: https://www.reddit.com/r/cpp/comments/jkgapv/vcpkg_and_github_actions_are_a_nightmare/
----
-The available tooling for doing cross platform development has improved quite a bit in the last few years, but sadly it's not quite there yet.
-
-Let's start out with a simple task: add a github action to enable ci for a c++ project that depends on boost and qt5.
-
-The workflow file would look something like this:
-
-    name: CompileMyProject
-    
-    on: [push, pull_request]
-    
-    jobs:
-      build:
-        strategy:
-          matrix:
-            platform: [windows-latest, ubuntu-latest, macos-latest]
-        runs-on: ${{ matrix.platform }}
-        steps:
-        - uses: actions/checkout@v2
-          with:
-            submodules: 'recursive'
-        - name: Run vcpkg
-          uses: lukka/run-vcpkg@v4
-          with:
-            vcpkgArguments: 'boost qt5'
-            vcpkgDirectory: '${{ github.workspace }}/vcpkg'
-
-As soon as you push the commit containing this workflow to the repo everything will appear to work perfectly. Github will even helpfully build the three platforms in parallel for you (even though each job is limited to 2 cores so expect this dependency build to take a least 2 hours).
-
-Don't worry about that 2 hour build time for your dependencies because the run-vcpkg script is smart enough to cache the compiled libraries...
-
-...unless of course something goes wrong. On any job. At any stage of the build process.
-
-You see, github actions do support artifact caching, but it's all-or-nothing.
-
-If vcpkg wants to build 100 packages, and you get an error on the 99th package, well sucks to be you because the 98 packages which did build successfully are toast.
-
-If any of the three platforms experiences an error, then the other two will abort if they have not finished. So unless the other platforms finish before the error on a different job, then you can kiss their artifacts good bye too.
-
-Don't worry though: Microsoft is happy to bill you for all the hours of redundant dependency building that you have to endure as you go through the process of discovering a configuration that works on all platforms.
-
-At least it's easy to debug though. Vcpkg helpfully saves all the build output to files so that you can read the exact build error message... if you were running this interactively on a console instead of as part of a ci script.
-
-The two tools in question (github actions and vcpkg) are reasonably decent when each is considered in isolation, but somehow they manage to achieve negative synergy when combined.
-## [11][Random Testing for C and C++ Compilers with YARPGen](https://www.reddit.com/r/cpp/comments/jklgh5/random_testing_for_c_and_c_compilers_with_yarpgen/)
-- url: https://www.cs.utah.edu/~regehr/yarpgen-oopsla20.pdf
----
-

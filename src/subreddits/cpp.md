@@ -56,11 +56,33 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Inbal Levi - Exploration of C++20 Meta Programming - Meeting C++ online](https://www.reddit.com/r/cpp/comments/jlfkq8/inbal_levi_exploration_of_c20_meta_programming/)
+## [2][Controlling Elegoo Robot Smart Car with ASIO and C++](https://www.reddit.com/r/cpp/comments/jm04wl/controlling_elegoo_robot_smart_car_with_asio_and_c/)
+- url: https://www.youtube.com/watch?v=nkCP95zLvSQ
+---
+
+## [3][Why was std::rope never standarised?](https://www.reddit.com/r/cpp/comments/jltmmc/why_was_stdrope_never_standarised/)
+- url: https://www.reddit.com/r/cpp/comments/jltmmc/why_was_stdrope_never_standarised/
+---
+SGI shipped a rope implementation but it seems to have been forgotten about. Does anyone know the history behind it?
+
+(A rope allows for efficient manipulation of strings)
+
+https://stackoverflow.com/questions/7811572/sgi-stl-rope-in-g
+## [4][Sharing Complex Types Between C++ WebAssembly and JavaScript](https://www.reddit.com/r/cpp/comments/jllohq/sharing_complex_types_between_c_webassembly_and/)
+- url: https://www.syntaxsuccess.com/viewarticle/sharing-complex-types-between-c++-webassembly-and-javascript
+---
+
+## [5][I found a six week course for C++ for beginners, would it be a good idea to enroll?](https://www.reddit.com/r/cpp/comments/jm28fk/i_found_a_six_week_course_for_c_for_beginners/)
+- url: https://www.reddit.com/r/cpp/comments/jm28fk/i_found_a_six_week_course_for_c_for_beginners/
+---
+https://www.ed2go.com/piedmont/online-courses/c-plus-plus-programming-introduction/
+
+The class says its for absolute beginners, and I work much better with instructors than self studying.  Its very cheap, and it looks to me like a good way to get some instructor guided experience. I'm already taking a few Udemy classes, do you guys think this instructor lead class for six weeks would be a good idea?
+## [6][Inbal Levi - Exploration of C++20 Meta Programming - Meeting C++ online](https://www.reddit.com/r/cpp/comments/jlfkq8/inbal_levi_exploration_of_c20_meta_programming/)
 - url: https://www.youtube.com/watch?v=4Jy-85lukZ0
 ---
 
-## [3][mltype - Typing practice for C++ and other languages](https://www.reddit.com/r/cpp/comments/jlh74e/mltype_typing_practice_for_c_and_other_languages/)
+## [7][mltype - Typing practice for C++ and other languages](https://www.reddit.com/r/cpp/comments/jlh74e/mltype_typing_practice_for_c_and_other_languages/)
 - url: https://www.reddit.com/r/cpp/comments/jlh74e/mltype_typing_practice_for_c_and_other_languages/
 ---
 **What is it?**
@@ -79,11 +101,15 @@ https://reddit.com/link/jlh74e/video/rd36ae447fw51/player
 
 * docs: [https://mltype.readthedocs.io/en/latest/](https://mltype.readthedocs.io/en/latest/)
 * github: [https://github.com/jankrepl/mltype](https://github.com/jankrepl/mltype)
-## [4][How to build dependencies as Meson subprojects using SDL as an example](https://www.reddit.com/r/cpp/comments/jl6jlq/how_to_build_dependencies_as_meson_subprojects/)
+## [8][Just a thought](https://www.reddit.com/r/cpp/comments/jly5fu/just_a_thought/)
+- url: https://www.reddit.com/r/cpp/comments/jly5fu/just_a_thought/
+---
+As someone learning C++, it seems like such a shame that pointer syntax does not use the '\^' symbol - was there some esoteric reason to go with '\*' ?
+## [9][How to build dependencies as Meson subprojects using SDL as an example](https://www.reddit.com/r/cpp/comments/jl6jlq/how_to_build_dependencies_as_meson_subprojects/)
 - url: https://nibblestew.blogspot.com/2020/10/how-to-build-dependencies-as-meson.html
 ---
 
-## [5][Forbidden C++](https://www.reddit.com/r/cpp/comments/jks8f3/forbidden_c/)
+## [10][Forbidden C++](https://www.reddit.com/r/cpp/comments/jks8f3/forbidden_c/)
 - url: https://www.reddit.com/r/cpp/comments/jks8f3/forbidden_c/
 ---
 I have Just watched this entertaining video on Forbidden C++.  Its aimed at beginners but thought i would post it here just for the intro alone!
@@ -91,7 +117,7 @@ I have Just watched this entertaining video on Forbidden C++.  Its aimed at begi
 [https://youtu.be/j0\_u26Vpb4w](https://youtu.be/j0_u26Vpb4w)
 
 The video is just a small list but as we all know, with every newer release of C++ we get better ways of doing things.  Hence the darker side of C++ will continue to grow!
-## [6][Strings in switch statements using constexp hashing](https://www.reddit.com/r/cpp/comments/jkw84k/strings_in_switch_statements_using_constexp/)
+## [11][Strings in switch statements using constexp hashing](https://www.reddit.com/r/cpp/comments/jkw84k/strings_in_switch_statements_using_constexp/)
 - url: https://www.reddit.com/r/cpp/comments/jkw84k/strings_in_switch_statements_using_constexp/
 ---
 I have a question which might be dumb.
@@ -142,40 +168,3 @@ So lets say we have a program like this:
 Would that be something bad to do. I don't really know a use case for now, but am interested if this would be OKish to do.
 
 Edit: The edits were for making the code look like it should
-## [7][std::visit is everything wrong with modern C++](https://www.reddit.com/r/cpp/comments/jkiqkz/stdvisit_is_everything_wrong_with_modern_c/)
-- url: https://bitbashing.io/std-visit.html
----
-
-## [8][Polymorphic Casting from void](https://www.reddit.com/r/cpp/comments/jl6918/polymorphic_casting_from_void/)
-- url: https://www.reddit.com/r/cpp/comments/jl6918/polymorphic_casting_from_void/
----
-Yes, from the title alone all alarm bells should go off. I just came across this [StackOverflow post](https://stackoverflow.com/questions/54024018/polymorphic-casting-from-void) where somebody showed off a working solution to wrap a pointer, do type erasure and later try and cast it back to seemingly arbitrary polymorphic types.
-
-`class void_ptr { void* obj; void (*discover_type)(void*); template&lt;typename T&gt; static void throw_typed_object(void* obj) { T* t = static_cast&lt;T*&gt;(obj); throw t; } public: void_ptr() : obj(0) {} template&lt;typename T&gt; void_ptr(T* t) : obj(t), discover_type(throw_typed_object&lt;T&gt;) { } template&lt;typename T&gt; T* cast() const { try { discover_type(obj); } catch (T* t) { return t; } catch (...) { } return 0; } };`
-
-Aside from the fact that this looks absolutely disgusting, it seems to work fine. I tried it with an unrelated polymorphic type and I got nullptr as expected. How reliable and portable is this? There does not seem to be anything about it that would not be portable in my eyes?
-
-$edit: Reddit ate my formatting. Wellp, the code stays the same...
-## [9][CppCast: ThinLTO](https://www.reddit.com/r/cpp/comments/jkp9sx/cppcast_thinlto/)
-- url: https://cppcast.com/teresa-johnson-thinlto/
----
-
-## [10][A tale of a build system bug](https://www.reddit.com/r/cpp/comments/jkc1bf/a_tale_of_a_build_system_bug/)
-- url: https://gist.github.com/Som1Lse/2fbb0e22cb59a158bb8e09bf6f527f7e
----
-
-## [11][Colony v6 released](https://www.reddit.com/r/cpp/comments/jkikj4/colony_v6_released/)
-- url: https://www.reddit.com/r/cpp/comments/jkikj4/colony_v6_released/
----
-More details [here](https://plflib.org/blog.htm#colonyv6),
-
-but yeah it's done.
-
-[https://github.com/mattreecebentley/plf\_colony](https://github.com/mattreecebentley/plf_colony)  
-
-
-Main features/changes:  
-\* actually fully-functional reserve()  
-\* performance improvements to lots of stuff  
-\* assign!  
-\* Misc!

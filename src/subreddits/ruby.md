@@ -7,8 +7,8 @@
 - url: https://twitter.com/razum2um/status/1322243197008052225
 ---
 
-## [3][READMEs on Ruby Toolbox project pages](https://www.reddit.com/r/ruby/comments/jkzf7x/readmes_on_ruby_toolbox_project_pages/)
-- url: https://www.ruby-toolbox.com/blog/2020-10-30/project-readmes
+## [3][Supporting RBS type checkinng in httpx](https://www.reddit.com/r/ruby/comments/jl6l8z/supporting_rbs_type_checkinng_in_httpx/)
+- url: https://honeyryderchuck.gitlab.io/httpx/2020/10/16/rbs-duck-typing-at-httpx.html
 ---
 
 ## [4][RDoc for Ruby CSV](https://www.reddit.com/r/ruby/comments/jl130l/rdoc_for_ruby_csv/)
@@ -19,16 +19,16 @@ I've completed a major revision of the RDoc for Ruby class [CSV](https://ruby.gi
 I've also been experimenting with [CSV recipes](https://ruby.github.io/csv/doc/csv/recipes/recipes_rdoc.html), which focus on specific user tasks rather than on API capabilities.
 
 Oh, and here's the [existing RDoc](https://ruby-doc.org/stdlib-2.7.2/libdoc/csv/rdoc/CSV.html).
-## [5][Supporting RBS type checkinng in httpx](https://www.reddit.com/r/ruby/comments/jl6l8z/supporting_rbs_type_checkinng_in_httpx/)
-- url: https://honeyryderchuck.gitlab.io/httpx/2020/10/16/rbs-duck-typing-at-httpx.html
+## [5][READMEs on Ruby Toolbox project pages](https://www.reddit.com/r/ruby/comments/jkzf7x/readmes_on_ruby_toolbox_project_pages/)
+- url: https://www.ruby-toolbox.com/blog/2020-10-30/project-readmes
 ---
 
-## [6][Ruby on Rails in a week](https://www.reddit.com/r/ruby/comments/jkpvwf/ruby_on_rails_in_a_week/)
-- url: https://www.simplethread.com/ruby-on-rails-in-a-week/
----
-
-## [7][Packwerk at Shopify](https://www.reddit.com/r/ruby/comments/jkwp16/packwerk_at_shopify/)
+## [6][Packwerk at Shopify](https://www.reddit.com/r/ruby/comments/jkwp16/packwerk_at_shopify/)
 - url: https://youtube.com/watch?v=olEA157z7kU
+---
+
+## [7][Ruby on Rails in a week](https://www.reddit.com/r/ruby/comments/jkpvwf/ruby_on_rails_in_a_week/)
+- url: https://www.simplethread.com/ruby-on-rails-in-a-week/
 ---
 
 ## [8][how is this converted to a hash in a function call?](https://www.reddit.com/r/ruby/comments/jktr6s/how_is_this_converted_to_a_hash_in_a_function_call/)

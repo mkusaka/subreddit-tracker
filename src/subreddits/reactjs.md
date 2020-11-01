@@ -1,19 +1,17 @@
 # reactjs
-## [1][Beginner's Thread / Easy Questions (October 2020)](https://www.reddit.com/r/reactjs/comments/j31umf/beginners_thread_easy_questions_october_2020/)
-- url: https://www.reddit.com/r/reactjs/comments/j31umf/beginners_thread_easy_questions_october_2020/
+## [1][Beginner's Thread / Easy Questions (November 2020)](https://www.reddit.com/r/reactjs/comments/jlwguv/beginners_thread_easy_questions_november_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/jlwguv/beginners_thread_easy_questions_november_2020/
 ---
 &gt; Previous Beginner's Threads can be found in the [wiki][wiki previous threads].
 
 Ask about React or anything else in its ecosystem :)
 
-Stuck making progress on your app?  
-Still Ask away! We’re a friendly bunch.
-
-No question is too simple. 🙂
+Stuck making progress on your app, need a feedback?  
+Still Ask away! We’re a friendly bunch 🙂
 
 ---
 
-## Want Help with your Code?
+## Help us to help you better
 
 1. **Improve your chances** of reply by
    1. adding minimal example with [JSFiddle][jsfiddle], [CodeSandbox][code sandbox], or [Stackblitz][stackblitz] links
@@ -26,36 +24,19 @@ No question is too simple. 🙂
 
 ## New to React?
 
-### Check out the sub's **sidebar**! 👉
+Check out the sub's **sidebar**! 👉  
+For rules and free resources~
 
-🆓 Here are great, **free** resources!
-
-- [Read the **official** Getting Started page][official getting started page] on the docs.
-- [Microsoft Frontend Bootcamp][microsoft frontend bootcamp]
-- [Codecademy's React courses][codecademy's react courses]
-- [Scrimba's React Course][scrimba's react course]
-- [FreeCodeCamp's React course][freecodecamp's react course]
-- [Kent Dodd's Egghead.io course][kent dodd's egghead.io course]
-- New to Hooks? Check out [Amelia Wattenberger's Thinking in React Hooks][thinking in react hooks]
-- and these React Hook recipes on [useHooks.com][usehooks.com] by [Gabe Ragland](https://twitter.com/gabe_ragland)
-- What other updated resources do you suggest?
-
-Any ideas/suggestions to improve this thread - feel free to comment here!
+**Comment here for any ideas/suggestions to improve this thread**
 
 _Finally, thank you to all who post questions and those who answer them. We're a growing community and [helping each other][learn by teaching] only [strengthens it!][learn in public]_
 
 ---
 
 [usehooks.com]: https://usehooks.com/
-[thinking in react hooks]: https://wattenberger.com/blog/react-hooks
-[freecodecamp's react course]: https://www.freecodecamp.org/news/learn-react-course/
-[microsoft frontend bootcamp]: https://www.reddit.com/r/reactjs/comments/auu02f/microsoft_has_open_sourced_their_frontend/
 [official getting started page]: https://reactjs.org/docs/getting-started.html
 [/u/acemarke]: https://www.reddit.com/u/acemarke
 [suggested resources for learning react]: http://blog.isquaredsoftware.com/2017/12/blogged-answers-learn-react/
-[kent dodd's egghead.io course]: http://kcd.im/beginner-react
-[codecademy's react courses]: https://www.codecademy.com/catalog/language/javascript
-[scrimba's react course]: https://scrimba.com/g/glearnreact
 [wiki formatting code]: https://www.reddit.com/r/reactjs/wiki/index#wiki_formatting_code
 [wiki previous threads]: https://www.reddit.com/r/reactjs/wiki/index#wiki_previous_threads
 [code sandbox]: https://codesandbox.io/s/new
@@ -66,374 +47,127 @@ _Finally, thank you to all who post questions and those who answer them. We're a
 [get started with redux]: https://www.reddit.com/r/reactjs/wiki/index#wiki_getting_started_with_redux
 [learn by teaching]: https://en.wikipedia.org/wiki/Learning_by_teaching
 [learn in public]: https://www.swyx.io/writing/learn-in-public/
-## [2][Help the React team write new docs—take the 2020 React Community Survey](https://www.reddit.com/r/reactjs/comments/j5iqj3/help_the_react_team_write_new_docstake_the_2020/)
-- url: https://www.surveymonkey.co.uk/r/T58DPNS
+## [2][Who's Hiring? [November 2020]](https://www.reddit.com/r/reactjs/comments/jlwj1x/whos_hiring_november_2020/)
+- url: https://www.reddit.com/r/reactjs/comments/jlwj1x/whos_hiring_november_2020/
 ---
+We alternate between **Who's Hiring** (on the 1st of the month, [most recent one here][hiring:most recent]) and **Who's Available** (on the 15th, [most recent one here][available:most recent])
 
-## [3][Content Security Policy - protect your website from XSS attacks](https://www.reddit.com/r/reactjs/comments/jleg5w/content_security_policy_protect_your_website_from/)
-- url: https://itsopensource.com/content-security-policy/
+Welcome to **the biggest React job board in the world!** This is like Hacker News' **Who's Hiring** but just for React. Top Level comments must be **Job Opportunities.**
+
+⚠️ NEW: WE ARE REQUESTING EVERYBODY FOLLOW [THE HN Who's Hiring FORMAT][format:hiring:hn]
+
+**Company inc. | Job Title | City/State Location | Full-time/Part-Time | On-site/Remote | (Optional) Salary range | Website jobs page, other hard requirements etc.**
+
+examples:
+
+- **Thorn | San Francisco or Remote (US based) | Full-time Contract | $100k - $150k | Software Engineer | https://www.wearethorn.org/**
+- **PolicyStat | Full-Stack Python+Django Software Engineer | Indianapolis, Vancouver, or REMOTE | Full Time | +\$80k**
+
+Please include as much information as possible. **If you are remote-friendly, or open to sponsoring work visas to your country, say so! These are the top 2 questions!**
+
+If you are looking for jobs, send a PM to the poster or post in our [Who's Available thread!][available:most recent]  
+(I am sorry folks. I didn't post 'Who's Available' for October...)
+
+[hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
+[available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
+## [3][Is Module Federation for me?](https://www.reddit.com/r/reactjs/comments/jm1bl3/is_module_federation_for_me/)
+- url: https://www.reddit.com/r/reactjs/comments/jm1bl3/is_module_federation_for_me/
 ---
+We are working on a problem that is in the sweet spot for micro frontends:  App A, written by Team A, is about to hit production. App B, is yet-to-be written and is still just a twinkle in my eye. App B will appear as a new feature of App A down the road a bit. App B will appear in App A's nav bar, and will get all of somedomain-dot-com/appb. Each team will independently deploy their apps. App A "owns" the auth UI, and must be able to share the auth status with App B (and all future app-lets). It is anticipated that Team A might need to parcel out it's nav system into a separate shared container for App B to consume.
 
+App A is, at this moment in time, a create-react-app app.  I've seen [examples](https://martinfowler.com/articles/micro-frontends.html) of micro frontends done with CRA.  App B aspires to be a NextJS app, and I anticipate that Next + Webpack 5 will play nicely by the time we need them to.  I am curious to find out what the level of effort will be to take App A, which "owns" user authentication UI and auth token creation, to be able to "hoist" the new feature from team B?  I am a total webpack nooob, and a devops feather-weight. I know how to solve the shared auth issue between to backends using NginX, http-only cookies, and a shared decrypt secret. 
+
+What I am unable to ascertain, just by following that initial Webpack MF blog article example, is will MF get in the way of my planned solution using the above combo for shared auth UI?  As presented, it seems it would hit a brick wall when it comes to cross-domain requests. Can the federation's module resolution work through reverse proxy servers?
+
+That's a lot of questions, and not really React-y, but CRA is the starting point, so I thought I'd through them all out here for discussion.
 ## [4][Run your React Native app on the web with React Native for Web](https://www.reddit.com/r/reactjs/comments/jlgo5q/run_your_react_native_app_on_the_web_with_react/)
 - url: https://mmazzarolo.com/blog/2020-10-24-adding-react-native-web/
 ---
 
-## [5][A responsive, composable react charting library with a hand-drawn style.](https://www.reddit.com/r/reactjs/comments/jkvvrp/a_responsive_composable_react_charting_library/)
-- url: https://beizhedenglong.github.io/rough-charts/?path=/docs/roughcharts--page
+## [5][Is there a Carousel library that allows to add delay to slide changes in React?](https://www.reddit.com/r/reactjs/comments/jlx9pl/is_there_a_carousel_library_that_allows_to_add/)
+- url: https://www.reddit.com/r/reactjs/comments/jlx9pl/is_there_a_carousel_library_that_allows_to_add/
+---
+Hi, I am relatively new to React and I am trying to include a Carousel that has a delay between slides to wait for an animation to complete, however I have not found a single library that offers this option. 
+
+I know I could implement this from scratch myself, but as I am not very experienced with React I think it would end up having a few bugs sneaked in.
+
+I ask this here because maybe someone who has been using React long enough has faced a similar situation and may have found a library or something like that that already does this, and well in case there is no one I guess I'll have to implement it myself.
+
+A working example of what I would like to achieve can be found [here](https://bridgelanding.qodeinteractive.com/elements/qode-slider/).
+## [6][How to use redux in case of nested object?](https://www.reddit.com/r/reactjs/comments/jlzv5j/how_to_use_redux_in_case_of_nested_object/)
+- url: https://www.reddit.com/r/reactjs/comments/jlzv5j/how_to_use_redux_in_case_of_nested_object/
+---
+Hello, I was wondering how to handle nested state.  Suppose, I have Project state and it has properties Id and Task. Also, Task is an object with properties Id and Name. How should I set my redux in order to edit Name properties in Task?
+## [7][How to persist form data?](https://www.reddit.com/r/reactjs/comments/jm29mj/how_to_persist_form_data/)
+- url: https://www.reddit.com/r/reactjs/comments/jm29mj/how_to_persist_form_data/
+---
+If there is a form usually we send the record and save it in db on form submission. 
+But what would be the best practice to persist data as making call to backend on every update wont be a good idea and local storage would only work on the same machine/browser and  wont be available across every device?
+## [8][Wanted to dive into MERN? Here's a Full-stack project to start with :)](https://www.reddit.com/r/reactjs/comments/jm0ufd/wanted_to_dive_into_mern_heres_a_fullstack/)
+- url: https://youtu.be/ngc9gnGgUdA
 ---
 
-## [6][Theming in React with variables (with default dark mode) 🌗](https://www.reddit.com/r/reactjs/comments/jl1ajl/theming_in_react_with_variables_with_default_dark/)
-- url: https://www.reddit.com/r/reactjs/comments/jl1ajl/theming_in_react_with_variables_with_default_dark/
+## [9][Re-render not being applied appropriately](https://www.reddit.com/r/reactjs/comments/jm0avj/rerender_not_being_applied_appropriately/)
+- url: https://www.reddit.com/r/reactjs/comments/jm0avj/rerender_not_being_applied_appropriately/
 ---
-If you are sick of adding hundreds of dependencies in order to do a simple task, then this article is for you.  👻
+I'm a newbie in ReactJS and I'm finding some unexpected behaviour made by React (Or maybe my concepts aren't at best !)
 
-This is how to implement a simple themes switcher with default dark mode step by step:
+Here's the thing:
 
-Firstly we are going to create a themes.js file and add the color variables 😓 :
+I'm preparing a test page using NextJS and inside the page, I'm rendering a component '*Questions*'
 
-    // the actual object holding the colors for each theme
-    // you can always define colors with same values for all themes in :root
-    const colors = {
-      night: {
-        '--lightest': '#e4e6eb',
-        '--light': '#b0b3b8',
-        '--medium': '#3a3b3c',
-        '--dark': '#242526',
-        '--darker': '#18191a',
-      },
-      day: {
-        '--lightest': '#ffffff',
-        '--light': '#f7f7f7',
-        '--medium': '#dfe3ee',
-        '--dark': '#8b9dc3',
-        '--darker': '#3b5998',
-      },
-      coffee: {
-        '--lightest': '#ece0d1',
-        '--light': '#dbc1ac',
-        '--medium': '#967259',
-        '--dark': '#634832',
-        '--darker': '#38220f',
-      },
-    };
-
-Save the themes' names in array and the first theme as fallback theme 🤔 :
-
-    const themes = Object.keys(colors);
-    const fallback = themes[0];
-
-Create functions for retrieving and saving the theme name 🤨 :
-
-    // returns the last saved theme or the first available one
-    // if the page is loaded for first time
-    const getTheme = () =&gt; {
-      const theme = localStorage.getItem('theme');
-      return colors[theme] ? theme : fallback;
-    };
-    
-    // simply saves the theme in the localStorage
-    const saveTheme = (theme = fallback) =&gt; localStorage.setItem('theme', theme);
-
-Then a function for actually changing the color variables from the colors object 😩 :
-
-    // actually changing the colors depending on the theme
-    const setColorScheme = (theme = fallback) =&gt; {
-      Object.entries(colors[theme]).map(([color, value]) =&gt; {
-        document.documentElement.style.setProperty(color, value);
-      });
-    };
-
-And finally a function for export to set the theme 🤓 :
-
-    // executes and returns a function for setting theme
-    const setTheme = (() =&gt; {
-      // it will load the last saved theme from the local storage
-      // or fallback to the first available one
-      // and then set it
-      // happens on page load once
-      setColorScheme(getTheme());
-    
-      return (theme) =&gt; {
-        theme = colors[theme] ? theme : fallback;
-        if (getTheme() !== theme) {
-          setColorScheme(theme);
-          saveTheme(theme);
-        }
-    
-        return theme;
-      };
-    })();
-    
-    export { themes, getTheme, setTheme };
-
-And this is a simple example on how to use it in ReactJS app (you can easily use it in any other):
-
-App.js
-
-    import './styles/app.css';
-    import { useState, useEffect } from 'react';
-    import { themes, getTheme, setTheme } from './styles/theme.js';
-    
-    export default () =&gt; {
-      const [currentTheme, nextTheme] = useState(getTheme());
-    
-      useEffect(() =&gt; {
-        setTheme(currentTheme);
-      }, [currentTheme]);
-    
-      return (
-        &lt;div className="app-wrapper"&gt;
-          &lt;select onChange={(event) =&gt; nextTheme(event.target.value)}&gt;
-            {themes.map((theme, i) =&gt; (
-              &lt;option selected={theme === currentTheme} key={i} value={theme}&gt;
-                {theme}
-              &lt;/option&gt;
-            ))}
-          &lt;/select&gt;
-        &lt;/div&gt;
-      );
-    };
-
-style.css
-
-    .app-wrapper {
-      width: 100vw;
-      height: 100vh;
-      background-color: var(--darker);
-    }
-    
-    .app-wrapper select {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      -webkit-transform: translate(-50%, -50%);
-              transform: translate(-50%, -50%);
-      padding: 0.4rem 0.8rem;
-      font-weight: bold;
-      background: var(--dark);
-      cursor: pointer;
-      color: var(--light);
-      border: 0.2rem solid var(--medium);
-      outline: none;
-    }
-    
-    .app-wrapper select:hover {
-      color: var(--lightest);
-    }
-
-The actual result: [https://i.ibb.co/rKj4p83/switcher.gif](https://i.ibb.co/rKj4p83/switcher.gif)  😳
-## [7][I made a package](https://www.reddit.com/r/reactjs/comments/jlcbt1/i_made_a_package/)
-- url: https://www.reddit.com/r/reactjs/comments/jlcbt1/i_made_a_package/
----
-If you're on this sub, you're probably aware of context - well I decided to try and reimplement this using some of React's basic API. 
-I call it react-ancestor
-
-[package](https://www.npmjs.com/package/react-ancestor)
-[github](github.com/enahsor/ancestor)
-
-I'd love to hear what you all of think of my attempt.
-## [8][React not re-rendering new Context, and nested component is pulling stale context state leading to undefined issues. However, moving the code to another component solves this issue and forces a hard re-render.](https://www.reddit.com/r/reactjs/comments/jlcu07/react_not_rerendering_new_context_and_nested/)
-- url: https://www.reddit.com/r/reactjs/comments/jlcu07/react_not_rerendering_new_context_and_nested/
----
-I am building an Invoice view (This code is far from production as some design choices are still up in the air). This view has two tabs: Payments and Charges (aka Transactions). Clicking on either tab should force a clean un-mount and re-render of all nested components. The InvoiceDetail page conditionally renders a ListContext (with either a "txapi" or a "pmtapi" prop that is used to fetch the data and setState inside the constructor and componentDidMount), and either a PmtTable or a TxTable. Both are children of a ListContext that fetches data.
-
-This does not work and leads to an internal validation error upon tab change when TxTable reads payment data, which is obviously of a different schema than transactions:
-
-    if (view == "payments") {
-    return (
-    &lt;Paper variant="outlined"&gt;
-          {invCard}
-          &lt;Divider /&gt;
-          &lt;ListContextProvider endpoint={"pmtapi/"} params={{ invoice: invID }}&gt;
-                 &lt;PmtTable /&gt;
-                 &lt;PageFooter /&gt;
-          &lt;/ListContextProvider&gt;
-    &lt;/Paper&gt; ); 
-    }
-    
-    if (view == "transactions") {
-    return (
-    &lt;Paper variant="outlined"&gt;
-          {invCard}
-          &lt;Divider /&gt;
-          &lt;ListContextProvider endpoint={"txapi/"} params={{ invoice: invID }}&gt;
-                  &lt;TxTable /&gt;
-                  &lt;PageFooter /&gt;
-          &lt;/ListContextProvider&gt;
-    &lt;/Paper&gt; ); 
-    }
-
-Now the following works fine when I move the ListContextProvider and its children into a separate component and import it :
-
-    if (view == "payments") {
-    return ( 
-    &lt;Paper variant="outlined"&gt;
-         {invCard} 
-         &lt;Divider /&gt;
-         &lt;ListContextProvider endpoint={"pmtapi/"} params={{ invoice: invID }}&gt;         
-          &lt;PmtTable /&gt; 
-              &lt;PageFooter /&gt; 
-         &lt;/ListContextProvider&gt; 
-    &lt;/Paper&gt; ); 
-    } 
-    
-    if (view == "transactions") { 
-    return ( 
-    &lt;Paper variant="outlined"&gt; 
-         {invCard} 
-         &lt;Divider /&gt; 
-         &lt;TxView /&gt; 
-    &lt;/Paper&gt; ); 
-    } 
-
-I've tried everything else, from modifying the life cycle methods inside the Context to sticking the logic inside of immediately-invoked functions. I am assuming that React-Fiber's diffing algorithm recognizes that ListContextProvider's position has not changed, but the props have changed and this should return a re-render of its children. I added a comparison of prevProps to props inside of shouldComponentUpdate in ListContextProvider but to no avail.
-
-And if the diffing is to blame here, why is wrapping the offending code inside nothing but essentially a named fragment or div not causing this issue? If I add an extra div wrapper to the original code to make one sub-tree different than the other, will this fix the issue? I really do not want to use a separate &lt;TxView&gt; component.
-
-Thanks in advance for all of the help! Not an expert at React.
-
-**EDIT**: Indeed the wrapper makes all the difference, and my suspicion of diffing being the issue is strengthened. I just stuck a div tag around one of the branches but not the other and it worked fine. I really am looking for a way to force a complete re-render.
-
-**EDIT2**: Sticking the offending code inside a function component using the render props pattern forced a hard re-render and solved the issue. I am still interested in understanding what's going on. From my understanding:  
-
-
-1) React Fiber realizes the DOM tree down to the `&lt;table&gt;`'s has not fundamentally changed, only the props and state are different. Even `&lt;TxTable&gt;` and `&lt;PmtTable&gt;` are actually implementations of the same Material-Table component.
-
-1.5) Props and state updates are supposed to force a re-render, but the order may not be guaranteed? The Context updates are asynchronous and the `useContext()` hook may fire first before a props update. Because most of the DOM tree has not really changed, the nested component is updating before the Context is re-rendered.
-
-2) The above looks true according to unposted print statements. Is there a reliable way to influence the order, or suspend for a certain amount of time, of re-renders?
-
-3) The above is re-inforced by a print statement inside ListContext's constructor that never fires. The `context.items` indeed change, but the constructor never fires even though the props are obviously different. How is this possible? And how can I change it?
-## [9][[HELP]getting Unexpected token &lt; in JSON at position 0 even if im returning json from my flask backend](https://www.reddit.com/r/reactjs/comments/jleerx/helpgetting_unexpected_token_in_json_at_position/)
-- url: https://www.reddit.com/r/reactjs/comments/jleerx/helpgetting_unexpected_token_in_json_at_position/
----
-hey, I'm learning how to use flask and react together so that i can host my python projects online. I'm following [this article](https://blog.miguelgrinberg.com/post/how-to-create-a-react--flask-project) to do so. But as soon as i reload the page i get this error in the dev console -
-
-`Uncaught (in promise) SyntaxError: Unexpected token &lt; in JSON at position 0`
-
-i did some research on it and turns out its because the backend is not returning json, but in my case im returning json(as flask automatically jsonifies dictionaries).
+Inside &lt;*Questions&gt;*, I have a block as follows:
 
 &amp;#x200B;
 
-Here is my code - [python code](https://pastebin.com/7SVKFqEg) , [react code](https://pastebin.com/tKkq5LgN)
+`const Questions = ({ data }) =&gt; {const {current_question_no,current_question,queids,get_question,authToken,answers,} = data;`
 
 &amp;#x200B;
 
-Any help is appreciated as im literally pulling my hair apart
+`const [userPref,setUserPref] = useState(1)`
+
+`const renderedChoices = answers.map((a) =&gt; {return (&lt;Answersanswer_id={a.id}option={a.option}user_pref={a.user_pref}onUserPrefClick={handleUserPref}&gt;&lt;/Answers&gt;);});`
+
+`const handleUserPref = (spanRef) =&gt; {//manipulating the form ref directlyif(!spanRef.current.innerText){//assign the valuespanRef.current.innerText = userPrefsetUserPref(userPref+1) //state changes}};`
+
+`return(`
+
+`&lt;QuestionBlock&gt;`
+
+`{renderedChoices}`
+
+`)`
+
+This is the code for my "*Answers*" component:
+
+`import React from "react";const Answers = ({ answer_id, option, user_pref, onUserPrefClick }) =&gt; {const span_ref = React.createRef();return (&lt;label &gt;&lt;inputtype="checkbox"id={answer_id}class="check-hidden"value={user_pref}onClick={(e) =&gt; onUserPrefClick(span_ref)}/&gt;&lt;div class="question-body"&gt;&lt;div class="number"&gt;&lt;span ref={span_ref}&gt;{user_pref}&lt;/span&gt;&lt;/div&gt;&lt;p&gt;{option}&lt;/p&gt;&lt;/div&gt;&lt;/label&gt;);};export default Answers;`
 
 &amp;#x200B;
 
-Thanks
-## [10][How to make simple messaging using socket.io and react useEffect()](https://www.reddit.com/r/reactjs/comments/jl81pt/how_to_make_simple_messaging_using_socketio_and/)
-- url: https://www.reddit.com/r/reactjs/comments/jl81pt/how_to_make_simple_messaging_using_socketio_and/
+As you can see, I'm allowing users to click on a span element inside my &lt;Answers&gt; component, and whenever the user clicks on it, I'm invoking `handleUserPref` (of Questions component) via a prop named `onUserPrefClick`
+
+The `handleUserRef` of &lt;Question&gt;s Component assigns the value of `userRef` (piece of state) to span ref element. Thereafter, it increments the the `userPref` by calling `setUserPref(userPref+1)`
+
+When a piece of state changes, it must rerender the entire component which must ALSO rerender my &lt;Answers&gt; Component ! If this happens, incidentally, my value of the span element must change to the original `user_pref` prop passed to &lt;Answers&gt; Component - But it is NOT CHANGING - In fact, it is remaining the same as the one assigned from the `userRef` state piece in &lt;Questions&gt; Component !
+
+&amp;#x200B;
+
+Can anyone explain the matter please !
+## [10][Populate my chat app! 🔥Hello everyone, I deployed a messenger app to firebase and I request you guys to populate my project with more messages, so that it looks more lively! Feel free to suggest new features. Appreciate it!](https://www.reddit.com/r/reactjs/comments/jlzwqv/populate_my_chat_app_hello_everyone_i_deployed_a/)
+- url: https://messenger-nowfel2k.web.app/
 ---
-    function App() {
-        const [messages, setMessages] = useState([{ type: "system", text: "Please stay nice!" }]);
-        useEffect(() =&gt; {
-          socket.current.on("messageSent", (data) =&gt; {
-            setMessages([...messages, { type: "you", text: data.message }]);
-          });
-    
-          socket.current.on("receiveMessage", (data) =&gt; {
-            setMessages([...messages, { type: "partner", text: data.message }]);
-          });
-        }, []);
-    
-        return (
-          &lt;&gt;
-            &lt;span className="container"&gt;
-              &lt;Chat messages={messages} /&gt;
-            &lt;/span&gt;
-          &lt;/&gt;
-        );
-      }
 
-So this useEffect() is run only once to set-up socket.
-
-Right now when I try to access messages from inside of useEffect I got only the starting value which is \[{ type: "system", text: "Please stay nice!" }\] also setMessages doesn't refresh props of my parent component and child component has only access to this starting value \[{ type: "system", text: "Please stay nice!" }\]. How to do this correctly?
-
-.
-## [11][Using localStorage with Redux to save favorites.](https://www.reddit.com/r/reactjs/comments/jktk0q/using_localstorage_with_redux_to_save_favorites/)
-- url: https://www.reddit.com/r/reactjs/comments/jktk0q/using_localstorage_with_redux_to_save_favorites/
+## [11][What's a good React library for avatar selections?](https://www.reddit.com/r/reactjs/comments/jlum7v/whats_a_good_react_library_for_avatar_selections/)
+- url: https://www.reddit.com/r/reactjs/comments/jlum7v/whats_a_good_react_library_for_avatar_selections/
 ---
- 
+Something similar to Github for example. With the file upload, cropping etc.
 
-Live demo here: [https://moviesearcher-rust.vercel.app/](https://moviesearcher-rust.vercel.app/)  
-Repository here: [https://github.com/wcelery/moviesearcher](https://github.com/wcelery/moviesearcher)  
-What I'm trying to do is save my favorite movies in localStorage by clicking heart icon. First click adds item, second click removes it. The problem is ADD\_TO\_FAVORITES works fine, but REMOVE\_FROM\_FAVORITE crashes my app with Cannot read property 'toString' of undefined  
- error here:
+Googling didn't yield many popular results. I wanted to know if there's some standard library that developers default to.
 
-    23 | case REMOVE_FROM_FAVORITES:
-      24 |   return {
-      25 |     ...state,
-    &gt; 26 |     favorites: Object.keys(state.favorites)
-         | ^  27 |       .filter((item) =&gt; item !== action.payload.id.toString())
-      28 |       .reduce(
-      29 |         (object, item) =&gt; ({ ...object, [item]: state.favorites[item] }),
+Thanks!
 
-Code, that handles clicks is in components/Movie.js:
-
-    export default function Movie({ poster, title, id }) {
-      const dispatch = useDispatch();
-      const favorites = useSelector((state) =&gt; state.favoriteStore.favorites);
-    
-      const parse = (poster, title, id) =&gt; {
-        return {
-          poster: poster,
-          title: title,
-          id: id,
-        };
-      };
-      let movie = parse(poster, title, id);
-    
-      let isFavourite = movie.id in favorites;
-    
-      const isStored = (value) =&gt; {
-        if (value) {
-          dispatch(removeFromFavorites(movie));
-        } else {
-          dispatch(addToFavorites(movie));
-        }
-      };
-
-Here's my redux/reducers/favoritesReducer.js:
-
-    import { ADD_TO_FAVORITES, REMOVE_FROM_FAVORITES } from "../config";
-    
-    const checkLocalStorage = () =&gt; {
-      return Object.assign(
-        {},
-        ...Object.entries(localStorage).map(([id, value]) =&gt; ({
-          [id]: JSON.parse(value),
-        }))
-      );
-    };
-    
-    const initialState = {
-      favorites: checkLocalStorage(),
-    };
-    
-    export const favoritesReducer = (state = initialState, action) =&gt; {
-      switch (action.type) {
-        case ADD_TO_FAVORITES:
-          //blah blah
-        case REMOVE_FROM_FAVORITES:
-          return {
-            ...state,
-            favorites: Object.keys(state.favorites)
-              .filter((item) =&gt; item !== action.payload.id.toString())
-              .reduce(
-                (object, item) =&gt; ({ ...object, [item]: state.favorites[item] }),
-                {}
-              ),
-          };
-        default:
-          return state;
-      }
-    };
-## [12][React hook practical guide](https://www.reddit.com/r/reactjs/comments/jlaxss/react_hook_practical_guide/)
-- url: https://www.reddit.com/r/reactjs/comments/jlaxss/react_hook_practical_guide/
+EDIT: Clarification added.
+## [12][Spooky Singles: A Phoenix + React site I made that's a dating site for Ghosts. Happy Halloween!](https://www.reddit.com/r/reactjs/comments/jlmy8j/spooky_singles_a_phoenix_react_site_i_made_thats/)
+- url: https://spooky.singles/
 ---
-Im trying to learn react hooks and i have the idea behind it but i want a practical tutorial. Is there any good video for this? Lets say they create a full stack project with it and explains every detail behind their decision (eg folder structure). 
 
-A udemy course link is also appreciated!

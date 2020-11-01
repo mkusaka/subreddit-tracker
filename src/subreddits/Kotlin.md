@@ -46,7 +46,43 @@ On October 12–15 we hosted the Kotlin 1.4 Online Event, and over the course of
 Please post your questions as top-level comments to this post.
 
 We look forward to hearing from you!
-## [2][Lint warning "assignment should be lifted out of if"](https://www.reddit.com/r/Kotlin/comments/jlhm1g/lint_warning_assignment_should_be_lifted_out_of_if/)
+## [2][Started learning Kotlin and I love it!](https://www.reddit.com/r/Kotlin/comments/jlz97r/started_learning_kotlin_and_i_love_it/)
+- url: https://www.reddit.com/r/Kotlin/comments/jlz97r/started_learning_kotlin_and_i_love_it/
+---
+Started learning Kotlin for Android app development and I love it. I have experience in other programming languages and Kotlin has become my favourite by far. It's just that good it has increased my productivity by a lot
+## [3][A starter project for creating admin websites using Kotlin](https://www.reddit.com/r/Kotlin/comments/jlluda/a_starter_project_for_creating_admin_websites/)
+- url: https://github.com/tipsy/kotlin-admin-template
+---
+
+## [4][Something like automapper for kotlin?](https://www.reddit.com/r/Kotlin/comments/jm0c5w/something_like_automapper_for_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/jm0c5w/something_like_automapper_for_kotlin/
+---
+Hi, I have Ktor + Exposed example app. Can i do this better? Is there any mapping libraby like automapper? Thx
+
+PersonTable.selectAll().map {
+                Person(it[PersonTable.Id],
+                        it[PersonTable.Name],
+                        it[PersonTable.Age])
+## [5][Using Kotlin Multiplatform for JVM and Android App](https://www.reddit.com/r/Kotlin/comments/jlpdyu/using_kotlin_multiplatform_for_jvm_and_android_app/)
+- url: https://www.reddit.com/r/Kotlin/comments/jlpdyu/using_kotlin_multiplatform_for_jvm_and_android_app/
+---
+When I use the application plugin and the android plugin in Gradle I get this error:   
+`The 'java' plugin has been applied, but it is not compatible with the Android plugins`
+
+Is there a way to easily run the app on the JVM and on android in the same project?
+## [6][Komoot is hiring 2 Kotlin developers!!](https://www.reddit.com/r/Kotlin/comments/jlwfou/komoot_is_hiring_2_kotlin_developers/)
+- url: https://www.reddit.com/r/Kotlin/comments/jlwfou/komoot_is_hiring_2_kotlin_developers/
+---
+Two really nice remote job opportunities currently being offered at Komoot!
+
+Senior Backend Developer/ Data Scientist (Kotlin/Java/Scala) &amp; Python
+
+Senior Backend Developer (Kotlin/Java/Scala)
+
+Get more details for both job listings at:
+
+[https://kotlin-jobs.com](https://kotlin-jobs.com)
+## [7][Lint warning "assignment should be lifted out of if"](https://www.reddit.com/r/Kotlin/comments/jlhm1g/lint_warning_assignment_should_be_lifted_out_of_if/)
 - url: https://www.reddit.com/r/Kotlin/comments/jlhm1g/lint_warning_assignment_should_be_lifted_out_of_if/
 ---
 I am sorry if this question is kinda lame.. but i am killing myself last hour or so to figure out what's the issue... In Android Studio Kotlin I want to clean my code based on lint warnings. Cleaned everything except this:
@@ -70,17 +106,133 @@ Simple code to check if photo is horizontal or vertical and to resize it accordi
 This code works but gives warning "assignment should be lifted out of if"
 
 Sooo... Any idea what to do? :)
-## [3][AndroidBites | Java ☕️ Maps 🗺 on the Kotlin.](https://www.reddit.com/r/Kotlin/comments/jle9xu/androidbites_java_maps_on_the_kotlin/)
+## [8][Android Kotlin: Click button -&gt; Create ViewText -&gt; Drag ViewText and on drop get Text :)](https://www.reddit.com/r/Kotlin/comments/jlpscm/android_kotlin_click_button_create_viewtext_drag/)
+- url: https://www.reddit.com/r/Kotlin/comments/jlpscm/android_kotlin_click_button_create_viewtext_drag/
+---
+EDIT: Ok.. I figured it out.. Dont know what I did.. I was randomly editing code until suddenly started working :)))
+
+Anyhow... I still have problem with No2. Soo.. If anyone can help me with Lint warning. I tried Alt Enter but nothing offered as a solution :)
+
+&amp;#x200B;
+
+\------------------------------------------------------------------------------
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+Ok..sooo... I found some piece of code which does what I want. Create ViewText... Drag it... Drop it..
+
+Now i have 2 problems:
+
+1. After I drop TextView, how to fetch text from it?
+2. Lint warning marks "newView.setOnTouchListener(listener)" and tells me: "Custom view TextView has SetOnTouchListener called on it but does not override perform click"
+
+&amp;#x200B;
+
+\--------------------------------------------------------
+
+My Code:
+
+\---------------------------------------------------
+
+    package example.javatpoint.com.myapplication
+    
+    import android.os.Bundle
+    import android.view.Gravity
+    import android.view.MotionEvent
+    import android.view.View
+    import android.view.ViewGroup
+    import android.widget.Button
+    import android.widget.TextView
+    import android.widget.Toast
+    import androidx.appcompat.app.AppCompatActivity
+    import kotlinx.android.synthetic.main.activity_main.*
+    
+    
+    class MainActivity : AppCompatActivity() {
+    
+        lateinit var newView: TextView
+    
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            // Hide the action bar
+            val actionBar = supportActionBar
+    
+            actionBar!!.hide()
+    
+            setContentView(R.layout.activity_main)
+    
+            var listener = View.OnTouchListener(function = { view, motionEvent  -&gt;
+    
+                if (motionEvent.action == MotionEvent.ACTION_MOVE) {
+                    view.y = motionEvent.rawY- view.height
+                    view.x = motionEvent.rawX - view.width/2
+                }
+                else
+                if (motionEvent.action == MotionEvent.ACTION_UP) {
+    
+                    view.y = motionEvent.rawY- view.height
+                    view.x = motionEvent.rawX - view.width/2
+    
+                    if (view.y &gt; 1200) {
+    
+                        var MyCoolText = ""
+    
+                        ////////////////////////////////////////////////////
+                        // NOW DO SOMETHING HERE TO GET STRING FROM VIEWTEXT
+                        ////////////////////////////////////////////////////
+    
+                        Toast.makeText(applicationContext,"ViewText:\n" + MyCoolText , Toast.LENGTH_LONG).show()
+    
+                        myLayout.removeView(view)
+                    }
+                }
+    
+                true
+            })
+    
+    
+    
+            val fGenerateButton = findViewById&lt;Button&gt;(R.id.buttonGenerate)
+            fGenerateButton.setOnClickListener(View.OnClickListener {
+    
+    
+                val MyCoolRandomNumber = (0..1000).random() + 1000
+                val MyCoolString = MyCoolRandomNumber.toString()
+    
+                var newView: TextView
+                newView = TextView(this)
+                myLayout.addView(newView)
+                newView.x = 300F
+                newView.y = 500F
+                newView.text = MyCoolString
+                newView.setBackgroundResource(R.drawable.rounded)
+                newView.textSize = 12f
+                newView.gravity = Gravity.CENTER_HORIZONTAL
+    
+                val paramsXCV = newView.getLayoutParams()
+                paramsXCV.height = ViewGroup.LayoutParams.WRAP_CONTENT
+                paramsXCV.width = ViewGroup.LayoutParams.WRAP_CONTENT
+                newView.setLayoutParams(paramsXCV)
+    
+    
+                newView.setOnTouchListener(listener)
+    
+            })
+        }
+    }
+## [9][AndroidBites | Java ☕️ Maps 🗺 on the Kotlin.](https://www.reddit.com/r/Kotlin/comments/jle9xu/androidbites_java_maps_on_the_kotlin/)
 - url: https://www.reddit.com/r/Kotlin/comments/jle9xu/androidbites_java_maps_on_the_kotlin/
 ---
 Most of the Kotlin developers are migrated from the Java environment, coming to Kotlin the collection framework has some tweaks which makes It so awesome to work with, In Today’s article, let's understand how Kotlin catered to Java Maps in his its colors, and few other concepts that will help you understand stdlib of collection
 
 https://chetan-garg36.medium.com/java-%EF%B8%8F-maps-on-the-kotlin-8930b9f55d8d
-## [4][kotlinx.coroutines 1.4.0: Introducing StateFlow and SharedFlow](https://www.reddit.com/r/Kotlin/comments/jkuyy2/kotlinxcoroutines_140_introducing_stateflow_and/)
+## [10][kotlinx.coroutines 1.4.0: Introducing StateFlow and SharedFlow](https://www.reddit.com/r/Kotlin/comments/jkuyy2/kotlinxcoroutines_140_introducing_stateflow_and/)
 - url: https://blog.jetbrains.com/kotlin/2020/10/kotlinx-coroutines-1-4-0-introducing-stateflow-and-sharedflow/
 ---
 
-## [5][We are participating in the development of the international Kotlin Multiplatform community](https://www.reddit.com/r/Kotlin/comments/jkzqc5/we_are_participating_in_the_development_of_the/)
+## [11][We are participating in the development of the international Kotlin Multiplatform community](https://www.reddit.com/r/Kotlin/comments/jkzqc5/we_are_participating_in_the_development_of_the/)
 - url: https://www.reddit.com/r/Kotlin/comments/jkzqc5/we_are_participating_in_the_development_of_the/
 ---
 
@@ -94,8 +246,11 @@ We have been using this technology at IceRock for more than 2 years and have rel
 Thanks to their experience in Kotlin development, our specialists have participated in writing documentation for the portal. It contains the following information:
 
 ●      multi-platform projects and how to get started with them;
+
 ●      the mobile Kotlin multi-platform allowing such projects to be created;
+
 ●      what libraries to use and where to find them;
+
 ●      the business cases that allow the experience of other development teams to be studied. 
 
 It also provides technical documentation and guides for common problem-solving. 
@@ -110,70 +265,3 @@ Using the SQLDelight database for the multi-platform: https://kotlinlang.org/doc
 Ktor framework for building an asynchronous client/server architecture that provides high program performance: https://kotlinlang.org/docs/mobile/use-ktor-for-networking.html
 
 The Kotlin Multiplatform language libraries: https://libs.kmp.icerock.dev
-## [6][Struggling with Leet and Kotlin](https://www.reddit.com/r/Kotlin/comments/jl0b8q/struggling_with_leet_and_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/jl0b8q/struggling_with_leet_and_kotlin/
----
-My first post here, so please forgive me if this is inappropriate.
-
-I have been a professional programmer for a very long time (more than 35 years), and have moved over time from (including others) assembler, to C, to C++, to Java, to Scala, to Kotlin.
-
-To pass the time during "covid lockdown" I decided a couple of weeks ago to flex my Kotlin skills and tackle lots of "programming challenges" on sites like HackerRank and Leet.
-
-Now that I have tackled about 100 such problems, I have noticed that my clean and functional Kotlin code almost always rates "slower than 95% of submissions" or some such, and the only way to get it ranking higher is to go really low-level in the code, doing pointer-based stuff in the style of C (or, specifically, index into arrays using Java-style code).
-
-I do understand that the purpose of functional programming is to write elegant and expressive code, but time and again I end up rewriting my submissions to improve my ranking on these sites.
-
-Of course, in "real life" performance isn't always critical, but at the same time it has me pondering hard on whether my love for "functional" code means I am doomed to writing slow code.
-## [7][Junior iOS developer looking to expand my skill set !](https://www.reddit.com/r/Kotlin/comments/jkuhoy/junior_ios_developer_looking_to_expand_my_skill/)
-- url: https://www.reddit.com/r/Kotlin/comments/jkuhoy/junior_ios_developer_looking_to_expand_my_skill/
----
-Hey yall! 
-
-So, i'm a self taught junior iOS developer. I've been learning in the academy of YouTube for for 6 months before i got my first job 3 months ago ( a grand total of 9 months, MASSIVE!)
-
-So, i know there's still a lot for me to learn about iOS, but - at the company i work for right now there aren't any android developers, so the head of development is forced to work as an Android dev. 
-
-That's where i try to come in ! I want to learn Kotlin in order for me to be able to work on our app from both platforms, and have a wider set of skill. 
-
-From what i've seen so far the differences between Swift and Kotlin aren't massive, so i was wondering, is there anyone else here who is an iOS developer as well? If so, how did you go about adapting to Kotlin? What are some good sources to learn for someone with a bit of history? for iOS there's hacking with swift and Angela Yu, are there any equivalencies in Kotlin? 
-
-&amp;#x200B;
-
-Thanks!
-## [8][Best Way To Learn Kotlin](https://www.reddit.com/r/Kotlin/comments/jks1yh/best_way_to_learn_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/jks1yh/best_way_to_learn_kotlin/
----
-I am a CS graduate and I have experience with C++, C#.NET and Python. But I have never worked with Java.
-
-I want to learn Kotlin from the ground-up, and not just learn it quickly and without depth.
-
-I REALLY want to know how everything works and how each piece fits in the language. My goal is to become an Android Developer, but after learning Kotlin first.
-
-Are there any resources you would recommend to me? I really prefer resources with plenty of exercies, videos are okay only if they contain exercises as well, and no, *think of something, and build it* is not much of a help, because I have no practical problems that I can currently solve with plain Kotlin on the commandline.
-## [9][Koin automatic injection](https://www.reddit.com/r/Kotlin/comments/jkuhap/koin_automatic_injection/)
-- url: https://www.reddit.com/r/Kotlin/comments/jkuhap/koin_automatic_injection/
----
-Libraries like Guice or Dagger allow you to inject a dependency, if all of this dependency dependencies are satisfied (through your module definition).
-
-This comes in handy to avoid having huge module definitions and also you can inject classes without dependencies without adding them to the module definition.
-
-Any idea on how to do this on Koin or Kodein?
-## [10][Migrating the deprecated Kotlin Android Extensions compiler plugin to ViewBinding](https://www.reddit.com/r/Kotlin/comments/jkt7up/migrating_the_deprecated_kotlin_android/)
-- url: https://melegy.medium.com/migrating-the-deprecated-kotlin-android-extensions-compiler-plugin-to-viewbinding-d234c691dec7
----
-
-## [11][Suggestion: an option to add automatic reversals for boolean functions](https://www.reddit.com/r/Kotlin/comments/jkuowv/suggestion_an_option_to_add_automatic_reversals/)
-- url: https://www.reddit.com/r/Kotlin/comments/jkuowv/suggestion_an_option_to_add_automatic_reversals/
----
-So a way to set an option that will create opposite functions for boolean functions, just like it creates getters and setters.  
-For example:
-
-`class Foo {`  
-`...`  
-`fun isEmpty() = this.amountOfBar == 0`  
-`fun isBig() = this.amountOfBar &gt; 0`  
-`}`  
-It'll then automatically generate these functions:  
-`@Kotlin.internal.InlineOnly inline fun Foo.isNotEmpty() = !this.isEmpty()`  
-`@Kotlin.internal.InlineOnly inline fun Foo.isNotBig() = !this.isBig()`  
-Which will inline on compilation. This will make coding more fluent, so no need to go to the back of the function call to add a `!`.

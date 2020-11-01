@@ -40,7 +40,45 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Looking for a code review for a small todo-list app using Flows, Channels, DataStore, Hilt, Room, etc.](https://www.reddit.com/r/androiddev/comments/jlgi1h/looking_for_a_code_review_for_a_small_todolist/)
+## [3][Code Simple Android Jetpack Compose Drawing App in less than 50 lines of code](https://www.reddit.com/r/androiddev/comments/jlyx8l/code_simple_android_jetpack_compose_drawing_app/)
+- url: https://elye-project.medium.com/code-simple-android-jetpack-compose-drawing-app-886d1146ad20?sk=d677ea09b6518193b6bed2857f5ecc35
+---
+
+## [4][25 — 31 October Android Newsletter](https://www.reddit.com/r/androiddev/comments/jlzu6t/25_31_october_android_newsletter/)
+- url: https://www.reddit.com/r/androiddev/comments/jlzu6t/25_31_october_android_newsletter/
+---
+Stay up to date with Android development, in this week's edition:   
+🗄️ Proto DataStore   
+💅 Migrate to ViewBinding  
+📉 Decrease memory usage by 50%  
+🕶️ Netflix &amp; Kotlin Multiplatform  
+and much more!
+
+Read it here 👉 [https://vladsonkin.com/android-newsletter-18/](https://vladsonkin.com/android-newsletter-18/)  
+What's your favorite one?
+
+🔥Featuring [@ahmadmlgy](https://twitter.com/ahmadmlgy) [@YSeanghay](https://twitter.com/YSeanghay) [@elye\_project](https://twitter.com/elye_project) [@hamen](https://twitter.com/hamen) [@ch8n2](https://twitter.com/Ch8n2) [@rockandnull](https://twitter.com/rockandnull) [@FMuntenescu](https://twitter.com/FMuntenescu) and many other great authors!
+
+💚 Subscribe and receive new editions directly to your email. Weekly, no spam, unsub anytime.  
+Here is an example: [https://mailchi.mp/e056e7da6187/android-newsletter-18](https://mailchi.mp/e056e7da6187/android-newsletter-18)
+## [5][Kotlin Parcelize is now a separate plugin as Synthetic is being deprecated](https://www.reddit.com/r/androiddev/comments/jllsnj/kotlin_parcelize_is_now_a_separate_plugin_as/)
+- url: https://i.redd.it/4nv64lsongw51.png
+---
+
+## [6][App Rejected for missing Login Info, but we've provided it?](https://www.reddit.com/r/androiddev/comments/jlm8rt/app_rejected_for_missing_login_info_but_weve/)
+- url: https://www.reddit.com/r/androiddev/comments/jlm8rt/app_rejected_for_missing_login_info_but_weve/
+---
+Hey there 👋!
+I've written a much longer post (see [here](https://www.reddit.com/r/jellyfin/comments/jll3jm/android_update_blocked_by_google/) about this at r/jellyfin) but I'll provide a summary here.
+
+We have an app that we've submitted with Android Auto for the first time. We got rejected for not providing login info. I filled in the Policy - App Content section about it and resubmitted. It's still getting rejected. Any ideas?
+## [7][Is it easy to port a SDL2 app to android?](https://www.reddit.com/r/androiddev/comments/jlvxya/is_it_easy_to_port_a_sdl2_app_to_android/)
+- url: https://www.reddit.com/r/androiddev/comments/jlvxya/is_it_easy_to_port_a_sdl2_app_to_android/
+---
+I'm planning to write an app using SDL2. I haven't decided if I want to use zig or C++ but both can be compiled with LLVM. If my app is only using SDL2 could someone simply just compile it for android or is there more to it? I don't make android apps but when I tried compiling an SDL2 app for android I couldn't get anything working and literally gave up due to compile errors and no solutions online (maybe theyre common ones that everyone knows except for a non android developer like me)
+
+If it's as easy as a recompile I'll develop the app with android in mind but will it be a simple recompile?
+## [8][Looking for a code review for a small todo-list app using Flows, Channels, DataStore, Hilt, Room, etc.](https://www.reddit.com/r/androiddev/comments/jlgi1h/looking_for_a_code_review_for_a_small_todolist/)
 - url: https://www.reddit.com/r/androiddev/comments/jlgi1h/looking_for_a_code_review_for_a_small_todolist/
 ---
 My focus in this small project was to get MVVM right and separate the logic between the fragment and the ViewModel properly. In the past, I've been writing a lot of logic in my fragments and I'm trying to learn how to do that better.
@@ -50,85 +88,51 @@ I use Channels converted to Flow to emit events from my ViewModels for my fragme
 Can someone take a look at this project and give some feedback? Any big mistakes?
 
 [https://github.com/codinginflow/ToDoPrep](https://github.com/codinginflow/ToDoPrep)
-## [4][AndroidBites | Java ☕️ Maps 🗺 on the Kotlin.](https://www.reddit.com/r/androiddev/comments/jle5oc/androidbites_java_maps_on_the_kotlin/)
-- url: https://chetan-garg36.medium.com/java-%EF%B8%8F-maps-on-the-kotlin-8930b9f55d8d
+## [9][They mystery of background activity &amp; background data.](https://www.reddit.com/r/androiddev/comments/jlw59z/they_mystery_of_background_activity_background/)
+- url: https://www.reddit.com/r/androiddev/comments/jlw59z/they_mystery_of_background_activity_background/
 ---
+I've scorched all over the internet and I can't seem to find any factually accurate information about of these topics. All I see are opinions and guesses, this leading me to make this post.
 
-## [5][How do I show a toast just below the Toolbar](https://www.reddit.com/r/androiddev/comments/jl5wcl/how_do_i_show_a_toast_just_below_the_toolbar/)
-- url: https://www.reddit.com/r/androiddev/comments/jl5wcl/how_do_i_show_a_toast_just_below_the_toolbar/
----
-I need to show a toast just below the toolbar. It is a standard activity with no frills
 
-&amp;#x200B;
+In settings of apps there are two types of usage, battery usage and data usage.
 
-&gt;override fun onCreateView(savedInstance: Bundle?) {  
-&gt;  
-&gt;super.onCreateView(savedBundle)  
-&gt;  
-&gt;setContentView(R.layout.my\_layout)  
-&gt;  
-&gt;val toast = Toast(this).apply {  
-&gt;  
-&gt;setGravity(Gravity.***TOP*** | Gravity.***CENTER\_HORIZONTAL***, 0, 0)setDuration(Toast.***LENGTH\_LONG***)  
-&gt;  
-&gt;show(R.string.success\_string)  
-&gt;  
-&gt;}  
-&gt;  
-&gt;. . . . . . . Other code in the function . . . .  
-&gt;  
-&gt;}
+In battery usage there's foreground activity and background activity.
 
-&amp;#x200B;
+Foreground activity is "on" by default on every app but background activity is "off".
 
-Activity definition in the manifest
+Question - what is foreground activity? How does it effect the battery performance when switched on or off?
 
-&amp;#x200B;
+Then there's data usage, in which there's only background data option which is "on" by default on every app.
 
-&gt;&lt;**activity android:name=".activities.InputActivity"** /&gt;
+Now, that's confusing.
 
-&amp;#x200B;
+If the background activity is "off" then why is the background data "on"?  shouldn't it be "off" too?
 
-I have  `setGravity(Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0)`. I know that I can set the y offset but I don't know how the y offset should be calculated. The most relevant article on SO is from 2013. Any suggestions would be gratefully appreciated.
+Why does the app need any background data if the app is not doing any activity in the background?
 
-[https://stackoverflow.com/questions/18420445/how-to-show-custom-toast-below-actionbar](https://stackoverflow.com/questions/18420445/how-to-show-custom-toast-below-actionbar)
-## [6][How to fix app:DexBuilderDebug build failed error?](https://www.reddit.com/r/androiddev/comments/jlgryb/how_to_fix_appdexbuilderdebug_build_failed_error/)
-- url: https://www.reddit.com/r/androiddev/comments/jlgryb/how_to_fix_appdexbuilderdebug_build_failed_error/
----
-This is my second time building an app with android studio. I’m trying to build a currency conversion app that calls an API to do the conversion. However, when I run the app, I get the dexBuilderDebug error. I’m only getting this error after creating the interface and class for retrofit. 
+Question- what's the difference between background activity and background data?
 
-I have my code and errors posted on [stackoverflow ](https://stackoverflow.com/questions/64620823/android-studio-build-failed-task-appdexbuilderdebug-failed). Has anyone ran into the same error before? How did you fix it? I can’t even understand what is causing the error
-## [7][How can I do custom notch on CardView like this?](https://www.reddit.com/r/androiddev/comments/jksyrl/how_can_i_do_custom_notch_on_cardview_like_this/)
-- url: https://i.redd.it/uncfvma607w51.png
----
+What are the effects of background activity on battery performance when switched on or off?
 
-## [8][New android dev, what do I need to know to do C/C++?](https://www.reddit.com/r/androiddev/comments/jlc1tm/new_android_dev_what_do_i_need_to_know_to_do_cc/)
-- url: https://www.reddit.com/r/androiddev/comments/jlc1tm/new_android_dev_what_do_i_need_to_know_to_do_cc/
----
-Hi, I'm totally new to Android dev. I'm hoping someone can give me a brief roadmap on what I'm going to need to know to work effectively with Android Studio and C++ so I can start reading the right articles and so on. For example, do I need to know "normal" Java android-development for the NDK to make sense? Are there decent resources for learning C++ oriented Android dev that aren't out of date? Are all NDK apps hybrids where at some point I'm dealing with the JNI?
+What are the effects of background data on battery performance when switched on or off?
+ 
+Some say background activity/data should be turned off to save battery while some it should be turned on to save battery as the app will keep asking permission to get on, or will keep getting on and off wasting battery. What's the truth?
 
-I'm mucking about with JUCE but I'm a big believer in understanding what your framework is doing and not developing more married to the framework than need be, so I feel I should be educating myself outside of just JUCE oriented resources.
+And let me say this again, I'm looking for facts, not guesses or opinions.
 
 Thanks!
-## [9][Avoiding I/O in gradle ?](https://www.reddit.com/r/androiddev/comments/jkyr0v/avoiding_io_in_gradle/)
-- url: https://www.reddit.com/r/androiddev/comments/jkyr0v/avoiding_io_in_gradle/
+## [10][Apps close as soon as screen off.](https://www.reddit.com/r/androiddev/comments/jlu3zw/apps_close_as_soon_as_screen_off/)
+- url: https://www.reddit.com/r/androiddev/comments/jlu3zw/apps_close_as_soon_as_screen_off/
 ---
-I have seen some threads recommending that you avoid I/O during gradle configuration. My company currently does this to get the branch name, build time, and git SHA, into BuildConfig. I'm trying to understand the reasoning of why I should avoid it before I bring it up to my coworkers.
+My phone is Samsung galaxy A20. As soon as the screen off the app which i was using closes and returns to the homepage, its not killed though. If i manually lock the screen and unlock it, the app is still there , it only happens when the screen auto off's  after timeout.
+I made sure that developer options was off,  battery optimization was off , and putting unused apps to sleep was also off. But nothing works.
 
-For these specific examples I replaced the git command with a static string, and did `./gradlew assemble* --dry-run --rerun-tasks --profile` and those configuration times dropped from around 3s to 1.5s. that's a nice percentage but not all that significant since that's only for configuration.
-
-What else should I know? I have read some threads alluding to impacting incremental builds but can't find concrete info about why
-## [10][Personal or business gmail address for developer account](https://www.reddit.com/r/androiddev/comments/jlboit/personal_or_business_gmail_address_for_developer/)
-- url: https://www.reddit.com/r/androiddev/comments/jlboit/personal_or_business_gmail_address_for_developer/
+Edit- i just found out that it happens when i double tap the screen to wake and does not happen when i press the power button or use the finger print sensor. But still why does it happen?
+## [11][Best approach to generate Order ID for payment transactions.](https://www.reddit.com/r/androiddev/comments/jlm7vl/best_approach_to_generate_order_id_for_payment/)
+- url: https://www.reddit.com/r/androiddev/comments/jlm7vl/best_approach_to_generate_order_id_for_payment/
 ---
-I plan on releasing a paid app to the play store soon. I don’t really expect it to make me much more than beer money, so I’m not incorporating as an LLC or anything. 
-
-I will be getting a separate gmail account though for the developer account. When I sign up for a new gmail address should it be a personal one since I’m just doing business as a sole proprietor (US based) or a business gmail account since I am selling something, which is a business transaction for the little it’ll be worth?
-## [11][Is there a known problem with chrome, and samsung galaxy phones having broken grayscale/black levels?](https://www.reddit.com/r/androiddev/comments/jl702w/is_there_a_known_problem_with_chrome_and_samsung/)
-- url: https://www.reddit.com/r/androiddev/comments/jl702w/is_there_a_known_problem_with_chrome_and_samsung/
----
-Chrome seems to make almost every video that should have either black become light gray, or a value that should be 100% white becomes grey instead.
-## [12][Mobile Developers Cafe Weekly Issue #12 🎉🎊 is out](https://www.reddit.com/r/androiddev/comments/jlcm71/mobile_developers_cafe_weekly_issue_12_is_out/)
-- url: https://archive.mobiledeveloperscafe.com/p/issue12
+Currently, I am using simple linear addition for generating new order IDs like 110000, 110001, 110002... But in this approach anyone can calculate number of orders placing on my app. So I want to add a new approach in which order ID is Readable but not Understandable by the user. I want to use this in my android app. So what can I do to achieve this using some logic or 3rd party libraries?
+## [12][Proto DataStore Android: Is It Worth It?](https://www.reddit.com/r/androiddev/comments/jlmvvf/proto_datastore_android_is_it_worth_it/)
+- url: https://vladsonkin.com/proto-datastore-android-is-it-worth-it/
 ---
 

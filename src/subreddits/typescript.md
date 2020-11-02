@@ -22,7 +22,52 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Query regarding Excess Property Checks in TypeScript](https://www.reddit.com/r/typescript/comments/jlyvu3/query_regarding_excess_property_checks_in/)
+## [2][How can I declare a const as a function that takes generics?](https://www.reddit.com/r/typescript/comments/jmch8b/how_can_i_declare_a_const_as_a_function_that/)
+- url: https://www.reddit.com/r/typescript/comments/jmch8b/how_can_i_declare_a_const_as_a_function_that/
+---
+Given the following types, how can I declare a const `foo` of type `F` where generics of `F` must be given when using it (i.e. I want to call `foo` like this: `foo&lt;number&gt;(someValue)`)?
+
+```
+type P&lt;T&gt; = { a: T };
+type R&lt;T&gt; = { b: T };
+type F&lt;T&gt; = (param: P&lt;T&gt;) =&gt; R&lt;T&gt;;
+
+// Define the dummy function here to reduce code dup.
+const fn = (param: any) =&gt; ({ b: param.a });
+```
+
+Simply saying foo is of type `F` results in "Generic type 'F' requires 1 type argument(s). (2314)" so that's no good:
+
+```
+const foo: F = fn;
+```
+
+If I redefine `F` inline, it's fine:
+
+```
+const foo: &lt;T&gt;(param: P&lt;T&gt;) =&gt; R&lt;T&gt; = fn;
+```
+
+But it's a syntax error if I try declare some generic must be passed to `F`:
+
+```
+const foo: &lt;T&gt;F&lt;T&gt; = fn;
+```
+
+I think that last option is close, but I just need to figure out the right syntax. Is there a correct syntax? If not, does anyone know if there is an issue open for this (I couldn't find one)?
+## [3][Practice for employment algorithm tests in JS or TS?](https://www.reddit.com/r/typescript/comments/jm6rlq/practice_for_employment_algorithm_tests_in_js_or/)
+- url: https://www.reddit.com/r/typescript/comments/jm6rlq/practice_for_employment_algorithm_tests_in_js_or/
+---
+I have an easier time keeping track of data shape in Typescript. I will take any job though.
+
+Is Typescript normally offered as an option during an employment algorithm test? Or is its availability during those types of tests restricted, compared to Javascript?
+
+If the later i may practice in Javascript.
+## [4][Continuations as collections](https://www.reddit.com/r/typescript/comments/jmaxe8/continuations_as_collections/)
+- url: https://medium.com/@wim_jongeneel/continuations-as-collections-f4a5172a88a3?source=friends_link&amp;sk=1f57f96d6659aa11c0c5a33fac86db8d
+---
+
+## [5][Query regarding Excess Property Checks in TypeScript](https://www.reddit.com/r/typescript/comments/jlyvu3/query_regarding_excess_property_checks_in/)
 - url: https://www.reddit.com/r/typescript/comments/jlyvu3/query_regarding_excess_property_checks_in/
 ---
 Hi Everyone, 
@@ -44,13 +89,13 @@ I am unable to understand on why is `mySquare1` valid while `mySquare2` ends up 
     // Argument of type '{ width: number; color: string; opacity: number; }' is not assignable to parameter of type 
     'SquareConfig'. Object literal may only specify known properties, and 'opacity' does not exist in type 
     'SquareConfig'.
-## [3][Semicolons, yay or nay?](https://www.reddit.com/r/typescript/comments/jlsqxj/semicolons_yay_or_nay/)
+## [6][Semicolons, yay or nay?](https://www.reddit.com/r/typescript/comments/jlsqxj/semicolons_yay_or_nay/)
 - url: https://www.reddit.com/r/typescript/comments/jlsqxj/semicolons_yay_or_nay/
 ---
 What is your preference for typescript?
 
 [View Poll](https://www.reddit.com/poll/jlsqxj)
-## [4][Strict version of built-in types (which use `any`)](https://www.reddit.com/r/typescript/comments/jlhzuv/strict_version_of_builtin_types_which_use_any/)
+## [7][Strict version of built-in types (which use `any`)](https://www.reddit.com/r/typescript/comments/jlhzuv/strict_version_of_builtin_types_which_use_any/)
 - url: https://www.reddit.com/r/typescript/comments/jlhzuv/strict_version_of_builtin_types_which_use_any/
 ---
 Hello,
@@ -78,17 +123,17 @@ Is there a community version of these native types which would use \`unknown\` i
 
 
 Or is there any other way to tackle this problem without requiring me to remember all the cases where typescript has got \`any\` as the built-in type?
-## [5][Good practices to follow for a Typescript project?](https://www.reddit.com/r/typescript/comments/jlhuc4/good_practices_to_follow_for_a_typescript_project/)
+## [8][Good practices to follow for a Typescript project?](https://www.reddit.com/r/typescript/comments/jlhuc4/good_practices_to_follow_for_a_typescript_project/)
 - url: https://www.reddit.com/r/typescript/comments/jlhuc4/good_practices_to_follow_for_a_typescript_project/
 ---
 Hi I'm going to start working on my first big project with Typescript using React Native. I'm still planning the whole system architecture but I need some help with how I should structure the code and files, document it, etc. Are there any resources that you would recommend for me?
-## [6][Pathing packages in a TS monorepo?](https://www.reddit.com/r/typescript/comments/jl9ud4/pathing_packages_in_a_ts_monorepo/)
+## [9][Pathing packages in a TS monorepo?](https://www.reddit.com/r/typescript/comments/jl9ud4/pathing_packages_in_a_ts_monorepo/)
 - url: https://www.reddit.com/r/typescript/comments/jl9ud4/pathing_packages_in_a_ts_monorepo/
 ---
 Anyone have experience with pathing packages in monorepos?  I've got a monorepo with several packages, including a component library and a dashboard. I'm trying to import the component library in my dashboard package as import { Button } from '@company/ui' but it doesnt give me type definitions on my Button component unless I import from @company/ui/lib
 
 I of course can always just import from /lib, but I feel like I'm doing something wrong here.
-## [7][Justified use of an exclamation mark](https://www.reddit.com/r/typescript/comments/jl87jc/justified_use_of_an_exclamation_mark/)
+## [10][Justified use of an exclamation mark](https://www.reddit.com/r/typescript/comments/jl87jc/justified_use_of_an_exclamation_mark/)
 - url: https://www.reddit.com/r/typescript/comments/jl87jc/justified_use_of_an_exclamation_mark/
 ---
 Hey! I just found a justified use case for an exclamation mark:
@@ -103,7 +148,7 @@ Hey! I just found a justified use case for an exclamation mark:
 Since we check `tokens.length` as part of the while loop, we can be sure `tokens.shift()` returns a token.
 
 So far, I haven't found many other cases of exclamation mark that I could justify. Have you found any that make sense?
-## [8][Share business logic between projects](https://www.reddit.com/r/typescript/comments/jkx8xr/share_business_logic_between_projects/)
+## [11][Share business logic between projects](https://www.reddit.com/r/typescript/comments/jkx8xr/share_business_logic_between_projects/)
 - url: https://www.reddit.com/r/typescript/comments/jkx8xr/share_business_logic_between_projects/
 ---
 Hello everyone, 
@@ -129,36 +174,3 @@ How should I organize my projects? I'm not willing to stay one week more with so
 
 
 Thank you
-## [9][Property '' is missing in type '{}' but required in type ''.](https://www.reddit.com/r/typescript/comments/jkxrjq/property_is_missing_in_type_but_required_in_type/)
-- url: https://www.reddit.com/r/typescript/comments/jkxrjq/property_is_missing_in_type_but_required_in_type/
----
-On the bold code I'm getting this error after setting the first property as mandatory.
-
-Any idea how to fix this?
-
-Property 'categId' is missing in type '{}' but required in type 'Produit'. 
-
-export class Produit {  
-  categId: string;  
-  id?: string;  
-  nom?: string;  
-  image?: string;  
-  prix?: string;  
-  description?: string;  
- constructor(**args: Produit = {}**) {  
- *this*.categId = args.categId;  
- *this*.id = args.id;  
- *this*.nom = args.nom;  
- *this*.image = args.image;  
- *this*.prix = args.prix;  
- *this*.description = args.description;  
-  }  
-}
-## [10][What's the point of tuples? Why would you ever use a tuple when an object works just fine?](https://www.reddit.com/r/typescript/comments/jkpz5l/whats_the_point_of_tuples_why_would_you_ever_use/)
-- url: https://www.reddit.com/r/typescript/comments/jkpz5l/whats_the_point_of_tuples_why_would_you_ever_use/
----
-I just don't get the point of tuples. If anything, they just make it more confusing for your coworkers because they may try to add different data types to the array, and they'll be confused as hell when an error is thrown.
-## [11][Starting a new library, what are the most modern settings i can use for node/browser?](https://www.reddit.com/r/typescript/comments/jkom4a/starting_a_new_library_what_are_the_most_modern/)
-- url: https://www.reddit.com/r/typescript/comments/jkom4a/starting_a_new_library_what_are_the_most_modern/
----
-... I want to start a new library.  Say I want to build to run in Node 15, and the most modern of browsers.  What are the best settings to use in my tsconfig?  I want zero backwards compatibility, and I want the output from TSC to run on both.  What can I get away with right now?

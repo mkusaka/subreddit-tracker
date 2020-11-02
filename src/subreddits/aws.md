@@ -3,110 +3,110 @@
 - url: https://register.virtual.awsevents.com/
 ---
 
-## [2][5 Tips to Make Your Lambda Functions Run Faster (and Cheaper)](https://www.reddit.com/r/aws/comments/jlt5fn/5_tips_to_make_your_lambda_functions_run_faster/)
-- url: https://www.webiny.com/blog/5-tips-to-make-your-lambda-functions-run-faster-and-cheaper
+## [2][In the Works – New AWS Region in Zurich, Switzerland](https://www.reddit.com/r/aws/comments/jmkkiv/in_the_works_new_aws_region_in_zurich_switzerland/)
+- url: https://aws.amazon.com/blogs/aws/in-the-works-new-aws-region-in-zurich-switzerland/
 ---
 
-## [3][Ways to increase availability of my API Gateway -&gt; Lambda -&gt; DynamoDB Setup](https://www.reddit.com/r/aws/comments/jlyv26/ways_to_increase_availability_of_my_api_gateway/)
-- url: https://www.reddit.com/r/aws/comments/jlyv26/ways_to_increase_availability_of_my_api_gateway/
+## [3][Lambda not scaling with SQS. ConcurrentExecutions is always 1. SQS ApproximateNumberOfMessagesVisible = 60k](https://www.reddit.com/r/aws/comments/jmgwmv/lambda_not_scaling_with_sqs_concurrentexecutions/)
+- url: https://www.reddit.com/r/aws/comments/jmgwmv/lambda_not_scaling_with_sqs_concurrentexecutions/
 ---
-I'm currently setting up a very small lambda function. Basically it takes some information related to website analytics (where the user click, who the user is, what time it was performed).
+I set a lambda with a  
+\- Memory: 1024MB  
+\- SQS trigger, batch size = 10  
+\- No concurrency limit. "Use unreserved account concurrency"  
+\- SQS is a FIFO queue  
+\- Lambda uses a VPC
 
-This saves it to DynamoDB and accessed via API Gateway (currently has no authentication method).
+Lambda has a success rate of 100% but ConcurrentExecutions never exceeds one (1). SQS ApproximateNumberOfMessagesVisible goes down slowly.
 
-I'm trying to test it using Artillery and I'm getting 502 after some time (when the load starts to increase).
+I thought with 60k messages on the queue it would start invoking lambdas up to 1k concurrently.
 
-I need some tips on what settings I could change to reach 10,000 API requests per minute. I'm very new to this set-up so please pardon this noob.
-## [4][Multiple Cost Allocation Tags in Cost Explorer or Cost Categories?](https://www.reddit.com/r/aws/comments/jlyw7i/multiple_cost_allocation_tags_in_cost_explorer_or/)
-- url: https://www.reddit.com/r/aws/comments/jlyw7i/multiple_cost_allocation_tags_in_cost_explorer_or/
+Do you guys have any ideas what's going on?
+
+Thanks for your help.
+## [4][AWS Cloud Support Interview coming up... super nervous :( and what does domain: generalist mean?](https://www.reddit.com/r/aws/comments/jml2mf/aws_cloud_support_interview_coming_up_super/)
+- url: https://www.reddit.com/r/aws/comments/jml2mf/aws_cloud_support_interview_coming_up_super/
 ---
-I've setup and activated seperate Cost Allocation Tags for Jenkins CI EC2 runs "win2012_qa",  "win2012_qa_manual". I enter these tags in the corresponding AMI/EC2 entries in Jenkins and launch some jenkins jobs which use the tags.
+Hello kind folks of reddit,
 
-It works as expected, I can view each tag individually fine in Cost Explorer.  But I cannot get multiple Cost Allocation Tags to present in Cost Explorer when I select more than 1 tag.
+I'm currently in the hiring process for the AWS Cloud Support Associate role and I passed the Online Assessment last week and my interview date is set for Nov 6 which is 4 days from now. In the email regarding the details of the interview, it says lists the domain for the interview as "generalist". My question is should I be worried about this? I've done a lot of reading online and people get specific domains for their interview I cannot find one person who's gotten generalist. I really hope this is not a bad thing. I put my top three interests as Big data, database, and Analytics at the end of my OA could I communicate to the interviewer to assess me for those teams? Also if anyone were to provide any tips or questions for the interview regarding any of those three teams or the generalist domain, I would really appreciate it!! I know the reddit community's got me :) 
 
-I then tried setting up a "QA" Cost category with "win2012_qa" and "win2012_qa_manual" as seperate rules with Dimension=Tag and Tag key+value = "win2012_qa".   Same for "win2012_qa_manual".   Wait 8 hours for it to process.  But it seems to only display 1 tag.
+Really appreciate all the help I can get, thanks in advance and I'll be sure to update you all after the interview
 
-Is there any way I can have multiple tags presented in Cost Explorer?
-## [5][AWS MFA with the YubiKey Manager CLI](https://www.reddit.com/r/aws/comments/jlmi8k/aws_mfa_with_the_yubikey_manager_cli/)
-- url: https://www.reddit.com/r/aws/comments/jlmi8k/aws_mfa_with_the_yubikey_manager_cli/
+Thank you all so much!!
+## [5][A method for managing backend application secrets using AWS S3 and CodeDeploy](https://www.reddit.com/r/aws/comments/jmjt5l/a_method_for_managing_backend_application_secrets/)
+- url: https://riadrifai22.medium.com/managing-application-secrets-like-never-before-using-aws-s3-and-codedeploy-611d3121ecbe
 ---
-I've been searching for a powerful CLI based application to manage hard tokens for my root and iam accounts. Recently I settled on the [__YubiKey Manager CLI app__](https://support.yubico.com/hc/en-us/articles/360016614940-YubiKey-Manager-CLI-ykman-User-Manual) in combination with the [__5c__](https://www.yubico.com/product/yubikey-5c/). Since the CLI app uses [__OATH-TOTP__](https://en.wikipedia.org/wiki/Time-based_One-time_Password_algorithm) it has made the experience quite pleasing and wanted to share my [__three part article__](https://blog.shaneyost.io/). A couple people on here had great advice on this application so I wanted to say thanks.
-## [6][Lightsail vs. EC2 for my project](https://www.reddit.com/r/aws/comments/jlyryd/lightsail_vs_ec2_for_my_project/)
-- url: https://www.reddit.com/r/aws/comments/jlyryd/lightsail_vs_ec2_for_my_project/
+
+## [6][Only 5 and half hours left to the HUMBLE BOOK BUNDLE: AWS, AZURE, GOOGLE, AND CLOUD SECURITY Get Amazon Web Services for Mobile Developers and more get it before it ends](https://www.reddit.com/r/aws/comments/jmnb2d/only_5_and_half_hours_left_to_the_humble_book/)
+- url: https://www.humblebundle.com/books/aws-azure-google-and-cloud-security-books?partner=mfasula&amp;charity=2175662
 ---
-I’m making a project where my Arduino sends an email/sms every time a sensor condition changes. To accomplish this I need a server to connect to SES and Twilio’s SMS API.
 
-I have limited experience with AWS so I’m really not sure if I should use Lightsail or EC2 for this. If the Arduino would only need to connect to connect to the server a couple times a day (about 600/year), which would be cheaper, the $3.50 Lightsale tier or EC2 (would this usage be within EC2’s free 750 hours?)
-## [7][Error during validation of WorkSpace image](https://www.reddit.com/r/aws/comments/jm1g58/error_during_validation_of_workspace_image/)
-- url: https://www.reddit.com/r/aws/comments/jm1g58/error_during_validation_of_workspace_image/
+## [7][Is it wise to use same application load balancer for API and UI? What are possible risks?](https://www.reddit.com/r/aws/comments/jmmbn2/is_it_wise_to_use_same_application_load_balancer/)
+- url: https://www.reddit.com/r/aws/comments/jmmbn2/is_it_wise_to_use_same_application_load_balancer/
 ---
-hey,
-
- I'm slowly despairing... I try to create an image with AWS but everytime I get the error " Error during validation of WorkSpace image". I installed a lot of software in it. Last time (6 months ago) everything worked fine.
-
-I have checked all of these steps: [https://aws.amazon.com/de/premiumsupport/knowledge-center/workspaces-image-creation-issue/](https://aws.amazon.com/de/premiumsupport/knowledge-center/workspaces-image-creation-issue/)  
-
-
-The imagechecker tool says that everything is passed and fine.   
- https://imgur.com/47qkidd   
-Does anybody have an advice for me? 
-
-Many greetings
-## [8][Help using S3 as Google One replacement for sharing](https://www.reddit.com/r/aws/comments/jlz411/help_using_s3_as_google_one_replacement_for/)
-- url: https://www.reddit.com/r/aws/comments/jlz411/help_using_s3_as_google_one_replacement_for/
+We can use host based routing in aws alb. So we can forward to api and ui target groups based on host headers.
+But in this case is it vulnerable to use the same load balancer?
+## [8][CHECK_NRPE: Socket timeout after 30 seconds || Nagios || Client](https://www.reddit.com/r/aws/comments/jmm506/check_nrpe_socket_timeout_after_30_seconds_nagios/)
+- url: https://www.reddit.com/r/aws/comments/jmm506/check_nrpe_socket_timeout_after_30_seconds_nagios/
 ---
-Hi,
+Able to do install Nagios Server on ubuntu but when doing for server getting this error on AWS. Go through many links of same error but not found the solution. 
 
-I was wondering if anybody is using S3 to replace Google Drive. I am considering this because Google options for having storage shared with family do not work for me (we live in different countries).
+[https://bobcares.com/blog/check\_nrpe-socket-timeout-after-10-seconds/](https://bobcares.com/blog/check_nrpe-socket-timeout-after-10-seconds/)
 
-My plan would be to make a IAM user for my parents with privileges to log into the console and only up/download from a bucket. I guess they should be OK to learn how to do this.
+[https://serverfault.com/questions/605666/check-nrpe-socket-timeout-after-10-seconds-https-ssl/605738](https://serverfault.com/questions/605666/check-nrpe-socket-timeout-after-10-seconds-https-ssl/605738)
 
-I would be grateful for any insights on possible showstopers and/or hidden costs that my crop up from other necessary infrastructure.
+It would be great if anyone have an exact solution for it. 
 
-\- Looking at costs per GB / transfer sound like I'd be paying only slightly more than Google Drive. I am assuming transfer cost "to the internet" are the highest transfer costs, correct?
+For Nagios Server I go through below link:
 
-\- Are IAM users and roles free?
+ [https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/install-nagios-4-1-1-ubuntu-16-04.html](https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/install-nagios-4-1-1-ubuntu-16-04.html)
 
-\- Could I add other permissions/limitations (different users for different family members, quotas, upload limits) using only S3, or would this need extra components? If only in S3, would this incurr extra costs?
+For Nagios Client followed below link:
 
-\- What could my parents do to screw this up? XD
+[https://www.itzgeek.com/how-tos/linux/centos-how-tos/monitor-remote-linux-system-with-nagios-3.html](https://www.itzgeek.com/how-tos/linux/centos-how-tos/monitor-remote-linux-system-with-nagios-3.html)
 
 &amp;#x200B;
 
-My quick google of a simple solution to add, e.g., a Web UI for such an application did not bring up much, but if there is somethig ready-made, it'd also be nice to take a look.
-
-&amp;#x200B;
-
-Thanks in advance for any help!
-
-Juan
-## [9][writing from EMR to AWS Elasticsearch](https://www.reddit.com/r/aws/comments/jlz9v1/writing_from_emr_to_aws_elasticsearch/)
-- url: https://www.reddit.com/r/aws/comments/jlz9v1/writing_from_emr_to_aws_elasticsearch/
+[Host Error](https://preview.redd.it/45ka9ruiftw51.png?width=1166&amp;format=png&amp;auto=webp&amp;s=bfc786e08b04738bf750716e63dd39fafabd76dd)
+## [9][Penetration testing API GW tips?](https://www.reddit.com/r/aws/comments/jm85on/penetration_testing_api_gw_tips/)
+- url: https://www.reddit.com/r/aws/comments/jm85on/penetration_testing_api_gw_tips/
 ---
-Hi,
+Ive recently been assigned a task that includes making a security review of an environment including an API Gateway pointing to a Lambda function, and while I have done Hack-the-boxes and CTFs in the past, im not entirely sure what to look for here in regards to misconfigurations of the API GW/Lambda which might be abuseable.   
+Since there is no database or website behind the gateway, attacks like SQLi and XSS shouldnt be possible I guess and im considering if there could be some tampering of JWTs or revelation of too much information, but im not really sure how to attack this atm. I have already identified the possibility of Denial-of-wallet attacks, but as we have a ton of monitoring and alarms, i highly doubt this is of much risk.  
+Anyway, to the question, do any of you guys do pentests on API GWs or Lambdas and have tips on what tools to use, what to look for etc? :)  
+Im currently using various Kali tools like Burp and NMAP scripts, but im open to try out other frameworks as i see multiple API testing tools exists that i havent tried yet.
 
-I'm convertin my code to from spark on (EC2) to EMR, but I can't find any relevant document regarding   
-writing from spark job to aws elasticsearch.
-
-I used ( on my EC2)  spark-hadoop jar, but now I not sure where i should add \\ configure this jar( es-haddop):  
-[http://www.elastic.co/downloads/hadoop](http://www.elastic.co/downloads/hadoop)
-
-Thanks 
-
-Yanka
-## [10][RDS MySQL keep 5% of disk space free permanently ?](https://www.reddit.com/r/aws/comments/jlz12b/rds_mysql_keep_5_of_disk_space_free_permanently/)
-- url: https://www.reddit.com/r/aws/comments/jlz12b/rds_mysql_keep_5_of_disk_space_free_permanently/
+Any tips are appreciated as im not too experienced with security on AWS! \^\^
+## [10][CWE/EventBridge doesn't receive IN_PROGRESS events from Codebuild Batch builds](https://www.reddit.com/r/aws/comments/jml5mg/cweeventbridge_doesnt_receive_in_progress_events/)
+- url: https://www.reddit.com/r/aws/comments/jml5mg/cweeventbridge_doesnt_receive_in_progress_events/
 ---
-A team is doing some bad SQL queries which are causing the innodb temporary tables on-disk to use up the full remaining disk space of the DB instance.
+Hi
 
-Because the DB Disk space gets full, I cannot restart/reboot the DB instance (the option is not available in the GUI).  I either have to get AWS support involved to reboot the DB, or manually kill the DB Connections and processes and increase the DB Disk size which will then allow me reboot the DB to clear the temporary tables and return the DB size to normal.
+Basically, see the problem in the title. For regular builds I receive all events I need. Here's my event pattern:
 
-While the team investigate and fix the bad queries, is there any way I can make the DB instance keep a % of disk space free so I can reboot the DB instance ?
+    {
+      "detail": {
+        "build-status": [
+          "IN_PROGRESS",
+          "SUCCEEDED",
+          "FAILED",
+          "STOPPED"
+        ],
+        "project-name": [
+          "super-mega-codebuild-project"
+        ]
+      },
+      "detail-type": [
+        "CodeBuild Build State Change"
+      ],
+      "source": [
+        "aws.codebuild"
+      ]
+    }
 
-The below has great information on how to set the temporary table sizing, but unfortunately the queries are forcing the tables to write to disk.
-
-https://aws.amazon.com/blogs/database/best-practices-for-configuring-parameters-for-amazon-rds-for-mysql-part-1-parameters-related-to-performance/
-## [11][What have you automated with python ?](https://www.reddit.com/r/aws/comments/jlstkv/what_have_you_automated_with_python/)
-- url: https://www.reddit.com/r/aws/comments/jlstkv/what_have_you_automated_with_python/
+Is there something wrong with the pattern or it's an expected behaviour?
+## [11][Schedule CSV export (to an email) of data from RDS](https://www.reddit.com/r/aws/comments/jmky8c/schedule_csv_export_to_an_email_of_data_from_rds/)
+- url: https://www.reddit.com/r/aws/comments/jmky8c/schedule_csv_export_to_an_email_of_data_from_rds/
 ---
-Hey everyone, I really need real case example on what you have automated in AWS. I feel like I hit a brick wall. I have been learning so much python for my sys role but no idea where to start automating in my company.Perhaps I would get some ideas if I get to hear to your automation achievement.
+I have a requirement to email weekly data from RDS (PostGres) as CSV in an email attachment. What is the best way to do it. I know it can be done via lambda but is there any other good way to achieve this ? Any built in service may be ?

@@ -3,15 +3,31 @@
 - url: https://blog.golang.org/survey2020
 ---
 
-## [2][Happy Halloween gophers!](https://www.reddit.com/r/golang/comments/jloh3s/happy_halloween_gophers/)
-- url: https://i.redd.it/82u5v5cwehw51.jpg
+## [2][I made an animation tool with go (Ebiten)!](https://www.reddit.com/r/golang/comments/jmjica/i_made_an_animation_tool_with_go_ebiten/)
+- url: https://i.redd.it/ch0y9vl59sw51.jpg
 ---
 
-## [3][Scan targets ports and export the results to Prometheus (in a k8s cluster or locally)](https://www.reddit.com/r/golang/comments/jlz6lz/scan_targets_ports_and_export_the_results_to/)
-- url: https://github.com/devops-works/scan-exporter
+## [3][New release of bit – a modern git CLI (0.9) - checkout PRs, themes and QOL improvements](https://www.reddit.com/r/golang/comments/jmeknc/new_release_of_bit_a_modern_git_cli_09_checkout/)
+- url: https://i.redd.it/bhdkx1f6dqw51.gif
 ---
 
-## [4][Is it a scam or not?](https://www.reddit.com/r/golang/comments/jm1y8x/is_it_a_scam_or_not/)
+## [4][Real-time visualization tool for Go process metrics](https://www.reddit.com/r/golang/comments/jm3oe1/realtime_visualization_tool_for_go_process_metrics/)
+- url: https://i.redd.it/ttvmz5302nw51.gif
+---
+
+## [5][New release of PTerm [v0.10.0] - Pretty print everything!](https://www.reddit.com/r/golang/comments/jm939z/new_release_of_pterm_v0100_pretty_print_everything/)
+- url: https://github.com/pterm/pterm
+---
+
+## [6][Hash Tables Implementation in Go | The inner implementation. A story (for normal people)](https://www.reddit.com/r/golang/comments/jmfopw/hash_tables_implementation_in_go_the_inner/)
+- url: https://medium.com/kalamsilicon/hash-tables-implementation-in-go-48c165c54553
+---
+
+## [7][Hello Everyone,New to Go language...Any tips to where to start?](https://www.reddit.com/r/golang/comments/jmm8xz/hello_everyonenew_to_go_languageany_tips_to_where/)
+- url: https://www.reddit.com/r/golang/comments/jmm8xz/hello_everyonenew_to_go_languageany_tips_to_where/
+---
+
+## [8][Is it a scam or not?](https://www.reddit.com/r/golang/comments/jm1y8x/is_it_a_scam_or_not/)
 - url: https://www.reddit.com/r/golang/comments/jm1y8x/is_it_a_scam_or_not/
 ---
 Hello guys,
@@ -37,57 +53,25 @@ I don't know if I should continue or not. Maybe I should deliver the GO client a
 What do you think? Is it a scam or not? I'll be very happy to have your thoughts. 
 
 Thanks
-## [5][Duct: docker-compose like functionality directly from golang, for integration testing.](https://www.reddit.com/r/golang/comments/jlzxyf/duct_dockercompose_like_functionality_directly/)
-- url: https://github.com/erikh/duct
+## [9][Newbie question on learning Go for app backend stuff.](https://www.reddit.com/r/golang/comments/jml6td/newbie_question_on_learning_go_for_app_backend/)
+- url: https://www.reddit.com/r/golang/comments/jml6td/newbie_question_on_learning_go_for_app_backend/
+---
+Alright so I have found Go due to a friend recommending it and I must say I really enjoy the static types and a lot of the simplicity Go brings. I'm doing an introductory course on Udemy to learn the basics and will move on from there. In short, I love this language but I'm still at the beginning. 
+
+So here's the plan; I want to build a mobile app and I'm thinking Flutter for frontend, GraphQL for API backend with some DB (not decided yet) and another microservice for SMS integration. Both the microservice and the GraphQL implementation will be based on Go.
+
+Is there anything special to keep in mind when I'm learning and building this? Are there packages and libraries that are new that I absolutely should check out and be aware of?
+
+Since GraphQL and SMS integration will be two different Docker containers on cloud, is there anything I need to learn or take into account for communication between those services? Do I need to make it an API or can the processes call each other directly?
+
+Thanks in advance if you have some good input.
+## [10][A little Sunday learning! Final video in our Go Syntax series](https://www.reddit.com/r/golang/comments/jm4t5c/a_little_sunday_learning_final_video_in_our_go/)
+- url: https://youtu.be/Z5cvLOrWlLM
 ---
 
-## [6][Call for help with Proto.Actor Go, maintainers wanted](https://www.reddit.com/r/golang/comments/jlzasc/call_for_help_with_protoactor_go_maintainers/)
-- url: https://www.reddit.com/r/golang/comments/jlzasc/call_for_help_with_protoactor_go_maintainers/
+## [11][Please help Interview Preparation Resources for Go](https://www.reddit.com/r/golang/comments/jmjx3t/please_help_interview_preparation_resources_for_go/)
+- url: https://www.reddit.com/r/golang/comments/jmjx3t/please_help_interview_preparation_resources_for_go/
 ---
-[Proto.Actor](https://Proto.Actor) \- Go. [https://github.com/AsynkronIT/protoactor-go](https://github.com/AsynkronIT/protoactor-go) 
-
-It's a fairly big project, and a decent user base.
-
-But as with all OSS, there needs to be more activity on the maintenance side of things.  
-There are community work coming in, PR's and Issues raised.
-
-I'm personally working fulltime on the [Proto.Actor](https://Proto.Actor) dotnet version with clients.
-
-So for anyone seeking an OSS project to help maintain, feel free to reach out.
-## [7][GoHooks - Secured Webhook Sending and Receiving (inspired by Spatie Laravel package)](https://www.reddit.com/r/golang/comments/jm1fqv/gohooks_secured_webhook_sending_and_receiving/)
-- url: https://github.com/averageflow/gohooks
----
-
-## [8][mltype - Typing practice for Go and other languages](https://www.reddit.com/r/golang/comments/jlh4b7/mltype_typing_practice_for_go_and_other_languages/)
-- url: https://www.reddit.com/r/golang/comments/jlh4b7/mltype_typing_practice_for_go_and_other_languages/
----
-**What is it?**
-
-Command line tool that uses a character-level LSTM model to generate text that resembles a real language (including programming languages). One can both train a network from scratch or download a pretrained one (Go, JavaScript, C, C++, Python,..).
-
-**Motivation**
-
-I recently switched to touch typing and I realized that there is basically no way to practise typing of programming languages (other than actually programming). Additionally, I revisited the famous blog post [http://karpathy.github.io/2015/05/21/rnn-effectiveness/](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) and thought it would be cool to use a model like this to generate infinite amount of custom text to type.
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-https://i.redd.it/9b9wziky5fw51.gif
-
-**Links**
-
-* docs: [https://mltype.readthedocs.io/en/latest/](https://mltype.readthedocs.io/en/latest/)
-* github: [https://github.com/jankrepl/mltype](https://github.com/jankrepl/mltype)
-## [9][A minimal pre-commit go workflow](https://www.reddit.com/r/golang/comments/jlqht8/a_minimal_precommit_go_workflow/)
-- url: https://prateeknischal.github.io/pre-commit-workflow/
----
-
-## [10][Mock Solutions for GoLang Unit Test](https://www.reddit.com/r/golang/comments/jlw96d/mock_solutions_for_golang_unit_test/)
-- url: https://www.pixelstech.net/article/1604198639-Mock-Solutions-for-GoLang-Unit-Test
----
-
-## [11][A preview of the package site redesign is now available at https://beta.pkg.go.dev](https://www.reddit.com/r/golang/comments/jlbi1o/a_preview_of_the_package_site_redesign_is_now/)
-- url: https://beta.pkg.go.dev/net/http
----
-
+Hi Guys,  
+Can you please point out some good resources for interview preparation? I've been coding in Go for about 4 months and have become fairly comfortable with it. I am preparing to give interview in about a month's time, so any good resources that will help me in understanding it better will really help me out. I've googled this, but the articles are a bit beginner level which I already know. I am looking for something like the inner working of channels,  garbage collection, etc.  
+So please help with any good resources. Thank You.

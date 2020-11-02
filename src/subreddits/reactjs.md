@@ -70,104 +70,98 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][Is Module Federation for me?](https://www.reddit.com/r/reactjs/comments/jm1bl3/is_module_federation_for_me/)
-- url: https://www.reddit.com/r/reactjs/comments/jm1bl3/is_module_federation_for_me/
+## [3][In desperate need of a MERN/React engineer for help](https://www.reddit.com/r/reactjs/comments/jm7hxu/in_desperate_need_of_a_mernreact_engineer_for_help/)
+- url: https://www.reddit.com/r/reactjs/comments/jm7hxu/in_desperate_need_of_a_mernreact_engineer_for_help/
 ---
-We are working on a problem that is in the sweet spot for micro frontends:  App A, written by Team A, is about to hit production. App B, is yet-to-be written and is still just a twinkle in my eye. App B will appear as a new feature of App A down the road a bit. App B will appear in App A's nav bar, and will get all of somedomain-dot-com/appb. Each team will independently deploy their apps. App A "owns" the auth UI, and must be able to share the auth status with App B (and all future app-lets). It is anticipated that Team A might need to parcel out it's nav system into a separate shared container for App B to consume.
+So my co-founder just left and gave me the entirety of his code developed in the MERN stack. Not being a software/web development engineer (although I am very experienced Python and C++ developper), I had to learn the fundamentals of Node, React, MongoDB and Express to be able to re-host what he built in a new domain, set up my own AWS etc...
 
-App A is, at this moment in time, a create-react-app app.  I've seen [examples](https://martinfowler.com/articles/micro-frontends.html) of micro frontends done with CRA.  App B aspires to be a NextJS app, and I anticipate that Next + Webpack 5 will play nicely by the time we need them to.  I am curious to find out what the level of effort will be to take App A, which "owns" user authentication UI and auth token creation, to be able to "hoist" the new feature from team B?  I am a total webpack nooob, and a devops feather-weight. I know how to solve the shared auth issue between to backends using NginX, http-only cookies, and a shared decrypt secret. 
+Everything is running fine in development mode on my machine, but when he sent me the files, he did not include his .env.production environment variable, and I can't figure out how to set it up myself. The result of this is that the React code is working perfectly on Localhost, but not on my local network. Naturally, it is not working either when I try to set it up on the domain I owe through AWS. Due to a disagreement, he's not willing to provide any help with what he considers is troubleshooting and outside the scope of our separation agreement...
 
-What I am unable to ascertain, just by following that initial Webpack MF blog article example, is will MF get in the way of my planned solution using the above combo for shared auth UI?  As presented, it seems it would hit a brick wall when it comes to cross-domain requests. Can the federation's module resolution work through reverse proxy servers?
-
-That's a lot of questions, and not really React-y, but CRA is the starting point, so I thought I'd through them all out here for discussion.
-## [4][Run your React Native app on the web with React Native for Web](https://www.reddit.com/r/reactjs/comments/jlgo5q/run_your_react_native_app_on_the_web_with_react/)
-- url: https://mmazzarolo.com/blog/2020-10-24-adding-react-native-web/
----
-
-## [5][Is there a Carousel library that allows to add delay to slide changes in React?](https://www.reddit.com/r/reactjs/comments/jlx9pl/is_there_a_carousel_library_that_allows_to_add/)
-- url: https://www.reddit.com/r/reactjs/comments/jlx9pl/is_there_a_carousel_library_that_allows_to_add/
----
-Hi, I am relatively new to React and I am trying to include a Carousel that has a delay between slides to wait for an animation to complete, however I have not found a single library that offers this option. 
-
-I know I could implement this from scratch myself, but as I am not very experienced with React I think it would end up having a few bugs sneaked in.
-
-I ask this here because maybe someone who has been using React long enough has faced a similar situation and may have found a library or something like that that already does this, and well in case there is no one I guess I'll have to implement it myself.
-
-A working example of what I would like to achieve can be found [here](https://bridgelanding.qodeinteractive.com/elements/qode-slider/).
-## [6][How to use redux in case of nested object?](https://www.reddit.com/r/reactjs/comments/jlzv5j/how_to_use_redux_in_case_of_nested_object/)
-- url: https://www.reddit.com/r/reactjs/comments/jlzv5j/how_to_use_redux_in_case_of_nested_object/
----
-Hello, I was wondering how to handle nested state.  Suppose, I have Project state and it has properties Id and Task. Also, Task is an object with properties Id and Name. How should I set my redux in order to edit Name properties in Task?
-## [7][How to persist form data?](https://www.reddit.com/r/reactjs/comments/jm29mj/how_to_persist_form_data/)
-- url: https://www.reddit.com/r/reactjs/comments/jm29mj/how_to_persist_form_data/
----
-If there is a form usually we send the record and save it in db on form submission. 
-But what would be the best practice to persist data as making call to backend on every update wont be a good idea and local storage would only work on the same machine/browser and  wont be available across every device?
-## [8][Wanted to dive into MERN? Here's a Full-stack project to start with :)](https://www.reddit.com/r/reactjs/comments/jm0ufd/wanted_to_dive_into_mern_heres_a_fullstack/)
-- url: https://youtu.be/ngc9gnGgUdA
----
-
-## [9][Re-render not being applied appropriately](https://www.reddit.com/r/reactjs/comments/jm0avj/rerender_not_being_applied_appropriately/)
-- url: https://www.reddit.com/r/reactjs/comments/jm0avj/rerender_not_being_applied_appropriately/
----
-I'm a newbie in ReactJS and I'm finding some unexpected behaviour made by React (Or maybe my concepts aren't at best !)
-
-Here's the thing:
-
-I'm preparing a test page using NextJS and inside the page, I'm rendering a component '*Questions*'
-
-Inside &lt;*Questions&gt;*, I have a block as follows:
+This is a much too broad question for stack overflow, and I guess that talking to someone directly would be the best way to fix the problem - thus me reaching out here... Anyone willing to help with this? You'd save my life...
 
 &amp;#x200B;
 
-`const Questions = ({ data }) =&gt; {const {current_question_no,current_question,queids,get_question,authToken,answers,} = data;`
+UPDATE:
 
-&amp;#x200B;
+To everyone who replied and/or DMed me, thank you so much for being so helpful. u/RangerCoder was extremely kind and helped me fix the issue (well the one I knew of at least LOL). I had a chat with my co-founder at the end, and he sent me the env files although they were useless since he was doing everything from the bash environment anyways. He was overall not very helpful for sure, and I honestly am quite annoyed at him, but most important is that things are (mostly) fixed now. Thanks again to everyone.  
+## [4][How do you deal with null values from an api?](https://www.reddit.com/r/reactjs/comments/jmj7hl/how_do_you_deal_with_null_values_from_an_api/)
+- url: https://www.reddit.com/r/reactjs/comments/jmj7hl/how_do_you_deal_with_null_values_from_an_api/
+---
+Hey guys, suppose I get a users info from the api that returns something like
 
-`const [userPref,setUserPref] = useState(1)`
+    { 
+        name: "username", 
+        subscription: { status: "active/pending verification/etc.", subscription_ends: date }
+     } 
 
-`const renderedChoices = answers.map((a) =&gt; {return (&lt;Answersanswer_id={a.id}option={a.option}user_pref={a.user_pref}onUserPrefClick={handleUserPref}&gt;&lt;/Answers&gt;);});`
+but if the user is not a subscriber it returns something like 
 
-`const handleUserPref = (spanRef) =&gt; {//manipulating the form ref directlyif(!spanRef.current.innerText){//assign the valuespanRef.current.innerText = userPrefsetUserPref(userPref+1) //state changes}};`
+    { 
+        name: "username", 
+        subscription: null
+    } 
 
-`return(`
+and i want to display data according to the subscription status currently I do something like 
 
-`&lt;QuestionBlock&gt;`
+    {data.subscription ? 
+        ( data.subscription.status === "active"
+            ? ( &lt;button&gt;Cancel Subscription&lt;/button&gt; ) 
+            : ( &lt;button&gt;Subscribe&lt;/button&gt; ) 
+        : ( &lt;button&gt;Subscribe&lt;/button&gt; ) 
+    }
 
-`{renderedChoices}`
+basically if i don't do "data.subscription  ? () : () " first then if data.subscription is null I'll get errors like cannot read data of null etc.
 
-`)`
-
-This is the code for my "*Answers*" component:
-
-`import React from "react";const Answers = ({ answer_id, option, user_pref, onUserPrefClick }) =&gt; {const span_ref = React.createRef();return (&lt;label &gt;&lt;inputtype="checkbox"id={answer_id}class="check-hidden"value={user_pref}onClick={(e) =&gt; onUserPrefClick(span_ref)}/&gt;&lt;div class="question-body"&gt;&lt;div class="number"&gt;&lt;span ref={span_ref}&gt;{user_pref}&lt;/span&gt;&lt;/div&gt;&lt;p&gt;{option}&lt;/p&gt;&lt;/div&gt;&lt;/label&gt;);};export default Answers;`
-
-&amp;#x200B;
-
-As you can see, I'm allowing users to click on a span element inside my &lt;Answers&gt; component, and whenever the user clicks on it, I'm invoking `handleUserPref` (of Questions component) via a prop named `onUserPrefClick`
-
-The `handleUserRef` of &lt;Question&gt;s Component assigns the value of `userRef` (piece of state) to span ref element. Thereafter, it increments the the `userPref` by calling `setUserPref(userPref+1)`
-
-When a piece of state changes, it must rerender the entire component which must ALSO rerender my &lt;Answers&gt; Component ! If this happens, incidentally, my value of the span element must change to the original `user_pref` prop passed to &lt;Answers&gt; Component - But it is NOT CHANGING - In fact, it is remaining the same as the one assigned from the `userRef` state piece in &lt;Questions&gt; Component !
-
-&amp;#x200B;
-
-Can anyone explain the matter please !
-## [10][Populate my chat app! 🔥Hello everyone, I deployed a messenger app to firebase and I request you guys to populate my project with more messages, so that it looks more lively! Feel free to suggest new features. Appreciate it!](https://www.reddit.com/r/reactjs/comments/jlzwqv/populate_my_chat_app_hello_everyone_i_deployed_a/)
-- url: https://messenger-nowfel2k.web.app/
+Is there a better way of checking for null values from the api than the one I'm currently using?
+## [5][Blog App Using MERN Stack](https://www.reddit.com/r/reactjs/comments/jmkan6/blog_app_using_mern_stack/)
+- url: https://medium.com/mehulkothari05/blog-app-using-mern-stack-b0b4d69d7ea1?source=friends_link&amp;sk=48181cdd4f1988f88718cbdd0ce35d49
 ---
 
-## [11][What's a good React library for avatar selections?](https://www.reddit.com/r/reactjs/comments/jlum7v/whats_a_good_react_library_for_avatar_selections/)
-- url: https://www.reddit.com/r/reactjs/comments/jlum7v/whats_a_good_react_library_for_avatar_selections/
+## [6][Redux vs Recoil / Differences and Simple API explanation](https://www.reddit.com/r/reactjs/comments/jmmq6l/redux_vs_recoil_differences_and_simple_api/)
+- url: https://www.reddit.com/r/reactjs/comments/jmmq6l/redux_vs_recoil_differences_and_simple_api/
 ---
-Something similar to Github for example. With the file upload, cropping etc.
+Video review of Recoil JS - *strengths and weaknesses* **\[spanish\]**  
 
-Googling didn't yield many popular results. I wanted to know if there's some standard library that developers default to.
+&amp;#x200B;
 
-Thanks!
+&amp;#x200B;
 
-EDIT: Clarification added.
-## [12][Spooky Singles: A Phoenix + React site I made that's a dating site for Ghosts. Happy Halloween!](https://www.reddit.com/r/reactjs/comments/jlmy8j/spooky_singles_a_phoenix_react_site_i_made_thats/)
-- url: https://spooky.singles/
+[https://youtu.be/uHTqYBg\_zkE](https://youtu.be/uHTqYBg_zkE)
+## [7][I just write a RSS reader using electron + react + typescript!](https://www.reddit.com/r/reactjs/comments/jmn2uv/i_just_write_a_rss_reader_using_electron_react/)
+- url: https://github.com/Saul-Mirone/homura
+---
+
+## [8][Has anyone used this folder structure in their projects?](https://www.reddit.com/r/reactjs/comments/jmiqm3/has_anyone_used_this_folder_structure_in_their/)
+- url: https://www.reddit.com/r/reactjs/comments/jmiqm3/has_anyone_used_this_folder_structure_in_their/
+---
+I'm wondering if anyone has anyone used this folder structure in their projects?  
+If you have, do you recommend it? Or if not what is your preferred folder structure?  
+[https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1)
+## [9][Trouble finding a job - what now?](https://www.reddit.com/r/reactjs/comments/jmlj16/trouble_finding_a_job_what_now/)
+- url: https://www.reddit.com/r/reactjs/comments/jmlj16/trouble_finding_a_job_what_now/
+---
+I'm having trouble finding a job as front-end developer with react, because i have 0 commercial experience with it. I have commercial experience with HTML, CSS, jquery, basic JS, but i haven't been doing that for a while.
+
+Here is my github with some react apps i made for practice - [https://github.com/red4211](https://github.com/red4211)
+
+I feel really demotivated by my inability to get a job, and now i have to look for jobs outside of web development.
+
+What do i do next? Is it actually realistic for me to hope for a job with React when i have 0 commercial experience w it? Haven't worked out for me yet.
+
+If not, what are the jobs in the field i actually have a chance to get?
+## [10][Show r/reactjs: fast arrow, a vscode extension/snippet to enable you to write arrow function in less than 1 second.](https://www.reddit.com/r/reactjs/comments/jmlcgo/show_rreactjs_fast_arrow_a_vscode/)
+- url: https://www.reddit.com/r/reactjs/comments/jmlcgo/show_rreactjs_fast_arrow_a_vscode/
+---
+One of the thing that bugs me when writing javascript is the need to type out `() =&gt; {}`. 
+
+That's a lot of button pressed and that's kinda annoying. This is why I created [fast arrow.](https://github.com/vinliao/fast-arrow) Now I type an arrow function really fast.
+
+Here's a short gif to illustrate: [gif](https://raw.githubusercontent.com/vinliao/fast-arrow/master/images/faster.gif)
+## [11][Why we need to abstract dependencies, a real world example with react router](https://www.reddit.com/r/reactjs/comments/jm6uoo/why_we_need_to_abstract_dependencies_a_real_world/)
+- url: https://davemanton.medium.com/why-we-need-to-abstract-dependencies-a-real-world-example-with-react-router-8b06d1540264
+---
+
+## [12][A simple react shopping cart that demonstrates fundamentals of React](https://www.reddit.com/r/reactjs/comments/jmdjtu/a_simple_react_shopping_cart_that_demonstrates/)
+- url: https://github.com/dilab/react-simple-cart
 ---
 

@@ -56,115 +56,69 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Controlling Elegoo Robot Smart Car with ASIO and C++](https://www.reddit.com/r/cpp/comments/jm04wl/controlling_elegoo_robot_smart_car_with_asio_and_c/)
+## [2][Getting started with Standard C++ Modules in Visual Studio](https://www.reddit.com/r/cpp/comments/jmigr7/getting_started_with_standard_c_modules_in_visual/)
+- url: https://devblogs.microsoft.com/cppblog/a-tour-of-cpp-modules-in-visual-studio/
+---
+
+## [3][A modern c/c++ buildsystem based on Lua](https://www.reddit.com/r/cpp/comments/jmlgic/a_modern_cc_buildsystem_based_on_lua/)
+- url: https://xmake.io
+---
+
+## [4][Controlling Elegoo Robot Smart Car with ASIO and C++](https://www.reddit.com/r/cpp/comments/jm04wl/controlling_elegoo_robot_smart_car_with_asio_and_c/)
 - url: https://www.youtube.com/watch?v=nkCP95zLvSQ
 ---
 
-## [3][Why was std::rope never standarised?](https://www.reddit.com/r/cpp/comments/jltmmc/why_was_stdrope_never_standarised/)
-- url: https://www.reddit.com/r/cpp/comments/jltmmc/why_was_stdrope_never_standarised/
+## [5][Lambda Functions](https://www.reddit.com/r/cpp/comments/jmn1af/lambda_functions/)
+- url: https://www.reddit.com/r/cpp/comments/jmn1af/lambda_functions/
 ---
-SGI shipped a rope implementation but it seems to have been forgotten about. Does anyone know the history behind it?
-
-(A rope allows for efficient manipulation of strings)
-
-https://stackoverflow.com/questions/7811572/sgi-stl-rope-in-g
-## [4][Sharing Complex Types Between C++ WebAssembly and JavaScript](https://www.reddit.com/r/cpp/comments/jllohq/sharing_complex_types_between_c_webassembly_and/)
-- url: https://www.syntaxsuccess.com/viewarticle/sharing-complex-types-between-c++-webassembly-and-javascript
----
-
-## [5][I found a six week course for C++ for beginners, would it be a good idea to enroll?](https://www.reddit.com/r/cpp/comments/jm28fk/i_found_a_six_week_course_for_c_for_beginners/)
-- url: https://www.reddit.com/r/cpp/comments/jm28fk/i_found_a_six_week_course_for_c_for_beginners/
----
-https://www.ed2go.com/piedmont/online-courses/c-plus-plus-programming-introduction/
-
-The class says its for absolute beginners, and I work much better with instructors than self studying.  Its very cheap, and it looks to me like a good way to get some instructor guided experience. I'm already taking a few Udemy classes, do you guys think this instructor lead class for six weeks would be a good idea?
-## [6][Inbal Levi - Exploration of C++20 Meta Programming - Meeting C++ online](https://www.reddit.com/r/cpp/comments/jlfkq8/inbal_levi_exploration_of_c20_meta_programming/)
-- url: https://www.youtube.com/watch?v=4Jy-85lukZ0
----
-
-## [7][mltype - Typing practice for C++ and other languages](https://www.reddit.com/r/cpp/comments/jlh74e/mltype_typing_practice_for_c_and_other_languages/)
-- url: https://www.reddit.com/r/cpp/comments/jlh74e/mltype_typing_practice_for_c_and_other_languages/
----
-**What is it?**
-
-Command line tool that uses a character-level LSTM model to generate text that resembles a real language (including programming languages). One can both train a network from scratch or download a pretrained one (C++, Go, JavaScript, C, Python,..).
-
-**Motivation**
-
-I recently switched to touch typing and I realized that there is basically no way to practise typing of programming languages (other than actually programming). Additionally, I revisited the famous blog post [http://karpathy.github.io/2015/05/21/rnn-effectiveness/](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) and thought it would be cool to use a model like this to generate infinite amount of custom text to type.
+[https://pastebin.ubuntu.com/p/SdBWdNgN2w/](https://pastebin.ubuntu.com/p/SdBWdNgN2w/)
 
 &amp;#x200B;
 
-https://reddit.com/link/jlh74e/video/rd36ae447fw51/player
-
-**Links**
-
-* docs: [https://mltype.readthedocs.io/en/latest/](https://mltype.readthedocs.io/en/latest/)
-* github: [https://github.com/jankrepl/mltype](https://github.com/jankrepl/mltype)
-## [8][Just a thought](https://www.reddit.com/r/cpp/comments/jly5fu/just_a_thought/)
-- url: https://www.reddit.com/r/cpp/comments/jly5fu/just_a_thought/
+I have a recursive function in the link above. I am supposed to use that function inside another function. I tried to make it a lambda function but i couldn't. How can i use this recursive function inside another function?
+## [6][Am I at a disadvantage by learning C++ on Mac?](https://www.reddit.com/r/cpp/comments/jmmiac/am_i_at_a_disadvantage_by_learning_c_on_mac/)
+- url: https://www.reddit.com/r/cpp/comments/jmmiac/am_i_at_a_disadvantage_by_learning_c_on_mac/
 ---
-As someone learning C++, it seems like such a shame that pointer syntax does not use the '\^' symbol - was there some esoteric reason to go with '\*' ?
-## [9][How to build dependencies as Meson subprojects using SDL as an example](https://www.reddit.com/r/cpp/comments/jl6jlq/how_to_build_dependencies_as_meson_subprojects/)
-- url: https://nibblestew.blogspot.com/2020/10/how-to-build-dependencies-as-meson.html
+I am learning C++ before my university starts next year, i will be using my Macbook Pro in University. I want to get used to the environment in my Macbook Pro and see how things work around there. I also want to do CP(Competitive Programming) from what I have seen almost all of Competitive Programmers use Windows/Ubuntu, i have seen some of them talking about code errors with submission on the server. So, it will help a bunch if you guys could tell me that should I use windows/ubuntu on my gaming pc or use my macbook?
+
+I also have a high-end PC and both of my Macbook Pro and PC's spec are mentioned down below if that helps in any kind of way.
+
+Macbook Pro 2019 - 16 Inches i7 6–core, 8th generation i think or either 10th, with 16GB DDR4 and 500GB NVME SSD
+
+Gaming PC: i9–9900K, 32GB DDR4 3200MHz, 2080-Ti, RM 750x with NZXT H700 casing. 500GB NVME m.2 x 2 SSD’s/500GB SSD SATA III x 2 / 3TB HDD. 
+
+I love MacOS a lot but i don’t want to have issues with CP, GUI-Applications and learning the programming language just because of the OS.
+
+Any guidance would be appreciate and for those who code on MacOS, i know it being Unix based helps a lot with making development easier but is it the same for C++? Sorry if this is a dumb question but it would be appreciated if any help was provided regarding this so i can start studying C++.
+## [7][Runtime Polymorphism with std::variant and std::visit (Updated 2nd Nov: Build times, passing args)](https://www.reddit.com/r/cpp/comments/jml8he/runtime_polymorphism_with_stdvariant_and_stdvisit/)
+- url: https://www.bfilipek.com/2020/04/variant-virtual-polymorphism.html
 ---
 
-## [10][Forbidden C++](https://www.reddit.com/r/cpp/comments/jks8f3/forbidden_c/)
-- url: https://www.reddit.com/r/cpp/comments/jks8f3/forbidden_c/
+## [8][If I wanted to create a new Build System™, what tips would you tell me?](https://www.reddit.com/r/cpp/comments/jm8k2q/if_i_wanted_to_create_a_new_build_system_what/)
+- url: https://www.reddit.com/r/cpp/comments/jm8k2q/if_i_wanted_to_create_a_new_build_system_what/
 ---
-I have Just watched this entertaining video on Forbidden C++.  Its aimed at beginners but thought i would post it here just for the intro alone!
+What do you dislike of existing build systems? 
 
-[https://youtu.be/j0\_u26Vpb4w](https://youtu.be/j0_u26Vpb4w)
 
-The video is just a small list but as we all know, with every newer release of C++ we get better ways of doing things.  Hence the darker side of C++ will continue to grow!
-## [11][Strings in switch statements using constexp hashing](https://www.reddit.com/r/cpp/comments/jkw84k/strings_in_switch_statements_using_constexp/)
-- url: https://www.reddit.com/r/cpp/comments/jkw84k/strings_in_switch_statements_using_constexp/
+What would you improve?
+
+
+What would you like to have in a build system that isn't there right now?
+## [9][Approximating 'constexpr for'](https://www.reddit.com/r/cpp/comments/jm3437/approximating_constexpr_for/)
+- url: https://artificial-mind.net/blog/2020/10/31/constexpr-for
 ---
-I have a question which might be dumb.
 
-If I am not mistaken, Java has switch-case statements that support strings. Such a thing is not possible with plain c++ but there is a workaround if we use a constexp hash function for converting a string to a size\_t value.
+## [10][Library to create random instances in tests](https://www.reddit.com/r/cpp/comments/jmihlv/library_to_create_random_instances_in_tests/)
+- url: https://www.reddit.com/r/cpp/comments/jmihlv/library_to_create_random_instances_in_tests/
+---
+Sharing a project I created to help with writing tests. 
+I have found that instantiating objects can be the most verbose part of writing test code (especially when dealing with large nested structures).
 
-So lets say we have a program like this:
+Individual tests don't need specific values for every field. I use this library to help generate them. If I do require specific values I can override them after creation. This can also help with readability by removing random variables that only exist so that an object can be created.
 
+https://github.com/jroddev/cpp-dummy
+(Not sure if something like this already exists).
+## [11][cpp-lazy 2.1.1 released: easy &amp; fast C++ iterator/lazy evaluation library](https://www.reddit.com/r/cpp/comments/jma3p1/cpplazy_211_released_easy_fast_c_iteratorlazy/)
+- url: https://github.com/MarcDirven/cpp-lazy/releases/tag/2.1.1
+---
 
-    constexpr size_t hash(const char* str){
-        const long long p = 131;
-        const long long m = 4294967291; // 2^32 - 5, largest 32 bit prime
-        long long total = 0;
-        long long current_multiplier = 1;
-        for (int i = 0; str[i] != '\0'; ++i){
-            total = (total + current_multiplier * str[i]) % m;
-            current_multiplier = (current_multiplier * p) % m;
-        }
-        return total;
-    }
-
-    int main() {
-        std::string val;
-        std::cin &gt;&gt; val;
-    
-        switch (hash(val.c_str())){
-            case hash("monday"):
-                std::cout &lt;&lt; "Have a nice monday" &lt;&lt; std::endl;
-                break;
-            case hash("tuesday"):
-                std::cout &lt;&lt; "Have a nice tuesday" &lt;&lt; std::endl;
-                break;
-            case hash("wednesday"):
-                std::cout &lt;&lt; "Have a nice wednesday" &lt;&lt; std::endl;
-                break;
-            case hash("thursday"):
-                std::cout &lt;&lt; "Have a nice thursday" &lt;&lt; std::endl;
-                break;
-            case hash("friday"):
-                std::cout &lt;&lt; "Have a nice friday" &lt;&lt; std::endl;
-                break;
-            default:
-                std::cout &lt;&lt; "It is the weekend" &lt;&lt; std::endl;
-        }
-        return 0;
-    }
-
-Would that be something bad to do. I don't really know a use case for now, but am interested if this would be OKish to do.
-
-Edit: The edits were for making the code look like it should

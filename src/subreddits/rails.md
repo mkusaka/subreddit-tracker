@@ -19,7 +19,148 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][How to use AJAX on an devise protected route?](https://www.reddit.com/r/rails/comments/jlzduy/how_to_use_ajax_on_an_devise_protected_route/)
+## [2][Rails app working with nginx locally, but redirecting 301 when deployed to EC2](https://www.reddit.com/r/rails/comments/jmlm7x/rails_app_working_with_nginx_locally_but/)
+- url: https://www.reddit.com/r/rails/comments/jmlm7x/rails_app_working_with_nginx_locally_but/
+---
+I have a dockerized Rails app, and the nginx container with some custom config on runtime that I have setup. The setup works perfectly fine on my local machine.
+
+
+I fire up docker-compose and the nginx container pointing to the app network, everything works like a charm. I'm able to access the app at localhost instead of localhost:8000.
+
+However, I'm currently deploying this on AWS ECS and there's a loadbalancer with HTTPS involved here.
+
+
+The app gets deployed and both containers are running fine, but urls that I hit are either returning a 301 Moved Permanently.
+
+Here's my default.conf
+
+
+    upstream PLACEHOLDER_BACKEND_NAME {
+    server PLACEHOLDER_BACKEND_NAME:PLACEHOLDER_BACKEND_PORT;
+    }
+    
+    server {
+    listen 80;
+    server_name www.PLACEHOLDER_VHOST;
+    return 301 https://$host$request_uri;
+    }
+    
+    server {
+    listen 80 default deferred;
+    server_name PLACEHOLDER_VHOST;
+    
+    root /PLACEHOLDER_BACKEND_NAME/public;
+    
+    # level due to Rail's asset pipeline.
+    location ~ ^/assets/ {
+    gzip_static on;
+    
+    expires max;
+    add_header Cache-Control public;
+    add_header Last-Modified "";
+    add_header ETag "";
+    }
+    
+    
+    
+    location ~ /\. {
+    return 404;
+    access_log off;
+    log_not_found off;
+    }
+    
+    try_files $uri $uri/index.html $uri.html u/PLACEHOLDER_BACKEND_NAME;
+    
+    location = /favicon.ico {
+    try_files /favicon.ico = 204;
+    access_log off;
+    log_not_found off;
+    }
+    
+    
+    add_header Strict-Transport-Security "max-age=31536000; includeSubDomains;";
+    
+    
+    location u/PLACEHOLDER_BACKEND_NAME {
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_redirect off;
+    
+    if ($http_x_forwarded_proto = "http") {
+    return 301 https://$host$request_uri;
+    }
+    proxy_pass http://PLACEHOLDER_BACKEND_NAME;
+    }
+    }
+
+&amp;#x200B;
+
+and here's my script that I'm running when the container starts :
+
+&amp;#x200B;
+
+    #!/usr/bin/env bash
+    
+    set -e
+    
+    PLACEHOLDER_BACKEND_NAME="my-api"
+    PLACEHOLDER_BACKEND_PORT="8000"
+    
+    
+    PLACEHOLDER_VHOST="$(curl http://169.254.169.254/latest/meta-data/public-hostname)"
+    
+    
+    DEFAULT_CONFIG_PATH="/etc/nginx/conf.d/default.conf"
+    
+    sed -i "s/PLACEHOLDER_VHOST/${PLACEHOLDER_VHOST}/g" "${DEFAULT_CONFIG_PATH}"
+    sed -i "s/PLACEHOLDER_BACKEND_NAME/${PLACEHOLDER_BACKEND_NAME}/g" "${DEFAULT_CONFIG_PATH}"
+    sed -i "s/PLACEHOLDER_BACKEND_PORT/${PLACEHOLDER_BACKEND_PORT}/g" "${DEFAULT_CONFIG_PATH}"
+    
+    # Execute the CMD from the Dockerfile and pass in all of its arguments.
+    exec "$@"
+
+&amp;#x200B;
+
+I even tried setting PLACEHOLDER\_VHOST in the script to my ELB public DNS but to no avail. What could be the issue here?
+## [3][Seo Optimizer gem](https://www.reddit.com/r/rails/comments/jmmmnu/seo_optimizer_gem/)
+- url: https://www.reddit.com/r/rails/comments/jmmmnu/seo_optimizer_gem/
+---
+Hey,
+
+I wrote a gem to manage sitemap, robots.txt, error pages, etc.
+
+Things to optimize SEO, you know \^\^ ...
+
+It uses the "sitemap\_generator" gem. 
+
+I would like to have your opinions, comments and contributions on this. 
+
+The first goal is to easily and efficiently manage SEO on a Rails application. 
+
+You can find the source code here: [https://github.com/RonanLOUARN/seo\_optimizer](https://github.com/RonanLOUARN/seo_optimizer)
+
+Have a great day!
+## [4][[RoR + k8] How do I manage to keep the same DB for multiple pods?](https://www.reddit.com/r/rails/comments/jmbc4q/ror_k8_how_do_i_manage_to_keep_the_same_db_for/)
+- url: https://www.reddit.com/r/rails/comments/jmbc4q/ror_k8_how_do_i_manage_to_keep_the_same_db_for/
+---
+I'm trying to run more than one version of a rails project in different containers and some of those versions might have different migration files.
+
+Is there a way to use the same database for all of the pods?
+
+I saw in a presentation someone mentioning a "migration" service that keeps all the running version valid, but I could not find how to achieve this.
+
+Does any of you had a similar problem or some guidance of how to do this?
+## [5][Rails API architecture approach for default images](https://www.reddit.com/r/rails/comments/jmc9dk/rails_api_architecture_approach_for_default_images/)
+- url: https://www.reddit.com/r/rails/comments/jmc9dk/rails_api_architecture_approach_for_default_images/
+---
+I am building api that hits a Vue frontend using ActiveStorage to handle images. If a record doesn’t have an image after retrieving from the db, I’d like to use a default image for the record to get passed to the frontend.  I’m unsure if this the right approach.  Should this be the responsibility of the api or the frontend?  The records aren’t required to have an image on create/update so I’m leaning towards the idea the frontend only care and should handle whether a record has one.
+## [6][Audio streaming](https://www.reddit.com/r/rails/comments/jm30hd/audio_streaming/)
+- url: https://www.reddit.com/r/rails/comments/jm30hd/audio_streaming/
+---
+Hi everyone, i want to add audio player in my apps, but i can't find simple example. I user rails 6, active storage (save all files in my disk) with standard  views (use jquery). Please give me links or idea how to build this
+## [7][How to use AJAX on an devise protected route?](https://www.reddit.com/r/rails/comments/jlzduy/how_to_use_ajax_on_an_devise_protected_route/)
 - url: https://www.reddit.com/r/rails/comments/jlzduy/how_to_use_ajax_on_an_devise_protected_route/
 ---
 I want to make some post requests to my app. I’m not using any front end framework. Just straight up rails and erb (well, i guess this isn’t entirely true. I am using stimulus js).
@@ -42,19 +183,13 @@ $.ajax({
 ```
 
 Any help is appreciated. Thanks!
-## [3][.distinct and postgres point type failure](https://www.reddit.com/r/rails/comments/jlynvx/distinct_and_postgres_point_type_failure/)
-- url: https://www.reddit.com/r/rails/comments/jlynvx/distinct_and_postgres_point_type_failure/
----
-I am using point type for keeping some coordinates in Rails. All the queries I've been using that have a `.distinct` fail because there are no operators in postgres for equality. 
-
-What If I use `.select('DISTINCT ON(...` on the `.id` instead? What are any other alternatives?
-## [4][Bookmarks on Ruby or Rails](https://www.reddit.com/r/rails/comments/jlt3bo/bookmarks_on_ruby_or_rails/)
+## [8][Bookmarks on Ruby or Rails](https://www.reddit.com/r/rails/comments/jlt3bo/bookmarks_on_ruby_or_rails/)
 - url: https://www.reddit.com/r/rails/comments/jlt3bo/bookmarks_on_ruby_or_rails/
 ---
 Hi everyone, I want to make a bookmarks system like on [Myanimelist.net](https://Myanimelist.net), here is a screenshot of what I am talking about [https://prnt.sc/vayxio](https://prnt.sc/vayxio)
 
 Do you know if there is already a gem, plugin or module that has most of functionality covered?
-## [5][Simple but Useful Rails Engines](https://www.reddit.com/r/rails/comments/jlkgx6/simple_but_useful_rails_engines/)
+## [9][Simple but Useful Rails Engines](https://www.reddit.com/r/rails/comments/jlkgx6/simple_but_useful_rails_engines/)
 - url: https://www.reddit.com/r/rails/comments/jlkgx6/simple_but_useful_rails_engines/
 ---
 I have a series of simple and useful plugins without complex logic to checkout. Wouldn't mind on getting some collaboration and suggestions from other developers.
@@ -62,7 +197,7 @@ I have a series of simple and useful plugins without complex logic to checkout. 
 [https://github.com/phcdevworks](https://github.com/phcdevworks)
 
 [https://rubygems.org/profiles/phcdevworks](https://rubygems.org/profiles/phcdevworks)
-## [6][How can I send truly empty body when hitting a API destroy endpoint?](https://www.reddit.com/r/rails/comments/jlyjq5/how_can_i_send_truly_empty_body_when_hitting_a/)
+## [10][How can I send truly empty body when hitting a API destroy endpoint?](https://www.reddit.com/r/rails/comments/jlyjq5/how_can_i_send_truly_empty_body_when_hitting_a/)
 - url: https://www.reddit.com/r/rails/comments/jlyjq5/how_can_i_send_truly_empty_body_when_hitting_a/
 ---
 I am using Rails 5.
@@ -82,7 +217,7 @@ See the screenshot:
 &amp;#x200B;
 
 https://preview.redd.it/17wfwg190lw51.png?width=1844&amp;format=png&amp;auto=webp&amp;s=51c15fad17fb19356e2f7d1e321d681cd4bc20d7
-## [7][DOM Parsing of XML file how to approach ?](https://www.reddit.com/r/rails/comments/jlovhj/dom_parsing_of_xml_file_how_to_approach/)
+## [11][DOM Parsing of XML file how to approach ?](https://www.reddit.com/r/rails/comments/jlovhj/dom_parsing_of_xml_file_how_to_approach/)
 - url: https://www.reddit.com/r/rails/comments/jlovhj/dom_parsing_of_xml_file_how_to_approach/
 ---
 Hi There Experts, 
@@ -98,61 +233,3 @@ I have checked Rexml but as is not active library with a lot of open issues I am
 &amp;#x200B;
 
 thanks in advance,
-## [8][How to reference new active storage file after save in model?](https://www.reddit.com/r/rails/comments/jlbpt1/how_to_reference_new_active_storage_file_after/)
-- url: https://www.reddit.com/r/rails/comments/jlbpt1/how_to_reference_new_active_storage_file_after/
----
-I am trying to read meta information from mp3s uploaded using taglib-ruby gem. It doesn't seem to be finding the file to read in though. My active storage is set up to store in public/uploads. How would I reference the recently uploaded file in this model?
-
-    class Song &lt; ApplicationRecord
-      belongs_to :band
-      has_one_attached :file, dependent: :destroy
-    
-      after_save :set_id3_tags_in_database
-    
-      require 'taglib'
-    
-      def set_id3_tags_in_database
-      TagLib::MPEG::File.open(file.filename) do |file|
-         tag = file.id3v2_tag
-         tag.title
-         tag.album
-         tag.artist
-       end
-      end
-    end
-
-Not even sure if I should put that in the model or in the controller either.
-
-&amp;#x200B;
-
-Any thoughts are appreciated.
-## [9][What are your dislikes about the "rails new" command ?](https://www.reddit.com/r/rails/comments/jkwpxr/what_are_your_dislikes_about_the_rails_new_command/)
-- url: https://www.reddit.com/r/rails/comments/jkwpxr/what_are_your_dislikes_about_the_rails_new_command/
----
-The "rails new" command is very handy when you have to test something in complete isolation. Here are my complains about that command :
-
-\* Too much things included. It would have been better to start with raw defaults and then only include  actual needs.
-
-\* To the contrary, very basic things (or things that I consider very basic) are missing : env var, code coverage, http mocking... I know there are gems for this, but I find it weird that ActionText is a default, but env var not.
-
-\* Webpacker seems unfinished feature so far. Webpack manage JS, but Sprockets others assets.
-
-\* I miss a default HomeController or WelcomeController. Same can be said for the view.
-
-\* .gitignore is not bad but still miss a few lines
-
-\* No auto-refresh of the browser when coding the view (or backend) part.
-
-\* sqlite by default. I don't know a Rails coders who uses it.
-
-\* sassc is too slow to install. Defaut compilation (without tweaking) of webpacker assets are also too slow.
-
-Bottom line : a **very big thank you** to Rails contributors, too much is better than not enough, and there are good ways to start with better defaults that match your needs anyway. Just wanted to share my thoughts with the community. Do you have also things you dislike about the Rails default tools ?
-## [10][New article: saving address as a hash with serialization](https://www.reddit.com/r/rails/comments/jl4eco/new_article_saving_address_as_a_hash_with/)
-- url: https://www.reddit.com/r/rails/comments/jl4eco/new_article_saving_address_as_a_hash_with/
----
-I don't like having separate columns for `city`, `state`, `street_address_1` etc...So here's how I store them as a hash and *edit them in a form*: [https://blog.corsego.com/2020/10/ruby-on-rails-serialization-saving.html](https://blog.corsego.com/2020/10/ruby-on-rails-serialization-saving.html) **But... do you think this approach makes sence?**
-## [11][devise_ldap_authenticatable API Based](https://www.reddit.com/r/rails/comments/jl00hg/devise_ldap_authenticatable_api_based/)
-- url: https://www.reddit.com/r/rails/comments/jl00hg/devise_ldap_authenticatable_api_based/
----
-Does anyone know how to use devise\_ldap\_authenticatable as a bare bones API?

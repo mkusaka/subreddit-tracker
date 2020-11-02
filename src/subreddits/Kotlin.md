@@ -46,15 +46,65 @@ On October 12–15 we hosted the Kotlin 1.4 Online Event, and over the course of
 Please post your questions as top-level comments to this post.
 
 We look forward to hearing from you!
-## [2][Started learning Kotlin and I love it!](https://www.reddit.com/r/Kotlin/comments/jlz97r/started_learning_kotlin_and_i_love_it/)
+## [2][Kotlin Cheat Sheet](https://www.reddit.com/r/Kotlin/comments/jmfjs6/kotlin_cheat_sheet/)
+- url: https://i.redd.it/hm1fj7innqw51.jpg
+---
+
+## [3][Ktor embedded server on production?](https://www.reddit.com/r/Kotlin/comments/jmmtr9/ktor_embedded_server_on_production/)
+- url: https://www.reddit.com/r/Kotlin/comments/jmmtr9/ktor_embedded_server_on_production/
+---
+I was wondering if you guys know some resources to learn about ktor prod deployment.
+
+I have been deploying with the embedded Netty and running into some issues.
+
+What would be the best way to go about this?
+
+Thanks a lot!
+## [4][Facts You May Not Know About Kotlin](https://www.reddit.com/r/Kotlin/comments/jmn85w/facts_you_may_not_know_about_kotlin/)
+- url: https://youtu.be/XwzStZaDpH0?list=PLEx5khR4g7PIiAEHCt6LGMFnzq7JjO8we
+---
+
+## [5][Why no "indexOfFirstOrNull" ?](https://www.reddit.com/r/Kotlin/comments/jm8vi1/why_no_indexoffirstornull/)
+- url: https://www.reddit.com/r/Kotlin/comments/jm8vi1/why_no_indexoffirstornull/
+---
+I am still relatively new to Kotlin, albeit a professional programmer for a very long time.
+
+One common pattern in Kotlin seems to be that various search-type functions have a "...OrNull" variant, so that you can add an elvis operator down the line.
+
+One glaring exception to this is "indexOfFirst" which returns the index of the first element matching some predicate, or -1 if no such element found.
+
+Is there some reason for this? And is there some specific convention for handling the -1 case? In my own code, I find it far more clumsy to deal with than the "...OrNull" pattern, but maybe I am just too dumb to see how to "recover" from the "-1" elegantly.
+## [6][Does anyone else have an issue with the Android Studio file type icons when using log tags?](https://www.reddit.com/r/Kotlin/comments/jmlucv/does_anyone_else_have_an_issue_with_the_android/)
+- url: https://www.reddit.com/r/Kotlin/comments/jmlucv/does_anyone_else_have_an_issue_with_the_android/
+---
+I've had this issue for a long time with the JetBrains IDE where the file type icons show as generic Kotlin files. I'm working on a project where I have many files in the same package with similar names so this issue has really reared its ugly head. It would be great if I could quickly identify the files with type icons. I refuse to follow the "IConcept" and "ConceptImpl" paradigm - nor am I going to separate them into different packages.
+
+The alternative to top-level \`private const val\` declarations is a companion object, creating an entire object which will ultimately be empty at runtime (~~As far as I can find,~~ the unused, empty object is not optimized away). Yes, I could declare them as \`val\` properties, but that's not a compile-time constant. I know, I know - it's just a single read operation, but it shouldn't need to be.
+
+Essentially any class I want to perform logging in won't display as the appropriate type.
+
+[https://youtrack.jetbrains.com/issue/KT-19583](https://youtrack.jetbrains.com/issue/KT-19583)
+
+I may have worded my issue a bit strongly. Someone please tell me if there's a workaround I'm unaware of.
+
+Edit: Using the Kotlin bytecode inspector, I've confirmed that a completely empty companion object is still generated even if unused anywhere.
+## [7][Started learning Kotlin and I love it!](https://www.reddit.com/r/Kotlin/comments/jlz97r/started_learning_kotlin_and_i_love_it/)
 - url: https://www.reddit.com/r/Kotlin/comments/jlz97r/started_learning_kotlin_and_i_love_it/
 ---
 Started learning Kotlin for Android app development and I love it. I have experience in other programming languages and Kotlin has become my favourite by far. It's just that good it has increased my productivity by a lot
-## [3][A starter project for creating admin websites using Kotlin](https://www.reddit.com/r/Kotlin/comments/jlluda/a_starter_project_for_creating_admin_websites/)
+## [8][From Reactor to Coroutines](https://www.reddit.com/r/Kotlin/comments/jm5h8s/from_reactor_to_coroutines/)
+- url: https://blog.frankel.ch/reactor-to-coroutines/
+---
+
+## [9][Python in Kotlin](https://www.reddit.com/r/Kotlin/comments/jm6mei/python_in_kotlin/)
+- url: https://www.reddit.com/r/Kotlin/comments/jm6mei/python_in_kotlin/
+---
+I'm starting to learn Kotlin, but I have a question before continuing, it is possible to run python programs inside a Kotlin Android app?
+## [10][A starter project for creating admin websites using Kotlin](https://www.reddit.com/r/Kotlin/comments/jlluda/a_starter_project_for_creating_admin_websites/)
 - url: https://github.com/tipsy/kotlin-admin-template
 ---
 
-## [4][Something like automapper for kotlin?](https://www.reddit.com/r/Kotlin/comments/jm0c5w/something_like_automapper_for_kotlin/)
+## [11][Something like automapper for kotlin?](https://www.reddit.com/r/Kotlin/comments/jm0c5w/something_like_automapper_for_kotlin/)
 - url: https://www.reddit.com/r/Kotlin/comments/jm0c5w/something_like_automapper_for_kotlin/
 ---
 Hi, I have Ktor + Exposed example app. Can i do this better? Is there any mapping libraby like automapper? Thx
@@ -63,205 +113,3 @@ PersonTable.selectAll().map {
                 Person(it[PersonTable.Id],
                         it[PersonTable.Name],
                         it[PersonTable.Age])
-## [5][Using Kotlin Multiplatform for JVM and Android App](https://www.reddit.com/r/Kotlin/comments/jlpdyu/using_kotlin_multiplatform_for_jvm_and_android_app/)
-- url: https://www.reddit.com/r/Kotlin/comments/jlpdyu/using_kotlin_multiplatform_for_jvm_and_android_app/
----
-When I use the application plugin and the android plugin in Gradle I get this error:   
-`The 'java' plugin has been applied, but it is not compatible with the Android plugins`
-
-Is there a way to easily run the app on the JVM and on android in the same project?
-## [6][Komoot is hiring 2 Kotlin developers!!](https://www.reddit.com/r/Kotlin/comments/jlwfou/komoot_is_hiring_2_kotlin_developers/)
-- url: https://www.reddit.com/r/Kotlin/comments/jlwfou/komoot_is_hiring_2_kotlin_developers/
----
-Two really nice remote job opportunities currently being offered at Komoot!
-
-Senior Backend Developer/ Data Scientist (Kotlin/Java/Scala) &amp; Python
-
-Senior Backend Developer (Kotlin/Java/Scala)
-
-Get more details for both job listings at:
-
-[https://kotlin-jobs.com](https://kotlin-jobs.com)
-## [7][Lint warning "assignment should be lifted out of if"](https://www.reddit.com/r/Kotlin/comments/jlhm1g/lint_warning_assignment_should_be_lifted_out_of_if/)
-- url: https://www.reddit.com/r/Kotlin/comments/jlhm1g/lint_warning_assignment_should_be_lifted_out_of_if/
----
-I am sorry if this question is kinda lame.. but i am killing myself last hour or so to figure out what's the issue... In Android Studio Kotlin I want to clean my code based on lint warnings. Cleaned everything except this:
-
-&amp;#x200B;
-
-var myCoolImage = BitmapFactory.decodeFile(myCoolFile.toString())
-
-val hhh = myCoolImage.height
-
-val www = myCoolImage.width
-
-if (hhh &gt; www) myCoolImage = resizeBitmap(myCoolImage,600,400)
-
-else myCoolImage = resizeBitmap(myCoolImage,400,600)
-
-&amp;#x200B;
-
-Simple code to check if photo is horizontal or vertical and to resize it accordingly to that.
-
-This code works but gives warning "assignment should be lifted out of if"
-
-Sooo... Any idea what to do? :)
-## [8][Android Kotlin: Click button -&gt; Create ViewText -&gt; Drag ViewText and on drop get Text :)](https://www.reddit.com/r/Kotlin/comments/jlpscm/android_kotlin_click_button_create_viewtext_drag/)
-- url: https://www.reddit.com/r/Kotlin/comments/jlpscm/android_kotlin_click_button_create_viewtext_drag/
----
-EDIT: Ok.. I figured it out.. Dont know what I did.. I was randomly editing code until suddenly started working :)))
-
-Anyhow... I still have problem with No2. Soo.. If anyone can help me with Lint warning. I tried Alt Enter but nothing offered as a solution :)
-
-&amp;#x200B;
-
-\------------------------------------------------------------------------------
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-Ok..sooo... I found some piece of code which does what I want. Create ViewText... Drag it... Drop it..
-
-Now i have 2 problems:
-
-1. After I drop TextView, how to fetch text from it?
-2. Lint warning marks "newView.setOnTouchListener(listener)" and tells me: "Custom view TextView has SetOnTouchListener called on it but does not override perform click"
-
-&amp;#x200B;
-
-\--------------------------------------------------------
-
-My Code:
-
-\---------------------------------------------------
-
-    package example.javatpoint.com.myapplication
-    
-    import android.os.Bundle
-    import android.view.Gravity
-    import android.view.MotionEvent
-    import android.view.View
-    import android.view.ViewGroup
-    import android.widget.Button
-    import android.widget.TextView
-    import android.widget.Toast
-    import androidx.appcompat.app.AppCompatActivity
-    import kotlinx.android.synthetic.main.activity_main.*
-    
-    
-    class MainActivity : AppCompatActivity() {
-    
-        lateinit var newView: TextView
-    
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            // Hide the action bar
-            val actionBar = supportActionBar
-    
-            actionBar!!.hide()
-    
-            setContentView(R.layout.activity_main)
-    
-            var listener = View.OnTouchListener(function = { view, motionEvent  -&gt;
-    
-                if (motionEvent.action == MotionEvent.ACTION_MOVE) {
-                    view.y = motionEvent.rawY- view.height
-                    view.x = motionEvent.rawX - view.width/2
-                }
-                else
-                if (motionEvent.action == MotionEvent.ACTION_UP) {
-    
-                    view.y = motionEvent.rawY- view.height
-                    view.x = motionEvent.rawX - view.width/2
-    
-                    if (view.y &gt; 1200) {
-    
-                        var MyCoolText = ""
-    
-                        ////////////////////////////////////////////////////
-                        // NOW DO SOMETHING HERE TO GET STRING FROM VIEWTEXT
-                        ////////////////////////////////////////////////////
-    
-                        Toast.makeText(applicationContext,"ViewText:\n" + MyCoolText , Toast.LENGTH_LONG).show()
-    
-                        myLayout.removeView(view)
-                    }
-                }
-    
-                true
-            })
-    
-    
-    
-            val fGenerateButton = findViewById&lt;Button&gt;(R.id.buttonGenerate)
-            fGenerateButton.setOnClickListener(View.OnClickListener {
-    
-    
-                val MyCoolRandomNumber = (0..1000).random() + 1000
-                val MyCoolString = MyCoolRandomNumber.toString()
-    
-                var newView: TextView
-                newView = TextView(this)
-                myLayout.addView(newView)
-                newView.x = 300F
-                newView.y = 500F
-                newView.text = MyCoolString
-                newView.setBackgroundResource(R.drawable.rounded)
-                newView.textSize = 12f
-                newView.gravity = Gravity.CENTER_HORIZONTAL
-    
-                val paramsXCV = newView.getLayoutParams()
-                paramsXCV.height = ViewGroup.LayoutParams.WRAP_CONTENT
-                paramsXCV.width = ViewGroup.LayoutParams.WRAP_CONTENT
-                newView.setLayoutParams(paramsXCV)
-    
-    
-                newView.setOnTouchListener(listener)
-    
-            })
-        }
-    }
-## [9][AndroidBites | Java ☕️ Maps 🗺 on the Kotlin.](https://www.reddit.com/r/Kotlin/comments/jle9xu/androidbites_java_maps_on_the_kotlin/)
-- url: https://www.reddit.com/r/Kotlin/comments/jle9xu/androidbites_java_maps_on_the_kotlin/
----
-Most of the Kotlin developers are migrated from the Java environment, coming to Kotlin the collection framework has some tweaks which makes It so awesome to work with, In Today’s article, let's understand how Kotlin catered to Java Maps in his its colors, and few other concepts that will help you understand stdlib of collection
-
-https://chetan-garg36.medium.com/java-%EF%B8%8F-maps-on-the-kotlin-8930b9f55d8d
-## [10][kotlinx.coroutines 1.4.0: Introducing StateFlow and SharedFlow](https://www.reddit.com/r/Kotlin/comments/jkuyy2/kotlinxcoroutines_140_introducing_stateflow_and/)
-- url: https://blog.jetbrains.com/kotlin/2020/10/kotlinx-coroutines-1-4-0-introducing-stateflow-and-sharedflow/
----
-
-## [11][We are participating in the development of the international Kotlin Multiplatform community](https://www.reddit.com/r/Kotlin/comments/jkzqc5/we_are_participating_in_the_development_of_the/)
-- url: https://www.reddit.com/r/Kotlin/comments/jkzqc5/we_are_participating_in_the_development_of_the/
----
-
-Our specialists at IceRock have contributed to the documentation for the Kotlin Multiplatform Mobile portal (https://kotlinlang.org/lp/mobile/). This has been prepared by the JetBrains team, the creators of the Kotlin programming language. The portal helps programmers who study this language independently and use the multi-platform technology.  
-
-Android developers are familiar with Kotlin and understand its benefits – it's capacious, secure, and user-friendly. And iOS app developers can easily learn the syntax because it is similar to Swift.
-
-Kotlin Multiplatform Mobile (multi-platform) is a set of tools for developing cross-platform apps. It enables business logic to be written just once for two operating systems, Android and iOS. The multi-platform helps reduce the time spent on writing, testing and debugging apps.
-
-We have been using this technology at IceRock for more than 2 years and have released 14 projects based on it. We will talk about this soon in our business cases.
-Thanks to their experience in Kotlin development, our specialists have participated in writing documentation for the portal. It contains the following information:
-
-●      multi-platform projects and how to get started with them;
-
-●      the mobile Kotlin multi-platform allowing such projects to be created;
-
-●      what libraries to use and where to find them;
-
-●      the business cases that allow the experience of other development teams to be studied. 
-
-It also provides technical documentation and guides for common problem-solving. 
-Several portal sections have been written by our specialists: Vladislav Areshkin @tetraquark_v and Andrey Chernov.
- 
-Links are provided below. The content is in English.
-
-Organizing the code writing process using the Kotlin mobile multi-platform: https://kotlinlang.org/docs/mobile/organize-process-around-kmm.html
-
-Using the SQLDelight database for the multi-platform: https://kotlinlang.org/docs/mobile/configure-sqldelight-for-data-storage.html
-
-Ktor framework for building an asynchronous client/server architecture that provides high program performance: https://kotlinlang.org/docs/mobile/use-ktor-for-networking.html
-
-The Kotlin Multiplatform language libraries: https://libs.kmp.icerock.dev

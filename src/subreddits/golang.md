@@ -3,75 +3,105 @@
 - url: https://blog.golang.org/survey2020
 ---
 
-## [2][I made an animation tool with go (Ebiten)!](https://www.reddit.com/r/golang/comments/jmjica/i_made_an_animation_tool_with_go_ebiten/)
+## [2][Why doesn’t golang allow me to do this](https://www.reddit.com/r/golang/comments/jn6oo0/why_doesnt_golang_allow_me_to_do_this/)
+- url: https://i.redd.it/z4jnotbkizw51.jpg
+---
+
+## [3][What's so great about Go? - Stack Overflow Blog](https://www.reddit.com/r/golang/comments/jmtx0h/whats_so_great_about_go_stack_overflow_blog/)
+- url: https://stackoverflow.blog/2020/11/02/go-golang-learn-fast-programming-languages/
+---
+
+## [4][I made CLI that can get GitHub's pull request URL.](https://www.reddit.com/r/golang/comments/jn8qhb/i_made_cli_that_can_get_githubs_pull_request_url/)
+- url: https://www.reddit.com/r/golang/comments/jn8qhb/i_made_cli_that_can_get_githubs_pull_request_url/
+---
+[https://github.com/skanehira/getpr](https://github.com/skanehira/getpr)
+
+&amp;#x200B;
+
+https://i.redd.it/s33spemwg0x51.gif
+## [5][go-df data frames for Golang](https://www.reddit.com/r/golang/comments/jn6rlv/godf_data_frames_for_golang/)
+- url: https://www.reddit.com/r/golang/comments/jn6rlv/godf_data_frames_for_golang/
+---
+After searching for a decent data-frames solution for Golang, we've decided (based on other implementations of data frames for go) to write our own "complete" solution for data frames.
+
+[https://github.com/AdikaStyle/go-df](https://github.com/AdikaStyle/go-df)
+
+feedback is appreciated :)
+## [6][I made an animation tool with go (Ebiten)!](https://www.reddit.com/r/golang/comments/jmjica/i_made_an_animation_tool_with_go_ebiten/)
 - url: https://i.redd.it/ch0y9vl59sw51.jpg
 ---
 
-## [3][New release of bit – a modern git CLI (0.9) - checkout PRs, themes and QOL improvements](https://www.reddit.com/r/golang/comments/jmeknc/new_release_of_bit_a_modern_git_cli_09_checkout/)
-- url: https://i.redd.it/bhdkx1f6dqw51.gif
+## [7][Bell - language based on Lisp written in Go](https://www.reddit.com/r/golang/comments/jmue7p/bell_language_based_on_lisp_written_in_go/)
+- url: https://www.reddit.com/r/golang/comments/jmue7p/bell_language_based_on_lisp_written_in_go/
+---
+Hey everyone. I made a pre-release of my first programming language (that I actually finished in somewhat usable form), [Bell](https://github.com/BranislavLazic/bell).   
+Few notes...
+
+Lexer and parser are written from scratch. No parser combinators were used.  
+Cucumber for e2e tests prove itself to be a fantastic choice. Bringing a lot of value with very little effort. Go is totally fine, but sometimes, I missed a language with expressive ADT's and pattern matching.  
+
+
+P.S. Big thanks to Thorsten Ball.
+## [8][What's the status of XML/SOAP support in Go?](https://www.reddit.com/r/golang/comments/jn24j8/whats_the_status_of_xmlsoap_support_in_go/)
+- url: https://www.reddit.com/r/golang/comments/jn24j8/whats_the_status_of_xmlsoap_support_in_go/
+---
+Unfortunately, I need to interact with an external system using the [HTNG](https://www.htng.org/) standard. As part of that, everything needs to be transmitted using SOAP (as both server and client for 2-way communication), using WS-Addressing and WS-Security. Searching around, the majority of what I've found have been projects that haven't been updated for at least 2 years, or writeups saying to do everything manually.
+
+What recommendations would you have with regards to interacting with a SOAP interface (preferably using Go)?
+## [9][I made a small Python package, which allows to use Golang (Go) functions inside python code (and run into big issues)](https://www.reddit.com/r/golang/comments/jna5r1/i_made_a_small_python_package_which_allows_to_use/)
+- url: https://www.reddit.com/r/golang/comments/jna5r1/i_made_a_small_python_package_which_allows_to_use/
+---
+GitHub page - [https://github.com/hermanTenuki/goinpy](https://github.com/hermanTenuki/goinpy).
+
+I like the idea in speeding up Python by moving hard computations to fast C-type language (Golang), so i made this small package based on "ctypes" module.
+
+It's working in 3 steps:
+
+1. Write Golang code with "C" package imported, create export comments for function that you want to have access to;
+2. Compile it to c-shared library;
+3. Load library in Python and use lib's functions with proper file types setup.
+
+As turned out, this is not so easy, i quickly ran into issues when Golang is starting to mess with mutable data types and pointers.
+
+GitHub issue - [https://github.com/hermanTenuki/goinpy/issues/6](https://github.com/hermanTenuki/goinpy/issues/6)
+
+As said in [https://golang.org/cmd/cgo/#hdr-Passing\_pointers](https://golang.org/cmd/cgo/#hdr-Passing_pointers):
+
+&gt; Go is a garbage collected language, and the garbage collector needs to know the location of every pointer to Go memory. Because of this, there are restrictions on passing pointers between Go and C.   
+&gt;  
+&gt;. . .  
+&gt;  
+&gt; It is possible to defeat this enforcement by using the unsafe package, and of course there is nothing stopping the C code from doing anything it likes. However, programs that break these rules are likely to fail in unexpected and unpredictable ways. 
+
+For now, my package **can be used for simple cases**, look at [https://github.com/hermanTenuki/goinpy#how-to-use](https://github.com/hermanTenuki/goinpy#how-to-use).
+
+I'm definitely going to continue working on this project, i want this idea to be real xd
+## [10][Problem Solving in Golang](https://www.reddit.com/r/golang/comments/jn8wtz/problem_solving_in_golang/)
+- url: https://shareablecode.com/browse/tags/golang+codingchallenge
 ---
 
-## [4][Real-time visualization tool for Go process metrics](https://www.reddit.com/r/golang/comments/jm3oe1/realtime_visualization_tool_for_go_process_metrics/)
-- url: https://i.redd.it/ttvmz5302nw51.gif
+## [11][Is assigning a large struct thread-safe?](https://www.reddit.com/r/golang/comments/jn0s21/is_assigning_a_large_struct_threadsafe/)
+- url: https://www.reddit.com/r/golang/comments/jn0s21/is_assigning_a_large_struct_threadsafe/
 ---
+I have a global variable containing a rather large struct. Several concurrent goroutines do frequent reads on this variable/struct. Also there's an update func that returns a new struct (by value) with updated content which is assigned to the global variable.
 
-## [5][New release of PTerm [v0.10.0] - Pretty print everything!](https://www.reddit.com/r/golang/comments/jm939z/new_release_of_pterm_v0100_pretty_print_everything/)
-- url: https://github.com/pterm/pterm
----
+There are no writes to the variable/struct other than the re-assignment of the variable itself by the update func.
 
-## [6][Hash Tables Implementation in Go | The inner implementation. A story (for normal people)](https://www.reddit.com/r/golang/comments/jmfopw/hash_tables_implementation_in_go_the_inner/)
-- url: https://medium.com/kalamsilicon/hash-tables-implementation-in-go-48c165c54553
----
+```
+type RatherLargeFoo struct {
+// ...
+}
 
-## [7][Hello Everyone,New to Go language...Any tips to where to start?](https://www.reddit.com/r/golang/comments/jmm8xz/hello_everyonenew_to_go_languageany_tips_to_where/)
-- url: https://www.reddit.com/r/golang/comments/jmm8xz/hello_everyonenew_to_go_languageany_tips_to_where/
----
+var globalVar RatherLargeFoo
 
-## [8][Is it a scam or not?](https://www.reddit.com/r/golang/comments/jm1y8x/is_it_a_scam_or_not/)
-- url: https://www.reddit.com/r/golang/comments/jm1y8x/is_it_a_scam_or_not/
----
-Hello guys,
+func updateFooStruct() RatherLargeFoo {
+  // assemble a refreshed RatherLargeFoo
+  return RatherLargeFoo{...}
+}
+```
 
-I just want to share the recruitment logic I faced lately. I'm very disturbed because of the approach and want to get your ideas.
+Question: Is `globalVar = updateFooStruct()` safe to do while several goroutines are reading from `globalVar` or is there an instant of time where undefined behaviour can occur? I know this is not "atomic" in the technical sense (as nothing is atomic as long as it doesn't claim to be) but as long as goroutines read either the complete old content or the complete new content, it's fine. I just don't want mixed, partial or weird results.
 
-First of all, I have 27 years of experience in development, and in the last 5 years, I'm developing using GO on a professional level. On the other hand, the company is a fin-tech start-up. They want to hire a senior golang engineer.
+Also note that the assingment is by value. Would having `updateFooStruct()` return a Pointer to a new struct change anything for the better or worse in my scenario?
 
-After our first interview, they sent me a "task" to complete and they said THERE IS NO TIME LIMIT. 
-
-I don't understand what is the logic in this. Do you need to hire someone for this position or not? According to this,  I can deliver the task after a month and it should not be a problem, right?
-
-Anyway, I didn't pay a lot of attention to this because I thought that maybe they want to give a comfort zone to a developer and wanted to have the best output for the task.
-
-The task is about developing a GO Client for their Finance service. HOWEVER, after I start the task, it is really containing so many details in it, and developing is taking not 2, 3 hours may be more than a week if I work full-time and pay attention to architecture creation, logic implementation, tests, coverage reports, lint fixing, documentation and the like. And the weird part is they want me to develop a full solution for the countries they support. Not two or three countries.
-
-I have great suspicion to complete the task. The first thing that popped up in my mind is, they just want to push the applicant to give up on their application. Kind of reject strategy. I wrote my thought to HR and they said that "We hired every engineer in the company in this way".  The second thought is they need to have a GO Client for their system and they are gathering all possible solutions from candidates and they will choose the best one from the task deliveries and reject the candidate. I've had many other conspiracy theories in my mind...
-
-In addition to that, should it be the way to test any applicants' golang skills to hire for the position? How many of you have free time to develop a task for a company to be hired? Will you find any time or energy after work to deliver such a detailed task?
-
-I don't know if I should continue or not. Maybe I should deliver the GO client and send the invoice. :) 
-
-What do you think? Is it a scam or not? I'll be very happy to have your thoughts. 
-
-Thanks
-## [9][Newbie question on learning Go for app backend stuff.](https://www.reddit.com/r/golang/comments/jml6td/newbie_question_on_learning_go_for_app_backend/)
-- url: https://www.reddit.com/r/golang/comments/jml6td/newbie_question_on_learning_go_for_app_backend/
----
-Alright so I have found Go due to a friend recommending it and I must say I really enjoy the static types and a lot of the simplicity Go brings. I'm doing an introductory course on Udemy to learn the basics and will move on from there. In short, I love this language but I'm still at the beginning. 
-
-So here's the plan; I want to build a mobile app and I'm thinking Flutter for frontend, GraphQL for API backend with some DB (not decided yet) and another microservice for SMS integration. Both the microservice and the GraphQL implementation will be based on Go.
-
-Is there anything special to keep in mind when I'm learning and building this? Are there packages and libraries that are new that I absolutely should check out and be aware of?
-
-Since GraphQL and SMS integration will be two different Docker containers on cloud, is there anything I need to learn or take into account for communication between those services? Do I need to make it an API or can the processes call each other directly?
-
-Thanks in advance if you have some good input.
-## [10][A little Sunday learning! Final video in our Go Syntax series](https://www.reddit.com/r/golang/comments/jm4t5c/a_little_sunday_learning_final_video_in_our_go/)
-- url: https://youtu.be/Z5cvLOrWlLM
----
-
-## [11][Please help Interview Preparation Resources for Go](https://www.reddit.com/r/golang/comments/jmjx3t/please_help_interview_preparation_resources_for_go/)
-- url: https://www.reddit.com/r/golang/comments/jmjx3t/please_help_interview_preparation_resources_for_go/
----
-Hi Guys,  
-Can you please point out some good resources for interview preparation? I've been coding in Go for about 4 months and have become fairly comfortable with it. I am preparing to give interview in about a month's time, so any good resources that will help me in understanding it better will really help me out. I've googled this, but the articles are a bit beginner level which I already know. I am looking for something like the inner working of channels,  garbage collection, etc.  
-So please help with any good resources. Thank You.
+Thanks!

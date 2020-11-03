@@ -3,110 +3,79 @@
 - url: https://register.virtual.awsevents.com/
 ---
 
-## [2][In the Works – New AWS Region in Zurich, Switzerland](https://www.reddit.com/r/aws/comments/jmkkiv/in_the_works_new_aws_region_in_zurich_switzerland/)
+## [2][Week of Nov 2nd - What are you building this week in AWS?](https://www.reddit.com/r/aws/comments/jmqb02/week_of_nov_2nd_what_are_you_building_this_week/)
+- url: https://www.reddit.com/r/aws/comments/jmqb02/week_of_nov_2nd_what_are_you_building_this_week/
+---
+Share what you are working on
+## [3][EC2 Image Builder now supports AMI distribution across AWS accounts](https://www.reddit.com/r/aws/comments/jn4ucq/ec2_image_builder_now_supports_ami_distribution/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/10/ec2-image-builder-now-supports-ami-distribution-across-aws-accounts/
+---
+
+## [4][New – GPU-Equipped EC2 P4 Instances for Machine Learning &amp; HPC](https://www.reddit.com/r/aws/comments/jmx7wx/new_gpuequipped_ec2_p4_instances_for_machine/)
+- url: https://aws.amazon.com/blogs/aws/new-gpu-equipped-ec2-p4-instances-for-machine-learning-hpc/
+---
+
+## [5][Advice for customers dealing with Docker Hub rate limits, and a Coming Soon announcement](https://www.reddit.com/r/aws/comments/jn0dvo/advice_for_customers_dealing_with_docker_hub_rate/)
+- url: https://aws.amazon.com/blogs/containers/advice-for-customers-dealing-with-docker-hub-rate-limits-and-a-coming-soon-announcement/
+---
+
+## [6][How you guys are using aws to ease out your personal life's or what are some non traditional (except stuff like blog/web hosting , simple vpn) personal projects that you host on aws?](https://www.reddit.com/r/aws/comments/jn4f5v/how_you_guys_are_using_aws_to_ease_out_your/)
+- url: https://www.reddit.com/r/aws/comments/jn4f5v/how_you_guys_are_using_aws_to_ease_out_your/
+---
+
+## [7][GPU-Equipped EC2 P4 Instances for Machine Learning &amp; HPC](https://www.reddit.com/r/aws/comments/jmx94e/gpuequipped_ec2_p4_instances_for_machine_learning/)
+- url: https://aws.amazon.com/blogs/aws/new-gpu-equipped-ec2-p4-instances-for-machine-learning-hpc/
+---
+
+## [8][In the Works – New AWS Region in Zurich, Switzerland](https://www.reddit.com/r/aws/comments/jmkkiv/in_the_works_new_aws_region_in_zurich_switzerland/)
 - url: https://aws.amazon.com/blogs/aws/in-the-works-new-aws-region-in-zurich-switzerland/
 ---
 
-## [3][Lambda not scaling with SQS. ConcurrentExecutions is always 1. SQS ApproximateNumberOfMessagesVisible = 60k](https://www.reddit.com/r/aws/comments/jmgwmv/lambda_not_scaling_with_sqs_concurrentexecutions/)
-- url: https://www.reddit.com/r/aws/comments/jmgwmv/lambda_not_scaling_with_sqs_concurrentexecutions/
+## [9][General Question - Architecture](https://www.reddit.com/r/aws/comments/jn77bj/general_question_architecture/)
+- url: https://www.reddit.com/r/aws/comments/jn77bj/general_question_architecture/
 ---
-I set a lambda with a  
-\- Memory: 1024MB  
-\- SQS trigger, batch size = 10  
-\- No concurrency limit. "Use unreserved account concurrency"  
-\- SQS is a FIFO queue  
-\- Lambda uses a VPC
+Hi all,
 
-Lambda has a success rate of 100% but ConcurrentExecutions never exceeds one (1). SQS ApproximateNumberOfMessagesVisible goes down slowly.
+I was wondering if anyone knew a space or a /r/ where I could see interesting (AWS or not) Architecture/System Designs if possible with a case study, problem definition and maybe a diagram?
 
-I thought with 60k messages on the queue it would start invoking lambdas up to 1k concurrently.
+I know AWS has a repo of those but they don't write ,the article on the Archi per say, rather on the AWS components used (which make sense). I really liked the video of SuccessInTech when he still posted for example.
 
-Do you guys have any ideas what's going on?
-
-Thanks for your help.
-## [4][AWS Cloud Support Interview coming up... super nervous :( and what does domain: generalist mean?](https://www.reddit.com/r/aws/comments/jml2mf/aws_cloud_support_interview_coming_up_super/)
-- url: https://www.reddit.com/r/aws/comments/jml2mf/aws_cloud_support_interview_coming_up_super/
+Thanks
+## [10][S3 Object Owner](https://www.reddit.com/r/aws/comments/jn9h3j/s3_object_owner/)
+- url: https://www.reddit.com/r/aws/comments/jn9h3j/s3_object_owner/
 ---
-Hello kind folks of reddit,
+I have a large legacy bucket with millions of objects all publicly accessible. Objects are owned by another AWS account.
 
-I'm currently in the hiring process for the AWS Cloud Support Associate role and I passed the Online Assessment last week and my interview date is set for Nov 6 which is 4 days from now. In the email regarding the details of the interview, it says lists the domain for the interview as "generalist". My question is should I be worried about this? I've done a lot of reading online and people get specific domains for their interview I cannot find one person who's gotten generalist. I really hope this is not a bad thing. I put my top three interests as Big data, database, and Analytics at the end of my OA could I communicate to the interviewer to assess me for those teams? Also if anyone were to provide any tips or questions for the interview regarding any of those three teams or the generalist domain, I would really appreciate it!! I know the reddit community's got me :) 
+If the AWS account owner / s3 object owner decides to terminate their AWS account, what happens to the publicly accessible objects? 
 
-Really appreciate all the help I can get, thanks in advance and I'll be sure to update you all after the interview
-
-Thank you all so much!!
-## [5][A method for managing backend application secrets using AWS S3 and CodeDeploy](https://www.reddit.com/r/aws/comments/jmjt5l/a_method_for_managing_backend_application_secrets/)
-- url: https://riadrifai22.medium.com/managing-application-secrets-like-never-before-using-aws-s3-and-codedeploy-611d3121ecbe
+Will they still be accessible or will end-users receive a 403 forbidden?
+## [11][Regional vs Edge-optimized Endpoint Configuration](https://www.reddit.com/r/aws/comments/jn8scn/regional_vs_edgeoptimized_endpoint_configuration/)
+- url: https://www.reddit.com/r/aws/comments/jn8scn/regional_vs_edgeoptimized_endpoint_configuration/
 ---
-
-## [6][Only 5 and half hours left to the HUMBLE BOOK BUNDLE: AWS, AZURE, GOOGLE, AND CLOUD SECURITY Get Amazon Web Services for Mobile Developers and more get it before it ends](https://www.reddit.com/r/aws/comments/jmnb2d/only_5_and_half_hours_left_to_the_humble_book/)
-- url: https://www.humblebundle.com/books/aws-azure-google-and-cloud-security-books?partner=mfasula&amp;charity=2175662
----
-
-## [7][Is it wise to use same application load balancer for API and UI? What are possible risks?](https://www.reddit.com/r/aws/comments/jmmbn2/is_it_wise_to_use_same_application_load_balancer/)
-- url: https://www.reddit.com/r/aws/comments/jmmbn2/is_it_wise_to_use_same_application_load_balancer/
----
-We can use host based routing in aws alb. So we can forward to api and ui target groups based on host headers.
-But in this case is it vulnerable to use the same load balancer?
-## [8][CHECK_NRPE: Socket timeout after 30 seconds || Nagios || Client](https://www.reddit.com/r/aws/comments/jmm506/check_nrpe_socket_timeout_after_30_seconds_nagios/)
-- url: https://www.reddit.com/r/aws/comments/jmm506/check_nrpe_socket_timeout_after_30_seconds_nagios/
----
-Able to do install Nagios Server on ubuntu but when doing for server getting this error on AWS. Go through many links of same error but not found the solution. 
-
-[https://bobcares.com/blog/check\_nrpe-socket-timeout-after-10-seconds/](https://bobcares.com/blog/check_nrpe-socket-timeout-after-10-seconds/)
-
-[https://serverfault.com/questions/605666/check-nrpe-socket-timeout-after-10-seconds-https-ssl/605738](https://serverfault.com/questions/605666/check-nrpe-socket-timeout-after-10-seconds-https-ssl/605738)
-
-It would be great if anyone have an exact solution for it. 
-
-For Nagios Server I go through below link:
-
- [https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/install-nagios-4-1-1-ubuntu-16-04.html](https://www.itzgeek.com/how-tos/linux/ubuntu-how-tos/install-nagios-4-1-1-ubuntu-16-04.html)
-
-For Nagios Client followed below link:
-
-[https://www.itzgeek.com/how-tos/linux/centos-how-tos/monitor-remote-linux-system-with-nagios-3.html](https://www.itzgeek.com/how-tos/linux/centos-how-tos/monitor-remote-linux-system-with-nagios-3.html)
+Hi - I am looking to understand the difference between setting up a regional vs edge optimized endpoint configuration for my API.
 
 &amp;#x200B;
 
-[Host Error](https://preview.redd.it/45ka9ruiftw51.png?width=1166&amp;format=png&amp;auto=webp&amp;s=bfc786e08b04738bf750716e63dd39fafabd76dd)
-## [9][Penetration testing API GW tips?](https://www.reddit.com/r/aws/comments/jm85on/penetration_testing_api_gw_tips/)
-- url: https://www.reddit.com/r/aws/comments/jm85on/penetration_testing_api_gw_tips/
+I want to get the API I built for our serverless app on to a better looking URL name for our users. So instead of:
+
+&amp;#x200B;
+
+"n6pj7g42oh.execute-api.us-east-1.amazonaws dot com" I want people to navigate to "example dot com/test" to access the serverless app.
+
+&amp;#x200B;
+
+The app will not experience a ton of traffic and will not be accessed all over the world. Adding this in for context around how this will be used in case that is helpful context.
+
+&amp;#x200B;
+
+Thank you in advance.
+## [12][The Most Important AWS Services You Need to Know](https://www.reddit.com/r/aws/comments/jn4jl2/the_most_important_aws_services_you_need_to_know/)
+- url: https://www.reddit.com/r/aws/comments/jn4jl2/the_most_important_aws_services_you_need_to_know/
 ---
-Ive recently been assigned a task that includes making a security review of an environment including an API Gateway pointing to a Lambda function, and while I have done Hack-the-boxes and CTFs in the past, im not entirely sure what to look for here in regards to misconfigurations of the API GW/Lambda which might be abuseable.   
-Since there is no database or website behind the gateway, attacks like SQLi and XSS shouldnt be possible I guess and im considering if there could be some tampering of JWTs or revelation of too much information, but im not really sure how to attack this atm. I have already identified the possibility of Denial-of-wallet attacks, but as we have a ton of monitoring and alarms, i highly doubt this is of much risk.  
-Anyway, to the question, do any of you guys do pentests on API GWs or Lambdas and have tips on what tools to use, what to look for etc? :)  
-Im currently using various Kali tools like Burp and NMAP scripts, but im open to try out other frameworks as i see multiple API testing tools exists that i havent tried yet.
+I recently put together my take on the most important AWS services for newcomers. Of course, this will always be highly dependent on the domain you are operating in, but I think this video serves as a good primer to the most commonly used services today.
 
-Any tips are appreciated as im not too experienced with security on AWS! \^\^
-## [10][CWE/EventBridge doesn't receive IN_PROGRESS events from Codebuild Batch builds](https://www.reddit.com/r/aws/comments/jml5mg/cweeventbridge_doesnt_receive_in_progress_events/)
-- url: https://www.reddit.com/r/aws/comments/jml5mg/cweeventbridge_doesnt_receive_in_progress_events/
----
-Hi
+Video is available here - https://youtu.be/B08iQQhXG1Y
 
-Basically, see the problem in the title. For regular builds I receive all events I need. Here's my event pattern:
+Let me know if I missed one you thought deserved to be present. I was deliberating Eventbridge and Kinesis.
 
-    {
-      "detail": {
-        "build-status": [
-          "IN_PROGRESS",
-          "SUCCEEDED",
-          "FAILED",
-          "STOPPED"
-        ],
-        "project-name": [
-          "super-mega-codebuild-project"
-        ]
-      },
-      "detail-type": [
-        "CodeBuild Build State Change"
-      ],
-      "source": [
-        "aws.codebuild"
-      ]
-    }
-
-Is there something wrong with the pattern or it's an expected behaviour?
-## [11][Schedule CSV export (to an email) of data from RDS](https://www.reddit.com/r/aws/comments/jmky8c/schedule_csv_export_to_an_email_of_data_from_rds/)
-- url: https://www.reddit.com/r/aws/comments/jmky8c/schedule_csv_export_to_an_email_of_data_from_rds/
----
-I have a requirement to email weekly data from RDS (PostGres) as CSV in an email attachment. What is the best way to do it. I know it can be done via lambda but is there any other good way to achieve this ? Any built in service may be ?
+Hope some find this helpful

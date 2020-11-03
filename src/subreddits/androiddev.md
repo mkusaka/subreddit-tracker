@@ -31,142 +31,244 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Netflix Android and iOS Studio Apps — now powered by Kotlin Multiplatform](https://www.reddit.com/r/androiddev/comments/jmdoux/netflix_android_and_ios_studio_apps_now_powered/)
-- url: https://netflixtechblog.com/netflix-android-and-ios-studio-apps-kotlin-multiplatform-d6d4d8d25d23
+## [3][Android 11 dodges a bullet - apps creating a folder at top level maybe able to simply move that to Music/Photos "shared storage" folder (requiring single line change in java) - without needing to resort to complications of SAF](https://www.reddit.com/r/androiddev/comments/jn5azi/android_11_dodges_a_bullet_apps_creating_a_folder/)
+- url: https://www.reddit.com/r/androiddev/comments/jn5azi/android_11_dodges_a_bullet_apps_creating_a_folder/
+---
+**EDIT:** what is described below applies not only for File API for java - but also for your C code i.e. apps using JNI/NDK native C libraries (if you are doing fopen(), and other standard file io).  I say this because our tests included native file io using C as well.
+
+
+**Summary**
+
+Google is moving to restrict android storage.  They had initially telegraphed a much stronger change that would have broken android.  For Android 11 someone at Google seems to have convinced the others that retaining file paths and fopen() is essential (this was something we have been harping about for ages on reddit - as absence of file paths and fopen() spelled the death of standard storage).
+
+Here I provide a quick overview of the storage changes, and advice for migrating for app developers who **do not want to spend time on storage migration**.  Specifically developers who have no interest in spending time on Storage Access Framework (SAF) - the flawed and inefficient "alternative" that Google tried to push devs to adopt (much like they pushed SAF as the alternative when they killed seamless ext SD card access in KitKat).
+
+Many apps just need ability to save files to a location that will be persistent (not go away once app is uninstalled).  This is the case for apps like audio recorders, camera apps and such.
+
+That is now possible with something as little as a one line change to your code for Android 11.
+
+The end result will be that you will not need to change your app's file handling (except one or two lines of java code).  The simplest of apps (like audio recorder apps) will only need to change one line, and keep behaving much as before.
+
+&amp;nbsp;
+
+
+**Backstory**
+
+As discussed here before, Google has been on a march to kill traditional storage on Android.
+
+Just as Google killed seamless external SD access with KitKat (and later providing an inadequate replacement - SAF - which expectedly never took off, leading to the demise of seamless ext SD card storage) - similarly Google had announced a flurry of changes for storage.  These changes are expected to make persistent storage as before harder to do.  Because the only way to continue using old storage code was to use the app-specific folders (which are removed when app is uninstalled).  This would have left cloud storage as an attractive alternative (to mirror the app-specific folders) - with few other easy options for storage persistence.
+
+Use of SAF is non-trivial for devs, and it comes with it's own set of caveats and performance limitations.  In addition, there was earlier a shadow over use of SAF as well (whether one would need Google Permissions Declaration Form for this as well - since SAF does allow writing in many more places and currently is used to routinely grant top folder access).  Now for Android 11, Google medium.com post has clarified that SAF does not require special permission from Google - and Google themselves will limit SAF so it cannot access the top level folder, and some other folders (this means those devs using SAF will need to check user flows to ensure their SAF use works under new restrictions).
+
+&amp;nbsp;
+
+
+**Android 11 solution**
+
+Android 11 arrives with changes:
+
+- file paths can be used as before and File API - for a few specific folders (Music, Photos .. i.e. the so-called "shared storage" folders).
+
+- fopen(), delete, instantaneous move of files - can be done  (again for a few specific folder locations)
+
+- these capabilities were not available in Android 10
+
+
+In practice this means an app could choose to no longer house it's app folder (where it stores persistent audio recordings etc.) at the top level folder on internal storage - but instead locate it in the Music folder (which is one of the "shared storage" folders).
+
+If your app saves files in a folder "folder1" (that was previously located at top folder) - that "folder1" now can be saved in the Music folder.
+
+Just change this line in your code - where you discover the parent directory where "folder1" should be stored:
+
+&gt;**File sdcardRoot = Environment.getExternalStorageDirectory();**
+
+to:
+
+&gt;**File sdcardRoot = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC);**
+
+And similarly for Photos etc.  For Downloads there is some additional restriction (apps cannot see files created by other apps).  While for Music/Photos etc. apps CAN see files (read-only) created by other apps (as long as you keep using the READ_EXTERNAL_STORAGE permission in AndroidManifest.xml.
+
+Now your "folder1" will be located in Music/folder1, but you can continue to use the rest of your code as before.  Manipulating file path strings etc. ..
+
+&amp;nbsp;
+
+
+**Android 11 caveats**
+
+The only caveat or restriction is:
+
+- if you use the Music folder, you can only create "audio" files there (.wav, .ogg, .mp3 and perhaps others).  If you need to create a dummy file "dummy", you can create it, but you will have to name it "dummy.mp3" etc. i.e. with an audio-like extension.
+
+- you can create folders within the Music folder - example: Music/folder1
+
+- two apps can use the same folder i.e. app1 creates folder1 and app2 also creates folder1.  One app can delete the folder created by another app (if folder is empty).  Files created by app1 can be read by app2 (if it uses the READ_EXTERNAL_STORAGE permission), but cannot be written or deleted by app2.  This means if you delete folder1 from app1, it will delete all the app1-created files in folder1, but will leave the files created by app2 there untouched (and so folder1 will not be deleted).  But if Music/folder1 was created by app1, it can be deleted by app2 (if the folder1 is empty or only contains files created by app2).
+
+&amp;nbsp;
+
+
+**Android 10 and earlier**
+
+Since Android 10 was missing these file path and fopen() capabilities, that means it will cause problems if you don't use "requestLegacyExternalStorage=true" in your AndroidManifest.xml.
+
+This is why Google also recommends that apps use this flag in your AndroidManifest.xml:
+
+requestLegacyExternalStorage="true"
+
+This will allow their app to perform the same as before all through to Android 10.  And somewhat so on Android 11 as well (as long as app is targeting below Android 11).
+
+Once your app starts targeting Android 11, this "requestLegacyExternalStorage" will be ignored.
+
+This means once you start targeting Android 11 (targetSdkVersion=30) your app should be using "Music/folder1" etc. instead of "folder1".
+
+
+Thus, the app developer HAS to ship his app for Android 10 using the "requestLegacyExternalStorage" flag set to TRUE (to opt out of the new storage changes) - if they want to not change their app code.
+
+If you don't use this for Android 10, then your app will be subject to Android 10 rules, and because Android 10 did not have file path and fopen() support, you will not be able to introduce the "Music/folder1" way of doing things.
+
+So keep using "requestLegacyExternalStorage" while you targetSdkVersion=29 (Android 10).
+
+Once you targetSdkVersion=30 (Android 11), the "requestLegacyExternalStorage" is ignored, and your app should be ready to use "Music/folder1" etc.  So you should have a behavior in place so files are stored in the Music folder or Photos folder (one of the "shared storage" folders) instead of at top level folder of internal storage.
+
+&amp;nbsp;
+
+
+**How to adapt to new restrictions**
+
+Google has announced that Android 11 will now again support File API and fopen() type methods (Android 10 did not - i.e. if you were targeting Android 10).
+
+The only restriction in Android 11 is that these capabilities can only be used for files and folders that are stored within Music, Photos etc. - the so-called "shared storage" folders.
+
+This means all you have to do is ensure the folder where you saved audio recorder files (usually a folder at top level of internal storage), can now be saved within the Music folder on internal storage:
+
+change:
+
+&gt;**File sdcardRoot = Environment.getExternalStorageDirectory();**
+
+to:
+
+&gt;**File sdcardRoot = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MUSIC);**
+
+
+And make sure you are using this in your AndroidManifest.xml (as Google recommends, this is to cover for the aberration that was Android 10 which does not support file paths and fopen() - Android 11 will ignore this flag):
+
+&gt;**requestLegacyExternalStorage="true"**
+
+&amp;nbsp;
+
+
+Eveything else can be kept as before - you can:
+
+- create a folder within this Music folder (just as you created a folder at top level on internal storage)
+
+- you can manpipulate the path, create a path for a sub-directory by appending to the file path
+
+- you can create a folder, and create files there
+
+- basically nearly all your old java code and NDK/JNI native C code will work as before - use fopen() using file path strings, manipulate path strings etc. (just make sure the paths you want to reference are within the Music folder)
+
+&amp;nbsp;
+
+
+What you cannot do:
+
+- you can only create audio files (more precisely files that have extension that indicate it is a file like .wav, .ogg, .mp3 etc.) within the Music folder (similar restrictions may apply to Photos).
+
+- evidently the file extension is the only thing used to screen - so you can create a file holding arbitrary data - just ensure it is named file.mp3 etc. (standard music file extensions)
+
+- if you try to create a file that does not have an audio extension, or another type of extension, it will fail
+
+&amp;nbsp;
+
+
+Some other different behaviors:
+
+- two apps can write to the same folder
+
+- so you can have two of your apps write to the same folder (within Music for example)
+
+- a folder created by app1 can be deleted by another app2 (if it is empty)
+
+- a file created by app1 cannot be deleted by another app2
+
+- this means app2 cannot delete a folder that contains a file created by app1
+
+- a file created by app1 CAN be read by app2 (if app2 uses the READ_EXTERNAL_STORAGE permission in it's AndroidManifest.xml)
+
+
+&amp;nbsp;
+
+
+**Thanks**
+
+Thanks to /u/oneday111 for [outlining the possibilities](https://www.reddit.com/r/androiddev/comments/jib3l7/android_11_scoped_storage_mediastore_can_create/ga6i0lw/) - which led to testing app behavior when the app folder is simply relocated to Music folder etc.
+
+
+&amp;nbsp;
+
+
+**NOTE TO MANUFACTURERS**
+
+Please ensure your devices running Android 11 use the source tree with the latest changes for Android 11.
+
+Because (as has happened before) - manufacturers sometimes choose an earlier Beta as their starting point (which can sometimes miss the final behaviors promised).
+
+So manufacturers, please don't mess up by failing to comply with this file path and fopen() behavior in Android 11 - since this is an essential feature of Android.  If you fail to ensure this is supported in your Android 11 version, a huge number of apps will break.
+
+I say this because the storage nuances seem to have been changing a lot in the last few months - so it is possible that a manufacturer picks up a Beta version as their starting point - but which fails to have the final behaviors now promised for storage in Android 11.
+## [4][Jetpack Compose on Desktop is in preview!](https://www.reddit.com/r/androiddev/comments/jn9swn/jetpack_compose_on_desktop_is_in_preview/)
+- url: https://twitter.com/iateyourmic/status/1323551064512172033
 ---
 
-## [4][Play protect Warning Pop-Up While installing Android app](https://www.reddit.com/r/androiddev/comments/jmkc2j/play_protect_warning_popup_while_installing/)
-- url: https://www.reddit.com/r/androiddev/comments/jmkc2j/play_protect_warning_popup_while_installing/
+## [5][Play Console: Way to see source of third-party referrals?](https://www.reddit.com/r/androiddev/comments/jn8wj3/play_console_way_to_see_source_of_thirdparty/)
+- url: https://www.reddit.com/r/androiddev/comments/jn8wj3/play_console_way_to_see_source_of_thirdparty/
 ---
- So we have an app that's deployed via the Microsoft AppCenter and one of the users received the following pop-up when trying to install it. 
+I have a small app, published on the Play Store, that is jugging along at a steady pace of about 200 downloads a day. However, a couple of weeks ago, I got two big spikes on specific days with thousands of downloads.
 
-&amp;#x200B;
+Looking at the statistics, I can see that these spikes came from one country and almost exclusively through third-party referrals. So someone must have posted something about this app online.
 
-&amp;#x200B;
+Is there a way to find the source of the referrals in the Play Console? I've tried googling for mentions from only that country and only in the past month, but have had no luck.
 
-[Installation Pop-Up](https://preview.redd.it/d1qzmdvxmsw51.png?width=380&amp;format=png&amp;auto=webp&amp;s=ca2890bc82ab24c582683c1716bd1f876d3bbc87)
-
- 
-
-Couldn't find any particular resource when I googled it except for the Minimum Target APK Version policy. The app in question has a minSdkVersion="21" and compile version(Target Framework) = Android 8.1 (27). I tried installing the same application on my device that has Android 11 but it works fine for me. Are we looking at a region specific issue? 
-
-Would be super grateful if anybody can help me out with this.
-## [5][Can an app identify other apps which are present on a phone](https://www.reddit.com/r/androiddev/comments/jmk7ie/can_an_app_identify_other_apps_which_are_present/)
-- url: https://www.reddit.com/r/androiddev/comments/jmk7ie/can_an_app_identify_other_apps_which_are_present/
----
-Sorry in advanced if this is the wrong sub but i have a question for any app developer. for context i have online exams coming up and i am required to download and invigilation app,at the same time for privacy reasons i want to download a microphone disabling app. The invigilation app requires storage permission ,so my question is will the invigilation app be able to identify what other apps are present on my phone
-## [6][does System.exit(int) kill the process and clear up all the resources?](https://www.reddit.com/r/androiddev/comments/jmj19y/does_systemexitint_kill_the_process_and_clear_up/)
-- url: https://www.reddit.com/r/androiddev/comments/jmj19y/does_systemexitint_kill_the_process_and_clear_up/
----
-According to [my previous post](https://www.reddit.com/r/androiddev/comments/jmfw8v/weird_behaviour_of_service_and_media_player/), and some research online, I found out that the sytem might be playing the music even after the service's `onDestroy` was called because it was holding on to some resources like the `MediaPlayer`, so I decided to actually kill the process instead of calling the  `stopForeground` or `stopSelf`, because they simply are not working. However, I synced all the application states and called `System.exit(0)` and it kills the foreground process as well as the activity as intended.
-
-The only bit of confusion I had is if `System.exit(0)` killed the process and also freed the app resources? That is, does it release every bit of resource held by the app? I am worried about it because I don't need to call `MediaPlayer.release()` and `stopForeground()` and other similar cleanup methods, just one `System.exit()` does the trick.
-
-It's okay to call this for my app, because it triggers the behaviour I intend, but, I wonder if its okay for the android system, because lingering memories would be a bad thing. Thanks in advance, any insight would be helpful.
-## [7][Im doing English-Spanish translations on small apps for free.](https://www.reddit.com/r/androiddev/comments/jm31ho/im_doing_englishspanish_translations_on_small/)
-- url: https://www.reddit.com/r/androiddev/comments/jm31ho/im_doing_englishspanish_translations_on_small/
----
- That's it. I have a lot of free time since i ~~work from home~~ lost my job.  
-
-
- I posted the same thing a few months ago when i was working from home and translated about 50 apps and a few random things  
-
-
-So im doing it again because honestly im bored and i really need to do something besides trying to get a new job lol.  
-
-
-Im doing up to 500-1000 words, not doing ToS or anything like that.
-
-Anyone can PM me (:
-## [8][Fewer crashes and more stability with Kotlin](https://www.reddit.com/r/androiddev/comments/jmlyyf/fewer_crashes_and_more_stability_with_kotlin/)
-- url: https://medium.com/androiddevelopers/fewer-crashes-and-more-stability-with-kotlin-b606c6a6ac04
+Thanks for any ideas :)
+## [6][Android Intent &amp; Bundle extensions that insert and retrieve values elegantly.](https://www.reddit.com/r/androiddev/comments/jmqvh0/android_intent_bundle_extensions_that_insert_and/)
+- url: https://github.com/skydoves/bundler
 ---
 
-## [9][Something like LFS.](https://www.reddit.com/r/androiddev/comments/jmkdl3/something_like_lfs/)
-- url: https://www.reddit.com/r/androiddev/comments/jmkdl3/something_like_lfs/
+## [7][How to go back from AOSP to OHA](https://www.reddit.com/r/androiddev/comments/jna7rk/how_to_go_back_from_aosp_to_oha/)
+- url: https://www.reddit.com/r/androiddev/comments/jna7rk/how_to_go_back_from_aosp_to_oha/
 ---
-I'm always fascinated by Android and various ports of Android.
-We know that there are tons and tons of "build" guides on the internet but non of them actually explain how things work.
-If only we had something like LFS for android, to teach people how android actually works, what goes where, etc, we'd be able to create more ports for various devices.
-Like right now, I wanna know how the port of android x86 actually works and how can I port other custom android like Lineage OS to work on x86 platform. (I know android x86 has Lineage OS port already, but that's version 14.1, Lineage is on 17.1 now)
-## [10][Auto Revoke Permissions settings panel missing on some apps (Android 11 API/System)](https://www.reddit.com/r/androiddev/comments/jmlsfe/auto_revoke_permissions_settings_panel_missing_on/)
-- url: https://www.reddit.com/r/androiddev/comments/jmlsfe/auto_revoke_permissions_settings_panel_missing_on/
----
-Hi,
+Hey ! 
 
-I'm trying to whitelist some of my enterprise apps, but it seems ([https://issuetracker.google.com/issues/170968725](https://issuetracker.google.com/issues/170968725)) that a new manifest attribute " autoRevokePermissions " isn't working (anymore or for now, I don't know because its new on API lvl 30 BUT its also not working AND bypassed by system...logic).
+Sorry if it's not the good place, i'm new to reddit
 
-So I'm trying to ask user permisison for this action, like explained here : [https://developer.android.com/guide/topics/permissions/overview#auto-reset-permissions-unused-apps](https://developer.android.com/guide/topics/permissions/overview#auto-reset-permissions-unused-apps)
+I tried rooting my new Google Pixel 4a with magisk and got some kind of error at the end (the phone said "corrupt" and wouldn't boot).  
+So i use the automatic android flashing tool for pixels and nexus ([https://flash.android.com/welcome](https://flash.android.com/welcome))
 
-My problem is, on some of the apps, this section of settings is totally gone. I've updated targetSdkVersion on all, the configurations seems similar...
+It worked well, but it installed the AOSP version of android (open source and without google services). I just wanted to go back to a fresh install of Android 11 lol.  
+The flashing tool only give me AOSP android version sadly.  
+How to get a fresh OHA android 11 install ?
 
-Does anyone know why I encounter this issue ? (Sorry for bad english I'm french ;)
-## [11][WebSockets and Android apps - client-side considerations](https://www.reddit.com/r/androiddev/comments/jmlnh7/websockets_and_android_apps_clientside/)
-- url: https://www.ably.io/topic/websockets-android/?utm_source=reddit&amp;utm_medium=sc&amp;utm_campaign=cm_wand
+Thanks !
+## [8][Versioning Android apps](https://www.reddit.com/r/androiddev/comments/jn9l5k/versioning_android_apps/)
+- url: https://maxirosson.medium.com/versioning-android-apps-d6ec171cfd82
 ---
 
-## [12][What type of APP is used to communicate with micro-controllers ?](https://www.reddit.com/r/androiddev/comments/jmllzh/what_type_of_app_is_used_to_communicate_with/)
-- url: https://www.reddit.com/r/androiddev/comments/jmllzh/what_type_of_app_is_used_to_communicate_with/
+## [9][What Could a Debug Menu Contain?](https://www.reddit.com/r/androiddev/comments/jmqg7f/what_could_a_debug_menu_contain/)
+- url: https://halcyonmobile.com/blog/mobile-app-development/android-app-development/what-could-a-debug-menu-contain/
 ---
-Hi guys!
 
-**Before I begin, if you find this post inappropriate for this subreddit, please let me know and direct me elsewhere if you don't mind. Thank you!**
+## [10][How can I implement a voice chat bot with User Interface in Android Studio ?](https://www.reddit.com/r/androiddev/comments/jn8qzp/how_can_i_implement_a_voice_chat_bot_with_user/)
+- url: https://i.redd.it/hm321hk8h0x51.png
+---
 
-I'm planning a project which will require an app to control it, but as I'm very new to this, I genuinely have no idea what am I looking for. I'm not asking for help with the development, but I could seriously use a few pointers just so I know where to start. There's an overwhelming amount of programming languages / frameworks / other relevant things and it's incredibly easy to become confused by it
+## [11][Automate Dependencies Upgrades With Releases Hub](https://www.reddit.com/r/androiddev/comments/jn8835/automate_dependencies_upgrades_with_releases_hub/)
+- url: https://www.reddit.com/r/androiddev/comments/jn8835/automate_dependencies_upgrades_with_releases_hub/
+---
+Automatically keep your Gradle project dependencies up to date.
 
-**In a single sentence**: the app should be able to communicate with an **external micro-controller** (ESP32) via Bluetooth and/or WIFI in order to control an individually addressable LED strip (such as WS2812B &amp; SK6812B). I'd like it to be both Android &amp; IOS compatible if possible.
+The **Releases Hub Gradle Plugin** helps developers to keep their dependencies up to date, reducing some tedious manual tasks like remembering to look for dependencies upgrades, upgrading the dependencies on the Gradle configuration and creating a PR with the changes.
 
-I'll continue to describe the plan in detail so you can get a better idea of what I'm trying to accomplish give feedback (if you want to help) accordingly. If something on this list is not possible or is extremely complicated, please take a moment to let me know if you don't mind.
+[https://medium.com/swlh/automate-dependencies-upgrades-with-releases-hub-8eac6d7f43d6](https://medium.com/swlh/automate-dependencies-upgrades-with-releases-hub-8eac6d7f43d6)
+## [12][New subscription server notifications available in production - News](https://www.reddit.com/r/androiddev/comments/jn86m6/new_subscription_server_notifications_available/)
+- url: https://developer.apple.com/news/?id=an960mux
+---
 
-\----------------------------------------------------------------------------------------------------------------------------------------
-
-**App Setup plans**
-
-1.Download &amp; install APP (Android + IOS compatibility)2.Select a control method - Bluetooth or Wifi- this option can be changed later but active option would apply to all devices (if multiple are added)- if both is not possible without user having to flash an ESP32 manually, then only one choice would be available.
-
-3.Select the LED strip chipset (WS2812B / SK6812, etc.)4.Select color order (RGB / GRB, etc.)5.Input the total number of LEDs6.Continue to APP / add more devices
-
-Since I'm likely to make custom models with separate dedicated white LEDs, I'd like to be able to add X models through APP updates.
-
-\----------------------------------------------------------------------------------------------------------------------------------------
-
-**App Feature plans**
-
-1.Brightness control (global)2.Speed control (global)3.Mic sensitivity adjustment4.On/off switch (turns the LEDs off via SSR to eliminate idle power consumption &amp; puts ESP in idle mode)5.Auto-mode (each effect is displayed for X amount of time, then a new effect begins)6.Manual solid color presets + RGB wheel / color picker7."Add to favorites" button &amp; list (quick access to saved pre-made effects)8.Save changes button &amp; list (pre-made effects with custom brightness and/or speed settings)9.Option to "sync" multiple lamps so they can be controlled simultaneously10.Update APP if controls were changed using built-in push buttons, encoders/pots and switches11.Language change (2 languages, without "auto-translate")
-
-\----------------------------------------------------------------------------------------------------------------------------------------
-
-\*\*Advanced Features (\*\*This option would require a small one-time payment)
-
-**1**.Wake up feature // using built-in clock or RTC module if needed
-
-a) Gradual - lights turn on at set time and brightness gradually increases. Lights stay this way until user input occurs.b) Flashing - lights continuously flash until cancelled but stop after 30 minutes or something like that.c) Lights &amp; Sound - combines option a or b (user's choice) with a user selected premade sounds (uses a small built-in speaker)
-
-**2**.Timer &amp; schedule function
-
-a) Schedule the lights to turn off after a set amount of timeb) Lights turn on &amp; off automatically at set times (+ choice for which days of the week)
-
-**3**.Proximity switch (Using a micro-wave radar or a passive infra-red sensor to detect nearby people)
-
-a) When a person is detected, the lights will automatically turn on (dedicated white light as a base, but changeable)b) When a person is not detected for X amount of time, lights turn off or go into idle mode
-
-// I don't know if this is possible to achieve without the lights turning off if a person isn't moving a lot. Why - PIR sensors usually use timers and only work with motion, if a person is sitting, they go out.
-
-**4**.Alexa &amp; Google Home compatibility
-
-\-- Not as important, but would be nice. Not sure if it's possible with a custom app or worth the integration price I'd probably have to pay since I know nothing about this but I reckon it would be a cool feature to have.
-
-**Commands** (just a few basic stuff):
-
-Lights on/offChange effect to \_preset keyword or numberDim the X light to/by X percentIncrease brightness to X percent / set to full
-
-**5**.Clock / temperature / humidity (if the model has a built-in LED segment display or an OLED module)
-
-Turn on/off  
-Auto cycle through stats / modes by default
-
-\----------------------------------------------------------------------------------------------------------------------------------------So Based on all that info, could you recommend a place to start ? Selecting an appropriate programming language is a priority, but any additional tips or suggestions are welcome.
-
-I was also wondering, how much would an APP like this cost ? Just in case someone has an approximation. In case this is an inappropriate question, ignore it.
-
-Anyways, thank you for taking the time &amp; have a great day!

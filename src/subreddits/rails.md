@@ -19,7 +19,165 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [2][Rails app working with nginx locally, but redirecting 301 when deployed to EC2](https://www.reddit.com/r/rails/comments/jmlm7x/rails_app_working_with_nginx_locally_but/)
+## [2][adding CSS to a single view](https://www.reddit.com/r/rails/comments/jn9nfy/adding_css_to_a_single_view/)
+- url: https://www.reddit.com/r/rails/comments/jn9nfy/adding_css_to_a_single_view/
+---
+I'm working on a rails 6 application ( i generated a controller with his view (index/show/edit) ) 
+
+but on the show page i have to add a show some images so i'm going to use swiperJS  (like this exemple not mine btw) https://codepad.co/snippet/swiper-thumbs-gallery-with-two-way-control
+
+so i need to add the JS and CSS to the show page only 
+
+a did a:
+
+    yarn add swiper 
+
+and to the javascript folder i added a new file called GallerieSwiper.js which contant my JS 
+
+and in my show.html.erb page i added:
+
+    &lt;%= javascript_pack_tag 'GallerieSwiper' %&gt;
+
+
+the issue is how to add the swiper.min.css to only the show view ? 
+
+i can't added in the top of the page as it is a subview of the application.html.erb that contant the whole website structure
+## [3][The best Rails developer that no one ever was](https://www.reddit.com/r/rails/comments/jmxfci/the_best_rails_developer_that_no_one_ever_was/)
+- url: https://www.reddit.com/r/rails/comments/jmxfci/the_best_rails_developer_that_no_one_ever_was/
+---
+What resources helped you become a better rails developer? Or projects?
+## [4][Have you implemented Elasticsearch as an indexing solution?](https://www.reddit.com/r/rails/comments/jn94yh/have_you_implemented_elasticsearch_as_an_indexing/)
+- url: https://www.reddit.com/r/rails/comments/jn94yh/have_you_implemented_elasticsearch_as_an_indexing/
+---
+Hi All,
+
+Hope everyone is staying safe.
+
+I'm currently hiring for a Senior Ruby Engineer who has implemented Elasticsearch as an indexing solution. We’re an AI startup with offices in London and Berlin who have grown to 55 people in the last 5 years. We’re working on cutting edge AI technology, supported by a small team of machine learning experts and a collaborative product team that enables our clients to make data driven decisions using 100k+ customer feedback to improve their product.
+
+As a Senior Ruby Engineer at Chattermill, you’ll be working on greenfield products as well as interesting performance optimisation problems. You will be involved in all steps of the project including design, architecture, implementation, automated tests development and monitoring the health of the systems in production. This role can be fully remote (within EU timezone) or be based in our London or Berlin office (when it's safe to open up again).
+
+This opportunity would suit: 
+
+* Someone who values autonomy and would relish working on new challenges
+* Has a growth mindset and wants to work with likeminded people
+* Wants to work on complex scaling problems
+* Wants to work in a high impact role within a startup but at the same time has a good work/ life balance
+
+What we’re after:
+
+* Someone with good knowledge of software design and architecture 
+* Proficient with PostgreSQL and has experience with large datasets.
+* Experience with Elasticsearch as an indexing solution
+* Someone who values working within a close knit team and is willing to help and support others 
+
+You can apply via: [https://grnh.se/a87508f63us](https://grnh.se/a87508f63us) or contact me directly if you have any questions via [jason@chattermill.io](mailto:jason@chattermill.io).
+## [5][How to fix Rendered ActiveModel::Serializer::Null with Hash](https://www.reddit.com/r/rails/comments/jn0wim/how_to_fix_rendered_activemodelserializernull/)
+- url: https://www.reddit.com/r/rails/comments/jn0wim/how_to_fix_rendered_activemodelserializernull/
+---
+Hi guys, I'm using Active Model Serializer and I'm having trouble updating a user. I'm not sure what to do to solve this problem? 
+
+I get this error message.   
+
+`app/controllers/registrations_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)` 
+
+My registrations_controller is:
+
+	`def update
+		@user = User.find(params[:id])
+		if @user.assign_attributes(registration_params)
+			render json: @user
+		else
+			render json: { status: :bad_request }
+		end	
+	end`	
+
+
+Here is my User Serializer:
+
+`
+class UserSerializer &lt; ActiveModel::Serializer
+  include Rails.application.routes.url_helpers
+  attributes  :id, :first_name, :last_name, :email, :photo_url, :login_status
+  
+  attributes :photo_url
+  def photo_url
+    variant = object.photo.variant(resize: "80x80")
+    return rails_representation_url(variant, only_path: true)
+  end  
+
+  def login_status
+    {
+      status: :created,
+      logged_in: true
+    }
+  end   
+end`
+## [6][AssetsNotPrecompiled not resolved with :clobber and :precompile](https://www.reddit.com/r/rails/comments/jn6qja/assetsnotprecompiled_not_resolved_with_clobber/)
+- url: https://www.reddit.com/r/rails/comments/jn6qja/assetsnotprecompiled_not_resolved_with_clobber/
+---
+Hi all,
+
+I am the creator of [https://github.com/chrisvel/wreeto\_official](https://github.com/chrisvel/wreeto_official).
+
+There's an issue pending for a couple of days, but I am unable to save.
+
+[https://github.com/chrisvel/wreeto\_official/issues/47](https://github.com/chrisvel/wreeto_official/issues/47)
+
+Heads up:
+
+`AssetsNotPrecompiled` appeared after a `docker-compose pull` of latest image and doesn't seem to go away with `rake assets:clobber` and `rake assets:precompile`, even If the public assets folder is removed manually with `rm -rf`.
+
+Does anyone have any idea that might help ?
+## [7][Seo Optimizer gem](https://www.reddit.com/r/rails/comments/jmmmnu/seo_optimizer_gem/)
+- url: https://www.reddit.com/r/rails/comments/jmmmnu/seo_optimizer_gem/
+---
+Hey,
+
+I wrote a gem to manage sitemap, robots.txt, error pages, etc.
+
+Things to optimize SEO, you know \^\^ ...
+
+It uses the "sitemap\_generator" gem. 
+
+I would like to have your opinions, comments and contributions on this. 
+
+The first goal is to easily and efficiently manage SEO on a Rails application. 
+
+You can find the source code here: [https://github.com/RonanLOUARN/seo\_optimizer](https://github.com/RonanLOUARN/seo_optimizer)
+
+Have a great day!
+## [8][DateRangePciker and Jquery: Uncaught TypeError: $(…).daterangepicker is not a function](https://www.reddit.com/r/rails/comments/jmxpc2/daterangepciker_and_jquery_uncaught_typeerror/)
+- url: https://www.reddit.com/r/rails/comments/jmxpc2/daterangepciker_and_jquery_uncaught_typeerror/
+---
+Hey guys, having a really puzzling time with everyones favorite daterangepicker. I had it working completely fine, and then all of a sudden the jquery has gone haywire on me! Im hoping someone ehre has experience with this issue.
+
+Ive started getting the 
+
+    Uncaught TypeError: $(...).daterangepicker is not a function
+
+error in my console, and the page breaks. I havent changed my application.js, gemfile, nor stylesheets since it was working, hoping to get some assistance here. From doing some research it seems that the function is being loaded before jquery is, but I am mystified as to why this is happening.
+
+Here are my files:
+
+Stack Overflow Post: [https://stackoverflow.com/questions/64654020/uncaught-typeerror-daterangepicker-is-not-a-function-rails](https://stackoverflow.com/questions/64654020/uncaught-typeerror-daterangepicker-is-not-a-function-rails)
+## [9][Incomplete response received from application](https://www.reddit.com/r/rails/comments/jmunb9/incomplete_response_received_from_application/)
+- url: https://www.reddit.com/r/rails/comments/jmunb9/incomplete_response_received_from_application/
+---
+I am deploying a new rails 6 app to a linux server. I have never seen that message before but haven't been able to figure out a way around it. I was thinking originally it was something to do with my credentials. I ran rails credentials:edit --environment production and it generated the files.
+
+Here is where I am getting confused. Is the string of characters I see in conig/credentials/production.yml.enc the secret key or is that just the contents of the file encrypted?
+
+Do I need a secret key base in that file?
+
+On the linux server I have the /home/deploy/myapp/.rbenv-vars file with my DB info and the secret\_key\_base. I'm not sure I am putting the right value in this. What exactly goes there?
+## [10][Am I being too careful?](https://www.reddit.com/r/rails/comments/jmr89x/am_i_being_too_careful/)
+- url: https://www.reddit.com/r/rails/comments/jmr89x/am_i_being_too_careful/
+---
+I have a User Model that has Organizations.  Each User will have two specific organizations (x and y) that are not to be modified in any way; Users can create more Organizations.  Would it be enough to just not show options for deletion/modification on the front-end or would I need to prevent deletion on the back-end?
+For example, show deletion/modification buttons on the front-end for all Organizations except x and y organization.  Also on the back-end, make sure x and y can not be modified in any way in my Organization controller.
+## [11][Rails app working with nginx locally, but redirecting 301 when deployed to EC2](https://www.reddit.com/r/rails/comments/jmlm7x/rails_app_working_with_nginx_locally_but/)
 - url: https://www.reddit.com/r/rails/comments/jmlm7x/rails_app_working_with_nginx_locally_but/
 ---
 I have a dockerized Rails app, and the nginx container with some custom config on runtime that I have setup. The setup works perfectly fine on my local machine.
@@ -124,112 +282,3 @@ and here's my script that I'm running when the container starts :
 &amp;#x200B;
 
 I even tried setting PLACEHOLDER\_VHOST in the script to my ELB public DNS but to no avail. What could be the issue here?
-## [3][Seo Optimizer gem](https://www.reddit.com/r/rails/comments/jmmmnu/seo_optimizer_gem/)
-- url: https://www.reddit.com/r/rails/comments/jmmmnu/seo_optimizer_gem/
----
-Hey,
-
-I wrote a gem to manage sitemap, robots.txt, error pages, etc.
-
-Things to optimize SEO, you know \^\^ ...
-
-It uses the "sitemap\_generator" gem. 
-
-I would like to have your opinions, comments and contributions on this. 
-
-The first goal is to easily and efficiently manage SEO on a Rails application. 
-
-You can find the source code here: [https://github.com/RonanLOUARN/seo\_optimizer](https://github.com/RonanLOUARN/seo_optimizer)
-
-Have a great day!
-## [4][[RoR + k8] How do I manage to keep the same DB for multiple pods?](https://www.reddit.com/r/rails/comments/jmbc4q/ror_k8_how_do_i_manage_to_keep_the_same_db_for/)
-- url: https://www.reddit.com/r/rails/comments/jmbc4q/ror_k8_how_do_i_manage_to_keep_the_same_db_for/
----
-I'm trying to run more than one version of a rails project in different containers and some of those versions might have different migration files.
-
-Is there a way to use the same database for all of the pods?
-
-I saw in a presentation someone mentioning a "migration" service that keeps all the running version valid, but I could not find how to achieve this.
-
-Does any of you had a similar problem or some guidance of how to do this?
-## [5][Rails API architecture approach for default images](https://www.reddit.com/r/rails/comments/jmc9dk/rails_api_architecture_approach_for_default_images/)
-- url: https://www.reddit.com/r/rails/comments/jmc9dk/rails_api_architecture_approach_for_default_images/
----
-I am building api that hits a Vue frontend using ActiveStorage to handle images. If a record doesn’t have an image after retrieving from the db, I’d like to use a default image for the record to get passed to the frontend.  I’m unsure if this the right approach.  Should this be the responsibility of the api or the frontend?  The records aren’t required to have an image on create/update so I’m leaning towards the idea the frontend only care and should handle whether a record has one.
-## [6][Audio streaming](https://www.reddit.com/r/rails/comments/jm30hd/audio_streaming/)
-- url: https://www.reddit.com/r/rails/comments/jm30hd/audio_streaming/
----
-Hi everyone, i want to add audio player in my apps, but i can't find simple example. I user rails 6, active storage (save all files in my disk) with standard  views (use jquery). Please give me links or idea how to build this
-## [7][How to use AJAX on an devise protected route?](https://www.reddit.com/r/rails/comments/jlzduy/how_to_use_ajax_on_an_devise_protected_route/)
-- url: https://www.reddit.com/r/rails/comments/jlzduy/how_to_use_ajax_on_an_devise_protected_route/
----
-I want to make some post requests to my app. I’m not using any front end framework. Just straight up rails and erb (well, i guess this isn’t entirely true. I am using stimulus js).
-
-In stimulus, I’m trying to make ajax requests which is working great. I know that I have to send an authenticity token along with my request. I just grab that from the meta tags. However, I don’t know what to send so that devise can authenticate my request with the current user. 
-
-Do I have to send something in the header of the request? Or maybe some other additional parameters? 
-
-```javascript
-$.ajax({
-    type: 'POST',
-    url: url,
-    headers: {
-        "X-CSRF-Token": CSRF_TOKEN,
-    }
-}).done(function(data) { 
-    alert(data);
-});
-
-```
-
-Any help is appreciated. Thanks!
-## [8][Bookmarks on Ruby or Rails](https://www.reddit.com/r/rails/comments/jlt3bo/bookmarks_on_ruby_or_rails/)
-- url: https://www.reddit.com/r/rails/comments/jlt3bo/bookmarks_on_ruby_or_rails/
----
-Hi everyone, I want to make a bookmarks system like on [Myanimelist.net](https://Myanimelist.net), here is a screenshot of what I am talking about [https://prnt.sc/vayxio](https://prnt.sc/vayxio)
-
-Do you know if there is already a gem, plugin or module that has most of functionality covered?
-## [9][Simple but Useful Rails Engines](https://www.reddit.com/r/rails/comments/jlkgx6/simple_but_useful_rails_engines/)
-- url: https://www.reddit.com/r/rails/comments/jlkgx6/simple_but_useful_rails_engines/
----
-I have a series of simple and useful plugins without complex logic to checkout. Wouldn't mind on getting some collaboration and suggestions from other developers.
-
-[https://github.com/phcdevworks](https://github.com/phcdevworks)
-
-[https://rubygems.org/profiles/phcdevworks](https://rubygems.org/profiles/phcdevworks)
-## [10][How can I send truly empty body when hitting a API destroy endpoint?](https://www.reddit.com/r/rails/comments/jlyjq5/how_can_i_send_truly_empty_body_when_hitting_a/)
-- url: https://www.reddit.com/r/rails/comments/jlyjq5/how_can_i_send_truly_empty_body_when_hitting_a/
----
-I am using Rails 5.
-
-I want to send an empty body after I hit the delete end point, but right now probably by rails default code, sending the \`id\` of the deleted resource. But i want it to be empty. What code I need to change here:
-
-    def destroy
-      @project.destroy
-    
-      respond_to do |format|
-        format.json { head :no_content }
-      end
-    end
-
-See the screenshot:
-
-&amp;#x200B;
-
-https://preview.redd.it/17wfwg190lw51.png?width=1844&amp;format=png&amp;auto=webp&amp;s=51c15fad17fb19356e2f7d1e321d681cd4bc20d7
-## [11][DOM Parsing of XML file how to approach ?](https://www.reddit.com/r/rails/comments/jlovhj/dom_parsing_of_xml_file_how_to_approach/)
-- url: https://www.reddit.com/r/rails/comments/jlovhj/dom_parsing_of_xml_file_how_to_approach/
----
-Hi There Experts, 
-
-some weeks ago I asked help from community regarding processing XML  files on RUBY with this post :
-
-[https://www.reddit.com/r/ruby/comments/j6ht5w/is\_there\_a\_gem\_for\_xml\_to\_json\_convertion/](https://www.reddit.com/r/ruby/comments/j6ht5w/is_there_a_gem_for_xml_to_json_convertion/)
-
-After read a lot I discover that what I need is parse a XML file and the DOM Parsing method seems to me more appropriate ( as I still do not have correct understanding of SAX Parsing) ... 
-
-I have checked Rexml but as is not active library with a lot of open issues I am checking for alternatives to accomplish this task ... Rigth now I checking xml\_to\_hash but decided to ask to RoR community if also have a suggestion ... as my requirements is more simplicity than performance as i will not need to work with HUGE files ...
-
-&amp;#x200B;
-
-thanks in advance,

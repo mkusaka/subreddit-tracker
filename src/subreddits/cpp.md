@@ -56,69 +56,73 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Getting started with Standard C++ Modules in Visual Studio](https://www.reddit.com/r/cpp/comments/jmigr7/getting_started_with_standard_c_modules_in_visual/)
-- url: https://devblogs.microsoft.com/cppblog/a-tour-of-cpp-modules-in-visual-studio/
+## [2][What are you most used Boost libraries?](https://www.reddit.com/r/cpp/comments/jn72ol/what_are_you_most_used_boost_libraries/)
+- url: https://www.reddit.com/r/cpp/comments/jn72ol/what_are_you_most_used_boost_libraries/
+---
+As a C++ newcomer I often hear about Boost, however most of the things I already find in \`std\` or extracted like ASIO. What are some good libraries I am missing? For example I was interested in metaprogramming and found Boost.Hana but it seems like modern C++ metaprogramming is much easier and the library might be a bit obsolete..?
+## [3][Learning modern C++](https://www.reddit.com/r/cpp/comments/jmyh86/learning_modern_c/)
+- url: https://www.reddit.com/r/cpp/comments/jmyh86/learning_modern_c/
+---
+So I did a little bit of C++ in school a few years ago but it wasn’t “real” C++, definitely not modern C++. 
+
+Now as someone who uses python all day at work, how to I learn and get better at modern C++? My goal is to atleast be intermediate with C++ within the next year so I can start targeting “cooler” projects/companies for work!  
+
+Any feedback is appreciated, thanks!
+## [4][Criterion: Microbenchmarking for C++17](https://www.reddit.com/r/cpp/comments/jna6yc/criterion_microbenchmarking_for_c17/)
+- url: https://github.com/p-ranav/criterion
 ---
 
-## [3][A modern c/c++ buildsystem based on Lua](https://www.reddit.com/r/cpp/comments/jmlgic/a_modern_cc_buildsystem_based_on_lua/)
+## [5][clang shows error when using a method with a "using type alias" parameter (in this case, with std::make_index_sequence), while gcc does not. Who's right?](https://www.reddit.com/r/cpp/comments/jmy1bh/clang_shows_error_when_using_a_method_with_a/)
+- url: https://www.reddit.com/r/cpp/comments/jmy1bh/clang_shows_error_when_using_a_method_with_a/
+---
+The code: https://godbolt.org/z/qT6vz6
+
+If you comment out the "template&lt;class... Ts&gt; using theAlias" line, and uncomment the "template&lt;class... Ts&gt; struct theAlias", both compilers issue no errors.
+
+x86-64 clang versions 9.0.0 and up shows the error: "error: no matching function for call to 'theFxn'"
+
+x86-64 gcc 10.1 and up compiles the code.
+
+Who's right?
+## [6][Say goodbye to memory leaks](https://www.reddit.com/r/cpp/comments/jn90da/say_goodbye_to_memory_leaks/)
+- url: https://www.reddit.com/r/cpp/comments/jn90da/say_goodbye_to_memory_leaks/
+---
+I made a thread-safe memory manager in C++ that prevents memory leaks. It comes with a simple DSL and includes support for smart-pointers. You can also get allocation stats and memory traces.
+
+Feel free to contribute!
+
+[https://github.com/supercmmetry/rainman](https://github.com/supercmmetry/rainman)
+## [7][Why C++ community add additional meaning to a struct?](https://www.reddit.com/r/cpp/comments/jn8qtl/why_c_community_add_additional_meaning_to_a_struct/)
+- url: https://www.reddit.com/r/cpp/comments/jn8qtl/why_c_community_add_additional_meaning_to_a_struct/
+---
+Almost all code styles describe \`struct\` as a POD, which is a nonsense. The only differences are default access specifiers, which are better in case of the \`struct\`: you almost always use \`public\` inheritance, and your \`struct\`/\`class\` always use public members. Making distinction between these alternatives is harmful, because this isn't something that comes from language, it's just a weird convention
+## [8][A modern c/c++ buildsystem based on Lua](https://www.reddit.com/r/cpp/comments/jmlgic/a_modern_cc_buildsystem_based_on_lua/)
 - url: https://xmake.io
 ---
 
-## [4][Controlling Elegoo Robot Smart Car with ASIO and C++](https://www.reddit.com/r/cpp/comments/jm04wl/controlling_elegoo_robot_smart_car_with_asio_and_c/)
-- url: https://www.youtube.com/watch?v=nkCP95zLvSQ
+## [9][You wanted Boost via Meson subprojects? You got it! (sorta)](https://www.reddit.com/r/cpp/comments/jms3xx/you_wanted_boost_via_meson_subprojects_you_got_it/)
+- url: https://nibblestew.blogspot.com/2020/11/you-wanted-boost-via-meson-subprojects.html
 ---
 
-## [5][Lambda Functions](https://www.reddit.com/r/cpp/comments/jmn1af/lambda_functions/)
-- url: https://www.reddit.com/r/cpp/comments/jmn1af/lambda_functions/
----
-[https://pastebin.ubuntu.com/p/SdBWdNgN2w/](https://pastebin.ubuntu.com/p/SdBWdNgN2w/)
-
-&amp;#x200B;
-
-I have a recursive function in the link above. I am supposed to use that function inside another function. I tried to make it a lambda function but i couldn't. How can i use this recursive function inside another function?
-## [6][Am I at a disadvantage by learning C++ on Mac?](https://www.reddit.com/r/cpp/comments/jmmiac/am_i_at_a_disadvantage_by_learning_c_on_mac/)
-- url: https://www.reddit.com/r/cpp/comments/jmmiac/am_i_at_a_disadvantage_by_learning_c_on_mac/
----
-I am learning C++ before my university starts next year, i will be using my Macbook Pro in University. I want to get used to the environment in my Macbook Pro and see how things work around there. I also want to do CP(Competitive Programming) from what I have seen almost all of Competitive Programmers use Windows/Ubuntu, i have seen some of them talking about code errors with submission on the server. So, it will help a bunch if you guys could tell me that should I use windows/ubuntu on my gaming pc or use my macbook?
-
-I also have a high-end PC and both of my Macbook Pro and PC's spec are mentioned down below if that helps in any kind of way.
-
-Macbook Pro 2019 - 16 Inches i7 6–core, 8th generation i think or either 10th, with 16GB DDR4 and 500GB NVME SSD
-
-Gaming PC: i9–9900K, 32GB DDR4 3200MHz, 2080-Ti, RM 750x with NZXT H700 casing. 500GB NVME m.2 x 2 SSD’s/500GB SSD SATA III x 2 / 3TB HDD. 
-
-I love MacOS a lot but i don’t want to have issues with CP, GUI-Applications and learning the programming language just because of the OS.
-
-Any guidance would be appreciate and for those who code on MacOS, i know it being Unix based helps a lot with making development easier but is it the same for C++? Sorry if this is a dumb question but it would be appreciated if any help was provided regarding this so i can start studying C++.
-## [7][Runtime Polymorphism with std::variant and std::visit (Updated 2nd Nov: Build times, passing args)](https://www.reddit.com/r/cpp/comments/jml8he/runtime_polymorphism_with_stdvariant_and_stdvisit/)
-- url: https://www.bfilipek.com/2020/04/variant-virtual-polymorphism.html
+## [10][Getting started with Standard C++ Modules in Visual Studio](https://www.reddit.com/r/cpp/comments/jmigr7/getting_started_with_standard_c_modules_in_visual/)
+- url: https://devblogs.microsoft.com/cppblog/a-tour-of-cpp-modules-in-visual-studio/
 ---
 
-## [8][If I wanted to create a new Build System™, what tips would you tell me?](https://www.reddit.com/r/cpp/comments/jm8k2q/if_i_wanted_to_create_a_new_build_system_what/)
-- url: https://www.reddit.com/r/cpp/comments/jm8k2q/if_i_wanted_to_create_a_new_build_system_what/
+## [11][Is it easy to pick up C++ again after a long gap (many years) ? My friends are pushing me to learn rust instead.](https://www.reddit.com/r/cpp/comments/jn42cg/is_it_easy_to_pick_up_c_again_after_a_long_gap/)
+- url: https://www.reddit.com/r/cpp/comments/jn42cg/is_it_easy_to_pick_up_c_again_after_a_long_gap/
 ---
-What do you dislike of existing build systems? 
+Yet another rust vs CPP post, I know :( but hopefully I am coming from a different place to make it interesting.
 
+So C++ was the first language I learned in school and college. I would say i used to only be an intermediate level programmer with C++ 11, despite using it as my primary language for 5-6 years :)
+Towards the end of University however I moved to Machine Learning Research and thus Python became my primary programming language. In just 2-3 years I would say I became better at Python than I ever was at C++ in terms of confidence in writing good code. Right now I think I am a pretty good python developer. I don't remember ever thinking that I am pretty good at c++ :(
 
-What would you improve?
+I am not looking for a new job or anything, I enjoy working in ML research. But I would like to take some time to do some personal projects typically linux command line applications/helpers to manage some of my workflow and maybe contribute to some open source projects when I have free time. Ideally in a language that is not Python.
 
+So I was thinking of either revisiting C++ with all it's latest features or check out the next hyped thing in rust.
+My question is how easy it is to pick up C++ again with all it's latest features? Consider the following points:
 
-What would you like to have in a build system that isn't there right now?
-## [9][Approximating 'constexpr for'](https://www.reddit.com/r/cpp/comments/jm3437/approximating_constexpr_for/)
-- url: https://artificial-mind.net/blog/2020/10/31/constexpr-for
----
+1.  Is the documentation and information about new features (post C++ 11) accessible ? Are there cool projects that are written in modern C++ with best practices that I can check out and learn from ?
+2.  I remember struggling a lot with using templates initially, especially the unhelpful error messages, is the situation better now?
+3. I also remember build systems being a complete mess, with Makefiles, CMake and pretty poor documentation about how to get things done in a good, elegant way. How is the situation now?
 
-## [10][Library to create random instances in tests](https://www.reddit.com/r/cpp/comments/jmihlv/library_to_create_random_instances_in_tests/)
-- url: https://www.reddit.com/r/cpp/comments/jmihlv/library_to_create_random_instances_in_tests/
----
-Sharing a project I created to help with writing tests. 
-I have found that instantiating objects can be the most verbose part of writing test code (especially when dealing with large nested structures).
-
-Individual tests don't need specific values for every field. I use this library to help generate them. If I do require specific values I can override them after creation. This can also help with readability by removing random variables that only exist so that an object can be created.
-
-https://github.com/jroddev/cpp-dummy
-(Not sure if something like this already exists).
-## [11][cpp-lazy 2.1.1 released: easy &amp; fast C++ iterator/lazy evaluation library](https://www.reddit.com/r/cpp/comments/jma3p1/cpplazy_211_released_easy_fast_c_iteratorlazy/)
-- url: https://github.com/MarcDirven/cpp-lazy/releases/tag/2.1.1
----
-
+Ultimately, I am not looking to become a professional C++ or rust developer anytime in the future. I am just looking to keep up with some language other than python. C++, rust are good candidates as they are statically typed and would be a a good complement to my python skillz :).  **So my biggest consideration is having fun developing some cool new projects as a hobby**. Considering that should I revisit C++ again or maybe check out rust ?

@@ -1,12 +1,10 @@
 # javascript
-## [1][WTF Wednesday (October 28, 2020)](https://www.reddit.com/r/javascript/comments/jjqjlu/wtf_wednesday_october_28_2020/)
-- url: https://www.reddit.com/r/javascript/comments/jjqjlu/wtf_wednesday_october_28_2020/
+## [1][Showoff Saturday (October 31, 2020)](https://www.reddit.com/r/javascript/comments/jlh1ld/showoff_saturday_october_31_2020/)
+- url: https://www.reddit.com/r/javascript/comments/jlh1ld/showoff_saturday_october_31_2020/
 ---
-Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
-Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
-this is the place.
+Did you find or create something cool this week in javascript? 
 
-[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+Show us here!
 ## [2][Your /r/javascript recap for the week of October 26 - November 01](https://www.reddit.com/r/javascript/comments/jml5ae/your_rjavascript_recap_for_the_week_of_october_26/)
 - url: https://www.reddit.com/r/javascript/comments/jml5ae/your_rjavascript_recap_for_the_week_of_october_26/
 ---
@@ -87,48 +85,49 @@ this is the place.
 
 
 &amp;nbsp;
-## [3][Node 15 released: Unhandled rejections are now raised as exceptions by default](https://www.reddit.com/r/javascript/comments/jmi8jk/node_15_released_unhandled_rejections_are_now/)
+## [3][Open source file uploader Uppy adds support for Unsplash](https://www.reddit.com/r/javascript/comments/jn9765/open_source_file_uploader_uppy_adds_support_for/)
+- url: https://uppy.io/blog/2020/10/1.22/
+---
+
+## [4][[AskJS] Why is NativeScript so dead?](https://www.reddit.com/r/javascript/comments/jn7e5g/askjs_why_is_nativescript_so_dead/)
+- url: https://www.reddit.com/r/javascript/comments/jn7e5g/askjs_why_is_nativescript_so_dead/
+---
+I'm a front end dev w/ mostly Vue experience and is looking to build my first mobile side project. I want to build something ASAP, and it seems that the easiest options were vue-native(which just compiles into RN) and *NativeScript*.
+
+From my limited research it seemed that from a tech stack perspective NativeScript seemed better than React Native since it can access native apis. And the main downside is the lack of big community like the one RN has. However, it seems that there's literally NOBODY using NativeScript.
+
+Most conversations on Reddit about NativeScript are at least 1 year old. And the NativeScript npm package install timeline also looks dead post mid 2019.
+
+**Why?** Vue's getting more popular, people are getting pissed at React Native, shouldn't NativeScript also grow with it?
+## [5][Supabase.js 1.0 - The open source Firebase alternative. Supabase adds realtime and restful APIs to Postgres without a single line of code](https://www.reddit.com/r/javascript/comments/jmpmlm/supabasejs_10_the_open_source_firebase/)
+- url: https://supabase.io/
+---
+
+## [6][ts-audio v0.4.5 is out! :)](https://www.reddit.com/r/javascript/comments/jn9h63/tsaudio_v045_is_out/)
+- url: https://github.com/EvandroLG/ts-audio/releases/tag/v0.4.5
+---
+
+## [7][JavaScript's Memory Management Explained](https://www.reddit.com/r/javascript/comments/jmwx33/javascripts_memory_management_explained/)
+- url: https://felixgerschau.com/javascript-memory-management/?ck_subscriber_id=478674400
+---
+
+## [8][Build and publish a Chrome Extension](https://www.reddit.com/r/javascript/comments/jn6or8/build_and_publish_a_chrome_extension/)
+- url: https://devrk.hashnode.dev/build-and-publish-a-chrome-extension
+---
+
+## [9][Finally, a curation of 10 React security best practices](https://www.reddit.com/r/javascript/comments/jmweez/finally_a_curation_of_10_react_security_best/)
+- url: https://snyk.io/blog/10-react-security-best-practices/
+---
+
+## [10][Hackathon on new Javascript based SDK](https://www.reddit.com/r/javascript/comments/jn521a/hackathon_on_new_javascript_based_sdk/)
+- url: https://gitcoin.co/hackathon/oasis/onboard
+---
+
+## [11][A tiny GEDCOM parser](https://www.reddit.com/r/javascript/comments/jn9t8b/a_tiny_gedcom_parser/)
+- url: https://github.com/thoughtsunificator/gedcom-parser
+---
+
+## [12][Node 15 released: Unhandled rejections are now raised as exceptions by default](https://www.reddit.com/r/javascript/comments/jmi8jk/node_15_released_unhandled_rejections_are_now/)
 - url: https://nodejs.medium.com/node-js-v15-0-0-is-here-deb00750f278
----
-
-## [4][Now You Can Walk Inside It: Half-Life Inspired 3D Level with WebGL - Supports Touch Devices](https://www.reddit.com/r/javascript/comments/jm2nuy/now_you_can_walk_inside_it_halflife_inspired_3d/)
-- url: https://oguzeroglu.github.io/ROYGBIV/demo/villeneuvedascq2/application.html
----
-
-## [5][Testing JavaScript applications with confidence](https://www.reddit.com/r/javascript/comments/jmjn2r/testing_javascript_applications_with_confidence/)
-- url: https://techblog.commercetools.com/testing-javascript-applications-with-confidence-ff539c4a25f2
----
-
-## [6][[AskJS] Drawing charts in js](https://www.reddit.com/r/javascript/comments/jmndxm/askjs_drawing_charts_in_js/)
-- url: https://www.reddit.com/r/javascript/comments/jmndxm/askjs_drawing_charts_in_js/
----
-Hey everybody,
-what do you use for charts? Seems like everyone’s using chart.js. Is it flexible enough?
-
-Do you use d3? From the first look it seems like a lot of studying must be done first, before you can draw even a simple thing.
-
-Any other thoughts?
-## [7][Top 5 JavaScript Machine Learning Libraries](https://www.reddit.com/r/javascript/comments/jmkfac/top_5_javascript_machine_learning_libraries/)
-- url: https://jaxenter.com/javascript-ml-libraries-172873.html
----
-
-## [8][I wrote a library to make working with the Airtable API even easier.](https://www.reddit.com/r/javascript/comments/jme53s/i_wrote_a_library_to_make_working_with_the/)
-- url: https://dev.to/gv14982/making-intneracting-with-the-airtable-api-even-easier-1lm5
----
-
-## [9][Hi I can make websites for you I'm a beginner but good If you want a website I can make, sell you the website and with the money I receive I can take courses on programming Help me](https://www.reddit.com/r/javascript/comments/jmn39l/hi_i_can_make_websites_for_you_im_a_beginner_but/)
-- url: https://pt.m.wikipedia.org/wiki/JavaScript
----
-
-## [10][Procedural art using P5.js in a Javascript and Python notebook](https://www.reddit.com/r/javascript/comments/jmcg0r/procedural_art_using_p5js_in_a_javascript_and/)
-- url: https://starboard.gg/gz/procedural-art-n3DYopT
----
-
-## [11][What's new in Svelte: November 2020](https://www.reddit.com/r/javascript/comments/jm7wp8/whats_new_in_svelte_november_2020/)
-- url: https://svelte.dev/blog/whats-new-in-svelte-november-2020
----
-
-## [12][JavaSpooky: Using JavaScript to revive an old horror webcomic from a flashplayer grave.](https://www.reddit.com/r/javascript/comments/jlov8g/javaspooky_using_javascript_to_revive_an_old/)
-- url: https://dev.to/nickgottschlich/javaspooky-using-javascript-to-revive-an-old-horror-webcomic-from-a-flashplayer-grave-4dgb
 ---
 

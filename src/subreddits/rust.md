@@ -23,64 +23,68 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/jmiktw/whats_everyone_working_on_this_week_452020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-45-2020/50962?u=llogiq)!
-## [3][Nom 6 released](https://www.reddit.com/r/rust/comments/jmiyg8/nom_6_released/)
-- url: https://github.com/Geal/nom/blob/master/CHANGELOG.md#600---2020-10-31
+## [3][BurntSushi, creator of ripgrep, on the Sourcegraph Podcast (transcript included)](https://www.reddit.com/r/rust/comments/jmzjjp/burntsushi_creator_of_ripgrep_on_the_sourcegraph/)
+- url: https://about.sourcegraph.com/podcast/andrew-gallant
 ---
 
-## [4][nom parser combinators, version 6.0.0](https://www.reddit.com/r/rust/comments/jmjgug/nom_parser_combinators_version_600/)
-- url: https://www.reddit.com/r/rust/comments/jmjgug/nom_parser_combinators_version_600/
----
-Hello all!  
-
-
-I'm happy to tell you that the [nom parser combinators library](https://github.com/Geal/nom) is now out at version 6.0.0! many thanks to [all the contributors](https://github.com/Geal/nom/blob/master/CHANGELOG.md#thanks-1) who helped developing it!  
-
-
-This release addresses a lot of issues around usability, mainly by relaxing the requirements on parsers (they can be \`FnMut\` now, or even anything that implements the \`nom::Parser\` trait). There was also some work around error management, simplifying the design of custom error types, integration with \`std::error::Error\`, etc.  
-
-
-This release also integrates with the awesome [bitvec](https://crates.io/crates/bitvec) crate, for easier bit level parsing. Along with the [regex](https://crates.io/crates/regex) and [lexical-core](https://crates.io/crates/lexical-core), it shows that you can easily wrap more specialized library in parsers that will be combined with the rest of nom.  
-
-
-There are a few [breaking changes](https://github.com/Geal/nom/blob/master/CHANGELOG.md#breaking-changes), but so far upgrades were not too complex changing \`Fn\` to \`FnMut\` here and there, and implementing the \`ContextError\` and \`FromExternalError\` trait if you use a custom error type.  
-
-
-There might be a few performance gains, but this was not the real focus of this release, I may have good news on that front in a few days/weeks.  
-
-
-That's all! Happy hacking!
-## [5][Rust cheats](https://www.reddit.com/r/rust/comments/jmku1s/rust_cheats/)
-- url: https://www.reddit.com/r/rust/comments/jmku1s/rust_cheats/
----
-In case you didn't found it already, I have found a very useful cheat sheet for learning Rust.   
-[Cheats](https://cheats.rs/)
-
-I'm not connected with the resource, I have just found it interesting and useful.
-## [6][The Newtype Pattern in Rust](https://www.reddit.com/r/rust/comments/jmkncv/the_newtype_pattern_in_rust/)
-- url: https://www.worthe-it.co.za/blog/2020-10-31-newtype-pattern-in-rust.html
+## [4][Hardware performance counters for the Rust compiler](https://www.reddit.com/r/rust/comments/jn9892/hardware_performance_counters_for_the_rust/)
+- url: https://hackmd.io/sH315lO2RuicY-SEt7ynGA?view
 ---
 
-## [7][Names are not type safety](https://www.reddit.com/r/rust/comments/jmi0lo/names_are_not_type_safety/)
-- url: https://lexi-lambda.github.io/blog/2020/11/01/names-are-not-type-safety/
+## [5][cn: A fast, memory-safe alternative to cp](https://www.reddit.com/r/rust/comments/jn59cv/cn_a_fast_memorysafe_alternative_to_cp/)
+- url: https://gitlab.com/arijit79/cn
 ---
 
-## [8][Are We Rust Yet](https://www.reddit.com/r/rust/comments/jm6v0o/are_we_rust_yet/)
-- url: https://github.com/UgurcanAkkok/AreWeRustYet
+## [6][Will I miss the rust community rising?](https://www.reddit.com/r/rust/comments/jn7onq/will_i_miss_the_rust_community_rising/)
+- url: https://www.reddit.com/r/rust/comments/jn7onq/will_i_miss_the_rust_community_rising/
+---
+Hey everyone! 
+
+So I've been wanting to learn Rust for a while now. I think it has so much potential as a future language in various scenarios. And lately I've been realizing that rust is becoming more and more popular (even though it was created 10years ago). Every time I go to hackernews there is a post about a new tool or library built in and for Rust. The problem is, I'm now learning C++, taking Java classes at college (even though I already knew Java) and programming in Python part time. And as much as I want to be a part of one the guys who helped Rust climb to the top (by building libraries, frameworks, tools, etc.) I feel like it would be hard to actually learn it. Because I'm using so many languages every day. 
+
+So my questions for you is: 
+
+* Should I stop learning c++ for now and focus on learning Rust and helping the rust community? 
+* Can I learn c++ and rust at the same time without mixing information?
+* Will I miss anything if I only learn rust in a year or two?
+## [7][R3: a proof-of-concept static RTOS utilizing compile-time function evaluation for static configuration](https://www.reddit.com/r/rust/comments/jn9ksr/r3_a_proofofconcept_static_rtos_utilizing/)
+- url: https://github.com/yvt/r3
 ---
 
-## [9][Precursor: secure open hardware platform for Rust apps](https://www.reddit.com/r/rust/comments/jmh4rv/precursor_secure_open_hardware_platform_for_rust/)
-- url: https://www.crowdsupply.com/sutajio-kosagi/precursor
+## [8][mltype - Typing practice for Rust and other languages](https://www.reddit.com/r/rust/comments/jmx7t0/mltype_typing_practice_for_rust_and_other/)
+- url: https://www.reddit.com/r/rust/comments/jmx7t0/mltype_typing_practice_for_rust_and_other/
+---
+**What is it?**
+
+Command line tool that uses a character-level LSTM model to generate text that resembles a real language (including programming languages). One can both train a network from scratch or download a pretrained one (Rust, Java, Go, JavaScript, C, C++, Python,..).
+
+**Motivation**
+
+I recently switched to touch typing and I realized that there is basically no way to practise typing of programming languages (other than actually programming). Additionally, I revisited the famous blog post [http://karpathy.github.io/2015/05/21/rnn-effectiveness/](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) and thought it would be cool to use a model like this to generate infinite amount of custom text to type.
+
+&amp;#x200B;
+
+[Demo](https://i.redd.it/ch024oereww51.gif)
+
+**Links**
+
+* docs: [https://mltype.readthedocs.io/en/latest/](https://mltype.readthedocs.io/en/latest/)
+* github: [https://github.com/jankrepl/mltype](https://github.com/jankrepl/mltype)
+
+PS: I trained the model on the Rust compiler source code. I am not sure how representative of "normal Rust" it is.
+## [9][rust-analyzer changelog #49](https://www.reddit.com/r/rust/comments/jmob3k/rustanalyzer_changelog_49/)
+- url: https://rust-analyzer.github.io/thisweek/2020/11/02/changelog-49.html
 ---
 
-## [10][hifitime version 2.1: a scientific time management library with several times systems (UTC, TAI, ...) , duration handling, time units, and build on top of lossless fractions](https://www.reddit.com/r/rust/comments/jmj1nz/hifitime_version_21_a_scientific_time_management/)
-- url: https://docs.rs/hifitime/2.1.0/hifitime/#examples
+## [10][IntelliJ Rust Changelog #134](https://www.reddit.com/r/rust/comments/jmolfb/intellij_rust_changelog_134/)
+- url: https://intellij-rust.github.io/2020/11/02/changelog-134.html
 ---
 
-## [11][A Continuous Deployment Pipeline For Rust Applications - Zero To Production In Rust #5](https://www.reddit.com/r/rust/comments/jmbxbv/a_continuous_deployment_pipeline_for_rust/)
-- url: https://www.lpalmieri.com/posts/2020-11-01-zero-to-production-5-how-to-deploy-a-rust-application/
+## [11][Apache Arrow 2.0.0 Rust Highlights](https://www.reddit.com/r/rust/comments/jmpdqd/apache_arrow_200_rust_highlights/)
+- url: https://arrow.apache.org/blog/2020/10/27/rust-2.0.0-release/
 ---
 
-## [12][Compile-Time Reflection in Rust](https://www.reddit.com/r/rust/comments/jm1h2x/compiletime_reflection_in_rust/)
-- url: https://www.mn.uio.no/ifi/english/research/groups/psy/completedmasters/2020/gaarde/masterthesis-gaarde.pdf
+## [12][Docs.rs dark color theme - does it have a name?](https://www.reddit.com/r/rust/comments/jn1xmm/docsrs_dark_color_theme_does_it_have_a_name/)
+- url: https://www.reddit.com/r/rust/comments/jn1xmm/docsrs_dark_color_theme_does_it_have_a_name/
 ---
-
+I was wondering if the docs.rs "dark" color theme had a name or is it specific to the website? I started piecing together a base-16 vim theme but wanted to make sure it hadn't already been done.

@@ -70,98 +70,107 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][In desperate need of a MERN/React engineer for help](https://www.reddit.com/r/reactjs/comments/jm7hxu/in_desperate_need_of_a_mernreact_engineer_for_help/)
-- url: https://www.reddit.com/r/reactjs/comments/jm7hxu/in_desperate_need_of_a_mernreact_engineer_for_help/
+## [3][Guidelines for choosing React Libraries](https://www.reddit.com/r/reactjs/comments/jn8ab0/guidelines_for_choosing_react_libraries/)
+- url: https://maxrozen.com/guidelines-for-choosing-react-libraries/
 ---
-So my co-founder just left and gave me the entirety of his code developed in the MERN stack. Not being a software/web development engineer (although I am very experienced Python and C++ developper), I had to learn the fundamentals of Node, React, MongoDB and Express to be able to re-host what he built in a new domain, set up my own AWS etc...
 
-Everything is running fine in development mode on my machine, but when he sent me the files, he did not include his .env.production environment variable, and I can't figure out how to set it up myself. The result of this is that the React code is working perfectly on Localhost, but not on my local network. Naturally, it is not working either when I try to set it up on the domain I owe through AWS. Due to a disagreement, he's not willing to provide any help with what he considers is troubleshooting and outside the scope of our separation agreement...
+## [4][New "Redux Fundamentals" core docs tutorial is live! Learn "how Redux works and how to use it", from the ground up](https://www.reddit.com/r/reactjs/comments/jmol10/new_redux_fundamentals_core_docs_tutorial_is_live/)
+- url: https://redux.js.org/tutorials/fundamentals/part-1-overview
+---
 
-This is a much too broad question for stack overflow, and I guess that talking to someone directly would be the best way to fix the problem - thus me reaching out here... Anyone willing to help with this? You'd save my life...
+## [5][New very easy to use Form library for React](https://www.reddit.com/r/reactjs/comments/jn77bs/new_very_easy_to_use_form_library_for_react/)
+- url: https://www.reddit.com/r/reactjs/comments/jn77bs/new_very_easy_to_use_form_library_for_react/
+---
+If you are frustrated with learning convoluted form library API's then React Bare Forms is the quickest &amp; easiest library to get started with. There is zero learning curve, just cut and paste one of the examples and away you go!
+
+[react-bare-forms](https://github.com/joegasewicz/react-bare-forms)
+
+Any code contributions, feedback etc is more than welcome!
+## [6][React Typescript project ESLint &amp; Prettier configuration](https://www.reddit.com/r/reactjs/comments/jn5n3e/react_typescript_project_eslint_prettier/)
+- url: https://www.reddit.com/r/reactjs/comments/jn5n3e/react_typescript_project_eslint_prettier/
+---
+Hi,
+
+Any recommendations on how to configure ESLint and Prettier for a project which is going to be using React and Typescript. It looks like CRA has ESLint config but I am thinking that maybe it would make sense to override that. Any thoughts or recommendations? Thank you!
+## [7][How can I inject a React component (with dependencies) into HTML?](https://www.reddit.com/r/reactjs/comments/jn81i0/how_can_i_inject_a_react_component_with/)
+- url: https://www.reddit.com/r/reactjs/comments/jn81i0/how_can_i_inject_a_react_component_with/
+---
+Hello there,
+
+I have been researching on this topic the last few days but cant find a fitting solution yet.
+
+I want to create a universal react component which will be included on several websites, which are partialy React only sites as well as HTML sites. Lets say its a Header with an specific design. It also will include some external npm packages and needs data from the HTML site.
+
+For example:
+
+    &lt;div 
+        id="header"
+        data="[
+            {url:"./home.html", label:"Home"},
+            {url:"./subpage.html", label:"Subpage"},
+            ...
+        ]"
+        &gt;
+    &lt;/div&gt;
+
+The React component gets the content of the data field, can convert it into proper JSON and passes it into an component as props. Then the component gets rendered into the div.  
+At least that was the idea but I cant find any solution in reality.   
+
+
+Most examples I can find on google are basic ones like in the [React documentation](https://reactjs.org/docs/add-react-to-a-website.html) but with that I cant import any other packages or pass data from the HTML element. I suppose I would need to compile the react somehow and include it into the HTML? Or is there a possibility to directly compile it into the existing HTML page?
+
+Any help is appreciated!
+## [8][SSR with VueJS vs. React (NuxtJS vs. NextJS)](https://www.reddit.com/r/reactjs/comments/jn93uv/ssr_with_vuejs_vs_react_nuxtjs_vs_nextjs/)
+- url: https://www.reddit.com/r/reactjs/comments/jn93uv/ssr_with_vuejs_vs_react_nuxtjs_vs_nextjs/
+---
+Hi,
 
 &amp;#x200B;
 
-UPDATE:
-
-To everyone who replied and/or DMed me, thank you so much for being so helpful. u/RangerCoder was extremely kind and helped me fix the issue (well the one I knew of at least LOL). I had a chat with my co-founder at the end, and he sent me the env files although they were useless since he was doing everything from the bash environment anyways. He was overall not very helpful for sure, and I honestly am quite annoyed at him, but most important is that things are (mostly) fixed now. Thanks again to everyone.  
-## [4][How do you deal with null values from an api?](https://www.reddit.com/r/reactjs/comments/jmj7hl/how_do_you_deal_with_null_values_from_an_api/)
-- url: https://www.reddit.com/r/reactjs/comments/jmj7hl/how_do_you_deal_with_null_values_from_an_api/
----
-Hey guys, suppose I get a users info from the api that returns something like
-
-    { 
-        name: "username", 
-        subscription: { status: "active/pending verification/etc.", subscription_ends: date }
-     } 
-
-but if the user is not a subscriber it returns something like 
-
-    { 
-        name: "username", 
-        subscription: null
-    } 
-
-and i want to display data according to the subscription status currently I do something like 
-
-    {data.subscription ? 
-        ( data.subscription.status === "active"
-            ? ( &lt;button&gt;Cancel Subscription&lt;/button&gt; ) 
-            : ( &lt;button&gt;Subscribe&lt;/button&gt; ) 
-        : ( &lt;button&gt;Subscribe&lt;/button&gt; ) 
-    }
-
-basically if i don't do "data.subscription  ? () : () " first then if data.subscription is null I'll get errors like cannot read data of null etc.
-
-Is there a better way of checking for null values from the api than the one I'm currently using?
-## [5][Blog App Using MERN Stack](https://www.reddit.com/r/reactjs/comments/jmkan6/blog_app_using_mern_stack/)
-- url: https://medium.com/mehulkothari05/blog-app-using-mern-stack-b0b4d69d7ea1?source=friends_link&amp;sk=48181cdd4f1988f88718cbdd0ce35d49
----
-
-## [6][Redux vs Recoil / Differences and Simple API explanation](https://www.reddit.com/r/reactjs/comments/jmmq6l/redux_vs_recoil_differences_and_simple_api/)
-- url: https://www.reddit.com/r/reactjs/comments/jmmq6l/redux_vs_recoil_differences_and_simple_api/
----
-Video review of Recoil JS - *strengths and weaknesses* **\[spanish\]**  
+I've been developing my interfaces in Vue and I've been thinking of learning React. However, I want to explore the SSR options first so I've tried (very quickly) NuxtJS. For those of you who have experience with both Nuxt and Next, which one do you think is best ? In terms of fuctionality but also maturity of the framework (for example with Nuxt I've been struggling to do some super basic stuff like... import SVGs...).
 
 &amp;#x200B;
 
-&amp;#x200B;
+Thanks.
+## [9][Why use function components over class components for new projects ?](https://www.reddit.com/r/reactjs/comments/jn7mfo/why_use_function_components_over_class_components/)
+- url: https://www.reddit.com/r/reactjs/comments/jn7mfo/why_use_function_components_over_class_components/
+---
+So to me the syntax of class components (with typescript) has always been more readable than function components (probably because of my java and php background), 
 
-[https://youtu.be/uHTqYBg\_zkE](https://youtu.be/uHTqYBg_zkE)
-## [7][I just write a RSS reader using electron + react + typescript!](https://www.reddit.com/r/reactjs/comments/jmn2uv/i_just_write_a_rss_reader_using_electron_react/)
+but since react introduced hooks, function components are the default and apparently people find them easier to read and understand than class components.
+
+I'm starting a new reactjs + TypeScript project and tried to integrate it with react query but since react query is used through hooks I would need some workaround to use these hooks in class components.
+
+So right now I'm wondering if react query is worth the switch to function components or if I should just stick with class components and implement my own fetch logic, which is how I have been doing it in the last project. 
+
+What do you guys think ?
+## [10][Problems animating svg-line with react-spring](https://www.reddit.com/r/reactjs/comments/jn7fjy/problems_animating_svgline_with_reactspring/)
+- url: https://www.reddit.com/r/reactjs/comments/jn7fjy/problems_animating_svgline_with_reactspring/
+---
+Hi,  
+
+
+super beginner with react-spring and svg's,,, and I can't wrap my head around how to animate the stroke on the following svg-path:  
+
+
+`import React from 'react';`  
+`import { useSpring, animated } from 'react-spring';`  
+`export default function LineAnimation(props) {`  
+ `const anim = useSpring(x:100 from:{x: 0});`  
+ `return (`  
+ `&lt;animated.svg`   
+ `style={{ position: "absolute", left: "150px", height: "50px", width: "250px" }}`   
+ `strokeWidth="12"`   
+ `strokeDashoffset={props.hover ? anim.x : 0}&gt;`  
+ `&lt;path stroke="black" d="M0 20 H100" /&gt;`  
+ `&lt;/animated.svg&gt;`  
+  `)`  
+`};`
+## [11][I just write a RSS reader using electron + react + typescript!](https://www.reddit.com/r/reactjs/comments/jmn2uv/i_just_write_a_rss_reader_using_electron_react/)
 - url: https://github.com/Saul-Mirone/homura
 ---
 
-## [8][Has anyone used this folder structure in their projects?](https://www.reddit.com/r/reactjs/comments/jmiqm3/has_anyone_used_this_folder_structure_in_their/)
-- url: https://www.reddit.com/r/reactjs/comments/jmiqm3/has_anyone_used_this_folder_structure_in_their/
----
-I'm wondering if anyone has anyone used this folder structure in their projects?  
-If you have, do you recommend it? Or if not what is your preferred folder structure?  
-[https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1](https://medium.com/@alexmngn/how-to-better-organize-your-react-applications-2fd3ea1920f1)
-## [9][Trouble finding a job - what now?](https://www.reddit.com/r/reactjs/comments/jmlj16/trouble_finding_a_job_what_now/)
-- url: https://www.reddit.com/r/reactjs/comments/jmlj16/trouble_finding_a_job_what_now/
----
-I'm having trouble finding a job as front-end developer with react, because i have 0 commercial experience with it. I have commercial experience with HTML, CSS, jquery, basic JS, but i haven't been doing that for a while.
-
-Here is my github with some react apps i made for practice - [https://github.com/red4211](https://github.com/red4211)
-
-I feel really demotivated by my inability to get a job, and now i have to look for jobs outside of web development.
-
-What do i do next? Is it actually realistic for me to hope for a job with React when i have 0 commercial experience w it? Haven't worked out for me yet.
-
-If not, what are the jobs in the field i actually have a chance to get?
-## [10][Show r/reactjs: fast arrow, a vscode extension/snippet to enable you to write arrow function in less than 1 second.](https://www.reddit.com/r/reactjs/comments/jmlcgo/show_rreactjs_fast_arrow_a_vscode/)
-- url: https://www.reddit.com/r/reactjs/comments/jmlcgo/show_rreactjs_fast_arrow_a_vscode/
----
-One of the thing that bugs me when writing javascript is the need to type out `() =&gt; {}`. 
-
-That's a lot of button pressed and that's kinda annoying. This is why I created [fast arrow.](https://github.com/vinliao/fast-arrow) Now I type an arrow function really fast.
-
-Here's a short gif to illustrate: [gif](https://raw.githubusercontent.com/vinliao/fast-arrow/master/images/faster.gif)
-## [11][Why we need to abstract dependencies, a real world example with react router](https://www.reddit.com/r/reactjs/comments/jm6uoo/why_we_need_to_abstract_dependencies_a_real_world/)
-- url: https://davemanton.medium.com/why-we-need-to-abstract-dependencies-a-real-world-example-with-react-router-8b06d1540264
----
-
-## [12][A simple react shopping cart that demonstrates fundamentals of React](https://www.reddit.com/r/reactjs/comments/jmdjtu/a_simple_react_shopping_cart_that_demonstrates/)
-- url: https://github.com/dilab/react-simple-cart
+## [12][Code Splitting with React, React.lazy, and React Router v5 - ui.dev](https://www.reddit.com/r/reactjs/comments/jmt8pp/code_splitting_with_react_reactlazy_and_react/)
+- url: https://ui.dev/react-router-v5-code-splitting/
 ---
 

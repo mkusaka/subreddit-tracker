@@ -22,7 +22,46 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Strategy for hydrating/deserializing binary data into TypeScript objects?](https://www.reddit.com/r/typescript/comments/jmp44e/strategy_for_hydratingdeserializing_binary_data/)
+## [2][I made a tool to lookup IP address geo info and plot on a map! TypeScript frontend and backend. Link and source in comments.](https://www.reddit.com/r/typescript/comments/jno4sz/i_made_a_tool_to_lookup_ip_address_geo_info_and/)
+- url: https://v.redd.it/u2ye4wgct4x51
+---
+
+## [3][What cool tricks / unexpected good outcomes have you found with TypeScript recently?](https://www.reddit.com/r/typescript/comments/jndhdo/what_cool_tricks_unexpected_good_outcomes_have/)
+- url: https://www.reddit.com/r/typescript/comments/jndhdo/what_cool_tricks_unexpected_good_outcomes_have/
+---
+I thought adding unnamed call signatures to interfaces was not possible, but it is. For an embarrassingly long time, I believed that writing this would result in errors:
+
+    interface FooInterface {
+      (): string;
+       ...
+     }
+
+Because the parentheses have no name attached. For hours today I've been agonising over how to write a types declaration file for a library, where there is an interface of methods that each return said interface (i.e. for chaining), but at the end of the chain an entirely different object is returned and it is called with new parentheses, like so:
+
+    const foo = a() // return type: FooInterface
+      .b() // return type: FooInterface
+      .c() // return type: FooInterface
+      (); // return type: { ... }
+
+I've been rewriting the types file over and over again, trying to navigate this problem, brushing off the error about `FooInterface` lacking a call signature since I believed that you can't just add an unlabelled call signature to an interface like that. But then along the way I found [this answer on SO](https://stackoverflow.com/a/57426632), where the author writes this:
+
+    interface MyFunc {
+      (arg: string): string //a call signature
+      funcName: (arg: string) =&gt; string //express of function in object literal
+    }
+
+And in seeing the first example of a call signature, the bare-bones unlabelled one, I realised that there was a way to solve that problem, where there is the final set of parentheses which work as the interface's *own* call signature. So I put it into my file and it works, 100%. A nice trick that I don't think many people even consider since it feels like it should be illegal to have an unnamed method like that.
+
+What cool tricks have you found lately, /r/typescript?
+## [4][React Modular Form](https://www.reddit.com/r/typescript/comments/jnqnae/react_modular_form/)
+- url: https://www.reddit.com/r/typescript/comments/jnqnae/react_modular_form/
+---
+I have created a react form library that has first class typescript integration (no magic strings)
+
+Check it out here
+
+[https://github.com/zpxp/react-modular-form](https://github.com/zpxp/react-modular-form)
+## [5][Strategy for hydrating/deserializing binary data into TypeScript objects?](https://www.reddit.com/r/typescript/comments/jmp44e/strategy_for_hydratingdeserializing_binary_data/)
 - url: https://www.reddit.com/r/typescript/comments/jmp44e/strategy_for_hydratingdeserializing_binary_data/
 ---
 I'm building a library which receives short binary messages from external hardware. (These happen to be MIDI messages, obtained via the Web MIDI API.) These messages range in size from three bytes to a few dozen.
@@ -75,7 +114,7 @@ Of course, since TypeScript doesn't support introspection, I would need to provi
 At that point, this approach is starting to feel a little clunky. Perhaps it's good enough – but do you know of a better way? I've never really done this kind of thing before.
 
 Thanks for reading!
-## [3][How can I declare a const as a function that takes generics?](https://www.reddit.com/r/typescript/comments/jmch8b/how_can_i_declare_a_const_as_a_function_that/)
+## [6][How can I declare a const as a function that takes generics?](https://www.reddit.com/r/typescript/comments/jmch8b/how_can_i_declare_a_const_as_a_function_that/)
 - url: https://www.reddit.com/r/typescript/comments/jmch8b/how_can_i_declare_a_const_as_a_function_that/
 ---
 Given the following types, how can I declare a const `foo` of type `F` where generics of `F` must be given when using it (i.e. I want to call `foo` like this: `foo&lt;number&gt;(someValue)`)?
@@ -108,11 +147,11 @@ const foo: &lt;T&gt;F&lt;T&gt; = fn;
 ```
 
 I think that last option is close, but I just need to figure out the right syntax. Is there a correct syntax? If not, does anyone know if there is an issue open for this (I couldn't find one)?
-## [4][Continuations as collections](https://www.reddit.com/r/typescript/comments/jmaxe8/continuations_as_collections/)
+## [7][Continuations as collections](https://www.reddit.com/r/typescript/comments/jmaxe8/continuations_as_collections/)
 - url: https://medium.com/@wim_jongeneel/continuations-as-collections-f4a5172a88a3?source=friends_link&amp;sk=1f57f96d6659aa11c0c5a33fac86db8d
 ---
 
-## [5][Practice for employment algorithm tests in JS or TS?](https://www.reddit.com/r/typescript/comments/jm6rlq/practice_for_employment_algorithm_tests_in_js_or/)
+## [8][Practice for employment algorithm tests in JS or TS?](https://www.reddit.com/r/typescript/comments/jm6rlq/practice_for_employment_algorithm_tests_in_js_or/)
 - url: https://www.reddit.com/r/typescript/comments/jm6rlq/practice_for_employment_algorithm_tests_in_js_or/
 ---
 I have an easier time keeping track of data shape in Typescript. I will take any job though.
@@ -120,7 +159,7 @@ I have an easier time keeping track of data shape in Typescript. I will take any
 Is Typescript normally offered as an option during an employment algorithm test? Or is its availability during those types of tests restricted, compared to Javascript?
 
 If the later i may practice in Javascript.
-## [6][Query regarding Excess Property Checks in TypeScript](https://www.reddit.com/r/typescript/comments/jlyvu3/query_regarding_excess_property_checks_in/)
+## [9][Query regarding Excess Property Checks in TypeScript](https://www.reddit.com/r/typescript/comments/jlyvu3/query_regarding_excess_property_checks_in/)
 - url: https://www.reddit.com/r/typescript/comments/jlyvu3/query_regarding_excess_property_checks_in/
 ---
 Hi Everyone, 
@@ -142,13 +181,13 @@ I am unable to understand on why is `mySquare1` valid while `mySquare2` ends up 
     // Argument of type '{ width: number; color: string; opacity: number; }' is not assignable to parameter of type 
     'SquareConfig'. Object literal may only specify known properties, and 'opacity' does not exist in type 
     'SquareConfig'.
-## [7][Semicolons, yay or nay?](https://www.reddit.com/r/typescript/comments/jlsqxj/semicolons_yay_or_nay/)
+## [10][Semicolons, yay or nay?](https://www.reddit.com/r/typescript/comments/jlsqxj/semicolons_yay_or_nay/)
 - url: https://www.reddit.com/r/typescript/comments/jlsqxj/semicolons_yay_or_nay/
 ---
 What is your preference for typescript?
 
 [View Poll](https://www.reddit.com/poll/jlsqxj)
-## [8][Strict version of built-in types (which use `any`)](https://www.reddit.com/r/typescript/comments/jlhzuv/strict_version_of_builtin_types_which_use_any/)
+## [11][Strict version of built-in types (which use `any`)](https://www.reddit.com/r/typescript/comments/jlhzuv/strict_version_of_builtin_types_which_use_any/)
 - url: https://www.reddit.com/r/typescript/comments/jlhzuv/strict_version_of_builtin_types_which_use_any/
 ---
 Hello,
@@ -176,28 +215,3 @@ Is there a community version of these native types which would use \`unknown\` i
 
 
 Or is there any other way to tackle this problem without requiring me to remember all the cases where typescript has got \`any\` as the built-in type?
-## [9][Good practices to follow for a Typescript project?](https://www.reddit.com/r/typescript/comments/jlhuc4/good_practices_to_follow_for_a_typescript_project/)
-- url: https://www.reddit.com/r/typescript/comments/jlhuc4/good_practices_to_follow_for_a_typescript_project/
----
-Hi I'm going to start working on my first big project with Typescript using React Native. I'm still planning the whole system architecture but I need some help with how I should structure the code and files, document it, etc. Are there any resources that you would recommend for me?
-## [10][Pathing packages in a TS monorepo?](https://www.reddit.com/r/typescript/comments/jl9ud4/pathing_packages_in_a_ts_monorepo/)
-- url: https://www.reddit.com/r/typescript/comments/jl9ud4/pathing_packages_in_a_ts_monorepo/
----
-Anyone have experience with pathing packages in monorepos?  I've got a monorepo with several packages, including a component library and a dashboard. I'm trying to import the component library in my dashboard package as import { Button } from '@company/ui' but it doesnt give me type definitions on my Button component unless I import from @company/ui/lib
-
-I of course can always just import from /lib, but I feel like I'm doing something wrong here.
-## [11][Justified use of an exclamation mark](https://www.reddit.com/r/typescript/comments/jl87jc/justified_use_of_an_exclamation_mark/)
-- url: https://www.reddit.com/r/typescript/comments/jl87jc/justified_use_of_an_exclamation_mark/
----
-Hey! I just found a justified use case for an exclamation mark:
-
-    function parse(tokens: Token[]) {
-        while (tokens.length) {
-            const token = tokens.shift()!;
-            ...
-        }
-    }
-
-Since we check `tokens.length` as part of the while loop, we can be sure `tokens.shift()` returns a token.
-
-So far, I haven't found many other cases of exclamation mark that I could justify. Have you found any that make sense?

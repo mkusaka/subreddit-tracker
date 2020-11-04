@@ -85,49 +85,51 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][Open source file uploader Uppy adds support for Unsplash](https://www.reddit.com/r/javascript/comments/jn9765/open_source_file_uploader_uppy_adds_support_for/)
+## [3][Malicious npm package opens backdoors on programmers' computers](https://www.reddit.com/r/javascript/comments/jne7av/malicious_npm_package_opens_backdoors_on/)
+- url: https://www.zdnet.com/article/malicious-npm-package-opens-backdoors-on-programmers-computers/
+---
+
+## [4][ffmpeg.wasm - a pure WebAssembly / Javascript port of FFmpeg](https://www.reddit.com/r/javascript/comments/jnc5qg/ffmpegwasm_a_pure_webassembly_javascript_port_of/)
+- url: https://ffmpegwasm.github.io/
+---
+
+## [5][I built this app to practice my React, Node, MongoDB and Redis skills](https://www.reddit.com/r/javascript/comments/jnuu4w/i_built_this_app_to_practice_my_react_node/)
+- url: https://probe.sh/
+---
+
+## [6][[AskJS] I want to build type-checked class-based components without a build system. Possibly?](https://www.reddit.com/r/javascript/comments/jnvsz2/askjs_i_want_to_build_typechecked_classbased/)
+- url: https://www.reddit.com/r/javascript/comments/jnvsz2/askjs_i_want_to_build_typechecked_classbased/
+---
+Edit: Possible?*, of course, sorry
+
+Type-checked = using Flow or TypeScript on strict settings with library declarations for whatever framework used.
+
+Class-based = Each component is a class (can also include template HTML, CSS, etc in a module structure).
+
+No idea if possible, pretty new to modern JS. :) Feel free to enlighten me. I've tried Vue, but classes require @Component annotation, which won't work without a transpilation build. Maybe Reason+React? But obviously that needs to be built. Not sure.
+
+Why no build system? To lower commitment and decrease feedback loop time. I'm working on a big legacy system (first commit 2003), and incremental improvements must be possible, not complete rewrites.
+## [7][Open source file uploader Uppy adds support for Unsplash](https://www.reddit.com/r/javascript/comments/jn9765/open_source_file_uploader_uppy_adds_support_for/)
 - url: https://uppy.io/blog/2020/10/1.22/
 ---
 
-## [4][[AskJS] Why is NativeScript so dead?](https://www.reddit.com/r/javascript/comments/jn7e5g/askjs_why_is_nativescript_so_dead/)
-- url: https://www.reddit.com/r/javascript/comments/jn7e5g/askjs_why_is_nativescript_so_dead/
----
-I'm a front end dev w/ mostly Vue experience and is looking to build my first mobile side project. I want to build something ASAP, and it seems that the easiest options were vue-native(which just compiles into RN) and *NativeScript*.
-
-From my limited research it seemed that from a tech stack perspective NativeScript seemed better than React Native since it can access native apis. And the main downside is the lack of big community like the one RN has. However, it seems that there's literally NOBODY using NativeScript.
-
-Most conversations on Reddit about NativeScript are at least 1 year old. And the NativeScript npm package install timeline also looks dead post mid 2019.
-
-**Why?** Vue's getting more popular, people are getting pissed at React Native, shouldn't NativeScript also grow with it?
-## [5][Supabase.js 1.0 - The open source Firebase alternative. Supabase adds realtime and restful APIs to Postgres without a single line of code](https://www.reddit.com/r/javascript/comments/jmpmlm/supabasejs_10_the_open_source_firebase/)
-- url: https://supabase.io/
+## [8][Codimg - A re-modeled approach to code plagiarism detection](https://www.reddit.com/r/javascript/comments/jnt4kp/codimg_a_remodeled_approach_to_code_plagiarism/)
+- url: https://github.com/techsyndicate/codimg
 ---
 
-## [6][ts-audio v0.4.5 is out! :)](https://www.reddit.com/r/javascript/comments/jn9h63/tsaudio_v045_is_out/)
-- url: https://github.com/EvandroLG/ts-audio/releases/tag/v0.4.5
+## [9][PRESENTA Lib, a javascript presentation library](https://www.reddit.com/r/javascript/comments/jnssfh/presenta_lib_a_javascript_presentation_library/)
+- url: https://lib.presenta.cc/
 ---
 
-## [7][JavaScript's Memory Management Explained](https://www.reddit.com/r/javascript/comments/jmwx33/javascripts_memory_management_explained/)
-- url: https://felixgerschau.com/javascript-memory-management/?ck_subscriber_id=478674400
+## [10][Isomorphic JavaScript logger based on Elastic Common Schema](https://www.reddit.com/r/javascript/comments/jnsdin/isomorphic_javascript_logger_based_on_elastic/)
+- url: https://github.com/ibitcy/eo-logger
 ---
 
-## [8][Build and publish a Chrome Extension](https://www.reddit.com/r/javascript/comments/jn6or8/build_and_publish_a_chrome_extension/)
-- url: https://devrk.hashnode.dev/build-and-publish-a-chrome-extension
+## [11][10 Practical JavaScript Tricks](https://www.reddit.com/r/javascript/comments/jnre0p/10_practical_javascript_tricks/)
+- url: https://dev.to/zandershirley/10-practical-javascript-tricks-2b7h
 ---
 
-## [9][Finally, a curation of 10 React security best practices](https://www.reddit.com/r/javascript/comments/jmweez/finally_a_curation_of_10_react_security_best/)
-- url: https://snyk.io/blog/10-react-security-best-practices/
----
-
-## [10][Hackathon on new Javascript based SDK](https://www.reddit.com/r/javascript/comments/jn521a/hackathon_on_new_javascript_based_sdk/)
-- url: https://gitcoin.co/hackathon/oasis/onboard
----
-
-## [11][A tiny GEDCOM parser](https://www.reddit.com/r/javascript/comments/jn9t8b/a_tiny_gedcom_parser/)
-- url: https://github.com/thoughtsunificator/gedcom-parser
----
-
-## [12][Node 15 released: Unhandled rejections are now raised as exceptions by default](https://www.reddit.com/r/javascript/comments/jmi8jk/node_15_released_unhandled_rejections_are_now/)
-- url: https://nodejs.medium.com/node-js-v15-0-0-is-here-deb00750f278
+## [12][A First Look at MarkoJS](https://www.reddit.com/r/javascript/comments/jnlk0x/a_first_look_at_markojs/)
+- url: https://dev.to/ryansolid/a-first-look-at-markojs-3h78
 ---
 

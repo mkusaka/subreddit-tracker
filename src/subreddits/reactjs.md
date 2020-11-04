@@ -70,107 +70,54 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][Guidelines for choosing React Libraries](https://www.reddit.com/r/reactjs/comments/jn8ab0/guidelines_for_choosing_react_libraries/)
+## [3][I made a tool to lookup IP address geo info and plot on a map! Link and source in comments.](https://www.reddit.com/r/reactjs/comments/jnhwf8/i_made_a_tool_to_lookup_ip_address_geo_info_and/)
+- url: https://v.redd.it/b7m4gp1z13x51
+---
+
+## [4][Made a simple visualization of the 2020 US presidential election](https://www.reddit.com/r/reactjs/comments/jnuomd/made_a_simple_visualization_of_the_2020_us/)
+- url: https://v.redd.it/svtsx5cae7x51
+---
+
+## [5][Introduction to State Machines with XState and React](https://www.reddit.com/r/reactjs/comments/jnv1b8/introduction_to_state_machines_with_xstate_and/)
+- url: https://www.reddit.com/r/reactjs/comments/jnv1b8/introduction_to_state_machines_with_xstate_and/
+---
+Hi!  
+I've recently made an Udemy course about state machines with XState and React :)  
+If you are new to finite state machines' concepts or if you have ever heard about state machines, but you have no clue what is that about, then go and check this tutorial.  
+
+
+Link: [https://www.udemy.com/course/introduction-to-state-machines-with-xstate-and-react/?referralCode=145403C5EBEB0D9633EC](https://www.udemy.com/course/introduction-to-state-machines-with-xstate-and-react/?referralCode=145403C5EBEB0D9633EC&amp;fbclid=IwAR1HTYFvf8KBw03FyomPmqAMTbuQ8r_XgjhrdFVhMYfoWfLwemrh3_jFnBE)
+## [6][Device based code split with ReactJS (how to + arguments)](https://www.reddit.com/r/reactjs/comments/jnufv3/device_based_code_split_with_reactjs_how_to/)
+- url: https://webup.org/blog/react-device-based-code-split/
+---
+
+## [7][Hey guys! I created a complete MERN stack boilerplate repo, which can be cloned and used to quickly bootstrap projects.](https://www.reddit.com/r/reactjs/comments/jnji8q/hey_guys_i_created_a_complete_mern_stack/)
+- url: https://www.reddit.com/r/reactjs/comments/jnji8q/hey_guys_i_created_a_complete_mern_stack/
+---
+I  put this repo together as a helper for me to quickly bootstrap projects  instead of writing out the same code over and over, and figured it  might be useful to some of you here to either use in your own projects,  or to study and see how this is built. If you have any questions, feel  free to comment or PM me.
+
+Built with MERN (MongoDB, Express, React, Node).
+
+Additional contributors/suggestions very welcome!
+
+[Link to GitHub repository](https://github.com/romaannaeem/mern-boilerplate)
+## [8][Airbnb CLONE - REACT AND FIREBASE](https://www.reddit.com/r/reactjs/comments/jnqq5s/airbnb_clone_react_and_firebase/)
+- url: https://v.redd.it/v4anb6qlp5x51
+---
+
+## [9][Guidelines for choosing React Libraries](https://www.reddit.com/r/reactjs/comments/jn8ab0/guidelines_for_choosing_react_libraries/)
 - url: https://maxrozen.com/guidelines-for-choosing-react-libraries/
 ---
 
-## [4][New "Redux Fundamentals" core docs tutorial is live! Learn "how Redux works and how to use it", from the ground up](https://www.reddit.com/r/reactjs/comments/jmol10/new_redux_fundamentals_core_docs_tutorial_is_live/)
-- url: https://redux.js.org/tutorials/fundamentals/part-1-overview
+## [10][React.js for Front-end Development- An Immersive Way for Better Usability](https://www.reddit.com/r/reactjs/comments/jnv7q5/reactjs_for_frontend_development_an_immersive_way/)
+- url: https://www.gpcoders.com/react-js-front-end-development-an-immersive-way-for-better-usability/
 ---
 
-## [5][New very easy to use Form library for React](https://www.reddit.com/r/reactjs/comments/jn77bs/new_very_easy_to_use_form_library_for_react/)
-- url: https://www.reddit.com/r/reactjs/comments/jn77bs/new_very_easy_to_use_form_library_for_react/
----
-If you are frustrated with learning convoluted form library API's then React Bare Forms is the quickest &amp; easiest library to get started with. There is zero learning curve, just cut and paste one of the examples and away you go!
-
-[react-bare-forms](https://github.com/joegasewicz/react-bare-forms)
-
-Any code contributions, feedback etc is more than welcome!
-## [6][React Typescript project ESLint &amp; Prettier configuration](https://www.reddit.com/r/reactjs/comments/jn5n3e/react_typescript_project_eslint_prettier/)
-- url: https://www.reddit.com/r/reactjs/comments/jn5n3e/react_typescript_project_eslint_prettier/
----
-Hi,
-
-Any recommendations on how to configure ESLint and Prettier for a project which is going to be using React and Typescript. It looks like CRA has ESLint config but I am thinking that maybe it would make sense to override that. Any thoughts or recommendations? Thank you!
-## [7][How can I inject a React component (with dependencies) into HTML?](https://www.reddit.com/r/reactjs/comments/jn81i0/how_can_i_inject_a_react_component_with/)
-- url: https://www.reddit.com/r/reactjs/comments/jn81i0/how_can_i_inject_a_react_component_with/
----
-Hello there,
-
-I have been researching on this topic the last few days but cant find a fitting solution yet.
-
-I want to create a universal react component which will be included on several websites, which are partialy React only sites as well as HTML sites. Lets say its a Header with an specific design. It also will include some external npm packages and needs data from the HTML site.
-
-For example:
-
-    &lt;div 
-        id="header"
-        data="[
-            {url:"./home.html", label:"Home"},
-            {url:"./subpage.html", label:"Subpage"},
-            ...
-        ]"
-        &gt;
-    &lt;/div&gt;
-
-The React component gets the content of the data field, can convert it into proper JSON and passes it into an component as props. Then the component gets rendered into the div.  
-At least that was the idea but I cant find any solution in reality.   
-
-
-Most examples I can find on google are basic ones like in the [React documentation](https://reactjs.org/docs/add-react-to-a-website.html) but with that I cant import any other packages or pass data from the HTML element. I suppose I would need to compile the react somehow and include it into the HTML? Or is there a possibility to directly compile it into the existing HTML page?
-
-Any help is appreciated!
-## [8][SSR with VueJS vs. React (NuxtJS vs. NextJS)](https://www.reddit.com/r/reactjs/comments/jn93uv/ssr_with_vuejs_vs_react_nuxtjs_vs_nextjs/)
-- url: https://www.reddit.com/r/reactjs/comments/jn93uv/ssr_with_vuejs_vs_react_nuxtjs_vs_nextjs/
----
-Hi,
-
-&amp;#x200B;
-
-I've been developing my interfaces in Vue and I've been thinking of learning React. However, I want to explore the SSR options first so I've tried (very quickly) NuxtJS. For those of you who have experience with both Nuxt and Next, which one do you think is best ? In terms of fuctionality but also maturity of the framework (for example with Nuxt I've been struggling to do some super basic stuff like... import SVGs...).
-
-&amp;#x200B;
-
-Thanks.
-## [9][Why use function components over class components for new projects ?](https://www.reddit.com/r/reactjs/comments/jn7mfo/why_use_function_components_over_class_components/)
-- url: https://www.reddit.com/r/reactjs/comments/jn7mfo/why_use_function_components_over_class_components/
----
-So to me the syntax of class components (with typescript) has always been more readable than function components (probably because of my java and php background), 
-
-but since react introduced hooks, function components are the default and apparently people find them easier to read and understand than class components.
-
-I'm starting a new reactjs + TypeScript project and tried to integrate it with react query but since react query is used through hooks I would need some workaround to use these hooks in class components.
-
-So right now I'm wondering if react query is worth the switch to function components or if I should just stick with class components and implement my own fetch logic, which is how I have been doing it in the last project. 
-
-What do you guys think ?
-## [10][Problems animating svg-line with react-spring](https://www.reddit.com/r/reactjs/comments/jn7fjy/problems_animating_svgline_with_reactspring/)
-- url: https://www.reddit.com/r/reactjs/comments/jn7fjy/problems_animating_svgline_with_reactspring/
----
-Hi,  
-
-
-super beginner with react-spring and svg's,,, and I can't wrap my head around how to animate the stroke on the following svg-path:  
-
-
-`import React from 'react';`  
-`import { useSpring, animated } from 'react-spring';`  
-`export default function LineAnimation(props) {`  
- `const anim = useSpring(x:100 from:{x: 0});`  
- `return (`  
- `&lt;animated.svg`   
- `style={{ position: "absolute", left: "150px", height: "50px", width: "250px" }}`   
- `strokeWidth="12"`   
- `strokeDashoffset={props.hover ? anim.x : 0}&gt;`  
- `&lt;path stroke="black" d="M0 20 H100" /&gt;`  
- `&lt;/animated.svg&gt;`  
-  `)`  
-`};`
-## [11][I just write a RSS reader using electron + react + typescript!](https://www.reddit.com/r/reactjs/comments/jmn2uv/i_just_write_a_rss_reader_using_electron_react/)
-- url: https://github.com/Saul-Mirone/homura
+## [11][First simple form using Formik!](https://www.reddit.com/r/reactjs/comments/jnv00x/first_simple_form_using_formik/)
+- url: https://www.youtube.com/watch?v=c9pg0WQdka4&amp;feature=share
 ---
 
-## [12][Code Splitting with React, React.lazy, and React Router v5 - ui.dev](https://www.reddit.com/r/reactjs/comments/jmt8pp/code_splitting_with_react_reactlazy_and_react/)
-- url: https://ui.dev/react-router-v5-code-splitting/
+## [12][Calendar population](https://www.reddit.com/r/reactjs/comments/jnuz4j/calendar_population/)
+- url: https://www.reddit.com/r/reactjs/comments/jnuz4j/calendar_population/
 ---
-
+I am trying to find a tutorial on how to take a users input and display it into a calendar. Does anyone know of any good resources like that? ?????

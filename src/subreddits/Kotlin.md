@@ -46,133 +46,94 @@ On October 12–15 we hosted the Kotlin 1.4 Online Event, and over the course of
 Please post your questions as top-level comments to this post.
 
 We look forward to hearing from you!
-## [2][Wow...Compose desktop (mac/linux/win) is now available with the latest plugin.](https://www.reddit.com/r/Kotlin/comments/jn6wio/wowcompose_desktop_maclinuxwin_is_now_available/)
-- url: https://i.redd.it/h3ul68wqlzw51.png
+## [2][A projet that I'm working on with Kotlin, it's a password manager app](https://www.reddit.com/r/Kotlin/comments/jnsuoe/a_projet_that_im_working_on_with_kotlin_its_a/)
+- url: https://v.redd.it/71y0u9a6k6x51
 ---
 
-## [3][My first Kotlin project](https://www.reddit.com/r/Kotlin/comments/jnaank/my_first_kotlin_project/)
+## [3][Get user current location using Kotlin](https://www.reddit.com/r/Kotlin/comments/jnw2uq/get_user_current_location_using_kotlin/)
+- url: https://youtu.be/vard0CUTLbA
+---
+
+## [4][My first Kotlin project](https://www.reddit.com/r/Kotlin/comments/jnaank/my_first_kotlin_project/)
 - url: https://v.redd.it/ogqte3sr11x51
 ---
 
-## [4][!null -&gt; !null contract](https://www.reddit.com/r/Kotlin/comments/jn5hxj/null_null_contract/)
-- url: https://www.reddit.com/r/Kotlin/comments/jn5hxj/null_null_contract/
+## [5][Wow...Compose desktop (mac/linux/win) is now available with the latest plugin.](https://www.reddit.com/r/Kotlin/comments/jn6wio/wowcompose_desktop_maclinuxwin_is_now_available/)
+- url: https://i.redd.it/h3ul68wqlzw51.png
 ---
-Is there a Kotlin construct (e.g. a contract) where I can define that `fun(blah: X?): X`? will return X when given an X; something similar to what `@org.jetbrains.annotations.Contract("!null -&gt; !null")` implies for Java?
-## [5][Can't solve a problem because of ConcurrentModificationException](https://www.reddit.com/r/Kotlin/comments/jn91zm/cant_solve_a_problem_because_of/)
-- url: https://www.reddit.com/r/Kotlin/comments/jn91zm/cant_solve_a_problem_because_of/
----
-I think I found the solution for this problem, no idea how efficient it is, but it looks good. The only problem is that I have to change the list while iterating over its elements and it throws ConcurrentModificationException. I tried what I found on the internet, some iterator functions, but wherever I try to put it in relation to the for-loops it doesn't work. How can I avoid this error?
 
-Here's the code. I need to find the longest non-descending sequence in an N elements list(array originally)
+## [6][Android Kotlin: File attributes + Weird (maybe Cache) problem](https://www.reddit.com/r/Kotlin/comments/jnuv0d/android_kotlin_file_attributes_weird_maybe_cache/)
+- url: https://www.reddit.com/r/Kotlin/comments/jnuv0d/android_kotlin_file_attributes_weird_maybe_cache/
+---
+ok.. few problems....
+
+While i was making some test apps, as usual, for every app there was a folder created (such as com.example.asdf) in Internal memory. But I noticed that for one app when i connect phone to pc, i cant find that app's folder (but i see all the others)... but i can find it when i use File manager directly in the phone. I already turned on option "Show hidden files and folders" on my pc.
 
 &amp;#x200B;
 
-    import java.util.*
-    
-    //sample input
-    //10                                           number of numbers
-    //1 2 4 1 2 2 5 7 4 3
-    //Sample Output 1:
-    //5                              the longest non-descending sequence (1 2 2 5 7)
-    
-    fun main() {
-        val scanner = Scanner(System.`in`)
-        val arrayLength = scanner.nextInt()
-        val array = MutableList(arrayLength) { scanner.nextInt() }
-    
-        val iterator = array.iterator()
-        var longestNonDescendingSequence = 0
-    
-        while (iterator.hasNext()) {
-            for (number in array) {
-                val item = iterator.next()
-                var lastNumOfSeq = number
-                val nonDesSeq = mutableListOf&lt;Int&gt;()
-    
-                for (i in array) {
-                    if (i &gt;= lastNumOfSeq) {
-                        nonDesSeq.add(1)
-                        lastNumOfSeq = i
-                        if (item == lastNumOfSeq) {
-                            iterator.remove()
-                        }
-                    } else {
-                        break
-                    }
-                }
-                if (nonDesSeq.size &gt; longestNonDescendingSequence) longestNonDescendingSequence = nonDesSeq.size
-            }
-        }
-    
-        println(longestNonDescendingSequence)
-    }
-    
-    12
-    1 2 4 1 2 3 5 7 8 9 10 11
-    Exception in thread "main" java.util.ConcurrentModificationException
-    	at java.base/java.util.ArrayList$Itr.checkForComodification(ArrayList.java:1013)
-    	at java.base/java.util.ArrayList$Itr.next(ArrayList.java:967)
-    	at MainKt.main(Main.kt:19)
-    	at MainKt.main(Main.kt)
-    
-    Process finished with exit code 1
+I don't know if the issue is because in that test app I am creating some subfolders and some files.
 
-I probably should add the original code without me trying to solve this with an iterator
+This is the code which is making a new folder and file. It works but do you think that this might be the reason for app's folder to be hidden on PC?
 
-    fun main() {
-        val scanner = Scanner(System.`in`)
-        val arrayLength = scanner.nextInt()
-        val array = MutableList(arrayLength) { scanner.nextInt() }
-        var longestNonDescendingSequence = 0
+In any case... I would like a help how to set attributes to the newly created folder and file. Those attributes like: Read only, Hidden, Archive...
+
+...but I would like a help how to set file without any restrictions: Not hidden, Read + Write,...
+
+    val fNewFile: File?
+    fNewFile = File(getExternalFilesDir("MyFolder"),"MyFile.txt")
     
-        for (number in array) {
-            var lastNumOfSeq = number
-            val nonDesSeq = mutableListOf&lt;Int&gt;()
-            for (i in array) {
-                if (i &gt;= lastNumOfSeq) {
-                    nonDesSeq.add(1)
-                    lastNumOfSeq = i
-                    array.removeAt(0)
-                } else {
-                    break
-                }
-            }
-            if (nonDesSeq.size &gt; longestNonDescendingSequence) longestNonDescendingSequence = nonDesSeq.size
-        }
+    val fNewFileExists= fNewFile.exists()
+    if(!fNewFileExists)
+    {
+      // if File "MyFile.txt" doesn't exist then make it
     
+      val fileData = "asdfasdfasdfasdf"
     
-        println(longestNonDescendingSequence)
+      try {
+        val fileOutPutStream = FileOutputStream(fNewFile)
+    
+        fileOutPutStream.write(fileData.toByteArray())
+        fileOutPutStream.close()
+      } catch (e: IOException) {
+        Toast.makeText(applicationContext,"Error...",Toast.LENGTH_SHORT).show()
+        e.printStackTrace()
+      }
     }
 
-&amp;#x200B;
-## [6][How to get a job as a Kotlin dev?](https://www.reddit.com/r/Kotlin/comments/jn6w45/how_to_get_a_job_as_a_kotlin_dev/)
-- url: https://www.reddit.com/r/Kotlin/comments/jn6w45/how_to_get_a_job_as_a_kotlin_dev/
----
-Hey Guys, let me explain this a bit why i ask this (tldr at the end). I'm a Dev with a finished industrial job training as a developer and working for around 6 years now for a company using xBase++ as programming language. The language itself comes from clipper, is quite old and is an OOP language. I have some minor basic Java skills, but never worked with toolkits or frameworks for testing, automating workflows or anything normal for java/kotlin devs, but i'm confident in learning a new programminglanguage and i'm interested in doing kotlin with android programming. For my current job i did frontend and backend development both with xBase++. I also never did any normal workflows used in the developerbranch like crunch, because we don't use this stuff at my current job.
+Second problem, and this one is QUITE HUGE problem for me. By using the same code my app makes some txt files, names of files are given by user in that moment. My code works.. but i have some weird problem.  If there are created files... a.txt, b.txt, c.txt... when i uninstall the app, those files should be deleted, yes? But when i uninstall the app, and then install it again, again i can see a.txt, b.txt, c.txt files.
 
-TLDR: I have no Knowledge about Kotlin/Java and it's frameworks with minor basic knowledge about the language itself but i know how to develop some stuff.
+Even when I manually delete them in File Manager, uninstall the app, install the app, they are back again.
 
-So how can i get into a developer job with kotlin with my current knowledge? Or how would you guys do it?
-## [7][Best course for beginners ?](https://www.reddit.com/r/Kotlin/comments/jn6suq/best_course_for_beginners/)
-- url: https://www.reddit.com/r/Kotlin/comments/jn6suq/best_course_for_beginners/
----
-What course / learning material for absolute beginners in Kotlin do you recommend ?
+Even crazier is that now if i create some new file..like... "test.txt" and then i reinstall the app... I will see those files "a.txt, b.txt, c.txt", but i will not see file "test.txt"
 
-Preference: free
-+ what IDE for kotlin is the best ? Intellij ?
-## [8][Kotlin Cheat Sheet](https://www.reddit.com/r/Kotlin/comments/jmfjs6/kotlin_cheat_sheet/)
-- url: https://i.redd.it/hm1fj7innqw51.jpg
+Even when I go to Settings/Apps/MyApp/Storage and there I click \[Clear data\] and \[Clear cache\], it shows in File manager that everything is deleted. Hahaha but again.. i reinstall the app... and all those files "a.txt, b.txt, c.txt" are back
+
+Any help? :)))
+## [7][You develop in Kotlin and you feel that the Kafka Client library for Java is painful to use ?](https://www.reddit.com/r/Kotlin/comments/jnuk6n/you_develop_in_kotlin_and_you_feel_that_the_kafka/)
+- url: /r/apachekafka/comments/iy9tiq/you_develop_in_kotlin_and_you_feel_that_the_kafka/
 ---
 
-## [9][Setting an audio file as phone's ringtone](https://www.reddit.com/r/Kotlin/comments/jn6h1u/setting_an_audio_file_as_phones_ringtone/)
-- url: https://www.reddit.com/r/Kotlin/comments/jn6h1u/setting_an_audio_file_as_phones_ringtone/
+## [8][Alternative to ORMLite and Hibernate](https://www.reddit.com/r/Kotlin/comments/jnu1xe/alternative_to_ormlite_and_hibernate/)
+- url: https://www.reddit.com/r/Kotlin/comments/jnu1xe/alternative_to_ormlite_and_hibernate/
 ---
-I've tried so many code so far now and none of em seem to work. Maybe I'm doing something ,I don't know, I'm absolutely new to Kotlin. Can somebody please help me on this?
-## [10][OpenCV](https://www.reddit.com/r/Kotlin/comments/jmu8b8/opencv/)
-- url: https://www.reddit.com/r/Kotlin/comments/jmu8b8/opencv/
----
-I am porting some code that I wrote in python into Kotlin so it will work on android. I am wondering if I can use OpenCV in Kotlin or do I need to use Java?
-## [11][Facts You May Not Know About Kotlin](https://www.reddit.com/r/Kotlin/comments/jmn85w/facts_you_may_not_know_about_kotlin/)
-- url: https://youtu.be/XwzStZaDpH0?list=PLEx5khR4g7PIiAEHCt6LGMFnzq7JjO8we
+Hi,
+
+I am looking for a library that will map the result of my queries to Kotlin objects.
+
+ORMLite comes close but has some problems with raw queries and Dates.
+
+I just need the mapping, none of the DSL, etc.
+
+Any ideas?
+## [9][Solving coding problems with Kotlin: Collection functions](https://www.reddit.com/r/Kotlin/comments/jni6bz/solving_coding_problems_with_kotlin_collection/)
+- url: https://proandroiddev.com/solving-coding-problems-with-kotlin-collection-functions-3d2b1ef7fe2c
 ---
 
+## [10][Importance of using Kotlin Language when Developing Android Applications - Aalpha](https://www.reddit.com/r/Kotlin/comments/jnqq02/importance_of_using_kotlin_language_when/)
+- url: https://www.aalpha.net/blog/importance-of-using-kotlin-language-when-developing-android-applications/
+---
+
+## [11][What is the difference between a double and a float ?](https://www.reddit.com/r/Kotlin/comments/jnfe4l/what_is_the_difference_between_a_double_and_a/)
+- url: https://www.reddit.com/r/Kotlin/comments/jnfe4l/what_is_the_difference_between_a_double_and_a/
+---
+ I searched before this, cant find any result for Kotlin, only C++ and i dont know if that applies here

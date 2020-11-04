@@ -56,11 +56,32 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][What are you most used Boost libraries?](https://www.reddit.com/r/cpp/comments/jn72ol/what_are_you_most_used_boost_libraries/)
+## [2][Header-only library for parallel function calls without using std::async and std::future, meaning no overhead from heap allocations, type erasure and synchronization.](https://www.reddit.com/r/cpp/comments/jnijgx/headeronly_library_for_parallel_function_calls/)
+- url: https://github.com/tirimatangi/Lazy
+---
+
+## [3][Kris Jusiak - Future of testing with C++20 - Meeting C++ online](https://www.reddit.com/r/cpp/comments/jnuzi5/kris_jusiak_future_of_testing_with_c20_meeting_c/)
+- url: https://www.youtube.com/watch?v=0mLoali1LOc
+---
+
+## [4][Criterion: Microbenchmarking for C++17](https://www.reddit.com/r/cpp/comments/jna6yc/criterion_microbenchmarking_for_c17/)
+- url: https://github.com/p-ranav/criterion
+---
+
+## [5][What are you most used Boost libraries?](https://www.reddit.com/r/cpp/comments/jn72ol/what_are_you_most_used_boost_libraries/)
 - url: https://www.reddit.com/r/cpp/comments/jn72ol/what_are_you_most_used_boost_libraries/
 ---
-As a C++ newcomer I often hear about Boost, however most of the things I already find in \`std\` or extracted like ASIO. What are some good libraries I am missing? For example I was interested in metaprogramming and found Boost.Hana but it seems like modern C++ metaprogramming is much easier and the library might be a bit obsolete..?
-## [3][Learning modern C++](https://www.reddit.com/r/cpp/comments/jmyh86/learning_modern_c/)
+As a C++ newcomer I often hear about Boost, however most of the things I already find in \`std\` or extracted like ASIO. What are some good libraries I am missing? For example I was interested in metaprogramming and found Boost.Hana but it seems like modern C++ metaprogramming is much easier and the library might be a bit obsolete..?  
+
+
+**Edit**
+
+I wanna thank everyone for all of your suggestions. I definitely heard new things in this thread and now i'm in research in all of the recommended libraries.
+## [6][Multi Threading with WebAssembly](https://www.reddit.com/r/cpp/comments/jngqzm/multi_threading_with_webassembly/)
+- url: https://www.syntaxsuccess.com/viewarticle/multi-threading-with-webassembly
+---
+
+## [7][Learning modern C++](https://www.reddit.com/r/cpp/comments/jmyh86/learning_modern_c/)
 - url: https://www.reddit.com/r/cpp/comments/jmyh86/learning_modern_c/
 ---
 So I did a little bit of C++ in school a few years ago but it wasn’t “real” C++, definitely not modern C++. 
@@ -68,11 +89,15 @@ So I did a little bit of C++ in school a few years ago but it wasn’t “real�
 Now as someone who uses python all day at work, how to I learn and get better at modern C++? My goal is to atleast be intermediate with C++ within the next year so I can start targeting “cooler” projects/companies for work!  
 
 Any feedback is appreciated, thanks!
-## [4][Criterion: Microbenchmarking for C++17](https://www.reddit.com/r/cpp/comments/jna6yc/criterion_microbenchmarking_for_c17/)
-- url: https://github.com/p-ranav/criterion
+## [8][NoisePage – Self-Driving Database Management System](https://www.reddit.com/r/cpp/comments/jnk8y4/noisepage_selfdriving_database_management_system/)
+- url: https://github.com/cmu-db/noisepage/
 ---
 
-## [5][clang shows error when using a method with a "using type alias" parameter (in this case, with std::make_index_sequence), while gcc does not. Who's right?](https://www.reddit.com/r/cpp/comments/jmy1bh/clang_shows_error_when_using_a_method_with_a/)
+## [9][How to debug LibreOffice Writer, forwards and backwards (Michael Stahl, CIB)](https://www.reddit.com/r/cpp/comments/jneo4b/how_to_debug_libreoffice_writer_forwards_and/)
+- url: https://www.youtube.com/watch?v=xI1YoPfZeiQ
+---
+
+## [10][clang shows error when using a method with a "using type alias" parameter (in this case, with std::make_index_sequence), while gcc does not. Who's right?](https://www.reddit.com/r/cpp/comments/jmy1bh/clang_shows_error_when_using_a_method_with_a/)
 - url: https://www.reddit.com/r/cpp/comments/jmy1bh/clang_shows_error_when_using_a_method_with_a/
 ---
 The code: https://godbolt.org/z/qT6vz6
@@ -84,30 +109,6 @@ x86-64 clang versions 9.0.0 and up shows the error: "error: no matching function
 x86-64 gcc 10.1 and up compiles the code.
 
 Who's right?
-## [6][Say goodbye to memory leaks](https://www.reddit.com/r/cpp/comments/jn90da/say_goodbye_to_memory_leaks/)
-- url: https://www.reddit.com/r/cpp/comments/jn90da/say_goodbye_to_memory_leaks/
----
-I made a thread-safe memory manager in C++ that prevents memory leaks. It comes with a simple DSL and includes support for smart-pointers. You can also get allocation stats and memory traces.
-
-Feel free to contribute!
-
-[https://github.com/supercmmetry/rainman](https://github.com/supercmmetry/rainman)
-## [7][Why C++ community add additional meaning to a struct?](https://www.reddit.com/r/cpp/comments/jn8qtl/why_c_community_add_additional_meaning_to_a_struct/)
-- url: https://www.reddit.com/r/cpp/comments/jn8qtl/why_c_community_add_additional_meaning_to_a_struct/
----
-Almost all code styles describe \`struct\` as a POD, which is a nonsense. The only differences are default access specifiers, which are better in case of the \`struct\`: you almost always use \`public\` inheritance, and your \`struct\`/\`class\` always use public members. Making distinction between these alternatives is harmful, because this isn't something that comes from language, it's just a weird convention
-## [8][A modern c/c++ buildsystem based on Lua](https://www.reddit.com/r/cpp/comments/jmlgic/a_modern_cc_buildsystem_based_on_lua/)
-- url: https://xmake.io
----
-
-## [9][You wanted Boost via Meson subprojects? You got it! (sorta)](https://www.reddit.com/r/cpp/comments/jms3xx/you_wanted_boost_via_meson_subprojects_you_got_it/)
-- url: https://nibblestew.blogspot.com/2020/11/you-wanted-boost-via-meson-subprojects.html
----
-
-## [10][Getting started with Standard C++ Modules in Visual Studio](https://www.reddit.com/r/cpp/comments/jmigr7/getting_started_with_standard_c_modules_in_visual/)
-- url: https://devblogs.microsoft.com/cppblog/a-tour-of-cpp-modules-in-visual-studio/
----
-
 ## [11][Is it easy to pick up C++ again after a long gap (many years) ? My friends are pushing me to learn rust instead.](https://www.reddit.com/r/cpp/comments/jn42cg/is_it_easy_to_pick_up_c_again_after_a_long_gap/)
 - url: https://www.reddit.com/r/cpp/comments/jn42cg/is_it_easy_to_pick_up_c_again_after_a_long_gap/
 ---

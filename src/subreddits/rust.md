@@ -23,68 +23,68 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/jmiktw/whats_everyone_working_on_this_week_452020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-45-2020/50962?u=llogiq)!
-## [3][BurntSushi, creator of ripgrep, on the Sourcegraph Podcast (transcript included)](https://www.reddit.com/r/rust/comments/jmzjjp/burntsushi_creator_of_ripgrep_on_the_sourcegraph/)
-- url: https://about.sourcegraph.com/podcast/andrew-gallant
+## [3][Bevy 0.3](https://www.reddit.com/r/rust/comments/jnirl3/bevy_03/)
+- url: https://bevyengine.org/news/bevy-0-3/
 ---
 
-## [4][Hardware performance counters for the Rust compiler](https://www.reddit.com/r/rust/comments/jn9892/hardware_performance_counters_for_the_rust/)
+## [4][async-std v1.7.0 has been released!](https://www.reddit.com/r/rust/comments/jnueup/asyncstd_v170_has_been_released/)
+- url: https://github.com/async-rs/async-std/releases/tag/v1.7.0
+---
+
+## [5][With the launch of Bevy Game Engine 0.3, I'm introducing chunk base Tile Maps!](https://www.reddit.com/r/rust/comments/jntjp8/with_the_launch_of_bevy_game_engine_03_im/)
+- url: https://www.reddit.com/r/rust/comments/jntjp8/with_the_launch_of_bevy_game_engine_03_im/
+---
+ [https://crates.io/crates/bevy\_tilemap](https://crates.io/crates/bevy_tilemap) 
+
+This is not intended to be just another Tile Map. It is meant to be a framework and extensible by design, like Bevy. There is an emphasis placed on generic traits to accomplish that. As well as work done to keep it as close to Bevy API as possible. This allows anyone to create their own tiles, chunks and maps and still retain the speed of a handcrafted multi-threaded chunk loader and tile map. 
+
+If you have comments or suggestions do let me know below! Thanks!
+## [6][Is Rust worth it for frontend development?](https://www.reddit.com/r/rust/comments/jntj2s/is_rust_worth_it_for_frontend_development/)
+- url: https://www.reddit.com/r/rust/comments/jntj2s/is_rust_worth_it_for_frontend_development/
+---
+Hey everyone!
+
+I'm currently working on a cloud server in Rust and I already have a solid backend. So now the big question is, what to use for the frontend.
+
+Of course I'd like to write the whole thing in Rust but after experimenting with it for a few hours I'm not sure whether that's the best solution. Anyway, here are my thoughts:
+
+Disadvantages of using Rust:
+
+* Additional dev dependencies like wasm toolchain and wasm-bindgen/wasm-pack
+* Makefiles or other build system required: wasm-bindgen/wasm-pack needs to be called separately to create "glue code" and requires a lot parameters to work correctly
+* Performance: neither Yew nor Seed look very good in benchmarks, at least they are not faster than JavaScript
+* WASM bindings don't feel native yet, JavaScript still seems to be a lot easier for interacting with Web-APIs
+
+Advantages of using Rust:
+
+* It's Rust, not JavaScript ;)
+
+I'm curious what you think about about this matter :)
+
+P. S. I'm using actix-web for the server and tried out Seed for the frontend. I've already got a Rust-based frontend setup working with my cloud server and pushed the code to a new branch: [https://github.com/AaronErhardt/Triox/tree/experimental-frontend](https://github.com/AaronErhardt/Triox/tree/experimental-frontend).
+
+EDIT: Thanks a lot for your answers!
+## [7][Hardware performance counters for the Rust compiler](https://www.reddit.com/r/rust/comments/jn9892/hardware_performance_counters_for_the_rust/)
 - url: https://hackmd.io/sH315lO2RuicY-SEt7ynGA?view
 ---
 
-## [5][cn: A fast, memory-safe alternative to cp](https://www.reddit.com/r/rust/comments/jn59cv/cn_a_fast_memorysafe_alternative_to_cp/)
-- url: https://gitlab.com/arijit79/cn
+## [8][bacon: a background code checker, to keep in a side terminal](https://www.reddit.com/r/rust/comments/jnde63/bacon_a_background_code_checker_to_keep_in_a_side/)
+- url: https://github.com/Canop/bacon
 ---
 
-## [6][Will I miss the rust community rising?](https://www.reddit.com/r/rust/comments/jn7onq/will_i_miss_the_rust_community_rising/)
-- url: https://www.reddit.com/r/rust/comments/jn7onq/will_i_miss_the_rust_community_rising/
+## [9][This month in Dimforge #2 (October 2020) - New collider shapes, collision filters, restitution, user-defined data, and work-in-progress coupling with fluids](https://www.reddit.com/r/rust/comments/jneh38/this_month_in_dimforge_2_october_2020_new/)
+- url: https://www.dimforge.com/blog/2020/11/01/this-month-in-dimforge
 ---
-Hey everyone! 
 
-So I've been wanting to learn Rust for a while now. I think it has so much potential as a future language in various scenarios. And lately I've been realizing that rust is becoming more and more popular (even though it was created 10years ago). Every time I go to hackernews there is a post about a new tool or library built in and for Rust. The problem is, I'm now learning C++, taking Java classes at college (even though I already knew Java) and programming in Python part time. And as much as I want to be a part of one the guys who helped Rust climb to the top (by building libraries, frameworks, tools, etc.) I feel like it would be hard to actually learn it. Because I'm using so many languages every day. 
+## [10][rena: a renamer program utility thing (am bad at describing my projects)](https://www.reddit.com/r/rust/comments/jnmius/rena_a_renamer_program_utility_thing_am_bad_at/)
+- url: https://github.com/lyssieth/rena
+---
 
-So my questions for you is: 
-
-* Should I stop learning c++ for now and focus on learning Rust and helping the rust community? 
-* Can I learn c++ and rust at the same time without mixing information?
-* Will I miss anything if I only learn rust in a year or two?
-## [7][R3: a proof-of-concept static RTOS utilizing compile-time function evaluation for static configuration](https://www.reddit.com/r/rust/comments/jn9ksr/r3_a_proofofconcept_static_rtos_utilizing/)
+## [11][Actix Web Rust](https://www.reddit.com/r/rust/comments/jnlyc6/actix_web_rust/)
+- url: https://www.reddit.com/r/rust/comments/jnlyc6/actix_web_rust/
+---
+I've recently taken an interest in Actix Web, especially with its performance benefits. However, I've noticed it's not well documented. It's usually out of date or isn't comprehensive enough. Is there a way someone can contribute to the official documentation for it? Or a more general way to make a more detailed and example oriented documentation?
+## [12][R3: a proof-of-concept static RTOS utilizing compile-time function evaluation for static configuration](https://www.reddit.com/r/rust/comments/jn9ksr/r3_a_proofofconcept_static_rtos_utilizing/)
 - url: https://github.com/yvt/r3
 ---
 
-## [8][mltype - Typing practice for Rust and other languages](https://www.reddit.com/r/rust/comments/jmx7t0/mltype_typing_practice_for_rust_and_other/)
-- url: https://www.reddit.com/r/rust/comments/jmx7t0/mltype_typing_practice_for_rust_and_other/
----
-**What is it?**
-
-Command line tool that uses a character-level LSTM model to generate text that resembles a real language (including programming languages). One can both train a network from scratch or download a pretrained one (Rust, Java, Go, JavaScript, C, C++, Python,..).
-
-**Motivation**
-
-I recently switched to touch typing and I realized that there is basically no way to practise typing of programming languages (other than actually programming). Additionally, I revisited the famous blog post [http://karpathy.github.io/2015/05/21/rnn-effectiveness/](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) and thought it would be cool to use a model like this to generate infinite amount of custom text to type.
-
-&amp;#x200B;
-
-[Demo](https://i.redd.it/ch024oereww51.gif)
-
-**Links**
-
-* docs: [https://mltype.readthedocs.io/en/latest/](https://mltype.readthedocs.io/en/latest/)
-* github: [https://github.com/jankrepl/mltype](https://github.com/jankrepl/mltype)
-
-PS: I trained the model on the Rust compiler source code. I am not sure how representative of "normal Rust" it is.
-## [9][rust-analyzer changelog #49](https://www.reddit.com/r/rust/comments/jmob3k/rustanalyzer_changelog_49/)
-- url: https://rust-analyzer.github.io/thisweek/2020/11/02/changelog-49.html
----
-
-## [10][IntelliJ Rust Changelog #134](https://www.reddit.com/r/rust/comments/jmolfb/intellij_rust_changelog_134/)
-- url: https://intellij-rust.github.io/2020/11/02/changelog-134.html
----
-
-## [11][Apache Arrow 2.0.0 Rust Highlights](https://www.reddit.com/r/rust/comments/jmpdqd/apache_arrow_200_rust_highlights/)
-- url: https://arrow.apache.org/blog/2020/10/27/rust-2.0.0-release/
----
-
-## [12][Docs.rs dark color theme - does it have a name?](https://www.reddit.com/r/rust/comments/jn1xmm/docsrs_dark_color_theme_does_it_have_a_name/)
-- url: https://www.reddit.com/r/rust/comments/jn1xmm/docsrs_dark_color_theme_does_it_have_a_name/
----
-I was wondering if the docs.rs "dark" color theme had a name or is it specific to the website? I started piecing together a base-16 vim theme but wanted to make sure it hadn't already been done.

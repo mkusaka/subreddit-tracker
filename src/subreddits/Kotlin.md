@@ -46,94 +46,204 @@ On October 12–15 we hosted the Kotlin 1.4 Online Event, and over the course of
 Please post your questions as top-level comments to this post.
 
 We look forward to hearing from you!
-## [2][A projet that I'm working on with Kotlin, it's a password manager app](https://www.reddit.com/r/Kotlin/comments/jnsuoe/a_projet_that_im_working_on_with_kotlin_its_a/)
+## [2][Jetpack Compose for Desktop: Milestone 1 Released](https://www.reddit.com/r/Kotlin/comments/johcrc/jetpack_compose_for_desktop_milestone_1_released/)
+- url: https://blog.jetbrains.com/cross-post/jetpack-compose-for-desktop-milestone-1-released/
+---
+
+## [3][Starting to learn kotlin and wondering if theres any others who are wanting to start or just started.](https://www.reddit.com/r/Kotlin/comments/jof5f9/starting_to_learn_kotlin_and_wondering_if_theres/)
+- url: https://www.reddit.com/r/Kotlin/comments/jof5f9/starting_to_learn_kotlin_and_wondering_if_theres/
+---
+I know it can be tough sometimes when you dont have anyone to check with for help sometimes and well those who know how tend to not want to help but if we learn together we can help eachother out. Want to join me on the path to learning kotlin let me know.
+## [4][Coroutines and exception logging](https://www.reddit.com/r/Kotlin/comments/joez53/coroutines_and_exception_logging/)
+- url: https://www.reddit.com/r/Kotlin/comments/joez53/coroutines_and_exception_logging/
+---
+I'm fairly new to Kotlin and I've noticed that exceptions thrown from within a coroutine that aren't also caught inside aren't picked up by my logging framework (Spring Boot + logback) the way they normally are. This means I don't get the additional logging info like log level, timestamp etc, as well as breaking the expected format in my log parser.
+
+Is there a way to solve this universally without explicitly adding exception handlers to each coroutine I launch?
+## [5][Mastering API Visibility in Kotlin - zsmb.co](https://www.reddit.com/r/Kotlin/comments/jo1aka/mastering_api_visibility_in_kotlin_zsmbco/)
+- url: https://zsmb.co/mastering-api-visibility-in-kotlin/
+---
+
+## [6][A projet that I'm working on with Kotlin, it's a password manager app](https://www.reddit.com/r/Kotlin/comments/jnsuoe/a_projet_that_im_working_on_with_kotlin_its_a/)
 - url: https://v.redd.it/71y0u9a6k6x51
 ---
 
-## [3][Get user current location using Kotlin](https://www.reddit.com/r/Kotlin/comments/jnw2uq/get_user_current_location_using_kotlin/)
-- url: https://youtu.be/vard0CUTLbA
+## [7][The Making of Accessible Android Applications](https://www.reddit.com/r/Kotlin/comments/jo4m2n/the_making_of_accessible_android_applications/)
+- url: https://www.reddit.com/r/Kotlin/comments/jo4m2n/the_making_of_accessible_android_applications/
+---
+For my thesis work I am working on a study on the respect of accessibility in Android applications.
+
+I need to collect information from Android developers to understand the problems encountered in implementing accessibility guidelines.
+
+I ask you to compile this survey and help me to spread it among your contacts.
+
+[https://docs.google.com/forms/d/e/1FAIpQLSc2lHuDCKcLzn\_gWGpjmiE4a0\_J6-AVH54hh8HNb2CAhfzZdQ/viewform](https://docs.google.com/forms/d/e/1FAIpQLSc2lHuDCKcLzn_gWGpjmiE4a0_J6-AVH54hh8HNb2CAhfzZdQ/viewform)
+
+Thank you for your cooperation.
+## [8][I wrote an article about Flows, Channels and State/Shared Flows](https://www.reddit.com/r/Kotlin/comments/jo0sc4/i_wrote_an_article_about_flows_channels_and/)
+- url: https://martinnowosad.medium.com/introduction-to-flow-channel-and-shared-stateflow-e1c28c5bc755
 ---
 
-## [4][My first Kotlin project](https://www.reddit.com/r/Kotlin/comments/jnaank/my_first_kotlin_project/)
-- url: https://v.redd.it/ogqte3sr11x51
+## [9][Android Kotlin: Adding subscription nightmare (+ Billing library 3.0)](https://www.reddit.com/r/Kotlin/comments/jo3ik6/android_kotlin_adding_subscription_nightmare/)
+- url: https://www.reddit.com/r/Kotlin/comments/jo3ik6/android_kotlin_adding_subscription_nightmare/
 ---
+I am being heavily ignored in the last days on this forum... but I will give it another try :)
 
-## [5][Wow...Compose desktop (mac/linux/win) is now available with the latest plugin.](https://www.reddit.com/r/Kotlin/comments/jn6wio/wowcompose_desktop_maclinuxwin_is_now_available/)
-- url: https://i.redd.it/h3ul68wqlzw51.png
----
+Ok.. I have downloaded Google's Trivial Drive app which should be kinda demo app for learning how to add billing library into your app... But... They made it soooo much (in my opinion) unnecessary complex and complicated...
 
-## [6][Android Kotlin: File attributes + Weird (maybe Cache) problem](https://www.reddit.com/r/Kotlin/comments/jnuv0d/android_kotlin_file_attributes_weird_maybe_cache/)
-- url: https://www.reddit.com/r/Kotlin/comments/jnuv0d/android_kotlin_file_attributes_weird_maybe_cache/
----
-ok.. few problems....
-
-While i was making some test apps, as usual, for every app there was a folder created (such as com.example.asdf) in Internal memory. But I noticed that for one app when i connect phone to pc, i cant find that app's folder (but i see all the others)... but i can find it when i use File manager directly in the phone. I already turned on option "Show hidden files and folders" on my pc.
+They focused so much on some layouts and made dozens of micro procedures which makes it very hard to get everything connected in your head... Even just checking if fuel is empty of full tank got sooo much complex...
 
 &amp;#x200B;
 
-I don't know if the issue is because in that test app I am creating some subfolders and some files.
+And the irony of the life is that in few places they wrote: "To keep simple things simple"
 
-This is the code which is making a new folder and file. It works but do you think that this might be the reason for app's folder to be hidden on PC?
+&amp;#x200B;
 
-In any case... I would like a help how to set attributes to the newly created folder and file. Those attributes like: Read only, Hidden, Archive...
+&amp;#x200B;
 
-...but I would like a help how to set file without any restrictions: Not hidden, Read + Write,...
+Can someone help me with the most simple code for buying 1 month subscription and buying 1 product?
 
-    val fNewFile: File?
-    fNewFile = File(getExternalFilesDir("MyFolder"),"MyFile.txt")
+&amp;#x200B;
+
+Please... Just the absolute bare minimum of code in one file... Without using my own server support for tracking sales... and if possible... to be compatible with   Billing library 3.0 :)))
+
+&amp;#x200B;
+
+In short.. I would like this code to do:
+
+\-----------------------------------------------------------------------------------------------------------------------------
+
+You click button \[Subscribe\] and get a Google Play dialog menu to pay for sub
+
+You click button \[Buy fuel\] and get a Google Play dialog menu to pay for product
+
+You click button \[Action button\] and code checks the status of subscription (Active, Expired, Canceled, In grace period, On hold, Paused)
+
+       // Is there a status ---&gt; NEVER BOUGHT SUBSCRIPTION... or something like that?)
+
+And there should be some event... Some trigger where you will get status what happened with requested purchase of product...
+
+override fun OnSomeActivityDontKnowWhichOne(action: Action, string: String)
+
+\-----------------------------------------------------------------------------------------------------------------------------
+
+&amp;#x200B;
+
+Ok.. Soo... Visually ...something like this:
+
+&amp;#x200B;
+
+    package example.asdf.com.billy
     
-    val fNewFileExists= fNewFile.exists()
-    if(!fNewFileExists)
+    import androidx.appcompat.app.AppCompatActivity
+    import android.os.Bundle
+    import android.widget.Toast
+    
+    var CarFuel = 0
+    
+    class MainActivity : AppCompatActivity() {
+    
+    override fun OnSomeActivityDontKnowWhichOne(action: Action, product: String) 
     {
-      // if File "MyFile.txt" doesn't exist then make it
     
-      val fileData = "asdfasdfasdfasdf"
+        if (action == PURCHASE_PRODUCT_OK) 
+        {
+            if (product == "car_fuel")
+            {
+               CarFuel++
+               Toast.makeText(applicationContext, 
+               "Thank you for your purchase. You have now " + CarFuel.toString() 
+               + " unit(s) of fuel", 
+               Toast.LENGTH_SHORT).show()
+            }
+        }
     
-      try {
-        val fileOutPutStream = FileOutputStream(fNewFile)
-    
-        fileOutPutStream.write(fileData.toByteArray())
-        fileOutPutStream.close()
-      } catch (e: IOException) {
-        Toast.makeText(applicationContext,"Error...",Toast.LENGTH_SHORT).show()
-        e.printStackTrace()
-      }
+        if (action == PURCHASE_PRODUCT_NOT_OK
+        {
+               Toast.makeText(applicationContext,"Purchase failed...", 
+               Toast.LENGTH_SHORT).show()
+        }
     }
-
-Second problem, and this one is QUITE HUGE problem for me. By using the same code my app makes some txt files, names of files are given by user in that moment. My code works.. but i have some weird problem.  If there are created files... a.txt, b.txt, c.txt... when i uninstall the app, those files should be deleted, yes? But when i uninstall the app, and then install it again, again i can see a.txt, b.txt, c.txt files.
-
-Even when I manually delete them in File Manager, uninstall the app, install the app, they are back again.
-
-Even crazier is that now if i create some new file..like... "test.txt" and then i reinstall the app... I will see those files "a.txt, b.txt, c.txt", but i will not see file "test.txt"
-
-Even when I go to Settings/Apps/MyApp/Storage and there I click \[Clear data\] and \[Clear cache\], it shows in File manager that everything is deleted. Hahaha but again.. i reinstall the app... and all those files "a.txt, b.txt, c.txt" are back
-
-Any help? :)))
-## [7][You develop in Kotlin and you feel that the Kafka Client library for Java is painful to use ?](https://www.reddit.com/r/Kotlin/comments/jnuk6n/you_develop_in_kotlin_and_you_feel_that_the_kafka/)
-- url: /r/apachekafka/comments/iy9tiq/you_develop_in_kotlin_and_you_feel_that_the_kafka/
+    
+    
+    override fun onCreate(savedInstanceState: Bundle?) 
+    {
+       super.onCreate(savedInstanceState)
+       setContentView(R.layout.activity_main)
+    
+    
+    
+    
+       // Text on button: [Subscribe]
+       val BuySub = findViewById&lt;Button&gt;(R.id.buttonBuyOneMonthSub)
+       BuySub.setOnClickListener(View.OnClickListener {
+    
+       // When you click button [Subscribe] it should appear
+       // Google Play dialog for paying for 1 month subscription
+    
+       RequestBuySubscription()
+    
+       })
+    
+    
+    
+       // Text on button: [Buy fuel]
+       val BuyProduct = findViewById&lt;Button&gt;(R.id.buttonBuyMyCoolProduct)
+       BuyProduct.setOnClickListener(View.OnClickListener {
+    
+       // When you click button [Buy fuel] it should appear
+       // Google Play dialog for buying a product
+    
+       RequestPurchaseProduct(ProductId)
+    
+       })
+    
+    
+    
+       // Text on button: [Action button]
+       val MyCoolAction = findViewById&lt;Button&gt;(R.id.buttonActionButton)
+       MyCoolAction.setOnClickListener(View.OnClickListener {
+    
+       // check if subscription is active...
+       // like...
+       val Status = GetSubscriptionStatus()
+    
+       // Status can be Active, Expired, Canceled, In grace period, On hold, Paused
+       // Is there a status ---&gt; NEVER BOUGHT SUBSCRIPTION... or something like that?
+    
+       if (Status == EXPIRED)
+       {
+          Toast.makeText(applicationContext,
+          "Subscription expired. Please click [Subscribe]", 
+          Toast.LENGTH_SHORT).show()
+    
+          return@OnClickListener
+       }
+    
+       if (Status == ACTIVE)
+       {
+          Toast.makeText(applicationContext,
+          "Thank you for being our vip user :)", 
+          Toast.LENGTH_SHORT).show()
+     
+          FetchSubStartTime()
+          FetchSubExpirationTime()
+    
+          // It would be good to fetch date of Subscription start and subscription end
+          // Preferably if possible to get unix times :)
+       }
+    
+    
+     })
+    
+    
+       }
+    }
+## [10][My first Kotlin project](https://www.reddit.com/r/Kotlin/comments/jnaank/my_first_kotlin_project/)
+- url: https://v.redd.it/ogqte3sr11x51
 ---
 
-## [8][Alternative to ORMLite and Hibernate](https://www.reddit.com/r/Kotlin/comments/jnu1xe/alternative_to_ormlite_and_hibernate/)
-- url: https://www.reddit.com/r/Kotlin/comments/jnu1xe/alternative_to_ormlite_and_hibernate/
----
-Hi,
-
-I am looking for a library that will map the result of my queries to Kotlin objects.
-
-ORMLite comes close but has some problems with raw queries and Dates.
-
-I just need the mapping, none of the DSL, etc.
-
-Any ideas?
-## [9][Solving coding problems with Kotlin: Collection functions](https://www.reddit.com/r/Kotlin/comments/jni6bz/solving_coding_problems_with_kotlin_collection/)
-- url: https://proandroiddev.com/solving-coding-problems-with-kotlin-collection-functions-3d2b1ef7fe2c
+## [11][Wow...Compose desktop (mac/linux/win) is now available with the latest plugin.](https://www.reddit.com/r/Kotlin/comments/jn6wio/wowcompose_desktop_maclinuxwin_is_now_available/)
+- url: https://i.redd.it/h3ul68wqlzw51.png
 ---
 
-## [10][Importance of using Kotlin Language when Developing Android Applications - Aalpha](https://www.reddit.com/r/Kotlin/comments/jnqq02/importance_of_using_kotlin_language_when/)
-- url: https://www.aalpha.net/blog/importance-of-using-kotlin-language-when-developing-android-applications/
----
-
-## [11][What is the difference between a double and a float ?](https://www.reddit.com/r/Kotlin/comments/jnfe4l/what_is_the_difference_between_a_double_and_a/)
-- url: https://www.reddit.com/r/Kotlin/comments/jnfe4l/what_is_the_difference_between_a_double_and_a/
----
- I searched before this, cant find any result for Kotlin, only C++ and i dont know if that applies here

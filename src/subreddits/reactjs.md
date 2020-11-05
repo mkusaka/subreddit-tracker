@@ -70,54 +70,100 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][I made a tool to lookup IP address geo info and plot on a map! Link and source in comments.](https://www.reddit.com/r/reactjs/comments/jnhwf8/i_made_a_tool_to_lookup_ip_address_geo_info_and/)
-- url: https://v.redd.it/b7m4gp1z13x51
+## [3][Brix UI: UI-Kit/Framework for React from Ukraine](https://www.reddit.com/r/reactjs/comments/joh6f3/brix_ui_uikitframework_for_react_from_ukraine/)
+- url: https://www.reddit.com/r/reactjs/comments/joh6f3/brix_ui_uikitframework_for_react_from_ukraine/
 ---
+Hello, r/reactjs!
 
-## [4][Made a simple visualization of the 2020 US presidential election](https://www.reddit.com/r/reactjs/comments/jnuomd/made_a_simple_visualization_of_the_2020_us/)
+We are a small but proud development team of [uStudio Company](http://ustudio.company/) from the country of Ukraine.
+
+Today we released our UI-Kit/Framework for React that uses `styled-components` – [Brix UI](https://github.com/uStudioTeam/brix-ui)!. It includes several useful packages with a bunch of components and theming-related stuff.
+
+This is a special moment for us and we would be really happy if this UI-Kit comes in handy for any other developers rather than us.
+
+We tried to approach many problems that were a pain for us while using other ui-kits (such as material-ui) and introduced some concepts that we think are worthy for you to check out.
+
+For now we only have a storybook documentation available, but in the close future we will make a full and descriptive documentation website. We plan on describing each and every concept we introduced as well as providing some guides/recipes.
+
+Thank you for your attention, any feedback will be much appreciated!
+## [4][Does a Low Code Serverless Graphql API creator sound interesting? Picture creating a graphql schema and then immediately start sending and querying data. Pay for what you use and guaranteed scalable.](https://www.reddit.com/r/reactjs/comments/joe0vj/does_a_low_code_serverless_graphql_api_creator/)
+- url: https://www.reddit.com/r/reactjs/comments/joe0vj/does_a_low_code_serverless_graphql_api_creator/
+---
+Hi all,
+
+I started prototyping a Serverless API creation tool last week. 
+
+I’ve spent a lot of time learning the Serverless ecosystem over the last few years and figured that some people might be interested in the advantages of Serverless without having to learn all the specifics.
+
+I also figure that Front End developers might want an easy solution for creating APIs without the hassle of coding up and maintaining the backend.
+
+The added benefit of Serverless is that you pay for what you use and it’s guaranteed scalable out of the box. So set it and forget it. 
+
+You would great your graphql schema and just start sending and querying data. Does this sound like something anyone here would be interested in?
+## [5][Made a simple visualization of the 2020 US presidential election](https://www.reddit.com/r/reactjs/comments/jnuomd/made_a_simple_visualization_of_the_2020_us/)
 - url: https://v.redd.it/svtsx5cae7x51
 ---
 
-## [5][Introduction to State Machines with XState and React](https://www.reddit.com/r/reactjs/comments/jnv1b8/introduction_to_state_machines_with_xstate_and/)
-- url: https://www.reddit.com/r/reactjs/comments/jnv1b8/introduction_to_state_machines_with_xstate_and/
----
-Hi!  
-I've recently made an Udemy course about state machines with XState and React :)  
-If you are new to finite state machines' concepts or if you have ever heard about state machines, but you have no clue what is that about, then go and check this tutorial.  
-
-
-Link: [https://www.udemy.com/course/introduction-to-state-machines-with-xstate-and-react/?referralCode=145403C5EBEB0D9633EC](https://www.udemy.com/course/introduction-to-state-machines-with-xstate-and-react/?referralCode=145403C5EBEB0D9633EC&amp;fbclid=IwAR1HTYFvf8KBw03FyomPmqAMTbuQ8r_XgjhrdFVhMYfoWfLwemrh3_jFnBE)
-## [6][Device based code split with ReactJS (how to + arguments)](https://www.reddit.com/r/reactjs/comments/jnufv3/device_based_code_split_with_reactjs_how_to/)
-- url: https://webup.org/blog/react-device-based-code-split/
+## [6][How to Use Async Actions for Global State With React Hooks and Context](https://www.reddit.com/r/reactjs/comments/johs94/how_to_use_async_actions_for_global_state_with/)
+- url: https://blog.asayer.io/how-to-use-async-actions-for-global-state-with-react-hooks-and-context
 ---
 
-## [7][Hey guys! I created a complete MERN stack boilerplate repo, which can be cloned and used to quickly bootstrap projects.](https://www.reddit.com/r/reactjs/comments/jnji8q/hey_guys_i_created_a_complete_mern_stack/)
-- url: https://www.reddit.com/r/reactjs/comments/jnji8q/hey_guys_i_created_a_complete_mern_stack/
+## [7][Can I upgrade my React project to v17 if all my a bunch of my dependencies require 16.x as a peer dependency?](https://www.reddit.com/r/reactjs/comments/jobomg/can_i_upgrade_my_react_project_to_v17_if_all_my_a/)
+- url: https://www.reddit.com/r/reactjs/comments/jobomg/can_i_upgrade_my_react_project_to_v17_if_all_my_a/
 ---
-I  put this repo together as a helper for me to quickly bootstrap projects  instead of writing out the same code over and over, and figured it  might be useful to some of you here to either use in your own projects,  or to study and see how this is built. If you have any questions, feel  free to comment or PM me.
-
-Built with MERN (MongoDB, Express, React, Node).
-
-Additional contributors/suggestions very welcome!
-
-[Link to GitHub repository](https://github.com/romaannaeem/mern-boilerplate)
-## [8][Airbnb CLONE - REACT AND FIREBASE](https://www.reddit.com/r/reactjs/comments/jnqq5s/airbnb_clone_react_and_firebase/)
-- url: https://v.redd.it/v4anb6qlp5x51
+With the release of React 17 a couple weeks ago, I upgraded my React project to v17. When I did so, I got a bunch of warnings from npm saying a bunch of other packages need React 16.x as a peer dependency. The project is still running fine, so am I okay to do this, or will there be some repercussions?
+## [8][Displaying hooks in a storyboard](https://www.reddit.com/r/reactjs/comments/joc7qu/displaying_hooks_in_a_storyboard/)
+- url: https://www.reddit.com/r/reactjs/comments/joc7qu/displaying_hooks_in_a_storyboard/
 ---
-
-## [9][Guidelines for choosing React Libraries](https://www.reddit.com/r/reactjs/comments/jn8ab0/guidelines_for_choosing_react_libraries/)
-- url: https://maxrozen.com/guidelines-for-choosing-react-libraries/
+I am making a storyboard to reuse code between react projects. I am displaying components but I also want to store hooks. This is there a preferred way of showing hooks in a storyboard. Should I make a dummy component to display the hook as documented code? How should I store my react hooks in a storyboard?
+## [9][Is Redux promise middleware good?](https://www.reddit.com/r/reactjs/comments/jogdze/is_redux_promise_middleware_good/)
+- url: https://www.reddit.com/r/reactjs/comments/jogdze/is_redux_promise_middleware_good/
 ---
+Im a few months old in react js. Im trying to learn redux so my question Is redux promise middleware good? Or should I learn redux-thunk or redux-saga instead.
 
-## [10][React.js for Front-end Development- An Immersive Way for Better Usability](https://www.reddit.com/r/reactjs/comments/jnv7q5/reactjs_for_frontend_development_an_immersive_way/)
-- url: https://www.gpcoders.com/react-js-front-end-development-an-immersive-way-for-better-usability/
+Thank you
+## [10][how to filter objects from a map.](https://www.reddit.com/r/reactjs/comments/jog240/how_to_filter_objects_from_a_map/)
+- url: https://www.reddit.com/r/reactjs/comments/jog240/how_to_filter_objects_from_a_map/
 ---
+hello all! I have an API call that returns an array of objects, so to create the necessary elements, I am using .map; I would like to be able to check to see if a coupon is expired so that I can not display it at all. I am not sure however how to check to see if my coupon.isExpired is true or false as the elements are being generated. I tried putting a {coupon.isExpired &amp;&amp; &lt;Card.../&gt;} inside the map, but it didn't work. Any ideas?
 
-## [11][First simple form using Formik!](https://www.reddit.com/r/reactjs/comments/jnv00x/first_simple_form_using_formik/)
-- url: https://www.youtube.com/watch?v=c9pg0WQdka4&amp;feature=share
----
+&amp;#x200B;
 
-## [12][Calendar population](https://www.reddit.com/r/reactjs/comments/jnuz4j/calendar_population/)
-- url: https://www.reddit.com/r/reactjs/comments/jnuz4j/calendar_population/
+Thanks!
+
+&amp;#x200B;
+
+`{getTradingPostsAPI.data.trades.map((coupon) =&gt; (`  
+ `&lt;Card`  
+ `key={coupon.couponID}`  
+ `{...coupon}`  
+ `onPress={() =&gt; {`  
+ `setClickedCouponInfo(coupon);`  
+ `setModalVisible(true);`  
+`}}`  
+ `/&gt;`  
+`))}`
+## [11][5 Handy Libraries Every React Developer Should Know](https://www.reddit.com/r/reactjs/comments/joinav/5_handy_libraries_every_react_developer_should/)
+- url: https://www.reddit.com/r/reactjs/comments/joinav/5_handy_libraries_every_react_developer_should/
 ---
-I am trying to find a tutorial on how to take a users input and display it into a calendar. Does anyone know of any good resources like that? ?????
+Hello, fellow devs! 
+
+I've been trying to spend some time writing programming blogs and after testing the waters, this is the secons blog that I've written.
+
+Link to the Article: [5 Handy React Libraries Every React Developer Should Know](https://blog.udaya.me/5-react-libraries/)
+
+I did not intend to share the ones that are too popular, and I've added what I thought personally were useful for me. 
+
+I am open to constructive criticism and discussions regarding the same. ❤️🙌🏾
+## [12][How to store initially loaded data in the service and not redux store?](https://www.reddit.com/r/reactjs/comments/johlkc/how_to_store_initially_loaded_data_in_the_service/)
+- url: https://www.reddit.com/r/reactjs/comments/johlkc/how_to_store_initially_loaded_data_in_the_service/
+---
+I have an app that fetches data from the server on applicaton startup, like getAuthors, getBooks, etc.
+
+This data is then used to populate dropdowns on app forms (I have only one form now but planning to add more forms that will use same Authours and Books data). 
+
+While Books data is being loaded, I want a spinner to be displayed on the Books dropdown.
+
+How can I notify the app when data load is complete so that spinners could be hidden?
+
+Is there a way to achieve this with the service-like patter rather than storing all inital data in the store? (the application is using Redux Toolkit)

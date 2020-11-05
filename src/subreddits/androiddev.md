@@ -31,64 +31,78 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Macbook Finder UI recreated using Jetpack Compose for Desktop](https://www.reddit.com/r/androiddev/comments/jnoes7/macbook_finder_ui_recreated_using_jetpack_compose/)
-- url: https://twitter.com/vinaygaba/status/1323741779133308930
+## [3][Jetpack Compose for Desktop: Milestone 1 Released](https://www.reddit.com/r/androiddev/comments/joghj3/jetpack_compose_for_desktop_milestone_1_released/)
+- url: https://www.reddit.com/r/androiddev/comments/joghj3/jetpack_compose_for_desktop_milestone_1_released/
+---
+[https://blog.jetbrains.com/cross-post/jetpack-compose-for-desktop-milestone-1-released/](https://blog.jetbrains.com/cross-post/jetpack-compose-for-desktop-milestone-1-released/)
+## [4][androidsrc.dev - Find Android sources](https://www.reddit.com/r/androiddev/comments/jo9eiq/androidsrcdev_find_android_sources/)
+- url: https://androidsrc.dev/
 ---
 
-## [4][[OC] View binding for the lazy](https://www.reddit.com/r/androiddev/comments/jnunei/oc_view_binding_for_the_lazy/)
-- url: https://www.crazylegend.dev/2020/11/view-binding-for-lazy.html
+## [5][How To Build A Successful Social Learning Platform](https://www.reddit.com/r/androiddev/comments/jognzn/how_to_build_a_successful_social_learning_platform/)
+- url: http://sociallearningplatform.space/
 ---
 
-## [5][Published App(Google Play) does not appear on Google Play Store for 36+ hours, Please Help](https://www.reddit.com/r/androiddev/comments/jntirr/published_appgoogle_play_does_not_appear_on/)
-- url: https://www.reddit.com/r/androiddev/comments/jntirr/published_appgoogle_play_does_not_appear_on/
+## [6][No apps on emulator changing orientation](https://www.reddit.com/r/androiddev/comments/joe6ku/no_apps_on_emulator_changing_orientation/)
+- url: https://www.reddit.com/r/androiddev/comments/joe6ku/no_apps_on_emulator_changing_orientation/
 ---
-I published an app 2days ago and it will not appear on the Google Play Store.
+Have no idea if it is something I've done or what? No apps on the emulator are changing orientation. Even the stock apps that are pre loaded on it? Anyone know what the problem could be?
+## [7][Looking to build 2D Android games by myself. How much would it cost?](https://www.reddit.com/r/androiddev/comments/jog90b/looking_to_build_2d_android_games_by_myself_how/)
+- url: https://www.reddit.com/r/androiddev/comments/jog90b/looking_to_build_2d_android_games_by_myself_how/
+---
+Hi,
 
-I'm not talking about search results. The URL Google Play Console officially gives me opens a page that saids "We're sorry, the requested URL was not found on this server". I've published a few apps before, all were up and running after 3\~12 hours and people told me that it would certainly appear after 24 hours. I waited for 36 hours cause these days there's a notice from google that COVID-19 issues are making them spend more time than usual.
+I'm a complete beginner in appdev, have some knowledge like HTML, CSS in webdev.
 
-More information:  
-\- Release State is "Published" in my console- Release Country is all set.  
-\- The version I published was tested Internally and Closed Beta.  
-\- Same version(and URL) shows up when I'm logged in to my browser  
-  (because I am an internal tester)  
-\- People told me to check app id/package name matching the [URL](https://play.google.com/store/apps/details?id=com.wayway.projectt),  
-  checked It and it matches the URL.  
-\- I made an [inquiry](https://support.google.com/googleplay/android-developer/contact/publishing?extra.IssueType=missing) to Google Dev Services,   
-  they are telling me it might take 2 days to get back to me.
+I want to develop 2d android games like Bubble Ball, Angry Birds etc by myself as I don't have a lot of money to pay others to do it for me.
 
-Anyone having same issues?
-## [6][How To Build A Messaging Chat App](https://www.reddit.com/r/androiddev/comments/jnuhw1/how_to_build_a_messaging_chat_app/)
-- url: http://messagingchatapp.fun/
+my questions are:
+
+1. How much would it cost me to build, launch and make this app successful (at least making $500 a month or more?)
+2. How long would it take me to do this? Learning appdev and then making the app?
+
+Thanks for your answers
+## [8][App not functioning on Google Play internal testing](https://www.reddit.com/r/androiddev/comments/jofwu9/app_not_functioning_on_google_play_internal/)
+- url: https://www.reddit.com/r/androiddev/comments/jofwu9/app_not_functioning_on_google_play_internal/
+---
+G'day Android Devs! 
+
+I'm a relatively new Android developer (but experienced with web and iOS). I'm getting ready to release my first app on the play store, but I'm having trouble with testing the app. The app fetches  data from a server, stores locally and displays on the device. 
+
+The 'internal testing' version of the app on the play store is unresponsive and shows an endless progress bar spinner, but building and installing via Android Studio, it works fine, no changes anywhere else. I've tried with multiple devices and users, all have the same result. As I don't have a debugger attached for the Internal Test build on the Play store, and the fact that it works fine in the development environment, it's difficult to know where to start debugging an issue like this.
+
+As I'm new to Android development, the cause of the issue is likely something basic that I've overlooked.
+
+If anyone could point me in the right direction of where I could start looking that would be awesome.
+
+Much Appreciated 🤙
+## [9][Birthday Picker some people struggeling](https://www.reddit.com/r/androiddev/comments/joi4j5/birthday_picker_some_people_struggeling/)
+- url: https://www.reddit.com/r/androiddev/comments/joi4j5/birthday_picker_some_people_struggeling/
+---
+Hello,
+
+most of our apps have some kind of birthday selection. I use the android default Picker. On Huawei phone there are 3 dropdowns, but most of the phones have the standard anroid calendar.
+
+It is very beautiful and easy to use, but sometimes the people use it the wrong way and get frustrated.  Instead of tap on the year, they just swipe through the months. It is not my problem, but we have over 5k reviews and about 20-50 are negative because of this incorrect usage.
+
+I know, it is not a lot, but have you seen any other good example of an easier to enter birthday field. We are having now 3 entry fields and a link to the picker, to get everyone happy, but it doesn't look so good.
+## [10][MPAndroidChart: Set different colors on live LineDataSet](https://www.reddit.com/r/androiddev/comments/joi1a8/mpandroidchart_set_different_colors_on_live/)
+- url: https://www.reddit.com/r/androiddev/comments/joi1a8/mpandroidchart_set_different_colors_on_live/
+---
+Hello guys,
+
+Do you know if it is possible to use different colors on a live LineDataSet depending of the values?
+
+For example, for every values above 50, display the point in red, and for every values below 50 in green.
+
+I managed to do it on a static LineDataSet using setColors but I am struggling with a live one. Is it possible?
+
+Thank you so much,
+## [11][MAD Skills Navigation: Wrap-Up](https://www.reddit.com/r/androiddev/comments/johvyo/mad_skills_navigation_wrapup/)
+- url: https://medium.com/androiddevelopers/mad-skills-navigation-wrap-up-4e5733ecb107
 ---
 
-## [7][People asking for a refund](https://www.reddit.com/r/androiddev/comments/jnwiwe/people_asking_for_a_refund/)
-- url: https://www.reddit.com/r/androiddev/comments/jnwiwe/people_asking_for_a_refund/
----
-Hi! 
-Today I noticed that my gmail account attached with my google play console has tons of mails of users asking for a refund. They say that they accidentally purchased my app and can not get a refund.I noticed that almost all mails are same but from different accounts and almost all users are indian.
-## [8][Jetpack Compose on Desktop is in preview!](https://www.reddit.com/r/androiddev/comments/jn9swn/jetpack_compose_on_desktop_is_in_preview/)
-- url: https://twitter.com/iateyourmic/status/1323551064512172033
----
-
-## [9][Samsung Galaxy S21 to Announce on January 14](https://www.reddit.com/r/androiddev/comments/jnwked/samsung_galaxy_s21_to_announce_on_january_14/)
-- url: https://www.techberg.tech/2020/11/samsung-galaxy-s21-to-announce-on.html
----
-
-## [10][What is the best way of loading profile pictures from Facebook](https://www.reddit.com/r/androiddev/comments/jnwjy2/what_is_the_best_way_of_loading_profile_pictures/)
-- url: https://www.reddit.com/r/androiddev/comments/jnwjy2/what_is_the_best_way_of_loading_profile_pictures/
----
-Hello guys. I am developing app that loads user profile pictures from Facebook. It’s all working fine, but sometimes images take long to show. A lot of images that are shown are from the same user in different places and every time when it needs to be displayed it must be downloaded again. I was curious if there is a way for this to be faster. Is it possible to cache userId : image pair somewhere? If it’s possible do I break any Facebook rule by saving profile picture ?
-## [11][I wrote a blog post about solving coding problems with Kotlin. It's not exactly about Android, but I hope it will help you to understand some features of Kotlin a bit more.](https://www.reddit.com/r/androiddev/comments/jnigig/i_wrote_a_blog_post_about_solving_coding_problems/)
-- url: https://www.reddit.com/r/androiddev/comments/jnigig/i_wrote_a_blog_post_about_solving_coding_problems/
----
-I'm an Android developer, but I used to solve coding problems on Leetcode with Java, but recently I have switched to Kotlin. I learned something during this process and decided to share it with you. It might be not about Android, but having those things in mind when writing Android code might be helpful.
-
-[https://proandroiddev.com/solving-coding-problems-with-kotlin-collection-functions-3d2b1ef7fe2c](https://proandroiddev.com/solving-coding-problems-with-kotlin-collection-functions-3d2b1ef7fe2c)
-
-&amp;#x200B;
-
-Do you practice solving coding problems on Leetcode, Codeforces or maybe you participate in JetBrains' Kotlin Heroes programming contest?
-## [12][What advantages would this method have over the way we usually handle one time events like clicks or navigations?](https://www.reddit.com/r/androiddev/comments/jnmgo1/what_advantages_would_this_method_have_over_the/)
-- url: https://medium.com/androiddevelopers/livedata-with-snackbar-navigation-and-other-events-the-singleliveevent-case-ac2622673150
+## [12][Mastering API Visibility in Kotlin - zsmb.co](https://www.reddit.com/r/androiddev/comments/jo1aqj/mastering_api_visibility_in_kotlin_zsmbco/)
+- url: https://zsmb.co/mastering-api-visibility-in-kotlin/
 ---
 

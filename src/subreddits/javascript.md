@@ -1,135 +1,51 @@
 # javascript
-## [1][Showoff Saturday (October 31, 2020)](https://www.reddit.com/r/javascript/comments/jlh1ld/showoff_saturday_october_31_2020/)
-- url: https://www.reddit.com/r/javascript/comments/jlh1ld/showoff_saturday_october_31_2020/
+## [1][WTF Wednesday (November 04, 2020)](https://www.reddit.com/r/javascript/comments/jnza9x/wtf_wednesday_november_04_2020/)
+- url: https://www.reddit.com/r/javascript/comments/jnza9x/wtf_wednesday_november_04_2020/
 ---
-Did you find or create something cool this week in javascript? 
+Post a link to a GitHub repo that you would like to have reviewed, and brace yourself for the comments!
+Whether you're a junior wanting your code sharpened or a senior interested in giving some feedback and have some time to spare, 
+this is the place.
 
-Show us here!
-## [2][Your /r/javascript recap for the week of October 26 - November 01](https://www.reddit.com/r/javascript/comments/jml5ae/your_rjavascript_recap_for_the_week_of_october_26/)
-- url: https://www.reddit.com/r/javascript/comments/jml5ae/your_rjavascript_recap_for_the_week_of_october_26/
----
-**Monday, October 26 - Sunday, November 01**
-
-###Top Posts
-
-| score | comments | title &amp; link |
-|--|--|--|
-| 236  | [21 comments](/r/javascript/comments/jm2nuy/now_you_can_walk_inside_it_halflife_inspired_3d/) | [Now You Can Walk Inside It: Half-Life Inspired 3D Level with WebGL - Supports Touch Devices](https://oguzeroglu.github.io/ROYGBIV/demo/villeneuvedascq2/application.html)|
-| 231  | [30 comments](https://www.reddit.com/r/javascript/comments/jk6082/why_npm_lockfiles_can_be_a_security_blindspot_for/) | [Why npm lockfiles can be a security blindspot for injecting malicious modules](https://snyk.io/blog/why-npm-lockfiles-can-be-a-security-blindspot-for-injecting-malicious-modules/)|
-| 189  | [13 comments](https://www.reddit.com/r/javascript/comments/jigyqq/cypress_is_an_amazing_testing_framework_but_i/) | [Cypress is an amazing testing framework but I always thought it should be easier to write test setups, so I made cypress-routines](https://maxschmitt.me/posts/cypress-routines/)|
-| 188  | [6 comments](https://www.reddit.com/r/javascript/comments/jjpoqf/simplest_js_paint/) | [Simplest JS paint](https://hinty.io/devforth/simplest-js-paint/)|
-| 183  | [24 comments](/r/javascript/comments/jkw3pc/how_to_install_multiple_versions_of_the_same/) | [How to Install Multiple Versions of the Same Package in NPM &amp;#40;Handy tip!&amp;#41;](https://medium.com/weekly-webtips/how-to-install-multiple-versions-of-the-same-package-in-npm-71c29b12e253?source=friends_link&amp;sk=312eb0068aa2c375b7518e75fb901486)|
-| 168  | [8 comments](/r/javascript/comments/jlov8g/javaspooky_using_javascript_to_revive_an_old/) | [JavaSpooky: Using JavaScript to revive an old horror webcomic from a flashplayer grave.](https://dev.to/nickgottschlich/javaspooky-using-javascript-to-revive-an-old-horror-webcomic-from-a-flashplayer-grave-4dgb)|
-| 163  | [36 comments](https://www.reddit.com/r/javascript/comments/jj10k9/vanillatodo_a_case_study_on_viable_techniques_for/) | [Vanilla-todo: A case study on viable techniques for vanilla web development](https://github.com/morris/vanilla-todo)|
-| 132  | [19 comments](https://www.reddit.com/r/javascript/comments/jj1rt4/layout_projection_a_method_for_animating_browser/) | [Layout projection: A method for animating browser layouts at 60fps](https://mattperry.is/writing-code/layout-projection-animate-browser-layout-60fps)|
-| 113  | [21 comments](https://www.reddit.com/r/javascript/comments/jjfrte/what_a_yarn_workspace_is_and_the_problem_it_solves/) | [What A Yarn Workspace Is, And The Problem It Solves](https://planflow.dev/blog/what-is-a-yarn-workspace)|
-| 106  | [4 comments](https://www.reddit.com/r/javascript/comments/jj45eq/nextjs_10_automatic_image_optimisation_and_more/) | [Next.js 10 - automatic Image optimisation and more](https://github.com/vercel/next.js/releases/tag/v10.0.0)|
-
-
-
-
-&amp;nbsp;
-
-###Most Commented Posts
-
-| score | comments | title &amp; link |
-|--|--|--|
-| 2  | [33 comments](/r/javascript/comments/jlufex/askjs_whats_after_react/) | `[AskJS]` &amp;#91;AskJS&amp;#93; What's after React?|
-| 12  | [24 comments](https://www.reddit.com/r/javascript/comments/jit9xn/askjs_entry_level_js_interview/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Entry Level JS Interview|
-| 92  | [20 comments](https://www.reddit.com/r/javascript/comments/jk1c01/free_and_unlimited_image_video_conversion/) | [Free and Unlimited Image &amp;amp; Video Conversion ENTIRELY in browser using FFMPEG compiled to WebAssembly. No Uploads! No backend!](https://fileconverter.digital)|
-| 0  | [19 comments](https://www.reddit.com/r/javascript/comments/jkhrsh/standardjs_1600_released/) | [StandardJS 16.0.0 Released](https://standardjs.com/changelog.html#1600---2020-10-28)|
-| 0  | [18 comments](https://www.reddit.com/r/javascript/comments/jj39m2/welcome_deno_does_this_mean_goodbye_to_nodejs/) | [Welcome Deno! Does this mean goodbye to Node.js?](https://www.stackbuilders.com/news/welcome-deno-does-this-mean-goodbye-to-node-js)|
-
-
-
-
-&amp;nbsp;
-
-###Top Ask JS
-
-| score | comments | title &amp; link |
-|--|--|--|
-| 4  | [17 comments](/r/javascript/comments/jlyt3m/askjs_should_i_compile_to_webassembly/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Should I compile to WebAssembly?|
-| 0  | [4 comments](https://www.reddit.com/r/javascript/comments/jj3d42/askjs_nextjsreact_or_nuxtjsvue_for_an_headless/) | `[AskJS]` &amp;#91;AskJS&amp;#93; NextJS&amp;#40;React&amp;#41; or NuxtJS&amp;#40;Vue&amp;#41; for an Headless Shopify project?|
-| 0  | [0 comments](https://www.reddit.com/r/javascript/comments/jjxz0q/askjs_are_there_any_plans_to_create_dedicated/) | `[AskJS]` &amp;#91;AskJS&amp;#93; Are there any plans to create dedicated number plus operator and a dedicated string concatenation operator?|
-
-
-
-
-&amp;nbsp;
-
-###Top Showoffs
-
-| score  |  comment  |
-|--|--|
-| 2  |  /u/stardust-kid said [Applied for the job, got test assignment to make to-do list. Didn’t like it and made to-do list of to-do lists instead.  https://structure.ninja doesn’t support mobile yet, visit from desktop.   https...](/r/javascript/comments/jlh1ld/showoff_saturday_october_31_2020/gaqhkrz/?context=5) |
-| 2  |  /u/irekrog said [I made a mobile app for Android &amp;#40;in React Native&amp;#41; to store links and preview them. Links can be saved from external apps &amp;#40;like Chrome, Reddit etc&amp;#41;, from text input typing URL or from s...](/r/javascript/comments/jlh1ld/showoff_saturday_october_31_2020/gaovyi0/?context=5) |
-| 1  |  /u/lonaExe said [ Hey there, Im Jes.  I   made Shakespeare, a Firefox extension. Well to keep it simple, here's a   situation. You're in a formal online group or thread, and there is  this  one person annoying the hel...](/r/javascript/comments/jlh1ld/showoff_saturday_october_31_2020/gatfkng/?context=5) |
-
-
-
-
-&amp;nbsp;
-
-###Top Comments
-
-| score  |  comment  |
-|--|--|
-| 107  |  /u/Romanmir said [I presume it uses “middle out” compression?](/r/javascript/comments/jlhlvz/released_a_javascript_sdk_to_reduce_video/gap7sl4/?context=5) |
-| 69  |  /u/Cyberlane said [To;Dr;  npm i &lt;package_name_alias&gt;@npm:&lt;package_name&gt;](/r/javascript/comments/jkw3pc/how_to_install_multiple_versions_of_the_same/galszfj/?context=5) |
-| 65  |  /u/license-bot said [Thanks for sharing your open source project, but it looks like you haven't specified a license.  &gt; When you make a creative work &amp;#40;which includes code&amp;#41;, the work is under exclusive copyright by...](/r/javascript/comments/jlhlvz/released_a_javascript_sdk_to_reduce_video/gaoz0a5/?context=5) |
-| 61  |  /u/robotmayo said [Hell will freeze over before I work on an application that uses hard-coded html strings again.](/r/javascript/comments/jj10k9/vanillatodo_a_case_study_on_viable_techniques_for/gaa33gk/?context=5) |
-| 42  |  /u/babanbosama said [&gt; replace our ***aging*** bundling infrastructure with a new bundler  Deno is ... 2 years old?](/r/javascript/comments/jjk5x2/deno_15_release_notes/gad4o5y/?context=5) |
-
-
-
-
-&amp;nbsp;
-## [3][Malicious npm package opens backdoors on programmers' computers](https://www.reddit.com/r/javascript/comments/jne7av/malicious_npm_package_opens_backdoors_on/)
-- url: https://www.zdnet.com/article/malicious-npm-package-opens-backdoors-on-programmers-computers/
+[Named after this comic](https://davidwalsh.name/demo/code-review.png)
+## [2][JavaScript new features (ES2021).](https://www.reddit.com/r/javascript/comments/joeyp0/javascript_new_features_es2021/)
+- url: https://sambat-tech.netlify.app/what-new-in-es12/
 ---
 
-## [4][ffmpeg.wasm - a pure WebAssembly / Javascript port of FFmpeg](https://www.reddit.com/r/javascript/comments/jnc5qg/ffmpegwasm_a_pure_webassembly_javascript_port_of/)
-- url: https://ffmpegwasm.github.io/
+## [3][I built a modern web app with React, TypeScript &amp; Redux best practices.](https://www.reddit.com/r/javascript/comments/jodnkv/i_built_a_modern_web_app_with_react_typescript/)
+- url: https://github.com/itailv/awesome-todo-app
 ---
 
-## [5][I built this app to practice my React, Node, MongoDB and Redis skills](https://www.reddit.com/r/javascript/comments/jnuu4w/i_built_this_app_to_practice_my_react_node/)
+## [4][The Art of War - How to Beat the Bugs, Faster and Harder](https://www.reddit.com/r/javascript/comments/jog0pm/the_art_of_war_how_to_beat_the_bugs_faster_and/)
+- url: https://dev.to/lxkuz/the-art-of-war-how-to-beat-the-bugs-faster-and-harder-2e4g
+---
+
+## [5][What's the deal with SvelteKit?](https://www.reddit.com/r/javascript/comments/jofsdq/whats_the_deal_with_sveltekit/)
+- url: https://svelte.dev/blog/whats-the-deal-with-sveltekit
+---
+
+## [6][Trying to get into blogging - My guide to unit testing inside enterprise microservices](https://www.reddit.com/r/javascript/comments/johqdb/trying_to_get_into_blogging_my_guide_to_unit/)
+- url: http://neighborlynook.com/unit-testing-inside-enterprise-microservices/
+---
+
+## [7][I built this app to practice my React, Node, MongoDB and Redis skills](https://www.reddit.com/r/javascript/comments/jnuu4w/i_built_this_app_to_practice_my_react_node/)
 - url: https://probe.sh/
 ---
 
-## [6][[AskJS] I want to build type-checked class-based components without a build system. Possibly?](https://www.reddit.com/r/javascript/comments/jnvsz2/askjs_i_want_to_build_typechecked_classbased/)
-- url: https://www.reddit.com/r/javascript/comments/jnvsz2/askjs_i_want_to_build_typechecked_classbased/
----
-Edit: Possible?*, of course, sorry
-
-Type-checked = using Flow or TypeScript on strict settings with library declarations for whatever framework used.
-
-Class-based = Each component is a class (can also include template HTML, CSS, etc in a module structure).
-
-No idea if possible, pretty new to modern JS. :) Feel free to enlighten me. I've tried Vue, but classes require @Component annotation, which won't work without a transpilation build. Maybe Reason+React? But obviously that needs to be built. Not sure.
-
-Why no build system? To lower commitment and decrease feedback loop time. I'm working on a big legacy system (first commit 2003), and incremental improvements must be possible, not complete rewrites.
-## [7][Open source file uploader Uppy adds support for Unsplash](https://www.reddit.com/r/javascript/comments/jn9765/open_source_file_uploader_uppy_adds_support_for/)
-- url: https://uppy.io/blog/2020/10/1.22/
+## [8][How to Use Async Actions for Global State With React Hooks and Context](https://www.reddit.com/r/javascript/comments/johu1u/how_to_use_async_actions_for_global_state_with/)
+- url: http://blog.asayer.io/how-to-use-async-actions-for-global-state-with-react-hooks-and-context
 ---
 
-## [8][Codimg - A re-modeled approach to code plagiarism detection](https://www.reddit.com/r/javascript/comments/jnt4kp/codimg_a_remodeled_approach_to_code_plagiarism/)
-- url: https://github.com/techsyndicate/codimg
+## [9][[AskJS] How to covert timestamp to just date ?](https://www.reddit.com/r/javascript/comments/jofza0/askjs_how_to_covert_timestamp_to_just_date/)
+- url: https://www.reddit.com/r/javascript/comments/jofza0/askjs_how_to_covert_timestamp_to_just_date/
 ---
-
-## [9][PRESENTA Lib, a javascript presentation library](https://www.reddit.com/r/javascript/comments/jnssfh/presenta_lib_a_javascript_presentation_library/)
-- url: https://lib.presenta.cc/
+The api response i get is "2020-11-05T07:42:01.161558" 
+I want to convert this into 05.11.2020 . 
+How can I do that ? Sorry if this question sounds stupid. I am still learning.
+## [10][[AskJS] Create a javascript spreadsheet from a CSV file](https://www.reddit.com/r/javascript/comments/joh6wx/askjs_create_a_javascript_spreadsheet_from_a_csv/)
+- url: https://www.reddit.com/r/javascript/comments/joh6wx/askjs_create_a_javascript_spreadsheet_from_a_csv/
 ---
-
-## [10][Isomorphic JavaScript logger based on Elastic Common Schema](https://www.reddit.com/r/javascript/comments/jnsdin/isomorphic_javascript_logger_based_on_elastic/)
-- url: https://github.com/ibitcy/eo-logger
----
-
-## [11][10 Practical JavaScript Tricks](https://www.reddit.com/r/javascript/comments/jnre0p/10_practical_javascript_tricks/)
-- url: https://dev.to/zandershirley/10-practical-javascript-tricks-2b7h
----
-
-## [12][A First Look at MarkoJS](https://www.reddit.com/r/javascript/comments/jnlk0x/a_first_look_at_markojs/)
-- url: https://dev.to/ryansolid/a-first-look-at-markojs-3h78
+Is it possible to create a javascript spreadsheet from a CSV file? If yes, then how can I write the Javascript spreadsheet for \[JExcel\] so that I can fetch the data of that spreadsheet as the database.
+## [11][7 Ways to do Dependency Injection in Functional JavaScript without a Framework](https://www.reddit.com/r/javascript/comments/jogxof/7_ways_to_do_dependency_injection_in_functional/)
+- url: https://happy-css.com/articles/dependency-injection-in-java-script/
 ---
 

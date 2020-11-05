@@ -23,15 +23,105 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/jmiktw/whats_everyone_working_on_this_week_452020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-45-2020/50962?u=llogiq)!
-## [3][Bevy 0.3](https://www.reddit.com/r/rust/comments/jnirl3/bevy_03/)
-- url: https://bevyengine.org/news/bevy-0-3/
+## [3][Making a Snake Clone with Bevy [Rewritten and Updated for Bevy 0.3]](https://www.reddit.com/r/rust/comments/job4jo/making_a_snake_clone_with_bevy_rewritten_and/)
+- url: https://mbuffett.com/posts/bevy-snake-tutorial/#0.3
 ---
 
-## [4][async-std v1.7.0 has been released!](https://www.reddit.com/r/rust/comments/jnueup/asyncstd_v170_has_been_released/)
+## [4][Sauron [v0.32] - a very fast web framework with server-side rendering.](https://www.reddit.com/r/rust/comments/jodrsw/sauron_v032_a_very_fast_web_framework_with/)
+- url: https://www.reddit.com/r/rust/comments/jodrsw/sauron_v032_a_very_fast_web_framework_with/
+---
+[Project repo](https://github.com/ivanceras/sauron)
+
+[Complete Changelog](https://github.com/ivanceras/sauron/blob/master/Changelog.md)
+
+[WIP Guide](https://sauron-rs.github.io/)
+
+`0.32` is the most stable iteration so far, adding a lot of improvements without breaking any of the api.
+
+Notable improvements:
+- you can now use rust keywords such as `for`,`type` in html node! macro.
+   example: &lt;input type="text"/&gt;.
+
+- `jss`, `jss_ns`, `class_namespaced` to write css styles alongside with your component's view, while mitigating conflicting classnames with other components by prepending the component's namespace. This is not foolproof replacement for scoped style, but it comes very handy replacement for compiled stylesheets such scss or less. Example usage is in [futuristic-ui button](https://github.com/ivanceras/sauron/blob/master/examples/futuristic-ui/src/fui_button.rs)
+
+
+A lot of performance improvement is done under the hood of sauron's [mt-dom](https://github.com/ivanceras/mt-dom) (read as: "empty-dom", or "mount-doom" whichever you like). In it, I've added improvements on diffing  algorithm of keyed-elements with `replace` and `skip` directive to allow developers to skip diffing on a particular nodes, for responsive/performance sensitive applications such as a code-editor(skip diffing on unchanged lines of code).
+
+A [wiki](https://github.com/ivanceras/sauron/wiki) pages is in the works (Contributions are welcomed).
+The deployed [site](https://sauron-rs.github.io/) is static site forged and generated using sauron itself to produce a searchable static site with nice rendering of source code and copy-able fake terminal for cli instructions.
+
+A big thank you to my patreon/opencollective supporters:
+- Matthew Piziak
+- Freeman Latif
+- YVT
+- Philip Edwards
+- Hugo Buddel
+## [5][MetaCall: Call Python, Ruby, NodeJS, TypeScript, C#, Cobol... functions from Rust (Looking for contributors)](https://www.reddit.com/r/rust/comments/jogthj/metacall_call_python_ruby_nodejs_typescript_c/)
+- url: https://www.reddit.com/r/rust/comments/jogthj/metacall_call_python_ruby_nodejs_typescript_c/
+---
+Hey rustaceans, I want to announce a recently published crate ( [https://crates.io/crates/metacall](https://crates.io/crates/metacall) ). This is a Rust wrapper around MetaCall library which is a multi-language runtime library (or also known as Polyglot).
+
+The original library provides virtually support for calling functions from/to any programming language. The crate is not production ready (although we are using the C/C++ library already in a FaaS) and also there is some feedback already gathered ( [https://github.com/metacall/core/issues/56](https://github.com/metacall/core/issues/56) ) which probably I won't be able to implement because I am a noob in Rust (I'm mainly a C/C++ developer).
+
+This Rust Proof of Concept works but it is far away from mimicking other APIs like NodeJS Port:
+
+    const { sum } = require('sum.py');
+    sum(3, 4); // 7
+
+Where `sum.py` is this:
+
+    def sum(a, b):
+      return a + b
+
+The Rust equivalent proposal would be something like:
+
+    let a = metacall! {
+      sum(3, 4);
+      foo()
+    }
+
+&amp;#x200B;
+
+Any feedback about the library will be highly appreciated and added to the issue for implementing it in the future. Anybody interested in contributing can contact us in our Telegram chat ( [https://t.me/joinchat/BMSVbBatp0Vi4s5l4VgUgg](https://t.me/joinchat/BMSVbBatp0Vi4s5l4VgUgg) ), or direct PR are accepted too.
+## [6][ThreadScope alternative for Rust? (Tool for performance profiling of parallel programs)](https://www.reddit.com/r/rust/comments/johsyq/threadscope_alternative_for_rust_tool_for/)
+- url: https://www.reddit.com/r/rust/comments/johsyq/threadscope_alternative_for_rust_tool_for/
+---
+For Haskell programs, there is [ThreadScope](https://wiki.haskell.org/ThreadScope)   
+I am looking to fine-tune a Rust service before taking it to production and I want to introduce some parallelism/concurrency wherever possible.   
+I'm going to try and use \`rayon\` and/or \`tokio\` depending on whether the functions/operations are \`async\`  or not.   
+
+
+Is there any tool like \`ThreadScope\` or something similar that would help me visualize better the utilization of my processor so that I can spot issues &amp; know what to optimize?
+## [7][Why Dark didn't choose Rust](https://www.reddit.com/r/rust/comments/jo2hco/why_dark_didnt_choose_rust/)
+- url: https://blog.darklang.com/why-dark-didnt-choose-rust/
+---
+
+## [8][Small script to sort derives](https://www.reddit.com/r/rust/comments/joh0z0/small_script_to_sort_derives/)
+- url: https://www.reddit.com/r/rust/comments/joh0z0/small_script_to_sort_derives/
+---
+Have you ever been annoyed that `cargo fmt` only sorts imports but not derives ?  
+Fear not! Consistency has arrived in a simple form:  
+A small python script that searches through all Rust files in current directory and sort derives for you according to a defined order when possible.  
+If you wish to change the order or add your own derives, just change the `special` list at the top.  
+
+[Link to gist](https://gist.github.com/Uriopass/542bfc3d489f98048c4c98e061782ac9)
+
+/!\ Be sure to run this script in a git repository as changes are irreversible and I am not entirely sure what happens if the script is killed while running /!\  
+
+I tested it on my 20k lines Rust project and it compiled successfully.
+## [9][Ktra: Your Little Cargo Registry](https://www.reddit.com/r/rust/comments/jny8h6/ktra_your_little_cargo_registry/)
+- url: https://github.com/moriturus/ktra
+---
+
+## [10][async-std v1.7.0 has been released!](https://www.reddit.com/r/rust/comments/jnueup/asyncstd_v170_has_been_released/)
 - url: https://github.com/async-rs/async-std/releases/tag/v1.7.0
 ---
 
-## [5][With the launch of Bevy Game Engine 0.3, I'm introducing chunk base Tile Maps!](https://www.reddit.com/r/rust/comments/jntjp8/with_the_launch_of_bevy_game_engine_03_im/)
+## [11][Introducing Text_Adventure an easy way to make a text adventure game.](https://www.reddit.com/r/rust/comments/jo8s4g/introducing_text_adventure_an_easy_way_to_make_a/)
+- url: https://github.com/10maurycy10/text_adventure
+---
+
+## [12][With the launch of Bevy Game Engine 0.3, I'm introducing chunk base Tile Maps!](https://www.reddit.com/r/rust/comments/jntjp8/with_the_launch_of_bevy_game_engine_03_im/)
 - url: https://www.reddit.com/r/rust/comments/jntjp8/with_the_launch_of_bevy_game_engine_03_im/
 ---
  [https://crates.io/crates/bevy\_tilemap](https://crates.io/crates/bevy_tilemap) 
@@ -39,52 +129,3 @@ New week, new Rust! What are you folks up to? Answer here or over at [rust-users
 This is not intended to be just another Tile Map. It is meant to be a framework and extensible by design, like Bevy. There is an emphasis placed on generic traits to accomplish that. As well as work done to keep it as close to Bevy API as possible. This allows anyone to create their own tiles, chunks and maps and still retain the speed of a handcrafted multi-threaded chunk loader and tile map. 
 
 If you have comments or suggestions do let me know below! Thanks!
-## [6][Is Rust worth it for frontend development?](https://www.reddit.com/r/rust/comments/jntj2s/is_rust_worth_it_for_frontend_development/)
-- url: https://www.reddit.com/r/rust/comments/jntj2s/is_rust_worth_it_for_frontend_development/
----
-Hey everyone!
-
-I'm currently working on a cloud server in Rust and I already have a solid backend. So now the big question is, what to use for the frontend.
-
-Of course I'd like to write the whole thing in Rust but after experimenting with it for a few hours I'm not sure whether that's the best solution. Anyway, here are my thoughts:
-
-Disadvantages of using Rust:
-
-* Additional dev dependencies like wasm toolchain and wasm-bindgen/wasm-pack
-* Makefiles or other build system required: wasm-bindgen/wasm-pack needs to be called separately to create "glue code" and requires a lot parameters to work correctly
-* Performance: neither Yew nor Seed look very good in benchmarks, at least they are not faster than JavaScript
-* WASM bindings don't feel native yet, JavaScript still seems to be a lot easier for interacting with Web-APIs
-
-Advantages of using Rust:
-
-* It's Rust, not JavaScript ;)
-
-I'm curious what you think about about this matter :)
-
-P. S. I'm using actix-web for the server and tried out Seed for the frontend. I've already got a Rust-based frontend setup working with my cloud server and pushed the code to a new branch: [https://github.com/AaronErhardt/Triox/tree/experimental-frontend](https://github.com/AaronErhardt/Triox/tree/experimental-frontend).
-
-EDIT: Thanks a lot for your answers!
-## [7][Hardware performance counters for the Rust compiler](https://www.reddit.com/r/rust/comments/jn9892/hardware_performance_counters_for_the_rust/)
-- url: https://hackmd.io/sH315lO2RuicY-SEt7ynGA?view
----
-
-## [8][bacon: a background code checker, to keep in a side terminal](https://www.reddit.com/r/rust/comments/jnde63/bacon_a_background_code_checker_to_keep_in_a_side/)
-- url: https://github.com/Canop/bacon
----
-
-## [9][This month in Dimforge #2 (October 2020) - New collider shapes, collision filters, restitution, user-defined data, and work-in-progress coupling with fluids](https://www.reddit.com/r/rust/comments/jneh38/this_month_in_dimforge_2_october_2020_new/)
-- url: https://www.dimforge.com/blog/2020/11/01/this-month-in-dimforge
----
-
-## [10][rena: a renamer program utility thing (am bad at describing my projects)](https://www.reddit.com/r/rust/comments/jnmius/rena_a_renamer_program_utility_thing_am_bad_at/)
-- url: https://github.com/lyssieth/rena
----
-
-## [11][Actix Web Rust](https://www.reddit.com/r/rust/comments/jnlyc6/actix_web_rust/)
-- url: https://www.reddit.com/r/rust/comments/jnlyc6/actix_web_rust/
----
-I've recently taken an interest in Actix Web, especially with its performance benefits. However, I've noticed it's not well documented. It's usually out of date or isn't comprehensive enough. Is there a way someone can contribute to the official documentation for it? Or a more general way to make a more detailed and example oriented documentation?
-## [12][R3: a proof-of-concept static RTOS utilizing compile-time function evaluation for static configuration](https://www.reddit.com/r/rust/comments/jn9ksr/r3_a_proofofconcept_static_rtos_utilizing/)
-- url: https://github.com/yvt/r3
----
-

@@ -56,74 +56,78 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Header-only library for parallel function calls without using std::async and std::future, meaning no overhead from heap allocations, type erasure and synchronization.](https://www.reddit.com/r/cpp/comments/jnijgx/headeronly_library_for_parallel_function_calls/)
-- url: https://github.com/tirimatangi/Lazy
+## [2][Qt Desktop Days: Use Windows Subsystem for Linux to develop your Qt apps on Windows](https://www.reddit.com/r/cpp/comments/jogz2x/qt_desktop_days_use_windows_subsystem_for_linux/)
+- url: https://www.youtube.com/watch?v=xXilWXNTfYg&amp;feature=youtu.be
 ---
 
-## [3][Kris Jusiak - Future of testing with C++20 - Meeting C++ online](https://www.reddit.com/r/cpp/comments/jnuzi5/kris_jusiak_future_of_testing_with_c20_meeting_c/)
+## [3][C++20 Modules Compiler Code Under Review, Could Still Land For GCC 11](https://www.reddit.com/r/cpp/comments/jnys51/c20_modules_compiler_code_under_review_could/)
+- url: https://www.phoronix.com/scan.php?page=news_item&amp;px=GCC-Modules-Code-Review
+---
+
+## [4][BrainFuck compiler in c++ template metaprogramming](https://www.reddit.com/r/cpp/comments/jnz5p1/brainfuck_compiler_in_c_template_metaprogramming/)
+- url: https://www.reddit.com/r/cpp/comments/jnz5p1/brainfuck_compiler_in_c_template_metaprogramming/
+---
+I wrote a BrainFuck compiler in c++ metaprogramming, At compile-time running the BrainFuck code and generating "hello world!" string, later printing it at runtime. 😀
+
+```cpp
+puts( R"(
+&gt;++++++++[&lt;+++++++++&gt;-]&lt;.
+&gt;&gt;++++++++++[&lt;++++++++++&gt;-]&lt;+.
+&gt;&gt;+++++++++[&lt;++++++++++++&gt;-]&lt;.
+&gt;&gt;+++++++++[&lt;++++++++++++&gt;-]&lt;.
+&gt;&gt;++++++++++[&lt;+++++++++++&gt;-]&lt;+.
+&gt;&gt;++++[&lt;++++++++&gt;-]&lt;.
+&gt;&gt;+++++++++++[&lt;++++++++&gt;-]&lt;-.
+&gt;&gt;++++++++++[&lt;+++++++++++&gt;-]&lt;+.
+&gt;&gt;++++++++++[&lt;++++++++++++&gt;-]&lt;------.
+&gt;&gt;+++++++++[&lt;++++++++++++&gt;-]&lt;.
+&gt;&gt;++++++++++[&lt;++++++++++&gt;-]&lt;.
+&gt;&gt;++++++[&lt;++++++&gt;-]&lt;---.
+)"_brain_fuck );
+```
+
+full code see: [BrainFuck.cpp](https://github.com/netcan/recipes/blob/master/cpp/metaproggramming/BrainFuck.cpp), [https://godbolt.org/z/GTKxhc](https://godbolt.org/z/GTKxhc)
+
+Any advices welcome.
+## [5][Teresa Johnsons Meeting C++ 2020 Center Keynote: ThinLTO Whole Program Optimization: Past, Present and Future](https://www.reddit.com/r/cpp/comments/jogl0n/teresa_johnsons_meeting_c_2020_center_keynote/)
+- url: https://meetingcpp.com/meetingcpp/news/items/Teresa-Johnsons-Center-Keynote--ThinLTO-Whole-Program-Optimization--Past--Present-and-Future.html
+---
+
+## [6][The FlaScript Programming Language](https://www.reddit.com/r/cpp/comments/joien5/the_flascript_programming_language/)
+- url: https://github.com/ferhatgec/flascript
+---
+
+## [7][Part 2 of the making of my ASCII game. I changed const and #define to constexpr and I added an initializer list to my classes. I'd love to read your suggestions and ideas in the comments.](https://www.reddit.com/r/cpp/comments/jnz9nf/part_2_of_the_making_of_my_ascii_game_i_changed/)
+- url: https://youtu.be/i_PvZvYd1Vw
+---
+
+## [8][Oat++ ORM](https://www.reddit.com/r/cpp/comments/jof38b/oat_orm/)
+- url: https://www.reddit.com/r/cpp/comments/jof38b/oat_orm/
+---
+Oat++ released its new ORM.  
+At the moment it supports SQLite (full feature support) and PostgreSQL (alpha version).
+
+ORM features include:
+
+- Object mapping
+- Schema migrations
+- Connection Pools
+- Transactions 
+
+Resources:
+
+- [ORM docs](https://oatpp.io/docs/components/orm/)
+- [Example Project](https://github.com/oatpp/example-crud)
+- [Oat++ repo](https://github.com/oatpp/oatpp)
+## [9][Kris Jusiak - Future of testing with C++20 - Meeting C++ online](https://www.reddit.com/r/cpp/comments/jnuzi5/kris_jusiak_future_of_testing_with_c20_meeting_c/)
 - url: https://www.youtube.com/watch?v=0mLoali1LOc
 ---
 
-## [4][Criterion: Microbenchmarking for C++17](https://www.reddit.com/r/cpp/comments/jna6yc/criterion_microbenchmarking_for_c17/)
+## [10][Header-only library for parallel function calls without using std::async and std::future, meaning no overhead from heap allocations, type erasure and synchronization.](https://www.reddit.com/r/cpp/comments/jnijgx/headeronly_library_for_parallel_function_calls/)
+- url: https://github.com/tirimatangi/Lazy
+---
+
+## [11][Criterion: Microbenchmarking for C++17](https://www.reddit.com/r/cpp/comments/jna6yc/criterion_microbenchmarking_for_c17/)
 - url: https://github.com/p-ranav/criterion
 ---
 
-## [5][What are you most used Boost libraries?](https://www.reddit.com/r/cpp/comments/jn72ol/what_are_you_most_used_boost_libraries/)
-- url: https://www.reddit.com/r/cpp/comments/jn72ol/what_are_you_most_used_boost_libraries/
----
-As a C++ newcomer I often hear about Boost, however most of the things I already find in \`std\` or extracted like ASIO. What are some good libraries I am missing? For example I was interested in metaprogramming and found Boost.Hana but it seems like modern C++ metaprogramming is much easier and the library might be a bit obsolete..?  
-
-
-**Edit**
-
-I wanna thank everyone for all of your suggestions. I definitely heard new things in this thread and now i'm in research in all of the recommended libraries.
-## [6][Multi Threading with WebAssembly](https://www.reddit.com/r/cpp/comments/jngqzm/multi_threading_with_webassembly/)
-- url: https://www.syntaxsuccess.com/viewarticle/multi-threading-with-webassembly
----
-
-## [7][Learning modern C++](https://www.reddit.com/r/cpp/comments/jmyh86/learning_modern_c/)
-- url: https://www.reddit.com/r/cpp/comments/jmyh86/learning_modern_c/
----
-So I did a little bit of C++ in school a few years ago but it wasn’t “real” C++, definitely not modern C++. 
-
-Now as someone who uses python all day at work, how to I learn and get better at modern C++? My goal is to atleast be intermediate with C++ within the next year so I can start targeting “cooler” projects/companies for work!  
-
-Any feedback is appreciated, thanks!
-## [8][NoisePage – Self-Driving Database Management System](https://www.reddit.com/r/cpp/comments/jnk8y4/noisepage_selfdriving_database_management_system/)
-- url: https://github.com/cmu-db/noisepage/
----
-
-## [9][How to debug LibreOffice Writer, forwards and backwards (Michael Stahl, CIB)](https://www.reddit.com/r/cpp/comments/jneo4b/how_to_debug_libreoffice_writer_forwards_and/)
-- url: https://www.youtube.com/watch?v=xI1YoPfZeiQ
----
-
-## [10][clang shows error when using a method with a "using type alias" parameter (in this case, with std::make_index_sequence), while gcc does not. Who's right?](https://www.reddit.com/r/cpp/comments/jmy1bh/clang_shows_error_when_using_a_method_with_a/)
-- url: https://www.reddit.com/r/cpp/comments/jmy1bh/clang_shows_error_when_using_a_method_with_a/
----
-The code: https://godbolt.org/z/qT6vz6
-
-If you comment out the "template&lt;class... Ts&gt; using theAlias" line, and uncomment the "template&lt;class... Ts&gt; struct theAlias", both compilers issue no errors.
-
-x86-64 clang versions 9.0.0 and up shows the error: "error: no matching function for call to 'theFxn'"
-
-x86-64 gcc 10.1 and up compiles the code.
-
-Who's right?
-## [11][Is it easy to pick up C++ again after a long gap (many years) ? My friends are pushing me to learn rust instead.](https://www.reddit.com/r/cpp/comments/jn42cg/is_it_easy_to_pick_up_c_again_after_a_long_gap/)
-- url: https://www.reddit.com/r/cpp/comments/jn42cg/is_it_easy_to_pick_up_c_again_after_a_long_gap/
----
-Yet another rust vs CPP post, I know :( but hopefully I am coming from a different place to make it interesting.
-
-So C++ was the first language I learned in school and college. I would say i used to only be an intermediate level programmer with C++ 11, despite using it as my primary language for 5-6 years :)
-Towards the end of University however I moved to Machine Learning Research and thus Python became my primary programming language. In just 2-3 years I would say I became better at Python than I ever was at C++ in terms of confidence in writing good code. Right now I think I am a pretty good python developer. I don't remember ever thinking that I am pretty good at c++ :(
-
-I am not looking for a new job or anything, I enjoy working in ML research. But I would like to take some time to do some personal projects typically linux command line applications/helpers to manage some of my workflow and maybe contribute to some open source projects when I have free time. Ideally in a language that is not Python.
-
-So I was thinking of either revisiting C++ with all it's latest features or check out the next hyped thing in rust.
-My question is how easy it is to pick up C++ again with all it's latest features? Consider the following points:
-
-1.  Is the documentation and information about new features (post C++ 11) accessible ? Are there cool projects that are written in modern C++ with best practices that I can check out and learn from ?
-2.  I remember struggling a lot with using templates initially, especially the unhelpful error messages, is the situation better now?
-3. I also remember build systems being a complete mess, with Makefiles, CMake and pretty poor documentation about how to get things done in a good, elegant way. How is the situation now?
-
-Ultimately, I am not looking to become a professional C++ or rust developer anytime in the future. I am just looking to keep up with some language other than python. C++, rust are good candidates as they are statically typed and would be a a good complement to my python skillz :).  **So my biggest consideration is having fun developing some cool new projects as a hobby**. Considering that should I revisit C++ again or maybe check out rust ?

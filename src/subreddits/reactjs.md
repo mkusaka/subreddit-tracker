@@ -70,7 +70,41 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][Brix UI: UI-Kit/Framework for React from Ukraine](https://www.reddit.com/r/reactjs/comments/joh6f3/brix_ui_uikitframework_for_react_from_ukraine/)
+## [3][What kind of projects to include in my portfolio? Looking for full stack dev role.](https://www.reddit.com/r/reactjs/comments/jowroz/what_kind_of_projects_to_include_in_my_portfolio/)
+- url: https://www.reddit.com/r/reactjs/comments/jowroz/what_kind_of_projects_to_include_in_my_portfolio/
+---
+I’m finishing up my portfolio site and have included a Twitter bot (API call), Java networked chess app to demo core Java, a full stack restaurant app using MERN and a react hooks blog app.  Any feedback greatly appreciated.
+## [4][Is there any good cheat sheet on how to extend Material-UI?](https://www.reddit.com/r/reactjs/comments/jox3uy/is_there_any_good_cheat_sheet_on_how_to_extend/)
+- url: https://www.reddit.com/r/reactjs/comments/jox3uy/is_there_any_good_cheat_sheet_on_how_to_extend/
+---
+Is there any good cheat sheet on how to extend Material-UI? There are several ways on how to extend Material-UI, but a lot of them leave unmanageable bloat in the code and don't maximize code reuse, so I would like to see a list of anti-patterns and best practices.
+## [5][How to use Bit?](https://www.reddit.com/r/reactjs/comments/jp1w5l/how_to_use_bit/)
+- url: https://www.reddit.com/r/reactjs/comments/jp1w5l/how_to_use_bit/
+---
+Recently I came across a site called [bit.dev](https://bit.dev/components), it provides a huge library of UI components for React, Angular, Vue and React Native freely made available by the community. Bit is also provides a platform to share UI components among team members while doing a project. But this is where my knowledge about Bit ends.
+
+Can anyone help me to use Bit in my project, I tried to find vdo tutorial in YouTube but failed. There are few tutorial showing how to create my own components and upload in the platform but those tutorials are also not very much clear and I couldn't find any tutorial showing how use the community made components to my project.
+
+If anyone is able to provide me with a vdo tutorial then it will be very much helpful.
+## [6][UI Design in SCSS or Styled Components (or any CSS-in-JS)?](https://www.reddit.com/r/reactjs/comments/jp2iwa/ui_design_in_scss_or_styled_components_or_any/)
+- url: https://www.reddit.com/r/reactjs/comments/jp2iwa/ui_design_in_scss_or_styled_components_or_any/
+---
+Hey all, 
+
+I am working with moderately large React codebase which is turning into legacy now (or that's what I think)
+
+I would like to get the whole app's design in sync with Designs and Designers are working on this part. Same is coming up for React App.
+
+Now I would like the get the communities opinion on what to use? SCSS (with BEM) or CSS-in-JS?
+
+We are using SCSS with BEM right now. But it has not been used properly and still there are some collisions of classes. Though I would say it is only ~2% (don't know how I am quoting this number. I just saw some of the collisions)
+
+As it is already going in moderately good direction; I still think, BEM puts the responsibility of making collision free class names on developers.
+
+And we have tools to avoid collision and not worry about the Class Names with CSS-in-JS.
+
+Can someone point out their experiences on both CSS systems and what they prefer after working on both?
+## [7][Brix UI: UI-Kit/Framework for React from Ukraine](https://www.reddit.com/r/reactjs/comments/joh6f3/brix_ui_uikitframework_for_react_from_ukraine/)
 - url: https://www.reddit.com/r/reactjs/comments/joh6f3/brix_ui_uikitframework_for_react_from_ukraine/
 ---
 Hello, r/reactjs!
@@ -86,84 +120,43 @@ We tried to approach many problems that were a pain for us while using other ui-
 For now we only have a storybook documentation available, but in the close future we will make a full and descriptive documentation website. We plan on describing each and every concept we introduced as well as providing some guides/recipes.
 
 Thank you for your attention, any feedback will be much appreciated!
-## [4][Does a Low Code Serverless Graphql API creator sound interesting? Picture creating a graphql schema and then immediately start sending and querying data. Pay for what you use and guaranteed scalable.](https://www.reddit.com/r/reactjs/comments/joe0vj/does_a_low_code_serverless_graphql_api_creator/)
-- url: https://www.reddit.com/r/reactjs/comments/joe0vj/does_a_low_code_serverless_graphql_api_creator/
----
-Hi all,
-
-I started prototyping a Serverless API creation tool last week. 
-
-I’ve spent a lot of time learning the Serverless ecosystem over the last few years and figured that some people might be interested in the advantages of Serverless without having to learn all the specifics.
-
-I also figure that Front End developers might want an easy solution for creating APIs without the hassle of coding up and maintaining the backend.
-
-The added benefit of Serverless is that you pay for what you use and it’s guaranteed scalable out of the box. So set it and forget it. 
-
-You would great your graphql schema and just start sending and querying data. Does this sound like something anyone here would be interested in?
-## [5][Made a simple visualization of the 2020 US presidential election](https://www.reddit.com/r/reactjs/comments/jnuomd/made_a_simple_visualization_of_the_2020_us/)
-- url: https://v.redd.it/svtsx5cae7x51
----
-
-## [6][How to Use Async Actions for Global State With React Hooks and Context](https://www.reddit.com/r/reactjs/comments/johs94/how_to_use_async_actions_for_global_state_with/)
-- url: https://blog.asayer.io/how-to-use-async-actions-for-global-state-with-react-hooks-and-context
----
-
-## [7][Can I upgrade my React project to v17 if all my a bunch of my dependencies require 16.x as a peer dependency?](https://www.reddit.com/r/reactjs/comments/jobomg/can_i_upgrade_my_react_project_to_v17_if_all_my_a/)
-- url: https://www.reddit.com/r/reactjs/comments/jobomg/can_i_upgrade_my_react_project_to_v17_if_all_my_a/
----
-With the release of React 17 a couple weeks ago, I upgraded my React project to v17. When I did so, I got a bunch of warnings from npm saying a bunch of other packages need React 16.x as a peer dependency. The project is still running fine, so am I okay to do this, or will there be some repercussions?
-## [8][Displaying hooks in a storyboard](https://www.reddit.com/r/reactjs/comments/joc7qu/displaying_hooks_in_a_storyboard/)
-- url: https://www.reddit.com/r/reactjs/comments/joc7qu/displaying_hooks_in_a_storyboard/
----
-I am making a storyboard to reuse code between react projects. I am displaying components but I also want to store hooks. This is there a preferred way of showing hooks in a storyboard. Should I make a dummy component to display the hook as documented code? How should I store my react hooks in a storyboard?
-## [9][Is Redux promise middleware good?](https://www.reddit.com/r/reactjs/comments/jogdze/is_redux_promise_middleware_good/)
-- url: https://www.reddit.com/r/reactjs/comments/jogdze/is_redux_promise_middleware_good/
----
-Im a few months old in react js. Im trying to learn redux so my question Is redux promise middleware good? Or should I learn redux-thunk or redux-saga instead.
-
-Thank you
-## [10][how to filter objects from a map.](https://www.reddit.com/r/reactjs/comments/jog240/how_to_filter_objects_from_a_map/)
-- url: https://www.reddit.com/r/reactjs/comments/jog240/how_to_filter_objects_from_a_map/
----
-hello all! I have an API call that returns an array of objects, so to create the necessary elements, I am using .map; I would like to be able to check to see if a coupon is expired so that I can not display it at all. I am not sure however how to check to see if my coupon.isExpired is true or false as the elements are being generated. I tried putting a {coupon.isExpired &amp;&amp; &lt;Card.../&gt;} inside the map, but it didn't work. Any ideas?
 
 &amp;#x200B;
 
-Thanks!
+[GitHub Page](https://github.com/uStudioTeam/brix-ui)
 
-&amp;#x200B;
-
-`{getTradingPostsAPI.data.trades.map((coupon) =&gt; (`  
- `&lt;Card`  
- `key={coupon.couponID}`  
- `{...coupon}`  
- `onPress={() =&gt; {`  
- `setClickedCouponInfo(coupon);`  
- `setModalVisible(true);`  
-`}}`  
- `/&gt;`  
-`))}`
-## [11][5 Handy Libraries Every React Developer Should Know](https://www.reddit.com/r/reactjs/comments/joinav/5_handy_libraries_every_react_developer_should/)
-- url: https://www.reddit.com/r/reactjs/comments/joinav/5_handy_libraries_every_react_developer_should/
+[Storybook](https://ustudioteam.github.io/brix-ui)
+## [8][Having troubles understanding how to protect routes in react-router-dom.](https://www.reddit.com/r/reactjs/comments/jp4e2m/having_troubles_understanding_how_to_protect/)
+- url: https://www.reddit.com/r/reactjs/comments/jp4e2m/having_troubles_understanding_how_to_protect/
 ---
-Hello, fellow devs! 
+I wanted to try authentication in react (MERN). I've been stuck on how to handle protected routes, redirecting users if they go to that route and going to dashboard after login. 
 
-I've been trying to spend some time writing programming blogs and after testing the waters, this is the secons blog that I've written.
+I would love to have your help/suggestions on this.
 
-Link to the Article: [5 Handy React Libraries Every React Developer Should Know](https://blog.udaya.me/5-react-libraries/)
-
-I did not intend to share the ones that are too popular, and I've added what I thought personally were useful for me. 
-
-I am open to constructive criticism and discussions regarding the same. ❤️🙌🏾
-## [12][How to store initially loaded data in the service and not redux store?](https://www.reddit.com/r/reactjs/comments/johlkc/how_to_store_initially_loaded_data_in_the_service/)
-- url: https://www.reddit.com/r/reactjs/comments/johlkc/how_to_store_initially_loaded_data_in_the_service/
+Any helpful tutorials or articles?
+## [9][Why And How To Migrate A React Application to Next.js](https://www.reddit.com/r/reactjs/comments/jp3zkf/why_and_how_to_migrate_a_react_application_to/)
+- url: http://reactapplicationtonextjs.space/
 ---
-I have an app that fetches data from the server on applicaton startup, like getAuthors, getBooks, etc.
 
-This data is then used to populate dropdowns on app forms (I have only one form now but planning to add more forms that will use same Authours and Books data). 
+## [10][Is there any point in using a &lt;form&gt; if I handle the submission anyway?](https://www.reddit.com/r/reactjs/comments/jp39n6/is_there_any_point_in_using_a_form_if_i_handle/)
+- url: https://www.reddit.com/r/reactjs/comments/jp39n6/is_there_any_point_in_using_a_form_if_i_handle/
+---
+At the moment I have something like:
+    
+    &lt;div&gt;
+       &lt;label for="name"&gt;Enter your name&lt;/label&gt;
+       &lt;textarea id="name" rows="4" onChange={handleTextChanged}&gt;
+       &lt;button onClick={handleSubmit}&gt;Submit&lt;/button&gt;
+    &lt;/div&gt;
+    
+&amp;nbsp;
 
-While Books data is being loaded, I want a spinner to be displayed on the Books dropdown.
+This work perfectly fine but I was wondering if I should be more semantically correct and use `&lt;form&gt;` instead? If I do then I also need to use `e.preventDefault()` to prevent the browser from submitting the form which isn't a big deal but it got me thinking that maybe using `&lt;form&gt;` in the first place in unnecessary. What do you guys think?
+## [11][[HIRING] Senior Software Engineer @ Montreal, Canada. Click on the link for more details.](https://www.reddit.com/r/reactjs/comments/jp2rau/hiring_senior_software_engineer_montreal_canada/)
+- url: https://stackraft.com/job/TheGuarantors/Senior-Software-Engineer-Montr%C3%A9al-Canada-93
+---
 
-How can I notify the app when data load is complete so that spinners could be hidden?
+## [12][Media organizer (kinda like plex)](https://www.reddit.com/r/reactjs/comments/jol7a0/media_organizer_kinda_like_plex/)
+- url: https://v.redd.it/uata6jcn1gx51
+---
 
-Is there a way to achieve this with the service-like patter rather than storing all inital data in the store? (the application is using Redux Toolkit)

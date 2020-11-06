@@ -39,7 +39,83 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Quick question about how to create a non-RESTful route](https://www.reddit.com/r/rails/comments/joe6dg/quick_question_about_how_to_create_a_nonrestful/)
+## [3][Golang crash course for RoR developer?](https://www.reddit.com/r/rails/comments/jp07ro/golang_crash_course_for_ror_developer/)
+- url: https://www.reddit.com/r/rails/comments/jp07ro/golang_crash_course_for_ror_developer/
+---
+In my current job I'm building and maintaining a Ruby on Rails API. But I'm expecting to start a new job in a few weeks and they're using Go. I think the syntax shouldn't be much of a problem, but I should understand the basic concept of API framework using Go. Is there any source to learn the framework quickly for a Rails developer?
+## [4][Open source tool for deploying Rails on Kubernetes](https://www.reddit.com/r/rails/comments/joswbw/open_source_tool_for_deploying_rails_on_kubernetes/)
+- url: https://www.reddit.com/r/rails/comments/joswbw/open_source_tool_for_deploying_rails_on_kubernetes/
+---
+I'm thinking about creating some open source tools that makes it easy to deploy and manage rails apps on Kubernetes and wanted to get some thoughts from the community. The tools will be mainly geared towards people who want to use Kubernetes but are a bit intimidated by the steep learning curve. The tools abstract away the details of k8s so that you can get started easily - at a high level, the goal is to build tools that give you the "Heroku experience" on Kubernetes without the exorbitant cost of Heroku. It can also be used by people who are already using Kubernetes but want to save time/want a smoother experience.
+
+I started building a few of these tools for myself while using kubernetes, and I am just trying to gauge if there's enough interest from the community for me to start an open source project. 
+
+What do you guys think?
+## [5][[Help] Validate belong_to Uniqueness](https://www.reddit.com/r/rails/comments/josqhu/help_validate_belong_to_uniqueness/)
+- url: https://www.reddit.com/r/rails/comments/josqhu/help_validate_belong_to_uniqueness/
+---
+I have a `tools` table which has 2 references (and 2 indexes).
+
+    create_table "tools", force: :cascade do |t|
+        t.string "name", null: false
+        t.bigint "product_id", null: false
+        t.bigint "manufacturer_id", null: false
+        t.datetime "created_at", precision: 6, null: false
+        t.datetime "updated_at", precision: 6, null: false
+        t.index ["product_id", "manufacturer_id"], name: "index_tools_on_product_id_and_manufacturer_id", unique: true
+        t.index ["product_id"], name: "index_tools_on_product_id"
+        t.index ["manufacturer_id"], name: "index_tools_on_manufacturer_id"
+      end
+
+And the `Tool` model:
+
+    class Tool &lt; ApplicationRecord
+      belongs_to :product
+      belongs_to :manufacturer
+    
+      validates :product_id, uniqueness: { scope: :manufacturer_id }
+    end
+
+I'm trying to make sure that there is no tool with the same product and manufacturer. Even if I have this uniqueness validator, I get the PG Error:
+
+    ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_tools_on_product_id_and_manufacturer_id"
+    DETAIL:  Key (product_id, manufacturer_id)=(50, 28) already exists.
+    ):
+
+How can I get the validation to work? What am I doing wrong?
+
+Thanks
+## [6][Performance impact of rails view partials](https://www.reddit.com/r/rails/comments/jomrzp/performance_impact_of_rails_view_partials/)
+- url: https://www.reddit.com/r/rails/comments/jomrzp/performance_impact_of_rails_view_partials/
+---
+https://scoutapm.com/blog/performance-impact-of-using-ruby-on-rails-view-partials
+
+Came across this article today. I’m a little dumbfounded by the results. Anyone care to explain when to use and not use rails partials?
+## [7][Viewing/highlighting grids in the browser (including flexbox)?](https://www.reddit.com/r/rails/comments/joizh3/viewinghighlighting_grids_in_the_browser/)
+- url: https://www.reddit.com/r/rails/comments/joizh3/viewinghighlighting_grids_in_the_browser/
+---
+I tried to ask this question on r/webdev but I'm too new to Reddit so it wasn't approved. I thought I'd ask here since my project is a Rails project and some of you might have experience with this.
+
+I'm looking for a way to view/highlight grids in the browser. I found a Chrome extension but it only appears to work with CSS grid, and the code is using flexbox.
+
+Ideally I could activate the extension/plugin and the entire grid(s) for the page would be highlighted. That way I can see at a glance if all the elements are aligning on the grid per the design (for which I can see the whole grid like this in my design tool).
+
+Does anyone know of a solution for this?
+## [8][How to dynamically style button background with DB color](https://www.reddit.com/r/rails/comments/jolkae/how_to_dynamically_style_button_background_with/)
+- url: https://www.reddit.com/r/rails/comments/jolkae/how_to_dynamically_style_button_background_with/
+---
+Say I have a link\_to with btn-primary class. what I want to do is color the background different based on the hex number stored in the DB. I am trying something like this but keep getting syntax errors. Any thoughts on what is wrong?
+
+          &lt;%= link_to compitem, class: 'btn btn-sm', style: "background-color: &lt;%= compitem.color %&gt;" do %&gt;
+            Start: &lt;%= compitem.name %&gt;
+          &lt;% end %&gt;
+## [9][Has Pundit been abandoned?](https://www.reddit.com/r/rails/comments/jon842/has_pundit_been_abandoned/)
+- url: https://www.reddit.com/r/rails/comments/jon842/has_pundit_been_abandoned/
+---
+The last release is from 11 months ago.
+
+It's still worth using it? Or should I use cancancan?
+## [10][Quick question about how to create a non-RESTful route](https://www.reddit.com/r/rails/comments/joe6dg/quick_question_about_how_to_create_a_nonrestful/)
 - url: https://www.reddit.com/r/rails/comments/joe6dg/quick_question_about_how_to_create_a_nonrestful/
 ---
 I want to be able to use a URL like `/goals/:date`.  
@@ -52,7 +128,7 @@ My route currently looks like this:
 
 
 But that makes the URL `/goals/:goal_id/:date`. How do I remove `:goal_id`?
-## [4][undefined method `auto_strip_attributes` in rails console?](https://www.reddit.com/r/rails/comments/jo67j8/undefined_method_auto_strip_attributes_in_rails/)
+## [11][undefined method `auto_strip_attributes` in rails console?](https://www.reddit.com/r/rails/comments/jo67j8/undefined_method_auto_strip_attributes_in_rails/)
 - url: https://www.reddit.com/r/rails/comments/jo67j8/undefined_method_auto_strip_attributes_in_rails/
 ---
 I'm using this gem [https://rubygems.org/gems/auto\_strip\_attributes/versions/2.0.6](https://rubygems.org/gems/auto_strip_attributes/versions/2.0.6) for stripping white space before saving the field to the db. I'm using it in my model like:
@@ -79,7 +155,7 @@ I tried:
 \- To force bundle install: `$ bundle install --redownload`
 
 \- stop any servers and only use rails console
-## [5][Big open source API project built with Rails to learn good patterns from?](https://www.reddit.com/r/rails/comments/jnso6v/big_open_source_api_project_built_with_rails_to/)
+## [12][Big open source API project built with Rails to learn good patterns from?](https://www.reddit.com/r/rails/comments/jnso6v/big_open_source_api_project_built_with_rails_to/)
 - url: https://www.reddit.com/r/rails/comments/jnso6v/big_open_source_api_project_built_with_rails_to/
 ---
 Hi guys, I recently picked rails for my next side project since it offers everything I need out of the box :)
@@ -89,112 +165,3 @@ I need to develop a rest api backend, so I created an app with the "only api" fl
 Since I'm building an API, I'm looking for a project that includes a API.
 
 Thanks :)
-## [6][Best way to keep Rails site CSS in sync with a separate Wordpress site?](https://www.reddit.com/r/rails/comments/jnvcxz/best_way_to_keep_rails_site_css_in_sync_with_a/)
-- url: https://www.reddit.com/r/rails/comments/jnvcxz/best_way_to_keep_rails_site_css_in_sync_with_a/
----
-Is there an accepted best practice way of doing this, or do I just have to manually copy and paste any changes I make?
-## [7][Where to get application templates?](https://www.reddit.com/r/rails/comments/jntpj9/where_to_get_application_templates/)
-- url: https://www.reddit.com/r/rails/comments/jntpj9/where_to_get_application_templates/
----
-I found a few cool templates, but most of them are made by people for educational purposes. I really suck at frontend design and everything related. I just need to know where's the treasure box!
-## [8][How to get full stacktrace for minitest](https://www.reddit.com/r/rails/comments/jnvw74/how_to_get_full_stacktrace_for_minitest/)
-- url: https://www.reddit.com/r/rails/comments/jnvw74/how_to_get_full_stacktrace_for_minitest/
----
-This is how the message I get for a failure in minitest   
-
-
-    Expected response to be a &lt;200&gt;, but was &lt;500&gt;.
-            Expected: 200
-              Actual: 500
-
-How can I get the full backtrace to understand where it gave a 500? 
-
-  
-Something like mentioned in this [https://gist.github.com/jeremyvdw/1001999](https://gist.github.com/jeremyvdw/1001999)
-## [9][adding CSS to a single view](https://www.reddit.com/r/rails/comments/jn9nfy/adding_css_to_a_single_view/)
-- url: https://www.reddit.com/r/rails/comments/jn9nfy/adding_css_to_a_single_view/
----
-I'm working on a rails 6 application ( i generated a controller with his view (index/show/edit) ) 
-
-but on the show page i have to add a show some images so i'm going to use swiperJS  (like this exemple not mine btw) https://codepad.co/snippet/swiper-thumbs-gallery-with-two-way-control
-
-so i need to add the JS and CSS to the show page only 
-
-a did a:
-
-    yarn add swiper 
-
-and to the javascript folder i added a new file called GallerieSwiper.js which contant my JS 
-
-and in my show.html.erb page i added:
-
-    &lt;%= javascript_pack_tag 'GallerieSwiper' %&gt;
-
-
-the issue is how to add the swiper.min.css to only the show view ? 
-
-i can't added in the top of the page as it is a subview of the application.html.erb that contant the whole website structure
-## [10][The best Rails developer that no one ever was](https://www.reddit.com/r/rails/comments/jmxfci/the_best_rails_developer_that_no_one_ever_was/)
-- url: https://www.reddit.com/r/rails/comments/jmxfci/the_best_rails_developer_that_no_one_ever_was/
----
-What resources helped you become a better rails developer? Or projects?
-## [11][How to fix Rendered ActiveModel::Serializer::Null with Hash](https://www.reddit.com/r/rails/comments/jn0wim/how_to_fix_rendered_activemodelserializernull/)
-- url: https://www.reddit.com/r/rails/comments/jn0wim/how_to_fix_rendered_activemodelserializernull/
----
-Hi guys, I'm using Active Model Serializer and I'm having trouble updating a user. I'm not sure what to do to solve this problem? 
-
-I get this error message.   
-
-`app/controllers/registrations_controller.rb:19
-[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)` 
-
-My registrations_controller is:
-
-	`def update
-		@user = User.find(params[:id])
-		if @user.assign_attributes(registration_params)
-			render json: @user
-		else
-			render json: { status: :bad_request }
-		end	
-	end`	
-
-
-Here is my User Serializer:
-
-`
-class UserSerializer &lt; ActiveModel::Serializer
-  include Rails.application.routes.url_helpers
-  attributes  :id, :first_name, :last_name, :email, :photo_url, :login_status
-  
-  attributes :photo_url
-  def photo_url
-    variant = object.photo.variant(resize: "80x80")
-    return rails_representation_url(variant, only_path: true)
-  end  
-
-  def login_status
-    {
-      status: :created,
-      logged_in: true
-    }
-  end   
-end`
-## [12][Seo Optimizer gem](https://www.reddit.com/r/rails/comments/jmmmnu/seo_optimizer_gem/)
-- url: https://www.reddit.com/r/rails/comments/jmmmnu/seo_optimizer_gem/
----
-Hey,
-
-I wrote a gem to manage sitemap, robots.txt, error pages, etc.
-
-Things to optimize SEO, you know \^\^ ...
-
-It uses the "sitemap\_generator" gem. 
-
-I would like to have your opinions, comments and contributions on this. 
-
-The first goal is to easily and efficiently manage SEO on a Rails application. 
-
-You can find the source code here: [https://github.com/RonanLOUARN/seo\_optimizer](https://github.com/RonanLOUARN/seo_optimizer)
-
-Have a great day!

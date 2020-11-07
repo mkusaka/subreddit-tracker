@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/jp4e9j/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/jp4e9j/weekly_anything_goes_thread/
+## [1][App Feedback Thread - November 07, 2020](https://www.reddit.com/r/androiddev/comments/jpq1lo/app_feedback_thread_november_07_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/jpq1lo/app_feedback_thread_november_07_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - November 02, 2020](https://www.reddit.com/r/androiddev/comments/jmley8/weekly_questions_thread_november_02_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/jmley8/weekly_questions_thread_november_02_2020/
 ---
@@ -25,49 +40,71 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Android 2.3.4 easteregg](https://www.reddit.com/r/androiddev/comments/joq8ar/android_234_easteregg/)
-- url: https://v.redd.it/betnfu5nchx51
+## [3][Android 7.1.0 and below will stop trusting LetsEncrypt HTTPS certificates in September 2021](https://www.reddit.com/r/androiddev/comments/jpjsvy/android_710_and_below_will_stop_trusting/)
+- url: https://letsencrypt.org/2020/11/06/own-two-feet.html
 ---
 
-## [4][Flutter vs native android](https://www.reddit.com/r/androiddev/comments/jp1bmf/flutter_vs_native_android/)
-- url: https://www.reddit.com/r/androiddev/comments/jp1bmf/flutter_vs_native_android/
+## [4][Android Studio 4.1.1 releasing shortly with a fix for Freezing UI](https://www.reddit.com/r/androiddev/comments/jp64ic/android_studio_411_releasing_shortly_with_a_fix/)
+- url: https://issuetracker.google.com/issues/165821809
 ---
-What are your thoughts about this market in the next few years and on the long term?
-## [5][Skip unaffected jvm unit tests with Dropbox/AffectedModuleDetector g adle plugin (early alpha)](https://www.reddit.com/r/androiddev/comments/jp4xye/skip_unaffected_jvm_unit_tests_with/)
+
+## [5][3 Major Benefits Of View Binding Android](https://www.reddit.com/r/androiddev/comments/jpqnqa/3_major_benefits_of_view_binding_android/)
+- url: https://vladsonkin.com/3-major-benefits-of-view-binding-android/
+---
+
+## [6][Upgrading for android studio. Help](https://www.reddit.com/r/androiddev/comments/jpqk4i/upgrading_for_android_studio_help/)
+- url: https://www.reddit.com/r/androiddev/comments/jpqk4i/upgrading_for_android_studio_help/
+---
+Hi. I have potato pc.
+Specs : 
+i3 4170
+Ddr3 ram 8gb 1600mhz
+256gb ssd 
+
+Just want to ask. What should i upgrade? I dont have much money.Change it to  Processor(i5 4th gen) or 16gb ram?
+## [7][Is it possible to change password after encrypting database content with Password-Based encryption??](https://www.reddit.com/r/androiddev/comments/jpn96f/is_it_possible_to_change_password_after/)
+- url: https://www.reddit.com/r/androiddev/comments/jpn96f/is_it_possible_to_change_password_after/
+---
+I am creating an android app where the app would encrypt some user data with AES Password based encryption. The password would be the password which the user used to create an account in the app. I am using Password based encryption because I think it is more secure than storing the Encryption keys somewhere inside the application.
+
+The problem is that user won't be able to decrypt the data if he changes the password.
+
+So is there any way to solve this problem??
+
+Or do I have to use other kind of encryption?
+## [8][Feedback for UI/UX &amp; ASO](https://www.reddit.com/r/androiddev/comments/jppmp5/feedback_for_uiux_aso/)
+- url: https://www.reddit.com/r/androiddev/comments/jppmp5/feedback_for_uiux_aso/
+---
+Hi guys,
+
+My app recently has started get organic downloads - 400/500 a day!
+
+However my conversion rate is low, around 30%.
+
+How can that be improved?
+
+Also can you guys give me some feedback about the UI/UX? Is my app easy to understand? :)
+
+Right now I am fixing the core of the app, to allow users to type in any sentence rather than pre-selected sentences! 
+
+[Travemo ](https://play.google.com/store/apps/details?id=com.anulagarwal.travemo)
+## [9][How to Make the Compiler Smarter with Kotlin Contracts](https://www.reddit.com/r/androiddev/comments/jp8fg1/how_to_make_the_compiler_smarter_with_kotlin/)
+- url: https://deniskrr.medium.com/how-to-make-the-compiler-smarter-b37f414875ac?sk=ab72c70068a9199f205a95567cf98207
+---
+
+## [10][OCR](https://www.reddit.com/r/androiddev/comments/jppj7c/ocr/)
+- url: https://www.reddit.com/r/androiddev/comments/jppj7c/ocr/
+---
+Hi all is there an example of creating an ocr that detects the text and draw an overlay above the detected text ! the Google machine learning kit it requires to send the image as image file or bitmap so this is not what i am looking for .any sample links would be appreciated.  
+
+
+example :  
+[https://camo.githubusercontent.com/5b1470447ac07108ce6b760a2b16876cd52c7f3b0139799653d4fff8695b88ae/687474703a2f2f692e696d6775722e636f6d2f6453397a706f312e706e67](https://camo.githubusercontent.com/5b1470447ac07108ce6b760a2b16876cd52c7f3b0139799653d4fff8695b88ae/687474703a2f2f692e696d6775722e636f6d2f6453397a706f312e706e67)
+## [11][Screenshot generator for Wear application](https://www.reddit.com/r/androiddev/comments/jpk9wt/screenshot_generator_for_wear_application/)
+- url: https://www.reddit.com/r/androiddev/comments/jpk9wt/screenshot_generator_for_wear_application/
+---
+I've developed some apps that work along with the Wear application. I've gotten away with not including the smartwatch screenshots. But I'd like for new users to see the Wear app in the Play Store and want to create screenshots for a picture that includes both the phone and the smartwatch in one picture or separate, if possible. There's plenty of sites that are free but are limited when it comes to smartwatch screenshots. Any recommendations are greatly appreciated!
+## [12][Skip unaffected jvm unit tests with Dropbox/AffectedModuleDetector g adle plugin (early alpha)](https://www.reddit.com/r/androiddev/comments/jp4xye/skip_unaffected_jvm_unit_tests_with/)
 - url: https://github.com/dropbox/AffectedModuleDetector
----
-
-## [6][Jetpack Compose for Desktop: Milestone 1 Released](https://www.reddit.com/r/androiddev/comments/joghj3/jetpack_compose_for_desktop_milestone_1_released/)
-- url: https://www.reddit.com/r/androiddev/comments/joghj3/jetpack_compose_for_desktop_milestone_1_released/
----
-[https://blog.jetbrains.com/cross-post/jetpack-compose-for-desktop-milestone-1-released/](https://blog.jetbrains.com/cross-post/jetpack-compose-for-desktop-milestone-1-released/)
-## [7][Android App Development: Helpful Android Tools for Developers](https://www.reddit.com/r/androiddev/comments/jp3uqz/android_app_development_helpful_android_tools_for/)
-- url: https://www.gpcoders.com/android-app-development-helpful-android-tools-for-developers/
----
-
-## [8][How to Make Your Android App Secure?](https://www.reddit.com/r/androiddev/comments/jp2guk/how_to_make_your_android_app_secure/)
-- url: https://www.techsjournal.com/how-to-make-your-android-app-secure/
----
-
-## [9][Is it possible to contribute to Android Documentation Guides like fixing outdated info or typos and how?](https://www.reddit.com/r/androiddev/comments/jonmfn/is_it_possible_to_contribute_to_android/)
-- url: https://www.reddit.com/r/androiddev/comments/jonmfn/is_it_possible_to_contribute_to_android/
----
-Android Documentation Guide - https://developer.android.com/guide
-## [10][Android studio is best ?](https://www.reddit.com/r/androiddev/comments/jp0mx0/android_studio_is_best/)
-- url: https://www.reddit.com/r/androiddev/comments/jp0mx0/android_studio_is_best/
----
-Hey all! 
-
-I'm a junior iOS dev that is starting to learn Android Dev due to my workplace wanting me to expand (amazing opportunity, I know!)
-
-now, with iOS there's Xcode and nothing else really compares / is a viable option. In Android there's obviously Android studio, but I was wondering if some of you are using something else? Maybe VSCode? Intelij? 
-
-Looking forward to your opinions and excited to join this community !
-## [11][Easy Espresso tests: use Barista](https://www.reddit.com/r/androiddev/comments/jotv3g/easy_espresso_tests_use_barista/)
-- url: https://www.rockandnull.com/android-testing-espresso/
----
-
-## [12][Creating a Private Maven Repository for Android Libraries on GitLab](https://www.reddit.com/r/androiddev/comments/jonp3h/creating_a_private_maven_repository_for_android/)
-- url: https://ibrahimsn98.medium.com/creating-a-private-maven-repository-for-android-libraries-on-gitlab-91137c402777
 ---
 

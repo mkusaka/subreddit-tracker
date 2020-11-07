@@ -70,93 +70,164 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][What kind of projects to include in my portfolio? Looking for full stack dev role.](https://www.reddit.com/r/reactjs/comments/jowroz/what_kind_of_projects_to_include_in_my_portfolio/)
-- url: https://www.reddit.com/r/reactjs/comments/jowroz/what_kind_of_projects_to_include_in_my_portfolio/
----
-I’m finishing up my portfolio site and have included a Twitter bot (API call), Java networked chess app to demo core Java, a full stack restaurant app using MERN and a react hooks blog app.  Any feedback greatly appreciated.
-## [4][Is there any good cheat sheet on how to extend Material-UI?](https://www.reddit.com/r/reactjs/comments/jox3uy/is_there_any_good_cheat_sheet_on_how_to_extend/)
-- url: https://www.reddit.com/r/reactjs/comments/jox3uy/is_there_any_good_cheat_sheet_on_how_to_extend/
----
-Is there any good cheat sheet on how to extend Material-UI? There are several ways on how to extend Material-UI, but a lot of them leave unmanageable bloat in the code and don't maximize code reuse, so I would like to see a list of anti-patterns and best practices.
-## [5][How to use Bit?](https://www.reddit.com/r/reactjs/comments/jp1w5l/how_to_use_bit/)
-- url: https://www.reddit.com/r/reactjs/comments/jp1w5l/how_to_use_bit/
----
-Recently I came across a site called [bit.dev](https://bit.dev/components), it provides a huge library of UI components for React, Angular, Vue and React Native freely made available by the community. Bit is also provides a platform to share UI components among team members while doing a project. But this is where my knowledge about Bit ends.
-
-Can anyone help me to use Bit in my project, I tried to find vdo tutorial in YouTube but failed. There are few tutorial showing how to create my own components and upload in the platform but those tutorials are also not very much clear and I couldn't find any tutorial showing how use the community made components to my project.
-
-If anyone is able to provide me with a vdo tutorial then it will be very much helpful.
-## [6][UI Design in SCSS or Styled Components (or any CSS-in-JS)?](https://www.reddit.com/r/reactjs/comments/jp2iwa/ui_design_in_scss_or_styled_components_or_any/)
-- url: https://www.reddit.com/r/reactjs/comments/jp2iwa/ui_design_in_scss_or_styled_components_or_any/
----
-Hey all, 
-
-I am working with moderately large React codebase which is turning into legacy now (or that's what I think)
-
-I would like to get the whole app's design in sync with Designs and Designers are working on this part. Same is coming up for React App.
-
-Now I would like the get the communities opinion on what to use? SCSS (with BEM) or CSS-in-JS?
-
-We are using SCSS with BEM right now. But it has not been used properly and still there are some collisions of classes. Though I would say it is only ~2% (don't know how I am quoting this number. I just saw some of the collisions)
-
-As it is already going in moderately good direction; I still think, BEM puts the responsibility of making collision free class names on developers.
-
-And we have tools to avoid collision and not worry about the Class Names with CSS-in-JS.
-
-Can someone point out their experiences on both CSS systems and what they prefer after working on both?
-## [7][Brix UI: UI-Kit/Framework for React from Ukraine](https://www.reddit.com/r/reactjs/comments/joh6f3/brix_ui_uikitframework_for_react_from_ukraine/)
-- url: https://www.reddit.com/r/reactjs/comments/joh6f3/brix_ui_uikitframework_for_react_from_ukraine/
----
-Hello, r/reactjs!
-
-We are a small but proud development team of [uStudio Company](http://ustudio.company/) from the country of Ukraine.
-
-Today we released our UI-Kit/Framework for React that uses `styled-components` – [Brix UI](https://github.com/uStudioTeam/brix-ui)!. It includes several useful packages with a bunch of components and theming-related stuff.
-
-This is a special moment for us and we would be really happy if this UI-Kit comes in handy for any other developers rather than us.
-
-We tried to approach many problems that were a pain for us while using other ui-kits (such as material-ui) and introduced some concepts that we think are worthy for you to check out.
-
-For now we only have a storybook documentation available, but in the close future we will make a full and descriptive documentation website. We plan on describing each and every concept we introduced as well as providing some guides/recipes.
-
-Thank you for your attention, any feedback will be much appreciated!
-
-&amp;#x200B;
-
-[GitHub Page](https://github.com/uStudioTeam/brix-ui)
-
-[Storybook](https://ustudioteam.github.io/brix-ui)
-## [8][Having troubles understanding how to protect routes in react-router-dom.](https://www.reddit.com/r/reactjs/comments/jp4e2m/having_troubles_understanding_how_to_protect/)
-- url: https://www.reddit.com/r/reactjs/comments/jp4e2m/having_troubles_understanding_how_to_protect/
----
-I wanted to try authentication in react (MERN). I've been stuck on how to handle protected routes, redirecting users if they go to that route and going to dashboard after login. 
-
-I would love to have your help/suggestions on this.
-
-Any helpful tutorials or articles?
-## [9][Why And How To Migrate A React Application to Next.js](https://www.reddit.com/r/reactjs/comments/jp3zkf/why_and_how_to_migrate_a_react_application_to/)
-- url: http://reactapplicationtonextjs.space/
+## [3][How to manage state in React apps with useReducer and useContext hooks](https://www.reddit.com/r/reactjs/comments/jplgzy/how_to_manage_state_in_react_apps_with_usereducer/)
+- url: https://dev.to/amanhimself/how-to-manage-state-in-react-apps-with-usereducer-and-usecontext-hooks-4eoc
 ---
 
-## [10][Is there any point in using a &lt;form&gt; if I handle the submission anyway?](https://www.reddit.com/r/reactjs/comments/jp39n6/is_there_any_point_in_using_a_form_if_i_handle/)
-- url: https://www.reddit.com/r/reactjs/comments/jp39n6/is_there_any_point_in_using_a_form_if_i_handle/
+## [4][Best practices for styled components](https://www.reddit.com/r/reactjs/comments/jp5lbe/best_practices_for_styled_components/)
+- url: https://www.reddit.com/r/reactjs/comments/jp5lbe/best_practices_for_styled_components/
 ---
-At the moment I have something like:
+Are there any best practices for styled components? In terms of naming conventions, storing in same or different files? Any good open source examples of medium/large scale applications using styled components?
+
+I've made a decent sized app with styled components but i found it quite annoying to have to navigate the same file to modify the css, and it felt cluttered. Especially in files where the react components are already large.
+## [5][Use Redux middleware to reduce redux thunk api action boilerplate](https://www.reddit.com/r/reactjs/comments/jpqma4/use_redux_middleware_to_reduce_redux_thunk_api/)
+- url: https://www.reddit.com/r/reactjs/comments/jpqma4/use_redux_middleware_to_reduce_redux_thunk_api/
+---
+If you have written code like below to call api using redux thunk again and again and got frustrated with it. There is a way to avoid this boilerplate using redux middleware.
+
+    const FETCH_POSTS_LOADING = 'FETCH_POSTS_LOADING'
+    const FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS'
+    const FETCH_POSTS_FAILURE = 'FETCH_POSTS_FAILURE'
     
-    &lt;div&gt;
-       &lt;label for="name"&gt;Enter your name&lt;/label&gt;
-       &lt;textarea id="name" rows="4" onChange={handleTextChanged}&gt;
-       &lt;button onClick={handleSubmit}&gt;Submit&lt;/button&gt;
-    &lt;/div&gt;
+    export const postLoading = () =&gt; ({ type: FETCH_POSTS_LOADING })
+    export const postLoadingSuccess = (response) =&gt; ({
+      type: FETCH_POSTS_SUCCESS,
+      payload: response
+    })
+    export const postLoadingFailure = (errors) =&gt; ({
+      type: FETCH_POSTS_FAILURE,
+      payload: errors
+    })
     
-&amp;nbsp;
+    export function fetchPosts() {
+      return function (dispatch) {
+        dispatch(postLoading())
+    
+        return axios.request({
+          url: 'https://www.example.come/posts.json',
+          method: 'get'
+        })
+          .then(({ data }) =&gt; {
+            dispatch(postLoadingSuccess(data))
+          })
+          .catch(errors =&gt; {
+            next(postLoadingFailure(errors))
+          })
+      }
+    }
 
-This work perfectly fine but I was wondering if I should be more semantically correct and use `&lt;form&gt;` instead? If I do then I also need to use `e.preventDefault()` to prevent the browser from submitting the form which isn't a big deal but it got me thinking that maybe using `&lt;form&gt;` in the first place in unnecessary. What do you guys think?
-## [11][[HIRING] Senior Software Engineer @ Montreal, Canada. Click on the link for more details.](https://www.reddit.com/r/reactjs/comments/jp2rau/hiring_senior_software_engineer_montreal_canada/)
-- url: https://stackraft.com/job/TheGuarantors/Senior-Software-Engineer-Montr%C3%A9al-Canada-93
+[Here](https://blog.sockosoft.com/power-of-redux-middleware/) is the blog post that shows the approach to reduce this boilerplate
+## [6][Why does this event listener trigger](https://www.reddit.com/r/reactjs/comments/jpqdoh/why_does_this_event_listener_trigger/)
+- url: https://www.reddit.com/r/reactjs/comments/jpqdoh/why_does_this_event_listener_trigger/
+---
+Hey React Community,
+
+Im currently developing a React App using the new hooks (okay, they are not that new, but last time I developed react stuff, class components were still king). Nevertheless im trying to implement a dropdown that closes if you click outside. For that i register a document event handler in a useEffect hook, like this:
+
+```
+  useEffect(() =&gt; {
+      document.addEventListener('click', handleClickOutside)
+      document.addEventListener('keydown', handleEsc)
+    return () =&gt; {
+      document.removeEventListener('click', handleClickOutside)
+      document.removeEventListener('keydown', handleEsc)
+    }
+  }, [isOpen])
+```
+
+But for some odd reason the same click event that triggers the isOpen to toggle also causes this event handler to trigger, one hacky workaround i found is this, but it seems like there needs to be a better solution.
+
+```
+  useEffect(() =&gt; {
+    setTimeout(() =&gt; {
+      document.addEventListener('click', handleClickOutside)
+      document.addEventListener('keydown', handleEsc)
+    }, 0);
+    return () =&gt; {
+      document.removeEventListener('click', handleClickOutside)
+      document.removeEventListener('keydown', handleEsc)
+    }
+  }, [isOpen])
+```
+
+The handleClickOutside looks like this
+```
+  function handleClickOutside(e: MouseEvent) {
+    if (dropdownRef.current &amp;&amp; !dropdownRef.current.contains(e.target as Node)) {
+      onClose()
+    }
+  }
+```
+
+This should actually for the click before the render not have any reference so failing in the first condition and no further click should happen after the render, so not sure why its closing immediately. The timeout can circumvent this by delaying the register of the event listener, but i dont think it should happen in the first place.
+
+Complete example in this code sandbox: [https://codesandbox.io/s/cool-poitras-efnoj?file=/src/App.js](https://codesandbox.io/s/cool-poitras-efnoj?file=/src/App.js)
+## [7][Is Redux Toolkit being used in companies](https://www.reddit.com/r/reactjs/comments/jpmrxz/is_redux_toolkit_being_used_in_companies/)
+- url: https://www.reddit.com/r/reactjs/comments/jpmrxz/is_redux_toolkit_being_used_in_companies/
+---
+I've been trying to learn redux a little better and it seems that many tutorials online have still not adopted the toolkit approach to writing redux.
+
+Have companies adopted redux toolkit? I am also looking to improve my skills for applying to jobs so I was wondering if it's more valuable to learn the old way of writing redux than the new way?
+## [8][Need help with bundling images with webpack for react component library.](https://www.reddit.com/r/reactjs/comments/jpmr6w/need_help_with_bundling_images_with_webpack_for/)
+- url: https://www.reddit.com/r/reactjs/comments/jpmr6w/need_help_with_bundling_images_with_webpack_for/
+---
+Hey fellow developers!   
+
+
+I am struggling with something that I have never dealt before. I am creating a component library using react . A few components are importing images and placing them as a background using `style={{backgroundImage: imgSrcHere}}` it loads images just fine while I am developing the library, when I build it with webpack (using a `file-loader` for all images ) I can see these images added to my dist folder. Now, when I publish the lib and import components inside create react app project, the components with image have an inline style as expected `background-image: url("6a4eaca085cb36d75d5e16181091010b.png"); background-position: left center;` But I don\`t see the images being rendered and the network tab explains it with a status code 304.  Obviously, [`http://localhost:3000/`](http://localhost:3000/)`6a4eaca085cb36d75d5e16181091010b.png` is not where the image is located....I don\`t know what to do or even how to google this problem.
+
+For now I solved it with webpacks `url-loader` but I don\`t like this solution because it adds \~300KB to my bundled index.js
+## [9][Expenses | Full Stack React and .NET Core Application](https://www.reddit.com/r/reactjs/comments/jpnwoo/expenses_full_stack_react_and_net_core_application/)
+- url: https://www.youtube.com/watch?v=MSTYmdzlU-c
 ---
 
-## [12][Media organizer (kinda like plex)](https://www.reddit.com/r/reactjs/comments/jol7a0/media_organizer_kinda_like_plex/)
-- url: https://v.redd.it/uata6jcn1gx51
+## [10][how do I start learning react?](https://www.reddit.com/r/reactjs/comments/jpq85v/how_do_i_start_learning_react/)
+- url: https://www.reddit.com/r/reactjs/comments/jpq85v/how_do_i_start_learning_react/
 ---
+ have basic JS and web-dev skills but I'm new to react and I find it difficult to keep myself concentrated on a 50 hour Udemy course. but I've always been able to be fully concentrated on doing my own stuff. like developing my own app. so I want to learn react by doing but I'm not sure where to start. obviously you need to learn basic concepts first before start coding. how did you guys do that? should I just overcome the boredom and finish Udemy course first any how?
+## [11][what is a good react datasheet package?](https://www.reddit.com/r/reactjs/comments/jpo2xz/what_is_a_good_react_datasheet_package/)
+- url: https://www.reddit.com/r/reactjs/comments/jpo2xz/what_is_a_good_react_datasheet_package/
+---
+I really need something like \[[Notion.so](https://Notion.so)\]([https://www.notion.so/](https://www.notion.so/)) table or excels spreadsheet where I can create formulas. Also, I need it to be very customizable on the level of frontend (the looking) and on the backend, where I can create custom formulas or implement javascript code in the cells.
 
+I tried \[jexcel3\]([https://bossanova.uk/jexcel/v3/](https://bossanova.uk/jexcel/v3/)) but it is very primitive and I users can't edit footer nor drag and drop columns and rows, Also I tried \[ag-grid\]( [https://www.ag-grid.com/example.php](https://www.ag-grid.com/example.php)) but it doesn't support formulas at all, finally I tried \[react-datasheet\]([https://nadbm.github.io/react-datasheet/](https://nadbm.github.io/react-datasheet/)) but users can't edit footers as well and it doesn't have a pattern recognition where I can write 1 and other cell 2 and select the tow cells and drag the selection to have automatically 1,2,3,4,5...
+## [12][Jexcel: How can I use updateTable with react?](https://www.reddit.com/r/reactjs/comments/jpnm5g/jexcel_how_can_i_use_updatetable_with_react/)
+- url: https://www.reddit.com/r/reactjs/comments/jpnm5g/jexcel_how_can_i_use_updatetable_with_react/
+---
+I have this problem, I want to use Jexcel with react, we can pass the option updateTable  
+ to manage how going to see the cell, how to render, we have this arguments: instance, cell, col, row, val, id  
+ where instance and cell are native nodes, then, for change an entry to image, for example, we could use cell.appendChild(...)  
+ or cell.innerHTML=...  
+ I want to know if exist a right way to use react components, specifically I want put inside a &lt;NavLink /&gt;  
+ which have the click event to navigate to another route (using react-router-dom of course). my code:
+
+\--------------------------------------------------------------------------------------------------------------------------  
+
+
+ class ....{  
+.....  
+   updateTable(instance, cell, col, row, val, id) {       
+if (col === 1) {  
+if (!val) return;         
+/\*  
+\* this NOT WORKING:  
+\* let img = &lt;img src={val} style={{ height: 40, width: '100%', objectFit: 'cover' }} /&gt;;         
+\* cell.appendChild(img);  
+\*/  
+cell.innerHTML=\`&lt;img src="${val}" /&gt;\`;  
+}  
+   }     
+componentDidMount() {  
+ let opts = {  
+...  
+freezeColumns: 1,  
+tableOverflow: true,  
+updateTable: this.updateTable,  
+lazyLoading: true  
+};  
+this.el = jexcel(this.wrapper.current, opts);  
+   }  
+.....  
+}
+
+\--------------------------------------------------------------------------

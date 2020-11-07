@@ -39,129 +39,105 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Golang crash course for RoR developer?](https://www.reddit.com/r/rails/comments/jp07ro/golang_crash_course_for_ror_developer/)
-- url: https://www.reddit.com/r/rails/comments/jp07ro/golang_crash_course_for_ror_developer/
+## [3][Bootstrap-table-rails](https://www.reddit.com/r/rails/comments/jpnu5h/bootstraptablerails/)
+- url: https://www.reddit.com/r/rails/comments/jpnu5h/bootstraptablerails/
 ---
-In my current job I'm building and maintaining a Ruby on Rails API. But I'm expecting to start a new job in a few weeks and they're using Go. I think the syntax shouldn't be much of a problem, but I should understand the basic concept of API framework using Go. Is there any source to learn the framework quickly for a Rails developer?
-## [4][Open source tool for deploying Rails on Kubernetes](https://www.reddit.com/r/rails/comments/joswbw/open_source_tool_for_deploying_rails_on_kubernetes/)
-- url: https://www.reddit.com/r/rails/comments/joswbw/open_source_tool_for_deploying_rails_on_kubernetes/
+hi, I'm trying to install this gem: https://github.com/bjevanchiu/bootstrap-table-rails in rails 6. The problem is that when I put it in the gemfile and run the bundle install command, it doesn't appear in node_modules. With linux find I looked for the bootstrap-table-rails directory but I can't find it anywhere. How can I integrate Bootstrap-table into rails? Thanks so much for the future help
+## [4][Securing Rails API access - what method?](https://www.reddit.com/r/rails/comments/jpgg3d/securing_rails_api_access_what_method/)
+- url: https://www.reddit.com/r/rails/comments/jpgg3d/securing_rails_api_access_what_method/
 ---
-I'm thinking about creating some open source tools that makes it easy to deploy and manage rails apps on Kubernetes and wanted to get some thoughts from the community. The tools will be mainly geared towards people who want to use Kubernetes but are a bit intimidated by the steep learning curve. The tools abstract away the details of k8s so that you can get started easily - at a high level, the goal is to build tools that give you the "Heroku experience" on Kubernetes without the exorbitant cost of Heroku. It can also be used by people who are already using Kubernetes but want to save time/want a smoother experience.
+Imagine your typical Rails API scenario: you're building an API but you want to restrict the access to it (also to have opportunity to see how many requests a certain consumer of the API made for statistical purposes).
 
-I started building a few of these tools for myself while using kubernetes, and I am just trying to gauge if there's enough interest from the community for me to start an open source project. 
+One way which seems simple enough and is often used in tutorials on the net is securing it using API keys which are tied to the other Rails apps consuming this new fancy API. 
 
-What do you guys think?
-## [5][[Help] Validate belong_to Uniqueness](https://www.reddit.com/r/rails/comments/josqhu/help_validate_belong_to_uniqueness/)
-- url: https://www.reddit.com/r/rails/comments/josqhu/help_validate_belong_to_uniqueness/
+My question is: where do you put the list of generated API keys? Inside the API itself in some table (e.g. approved_clients)? Or do you use some other solution?
+
+I'm trying to brainstorm here which approach I should take when building an API shared between several Rails-based apps.
+
+Using oAuth makes no sense here to me because the said API would not be user-centric but Rails app (client) centric: e.g. you'd ask the shared geo API to return you a list of cities close to given geo coordinates. So we don't need to login individual users here to do something on them, just to have a shared services that's generic enough no to involve oAuth or other more complicated flows. 
+
+Or could JWTs somehow fit here?
+
+Thanks for your ideas.
+## [5][paragraphs not showed in my markdown redcarpet](https://www.reddit.com/r/rails/comments/jpq7mt/paragraphs_not_showed_in_my_markdown_redcarpet/)
+- url: https://www.reddit.com/r/rails/comments/jpq7mt/paragraphs_not_showed_in_my_markdown_redcarpet/
 ---
-I have a `tools` table which has 2 references (and 2 indexes).
+Hi guys. I'm editing the website made by another developer.
 
-    create_table "tools", force: :cascade do |t|
-        t.string "name", null: false
-        t.bigint "product_id", null: false
-        t.bigint "manufacturer_id", null: false
-        t.datetime "created_at", precision: 6, null: false
-        t.datetime "updated_at", precision: 6, null: false
-        t.index ["product_id", "manufacturer_id"], name: "index_tools_on_product_id_and_manufacturer_id", unique: true
-        t.index ["product_id"], name: "index_tools_on_product_id"
-        t.index ["manufacturer_id"], name: "index_tools_on_manufacturer_id"
+He used markdown redcarpet gem but I'm noticing that it doesn't show the paragraphs (tag &lt;p&gt;).
+
+What to check to enable them?
+## [6][Confused about pulling changes without overwriting local env](https://www.reddit.com/r/rails/comments/jpgc5y/confused_about_pulling_changes_without/)
+- url: https://www.reddit.com/r/rails/comments/jpgc5y/confused_about_pulling_changes_without/
+---
+Can somebody explain with a TL;DR on this? I'm trying to figure out the following scenario:
+
+\- I clone a repo and get it up and running with bundle install, setup local db, create env file, compile webpacker, and so on. This goes fine.
+
+\- A dev makes changes to that remote repo which I want to get on my local machine. What do I do now? How do I get those changes onto my machine without overwriting my env file or any other setup I've done locally?
+## [7][Best React resource for Rails developers](https://www.reddit.com/r/rails/comments/jpb17u/best_react_resource_for_rails_developers/)
+- url: https://www.reddit.com/r/rails/comments/jpb17u/best_react_resource_for_rails_developers/
+---
+hey friends, I'm a purely backend developer and I barely played with React so far. What are the best resources that you recommend for me to go over to get up to speed when it comes to React on top of Rails.
+## [8][I created an Xbox backward compatible game catalogue with Rails](https://www.reddit.com/r/rails/comments/jpc1tb/i_created_an_xbox_backward_compatible_game/)
+- url: https://www.reddit.com/r/rails/comments/jpc1tb/i_created_an_xbox_backward_compatible_game/
+---
+Hi there,
+
+I've recently purchased an Xbox Series S and excited about the games from the previous generation as I didn't have much time to dive in. I created [this small web app](https://backwardible.com/) with Rails and thought it might help other people too.
+
+Oh, I tend to write blog posts about the side-projects I do, so if anyone's interested in terms of what I used and why I used, the concerning post is [here](https://arkan.me/backwardible/) as well!
+
+I would love to hear your feedback.
+## [9][How to scaffold a preconfigured Rails base app ?](https://www.reddit.com/r/rails/comments/jp9dj3/how_to_scaffold_a_preconfigured_rails_base_app/)
+- url: https://www.reddit.com/r/rails/comments/jp9dj3/how_to_scaffold_a_preconfigured_rails_base_app/
+---
+I try new ideas frequently and I am building Rails apps from scratch by copying migrations, Gemfile/initializers, front-end libs (bootstrap, jquery etc.) then customize the additional stuff (new models, controllers etc.).
+
+A great part of the apps is the same, e.g. devise/pundit for auth, bullet/robocop/letter\_opener for development etc. 
+
+I want to build a \_base\_ for my apps and I want to be able to scaffold a new one easily with just a command. Creating an app and pushing to a git repo could do the trick, but I wonder If there are any other ways, for example building an engine with all these and just include it in the Gemfile. 
+
+What do you guys do in similar cases?
+## [10][How to clone record with active storage attachments?](https://www.reddit.com/r/rails/comments/jpd2zv/how_to_clone_record_with_active_storage/)
+- url: https://www.reddit.com/r/rails/comments/jpd2zv/how_to_clone_record_with_active_storage/
+---
+I have a function to clone records in a rails application. In addition to the record data I would like to copy/attach any active storage file uploads that are attached to the source object to the new object. The files are stored on local storage. I would like to create new files to attach and not just point the cloned record at the same files. Any ideas on how to do this? The dup record works great. Just need to clone the attachments. Here is my action and model:
+
+Trying to do something like this:
+
+      def copy
+       u/source = Compitem.find(params[:id])
+       u/compitem = u/source.dup
+       if u/source.uploads.any?
+          u/source.uploads.each do |upload|
+            cloned_upload= upload.dup
+            u/compitem.uploads &lt;&lt; cloned_upload
+          end
+        end
+       render 'new'
       end
 
-And the `Tool` model:
+Model:
 
-    class Tool &lt; ApplicationRecord
-      belongs_to :product
-      belongs_to :manufacturer
-    
-      validates :product_id, uniqueness: { scope: :manufacturer_id }
+    class Compitem &lt; ApplicationRecord
+      belongs_to :user
+      has_many_attached :uploads, dependent: :destroy
     end
-
-I'm trying to make sure that there is no tool with the same product and manufacturer. Even if I have this uniqueness validator, I get the PG Error:
-
-    ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "index_tools_on_product_id_and_manufacturer_id"
-    DETAIL:  Key (product_id, manufacturer_id)=(50, 28) already exists.
-    ):
-
-How can I get the validation to work? What am I doing wrong?
-
-Thanks
-## [6][Performance impact of rails view partials](https://www.reddit.com/r/rails/comments/jomrzp/performance_impact_of_rails_view_partials/)
-- url: https://www.reddit.com/r/rails/comments/jomrzp/performance_impact_of_rails_view_partials/
+## [11][Gem for intercepting server errors for report purposes?](https://www.reddit.com/r/rails/comments/jp9887/gem_for_intercepting_server_errors_for_report/)
+- url: https://www.reddit.com/r/rails/comments/jp9887/gem_for_intercepting_server_errors_for_report/
 ---
-https://scoutapm.com/blog/performance-impact-of-using-ruby-on-rails-view-partials
+Is there any Gems/middleware that allow you to intercept any server errors and send the stacktrace via email or make a custom API call? 
 
-Came across this article today. I’m a little dumbfounded by the results. Anyone care to explain when to use and not use rails partials?
-## [7][Viewing/highlighting grids in the browser (including flexbox)?](https://www.reddit.com/r/rails/comments/joizh3/viewinghighlighting_grids_in_the_browser/)
-- url: https://www.reddit.com/r/rails/comments/joizh3/viewinghighlighting_grids_in_the_browser/
+Basically have a few servers that are in beta, they're going to have errors but I'd like to either email or do some kind of handling if a 500 error occurs.
+## [12][teaspoon or blade runner to browser test the js code you write in a rails application?](https://www.reddit.com/r/rails/comments/jp7qvi/teaspoon_or_blade_runner_to_browser_test_the_js/)
+- url: https://www.reddit.com/r/rails/comments/jp7qvi/teaspoon_or_blade_runner_to_browser_test_the_js/
 ---
-I tried to ask this question on r/webdev but I'm too new to Reddit so it wasn't approved. I thought I'd ask here since my project is a Rails project and some of you might have experience with this.
-
-I'm looking for a way to view/highlight grids in the browser. I found a Chrome extension but it only appears to work with CSS grid, and the code is using flexbox.
-
-Ideally I could activate the extension/plugin and the entire grid(s) for the page would be highlighted. That way I can see at a glance if all the elements are aligning on the grid per the design (for which I can see the whole grid like this in my design tool).
-
-Does anyone know of a solution for this?
-## [8][How to dynamically style button background with DB color](https://www.reddit.com/r/rails/comments/jolkae/how_to_dynamically_style_button_background_with/)
-- url: https://www.reddit.com/r/rails/comments/jolkae/how_to_dynamically_style_button_background_with/
----
-Say I have a link\_to with btn-primary class. what I want to do is color the background different based on the hex number stored in the DB. I am trying something like this but keep getting syntax errors. Any thoughts on what is wrong?
-
-          &lt;%= link_to compitem, class: 'btn btn-sm', style: "background-color: &lt;%= compitem.color %&gt;" do %&gt;
-            Start: &lt;%= compitem.name %&gt;
-          &lt;% end %&gt;
-## [9][Has Pundit been abandoned?](https://www.reddit.com/r/rails/comments/jon842/has_pundit_been_abandoned/)
-- url: https://www.reddit.com/r/rails/comments/jon842/has_pundit_been_abandoned/
----
-The last release is from 11 months ago.
-
-It's still worth using it? Or should I use cancancan?
-## [10][Quick question about how to create a non-RESTful route](https://www.reddit.com/r/rails/comments/joe6dg/quick_question_about_how_to_create_a_nonrestful/)
-- url: https://www.reddit.com/r/rails/comments/joe6dg/quick_question_about_how_to_create_a_nonrestful/
----
-I want to be able to use a URL like `/goals/:date`.  
-
-My route currently looks like this:  
-
-      resources :goals do
-        get ':date', to: 'goals#filter_by_date'
-      end
+  
 
 
-But that makes the URL `/goals/:goal_id/:date`. How do I remove `:goal_id`?
-## [11][undefined method `auto_strip_attributes` in rails console?](https://www.reddit.com/r/rails/comments/jo67j8/undefined_method_auto_strip_attributes_in_rails/)
-- url: https://www.reddit.com/r/rails/comments/jo67j8/undefined_method_auto_strip_attributes_in_rails/
----
-I'm using this gem [https://rubygems.org/gems/auto\_strip\_attributes/versions/2.0.6](https://rubygems.org/gems/auto_strip_attributes/versions/2.0.6) for stripping white space before saving the field to the db. I'm using it in my model like:
+https://preview.redd.it/dmoi45958nx51.png?width=2400&amp;format=png&amp;auto=webp&amp;s=fe5ed733b0bef76a2e2f78aa9b5aefec8222f7e3
 
-    class Brand &lt; ApplicationRecord
-      auto_strip_attributes :name
-    end
+&amp;#x200B;
 
-No idea what I did, but now whenever I go into rails console, I'm getting:
-
-    Traceback (most recent call last):
-            3: from (irb):1
-            2: from app/models/person.rb:1:in `&lt;top (required)&gt;'
-            1: from app/models/person.rb:12:in `&lt;class:Brand&gt;'
-    NoMethodError (undefined method `auto_strip_attributes' for Person (call 'Person.connection' to establish a connection):Class)
-
-Version of gem I'm using:
-
-    $ bundle list | grep auto_strip
-      * auto_strip_attributes (2.6.0)
-
-I tried:
-
-\- To force bundle install: `$ bundle install --redownload`
-
-\- stop any servers and only use rails console
-## [12][Big open source API project built with Rails to learn good patterns from?](https://www.reddit.com/r/rails/comments/jnso6v/big_open_source_api_project_built_with_rails_to/)
-- url: https://www.reddit.com/r/rails/comments/jnso6v/big_open_source_api_project_built_with_rails_to/
----
-Hi guys, I recently picked rails for my next side project since it offers everything I need out of the box :)
-
-I need to develop a rest api backend, so I created an app with the "only api" flag. I'm following some tutorials on GoRails but I'm looking for a good open source project to learn from.
-
-Since I'm building an API, I'm looking for a project that includes a API.
-
-Thanks :)
+which one do you recommend/prefer

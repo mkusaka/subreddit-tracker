@@ -3,175 +3,122 @@
 - url: https://register.virtual.awsevents.com/
 ---
 
-## [2][In the Works – AWS Region in Hyderabad, India](https://www.reddit.com/r/aws/comments/joz9nc/in_the_works_aws_region_in_hyderabad_india/)
+## [2][New – Archive and Replay Events with Amazon EventBridge](https://www.reddit.com/r/aws/comments/jp9405/new_archive_and_replay_events_with_amazon/)
+- url: https://aws.amazon.com/blogs/aws/new-archive-and-replay-events-with-amazon-eventbridge/
+---
+
+## [3][Boto3 update_auto_scaling_group failing](https://www.reddit.com/r/aws/comments/jpptpz/boto3_update_auto_scaling_group_failing/)
+- url: https://www.reddit.com/r/aws/comments/jpptpz/boto3_update_auto_scaling_group_failing/
+---
+Trying to update ASGs with new launchtemplate / lt version using update\_auto\_scaling\_group (Python3.7 in Lambda function) but get the following error:
+
+"An error occurred (AccessDenied) when calling the UpdateAutoScalingGroup operation: You are not authorized to use launch template"
+
+Cloudtrail shows:
+
+"errorCode": "AccessDenied","errorMessage": "An unknown error occurred",
+
+The lambda role has EC2FullAdmin assigned to it, which [according to the documentation is sufficient](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-launch-template-permissions.html) for accessing autoscaling and launchtemplates. I've also added AutoScalingFullAccess (though EC2FullAdmin includes autoscaling:\*).
+
+Code (based on boto3 documentation)
+
+`response = asg_client.update_auto_scaling_group(`
+
+`AutoScalingGroupName=ASGName,`
+
+`LaunchTemplate={`
+
+`'LaunchTemplateId': 'lt-123abc',`
+
+`'Version': '15'`
+
+`}`
+
+`)`
+
+Strangely, if I instead use MixedInstancesPolicy, it updates the ASG with the new launch template version without an issue, implying access is not a problem.
+
+`response = asg_client.update_auto_scaling_group(`
+
+`AutoScalingGroupName=ASGName,`
+
+`MixedInstancesPolicy = {`
+
+`"LaunchTemplate":{`
+
+`"LaunchTemplateSpecification":{`
+
+`"LaunchTemplateId": 'lt-123abc',`
+
+`"Version": '15'`
+
+`},`
+
+`"Overrides": CurrentMixedInstancesPolicy['LaunchTemplate']['Overrides']`
+
+`}`
+
+`}`
+
+`)`
+
+What am I missing here?
+
+&amp;#x200B;
+
+Edit: So I granted the lambda role AdministratorAccess as a test, the first code example then worked. So AmazonEC2FullAccess / AutoScalingFullAccess is not enough. CloudTrail is not giving me sufficient info to tell what API permission I am missing...
+## [4][Cognito REST API](https://www.reddit.com/r/aws/comments/jpmffo/cognito_rest_api/)
+- url: https://www.reddit.com/r/aws/comments/jpmffo/cognito_rest_api/
+---
+Hey guys. I’ve been playing with Amplify and I’m currently waiting for SES to be approved for my cognito MFA. 
+
+Long story short, I’d like for users who sign up have the opportunity to CRUD through the REST API, but I’d like for guests to only be able to read. Whenever I set up the amplify API, I can only allow the cognito users to have permissions, but not guests. What’s the best way to do this?
+## [5][How can I get the latest added key in s3 without having to iterate through it's contents?](https://www.reddit.com/r/aws/comments/jpne0d/how_can_i_get_the_latest_added_key_in_s3_without/)
+- url: https://www.reddit.com/r/aws/comments/jpne0d/how_can_i_get_the_latest_added_key_in_s3_without/
+---
+I have a lambda function that adds folders and files to s3. Is there any way for a second lambda function to get the latest added key to s3 without iterating through the s3 contents or listening to s3 events.
+## [6][ec2: How to install/configure pfsense to work properly?](https://www.reddit.com/r/aws/comments/jpmvuw/ec2_how_to_installconfigure_pfsense_to_work/)
+- url: https://www.reddit.com/r/aws/comments/jpmvuw/ec2_how_to_installconfigure_pfsense_to_work/
+---
+I have 2 ec2 instances and they both have elastic addresses. I have 2 VPC on the [10.0.0.0](https://10.10.10.0) range and [172.31.0.0](https://172.31.0.0)
+
+Any idea what I have to do when launching a pfsense instance? 
+
+Thanks very much
+## [7][In the Works – AWS Region in Hyderabad, India](https://www.reddit.com/r/aws/comments/joz9nc/in_the_works_aws_region_in_hyderabad_india/)
 - url: https://aws.amazon.com/blogs/aws/in-the-works-aws-region-in-hyderabad-india/
 ---
 
-## [3][A password encryption application built with Nitro Enclaves](https://www.reddit.com/r/aws/comments/joyvpx/a_password_encryption_application_built_with/)
-- url: https://www.sentiatechblog.com/ultra-secure-password-storage-with-nitropepper?utm_source=reddit&amp;utm_medium=social&amp;utm_campaign=nitropepper
+## [8][Starting the conversation from Lex Chatbot?](https://www.reddit.com/r/aws/comments/jpcr3g/starting_the_conversation_from_lex_chatbot/)
+- url: https://www.reddit.com/r/aws/comments/jpcr3g/starting_the_conversation_from_lex_chatbot/
 ---
+I’m trying to integrate Lex onto my website, which uses AWS indirectly and ultimately deployed from Heroku.  I just had a few questions.
 
-## [4][New Route53 Interface?](https://www.reddit.com/r/aws/comments/jokgqn/new_route53_interface/)
-- url: https://www.reddit.com/r/aws/comments/jokgqn/new_route53_interface/
+- Will deploying the bot on my website be the same for other users who use just AWS to deploy the website? 
+- is there a way for Lex to initiate the conversation when the user lands on the page, such as a welcome message?
+## [9][Amazon S3 Website won't load quickly and in-page links don't work, yet things load from Google](https://www.reddit.com/r/aws/comments/jpk0e0/amazon_s3_website_wont_load_quickly_and_inpage/)
+- url: https://www.reddit.com/r/aws/comments/jpk0e0/amazon_s3_website_wont_load_quickly_and_inpage/
 ---
-What do you guys think? I think it's incredibly terrible. I've left them feedback and I'm actually seriously concerned they might make it permanent.
-## [5][Does anybody feels Lambda frustrating?](https://www.reddit.com/r/aws/comments/jovis9/does_anybody_feels_lambda_frustrating/)
-- url: https://www.reddit.com/r/aws/comments/jovis9/does_anybody_feels_lambda_frustrating/
----
-Feels like an old drama queen friend that you like once you get to know the quirks. 
-
-Testing is very heavy and takes a long time to deploy, even with SAM. The examples are unnecessary complex. The python packages should not live in the same folder as the code. A lot of nit pick details to make simple code to work. Random errors that gets fixed redeploying the same exact code.
-## [6][Trying to get the OnDemand price for the reservations available in my AWS account using pricing Api](https://www.reddit.com/r/aws/comments/jp4ms1/trying_to_get_the_ondemand_price_for_the/)
-- url: https://www.reddit.com/r/aws/comments/jp4ms1/trying_to_get_the_ondemand_price_for_the/
----
-As reservations are  part of ec2 instances, I was getting cost for ec2 instances but not specifically for the reservation. Is there any possibility to get only cost for reservation or any attribute that available to get details of reservation
-
-    client = boto3.client('pricing', region_name='ap-south-1',                                                              aws_access_key_id='abc',                                                              aws_secret_access_key='')
-    
-            response = client.get_products(
-                ServiceCode='AmazonEC2',
-                Filters=[
-                    {'Type': 'TERM_MATCH', 'Field': 'operatingSystem', 'Value':'Linux'},
-                    {'Type': 'TERM_MATCH', 'Field': 'location','Value': 'US East (N. Virginia)'},
-                    {'Type': 'TERM_MATCH', 'Field': 'instanceType', 'Value': 't3.micro'},
-                    {'Type': 'TERM_MATCH', 'Field': 'tenancy', 'Value': 'Default'},
-                ]
-    
-            )
-
-This is the code snippet
-## [7][EventBridge event storage and replay](https://www.reddit.com/r/aws/comments/jp417a/eventbridge_event_storage_and_replay/)
-- url: https://www.reddit.com/r/aws/comments/jp417a/eventbridge_event_storage_and_replay/
----
-Looks like EventBridge is getting event archive and replay. Seems like big news but I think it just leaked in the API update, haven’t seen a post yet!
-
-https://awsapichanges.info/archive/changes/034487-events.html
-## [8][Anyone who can help me with policies?](https://www.reddit.com/r/aws/comments/jp12cm/anyone_who_can_help_me_with_policies/)
-- url: https://www.reddit.com/r/aws/comments/jp12cm/anyone_who_can_help_me_with_policies/
----
-Sorry, but I'm a big noob on AWS Policies, I've only used the defaults until now.
-
-What I'm trying to do is the following: -Create a custom policy that allows only for certain regions (currently only 2 regions only) -In the same policy, allow full access to s3, ec2, elastic beanstalk, rds, route 53, cloudfront -In the same policy, limit the instance types that these users can launch (e.g. t3 only or micro and small types only) this is applicable for both EC2 and RDS
-
-Currently I'm having problem with the "Deny" part for EC2 instances, it seems to deny everything currently. Also if I only allow ec2, I can't even create an instance (it throws an error with no clue what's missing) because it requires other permissions such as security group and etc.
-
-Here's what I currently have:
-
-    {
-        "Version": "2012-10-17",
-        "Statement": [
-            {
-                "Sid": "AllowGlobals",
-                "Effect": "Allow",
-                "Action": [
-                    "route53:*"
-                ],
-                "Resource": "*"
-            },
-            {
-                "Sid": "AllowedRegions",
-                "Effect": "Allow",
-                "Action": [
-                    "*",
-                    "cloudwatch:*",
-                    "ec2:*"
-                ],
-                "Resource": "*",
-                "Condition": {
-                    "StringEquals": {
-                        "aws:RequestedRegion": [
-                            "ap-southeast-1",
-                            "ap-southeast-2"
-                        ]
-                    }
-                }
-            },
-            {
-                "Sid": "LimitEc2Instances",
-                "Effect": "Deny",
-                "Action": [
-                    "ec2:RunInstances",
-                    "ec2:StartInstances",
-                    "ec2:RebootInstances",
-                    "ec2:StopInstances"
-                ],
-                "Resource": [
-                    "arn:aws:ec2:*:*:*"
-                ],
-                "Condition": {
-                    "StringNotEquals": {
-                        "ec2.InstanceType": [
-                            "*.nano",
-                            "*.micro",
-                            "*.small"
-                        ]
-                    }
-                }
-            }
-        ]
-    }
-## [9][API Gateway - Gateway Responses](https://www.reddit.com/r/aws/comments/jp3k6v/api_gateway_gateway_responses/)
-- url: https://www.reddit.com/r/aws/comments/jp3k6v/api_gateway_gateway_responses/
----
-Hi - I set up Gateway Responses for Response status codes of:
-
-&amp;#x200B;
-
-403 and 404 in the Gateway Responses tab of API Gateway.
-
-&amp;#x200B;
-
-I setup the Response templates to text/html and put in an html body to make the errors more human friendly and helpful.
-
-&amp;#x200B;
-
-I then deployed the new updates and for some reason nothing changes on my end. I still receive:
-
-&amp;#x200B;
-
-{"message":"Missing Authentication Token"}
-
-&amp;#x200B;
-
-Then I look in the google developer console and see the following:
-
-&amp;#x200B;
-
-Failed to load resource: the server responded with a status of 403 ()
+I'm very new to Amazon S3, and have been having trouble with my website that I host on S3 loading quickly. When I type the address of the website into the address bar, the page doesn't load until I manually select the address and hit enter again. The other issue I'm having is that the in-page links I have (essentially, when I click the About Me button, I want the page to scroll down to the About Me section) don't load when I select them. The page begins to load but never finishes. I also can't open my resume from the website. However, when I search the website in the Google search engine and click on it from there, it loads right away. Furthermore, I can select the About Me, Projects, Contact Me, and Resume parts of my page from Google, and when I do so, they load right away. I've had this problem in both Safari and Google Chrome, so I don't think it's a browser issue. Any help would be appreciated, and let me know if you need more information!
 
 &amp;#x200B;
 
 &amp;#x200B;
 
-What does Gateway Responses do? It seems like I made the updates and these templates are not showing.
-## [10][How can I inject environment variables into a ECR container (Python app)](https://www.reddit.com/r/aws/comments/jp3702/how_can_i_inject_environment_variables_into_a_ecr/)
-- url: https://www.reddit.com/r/aws/comments/jp3702/how_can_i_inject_environment_variables_into_a_ecr/
+https://preview.redd.it/dcblb5bxpqx51.png?width=1236&amp;format=png&amp;auto=webp&amp;s=28a51375046c8b63bf5d96ba951f9e120bda3303
+## [10][ec2 instances "freezing"](https://www.reddit.com/r/aws/comments/jp7uef/ec2_instances_freezing/)
+- url: https://www.reddit.com/r/aws/comments/jp7uef/ec2_instances_freezing/
 ---
-Hey guys,  
-Trying to deploy a Python app to AWS using Docker.  
-I did push my Docker image to ECR and hooked it to Cluster, Task Definition, Services, etc.
+I've had a few instances that i lose the ability to SSH or RDP into them until i reboot them, but i can still ping them.
 
-When creating the container in ECR I remember defining my environment variables (it's basically my Stripe Secret Keys + some MySQL credentials) but for some reasons, the app is not picking those up.
-
-I read about a couple of approaches, such as uploading a .env file into a S3 bucket and using that.
-
-Has anyone been successful setting that up?
-
-In the Python code, the variables are defined as follow :
-
-`STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')`
-## [11][Email alert when EC2 are left running over 24hrs](https://www.reddit.com/r/aws/comments/jozxui/email_alert_when_ec2_are_left_running_over_24hrs/)
-- url: https://www.reddit.com/r/aws/comments/jozxui/email_alert_when_ec2_are_left_running_over_24hrs/
+what causes this, or am i missing something?
+## [11][Can I use python to ssh into an EC2 instance to place files from my local pc?](https://www.reddit.com/r/aws/comments/jp7vgx/can_i_use_python_to_ssh_into_an_ec2_instance_to/)
+- url: https://www.reddit.com/r/aws/comments/jp7vgx/can_i_use_python_to_ssh_into_an_ec2_instance_to/
 ---
-Every EC2 instance in my account are for lab purpose that should never be left running &gt; 24hrs.
+Disclaimer: I couldn't find any other sub to post this to other than here, so well:
 
-Objectives:
+I have an AWS EC2 instance, and I want to ssh into it and place some  of my local files on the server using a python script. I've heard that  you can use a module called paramiko  
+ which is great, but the EC2 instance gives you a key pair (.pem  
+), not a password, and I don't know how to login using that instead of a password.
 
-* Check the launch time on every single EC2 instance (don't care about whether its tagged or what the tag key/value are).
-* Every region should be checked.
-* Send email to a distribution group listing the Name tag or instance id if there's no tag if EC2 has been running for &gt; 24hrs. Repeat when &gt; 36hrs then again &gt; 48hrs etc.
-
-[This post] (https://www.reddit.com/r/aws/comments/41l2s4/alerts_when_lab_instances_are_left_running_for/) came close to what I was looking for.
-
-Is Lamdba + CloudWatch + SNS Topic the most efficient method to implement this?
-Would I need to implement scripts for every region I need checked?
+Any help will be greatly appreciated.

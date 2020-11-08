@@ -70,164 +70,219 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][How to manage state in React apps with useReducer and useContext hooks](https://www.reddit.com/r/reactjs/comments/jplgzy/how_to_manage_state_in_react_apps_with_usereducer/)
-- url: https://dev.to/amanhimself/how-to-manage-state-in-react-apps-with-usereducer-and-usecontext-hooks-4eoc
+## [3][I created TwitterFOMO—see the most liked tweets in webdev at one place. Used Next.js, ChakraUI, and react-spring. (Soon to be open-sourced!)](https://www.reddit.com/r/reactjs/comments/jpxw93/i_created_twitterfomosee_the_most_liked_tweets_in/)
+- url: https://v.redd.it/ny9bwvo8qvx51
 ---
 
-## [4][Best practices for styled components](https://www.reddit.com/r/reactjs/comments/jp5lbe/best_practices_for_styled_components/)
-- url: https://www.reddit.com/r/reactjs/comments/jp5lbe/best_practices_for_styled_components/
+## [4][React js entry/junior level interview questions. HELP](https://www.reddit.com/r/reactjs/comments/jqan4l/react_js_entryjunior_level_interview_questions/)
+- url: https://www.reddit.com/r/reactjs/comments/jqan4l/react_js_entryjunior_level_interview_questions/
 ---
-Are there any best practices for styled components? In terms of naming conventions, storing in same or different files? Any good open source examples of medium/large scale applications using styled components?
+Im having an Interview this week Im terrified and I want to prepare myself.
 
-I've made a decent sized app with styled components but i found it quite annoying to have to navigate the same file to modify the css, and it felt cluttered. Especially in files where the react components are already large.
-## [5][Use Redux middleware to reduce redux thunk api action boilerplate](https://www.reddit.com/r/reactjs/comments/jpqma4/use_redux_middleware_to_reduce_redux_thunk_api/)
-- url: https://www.reddit.com/r/reactjs/comments/jpqma4/use_redux_middleware_to_reduce_redux_thunk_api/
+What are the commonly ask reactjs questions for entry/junior level developer? 
+Another questions is do they ask “leet code” type of questions during an interview for a front end position?
+
+Thank you!
+## [5][My window-styled portfolio - Winport](https://www.reddit.com/r/reactjs/comments/jq9st0/my_windowstyled_portfolio_winport/)
+- url: https://khang-nd.github.io
 ---
-If you have written code like below to call api using redux thunk again and again and got frustrated with it. There is a way to avoid this boilerplate using redux middleware.
 
-    const FETCH_POSTS_LOADING = 'FETCH_POSTS_LOADING'
-    const FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS'
-    const FETCH_POSTS_FAILURE = 'FETCH_POSTS_FAILURE'
+## [6][Beginner question about to-do list](https://www.reddit.com/r/reactjs/comments/jqav9g/beginner_question_about_todo_list/)
+- url: https://www.reddit.com/r/reactjs/comments/jqav9g/beginner_question_about_todo_list/
+---
+In what part of the code are we setting that the newly added todos(through addTodo func)are being set to isCompleted:false so that they are not crossed out from the beginning(since we are only adding text in addTodo)?
+
+    import React,{useState,useEffect} from 'react';
+    import './App.css';
     
-    export const postLoading = () =&gt; ({ type: FETCH_POSTS_LOADING })
-    export const postLoadingSuccess = (response) =&gt; ({
-      type: FETCH_POSTS_SUCCESS,
-      payload: response
-    })
-    export const postLoadingFailure = (errors) =&gt; ({
-      type: FETCH_POSTS_FAILURE,
-      payload: errors
-    })
+    const LOCAL_STORAGE_KEY='todo_app.todos'
     
-    export function fetchPosts() {
-      return function (dispatch) {
-        dispatch(postLoading())
+    function Todo({todo,index,completeTodo,removeTodo}){
+    return (
     
-        return axios.request({
-          url: 'https://www.example.come/posts.json',
-          method: 'get'
-        })
-          .then(({ data }) =&gt; {
-            dispatch(postLoadingSuccess(data))
-          })
-          .catch(errors =&gt; {
-            next(postLoadingFailure(errors))
-          })
-      }
+    &lt;div className='todo'&gt;
+    &lt;div style={{textDecoration:todo.isCompleted? 'line-through':null}}&gt; 
+      {todo.text}
+    
+    &lt;button onClick={()=&gt;completeTodo(index)}&gt;Complete&lt;/button&gt;
+    &lt;button onClick={()=&gt;removeTodo(index)}&gt;X&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+    
+    
+    )
+    
     }
-
-[Here](https://blog.sockosoft.com/power-of-redux-middleware/) is the blog post that shows the approach to reduce this boilerplate
-## [6][Why does this event listener trigger](https://www.reddit.com/r/reactjs/comments/jpqdoh/why_does_this_event_listener_trigger/)
-- url: https://www.reddit.com/r/reactjs/comments/jpqdoh/why_does_this_event_listener_trigger/
----
-Hey React Community,
-
-Im currently developing a React App using the new hooks (okay, they are not that new, but last time I developed react stuff, class components were still king). Nevertheless im trying to implement a dropdown that closes if you click outside. For that i register a document event handler in a useEffect hook, like this:
-
-```
-  useEffect(() =&gt; {
-      document.addEventListener('click', handleClickOutside)
-      document.addEventListener('keydown', handleEsc)
-    return () =&gt; {
-      document.removeEventListener('click', handleClickOutside)
-      document.removeEventListener('keydown', handleEsc)
+    
+    function TodoForm({addTodo}){
+    const[value,setValue]=useState('')
+     
+    function submitHandler(e){
+    e.preventDefault();
+    if(!value){
+      return
     }
-  }, [isOpen])
-```
-
-But for some odd reason the same click event that triggers the isOpen to toggle also causes this event handler to trigger, one hacky workaround i found is this, but it seems like there needs to be a better solution.
-
-```
-  useEffect(() =&gt; {
-    setTimeout(() =&gt; {
-      document.addEventListener('click', handleClickOutside)
-      document.addEventListener('keydown', handleEsc)
-    }, 0);
-    return () =&gt; {
-      document.removeEventListener('click', handleClickOutside)
-      document.removeEventListener('keydown', handleEsc)
+    addTodo(value)
+    setValue('')
+    } 
+    
+    return(
+      &lt;form onSubmit={submitHandler}&gt;
+      &lt;input type="text" value={value} onChange={e=&gt;setValue(e.target.value)}/&gt;
+        &lt;/form&gt;
+    )
+     
+    
+    
+     
+      
     }
-  }, [isOpen])
-```
-
-The handleClickOutside looks like this
-```
-  function handleClickOutside(e: MouseEvent) {
-    if (dropdownRef.current &amp;&amp; !dropdownRef.current.contains(e.target as Node)) {
-      onClose()
+    
+    function App(){
+    const[todos,setTodos]=useState([
+      {text:'Go out with a girl',
+    isCompleted:false
+    },
+    {text:'Learn React',
+    isCompleted:false
+    },
+    {text:'Read a book',
+    isCompleted:false
+    },
+    ])
+    useEffect(()=&gt;{
+    const storedTodos=JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+    if (storedTodos){
+    setTodos(storedTodos)
     }
-  }
-```
+    },[])
+    useEffect(()=&gt;{
+      localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(todos))
+    },[todos])
+    function addTodo(text){
+     const newTodos=[...todos,{text}]
+     setTodos(newTodos)
+    }
+    function completeTodo(index){
+    const newTodos=[...todos]
+    newTodos[index].isCompleted=true
+    setTodos(newTodos)
+    
+    }
+    function removeTodo(index){
+    const newTodos=[...todos]
+    newTodos.splice(index,1)
+    setTodos(newTodos)
+    
+    }
+    return(
+    &lt;div className="app"&gt;
+     &lt;div className="todo-list"&gt;
+      {todos.map((todo,index)=&gt;(
+        &lt;Todo todo={todo} index={index} key={index} completeTodo={completeTodo} removeTodo={removeTodo}/&gt;
+      ))}
+      &lt;TodoForm addTodo={addTodo}/&gt;
+     &lt;/div&gt; 
+    &lt;/div&gt;
+      )
+    
+    
+    }
+    export default App;
 
-This should actually for the click before the render not have any reference so failing in the first condition and no further click should happen after the render, so not sure why its closing immediately. The timeout can circumvent this by delaying the register of the event listener, but i dont think it should happen in the first place.
-
-Complete example in this code sandbox: [https://codesandbox.io/s/cool-poitras-efnoj?file=/src/App.js](https://codesandbox.io/s/cool-poitras-efnoj?file=/src/App.js)
-## [7][Is Redux Toolkit being used in companies](https://www.reddit.com/r/reactjs/comments/jpmrxz/is_redux_toolkit_being_used_in_companies/)
-- url: https://www.reddit.com/r/reactjs/comments/jpmrxz/is_redux_toolkit_being_used_in_companies/
+&amp;#x200B;
+## [7][Displaying long list of related articles](https://www.reddit.com/r/reactjs/comments/jqbora/displaying_long_list_of_related_articles/)
+- url: https://www.reddit.com/r/reactjs/comments/jqbora/displaying_long_list_of_related_articles/
 ---
-I've been trying to learn redux a little better and it seems that many tutorials online have still not adopted the toolkit approach to writing redux.
+I made this site for my tai chi students near the beginning of covid, [https://breathetaichi.com](https://breathetaichi.com/)  
+It  was my first project, and I'd like to go back to it and make it  portfolio worthy.  My only other piece I really like to show is [https://protopla.net](https://protopla.net/)
 
-Have companies adopted redux toolkit? I am also looking to improve my skills for applying to jobs so I was wondering if it's more valuable to learn the old way of writing redux than the new way?
-## [8][Need help with bundling images with webpack for react component library.](https://www.reddit.com/r/reactjs/comments/jpmr6w/need_help_with_bundling_images_with_webpack_for/)
-- url: https://www.reddit.com/r/reactjs/comments/jpmr6w/need_help_with_bundling_images_with_webpack_for/
+I'd  love to hear any critiques of either site, but the my main question  would be is there a standard way to display as much info as I have on my  tai chi site?  It feels kinda messy, and I'm too close to it  to be able to see what it should be. 
+
+Thanks!
+## [8][Nextjs supported CDN outside US](https://www.reddit.com/r/reactjs/comments/jqblx8/nextjs_supported_cdn_outside_us/)
+- url: https://www.reddit.com/r/reactjs/comments/jqblx8/nextjs_supported_cdn_outside_us/
 ---
-Hey fellow developers!   
-
-
-I am struggling with something that I have never dealt before. I am creating a component library using react . A few components are importing images and placing them as a background using `style={{backgroundImage: imgSrcHere}}` it loads images just fine while I am developing the library, when I build it with webpack (using a `file-loader` for all images ) I can see these images added to my dist folder. Now, when I publish the lib and import components inside create react app project, the components with image have an inline style as expected `background-image: url("6a4eaca085cb36d75d5e16181091010b.png"); background-position: left center;` But I don\`t see the images being rendered and the network tab explains it with a status code 304.  Obviously, [`http://localhost:3000/`](http://localhost:3000/)`6a4eaca085cb36d75d5e16181091010b.png` is not where the image is located....I don\`t know what to do or even how to google this problem.
-
-For now I solved it with webpacks `url-loader` but I don\`t like this solution because it adds \~300KB to my bundled index.js
-## [9][Expenses | Full Stack React and .NET Core Application](https://www.reddit.com/r/reactjs/comments/jpnwoo/expenses_full_stack_react_and_net_core_application/)
-- url: https://www.youtube.com/watch?v=MSTYmdzlU-c
+Any one knows a CDN that belongs to a non-US startup which can host NextJS apps?
+## [9][implementing build react app inside another website](https://www.reddit.com/r/reactjs/comments/jq7hkl/implementing_build_react_app_inside_another/)
+- url: https://www.reddit.com/r/reactjs/comments/jq7hkl/implementing_build_react_app_inside_another/
 ---
+Hey guys, I made a chatbot with reactjs and ran npm run build.
 
-## [10][how do I start learning react?](https://www.reddit.com/r/reactjs/comments/jpq85v/how_do_i_start_learning_react/)
-- url: https://www.reddit.com/r/reactjs/comments/jpq85v/how_do_i_start_learning_react/
+Now I wat to use the built code inside other websites. So my chatbot will popup on other websites.
+
+How can I implement it to other codebases?
+## [10][Why my asynchronous function findOne request to wrong pat?](https://www.reddit.com/r/reactjs/comments/jqb1jk/why_my_asynchronous_function_findone_request_to/)
+- url: https://www.reddit.com/r/reactjs/comments/jqb1jk/why_my_asynchronous_function_findone_request_to/
 ---
- have basic JS and web-dev skills but I'm new to react and I find it difficult to keep myself concentrated on a 50 hour Udemy course. but I've always been able to be fully concentrated on doing my own stuff. like developing my own app. so I want to learn react by doing but I'm not sure where to start. obviously you need to learn basic concepts first before start coding. how did you guys do that? should I just overcome the boredom and finish Udemy course first any how?
-## [11][what is a good react datasheet package?](https://www.reddit.com/r/reactjs/comments/jpo2xz/what_is_a_good_react_datasheet_package/)
-- url: https://www.reddit.com/r/reactjs/comments/jpo2xz/what_is_a_good_react_datasheet_package/
+ I created a function to check if in my database a user exists according to the `sub` parameter.
+
+**Front-end**
+
+    async function exist (sub)  {  
+    const response = await InfoDataService.get(sub);   
+    console.log(response);       
+    }    
+
+**InfoDataService**
+
+    import http from "../http-common.js";   
+    const get = sub =&gt; {  
+    return http.get(`/users/${sub}`);   
+    };   
+    export default { get, };  
+
+**Controller**
+
+    // Find a single User with sub  
+    exports.findOne = (req, res) =&gt; {   
+    const sub = req.params.sub;  
+    User.findOne({sub})     
+    .then(data =&gt; { res.send(data);     
+    })     
+    .catch(err =&gt; {   
+    res.status(500).send({ message: "Error retrieving User with sub=" + sub});  });  
+     };  
+
+**Route**
+
+    module.exports = app =&gt; {  
+    const users = require("../controllers/user.controller.js");  
+    const router = require("express").Router();   
+    
+    // Retrieve a single Tutorial with sub   
+    router.get("/:sub", users.findOne);  
+     
+    app.use('/api/users', router);  
+    };  
+
+The path for post is `api/users`, while for get it is `api/users/:sub`. Checking the network I found that the asynchronous function makes the request to `api/users/undefined`. Where would the error be?
+
+The problem is in the asynchronous function. Create, update, getAll etc ... also work well in this API. I also have an API for published posts, structured the same way and it works. I don't understand why only the asynchronous function follows a different and wrong path.
+## [11][How to select options in a custom dropdown menu with arrow keys?](https://www.reddit.com/r/reactjs/comments/jqauun/how_to_select_options_in_a_custom_dropdown_menu/)
+- url: https://www.reddit.com/r/reactjs/comments/jqauun/how_to_select_options_in_a_custom_dropdown_menu/
 ---
-I really need something like \[[Notion.so](https://Notion.so)\]([https://www.notion.so/](https://www.notion.so/)) table or excels spreadsheet where I can create formulas. Also, I need it to be very customizable on the level of frontend (the looking) and on the backend, where I can create custom formulas or implement javascript code in the cells.
+In a custom dropdown, There is an input type text and a different container floating below the input which contains the list of options. How do I select the options in the container floating below using the arrow keys when I focus on the input? (I've attached a screen-capture below)
 
-I tried \[jexcel3\]([https://bossanova.uk/jexcel/v3/](https://bossanova.uk/jexcel/v3/)) but it is very primitive and I users can't edit footer nor drag and drop columns and rows, Also I tried \[ag-grid\]( [https://www.ag-grid.com/example.php](https://www.ag-grid.com/example.php)) but it doesn't support formulas at all, finally I tried \[react-datasheet\]([https://nadbm.github.io/react-datasheet/](https://nadbm.github.io/react-datasheet/)) but users can't edit footers as well and it doesn't have a pattern recognition where I can write 1 and other cell 2 and select the tow cells and drag the selection to have automatically 1,2,3,4,5...
-## [12][Jexcel: How can I use updateTable with react?](https://www.reddit.com/r/reactjs/comments/jpnm5g/jexcel_how_can_i_use_updatetable_with_react/)
-- url: https://www.reddit.com/r/reactjs/comments/jpnm5g/jexcel_how_can_i_use_updatetable_with_react/
+&amp;#x200B;
+
+Here's a link to the trimmed down version of my project if anyone wants to see the actual code: 
+
+[https://github.com/paritosh-34/absolute\_dropdown](https://github.com/paritosh-34/absolute_dropdown)
+
+The project is created with next.js and typescript.
+
+&amp;#x200B;
+
+[ScreenCapture](https://reddit.com/link/jqauun/video/y8vke2e1d0y51/player)
+## [12][Disable page scrolling, but allow sidebar scrolling](https://www.reddit.com/r/reactjs/comments/jqarb2/disable_page_scrolling_but_allow_sidebar_scrolling/)
+- url: https://www.reddit.com/r/reactjs/comments/jqarb2/disable_page_scrolling_but_allow_sidebar_scrolling/
 ---
-I have this problem, I want to use Jexcel with react, we can pass the option updateTable  
- to manage how going to see the cell, how to render, we have this arguments: instance, cell, col, row, val, id  
- where instance and cell are native nodes, then, for change an entry to image, for example, we could use cell.appendChild(...)  
- or cell.innerHTML=...  
- I want to know if exist a right way to use react components, specifically I want put inside a &lt;NavLink /&gt;  
- which have the click event to navigate to another route (using react-router-dom of course). my code:
-
-\--------------------------------------------------------------------------------------------------------------------------  
+Hi!  
 
 
- class ....{  
-.....  
-   updateTable(instance, cell, col, row, val, id) {       
-if (col === 1) {  
-if (!val) return;         
-/\*  
-\* this NOT WORKING:  
-\* let img = &lt;img src={val} style={{ height: 40, width: '100%', objectFit: 'cover' }} /&gt;;         
-\* cell.appendChild(img);  
-\*/  
-cell.innerHTML=\`&lt;img src="${val}" /&gt;\`;  
-}  
-   }     
-componentDidMount() {  
- let opts = {  
-...  
-freezeColumns: 1,  
-tableOverflow: true,  
-updateTable: this.updateTable,  
-lazyLoading: true  
-};  
-this.el = jexcel(this.wrapper.current, opts);  
-   }  
-.....  
-}
+I have a feeling this is a simple issue, but I can't seem to figure it out. I've built a simple website with React and Next.JS. On mobile, I have a navigation bar that opens from the side and has position: absolute. When the sidebar is opened, I do not want users to be able to scroll the page. However, since the content on the sidebar is more than the average screen can display, I do want users to scroll inside the sidebar. Is there a universal or commonly used way to approach this?  
 
-\--------------------------------------------------------------------------
+
+Thanks in advance,  
+Quinten

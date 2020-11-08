@@ -22,7 +22,160 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Type-safe dotted paths for objects, arrays, and nested recursive objects! (and intellisense)](https://www.reddit.com/r/typescript/comments/jpf9gr/typesafe_dotted_paths_for_objects_arrays_and/)
+## [2][I have released a web sdk to reduce video streaming costs by 90%](https://www.reddit.com/r/typescript/comments/jqazdm/i_have_released_a_web_sdk_to_reduce_video/)
+- url: https://www.reddit.com/r/typescript/comments/jqazdm/i_have_released_a_web_sdk_to_reduce_video/
+---
+ Hi everyone,
+
+I am working on a javascript sdk which can reduce video streaming costs of CDN by up-to 90% using a hybrid decentralized load sharing technology. I have opened it up for beta-access for developers to try it out. Looking for feedback w.r.t the technology and any features you would want to have.
+
+A web demo is available here [https://api.peervadoo.com/test](https://api.peervadoo.com/test) . Click on **Add new peer** to see the tech in action,
+
+**Javascript sdk link** :- [https://github.com/vadootvpeer/sdk-javascript](https://github.com/vadootvpeer/sdk-javascript)
+## [3][Constraining the shape of a dictionary object's content?](https://www.reddit.com/r/typescript/comments/jqb2qe/constraining_the_shape_of_a_dictionary_objects/)
+- url: https://www.reddit.com/r/typescript/comments/jqb2qe/constraining_the_shape_of_a_dictionary_objects/
+---
+I have a function which consumes dictionary objs. I'd like to constrain the shape of each entry in the dictionary (which is consistent across entries), though I'm not quite sure how...
+
+I tried using `[key: string]` as the key, but that matches all entries, even invalid ones that aren't in the dictionary (i.e. `dict['doesntExist']`)
+
+Does anybody have any insight on how to do this?
+
+
+    type constraintObject_T = {
+        [allKeysWhichExistOnObject] : {
+            bar: string
+        }
+    }
+
+    function ConstrainedObject&lt;T extends constraintObject_T&gt;(object: T){
+        ...
+    }
+
+
+# Dict Examples
+    const valid = {
+        Foo: {
+            bar: 'test'
+        },
+        Too: {
+            bar: 'test'
+        }
+    }
+
+    const invalid = {
+        Foo: {
+            bar2: 'test'
+        },
+        Too: {
+            bar: 123
+        }
+    }
+## [4][Can enums have functions as values?](https://www.reddit.com/r/typescript/comments/jq355k/can_enums_have_functions_as_values/)
+- url: https://www.reddit.com/r/typescript/comments/jq355k/can_enums_have_functions_as_values/
+---
+Hi,
+
+New to TS here. I am learning about enums, and I was wondering if TS enums could hold functions as enums. It seems like there's no reason it shouldn't be able to, except maybe that it is not possible to serialize functions and closures, (what about expressions where variables must only be params?) and I was looking at the documentation for typescript and couldn't find any information:
+
+ [https://www.typescriptlang.org/docs/handbook/enums.html](https://www.typescriptlang.org/docs/handbook/enums.html)
+
+Java seems to be able to support functions in enums. Was there a specific reason for this, or is there actually a way? I know I can use an object, but it's interesting and useful to map a set of functions to a set of choices.
+## [5][Is there a generic interface to get all nested keys for an interface?](https://www.reddit.com/r/typescript/comments/jq2vj5/is_there_a_generic_interface_to_get_all_nested/)
+- url: https://www.reddit.com/r/typescript/comments/jq2vj5/is_there_a_generic_interface_to_get_all_nested/
+---
+TypeScript 4.1+ is accessible in this scenario.
+
+I've seen a few snippets that do this:
+
+    interface X {
+      a: {
+        b: boolean;
+      };
+      c: string;
+    }
+    type Example&lt;X&gt; = /* magic here */;
+    // Example&lt;X&gt; = 'a.b' | 'c';
+
+I am wanting an array version of this:
+
+    type Example&lt;X&gt; = /* magic here */;
+    // Example&lt;X&gt; = ['a', 'b'] | ['c'];
+
+Is this possible yet in TypeScript?
+
+Use case:
+
+    const x: X = {
+      a: {
+        b: true,
+      },
+      c: 'yes',
+    };
+    const getFromX = &lt;NestedKeys extends Example&lt;X&gt;&gt;(...keys: NestedKeys): TypeOf&lt;X, NestedKeys&gt; =&gt; {
+      let temp = x;
+      for (const key of keys) {
+        temp = temp[key];
+      }
+      return temp;
+    };
+    const bool: boolean = getFromX('a', 'b'); // true
+    const str: string = getFromX('c'); // 'yes'
+## [6][Purify 0.16 released! - A Functional programming library for TypeScript](https://www.reddit.com/r/typescript/comments/jpr6pl/purify_016_released_a_functional_programming/)
+- url: https://www.reddit.com/r/typescript/comments/jpr6pl/purify_016_released_a_functional_programming/
+---
+Link to changelog: [https://gigobyte.github.io/purify/changelog/0.16](https://gigobyte.github.io/purify/changelog/0.16)
+
+Before the usual comment asking about a comparison with fp-ts that comes up with every release post - [here](https://www.reddit.com/r/functionalprogramming/comments/ebg4pc/purify_014_released_a_functional_programming/fb5uv16/).
+
+Purify is becoming pretty much production ready, so this will be the last 0.x release. Every release post in this subreddit has always generated some nice feedback, so I'm looking forward to that.
+## [7][How to define a dictionary that is indexed with symbols in typescript ?](https://www.reddit.com/r/typescript/comments/jpwiyr/how_to_define_a_dictionary_that_is_indexed_with/)
+- url: https://www.reddit.com/r/typescript/comments/jpwiyr/how_to_define_a_dictionary_that_is_indexed_with/
+---
+[Here](https://www.typescriptlang.org/play?#code/MYewdgzgLgBAJgS2LAXDASgU1AJzgHggE8BbAIxABsAaaHBMAcwD4YBeGAbwF8BuAKH6JkAbQDKpCpQAUASgC6A-qEiwQUABaYcAESSouIgB4pi5KvJho6DRt3Zc+QA) is what I have tried so far. Why is it wrong?
+## [8][How to preserve type when plucking from object, but account for undefined keys?](https://www.reddit.com/r/typescript/comments/jq2o4h/how_to_preserve_type_when_plucking_from_object/)
+- url: https://www.reddit.com/r/typescript/comments/jq2o4h/how_to_preserve_type_when_plucking_from_object/
+---
+Consider the below code, the code `const foundKey = classDict[key]` should have the type `string | undefined`, because it's possible to enter in a string key that's not part of the `dict` object (e.g. `dict['bar']`). 
+
+However, I can't seem to figure out how to accomplish this. Does anybody how to accomplish this?
+
+
+
+# Function
+
+
+    function classMatcher&lt;
+      K extends keyof T,
+      T extends baseClassDict_T
+    &gt;(keys: K[], classDict: T): T[K] | undefined {
+      for (let key of keys) {
+        const foundKey = classDict[key]; // &lt;---- Type = string, should equal string | undefined
+        if (foundKey !== undefined) return foundKey;
+      }
+      return undefined;
+    }
+
+    type baseClassDict_T = {
+      [key: string]: {
+        component: (prop: any) =&gt; JSX.Element;
+      };
+    };
+
+# Usage
+
+    const keys = ['foo', 'bar'];
+    const dict = {
+        foo: {
+            component: //misc...
+        }
+    }
+    classMatcher(keys, dict)
+## [9][react native how to add IOS and android model top of the input field for register?](https://www.reddit.com/r/typescript/comments/jq2j6k/react_native_how_to_add_ios_and_android_model_top/)
+- url: https://www.reddit.com/r/typescript/comments/jq2j6k/react_native_how_to_add_ios_and_android_model_top/
+---
+
+## [10][Type-safe dotted paths for objects, arrays, and nested recursive objects! (and intellisense)](https://www.reddit.com/r/typescript/comments/jpf9gr/typesafe_dotted_paths_for_objects_arrays_and/)
 - url: https://www.reddit.com/r/typescript/comments/jpf9gr/typesafe_dotted_paths_for_objects_arrays_and/
 ---
 Imagine you have the following \`get\` function:
@@ -47,7 +200,7 @@ It handles recursive objects and arrays too - at lightning speed.
 \`PathDot\` will ship soon with the upcoming version \`9\`. Leave a star on:
 
 [https://github.com/millsp/ts-toolbelt](https://github.com/millsp/ts-toolbelt)
-## [3][Fire a Promise and Collect the Result Later](https://www.reddit.com/r/typescript/comments/jpbawa/fire_a_promise_and_collect_the_result_later/)
+## [11][Fire a Promise and Collect the Result Later](https://www.reddit.com/r/typescript/comments/jpbawa/fire_a_promise_and_collect_the_result_later/)
 - url: https://www.reddit.com/r/typescript/comments/jpbawa/fire_a_promise_and_collect_the_result_later/
 ---
 I want to make a call to a service (and get a response from that service), do other stuff at the same time, then take the result from that service call and use it to populate some variables.
@@ -67,145 +220,3 @@ My current idea is:
 \---
 
 How do you get the serviceResponse?
-## [4][Leave blank if undefined for optional value of interface.](https://www.reddit.com/r/typescript/comments/jpg2ul/leave_blank_if_undefined_for_optional_value_of/)
-- url: https://www.reddit.com/r/typescript/comments/jpg2ul/leave_blank_if_undefined_for_optional_value_of/
----
-I am trying to parse incoming data into a interface. It has imageURL? as optional. Incoming data might not contain imageURL. I would like parse if it’s not undefined and ignore if it is. Currently I am using an if statement to check incoming json for imageURL if it’s undefined or null. Then add to User.imagUrL if it exist.
-
-
-This takes up 5 lines of code. I’m planning on having more optional values... and I’m wondering if there’s a better way to do ?
-## [5][Guides for truly understanding generics in TS](https://www.reddit.com/r/typescript/comments/josnlh/guides_for_truly_understanding_generics_in_ts/)
-- url: https://www.reddit.com/r/typescript/comments/josnlh/guides_for_truly_understanding_generics_in_ts/
----
-I come from a background where I never had to deal with generics, so they're still quite a foreign concept to me.
-
-Does anyone know a good guide/tutorial on generics, from zero to advanced? I really want to understand this part of TS so I can have a more complete experience with it.
-
-Thanks
-## [6][How do I add proper typing to this function with Object.entries](https://www.reddit.com/r/typescript/comments/joxmf9/how_do_i_add_proper_typing_to_this_function_with/)
-- url: https://www.reddit.com/r/typescript/comments/joxmf9/how_do_i_add_proper_typing_to_this_function_with/
----
-Here is the [demo](https://www.typescriptlang.org/play?#code/JYOwLgpgTgZghgYwgAgLIE8DCiAWKDeAUMsnAFzJEkkBGFV1JCFAzmFKAOYDaAugNzFGyACat2XQYwC+U5LMLTCCAPYg2yMDi4sAKioBKEALYqAbigC8ybgCIwhk+YgBGWwBpk9x6YsAmWwFlNQ0EXAgKDGwEPGRrBnJKIVp6ZOpmG28jX1cPLwcABSgIFmgLN08sp3887yKSsogA3nc0kjEvYChigBsIMzhwWzSlEiUFQjB0AAcUVDhp2ZFdKEGWGBUoYwAeXWQIAA9IEBEWSmkAPjikkm4AaWRQZABrCHQVGGRdXgB+SIWlis1hstrt7rwrgAfZAAChh0zgq2MLAounBAEo4ldBuh0YIJjAAK4gBBgYBqTSrCxQUrbAwXGFhGIRZAGTzsYGbYwAeRoACsIKT-osIMtVuoQTt6ZiGMUwISoCBkLyBaSAHQQcAcEowjkSrkqwVgdFq4oiQlIGFmi0QIH6rYAORUIggniZeDxikIhAA9D7kDgVAB3UQqZAASU0MxQWmAZ0AvBuAcR3guowMhrUg7esuU6XddGeFc66bHrs1s7m92eKy8YAGpwHqEiC8TGWK4MVSpygl6uSivoXgUEDOlDSa7uiBFuSdjQgCBB6J4euNqxpKazD6UzlbZdNuKWay2IkkslqYbCZA-Lf2usNpsw4cu9FtZAUDnU0q63tc3fFx8QT0hDlBUlQYEg1Qgici1aRhuFLPs3kHZA5wXcJfyEBQJnfaBaSicIGQnTwElSRg6BuYQMgfEdWyuf81RgYAekgKA4TYDgQE4GjkAAQljDi9B8Zw1VABBGxdFgYTYrh0WfGQMMUT0gA)
-
-I am trying to type this function 
-```js
-const reduceTransformNode = (cacheNode, [transformKey, transformValue]) =&gt; {
-  const { [transformKey]: node } = cacheNode;
-  const newCacheValue =
-    typeof transformValue === "function"
-      ? transformValue(node)
-      : traverse(transformValue, node);
-
-  return {
-    ...cacheNode,
-    [transformKey]: newCacheValue
-  };
-};
-```
-
-I cannot seem to solve it because there seems to be a circular dependency between `traverse` and `reduceTransformNode` 
-
-This is one [solution](https://www.typescriptlang.org/play?#code/JYOwLgpgTgZghgYwgAgLIE8DCiAWKDeAUMsnAFzJEkkBGFV1JCFAzmFKAOYDaAugDTFGyACat2XQYwC+Q2bIQB7EG2RgcXFgBVFAJQgBbRQDcUAXmTcA5GD2GTEAIxX+yG3aOmATFd4BuQiUVMGQEXAgKDGwEPGQLBnJKIVp6ZGTqZkt3fU8nFzdbAAUoCBZoU2dXbPtvfPdi0vKIHwE04VEKACJgKBKAGwhjOHBOtuppKWR5QkIwdAAHFFQ4ecWRLShhlhhFKAMAHi1kCAAPSBARFkppAD44pJJuAGlkUGQAawh0RRhkLV4APyRFZrDZbHZ7Q7PXh3AA+yAAFAj5nBNgYWBQtNCAJRxO7DdDYwiyQgwACuIAQYGAymQJREZKQYJUEIMADlFCIIIdjmcIBcrvhLJ90OIOCBOLwKASpjcEWEYhAOVzMa5uOxwbsDE8vq4NSytQA1OB9MkQKWWNjiziuAm8bGYh6hZSqIXqzYGvY69AWkCclDSe4KvDKiABJgukIgCAAd2ieGNpvM6Tmix+ag92yNJrNcTMFk65Mp1OUnXSJABGc1e0TZoRfq5RPaFA1pigZQR+qzNZzEFcDYg2ICQhKYDJUBATpIADpZ8Glf7Jo8u6zvb7Y-GILWIHIAtJhzMi1SaZPW9AyvtdHL52RdHrM6yAPI0ABWECpwNWEHWD61l5uDrILoTqjuOk7Pm+VLTvyEilJ2v57BB75gNi070oyEAIuhTIIeyi6hOEQ7EjMQSqAY6DMt2BhIR+aAgt+lGsvsUThHc8RCIkDApFOGQUPW-q4mYdwDtOMDAH0kBQAiVp4sgACE6iaDoOQONOoAIKaXIsNJ7C4k24xyMRgSRnSpRkhJ9xnu23IsYq17hK45GMVqNEocZKiKAM059IonBYWZElEoQQA) I found that would work but not ideal. 
-
-```ts
-function reduceTransformNode&lt;T extends { [key: string]: any }&gt;(cacheNode: T, [transformKey, transformValue]: [string, any]): T {
-  const { [transformKey]: node } = cacheNode;
-  const newCacheValue =
-    typeof transformValue === "function"
-      ? transformValue(node)
-      : traverse(transformValue, node);
-
-  return {
-    ...cacheNode,
-    [transformKey]: newCacheValue
-  };
-};
-```
-
-I don't want to have `any` in the code. Can anyone give this trick TypeScript problem a try
-## [7][Help: Mapped Type modifiers are being lost](https://www.reddit.com/r/typescript/comments/joyh92/help_mapped_type_modifiers_are_being_lost/)
-- url: https://www.reddit.com/r/typescript/comments/joyh92/help_mapped_type_modifiers_are_being_lost/
----
-I'm trying to make a mapped type based on two given types. I want the mapped type to have all keys that two given types have but respect and modifiers on those keys.
-
-My first attempt at such a type was:
-
-    type Merge1&lt;T1, T2&gt; = {
-        [K in keyof T1 | keyof T2]: SomeType;
-    }
-
-But the modifiers obviously become lost in this.
-
-I then tried:
-
-    type Merge2&lt;T1, T2&gt; = {
-        [K in keyof (T1 &amp; T2)]: SomeType;
-    }
-
-And this works in almost every single case. Yay for almost.
-
-The case were it doesn't work is with const assertions and I have no idea why. I initially thought the reason why was because `"a" &amp; "b"` is `never` but `string &amp; number` should also be `never` and it works fine in this case.
-
-[Here's a playground link](https://www.typescriptlang.org/play?#code/PQ18ZXTUFAgAQBUCeAHApogkgcgFtEAXAJ1QEsA7AcxIHtEATTAYwBsBDUzAOjjjEM2ALKZSNTAEYAPMikAaFACYAfIgC8iAN5xE+xAG0A0omqIA1plT0AZiimIAPpet2VAXQBciAMr0CTDQsAG44AF8BAxJhRDEJTGU5RRV1LV1o6JMzKlcbewAKeUQAMhUASm8-AKDhMOjIhFhmltbmpsQAEQBXAgJUFFiAWjNiPABnRCp6YjMCdHpSYk4qYn5BWP9A4Ox0xE4fbqoLaYB3XPCwprab25aO5Exx4mo6HfGBISxEAA1NHTgAEgeJwmPQqOwBrZ6PQfM9SK8FHoDAAjbhwsiIiJXL7YACa-10gOhsKmvRR4iR0TRpAA-BiEbQkZdPrEfqxwc9CUCQWCIVCYT4AEScFGsIVU1HoxBCli2CXY1nfPEcqhc9JAkk+ACskv0NPpMpoAAsKAqWdc7lbraAHk9iB8OiJ6EwKLZxJNuNh2PRnvxcSh7VIAIL-eKSWQ-JR41RhAOPZ5SABCYfEEZk7M5xGjquesYESAA6osLJMOaQeKxiJD-bEE8RlKGtOHEhno-mOp16E8qHhZqcS7XvvXlCnm2nW5m1dnECqs7HEEh0o0iyWy4tK9XUEPsCOAMKphJJKfPJQn4j5+P25SdQ+SJJz6c5+dhIA) so you can see what I'm talking about.
-
-Anyone have any idea on how I can fix my type? Or is this a bug in TypeScript itself?
-
-Edit: Probably not the most accurate title now that I think about it, but oh well. If you're reading this then it got the job done.
-## [8][Strict Mode without config file?](https://www.reddit.com/r/typescript/comments/jotkaz/strict_mode_without_config_file/)
-- url: https://www.reddit.com/r/typescript/comments/jotkaz/strict_mode_without_config_file/
----
-In VSCode, can I force a TypeScript file that exists outside of TypeScript project to be interpreted in strict mode?
-## [9][How do you initialize an "empty" map?](https://www.reddit.com/r/typescript/comments/jopxz2/how_do_you_initialize_an_empty_map/)
-- url: https://www.reddit.com/r/typescript/comments/jopxz2/how_do_you_initialize_an_empty_map/
----
-I have a type `type MyMap = Map&lt;string, string&gt;` .
-
-* When I attempt to implement this type as `const defaultMap:MyMap = new Map()` , I get an error `Only a void function can be called with the 'new' keyword.ts(2350)`
-* I changed it to `Map()` and I get `Type 'Map&lt;unknown, unknown&gt;' is missing the following properties from type 'Map&lt;string, string&gt;': [Symbol.iterator], [Symbol.toStringTag]ts(2739)`
-* I changed it to `Map&lt;string, string&gt;()` and I got the same error as above
-## [10][Short syntax for implicit type declaration with optional properties?](https://www.reddit.com/r/typescript/comments/joigd5/short_syntax_for_implicit_type_declaration_with/)
-- url: https://www.reddit.com/r/typescript/comments/joigd5/short_syntax_for_implicit_type_declaration_with/
----
-I am looking for the best/shortest way to initialize an object with values and declare its structure, including optional properties. E.g. I want to go from here:
-
-    interface IPerson {
-      name: string;
-      phone?: string;
-    }
-    
-    const dan: IPerson = {
-      name: "Dan",
-    };
-
-to a solution that is similar to this, but even shorter:
-
-    const dan = {
-      name: "Dan",
-      phone: undefined as undefined | string,
-    };
-
-Solutions I have come up with so far...
-
-**A: Explicit "undefined" value.** Too verbose for my liking because it requires spelling out "undefined", and twice. A concise `?` style syntax would be nice, but is not supported here.
-
-    const person = {
-      name: "Dan",
-      phone: undefined as undefined | string,
-    };
-
-**B: Helper function** makes code nicer to read and less verbose.
-
-    export function optional&lt;T&gt;(init?: T): undefined | T {
-      return init;
-    }
-    
-    const dan = {
-      name: "Dan",
-      phone: optional&lt;string&gt;()
-    }
-
-Is there a nice, "in-language" solution to achieve a more concise syntax?
-## [11][I made a VSCode plugin that does GoTo Definition faster than VSCode/TSServer](https://www.reddit.com/r/typescript/comments/jo3z86/i_made_a_vscode_plugin_that_does_goto_definition/)
-- url: https://marketplace.visualstudio.com/items?itemName=verydanny.smart-goto
----
-

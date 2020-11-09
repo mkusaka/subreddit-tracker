@@ -22,7 +22,49 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][I have released a web sdk to reduce video streaming costs by 90%](https://www.reddit.com/r/typescript/comments/jqazdm/i_have_released_a_web_sdk_to_reduce_video/)
+## [2][Stator: A full-stack boilerplate – releases, deployments, enforced conventions](https://www.reddit.com/r/typescript/comments/jqpizp/stator_a_fullstack_boilerplate_releases/)
+- url: https://www.reddit.com/r/typescript/comments/jqpizp/stator_a_fullstack_boilerplate_releases/
+---
+Have you ever started a new project by yourself?
+
+If so, you probably know that it is tedious to set up all the necessary tools. 
+
+Just like you, the part I enjoy the most is coding, not boilerplate.
+
+&amp;#x200B;
+
+Say hi to [stator](https://github.com/chocolat-chaud-io/stator), a full-stack TypeScript template that enforces conventions, handles releases, deployments and many more features!
+## [3][Help with typing a deep merge function.](https://www.reddit.com/r/typescript/comments/jqqtg5/help_with_typing_a_deep_merge_function/)
+- url: https://www.reddit.com/r/typescript/comments/jqqtg5/help_with_typing_a_deep_merge_function/
+---
+Hey all, I'm wondering if there are any smart people out there looking a little bit of a challenge.
+On the surface this didn't seem like it would be very hard when I started but it's been a lot more difficult than I expected.
+
+But anyway, essentially I'm trying to type 2 functions. One that will deeply merge any 2 given objects into a new resulting object. And the other that will deeply merge an array of 2+ objects into a new resulting object.
+
+I feel I'm close to getting the typings all correct but I'm having trouble with the second of the 2 functions. I'd really appreciate any help with solving this issue.
+I'd also really love if anyone was able to peer review my current PR.
+
+https://github.com/TehShrike/deepmerge/pull/211
+
+Thanks for reading :)
+## [4][Terraform with TypeScript](https://www.reddit.com/r/typescript/comments/jqxmoq/terraform_with_typescript/)
+- url: https://medium.com/francisvitullo/terraform-with-typescript-7643defb4eb1?source=friends_link&amp;sk=975dc30cd7d48d989f2d7f0c16882c2e
+---
+
+## [5][How to use Contact Picker API in typescript?](https://www.reddit.com/r/typescript/comments/jqu6yo/how_to_use_contact_picker_api_in_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/jqu6yo/how_to_use_contact_picker_api_in_typescript/
+---
+Hi.I need to use [Contact Picker API](https://wicg.github.io/contact-api/spec/) in my angular project. but it doesn't work because contacts and ContactsManager is not declared in Navigator in typescript dom library. and the error say "property contatcs does not exist on Navigator"
+
+here's some working examples in js:[https://whatwebcando.today/contacts.html](https://whatwebcando.today/contacts.html)[https://contact-picker.glitch.me](https://contact-picker.glitch.me/)
+
+here's my test angular app:  [https://codesandbox.io/s/angular-contacts-85x29-85x29](https://codesandbox.io/s/angular-contacts-85x29-85x29)
+
+I copied one of the examples and it doesn't work. I tried to add interface for contactManager and contact and merge it with Navigator in contacts.d.ts and added it in types in tsconfig, but I think it's not correct. I appreciate if you check my code or give me some hint on what to do to make it work.
+
+thanks in advance.
+## [6][I have released a web sdk to reduce video streaming costs by 90%](https://www.reddit.com/r/typescript/comments/jqazdm/i_have_released_a_web_sdk_to_reduce_video/)
 - url: https://www.reddit.com/r/typescript/comments/jqazdm/i_have_released_a_web_sdk_to_reduce_video/
 ---
  Hi everyone,
@@ -32,191 +74,51 @@ I am working on a javascript sdk which can reduce video streaming costs of CDN b
 A web demo is available here [https://api.peervadoo.com/test](https://api.peervadoo.com/test) . Click on **Add new peer** to see the tech in action,
 
 **Javascript sdk link** :- [https://github.com/vadootvpeer/sdk-javascript](https://github.com/vadootvpeer/sdk-javascript)
-## [3][Constraining the shape of a dictionary object's content?](https://www.reddit.com/r/typescript/comments/jqb2qe/constraining_the_shape_of_a_dictionary_objects/)
-- url: https://www.reddit.com/r/typescript/comments/jqb2qe/constraining_the_shape_of_a_dictionary_objects/
+## [7][Is there any way to make `tsc` "inline" imported modules?](https://www.reddit.com/r/typescript/comments/jqkrn3/is_there_any_way_to_make_tsc_inline_imported/)
+- url: https://www.reddit.com/r/typescript/comments/jqkrn3/is_there_any_way_to_make_tsc_inline_imported/
 ---
-I have a function which consumes dictionary objs. I'd like to constrain the shape of each entry in the dictionary (which is consistent across entries), though I'm not quite sure how...
+I'm writing a firefox extension using TypeScript. So far, the only tool in my build chain is `tsc` and ideally I would like it to stay that way.
 
-I tried using `[key: string]` as the key, but that matches all entries, even invalid ones that aren't in the dictionary (i.e. `dict['doesntExist']`)
+I basically have three source files:
 
-Does anybody have any insight on how to do this?
+    src/background.ts
+    src/context.ts
+    src/shared.ts
 
+`background` and `context` both use a few small methods from `shared`. However, the resulting JS code uses `import` statements (which do not really work in an extension environent). Ideally, I would like the import statement to be replaced by expanding the original code from `shared`, such that the output consists of only `background.js` and `context.js` (each with duplicated copies of the shared code).
 
-    type constraintObject_T = {
-        [allKeysWhichExistOnObject] : {
-            bar: string
-        }
-    }
-
-    function ConstrainedObject&lt;T extends constraintObject_T&gt;(object: T){
-        ...
-    }
-
-
-# Dict Examples
-    const valid = {
-        Foo: {
-            bar: 'test'
-        },
-        Too: {
-            bar: 'test'
-        }
-    }
-
-    const invalid = {
-        Foo: {
-            bar2: 'test'
-        },
-        Too: {
-            bar: 123
-        }
-    }
-## [4][Can enums have functions as values?](https://www.reddit.com/r/typescript/comments/jq355k/can_enums_have_functions_as_values/)
-- url: https://www.reddit.com/r/typescript/comments/jq355k/can_enums_have_functions_as_values/
+I'm pretty new to typescript and have found the documentation unhelpful
+## [8][how to remove debug TypeScript](https://www.reddit.com/r/typescript/comments/jqm9r1/how_to_remove_debug_typescript/)
+- url: https://www.reddit.com/r/typescript/comments/jqm9r1/how_to_remove_debug_typescript/
 ---
-Hi,
+I'm currently remote debugging in webstorm with node and everything works great. but now I'd like to remote  debug TypeScript and wondering how is that set up with the map files and everything?
 
-New to TS here. I am learning about enums, and I was wondering if TS enums could hold functions as enums. It seems like there's no reason it shouldn't be able to, except maybe that it is not possible to serialize functions and closures, (what about expressions where variables must only be params?) and I was looking at the documentation for typescript and couldn't find any information:
-
- [https://www.typescriptlang.org/docs/handbook/enums.html](https://www.typescriptlang.org/docs/handbook/enums.html)
-
-Java seems to be able to support functions in enums. Was there a specific reason for this, or is there actually a way? I know I can use an object, but it's interesting and useful to map a set of functions to a set of choices.
-## [5][Is there a generic interface to get all nested keys for an interface?](https://www.reddit.com/r/typescript/comments/jq2vj5/is_there_a_generic_interface_to_get_all_nested/)
-- url: https://www.reddit.com/r/typescript/comments/jq2vj5/is_there_a_generic_interface_to_get_all_nested/
+thanks
+## [9][Any good ways to make a shared tsconfig.json?](https://www.reddit.com/r/typescript/comments/jqe69e/any_good_ways_to_make_a_shared_tsconfigjson/)
+- url: https://www.reddit.com/r/typescript/comments/jqe69e/any_good_ways_to_make_a_shared_tsconfigjson/
 ---
-TypeScript 4.1+ is accessible in this scenario.
+So I am writing a general library containing JS/TS configuration utilities that I use across all my projects. Webpack, Babel, ESLint, etc. The goal is to be able to have something that I can literally just drop in and use. So I'm looking for help in a few areas:
 
-I've seen a few snippets that do this:
+1. Is there the equivalent of tsconfig.js? JavaScript configuration files, IMO, are much easier to use for shared configuration. I can just alternate between `__dirname` for references to code in the configuration library and `process.cwd()` for references to code in the consuming project. I have seen no references to this capability, so I assume no. If there is a way to do this, all subsequent questions are moot. If the answer is no, then please provide guidance for the subsequent questions for the JSON configuration.
+2. Is there any way to have configurable settings? For example, whether to compile the code to have esmodules or commonjs modules is a setting I want configurable.
+3. How do I handle relative paths? The `include` array, `compilerOptions.outDir`, `exclude` array, etc. I would want to be able to have the tsconfig.json in my configuration library while still pointing to the locations in the project that uses it.
 
-    interface X {
-      a: {
-        b: boolean;
-      };
-      c: string;
-    }
-    type Example&lt;X&gt; = /* magic here */;
-    // Example&lt;X&gt; = 'a.b' | 'c';
-
-I am wanting an array version of this:
-
-    type Example&lt;X&gt; = /* magic here */;
-    // Example&lt;X&gt; = ['a', 'b'] | ['c'];
-
-Is this possible yet in TypeScript?
-
-Use case:
-
-    const x: X = {
-      a: {
-        b: true,
-      },
-      c: 'yes',
-    };
-    const getFromX = &lt;NestedKeys extends Example&lt;X&gt;&gt;(...keys: NestedKeys): TypeOf&lt;X, NestedKeys&gt; =&gt; {
-      let temp = x;
-      for (const key of keys) {
-        temp = temp[key];
-      }
-      return temp;
-    };
-    const bool: boolean = getFromX('a', 'b'); // true
-    const str: string = getFromX('c'); // 'yes'
-## [6][Purify 0.16 released! - A Functional programming library for TypeScript](https://www.reddit.com/r/typescript/comments/jpr6pl/purify_016_released_a_functional_programming/)
-- url: https://www.reddit.com/r/typescript/comments/jpr6pl/purify_016_released_a_functional_programming/
+That's it for now. Help is appreciated. Thanks.
+## [10][Filtering array of Record&lt;&gt; and Objects](https://www.reddit.com/r/typescript/comments/jqd9c8/filtering_array_of_record_and_objects/)
+- url: https://www.reddit.com/r/typescript/comments/jqd9c8/filtering_array_of_record_and_objects/
 ---
-Link to changelog: [https://gigobyte.github.io/purify/changelog/0.16](https://gigobyte.github.io/purify/changelog/0.16)
+I'm new to TypeScript, and since for the past few years I only programmed in JS, I'm not really used to using types.
 
-Before the usual comment asking about a comparison with fp-ts that comes up with every release post - [here](https://www.reddit.com/r/functionalprogramming/comments/ebg4pc/purify_014_released_a_functional_programming/fb5uv16/).
+I want to filter an array of objects like this:`(Record&lt;string, unknown&gt; | iItem)[]`
 
-Purify is becoming pretty much production ready, so this will be the last 0.x release. Every release post in this subreddit has always generated some nice feedback, so I'm looking forward to that.
-## [7][How to define a dictionary that is indexed with symbols in typescript ?](https://www.reddit.com/r/typescript/comments/jpwiyr/how_to_define_a_dictionary_that_is_indexed_with/)
-- url: https://www.reddit.com/r/typescript/comments/jpwiyr/how_to_define_a_dictionary_that_is_indexed_with/
+I want it to only contain `iItem`. I know that iItem will contain properties like id and type, inherited from `BaseItem` interface. What I've tried to do is to create a filtering function
+
+    isItem( v: Record&lt;string, unknown&gt; | iItem ):v is iItem {
+ return v instanceof BaseItem
+ }
+
+And then pass it to `.filter` method, however it doesn't seem to recognize that the output type will be iItem. Is there an easier way of filtering it? Am I doing something wrong?
+## [11][Check if string is AWS ARN](https://www.reddit.com/r/typescript/comments/jqj59y/check_if_string_is_aws_arn/)
+- url: https://www.reddit.com/r/typescript/comments/jqj59y/check_if_string_is_aws_arn/
 ---
-[Here](https://www.typescriptlang.org/play?#code/MYewdgzgLgBAJgS2LAXDASgU1AJzgHggE8BbAIxABsAaaHBMAcwD4YBeGAbwF8BuAKH6JkAbQDKpCpQAUASgC6A-qEiwQUABaYcAESSouIgB4pi5KvJho6DRt3Zc+QA) is what I have tried so far. Why is it wrong?
-## [8][How to preserve type when plucking from object, but account for undefined keys?](https://www.reddit.com/r/typescript/comments/jq2o4h/how_to_preserve_type_when_plucking_from_object/)
-- url: https://www.reddit.com/r/typescript/comments/jq2o4h/how_to_preserve_type_when_plucking_from_object/
----
-Consider the below code, the code `const foundKey = classDict[key]` should have the type `string | undefined`, because it's possible to enter in a string key that's not part of the `dict` object (e.g. `dict['bar']`). 
-
-However, I can't seem to figure out how to accomplish this. Does anybody how to accomplish this?
-
-
-
-# Function
-
-
-    function classMatcher&lt;
-      K extends keyof T,
-      T extends baseClassDict_T
-    &gt;(keys: K[], classDict: T): T[K] | undefined {
-      for (let key of keys) {
-        const foundKey = classDict[key]; // &lt;---- Type = string, should equal string | undefined
-        if (foundKey !== undefined) return foundKey;
-      }
-      return undefined;
-    }
-
-    type baseClassDict_T = {
-      [key: string]: {
-        component: (prop: any) =&gt; JSX.Element;
-      };
-    };
-
-# Usage
-
-    const keys = ['foo', 'bar'];
-    const dict = {
-        foo: {
-            component: //misc...
-        }
-    }
-    classMatcher(keys, dict)
-## [9][react native how to add IOS and android model top of the input field for register?](https://www.reddit.com/r/typescript/comments/jq2j6k/react_native_how_to_add_ios_and_android_model_top/)
-- url: https://www.reddit.com/r/typescript/comments/jq2j6k/react_native_how_to_add_ios_and_android_model_top/
----
-
-## [10][Type-safe dotted paths for objects, arrays, and nested recursive objects! (and intellisense)](https://www.reddit.com/r/typescript/comments/jpf9gr/typesafe_dotted_paths_for_objects_arrays_and/)
-- url: https://www.reddit.com/r/typescript/comments/jpf9gr/typesafe_dotted_paths_for_objects_arrays_and/
----
-Imagine you have the following \`get\` function:
-
-https://preview.redd.it/ylkw3bvytox51.png?width=1340&amp;format=png&amp;auto=webp&amp;s=97c7ebc93f8dd488c03ac3bfefd9bf0d4cfd9411
-
-Do you want type safe paths and return types? With auto-completion / intellisense?
-
-[Implementation](https://preview.redd.it/g3zu2nm16px51.png?width=1640&amp;format=png&amp;auto=webp&amp;s=ed2d3099dca13581bf1f327de9571786aa54f440)
-
-&amp;#x200B;
-
-[Result with errors](https://preview.redd.it/vw0x8nqf5px51.png?width=640&amp;format=png&amp;auto=webp&amp;s=53ad8e01e22e0f121aee909ae14cf0acda6eb923)
-
-&amp;#x200B;
-
-It handles recursive objects and arrays too - at lightning speed.
-
-[https://gist.github.com/millsp/1eec03fbe64592c70efa4c80515f741f](https://gist.github.com/millsp/1eec03fbe64592c70efa4c80515f741f)  
-
-
-\`PathDot\` will ship soon with the upcoming version \`9\`. Leave a star on:
-
-[https://github.com/millsp/ts-toolbelt](https://github.com/millsp/ts-toolbelt)
-## [11][Fire a Promise and Collect the Result Later](https://www.reddit.com/r/typescript/comments/jpbawa/fire_a_promise_and_collect_the_result_later/)
-- url: https://www.reddit.com/r/typescript/comments/jpbawa/fire_a_promise_and_collect_the_result_later/
----
-I want to make a call to a service (and get a response from that service), do other stuff at the same time, then take the result from that service call and use it to populate some variables.
-
-&amp;#x200B;
-
-My current idea is:
-
-`private async serviceCall(): Promise&lt;ServiceResponse&gt; { return await serviceHandle(); }`
-
-`var servicePromise = new Promise(() =&gt; this.serviceCall());`
-
-`doOtherStuff();`
-
-... get the ServiceResponse and store it in a variable.
-
-\---
-
-How do you get the serviceResponse?
+Hey guys, how can I check if a string is an AWS ARN in Typescript? I'm having difficulty implementing such a functionality.

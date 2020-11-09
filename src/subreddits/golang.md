@@ -3,138 +3,132 @@
 - url: https://blog.golang.org/survey2020
 ---
 
-## [2][Better error handling with DDD Error](https://www.reddit.com/r/golang/comments/jq9f91/better_error_handling_with_ddd_error/)
-- url: https://www.reddit.com/r/golang/comments/jq9f91/better_error_handling_with_ddd_error/
+## [2][What’s it like (Career-wise) as a Go programmer?](https://www.reddit.com/r/golang/comments/jqrks8/whats_it_like_careerwise_as_a_go_programmer/)
+- url: https://www.reddit.com/r/golang/comments/jqrks8/whats_it_like_careerwise_as_a_go_programmer/
 ---
-Hey, everyone!
+I’d love to know what you day to say is. What is your career, how much time do you actually spending coding? Do you recommend Go? What made you interested in it?
 
-Today I just finished my first Go package after more than a year using this amazing lang. I wanted to shared it with you all.
+And also, have you done any cool (personal) projects?
 
-I specifically focused on following the Go’s simplicity principles and keep the library idiomatic. Don’t worry about any good ol’ Java/PHP/C#/Typescript complexities.
-
-`DDD Error` is a _generic domain-driven exception wrapper_ made for Go.
-
-Using existing _validators_ such as playground's implementation is _overwhelming because tag validation_ and the need to rewrite descriptions. 
-With `DDD Error`, _you may still use 3rd-party validators_ or _make your own validations_ in your value objects, entities or aggregates.
-
-In addition, infrastructure exceptions were added so you may be able to _catch specific kind of infrastructure errors._
-
-Exceptions _descriptions are based on the [Google Cloud API Design Guidelines](https://cloud.google.com/apis/design/errors)_.
-
-`DDD Error` is compatible with popular error-handling packages such as [Hashicorp's go-multierror](https://github.com/hashicorp/go-multierror)
-
-In conclusion, `DDD Error` aims to _ease the lack of exception handling_ in The Go Programming Language by defining a _wide selection of common exceptions_ 
-which happen inside the _domain and/or infrastructure_ layer(s).
-
-_Note: `DDD Error` is dependency-free, it uses built-in packages such as errors package._
-
-**Which use cases you'll find DDD Error useful?**
-- Implement retry strategy and circuit breaker resiliency patterns by adding Network exception to the whitelist.
-- Not Acknowledging messages from an event bus if got a Network or Infrastructure generic exception.
-- Get an HTTP/gRPC/OpenCensus status code from an error.
-- Implement multiple strategies when an specific (or generic) type of error was thrown in.
-- Fine-grained exception logging on infrastructure layer by using GetParentDescription() function.
-- More.
-
-_The only requirement is Go version 1.13 or above._
-
-[Take me to the GitHub repository](https://github.com/NeutrinoCorp/ddderr)
-
-_Note: I've been using similar strategies for quite a time, but have in mind I made this package in just a few hours. Please, feel free to report any bug._
-## [3][Today, I presented Go to my team... (the screen recoding)](https://www.reddit.com/r/golang/comments/jpugtg/today_i_presented_go_to_my_team_the_screen/)
-- url: https://www.reddit.com/r/golang/comments/jpugtg/today_i_presented_go_to_my_team_the_screen/
----
-A few days ago, I posted my experience of [introducing Go to my team](https://www.reddit.com/r/golang/comments/jnhzm5/today_i_presented_go_to_my_team/) and the feedback was overwhelming. I would like to thank you all again for your support!  &lt;3
-
-As some have requested, here is the screen recoding of the presenation for you to watch:
-
-[https://www.youtube.com/watch?v=Mjcw8fHdx8Q](https://www.youtube.com/watch?v=Mjcw8fHdx8Q)
-
-*Make sure to speed it up, if I'm talking too slow :)*
-
-EDIT: New YouTube link (old one had broken audio)
-
-EDIT2: As many have been asking, I've used a personally modified version of [present](https://pkg.go.dev/golang.org/x/tools/present) for making the slides.
-You can install it with: `go get golang.org/x/tools/cmd/present`
-## [4][If google is supporting Go, is this search result just a joke ? :D](https://www.reddit.com/r/golang/comments/jqbjn2/if_google_is_supporting_go_is_this_search_result/)
+Don’t need to answer above, I’d just like to read your experience!
+## [3][If google is supporting Go, is this search result just a joke ? :D](https://www.reddit.com/r/golang/comments/jqbjn2/if_google_is_supporting_go_is_this_search_result/)
 - url: https://i.redd.it/iuo2ju8nn0y51.png
 ---
 
-## [5][Clean Boilerplate of Go, Domain-Driven Design, Clean Architecture, Gin and GORM.](https://www.reddit.com/r/golang/comments/jq1id7/clean_boilerplate_of_go_domaindriven_design_clean/)
-- url: https://i.redd.it/mdrc2aexqwx51.png
+## [4][Upcoming Go 1.16 reduces significantly reduces sizes for built executables](https://www.reddit.com/r/golang/comments/jqdkc6/upcoming_go_116_reduces_significantly_reduces/)
+- url: https://www.reddit.com/r/golang/comments/jqdkc6/upcoming_go_116_reduces_significantly_reduces/
 ---
+Just tried building [VictoriaMetrics project](https://github.com/VictoriaMetrics/VictoriaMetrics/) with Go tip (aka upcoming Go 1.16) and noticed significant reduction in produced binary size comparing to Go 1.15.4:
 
-## [6][Tutorial for beginners](https://www.reddit.com/r/golang/comments/jqa93y/tutorial_for_beginners/)
-- url: https://www.reddit.com/r/golang/comments/jqa93y/tutorial_for_beginners/
----
-Hi everyone! I'm looking for some interesting tutorial for beginners. Suggestions? 🤓
-## [7][Go http client closes the underlying tcp connection when it hits a timeout with a request, ignoring the connection pooling settings. Anyone knows the reason why?](https://www.reddit.com/r/golang/comments/jq8j7i/go_http_client_closes_the_underlying_tcp/)
-- url: https://v.redd.it/s3xc7z99bzx51
----
-
-## [8][How suitable is Go for handling thousands of busy websocket connections with decent latency?](https://www.reddit.com/r/golang/comments/jq8b7s/how_suitable_is_go_for_handling_thousands_of_busy/)
-- url: https://www.reddit.com/r/golang/comments/jq8b7s/how_suitable_is_go_for_handling_thousands_of_busy/
----
-Hi there,
-
-I have had a project in mind for a while that I initially wanted to implement with Python. I have a working prototype that I have tested with low player counts.
-
-However you don't have to be a genius to see how hard it will be to scale it. Python's Async / concurrency APIs are not especially mature (and make your codebase quite ugly to be honest).
-
-The requirements for this application server are that it has to be able to handle up to 5k websocket connections, do some simple business logic, and broadcast data to all clients without significant latency.  Has anyone here done something similar with Go?
-## [9][Static Dependency Analysis Tool for Go Files](https://www.reddit.com/r/golang/comments/jpm0aj/static_dependency_analysis_tool_for_go_files/)
-- url: https://i.redd.it/h71qm0zrhrx51.gif
----
-
-## [10][I started learning Go today... and I really like it!](https://www.reddit.com/r/golang/comments/jq4534/i_started_learning_go_today_and_i_really_like_it/)
-- url: https://www.reddit.com/r/golang/comments/jq4534/i_started_learning_go_today_and_i_really_like_it/
----
-![](https://pbs.twimg.com/media/Ef-GZDIXoAEnbhE?format=jpg&amp;name=small)
-
-I spent the whole day reading Introducing Go by Caleb Doxsey and I already feel pretty confident writing Go code.
-
-After over a year of working with Rust I wanted to try Go out and I was surprised by how simple it is and also kinda bugged about how verbose it can be sometimes. I really missed Rust's compile time checks and the ownership model, but I also felt that I had more control over what I wanted my code to do, even if it could lead to runtime errors. 
-
-Overall my first experience with the language was very pleasant and I plan to keep on learning, perhaps get a job someday, who knows?
-## [11][atomic.Value docs - explain "must not be copied" please](https://www.reddit.com/r/golang/comments/jq1jgd/atomicvalue_docs_explain_must_not_be_copied_please/)
-- url: https://www.reddit.com/r/golang/comments/jq1jgd/atomicvalue_docs_explain_must_not_be_copied_please/
----
-Hi, the atomic.Value doc (https://golang.org/pkg/sync/atomic/) states
-
-&gt; Once Store has been called, a Value must not be copied.
-&gt;
-&gt; A Value must not be copied after first use.
-
-What does that even mean? 
-
-Does it just mean that under
-`x := y.Load()`
-the `x` will not show the atomic behaviour that `y` enjoys? I'd think this is so obvious that I suspect that statement in the docs mean something else.
-
-Considering the following most basic snippet with an atomic.Value `a`, strictly without anything "copied":
 ```
-if len(a.Load().(string)) == 0 {
-  panic("empty string!")
-}
-
-println(a.Load().(string))
+$ ls -lGg --si bin/
+total 34M
+-rwxr-xr-x 1 19M Nov  7 01:19 victoria-metrics-go1.15.4
+-rwxr-xr-x 1 16M Nov  7 01:21 victoria-metrics-go-tip
 ```
 
-In the above snippet, isn't the use of atomic.Value completely useless because between the two Load()'s a Store() might occur from somewhere else, setting `a` to an empty string that would then have bypassed the panic-check?
+VictoriaMetrics executable size has been reduced from 19MB to 16MB - almost 16% reduction. This looks awesome!
 
-So what one obviously needs to do is:
-```
-x := a.Load().(string)
+It would be great to know which particular changes in Go 1.16 are responsible for such great binary size reduction.
+## [5][Why does the log package always output to stderr?](https://www.reddit.com/r/golang/comments/jqvaft/why_does_the_log_package_always_output_to_stderr/)
+- url: https://www.reddit.com/r/golang/comments/jqvaft/why_does_the_log_package_always_output_to_stderr/
+---
+I'm just starting out with Go and wondered why the log package always outputs to stderr? 
 
-if len(x) == 0 {
-  panic("empty string!")
-}
+I would expect some functions to output to stdout and others to stderr. For example calls to log.Fatal would go to stderr, calls to log.Print to stdout. 
 
-println(x)
-```
+Is there some idiomatic way to handle logging in Go?
+## [6][gRPC](https://www.reddit.com/r/golang/comments/jqsf0n/grpc/)
+- url: https://www.reddit.com/r/golang/comments/jqsf0n/grpc/
+---
+Is anyone using gRPC or still using Restful APIs? I tried using it a while back (\~ 2 years) but had to use [grpc-gateway](https://github.com/grpc-ecosystem/grpc-gateway) to be able to invoke from react (web)/ mobile etc but we quickly shifted back to Restful APIs.
+## [7][I have rewritten "Spinning Donut" to Golang](https://www.reddit.com/r/golang/comments/jqxm6d/i_have_rewritten_spinning_donut_to_golang/)
+- url: https://www.reddit.com/r/golang/comments/jqxm6d/i_have_rewritten_spinning_donut_to_golang/
+---
+Implementation of "Spinning Donut" on Golang, not much different but cool
 
-But beware: `x := a.Load().(string)` is copying which *must not be done*... no?  
+Left: Go  
+Right: C  
+Source: [https://github.com/Vlad-Shevliakov/ASCII-render](https://github.com/Vlad-Shevliakov/ASCII-render)
 
-To me it seems some copying *must totally* be done for atomic.Value to have any use at all.
+https://reddit.com/link/jqxm6d/video/9m2dr0o5v7y51/player
+## [8][I added syntax highlighting to Go's present tool. Inspired by flippeeer's presentation.](https://www.reddit.com/r/golang/comments/jqkl5m/i_added_syntax_highlighting_to_gos_present_tool/)
+- url: https://github.com/soypat/go-presentx
+---
 
-Can someone please unconfuse me? Thanks.
+## [9][Simple Modern OpenGL Renderer Written in Go](https://www.reddit.com/r/golang/comments/jqfswr/simple_modern_opengl_renderer_written_in_go/)
+- url: https://www.reddit.com/r/golang/comments/jqfswr/simple_modern_opengl_renderer_written_in_go/
+---
+Hi folks,
+
+I want to share my recent side project, nothing fancy but I'm looking forward to your feedback also maybe some of you will find it interesting to play around with the code.
+
+hope you like it, Thanks.
+
+[https://github.com/dkvilo/andromeda](https://github.com/dkvilo/andromeda)
+## [10][Go Offline Development. Best Practices/Tips](https://www.reddit.com/r/golang/comments/jquf12/go_offline_development_best_practicestips/)
+- url: https://www.reddit.com/r/golang/comments/jquf12/go_offline_development_best_practicestips/
+---
+\[Solved\]
+
+Seems like this tutorial will do the trick [https://medium.com/@bnprashanth256/dependency-management-and-vendoring-in-go-golang-5ec6d6b7590e](https://medium.com/@bnprashanth256/dependency-management-and-vendoring-in-go-golang-5ec6d6b7590e)
+
+&amp;#x200B;
+
+Hey guys,
+
+I've got an interesting problem. I need to write code in Go in an airgapped environment. That means no internet connection and only file transfer via secure USB-Sticks.
+
+**How can I download and resolve my dependencies for 3rd-party librarys without an internet connection?**
+
+I can't seem to find anything online about this topic. I need to be able to use the `gopkg.in/yaml.v2` Libary. Simply downloading the .zip from GitHub and copying it manually to the GOPATH is not feasible. Most library use a decent amount of other library so i need a way (that can be automated) to download all sub-dependencies to.
+
+Thanks in advance for all your input.
+## [11][Machine is a zero dependency library for highly concurrent Go applications](https://www.reddit.com/r/golang/comments/jql79e/machine_is_a_zero_dependency_library_for_highly/)
+- url: https://www.reddit.com/r/golang/comments/jql79e/machine_is_a_zero_dependency_library_for_highly/
+---
+Update: v1.1.0 
+
+&amp;#x200B;
+
+https://preview.redd.it/ybk93cwmg3y51.jpg?width=800&amp;format=pjpg&amp;auto=webp&amp;s=61deeda7df783a2d0904790f4d066a27787b9682
+
+* GitHub: [https://github.com/autom8ter/machine](https://github.com/autom8ter/machine)
+* GoDoc: [https://pkg.go.dev/github.com/autom8ter/machine](https://pkg.go.dev/github.com/autom8ter/machine)
+* import "[github.com/autom8ter/machine](https://github.com/autom8ter/machine)"
+
+Machine is a zero dependency runtime for managed goroutines. It is inspired by [errgroup.Group](https://errgroup.Group) with extra bells &amp; whistles:
+
+* throttled goroutines
+* self-cancellable goroutines with \[*\`*Context\*\`\*\]([*https://golang.org/pkg/context#Context*](https://golang.org/pkg/context#Context))
+* global-cancellable goroutines with context (see \[Cancel\]([*https://pkg.go.dev/github.com/autom8ter/machine#Machine.Cancel*](https://pkg.go.dev/github.com/autom8ter/machine#Machine.Cancel)))
+* goroutines have IDs and optional tags for easy debugging (see \[Stats\]([*https://pkg.go.dev/github.com/autom8ter/machine#Machine.Stats*](https://pkg.go.dev/github.com/autom8ter/machine#Machine.Stats)))
+* native \[publish/subscribe\]([*https://pkg.go.dev/github.com/autom8ter/machine/pubsub#PubSub*](https://pkg.go.dev/github.com/autom8ter/machine/pubsub#PubSub)) implementation for broadcasting messages to active goroutines
+* \[middlewares\]([*https://pkg.go.dev/github.com/autom8ter/machine#Middleware*](https://pkg.go.dev/github.com/autom8ter/machine#Middleware)) for wrapping/decorating functions
+* "sub" machines for creating a dependency tree between groups of goroutines
+* goroutine leak prevention
+* native pprof &amp; golang execution tracer integration
+* greater than 80% test coverage
+
+## Use Cases
+
+[Machine](https://pkg.go.dev/github.com/autom8ter/machine#Machine) is meant to be completely agnostic and dependency free- its use cases are expected to be emergent. Really, it can be used **anywhere** goroutines are used.
+
+Highly concurrent and/or asynchronous applications include:
+
+* gRPC streaming servers
+* websocket servers
+* pubsub servers
+* reverse proxies
+* cron jobs
+* custom database/cache
+* ETL pipelines
+* log sink
+* filesystem walker
+* code generation
+
+Visit [https://github.com/autom8ter/machine/blob/master/examples/README.md](https://github.com/autom8ter/machine/blob/master/examples/README.md) for examples that are easy to grok(under &lt; 500 lines of code)
+
+* gRPC Bidirectional Chat Stream Server
+* TCP Reverse Proxy
+* Concurrent Cron Job Server

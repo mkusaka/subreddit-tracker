@@ -56,106 +56,151 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][fineFTP - A C++ FTP Sever library to create an embedded FTP Server](https://www.reddit.com/r/cpp/comments/jpuyz0/fineftp_a_c_ftp_sever_library_to_create_an/)
-- url: https://www.reddit.com/r/cpp/comments/jpuyz0/fineftp_a_c_ftp_sever_library_to_create_an/
----
-fineFTP Server is a C++ FTP Server Library that lets you create an embedded FTP Server with just 3 lines of code:
-
-``` cpp
-fineftp::FtpServer ftp_server();
-ftp_server.addUserAnonymous("C:\\", fineftp::Permission::All); // Use "/" on Linux
-ftp_server.start(); // Non blocking!
-```
-
-fineFTP is implemented with (non-boost) asio and is cross-platform (Windows/Unix). It is licensed under MIT.
-
-Check it out on GitHub! https://github.com/continental/fineftp-server
-## [3][lunasvg 1.4.0 released](https://www.reddit.com/r/cpp/comments/jpvwzb/lunasvg_140_released/)
-- url: https://github.com/sammycage/lunasvg/releases/tag/1.4.0
+## [2][Structured Concurrency](https://www.reddit.com/r/cpp/comments/jqt4z2/structured_concurrency/)
+- url: https://ericniebler.com/2020/11/08/structured-concurrency/
 ---
 
-## [4][Created a convenient (albeit trivial) `concept` for keeping all parameters/arguments explicit—useful for embedded, perhaps.](https://www.reddit.com/r/cpp/comments/jpqtcd/created_a_convenient_albeit_trivial_concept_for/)
-- url: https://www.reddit.com/r/cpp/comments/jpqtcd/created_a_convenient_albeit_trivial_concept_for/
----
-    // Prevents all implicit conversions.
-    //
-    // intendend usage (example):
-    //   auto aFunction(Strict&lt;ExactlyOneConcreteType&gt; auto parameter) {...}
-    //
-    template &lt;typename ValueType, typename StrictType&gt;
-    concept Strict = std::is_same&lt;StrictType, ValueType&gt;::value;
-
-Please see [this code on the Compiler Explorer](https://godbolt.org/z/e4qdWo) for more examples.
-
-Essentially, it forces you to code even built-in types with type safety. You can't even pass `/\d+/` to a function with the signature `someFunction(Strict&lt;unsigned int&gt; auto)`, you're forced to append a `u`.
-
-Please, anyone, speak up if this kills compiler optimization or something like that (I don't see it, but I'm not an expert). Also, yeah, you're not saving *very* much by skipping all the implicit conversions, but I think it's got potential for simply keeping you working *strictly* within the types you intend for things like embedded applications. You don't have to worry about templates/concepts exploding your function count, allowing you to use `concepts` to represent [concepts](https://en.wikipedia.org/wiki/Concept) even in limited environments, allowing you to say what you mean (and no more).
-
-Maybe. I'm going to try it out on my keyboard firmware—it's got me excited.
-## [5][dealing with lifetime has become a major complexity in modern C++](https://www.reddit.com/r/cpp/comments/jpye6g/dealing_with_lifetime_has_become_a_major/)
-- url: https://www.reddit.com/r/cpp/comments/jpye6g/dealing_with_lifetime_has_become_a_major/
----
-first, I should clarify here that I'm **not** saying that any lifetime related facilities provided by C++ is poorly designed or unnecessary. It's more of that other parts of the language have been simplified so much, and *in comparison*, dealing with lifetime (especially in generic code) has become a major cause that breaks a piece of otherwise elegant code, and makes things more cumbersome in general. Also regarding "lifetime", I'm talking in a very specific context here that involves xvalues, it doesn't apply to RAII, smart pointers or any other circumstance.
-
-basically, what I'm talking about is that you often have to write special code to deal with xvalues. I realized this only recently while I have been refactoring a C++20 codebase for an upstream API upgrade. whenever there's a seemingly unreasonably complex or counterintuitive code snippet, it usually has something to do with xvalues. see [here](https://github.com/IFeelBloated/vsFilterScript/blob/master/include/Utility.vxx#L53), [here](https://github.com/IFeelBloated/vsFilterScript/blob/master/include/Node.vxx#L60) and [here](https://github.com/IFeelBloated/vsFilterScript/blob/master/include/Plugin.vxx#L46), it even leads to obscure language details like [this](https://www.reddit.com/r/cpp_questions/comments/jppw2f/is_the_initialization_order_for_uniform/). I wonder if there's any possibility to simplify stuff like this in future standards.
-## [6][what concepts/libraries of c++ are used in industries](https://www.reddit.com/r/cpp/comments/jpiuc3/what_conceptslibraries_of_c_are_used_in_industries/)
-- url: https://www.reddit.com/r/cpp/comments/jpiuc3/what_conceptslibraries_of_c_are_used_in_industries/
----
-I'm trying to learn more about C++. In my university, the courses do a good job of teaching the basic foundations of C++. But I feel like there is such a big void/gap between what I know and what is expected in industries. I feel like the only things I know are building classes, functions, using the STL and that's about it :(
-
-What I am trying to ask is, what concepts or libraries are useful for me to learn before entering an industry? I know the word "industry" is super broad, but I'm open to anything because I want to learn more.
-## [7][Fast open-source intrusion detection](https://www.reddit.com/r/cpp/comments/jpk70l/fast_opensource_intrusion_detection/)
-- url: https://github.com/cmu-snap/pigasus
+## [3][C++ code testing with GTEST for beginners](https://www.reddit.com/r/cpp/comments/jqh7nq/c_code_testing_with_gtest_for_beginners/)
+- url: https://youtu.be/XW64uWpkYfY
 ---
 
-## [8][I built a site to Instant-Search through 32 Million Songs in Milliseconds, using Typesense - a search engine written in C++](https://www.reddit.com/r/cpp/comments/jowldc/i_built_a_site_to_instantsearch_through_32/)
-- url: https://songs-search.typesense.org/
+## [4][[QUESTION] Any experience with making some money on the side on Fiverr (or other platforms)?](https://www.reddit.com/r/cpp/comments/jqww29/question_any_experience_with_making_some_money_on/)
+- url: https://www.reddit.com/r/cpp/comments/jqww29/question_any_experience_with_making_some_money_on/
+---
+Hi everyone
+
+Due to corona i occasionally have some unemployment days which means i have some time left over. I want to do something with this time and i was looking for some side-hustle in the cpp area for example as a code reviewer/bug fixer on Fiverr.
+
+&amp;#x200B;
+
+My profile:
+
+Graduated sept '19, masters degree in electronics/ICT engineering
+
+Working fulltime as a c++ developer since sept '19
+
+&amp;#x200B;
+
+Would i be experienced enought to do something like this?
+
+Does anyone have experience with Fiverr (or other platforms)?
+
+If so, is it somewhat profitable? Getting rich fast isn't the goal, but i would like to spend my time useful by helping someone/gaining experience/making some extra money as a bonus.
+## [5][[C++ Web Game + Update] SFML Game Engine for Web (HTML), Android &amp; PC](https://www.reddit.com/r/cpp/comments/jqhqmx/c_web_game_update_sfml_game_engine_for_web_html/)
+- url: https://www.reddit.com/r/cpp/comments/jqhqmx/c_web_game_update_sfml_game_engine_for_web_html/
+---
+Hi everyone, hope you are doing well!
+
+&amp;#x200B;
+
+A new update of **is::Engine** (SFML Game Engine) is available but this time it comes with a **web game** that was created with the engine.
+
+This is a special version of the game (Complete game overhaul) **I Can Transform** (released on Android) created to celebrate these 2 years.
+
+The game was created with **SFML** except the physics engine that I had coded myself.
+
+&amp;#x200B;
+
+Here are the new features of version 3.1.1:
+
+► **IS\_ENGINE\_RENDER**: allows you to optimize your games so that they can run on old computers (mine for example \^\^).
+
+► **Game Slider**: allows you to do sliding actions (like on Smartphones) to manipulate your menus.
+
+► **Transition Effect**: allows you to make Fade Out and Fade In type transition effects.
+
+► **Improved web support**: many bugs have been fixed.
+
+► **Support of Render Texture in web development.**
+
+&amp;#x200B;
+
+**Game Engine link**: [Here](https://github.com/Is-Daouda/is-Engine)
+
+&amp;#x200B;
+
+**Here is web game link**: [Here](http://is-daouda.github.io)
+
+(It's a web game so it's playable on PC and mobile)
+
+A tip to start the game well, note that the environment is your best ally in this game.
+
+&amp;#x200B;
+
+**Here is the Game trailer**: [Here](https://youtu.be/vETLpYMc2sA)
+
+&amp;#x200B;
+
+The development of the game and the engine update were done during this week (at my free time of course) so I didn’t have time to create many levels. But believe me, there’s enough for you to have a good time. :)
+
+&amp;#x200B;
+
+Your questions are welcome
+
+&amp;#x200B;
+
+Have a good day :)
+## [6][A good C++ IDE for Mac](https://www.reddit.com/r/cpp/comments/jqxfjr/a_good_c_ide_for_mac/)
+- url: https://www.reddit.com/r/cpp/comments/jqxfjr/a_good_c_ide_for_mac/
+---
+I am in my first year of University, and I was wondering if there were any good IDEs for c++ in MacOS, since they use visual studio for windows in my classes and I only have a MacBook.
+
+Thank you in advance
+## [7][A libc written in C++](https://www.reddit.com/r/cpp/comments/jqxan9/a_libc_written_in_c/)
+- url: https://llvm.org/docs/Proposals/LLVMLibC.html
 ---
 
-## [9][BrainFuck compiler in c++/rust metaprogramming(constexpr/procedural macro solution)](https://www.reddit.com/r/cpp/comments/jp7k0u/brainfuck_compiler_in_crust/)
-- url: https://www.reddit.com/r/cpp/comments/jp7k0u/brainfuck_compiler_in_crust/
+## [8][Conservative instantiation in variadic templates](https://www.reddit.com/r/cpp/comments/jqx1oa/conservative_instantiation_in_variadic_templates/)
+- url: https://www.reddit.com/r/cpp/comments/jqx1oa/conservative_instantiation_in_variadic_templates/
 ---
-In my last post [BrainFuck compiler in c++ template metaprogramming](https://www.reddit.com/r/cpp/comments/jnz5p1/brainfuck_compiler_in_c_template_metaprogramming/), I used template metaprogramming solution to do this, but now I have done it in c++ and rust in constexpr and procedural macro way (~80 lines), and supports output and nest loop.
+A use case of variadic templates that often arises in my libraries and applications is the following:
 
-c++ version: [BrainFuckConstexpr.cpp](https://github.com/netcan/recipes/blob/master/cpp/metaproggramming/brain_fuck/BrainFuckConstexpr.cpp), [https://godbolt.org/z/EYn7PG](https://godbolt.org/z/EYn7PG), below:
+    void f(std::convertible_to&lt;double&gt; auto const&amp;... x);
 
-```cpp
-// compile time
-constexpr auto res = brain_fuck(R"(
-    ++++++++[&gt;++++[&gt;++&gt;+++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]&gt;+&gt;+&gt;-&gt;&gt;+[&lt;]&lt;-]&gt;&gt;.
-    &gt;---.+++++++..+++.&gt;&gt;.&lt;-.&lt;.+++.------.--------.&gt;&gt;+.&gt;++.
-)");
-puts(res);
+Or put into words: wanting to accept an arbitrary number of arguments that all have to be convertible to a certain type. The issue with the provided implementation is that it leads to an arbitrary number of template instantiations even in the case that they all have the same number of parameters:
 
-// runtime
-if (argc &gt; 1) puts(brain_fuck(argv[1]));
-```
+    f(1.0, 2.0), f(1.0, 2); // etc.
 
-rust version: [https://github.com/netcan/recipes/blob/master/rust/BrainFuck/src/lib.rs](https://github.com/netcan/recipes/blob/master/rust/BrainFuck/src/lib.rs), below:
+More instantiations lead to bloated binaries and longer compile and link times, so it is self-explanatory that one wants to avoid instantiations wherever possible. I would propose using a syntax along the lines of this:
 
-```rust
-extern crate brain_fuck;
-use brain_fuck::brain_fuck;
-fn main() {
-    println!("{}", brain_fuck!(
-        ++++++++[&gt;++++[&gt;++&gt;+++&gt;+++&gt;+&lt;&lt;&lt;&lt;-]&gt;+&gt;+&gt;-&gt;&gt;+[&lt;]&lt;-]&gt;&gt;.
-        &gt;---.+++++++..+++.&gt;&gt;.&lt;-.&lt;.+++.------.--------.&gt;&gt;+.&gt;++.
-    ));
-}
-```
-## [10][FTL - A functional template library for containers processing in C++](https://www.reddit.com/r/cpp/comments/jor2hd/ftl_a_functional_template_library_for_containers/)
-- url: https://www.reddit.com/r/cpp/comments/jor2hd/ftl_a_functional_template_library_for_containers/
----
-Hi everyone!
+    void f(double... x);
 
-I would like to present you a C++17 library that me and my friend were working on recently. The library is still very much WIP so any suggestions are welcome.
+This, too, should just be an abbreviated function template but the deduced type parameter pack `T` ought to satisfy the constraint `std::conjunction_v&lt;std::is_same&lt;T, double&gt;...&gt;`. In other words, only the number of types in the pack should vary between instantiations, not the types themselves.
 
-The main idea was to provide a more elegant functional API for containers processing. The API itself is heavily inspired by the way the Rust programming language deals with container processing and iterators.
+This proposed syntax may clash however with plain old C variadics (in the case that the argument pack isn't named) because they - for some reason - aren't required to be separated by a comma. A possible solution is requiring such typed parameter packs to always be named.
 
-If you have any suggestions or feedback do not hesitate to open issues/pull requests or reach out to us!
-
-[https://github.com/ftlorg/ftl](https://github.com/ftlorg/ftl)
-## [11][matio-cpp: a C++ wrapper for the matio library](https://www.reddit.com/r/cpp/comments/jp134a/matiocpp_a_c_wrapper_for_the_matio_library/)
-- url: https://github.com/dic-iit/matio-cpp
+Has anybody seen or written a proposal regarding this? If not, how can I write a proposal?
+## [9][Dashboard: Zero-Days in Desktop Web Browsers (heap corruption, use-after-free,...)](https://www.reddit.com/r/cpp/comments/jqwrf7/dashboard_zerodays_in_desktop_web_browsers_heap/)
+- url: https://www.radsix.com/dashboard1/
 ---
 
+## [10][Systems Of Units Library in C++](https://www.reddit.com/r/cpp/comments/jqo92n/systems_of_units_library_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/jqo92n/systems_of_units_library_in_c/
+---
+  
+
+The following link is to a Systems Of Units (SOU) library which I created in C++. It does all type checks of units and conversions at compile time. Most of the work on the library was out of trying to learn new features and techniques with C++.  The Library includes a test suite written using the Google Test Framework.  See the Readme.md page for more details of use.
+
+[https://github.com/trailfrenzy/SIwithET](https://github.com/trailfrenzy/SIwithET)
+
+Currently the library is tested with the VS C++20 compiler and have not had an opportunity to test it against the GNU C++20 library. Older versions in GitHub are compliant with C++17.
+
+Let me know if you have any problems with the library or errors which you may find.
+## [11][Discoverable algorithms](https://www.reddit.com/r/cpp/comments/jqenk4/discoverable_algorithms/)
+- url: https://www.reddit.com/r/cpp/comments/jqenk4/discoverable_algorithms/
+---
+[http://code-ballads.net/discoverable-algorithms/](http://code-ballads.net/discoverable-algorithms/)
+
+Searching  for algorithms based on the signatures of the transformations they can apply to data is invaluable.
+
+For example, [this link](https://hoogle.haskell.org/?hoogle=int-%3E[a]-%3E[a]) demonstrates a search engine used to discover all the available algorithms in Haskell for transformation given a signature "(int, \[a\]) -&gt; \[a\]".
+
+In C++, one library offers such a facility : [FunctionalPlus](https://github.com/Dobiasd/FunctionalPlus).  Access its [API search page](http://www.editgym.com/fplus-api-search/) and enter this in the search box:
+
+    (int, [a]) -&gt; [a]
+
+... and you will find many useful algorithms based on this signature (drop, repeat, stride, drop\_idx, take\_cyclic, partial\_sort, etc, etc.).
+
+I wish more libraries would follow this idea, since reasoning about values and their transformations is a powerful way to render the code more readable and correct at the same time.
+
+For those interested the linked article gives more detail as well as a [video](https://youtu.be/i5Xots8dtDU) that shows how such a search engine can be useful during the development.

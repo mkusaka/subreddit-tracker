@@ -39,7 +39,48 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][How to add hard_wrap: true in a custom Markdown Redcarpet](https://www.reddit.com/r/rails/comments/jq8upc/how_to_add_hard_wrap_true_in_a_custom_markdown/)
+## [3][Is there a convention for the controller/view of the root route?](https://www.reddit.com/r/rails/comments/jqn37p/is_there_a_convention_for_the_controllerview_of/)
+- url: https://www.reddit.com/r/rails/comments/jqn37p/is_there_a_convention_for_the_controllerview_of/
+---
+I keep thinking I should call it main or default or root or maybe application.   
+I plan to have it check the whether a session exists and redirect to a main page otherwise show some unauthenticated information. So in that case should it be called welcome?  
+... Thoughts?
+## [4][I want to build a CMS for Photos. But I want the photos saved on a CDN like Amazoin CLoudfront, how do I go about this?](https://www.reddit.com/r/rails/comments/jqc2tz/i_want_to_build_a_cms_for_photos_but_i_want_the/)
+- url: https://www.reddit.com/r/rails/comments/jqc2tz/i_want_to_build_a_cms_for_photos_but_i_want_the/
+---
+What CDN would you suggest?
+
+And if anyone has done this before, could they share a link to their source code if it was open source.   
+What pitfalls should I avoid?
+## [5][Permitted attribute but still Cannot mass assign warning](https://www.reddit.com/r/rails/comments/jqrb8v/permitted_attribute_but_still_cannot_mass_assign/)
+- url: https://www.reddit.com/r/rails/comments/jqrb8v/permitted_attribute_but_still_cannot_mass_assign/
+---
+I wrap the params in my controller so I get something like this.
+
+    params = { "name": "user_name", "user": { "name": "user_name" } }
+
+and in the application controller I permit these like so
+
+     params["user"].permit(:name)
+
+But durinng .new like so 
+
+    User.new(params[:user]))
+
+I get a warning like
+
+ 
+
+Can't mass-assign protected attributes for User: name
+
+&amp;#x200B;
+
+I do not have name in attr\_accessible since I belive it needs to be handled in the controller level. But I'm not sure why I'm getting this cannot mass-assign exception
+## [6][Rails custom domains for users on heroku](https://www.reddit.com/r/rails/comments/jqhvaa/rails_custom_domains_for_users_on_heroku/)
+- url: https://www.reddit.com/r/rails/comments/jqhvaa/rails_custom_domains_for_users_on_heroku/
+---
+Really appreciate the community help here. I'm working on an app that exists on Heroku. The app has users through devise and those users should be able to add their own domain name to the app. [www.app.com/user1](https://www.app.com/user1) should be accessible from [user1.com](https://user1.com) if they have a domain set up. I've been researching like crazy and I don't have a solid solution yet. If anyone has achieved something similar I would love to know how. Thank you family! If the solution requires a paid third party service like Cloudflare that is acceptable.
+## [7][How to add hard_wrap: true in a custom Markdown Redcarpet](https://www.reddit.com/r/rails/comments/jq8upc/how_to_add_hard_wrap_true_in_a_custom_markdown/)
 - url: https://www.reddit.com/r/rails/comments/jq8upc/how_to_add_hard_wrap_true_in_a_custom_markdown/
 ---
 In my application\_helper I have this
@@ -103,13 +144,13 @@ I also try to add in
      end 
 
 But it doesn't work.
-## [4][Getting a syntax error, but I can't figure out why](https://www.reddit.com/r/rails/comments/jq6s9h/getting_a_syntax_error_but_i_cant_figure_out_why/)
+## [8][Getting a syntax error, but I can't figure out why](https://www.reddit.com/r/rails/comments/jq6s9h/getting_a_syntax_error_but_i_cant_figure_out_why/)
 - url: https://www.reddit.com/r/rails/comments/jq6s9h/getting_a_syntax_error_but_i_cant_figure_out_why/
 ---
 https://imgur.com/a/0far2GQ
 
 I am following a twitter clone tutorial and I keep getting a syntax error when trying to render a partial form. I can't figure out what I am doing wrong. Could you please take a look?
-## [5][Add library css in Ruby on Rails 6 with webpacker](https://www.reddit.com/r/rails/comments/jqb6u3/add_library_css_in_ruby_on_rails_6_with_webpacker/)
+## [9][Add library css in Ruby on Rails 6 with webpacker](https://www.reddit.com/r/rails/comments/jqb6u3/add_library_css_in_ruby_on_rails_6_with_webpacker/)
 - url: https://www.reddit.com/r/rails/comments/jqb6u3/add_library_css_in_ruby_on_rails_6_with_webpacker/
 ---
 I'm trying to install a library, specifically bootstrap-table via yarn. I had tried the gem found at the following link [Click](https://github.com/bjevanchiu/bootstrap-table-rails) but it is an old version and I was unable to get it to work. I have read around that however with Rails 6 it is better to use the webpacker to install libraries. My problem now is I can't figure out how to insert bootstrap-table css.
@@ -216,7 +257,7 @@ I also started the `bin / webpack-dev-server` command in the console but I got t
 
 
 I would like not to have to use all this configuration but to just add the bootstrap-table css file to my page. I don't feel like good in running this `bin / webpack-dev-server` command. This is because I had a lot of errors after running this command and I would like to avoid having to keep it running all the time. It's possible? If that's not possible, what am I doing wrong?
-## [6][General models or multiple specific ones?](https://www.reddit.com/r/rails/comments/jq4vcx/general_models_or_multiple_specific_ones/)
+## [10][General models or multiple specific ones?](https://www.reddit.com/r/rails/comments/jq4vcx/general_models_or_multiple_specific_ones/)
 - url: https://www.reddit.com/r/rails/comments/jq4vcx/general_models_or_multiple_specific_ones/
 ---
 I am building an inventory tracker with some extra features as a project and wondering in the scenario  I am having whether to use 2 models (ProductVariantTitle and ProductVariantTag) and allow the user to add their own Tagging Title and Description/Tag like Size, Color, Category, etc. Or do more specified models that are more likely to be required like "Category" or "Vendor"?
@@ -313,7 +354,7 @@ But maybe at the same time, keep the **ProductVariantTitle and ProductVariantTag
 &amp;#x200B;
 
 Both seem to make sense in their own worlds but I am wondering if there are any opinions on either?
-## [7][How to incorporate an application within a Rails application?](https://www.reddit.com/r/rails/comments/jpyk29/how_to_incorporate_an_application_within_a_rails/)
+## [11][How to incorporate an application within a Rails application?](https://www.reddit.com/r/rails/comments/jpyk29/how_to_incorporate_an_application_within_a_rails/)
 - url: https://www.reddit.com/r/rails/comments/jpyk29/how_to_incorporate_an_application_within_a_rails/
 ---
 Hello Rails community!
@@ -327,45 +368,7 @@ I was thinking of having a shared database and using it as a shared place where 
 I think I have an idea, but was wondering if I was on the right track.
 
 Thanks for any help!
-## [8][Bootstrap-table-rails](https://www.reddit.com/r/rails/comments/jpnu5h/bootstraptablerails/)
+## [12][Bootstrap-table-rails](https://www.reddit.com/r/rails/comments/jpnu5h/bootstraptablerails/)
 - url: https://www.reddit.com/r/rails/comments/jpnu5h/bootstraptablerails/
 ---
 hi, I'm trying to install this gem: https://github.com/bjevanchiu/bootstrap-table-rails in rails 6. The problem is that when I put it in the gemfile and run the bundle install command, it doesn't appear in node_modules. With linux find I looked for the bootstrap-table-rails directory but I can't find it anywhere. How can I integrate Bootstrap-table into rails? Thanks so much for the future help
-## [9][Securing Rails API access - what method?](https://www.reddit.com/r/rails/comments/jpgg3d/securing_rails_api_access_what_method/)
-- url: https://www.reddit.com/r/rails/comments/jpgg3d/securing_rails_api_access_what_method/
----
-Imagine your typical Rails API scenario: you're building an API but you want to restrict the access to it (also to have opportunity to see how many requests a certain consumer of the API made for statistical purposes).
-
-One way which seems simple enough and is often used in tutorials on the net is securing it using API keys which are tied to the other Rails apps consuming this new fancy API. 
-
-My question is: where do you put the list of generated API keys? Inside the API itself in some table (e.g. approved_clients)? Or do you use some other solution?
-
-I'm trying to brainstorm here which approach I should take when building an API shared between several Rails-based apps.
-
-Using oAuth makes no sense here to me because the said API would not be user-centric but Rails app (client) centric: e.g. you'd ask the shared geo API to return you a list of cities close to given geo coordinates. So we don't need to login individual users here to do something on them, just to have a shared services that's generic enough no to involve oAuth or other more complicated flows. 
-
-Or could JWTs somehow fit here?
-
-Thanks for your ideas.
-## [10][I created an Xbox backward compatible game catalogue with Rails](https://www.reddit.com/r/rails/comments/jpc1tb/i_created_an_xbox_backward_compatible_game/)
-- url: https://www.reddit.com/r/rails/comments/jpc1tb/i_created_an_xbox_backward_compatible_game/
----
-Hi there,
-
-I've recently purchased an Xbox Series S and excited about the games from the previous generation as I didn't have much time to dive in. I created [this small web app](https://backwardible.com/) with Rails and thought it might help other people too.
-
-Oh, I tend to write blog posts about the side-projects I do, so if anyone's interested in terms of what I used and why I used, the concerning post is [here](https://arkan.me/backwardible/) as well!
-
-I would love to hear your feedback.
-## [11][Confused about pulling changes without overwriting local env](https://www.reddit.com/r/rails/comments/jpgc5y/confused_about_pulling_changes_without/)
-- url: https://www.reddit.com/r/rails/comments/jpgc5y/confused_about_pulling_changes_without/
----
-Can somebody explain with a TL;DR on this? I'm trying to figure out the following scenario:
-
-\- I clone a repo and get it up and running with bundle install, setup local db, create env file, compile webpacker, and so on. This goes fine.
-
-\- A dev makes changes to that remote repo which I want to get on my local machine. What do I do now? How do I get those changes onto my machine without overwriting my env file or any other setup I've done locally?
-## [12][Best React resource for Rails developers](https://www.reddit.com/r/rails/comments/jpb17u/best_react_resource_for_rails_developers/)
-- url: https://www.reddit.com/r/rails/comments/jpb17u/best_react_resource_for_rails_developers/
----
-hey friends, I'm a purely backend developer and I barely played with React so far. What are the best resources that you recommend for me to go over to get up to speed when it comes to React on top of Rails.

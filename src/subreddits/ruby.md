@@ -1,5 +1,35 @@
 # ruby
-## [1][Procs and Lambdas](https://www.reddit.com/r/ruby/comments/jq1zig/procs_and_lambdas/)
+## [1][What Is The Purpose Of Private?](https://www.reddit.com/r/ruby/comments/jqx0g5/what_is_the_purpose_of_private/)
+- url: https://www.tomdalling.com/blog/software-design/what-is-the-purpose-of-private/
+---
+
+## [2][How to merge SimpleCov results with parallel Rails specs on Semaphore CI](https://www.reddit.com/r/ruby/comments/jqvccr/how_to_merge_simplecov_results_with_parallel/)
+- url: https://docs.knapsackpro.com/2020/how-to-merge-simplecov-results-with-parallel-rails-specs
+---
+
+## [3][Parsing ORFs with Ruby](https://www.reddit.com/r/ruby/comments/jqokvd/parsing_orfs_with_ruby/)
+- url: https://youtu.be/lpXw7wUhRsc
+---
+
+## [4][My project automation gem hits 1.0.0](https://www.reddit.com/r/ruby/comments/jqf0x6/my_project_automation_gem_hits_100/)
+- url: https://www.reddit.com/r/ruby/comments/jqf0x6/my_project_automation_gem_hits_100/
+---
+Hi all,
+
+I just wanted to post to say that [ops\_team](https://github.com/nickthecook/ops), a gem I've been working on since April, has hit the 1.0.0 release.
+
+It has 13k downloads, so thanks to everyone who has been using it. However, I've had no feedback at all, and I'd *really like* to hear what people think, even if it's just some info about what they use it for and whether it works or not.
+
+[ops\_team on RubyGems.org](https://rubygems.org/gems/ops_team)
+## [5][what the heck is =&amp;gt in ruby ?](https://www.reddit.com/r/ruby/comments/jqjmva/what_the_heck_is_gt_in_ruby/)
+- url: https://www.reddit.com/r/ruby/comments/jqjmva/what_the_heck_is_gt_in_ruby/
+---
+Did that evolve/change in different versions of ruby. I am referring a book that's written based on v4.x of rails and I am using 5.x .
+## [6][Is there a group that I should add my self for as a budding ruby/RoR programmer. I am from a front-end engineering background who understands MVC very well. I hope that makes my life less difficult to become a pro in the ruby world. However, I have difficulty with the ruby syntaxes.](https://www.reddit.com/r/ruby/comments/jqkcix/is_there_a_group_that_i_should_add_my_self_for_as/)
+- url: https://www.reddit.com/r/ruby/comments/jqkcix/is_there_a_group_that_i_should_add_my_self_for_as/
+---
+I am expecting a group that has active members most of the times with less delays in reply to my posts. TIA
+## [7][Procs and Lambdas](https://www.reddit.com/r/ruby/comments/jq1zig/procs_and_lambdas/)
 - url: https://www.reddit.com/r/ruby/comments/jq1zig/procs_and_lambdas/
 ---
 So ima semi noob in the ruby/rails world, like many before me I rushed to simply skim the basics and start building, but I hit many walls and spent even more time reading than building, that's when it hit me I should just put in the time to simply learn everything right and stop this self-imposed rush I'm in.
@@ -7,7 +37,7 @@ So ima semi noob in the ruby/rails world, like many before me I rushed to simply
 Just learned about Procs and Lambdas and I am stuck in the concept of Lambdas and Procs, I understand the syntax and how to build one, but can't for the life of me find practical or real-world applications for when to use these over simply defining a method.
 
 Can someone please elaborate on this plz! Thank you in advance
-## [2][I've created a gem that makes your users' input polite](https://www.reddit.com/r/ruby/comments/jpw9gq/ive_created_a_gem_that_makes_your_users_input/)
+## [8][I've created a gem that makes your users' input polite](https://www.reddit.com/r/ruby/comments/jpw9gq/ive_created_a_gem_that_makes_your_users_input/)
 - url: https://www.reddit.com/r/ruby/comments/jpw9gq/ive_created_a_gem_that_makes_your_users_input/
 ---
 Hey everyone ✌️
@@ -23,7 +53,7 @@ Feel free to contribute or to give me feedbacks,
 Cheers ✌️
 
 Olivier
-## [3][Super Bombinhas v0.8.0](https://www.reddit.com/r/ruby/comments/jprhqr/super_bombinhas_v080/)
+## [9][Super Bombinhas v0.8.0](https://www.reddit.com/r/ruby/comments/jprhqr/super_bombinhas_v080/)
 - url: https://www.reddit.com/r/ruby/comments/jprhqr/super_bombinhas_v080/
 ---
 Hi!
@@ -35,7 +65,7 @@ The last demo of my platformer game Super Bombinhas is here!
 Next release will be version 1.0, with the complete adventure... As always, all feedback is appreciated.
 
 Thanks!
-## [4][Promises in Ruby? Particularly in "ruby-concurrency"?](https://www.reddit.com/r/ruby/comments/jpmb10/promises_in_ruby_particularly_in_rubyconcurrency/)
+## [10][Promises in Ruby? Particularly in "ruby-concurrency"?](https://www.reddit.com/r/ruby/comments/jpmb10/promises_in_ruby_particularly_in_rubyconcurrency/)
 - url: https://www.reddit.com/r/ruby/comments/jpmb10/promises_in_ruby_particularly_in_rubyconcurrency/
 ---
 Gem [https://github.com/ruby-concurrency](https://github.com/ruby-concurrency)
@@ -47,58 +77,3 @@ There're some examples in the documentation, but there're so many methods and fu
 Are there simple real examples of how to use Promises, how to chain them, wait for them to resolve and so on?
 
 Or what gem would you recommend instead? A library that's used by many people, yet simple and decent. I don't need a gem that's abandoned or use by few people.
-## [5]["What are the different kinds of Rails tests and when should I use each?"](https://www.reddit.com/r/ruby/comments/jpd20o/what_are_the_different_kinds_of_rails_tests_and/)
-- url: https://www.reddit.com/r/ruby/comments/jpd20o/what_are_the_different_kinds_of_rails_tests_and/
----
-I recently conducted a survey of Rails developers to ask what their biggest testing questions are.
-
-Out of the 8 questions people voted on, "What are the different kinds of Rails tests and when should I use each?" was solidly the top question.
-
-My answer is that you can meet 98% of your needs with just system specs and model specs. I don't really use request specs, helper specs, view specs, routing specs, mailer specs or jobs specs, for various different reasons.
-
-I explain all my reasoning in this post:
-
-[What are the different kinds of Rails tests and when should I use each?](https://www.codewithjason.com/different-kinds-rails-tests-use/)
-
-I would welcome any feedback anyone has. From experienced testers, I'd especially like to know if you disagree, and if so why. From people newer to testing, I'm curious to what extent this answers your questions and if this leaves you with any questions unanswered.
-
-Hope you find the post useful.
-## [6][Rails autoloading — how it works!](https://www.reddit.com/r/ruby/comments/jpd7ya/rails_autoloading_how_it_works/)
-- url: https://www.urbanautomaton.com/blog/2020/11/04/rails-autoloading-heaven/
----
-
-## [7][Help please. I’m trying to install ruby on my MacBook but it’s not working](https://www.reddit.com/r/ruby/comments/jprbjj/help_please_im_trying_to_install_ruby_on_my/)
-- url: https://i.redd.it/59zvk6u4rtx51.jpg
----
-
-## [8][Why Shopify's engineering team stuck with Ruby when rewriting their storefront](https://www.reddit.com/r/ruby/comments/jounah/why_shopifys_engineering_team_stuck_with_ruby/)
-- url: https://www.youtube.com/watch?v=_Blz2mFjWis
----
-
-## [9][Turkish language support for ruby](https://www.reddit.com/r/ruby/comments/jp1kno/turkish_language_support_for_ruby/)
-- url: https://github.com/sbagdat/turkish_support
----
-
-## [10][mltype - Typing practice for Ruby and other languages](https://www.reddit.com/r/ruby/comments/jon8bl/mltype_typing_practice_for_ruby_and_other/)
-- url: https://www.reddit.com/r/ruby/comments/jon8bl/mltype_typing_practice_for_ruby_and_other/
----
-**What is it?**
-
-Command line tool that uses a character-level LSTM model to generate text that resembles a real language (including programming languages). One can both train a network from scratch or download a pretrained one (Ruby, Java, Go, JavaScript, C, C++, Python,..).
-
-**Motivation**
-
-I recently switched to touch typing and I realized that there is basically no way to practise typing of programming languages (other than actually programming). Additionally, I revisited the famous blog post [http://karpathy.github.io/2015/05/21/rnn-effectiveness/](http://karpathy.github.io/2015/05/21/rnn-effectiveness/) and thought it would be cool to use a model like this to generate infinite amount of custom text to type.
-
-&amp;#x200B;
-
-&amp;#x200B;
-
-[Demo](https://i.redd.it/usz1sh7okgx51.gif)
-
-**Links**
-
-* docs: [https://mltype.readthedocs.io/en/latest/](https://mltype.readthedocs.io/en/latest/)
-* github: [https://github.com/jankrepl/mltype](https://github.com/jankrepl/mltype)
-
-PS: I trained the model on Jekyll since that is the only Ruby project I ever used!

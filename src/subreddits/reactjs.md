@@ -70,11 +70,27 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][I created TwitterFOMO—see the most liked tweets in webdev at one place. Used Next.js, ChakraUI, and react-spring. (Soon to be open-sourced!)](https://www.reddit.com/r/reactjs/comments/jpxw93/i_created_twitterfomosee_the_most_liked_tweets_in/)
-- url: https://v.redd.it/ny9bwvo8qvx51
+## [3][I made a pokedex! | React + TypeScript + Tailwind CSS + redux-toolkit](https://www.reddit.com/r/reactjs/comments/jqsij9/i_made_a_pokedex_react_typescript_tailwind_css/)
+- url: https://v.redd.it/i4oj1n21r5y51
 ---
 
-## [4][React js entry/junior level interview questions. HELP](https://www.reddit.com/r/reactjs/comments/jqan4l/react_js_entryjunior_level_interview_questions/)
+## [4][Chonky 2.0 - the best React file browser component, now with a super powerful file action framework!](https://www.reddit.com/r/reactjs/comments/jqky18/chonky_20_the_best_react_file_browser_component/)
+- url: https://chonky.io/
+---
+
+## [5][Create resizeable split panels in React](https://www.reddit.com/r/reactjs/comments/jqx17r/create_resizeable_split_panels_in_react/)
+- url: https://blog.theodo.com/2020/11/react-resizeable-split-panels/
+---
+
+## [6][ahooksjs - a hooks library for React](https://www.reddit.com/r/reactjs/comments/jqxa1p/ahooksjs_a_hooks_library_for_react/)
+- url: https://ahooks.js.org/
+---
+
+## [7][Commons Mistakes with React useEffect hook and How to Prevent them.](https://www.reddit.com/r/reactjs/comments/jqvk76/commons_mistakes_with_react_useeffect_hook_and/)
+- url: https://medium.com/javascript-in-plain-english/commons-mistakes-with-react-useeffect-hook-and-how-to-prevent-them-d0ca253fb1f7?source=friends_link&amp;sk=e3f4d297fa6554f46dcf0a20302d8eff
+---
+
+## [8][React js entry/junior level interview questions. HELP](https://www.reddit.com/r/reactjs/comments/jqan4l/react_js_entryjunior_level_interview_questions/)
 - url: https://www.reddit.com/r/reactjs/comments/jqan4l/react_js_entryjunior_level_interview_questions/
 ---
 Im having an Interview this week Im terrified and I want to prepare myself.
@@ -83,206 +99,43 @@ What are the commonly ask reactjs questions for entry/junior level developer?
 Another questions is do they ask “leet code” type of questions during an interview for a front end position?
 
 Thank you!
-## [5][My window-styled portfolio - Winport](https://www.reddit.com/r/reactjs/comments/jq9st0/my_windowstyled_portfolio_winport/)
-- url: https://khang-nd.github.io
+
+EDIT: WOW this completely blew up! Thank you everyone for the advice you’ve given! Tomorrow’s the interview Wish me luck!
+## [9][Is there a working infinite scroll library which can be used in a chat app?](https://www.reddit.com/r/reactjs/comments/jqtgg7/is_there_a_working_infinite_scroll_library_which/)
+- url: https://www.reddit.com/r/reactjs/comments/jqtgg7/is_there_a_working_infinite_scroll_library_which/
 ---
-
-## [6][Beginner question about to-do list](https://www.reddit.com/r/reactjs/comments/jqav9g/beginner_question_about_todo_list/)
-- url: https://www.reddit.com/r/reactjs/comments/jqav9g/beginner_question_about_todo_list/
+I tried react-infinite-scroll-component but it's a bug and will fetch the messages on scroll to bottom aswell when inverse is set true. Is there any other library which can help me achieve infinite scroll on top for a chat app?
+## [10][React-admin help !](https://www.reddit.com/r/reactjs/comments/jqv8du/reactadmin_help/)
+- url: https://www.reddit.com/r/reactjs/comments/jqv8du/reactadmin_help/
 ---
-In what part of the code are we setting that the newly added todos(through addTodo func)are being set to isCompleted:false so that they are not crossed out from the beginning(since we are only adding text in addTodo)?
+Hey everyone ! I need some help from you guys. Currently I am working on project. And have used [react-admin](https://github.com/marmelab/react-admin/) in it. Somehow I need to implement the admin dashboard on a specific route namely [website.com/admin](https://website.com/admin). And also the login route uses the [website.com/login](https://website.com/login) but I need that route for logging in my users and I want the admin login to be [website.com/admin/login](https://website.com/admin/login)  Tried many possible ways from my side and couldn't figure out how to do it ! Can anyone help me to implement it ?
 
-    import React,{useState,useEffect} from 'react';
-    import './App.css';
-    
-    const LOCAL_STORAGE_KEY='todo_app.todos'
-    
-    function Todo({todo,index,completeTodo,removeTodo}){
-    return (
-    
-    &lt;div className='todo'&gt;
-    &lt;div style={{textDecoration:todo.isCompleted? 'line-through':null}}&gt; 
-      {todo.text}
-    
-    &lt;button onClick={()=&gt;completeTodo(index)}&gt;Complete&lt;/button&gt;
-    &lt;button onClick={()=&gt;removeTodo(index)}&gt;X&lt;/button&gt;
-    &lt;/div&gt;
-    &lt;/div&gt;
-    
-    
-    )
-    
-    }
-    
-    function TodoForm({addTodo}){
-    const[value,setValue]=useState('')
-     
-    function submitHandler(e){
-    e.preventDefault();
-    if(!value){
-      return
-    }
-    addTodo(value)
-    setValue('')
-    } 
-    
-    return(
-      &lt;form onSubmit={submitHandler}&gt;
-      &lt;input type="text" value={value} onChange={e=&gt;setValue(e.target.value)}/&gt;
-        &lt;/form&gt;
-    )
-     
-    
-    
-     
-      
-    }
-    
-    function App(){
-    const[todos,setTodos]=useState([
-      {text:'Go out with a girl',
-    isCompleted:false
-    },
-    {text:'Learn React',
-    isCompleted:false
-    },
-    {text:'Read a book',
-    isCompleted:false
-    },
-    ])
-    useEffect(()=&gt;{
-    const storedTodos=JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-    if (storedTodos){
-    setTodos(storedTodos)
-    }
-    },[])
-    useEffect(()=&gt;{
-      localStorage.setItem(LOCAL_STORAGE_KEY,JSON.stringify(todos))
-    },[todos])
-    function addTodo(text){
-     const newTodos=[...todos,{text}]
-     setTodos(newTodos)
-    }
-    function completeTodo(index){
-    const newTodos=[...todos]
-    newTodos[index].isCompleted=true
-    setTodos(newTodos)
-    
-    }
-    function removeTodo(index){
-    const newTodos=[...todos]
-    newTodos.splice(index,1)
-    setTodos(newTodos)
-    
-    }
-    return(
-    &lt;div className="app"&gt;
-     &lt;div className="todo-list"&gt;
-      {todos.map((todo,index)=&gt;(
-        &lt;Todo todo={todo} index={index} key={index} completeTodo={completeTodo} removeTodo={removeTodo}/&gt;
-      ))}
-      &lt;TodoForm addTodo={addTodo}/&gt;
-     &lt;/div&gt; 
-    &lt;/div&gt;
-      )
-    
-    
-    }
-    export default App;
-
-&amp;#x200B;
-## [7][Displaying long list of related articles](https://www.reddit.com/r/reactjs/comments/jqbora/displaying_long_list_of_related_articles/)
-- url: https://www.reddit.com/r/reactjs/comments/jqbora/displaying_long_list_of_related_articles/
+P.S : I am using [react-admin-firebase](https://github.com/benwinding/react-admin-firebase/) as my data provider
+## [11][Do I need a constructor?](https://www.reddit.com/r/reactjs/comments/jqul53/do_i_need_a_constructor/)
+- url: https://www.reddit.com/r/reactjs/comments/jqul53/do_i_need_a_constructor/
 ---
-I made this site for my tai chi students near the beginning of covid, [https://breathetaichi.com](https://breathetaichi.com/)  
-It  was my first project, and I'd like to go back to it and make it  portfolio worthy.  My only other piece I really like to show is [https://protopla.net](https://protopla.net/)
+Hi there, I'm a little confused when reading about this topic so maybe someone can shed some light on it for me. Most of the examples of class components in the React Docs use a constructor to set the state, bind event handlers and assign any other value to `this`. But I've also noted that you don't need to bind methods if you use arrow functions, and that object properties (including state) can be assigned directly on the class. I was reading about uncontrolled components and the example in the docs goes something like this:  
 
-I'd  love to hear any critiques of either site, but the my main question  would be is there a standard way to display as much info as I have on my  tai chi site?  It feels kinda messy, and I'm too close to it  to be able to see what it should be. 
 
-Thanks!
-## [8][Nextjs supported CDN outside US](https://www.reddit.com/r/reactjs/comments/jqblx8/nextjs_supported_cdn_outside_us/)
-- url: https://www.reddit.com/r/reactjs/comments/jqblx8/nextjs_supported_cdn_outside_us/
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.input = React.createRef();
+      }
+
+but I've noticed that I can also just do this:
+
+    input = React.createRef();
+    handleSubmit = () =&gt; {/*...do a thing...*/};
+
+No constructor needed. Which seems to work just fine. Is there any reason why this is bad practice? And why is it not mentioned in the docs?
+## [12][How can I force some elements to be placed into the DOM before rendering child nodes?](https://www.reddit.com/r/reactjs/comments/jqo92m/how_can_i_force_some_elements_to_be_placed_into/)
+- url: https://www.reddit.com/r/reactjs/comments/jqo92m/how_can_i_force_some_elements_to_be_placed_into/
 ---
-Any one knows a CDN that belongs to a non-US startup which can host NextJS apps?
-## [9][implementing build react app inside another website](https://www.reddit.com/r/reactjs/comments/jq7hkl/implementing_build_react_app_inside_another/)
-- url: https://www.reddit.com/r/reactjs/comments/jq7hkl/implementing_build_react_app_inside_another/
----
-Hey guys, I made a chatbot with reactjs and ran npm run build.
+I have a legacy API that needs to use querySelector and then it writes to that element  (pdf.js).  
 
-Now I wat to use the built code inside other websites. So my chatbot will popup on other websites.
+The problem I need to make sure the container has been rendered to the DOM before I attempt to use a child component.
 
-How can I implement it to other codebases?
-## [10][Why my asynchronous function findOne request to wrong pat?](https://www.reddit.com/r/reactjs/comments/jqb1jk/why_my_asynchronous_function_findone_request_to/)
-- url: https://www.reddit.com/r/reactjs/comments/jqb1jk/why_my_asynchronous_function_findone_request_to/
----
- I created a function to check if in my database a user exists according to the `sub` parameter.
+I think I can do this by only rendering the child when the ref callback is defined right? 
 
-**Front-end**
-
-    async function exist (sub)  {  
-    const response = await InfoDataService.get(sub);   
-    console.log(response);       
-    }    
-
-**InfoDataService**
-
-    import http from "../http-common.js";   
-    const get = sub =&gt; {  
-    return http.get(`/users/${sub}`);   
-    };   
-    export default { get, };  
-
-**Controller**
-
-    // Find a single User with sub  
-    exports.findOne = (req, res) =&gt; {   
-    const sub = req.params.sub;  
-    User.findOne({sub})     
-    .then(data =&gt; { res.send(data);     
-    })     
-    .catch(err =&gt; {   
-    res.status(500).send({ message: "Error retrieving User with sub=" + sub});  });  
-     };  
-
-**Route**
-
-    module.exports = app =&gt; {  
-    const users = require("../controllers/user.controller.js");  
-    const router = require("express").Router();   
-    
-    // Retrieve a single Tutorial with sub   
-    router.get("/:sub", users.findOne);  
-     
-    app.use('/api/users', router);  
-    };  
-
-The path for post is `api/users`, while for get it is `api/users/:sub`. Checking the network I found that the asynchronous function makes the request to `api/users/undefined`. Where would the error be?
-
-The problem is in the asynchronous function. Create, update, getAll etc ... also work well in this API. I also have an API for published posts, structured the same way and it works. I don't understand why only the asynchronous function follows a different and wrong path.
-## [11][How to select options in a custom dropdown menu with arrow keys?](https://www.reddit.com/r/reactjs/comments/jqauun/how_to_select_options_in_a_custom_dropdown_menu/)
-- url: https://www.reddit.com/r/reactjs/comments/jqauun/how_to_select_options_in_a_custom_dropdown_menu/
----
-In a custom dropdown, There is an input type text and a different container floating below the input which contains the list of options. How do I select the options in the container floating below using the arrow keys when I focus on the input? (I've attached a screen-capture below)
-
-&amp;#x200B;
-
-Here's a link to the trimmed down version of my project if anyone wants to see the actual code: 
-
-[https://github.com/paritosh-34/absolute\_dropdown](https://github.com/paritosh-34/absolute_dropdown)
-
-The project is created with next.js and typescript.
-
-&amp;#x200B;
-
-[ScreenCapture](https://reddit.com/link/jqauun/video/y8vke2e1d0y51/player)
-## [12][Disable page scrolling, but allow sidebar scrolling](https://www.reddit.com/r/reactjs/comments/jqarb2/disable_page_scrolling_but_allow_sidebar_scrolling/)
-- url: https://www.reddit.com/r/reactjs/comments/jqarb2/disable_page_scrolling_but_allow_sidebar_scrolling/
----
-Hi!  
-
-
-I have a feeling this is a simple issue, but I can't seem to figure it out. I've built a simple website with React and Next.JS. On mobile, I have a navigation bar that opens from the side and has position: absolute. When the sidebar is opened, I do not want users to be able to scroll the page. However, since the content on the sidebar is more than the average screen can display, I do want users to scroll inside the sidebar. Is there a universal or commonly used way to approach this?  
-
-
-Thanks in advance,  
-Quinten
+That seems like it would do it!

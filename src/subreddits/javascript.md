@@ -85,43 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][[faker.js] No more free work from Marak - Pay Me or Fork This](https://www.reddit.com/r/javascript/comments/jquo97/fakerjs_no_more_free_work_from_marak_pay_me_or/)
+## [3][A search engine for JS operators](https://www.reddit.com/r/javascript/comments/jrdd7g/a_search_engine_for_js_operators/)
+- url: https://joshwcomeau.com/operator-lookup/
+---
+
+## [4][I animated the Marching Squares Algorithm using p5.js. Working Demo and Tutorial](https://www.reddit.com/r/javascript/comments/jrb536/i_animated_the_marching_squares_algorithm_using/)
+- url: https://ckcollab.com/2020/11/08/Marching-Squares-Algorithm.html
+---
+
+## [5][You're Probably Not Using Promise.All Enough](https://www.reddit.com/r/javascript/comments/jrdmej/youre_probably_not_using_promiseall_enough/)
+- url: https://www.samjarman.co.nz/blog/promisedotall
+---
+
+## [6][10 Insights from Adopting TypeScript at Scale](https://www.reddit.com/r/javascript/comments/jrgozd/10_insights_from_adopting_typescript_at_scale/)
+- url: https://www.techatbloomberg.com/blog/10-insights-adopting-typescript-at-scale/
+---
+
+## [7][[AskJS] Netflix's Interactive Witcher Map](https://www.reddit.com/r/javascript/comments/jrhnq5/askjs_netflixs_interactive_witcher_map/)
+- url: https://www.reddit.com/r/javascript/comments/jrhnq5/askjs_netflixs_interactive_witcher_map/
+---
+ I'm wondering if there's library that would make it easier to make map similiar to the linked one. I thought of leaflet.js but I think I    wouldn't be able to code it in the way the Netflix map is made there (I    never used it tho, might be wrong). I know that   "Anyone know a library that does \_\_\_?"  questions are forbidden but I know a lot of interactive map libraries and I don't think it's possible to achieve similiar result with them.
+## [8][[faker.js] No more free work from Marak - Pay Me or Fork This](https://www.reddit.com/r/javascript/comments/jquo97/fakerjs_no_more_free_work_from_marak_pay_me_or/)
 - url: https://github.com/Marak/faker.js/issues/1046
 ---
 
-## [4][What is the difference between APIs, SDKs, and Webhooks and when to use what?](https://www.reddit.com/r/javascript/comments/jqrno5/what_is_the_difference_between_apis_sdks_and/)
-- url: https://loom.ly/QeH6lFs
+## [9][The anti-pattern of front-end developers inferring design rules from mockups](https://www.reddit.com/r/javascript/comments/jrhzo8/the_antipattern_of_frontend_developers_inferring/)
+- url: https://write.as/persille/a-picture-is-worth-a-thousand-words
 ---
 
-## [5][Five common mistakes writing react components (with hooks) in 2020](https://www.reddit.com/r/javascript/comments/jqvg7h/five_common_mistakes_writing_react_components/)
-- url: https://www.lorenzweiss.de/common_mistakes_react_hooks/
+## [10][Puppetaria: accessibility-first Puppeteer scripts | Web](https://www.reddit.com/r/javascript/comments/jrkno0/puppetaria_accessibilityfirst_puppeteer_scripts/)
+- url: https://developers.google.com/web/updates/2020/11/puppetaria
 ---
 
-## [6][How to detect human faces (and other shapes) in JavaScript](https://www.reddit.com/r/javascript/comments/jquuod/how_to_detect_human_faces_and_other_shapes_in/)
-- url: https://ckeditor.com/blog/How-to-detect-human-faces-and-other-shapes-in-JavaScript/
+## [11][The same app is 165mb in Electron and 6mb in Sciter](https://www.reddit.com/r/javascript/comments/jrdvtk/the_same_app_is_165mb_in_electron_and_6mb_in/)
+- url: https://github.com/GirkovArpa/clipper-sciter
 ---
 
-## [7][Spacetime: a lightweight javascript timezone library](https://www.reddit.com/r/javascript/comments/jqbbcz/spacetime_a_lightweight_javascript_timezone/)
-- url: http://spacetime.how/
----
-
-## [8][Find the Overlap Area (JavaScript Utils)](https://www.reddit.com/r/javascript/comments/jqx8uv/find_the_overlap_area_javascript_utils/)
-- url: https://daybrush.com/overlap-area/
----
-
-## [9][How to use Command Pattern to manage large amount of context menu actions](https://www.reddit.com/r/javascript/comments/jqtmne/how_to_use_command_pattern_to_manage_large_amount/)
-- url: https://dev.to/humberd/context-menu-actions-at-scale-command-pattern-in-a-real-life-scenario-9o0
----
-
-## [10][[Tutorial] Just Enough Functional Programming for OO-Programmer](https://www.reddit.com/r/javascript/comments/jqk7tu/tutorial_just_enough_functional_programming_for/)
-- url: https://lambdablob.com/series/functional-programming-for-oo-programmers/
----
-
-## [11][Learning Puppeteer In-Stride Through Short Videos](https://www.reddit.com/r/javascript/comments/jqw5p9/learning_puppeteer_instride_through_short_videos/)
-- url: https://nitayneeman.com/posts/learning-puppeteer-in-stride-through-short-videos/
----
-
-## [12][How does the even loop work? (video)](https://www.reddit.com/r/javascript/comments/jqqnni/how_does_the_even_loop_work_video/)
-- url: https://yonatankra.com/how-does-the-event-loop-work/
+## [12][Vue/Svelte/React color pickers running on the same page with very little boilerplate](https://www.reddit.com/r/javascript/comments/jrjna1/vuesveltereact_color_pickers_running_on_the_same/)
+- url: https://ellx.io/matyunya/color-pickers
 ---
 

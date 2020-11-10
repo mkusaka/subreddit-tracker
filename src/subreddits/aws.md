@@ -3,100 +3,77 @@
 - url: https://register.virtual.awsevents.com/
 ---
 
-## [2][AWS Plans $2.8B Data Centers In India](https://www.reddit.com/r/aws/comments/jqgs2d/aws_plans_28b_data_centers_in_india/)
-- url: https://www.thetechee.com/2020/11/aws-plans-28b-data-centers-in-india.html
+## [2][Week of Nov 9th - What have you learned recently about AWS?](https://www.reddit.com/r/aws/comments/jqya79/week_of_nov_9th_what_have_you_learned_recently/)
+- url: https://www.reddit.com/r/aws/comments/jqya79/week_of_nov_9th_what_have_you_learned_recently/
+---
+Share your learnings with the community
+## [3][Welcome to AWS Storage Day 2020](https://www.reddit.com/r/aws/comments/jr4ggk/welcome_to_aws_storage_day_2020/)
+- url: https://aws.amazon.com/blogs/aws/welcome-to-aws-storage-day-2020/
 ---
 
-## [3][SES Policy Generator and domain migration](https://www.reddit.com/r/aws/comments/jqwfzj/ses_policy_generator_and_domain_migration/)
-- url: https://www.reddit.com/r/aws/comments/jqwfzj/ses_policy_generator_and_domain_migration/
----
-I am migrating to a new domain. I have a Lambda that will send an email when an error occurs.
-
-This is the current (and working) SES send authorization policy:
-
-	{
-		"Version": "2008-10-17",
-		"Statement": [
-			{
-				"Sid": "stmt0000000000000",
-				"Effect": "Allow",
-				"Principal": {
-					"AWS": "AIDARxxxxxxxxxxxxxxxx"
-				},
-				"Action": [
-					"ses:SendEmail",
-					"ses:SendRawEmail"
-				],
-				"Resource": "arn:aws:ses:us-east-1:yyyyyyyyyyyy:identity/zzzzzzzzzz"
-			}
-		]
-	}
-	
-I don't remember how got the `Principal:AWS` value.  It is `21` characters long.  When I tried using the value from the old policy, I receive this error message:
-
-    Error while applying policy: Policy contains an invalid principal
-
-Since this is not a 12-digit AWS account ID, then I am assuming the is the ARN of an IAM user.  In the `IAM console`, I don't see where this value could live at.  How can I find it or how can I generate a new, valid value other than `*`?
-
-Thanks.
-## [4][Anyone ever use SES list/subscription management for a blog?](https://www.reddit.com/r/aws/comments/jqmkm4/anyone_ever_use_ses_listsubscription_management/)
-- url: https://www.reddit.com/r/aws/comments/jqmkm4/anyone_ever_use_ses_listsubscription_management/
----
-I'm creating a blog for one of my side projects and saw this press release: [Amazon SES now offers list and subscription management capabilities](https://aws.amazon.com/about-aws/whats-new/2020/10/amazon-ses-now-offers-list-and-subscription-management-capabilities/). I'm pretty familiar with AWS already, though I haven't really used SES outside of `sendEmail`. I'd like to **SES's list/subscription management feature for the blog's mailing list** however, there's not much written about this feature outside of the docs, so I want to see if anyone had any positive/negative experiences with SES list management.
-
-From a technical standpoint - the blog is very simple and I'm not using a CMS. I'm just taking markdown files and compiling them into html.
-
-I know there's services that cater to this need and I'm open to them if SES doesn't fit the use case. However, this project pretty much uses AWS for everything (except GitHub), so I'd like to stay in the ecosystem, if possible.
-## [5][How to update in bulk G Suite users custom attributes with Google Admin SDK for AWS SAML federation](https://www.reddit.com/r/aws/comments/jqvpvc/how_to_update_in_bulk_g_suite_users_custom/)
-- url: https://www.reddit.com/r/aws/comments/jqvpvc/how_to_update_in_bulk_g_suite_users_custom/
----
-Hi everyone, after writing an article about how to manually federate G   Suite with AWS an interesting discussion pop-out on how to make these changes programmatically.
-
-After a bit of research, I wrote another article and a GitHub repo to show my findings.
-
-Wanted to share with you and know what do you think about the whole process and if you know of alternate methods to achieve the same thing.
-
-Here are the links:
-
-* [https://blog.pethron.me/how-to-update-in-bulk-g-suite-users-custom-attributes-with-google-admin-sdk](https://blog.pethron.me/how-to-update-in-bulk-g-suite-users-custom-attributes-with-google-admin-sdk)
-* [https://github.com/pethron/gsuite-custom-schema-update](https://github.com/pethron/gsuite-custom-schema-update)
-## [6][MFA Device Stolen](https://www.reddit.com/r/aws/comments/jqvph7/mfa_device_stolen/)
-- url: https://www.reddit.com/r/aws/comments/jqvph7/mfa_device_stolen/
----
-Need some advice. My cellphone that I used for MFA on my AWS Root and IAM user login has been stolen.. any idea how to go about regaining access?
-## [7][Weird API Gateway Error, but not on console?](https://www.reddit.com/r/aws/comments/jquipp/weird_api_gateway_error_but_not_on_console/)
-- url: https://stackoverflow.com/questions/64741872/api-gateway-get-action-works-in-the-console-but-not-in-postman-or-my-app
+## [4][New – Export Amazon DynamoDB Table Data to Your Data Lake in Amazon S3, No Code Writing Required](https://www.reddit.com/r/aws/comments/jr7m8e/new_export_amazon_dynamodb_table_data_to_your/)
+- url: https://aws.amazon.com/blogs/aws/new-export-amazon-dynamodb-table-data-to-data-lake-amazon-s3/
 ---
 
-## [8][Weird Lambda behavior - Not executing email module when auto run but executing when when run manually](https://www.reddit.com/r/aws/comments/jqp51o/weird_lambda_behavior_not_executing_email_module/)
-- url: https://www.reddit.com/r/aws/comments/jqp51o/weird_lambda_behavior_not_executing_email_module/
+## [5][Amazon ECS now supports Internet Protocol Version 6 (IPv6) in awsvpc networking mode](https://www.reddit.com/r/aws/comments/jr88ao/amazon_ecs_now_supports_internet_protocol_version/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/11/amazon-ecs-supports-ipv6-in-awsvpc-networking-mode/
 ---
-I have a simple Lambda.py which grabs a "requests" lib response , converts it into csv, sorts it , uploads to S3 and sends an email with attached csv.  
 
-When I login to console and run it manually, the email is being sent, however when its run automatically by event bridge at 8 am, the email is not being sent. Rest of the modules are executed ( I can see the csv uploaded to S3 at 8 am every day).
-anyone seen this ? How do I fix this?
-## [9][Am I the only one who hates the new AWS console design updates?](https://www.reddit.com/r/aws/comments/jq3cha/am_i_the_only_one_who_hates_the_new_aws_console/)
-- url: https://www.reddit.com/r/aws/comments/jq3cha/am_i_the_only_one_who_hates_the_new_aws_console/
+## [6][Transition from VPS and cost comparison](https://www.reddit.com/r/aws/comments/jrjxcg/transition_from_vps_and_cost_comparison/)
+- url: https://www.reddit.com/r/aws/comments/jrjxcg/transition_from_vps_and_cost_comparison/
 ---
-I rarely use the old console except when I absolutely have to. It was slow and somewhat unappealing to look at. 
+Did you have experience deploying a web application or service on VPS that costed you anything less than $100 per VPS, and transitioned to AWS non vps or lightspeed offering, where it now costs you less per month, or you are getting any additional benefit from the transition?
 
-AWS just made some major updates to the console and I feel they did so with no user input. At least to me, everything I hate about the old one wasn't addressed or even made worse.
+if you transitioned to aws lambda or any other per request + bandwidth + storage options.
 
-Is this just me or does anyone else feel same?
-## [10][Suggestions on how to auto deploy lambdas from Github](https://www.reddit.com/r/aws/comments/jqpuke/suggestions_on_how_to_auto_deploy_lambdas_from/)
-- url: https://www.reddit.com/r/aws/comments/jqpuke/suggestions_on_how_to_auto_deploy_lambdas_from/
+if you have any numbers to share, like average requests per day or storage use per day or db operations.
+
+it seems to me, that it will cost more, and be more limiting, as I can't just run any long running tasks to generate a report or create chart data when the server is idling.
+## [7][Exporting DynamoDB table data to Amazon S3](https://www.reddit.com/r/aws/comments/jr7mze/exporting_dynamodb_table_data_to_amazon_s3/)
+- url: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataExport.html
 ---
-I am building a system for clients to upload their own serverless/lambda JS/TS functions to a lambda from their GH repo. I have this working using CDK/CodePipeline but I don't think stacks are practical for this use case (many lambdas - don't want to deal with stack limits). I am looking at CodeDeploy as it seems this may do the trick. Basically the process should go like this:
 
-\- User enters repo info in my dashboard (I am ok with them needing to create an oauth token)  
-\- Press submit and a lambda fetches a builds code
-
-Anyone have some experience with this and some potential pain points or alternative approaches? I am finding little on the subject of this process being automated from a lambda.
-## [11][Best email provider for reliable/fast production integration with AWS SES](https://www.reddit.com/r/aws/comments/jqgrrq/best_email_provider_for_reliablefast_production/)
-- url: https://www.reddit.com/r/aws/comments/jqgrrq/best_email_provider_for_reliablefast_production/
+## [8][Athena CTAS query with column names](https://www.reddit.com/r/aws/comments/jrhfpc/athena_ctas_query_with_column_names/)
+- url: https://www.reddit.com/r/aws/comments/jrhfpc/athena_ctas_query_with_column_names/
 ---
-Hey,
+Hey hey! 
 
-I'm setting up a service that receives an email and integrates with SES where SES sends the attachment to S3 and then a lambda function parses the attachment.
+I’m working on a project that mainly uses Athena to query and transform data in S3, and allowing a client to download the transformed data from a S3 bucket. I’m currently using Athena’s CTAS query to output the transformed data to a destination S3 bucket. However, the column names are not present. I tried hard coding the column names and UNION ALL the table but Athena CTAS doesn’t preserve the order due to it’s distributed nature so the column headers doesn’t appear as the first row (even after ORDER BY). Does anyone have experience working on similar set up? Keen to pick your brains on it! 
 
-I'm wondering if anyone has experience with which email provider to use for this. I was using a namecheap host but it's quite slow and buggy. What's the most reliable/fastest email provider that can integrate with SES?
+Cheers
+
+Edit: I realised I only need the CSV query result from a SELECT query since it comes with column headers and nicely formatted. So simply triggering an athena SELECT query with a specified output bucket achieves my goal. An S3 event is triggered upon the .csv file landing in the bucket.
+## [9][New – Export Amazon DynamoDB Table Data to Your Data Lake in Amazon S3, No Code Writing Required | Amazon Web Services](https://www.reddit.com/r/aws/comments/jr7s0i/new_export_amazon_dynamodb_table_data_to_your/)
+- url: https://aws.amazon.com/blogs/aws/new-export-amazon-dynamodb-table-data-to-data-lake-amazon-s3/
+---
+
+## [10][AWS Migration with CloudEndure](https://www.reddit.com/r/aws/comments/jrj4ml/aws_migration_with_cloudendure/)
+- url: https://www.reddit.com/r/aws/comments/jrj4ml/aws_migration_with_cloudendure/
+---
+
+How does CloudEndure decide what type of server to create in the target environment?
+
+(Since CloudEndure does not generate any EC2 recommendations based on the existing server)
+## [11][Remote Developing with VsCode on AWS Cloud9 EC2 Instance](https://www.reddit.com/r/aws/comments/jrinwe/remote_developing_with_vscode_on_aws_cloud9_ec2/)
+- url: https://www.reddit.com/r/aws/comments/jrinwe/remote_developing_with_vscode_on_aws_cloud9_ec2/
+---
+With this setup, all the CPU used to run/debug, all the docker images are just running in the cloud and are not exhausting thee laptop resources anymore.  --&gt; [Article](https://itnext.io/remote-developing-with-vscode-on-aws-cloud9-ec2-instance-e18134af353f?source=friends_link&amp;sk=9a4362dc515ca8d090fdbf69047c9b23)
+## [12][AWS Guard Duty Delegation to Security account](https://www.reddit.com/r/aws/comments/jrcqk8/aws_guard_duty_delegation_to_security_account/)
+- url: https://www.reddit.com/r/aws/comments/jrcqk8/aws_guard_duty_delegation_to_security_account/
+---
+Hi,
+
+How to automate guard duty reporting from all aws accounts to central security aws account that security team owned ?
+
+  
+Ideally, if we add new aws accounts to our environment how should be make sure new aws account guard duty service is added to central security account for reporting finding into central secuirty account ?
+
+can someone advise how can we achieve above ?
+
+Here few thoughts :
+
+1. can we implement using SCP policies at organization level ? and automate for new aws accounts that might added in future ?  
+if so, can you point to resources , or sample scp policies please 
+2. Or run daily job to add new account guard duty service reporting to security account ?  
+(probably not ideal i guess )
+3. Definitely avoid manually .

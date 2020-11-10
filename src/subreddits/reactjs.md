@@ -70,72 +70,93 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][I made a pokedex! | React + TypeScript + Tailwind CSS + redux-toolkit](https://www.reddit.com/r/reactjs/comments/jqsij9/i_made_a_pokedex_react_typescript_tailwind_css/)
+## [3][Would anyone be interested in a guided project?](https://www.reddit.com/r/reactjs/comments/jrekra/would_anyone_be_interested_in_a_guided_project/)
+- url: https://www.reddit.com/r/reactjs/comments/jrekra/would_anyone_be_interested_in_a_guided_project/
+---
+Hello all!
+
+I have spent some time tutoring people recently, and it got me thinking about setting up a guided project program. My current thought is to create a project outline for students follow; a task list in a sense. Each week, students will have a list of tasks to attempt to get through (if they can't that's fine, I know life happens) and at the end of the week I would review their code and provide feedback to help them improve. I'd also be available to answer questions on slack throughout the week. The goal is to have the students do all of the actual programming, so the end result is something that they created entirely, I would only be acting as a guide. I'd hope for the project to last about 8-10 weeks.
+
+I know how challenging it can be to find programming help, especially for those who are learning on their own. If this sounds interesting to you, or if you have any recommendations / concerns please let me know! I'm hoping to be able to give back to the community where possible :)
+## [4][Our project, Quarkly.io, hits open beta - you are welcome to try it!](https://www.reddit.com/r/reactjs/comments/jrjuk8/our_project_quarklyio_hits_open_beta_you_are/)
+- url: https://www.reddit.com/r/reactjs/comments/jrjuk8/our_project_quarklyio_hits_open_beta_you_are/
+---
+Hi folks, our React-based project, [Quarkly.io](https://Quarkly.io), just hit Open Beta! It is a tool dedicated to ease the workflow of React web developers and designers. Wanna try it? We invite you all to participate!
+
+We already successfully launch on ProductHunt: [https://www.producthunt.com/posts/quarkly](https://www.producthunt.com/posts/quarkly)
+
+You can read more about us here:
+
+[https://dev.to/alex\_kols/introducing-quarkly-instrument-for-react-devs-and-designers-that-will-help-you-optimize-your-workflow-15i6](https://dev.to/alex_kols/introducing-quarkly-instrument-for-react-devs-and-designers-that-will-help-you-optimize-your-workflow-15i6)
+
+Or join our Discord or Spectrum community if you want to ask questions about it (the creators themselves will answer your question at this stage):
+
+[https://discord.gg/5K5mnckUsf](https://discord.gg/5K5mnckUsf)
+
+[https://spectrum.chat/quarkly](https://spectrum.chat/quarkly)
+
+Feel free to ask questions here as well :)
+## [5][I made a pokedex! | React + TypeScript + Tailwind CSS + redux-toolkit](https://www.reddit.com/r/reactjs/comments/jqsij9/i_made_a_pokedex_react_typescript_tailwind_css/)
 - url: https://v.redd.it/i4oj1n21r5y51
 ---
 
-## [4][Chonky 2.0 - the best React file browser component, now with a super powerful file action framework!](https://www.reddit.com/r/reactjs/comments/jqky18/chonky_20_the_best_react_file_browser_component/)
-- url: https://chonky.io/
+## [6][How to wrap "Typography" in new line in Material UI?](https://www.reddit.com/r/reactjs/comments/jrjry9/how_to_wrap_typography_in_new_line_in_material_ui/)
+- url: https://www.reddit.com/r/reactjs/comments/jrjry9/how_to_wrap_typography_in_new_line_in_material_ui/
+---
+Currently I have this code:
+
+&gt;&lt;Typography variant="h3"&gt;&lt;/Typography&gt;
+
+However, it overflows when the screen size is small or medium.
+## [7][React Frontload v2.0.0 - Simple full-stack data loading for React](https://www.reddit.com/r/reactjs/comments/jrj5so/react_frontload_v200_simple_fullstack_data/)
+- url: https://davnicwil.com/react-frontload/
 ---
 
-## [5][Create resizeable split panels in React](https://www.reddit.com/r/reactjs/comments/jqx17r/create_resizeable_split_panels_in_react/)
-- url: https://blog.theodo.com/2020/11/react-resizeable-split-panels/
+## [8][Server Rendering with React and React Router v5](https://www.reddit.com/r/reactjs/comments/jr185i/server_rendering_with_react_and_react_router_v5/)
+- url: https://ui.dev/react-router-v5-server-rendering/
 ---
 
-## [6][ahooksjs - a hooks library for React](https://www.reddit.com/r/reactjs/comments/jqxa1p/ahooksjs_a_hooks_library_for_react/)
-- url: https://ahooks.js.org/
+## [9][React SimpleTable is a table component to show and select data with a special focus on productivity](https://www.reddit.com/r/reactjs/comments/jrg54n/react_simpletable_is_a_table_component_to_show/)
+- url: https://www.reddit.com/r/reactjs/comments/jrg54n/react_simpletable_is_a_table_component_to_show/
+---
+SimpleTable works with local or remote data (with automated pagination) and have two built-in themes: material and flat.
+
+The library try to be simple enough to be used in cases where does not needed more complex features and the productivity is necessary. Simple CRUD's or website details list is common examples.
+
+See examples live: [https://hesenger.com/react-simpletable/](https://hesenger.com/react-simpletable/)
+
+The projected is MIT licensed on github and npm package is published
+
+- [https://github.com/hesenger/react-simpletable](https://github.com/hesenger/react-simpletable)
+- [https://www.npmjs.com/package/@hesenger/react-simpletable](https://www.npmjs.com/package/@hesenger/react-simpletable)
+
+Feel free to suggest features or to create PR on github.
+## [10][Rockpack](https://www.reddit.com/r/reactjs/comments/jrieuy/rockpack/)
+- url: https://www.reddit.com/r/reactjs/comments/jrieuy/rockpack/
+---
+**Rockpack** is a simple solution for creating React Application with Server Side Rendering, bundling, linting, testing, logging, localizing.
+
+[https://github.com/AlexSergey/rockpack](https://github.com/AlexSergey/rockpack)
+
+There are several cases where **Rockpack** is useful:
+
+**Beginners** \- With the help of Rockpack, any newbie to React [can deploy a project of any complexity in a few minutes](https://www.rockpack.io/fast-setup). Applications can be either regular single page or with a project structure, [server-side rendering](https://www.rockpack.io/ssr-1-creating-simple-ssr-application/), etc.
+
+**Large projects from scratch** \- Rockpack supports most of the webpack best practices and scales to big projects.
+
+**Startup** \- If you need to quickly check an idea without wasting time on unfolding and setting up the project.
+
+**Library or React component** \- If you want to write a UMD library or React component, there's support for the ESM/CommonJS builds as well as the minifying.
+
+**Legacy projects or modular use**. - You can for example [migrate a legacy application to SSR using Rockpack](https://www.rockpack.io/ssr-2-migration-legacy-app-to-ssr/).
+## [11][Commons Mistakes with React useState hook and How to Prevent them.](https://www.reddit.com/r/reactjs/comments/jria6q/commons_mistakes_with_react_usestate_hook_and_how/)
+- url: https://medium.com/javascript-in-plain-english/commons-mistakes-with-react-usestate-hook-and-how-to-prevent-them-43c811ca7451?source=friends_link&amp;sk=efa94031ba9e2478f29f2b41092b1e9a
 ---
 
-## [7][Commons Mistakes with React useEffect hook and How to Prevent them.](https://www.reddit.com/r/reactjs/comments/jqvk76/commons_mistakes_with_react_useeffect_hook_and/)
-- url: https://medium.com/javascript-in-plain-english/commons-mistakes-with-react-useeffect-hook-and-how-to-prevent-them-d0ca253fb1f7?source=friends_link&amp;sk=e3f4d297fa6554f46dcf0a20302d8eff
+## [12][Using finite state machines in React applications with XState](https://www.reddit.com/r/reactjs/comments/jr7x3z/using_finite_state_machines_in_react_applications/)
+- url: https://www.reddit.com/r/reactjs/comments/jr7x3z/using_finite_state_machines_in_react_applications/
 ---
+I have made a course about creating state machines with XState and using it inside React apps.  
+State machines with XState is a fresh topic for Frontend development, which allows us to better manage applications state.
 
-## [8][React js entry/junior level interview questions. HELP](https://www.reddit.com/r/reactjs/comments/jqan4l/react_js_entryjunior_level_interview_questions/)
-- url: https://www.reddit.com/r/reactjs/comments/jqan4l/react_js_entryjunior_level_interview_questions/
----
-Im having an Interview this week Im terrified and I want to prepare myself.
-
-What are the commonly ask reactjs questions for entry/junior level developer? 
-Another questions is do they ask “leet code” type of questions during an interview for a front end position?
-
-Thank you!
-
-EDIT: WOW this completely blew up! Thank you everyone for the advice you’ve given! Tomorrow’s the interview Wish me luck!
-## [9][Is there a working infinite scroll library which can be used in a chat app?](https://www.reddit.com/r/reactjs/comments/jqtgg7/is_there_a_working_infinite_scroll_library_which/)
-- url: https://www.reddit.com/r/reactjs/comments/jqtgg7/is_there_a_working_infinite_scroll_library_which/
----
-I tried react-infinite-scroll-component but it's a bug and will fetch the messages on scroll to bottom aswell when inverse is set true. Is there any other library which can help me achieve infinite scroll on top for a chat app?
-## [10][React-admin help !](https://www.reddit.com/r/reactjs/comments/jqv8du/reactadmin_help/)
-- url: https://www.reddit.com/r/reactjs/comments/jqv8du/reactadmin_help/
----
-Hey everyone ! I need some help from you guys. Currently I am working on project. And have used [react-admin](https://github.com/marmelab/react-admin/) in it. Somehow I need to implement the admin dashboard on a specific route namely [website.com/admin](https://website.com/admin). And also the login route uses the [website.com/login](https://website.com/login) but I need that route for logging in my users and I want the admin login to be [website.com/admin/login](https://website.com/admin/login)  Tried many possible ways from my side and couldn't figure out how to do it ! Can anyone help me to implement it ?
-
-P.S : I am using [react-admin-firebase](https://github.com/benwinding/react-admin-firebase/) as my data provider
-## [11][Do I need a constructor?](https://www.reddit.com/r/reactjs/comments/jqul53/do_i_need_a_constructor/)
-- url: https://www.reddit.com/r/reactjs/comments/jqul53/do_i_need_a_constructor/
----
-Hi there, I'm a little confused when reading about this topic so maybe someone can shed some light on it for me. Most of the examples of class components in the React Docs use a constructor to set the state, bind event handlers and assign any other value to `this`. But I've also noted that you don't need to bind methods if you use arrow functions, and that object properties (including state) can be assigned directly on the class. I was reading about uncontrolled components and the example in the docs goes something like this:  
-
-
-    constructor(props) {
-        super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.input = React.createRef();
-      }
-
-but I've noticed that I can also just do this:
-
-    input = React.createRef();
-    handleSubmit = () =&gt; {/*...do a thing...*/};
-
-No constructor needed. Which seems to work just fine. Is there any reason why this is bad practice? And why is it not mentioned in the docs?
-## [12][How can I force some elements to be placed into the DOM before rendering child nodes?](https://www.reddit.com/r/reactjs/comments/jqo92m/how_can_i_force_some_elements_to_be_placed_into/)
-- url: https://www.reddit.com/r/reactjs/comments/jqo92m/how_can_i_force_some_elements_to_be_placed_into/
----
-I have a legacy API that needs to use querySelector and then it writes to that element  (pdf.js).  
-
-The problem I need to make sure the container has been rendered to the DOM before I attempt to use a child component.
-
-I think I can do this by only rendering the child when the ref callback is defined right? 
-
-That seems like it would do it!
+Check it out: [https://www.udemy.com/course/introduction-to-state-machines-with-xstate-and-react](https://www.udemy.com/course/introduction-to-state-machines-with-xstate-and-react/?referralCode=145403C5EBEB0D9633EC&amp;fbclid=IwAR1HTYFvf8KBw03FyomPmqAMTbuQ8r_XgjhrdFVhMYfoWfLwemrh3_jFnBE)

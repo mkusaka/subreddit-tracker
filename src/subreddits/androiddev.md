@@ -31,58 +31,54 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Kotlin plugin updated to add data class, sealed class, annotations quicker](https://www.reddit.com/r/androiddev/comments/jqnn6m/kotlin_plugin_updated_to_add_data_class_sealed/)
-- url: https://i.redd.it/ysedmnny44y51.png
+## [3][I found this weird prototype Android tablet from 2010 at Goodwill today. I couldn't find much information on it besides that it is a Texas Instruments Blaze and used for Android development but never reached the consumer market. I was wondering if anyone knew more about these machines.](https://www.reddit.com/r/androiddev/comments/jrbnnh/i_found_this_weird_prototype_android_tablet_from/)
+- url: http://imgur.com/gallery/3A0POhz
 ---
 
-## [4][I have an IOS app written in Swift. How can I “translate it” so to speak into a functional android app?](https://www.reddit.com/r/androiddev/comments/jqtdi3/i_have_an_ios_app_written_in_swift_how_can_i/)
-- url: https://www.reddit.com/r/androiddev/comments/jqtdi3/i_have_an_ios_app_written_in_swift_how_can_i/
+## [4][Android 11 device controls are not visible in emulator](https://www.reddit.com/r/androiddev/comments/jrj9en/android_11_device_controls_are_not_visible_in/)
+- url: https://www.reddit.com/r/androiddev/comments/jrj9en/android_11_device_controls_are_not_visible_in/
 ---
-More specifically, as I understand I can’t just snap my fingers, are there any tools you guys recommend I use to help me with this process?
-## [5][Connection to BLE Device not working on Oppo model F17](https://www.reddit.com/r/androiddev/comments/jqxgx3/connection_to_ble_device_not_working_on_oppo/)
-- url: https://www.reddit.com/r/androiddev/comments/jqxgx3/connection_to_ble_device_not_working_on_oppo/
----
-Hi,
+Any other developers that would love to work with the new Android 11 Device Controls?
 
-I'm trying to connect to a ble device. It works fine in most of the phones but it's not working in some of the Oppo models specially in  F15. Connection is failed whenever I try to connect to the ble device. I have tried connecting to the ble device even using the Ble Scanner app but it doesn't work in that too.
-## [6][Optimizing for battery life?](https://www.reddit.com/r/androiddev/comments/jqqkqg/optimizing_for_battery_life/)
-- url: https://www.reddit.com/r/androiddev/comments/jqqkqg/optimizing_for_battery_life/
----
-Are there any good lists of things to avoid when trying to optimize a production application for battery life?
-
-Also, I'm looking for a good way to get battery data between app releases so that I can see if there's a big change in battery drain. Battery Historian seems to be good for this, but it also seems like it wouldn't always help me find where exactly the drain is coming from. Are there others tools I can use that would provide more information?
-## [7][Threw together this quick replacement for the old API Distribution Dashboard from the docs (RIP)](https://www.reddit.com/r/androiddev/comments/jqlxfg/threw_together_this_quick_replacement_for_the_old/)
-- url: https://nbadal.github.io/android-dist
----
-
-## [8][How do you guys advertise your android game?](https://www.reddit.com/r/androiddev/comments/jql9w7/how_do_you_guys_advertise_your_android_game/)
-- url: https://www.reddit.com/r/androiddev/comments/jql9w7/how_do_you_guys_advertise_your_android_game/
----
-
-## [9][SSL decryption](https://www.reddit.com/r/androiddev/comments/jqwbu9/ssl_decryption/)
-- url: https://www.reddit.com/r/androiddev/comments/jqwbu9/ssl_decryption/
----
-Hello, I am currently reverse engineering an Android App. I tried to sniff the packets using Wireshark. The requests are sent encrypted. Now how can I decrypt them?  
-
-
-I tried accessing the app's private files but it seems like that there is no key.  
-My idea now is to use my own key to encrypt the traffic. Is it possible to import my very own key and force my android phone to only use my own key?  
-
-
-Is that possible? Or are there any other possibilities I can try?
+But are hampered by the fact that they don't work on emulators??
 
 &amp;#x200B;
 
-KR
-## [10][Is Pre-registration in Google Play Console broken?](https://www.reddit.com/r/androiddev/comments/jqw8ot/is_preregistration_in_google_play_console_broken/)
-- url: https://www.reddit.com/r/androiddev/comments/jqw8ot/is_preregistration_in_google_play_console_broken/
+ [https://issuetracker.google.com/issues/168973367](https://issuetracker.google.com/issues/168973367)   
+
+
+Or does anyone knows a workaround?
+## [5][Building Swipe View via MotionLayout](https://www.reddit.com/r/androiddev/comments/jresh0/building_swipe_view_via_motionlayout/)
+- url: https://www.reddit.com/r/androiddev/comments/jresh0/building_swipe_view_via_motionlayout/
 ---
- My game is in pre-registration for days now, and I don't get any data on the storefront or the registration number whatsoever. (And I know for sure about a number of people who clicked on the Pre-register button but it shows 0). Should I contact Google?
-## [11][Android library development resource declaration impact](https://www.reddit.com/r/androiddev/comments/jqvzf6/android_library_development_resource_declaration/)
-- url: https://proandroiddev.com/android-library-development-resource-declaration-part-1-c357ca4dfacb
+[Swipe view using MotionLayout](https://link.medium.com/cSBgLCs7hbb)
+## [6][Fragment and ViewModel responsibilities](https://www.reddit.com/r/androiddev/comments/jrktcx/fragment_and_viewmodel_responsibilities/)
+- url: https://www.reddit.com/r/androiddev/comments/jrktcx/fragment_and_viewmodel_responsibilities/
+---
+Hello developers. I have a question for those using the MVVM architecture. When you read a file from storage and grab its uri, do you read the inputstream to get the file contents within the fragment or activity itself or you pass the uri to the viewmodel and do your other stuff from their?  Just curious.
+## [7][Sooner Home - democratising the Google Sooner experience](https://www.reddit.com/r/androiddev/comments/jrkshc/sooner_home_democratising_the_google_sooner/)
+- url: https://www.reddit.com/r/androiddev/comments/jrkshc/sooner_home_democratising_the_google_sooner/
+---
+Good morning r/Android! I’ve been recently working on an app called Sooner Home. It is essentially a launcher that replicates the Google Sooner experience to every Android device out there (proof of concept: https://ibb.co/jWNzBVt - Sooner Home running on a Galaxy A320FL). What is Google Sooner? Well, it’s the first prototype hardware that Android was developed upon, back in 2006. Although it is very difficult to get hold of such a prototype, with my app, Sooner Home, you can get your own phone have a similar Home Screen layout. What are your thoughts on my project? Would you like to see it someday on PlayStore? If yes, would you install it? Let’s discuss in the comments. (reposted from r/Android)
+## [8][Difference in admob revenue of app is not on Play store](https://www.reddit.com/r/androiddev/comments/jrkfm5/difference_in_admob_revenue_of_app_is_not_on_play/)
+- url: https://www.reddit.com/r/androiddev/comments/jrkfm5/difference_in_admob_revenue_of_app_is_not_on_play/
 ---
 
-## [12][Android App Development: Helpful Android Tools for Developers](https://www.reddit.com/r/androiddev/comments/jqvrz6/android_app_development_helpful_android_tools_for/)
-- url: https://www.gpcoders.com/android-app-development-helpful-android-tools-for-developers/
+## [9][How to store auth token](https://www.reddit.com/r/androiddev/comments/jrjzpv/how_to_store_auth_token/)
+- url: https://www.reddit.com/r/androiddev/comments/jrjzpv/how_to_store_auth_token/
+---
+I send a post request via volley and log in and as a response I get a token. Once I close the app i have to sing in again. How can i store the token ? and how do I send get request with it? 
+
+Thanks!
+## [10][Knowing your Data 1: LiveData](https://www.reddit.com/r/androiddev/comments/jrhc1w/knowing_your_data_1_livedata/)
+- url: https://www.youtube.com/watch?v=O3KrsoIoD9A
+---
+
+## [11][Max Persistent URI grants for Android 11 is 512 not 128](https://www.reddit.com/r/androiddev/comments/jr0t24/max_persistent_uri_grants_for_android_11_is_512/)
+- url: https://issuetracker.google.com/issues/149315521
+---
+
+## [12][Should I learn Kotlin for Android and other FAQs](https://www.reddit.com/r/androiddev/comments/jrhxry/should_i_learn_kotlin_for_android_and_other_faqs/)
+- url: https://medium.com/androiddevelopers/should-i-learn-kotlin-for-android-and-other-faqs-88a2bb281a60
 ---
 

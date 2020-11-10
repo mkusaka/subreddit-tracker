@@ -39,336 +39,113 @@ A suggested format to get you started:
  
 
 ^(Many thanks to Kritnc for getting the ball rolling.)
-## [3][Is there a convention for the controller/view of the root route?](https://www.reddit.com/r/rails/comments/jqn37p/is_there_a_convention_for_the_controllerview_of/)
-- url: https://www.reddit.com/r/rails/comments/jqn37p/is_there_a_convention_for_the_controllerview_of/
+## [3][Asking for recommended way to sell digital goods](https://www.reddit.com/r/rails/comments/jrkpxm/asking_for_recommended_way_to_sell_digital_goods/)
+- url: https://www.reddit.com/r/rails/comments/jrkpxm/asking_for_recommended_way_to_sell_digital_goods/
 ---
-I keep thinking I should call it main or default or root or maybe application.   
-I plan to have it check the whether a session exists and redirect to a main page otherwise show some unauthenticated information. So in that case should it be called welcome?  
-... Thoughts?
-## [4][I want to build a CMS for Photos. But I want the photos saved on a CDN like Amazoin CLoudfront, how do I go about this?](https://www.reddit.com/r/rails/comments/jqc2tz/i_want_to_build_a_cms_for_photos_but_i_want_the/)
-- url: https://www.reddit.com/r/rails/comments/jqc2tz/i_want_to_build_a_cms_for_photos_but_i_want_the/
----
-What CDN would you suggest?
-
-And if anyone has done this before, could they share a link to their source code if it was open source.   
-What pitfalls should I avoid?
-## [5][Permitted attribute but still Cannot mass assign warning](https://www.reddit.com/r/rails/comments/jqrb8v/permitted_attribute_but_still_cannot_mass_assign/)
-- url: https://www.reddit.com/r/rails/comments/jqrb8v/permitted_attribute_but_still_cannot_mass_assign/
----
-I wrap the params in my controller so I get something like this.
-
-    params = { "name": "user_name", "user": { "name": "user_name" } }
-
-and in the application controller I permit these like so
-
-     params["user"].permit(:name)
-
-But durinng .new like so 
-
-    User.new(params[:user]))
-
-I get a warning like
-
- 
-
-Can't mass-assign protected attributes for User: name
+I have been looking around for this kind of platforms, and stumbled upon Gumroad, BuyMeACoffee, and etc as possible solutions.
 
 &amp;#x200B;
 
-I do not have name in attr\_accessible since I belive it needs to be handled in the controller level. But I'm not sure why I'm getting this cannot mass-assign exception
-## [6][Rails custom domains for users on heroku](https://www.reddit.com/r/rails/comments/jqhvaa/rails_custom_domains_for_users_on_heroku/)
-- url: https://www.reddit.com/r/rails/comments/jqhvaa/rails_custom_domains_for_users_on_heroku/
+Any of you have experiences with these platforms or something similar to that? Or is it better to just make our own solution?
+## [4][What OS do you use?](https://www.reddit.com/r/rails/comments/jrk7kz/what_os_do_you_use/)
+- url: https://www.reddit.com/r/rails/comments/jrk7kz/what_os_do_you_use/
 ---
-Really appreciate the community help here. I'm working on an app that exists on Heroku. The app has users through devise and those users should be able to add their own domain name to the app. [www.app.com/user1](https://www.app.com/user1) should be accessible from [user1.com](https://user1.com) if they have a domain set up. I've been researching like crazy and I don't have a solid solution yet. If anyone has achieved something similar I would love to know how. Thank you family! If the solution requires a paid third party service like Cloudflare that is acceptable.
-## [7][How to add hard_wrap: true in a custom Markdown Redcarpet](https://www.reddit.com/r/rails/comments/jq8upc/how_to_add_hard_wrap_true_in_a_custom_markdown/)
-- url: https://www.reddit.com/r/rails/comments/jq8upc/how_to_add_hard_wrap_true_in_a_custom_markdown/
+Hey Ruby People, 
+
+I am thinking of switching from MacOS to Linux for my development machine. Have you made the switch, or do you dev on a linux machine? 
+
+I'd love to know what peoples opinions are. :)
+## [5][How to invalidate nested pertain cache?](https://www.reddit.com/r/rails/comments/jrgpbg/how_to_invalidate_nested_pertain_cache/)
+- url: https://www.reddit.com/r/rails/comments/jrgpbg/how_to_invalidate_nested_pertain_cache/
 ---
-In my application\_helper I have this
 
-    def parse_markdown(text)
-     markdown = Redcarpet::Markdown.new(MarkdownRenderer, hard_wrap: true, autolink: true, space_after_headers: true)
-     markdown.render(text)
-    end 
+    cache “1” do
+      cache “2” do 
+         cache “3” do
 
-But probably to add **hard\_wrap: true** is not the right thing to do.
 
-We are using a "*custom markdown*". So in **facedes/markdown\_render.rb** I have this
+If I change temple or code that produced cache 3, how can I invalidate 2, which then invalidates 1 aswell?
 
-    class MarkdownRenderer &lt; Redcarpet::Render::HTML
-     include Rails.application.routes.url_helpers
-     include ActionView::Helpers::UrlHelper
-        def paragraph(text)
-         "#{text}&lt;br&gt;"
-        end
-       (and a lot of other things) 
+The idea was to have a cache based on filehash + templatehash. 
 
-But in this way if I write a comment with
+Children are called within the template , so I don’t know yet what children will be called 
 
-    line one
-    line two 
+Having an additional VERSION inside the classes is ok but then I need to change version +1 for 1 and 2, just if I change 3
 
-I see
 
-    line one line two 
-
-and only if I use the "doubble", in this way
-
-    line one
-    
-    line two 
-
-I see
-
-    line one
-    line two 
-
-**How to solve?**
-
-I want to write
-
-    line one
-    line two
-    
-    line three 
-
-and to see
-
-    line one
-    line two
-    line three
-
-I also try to add in 
-
-     def initialize(options={})
-       super options.merge(:hard_wrap =&gt; true)
-     end 
-
-But it doesn't work.
-## [8][Getting a syntax error, but I can't figure out why](https://www.reddit.com/r/rails/comments/jq6s9h/getting_a_syntax_error_but_i_cant_figure_out_why/)
-- url: https://www.reddit.com/r/rails/comments/jq6s9h/getting_a_syntax_error_but_i_cant_figure_out_why/
+General programming question I guess
+## [6][Amazing course for on RAILS preferably PAID](https://www.reddit.com/r/rails/comments/jr26sa/amazing_course_for_on_rails_preferably_paid/)
+- url: https://www.reddit.com/r/rails/comments/jr26sa/amazing_course_for_on_rails_preferably_paid/
 ---
-https://imgur.com/a/0far2GQ
+I can take courses at work, and I'm thinking of taking a rails course to up my skills. The course can be paid one. What I'm really looking for in the course.  
 
-I am following a twitter clone tutorial and I keep getting a syntax error when trying to render a partial form. I can't figure out what I am doing wrong. Could you please take a look?
-## [9][Add library css in Ruby on Rails 6 with webpacker](https://www.reddit.com/r/rails/comments/jqb6u3/add_library_css_in_ruby_on_rails_6_with_webpacker/)
-- url: https://www.reddit.com/r/rails/comments/jqb6u3/add_library_css_in_ruby_on_rails_6_with_webpacker/
+1. Internals of rails app, lesser-known features, identifying performance bottlenecks, and optimizing code with design patterns and good testing techniques. 
+2. Using APM's like new relic to monitor the health of the app
+3. The devops side of deploying, CI, CD etc of a rails app. 
+
+I do not want a beginner's course on creating a simple CRUD app. I want it to be something a little advanced than that. 
+
+Could someone please suggest a good, paid course on this, or even multiple courses that cover this? 
+
+Thanks.
+## [7][For an Index page, should I calculate this info on the fly, or store it in the database?](https://www.reddit.com/r/rails/comments/jrbgnm/for_an_index_page_should_i_calculate_this_info_on/)
+- url: https://www.reddit.com/r/rails/comments/jrbgnm/for_an_index_page_should_i_calculate_this_info_on/
 ---
-I'm trying to install a library, specifically bootstrap-table via yarn. I had tried the gem found at the following link [Click](https://github.com/bjevanchiu/bootstrap-table-rails) but it is an old version and I was unable to get it to work. I have read around that however with Rails 6 it is better to use the webpacker to install libraries. My problem now is I can't figure out how to insert bootstrap-table css.
+Hey there, I am working on a simple invoicing app and for my Clients index view, which will probably show 12-15 records at a time, I want each Client's table line to include some data like:
 
-Here are my files:
+* How many outstanding invoices that client has (ie, 23 invoices)
+* How many Paid invoices they have
+* The dollar amount of all their invoices (ie, $18,453.52 total)
+* The dollar amount of outstanding invoices
 
-application.js
+This seems like it might be a burden to have Rails calculate all this for 12-15 clients per index page, yes? This is my first project, so I'm just not sure, but it seems like it involves a lot of database work every time a user simply looks at their Client index page. So I was going to create a couple of Count values and Totals values columns the Client table, and just change them anytime a new invoice is created/deleted/paid.
 
-    import 'bootstrap'
-    require("@rails/ujs").start()
-    require("turbolinks").start()
-    require("@rails/activestorage").start()
-    require("channels")
-    require("jquery")
-    require("jquery-ui")
-    import "@fortawesome/fontawesome-free/js/all";
-    require("leaflet");
-    require("easy-autocomplete")
-    
-    require bootstrap-table
+Does this seem reasonable?
 
-
-application.scss
-
-     *= require jquery-ui
-     *= require_tree .
-     *= require_self
-    
-    
-    
-     */
-    
-    @import "leaflet/dist/leaflet";
-    @import "bootstrap/scss/bootstrap";
-    @import '@fortawesome/fontawesome-free/css/fontawesome.css';
-    @import '@fortawesome/fontawesome-free/css/all.css';
-    @import 'easy-autocomplete/dist/easy-autocomplete';
-
-
-In app/views/layouts/application.htlm.erb I have:
-
-    &lt;!DOCTYPE html&gt;
-    &lt;html&gt;
-      &lt;head&gt;
-        &lt;title&gt;Resto&lt;/title&gt;
-        &lt;%= csrf_meta_tags %&gt;
-        &lt;%= csp_meta_tag %&gt;
-    
-        &lt;%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %&gt;
-        &lt;!-- This refers to app/javascript/stylesheets/application.scss--&gt;
-        &lt;%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %&gt;
-    
-    
-      &lt;/head&gt;
-    
-      &lt;body&gt;
-        &lt;p class = "notice" &gt;&lt;%= notice %&gt; &lt;/p&gt;
-        &lt;p class = "alert" &gt;&lt;%= alert %&gt;&lt;/p&gt;
-        &lt;%= yield %&gt;
-    
-      &lt;/body&gt;
-    &lt;/html&gt;
-
-
-I read on the internet that to insert the css of the libraries installed by yarn I have to paste the following code in application.html.erb file:
-
-    &lt;% = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'%&gt;
-
-
-So what I did was put this code in the file and I edited `config/webpacker.yml` to be sure it has `extract_css: true` in the default section at the top.
-
-
-I also started the `bin / webpack-dev-server` command in the console but I got this error:
-
-
-
-    You want to set webpacker.yml value of compile to true for your environment
-    
-    unless you are using the webpack -w or the webpack-dev-server.
-    
-    webpack has not yet re-run to reflect updates.
-    
-    You have misconfigured Webpacker's config/webpacker.yml file.
-    
-    Your webpack configuration is not creating a manifest.
-    
-    Your manifest contains:
-    
-    {
-      "application.js": "/packs/js/application-105ced549e0eccca7ef2.js",
-      "application.js.map": "/packs/js/application-105ced549e0eccca7ef2.js.map",
-      "entrypoints": {
-        "application": {
-          "js": [
-            "/packs/js/application-105ced549e0eccca7ef2.js"
-          ],
-          "js.map": [
-            "/packs/js/application-105ced549e0eccca7ef2.js.map"
-          ]
-        }
-      }
-    }
-
-
-
-I would like not to have to use all this configuration but to just add the bootstrap-table css file to my page. I don't feel like good in running this `bin / webpack-dev-server` command. This is because I had a lot of errors after running this command and I would like to avoid having to keep it running all the time. It's possible? If that's not possible, what am I doing wrong?
-## [10][General models or multiple specific ones?](https://www.reddit.com/r/rails/comments/jq4vcx/general_models_or_multiple_specific_ones/)
-- url: https://www.reddit.com/r/rails/comments/jq4vcx/general_models_or_multiple_specific_ones/
+Thanks much!
+## [8][How to link to github file for current rails view file](https://www.reddit.com/r/rails/comments/jrhand/how_to_link_to_github_file_for_current_rails_view/)
+- url: https://www.reddit.com/r/rails/comments/jrhand/how_to_link_to_github_file_for_current_rails_view/
 ---
-I am building an inventory tracker with some extra features as a project and wondering in the scenario  I am having whether to use 2 models (ProductVariantTitle and ProductVariantTag) and allow the user to add their own Tagging Title and Description/Tag like Size, Color, Category, etc. Or do more specified models that are more likely to be required like "Category" or "Vendor"?
+I am working on a project with other people who are not too familiar with where files for different parts of my app are to be found. I'd like to add links that "open source file for this component on github".
 
-&amp;#x200B;
-
-Assuming there is a Product Model and ProductVariant Model in both cases... (Product model is more of a title and generalized information, the ProuctVariant is the specific SKU --- no matter if there are no variants, there will always be a ProductVariant created within the app)
-
-For instance, I can maybe do one less specified model structure like this:
-
-&amp;#x200B;
-
-**ProductVariantTitle**
-
-⦁	Name
-
-Examples:
-
-NAME is Size
-
-NAME is Color
-
-NAME is Category
-
-NAME is Vendor
-
-NAME is Collection
-
-&amp;#x200B;
-
-**ProductVariantTag**
-
-⦁	Name
-
-⦁	ProductVariantTitleId
-
-⦁	ProductVariantId
-
-Examples:
-
-NAME is Small
-
-NAME is Black
-
-NAME is T-Shirt
-
-NAME is Bob
-
-NAME is Summer
-
-&amp;#x200B;
-
-Or should I be doing something more specified like:
-
-**Vendor**
-
-* Name
-
-**ProductVariantVendor**  (join)
-
-* VendorId
-* ProductVariantId
-
-&amp;#x200B;
-
-**Collection**
-
-* Name
-
-**ProductVariantCollection**  (join)
-
-* CollectionId
-* ProductVariantId
-
-&amp;#x200B;
-
-**Category**
-
-* Name
-
-**ProductVariantCategory** (join)
-
-* CategoryId
-* ProductVariantId
-
-&amp;#x200B;
-
-as models?
-
-&amp;#x200B;
-
-But maybe at the same time, keep the **ProductVariantTitle and ProductVariantTag** for more dynamic titles like **"Size", "Style", "Color" etc.?** Because not every product will always have a color specified, such as a battery or food.  But Category and Vendor are characteristics that will always be required for any product.
-
-&amp;#x200B;
-
-Both seem to make sense in their own worlds but I am wondering if there are any opinions on either?
-## [11][How to incorporate an application within a Rails application?](https://www.reddit.com/r/rails/comments/jpyk29/how_to_incorporate_an_application_within_a_rails/)
-- url: https://www.reddit.com/r/rails/comments/jpyk29/how_to_incorporate_an_application_within_a_rails/
+Does anyone know if there is already such a gem available? If not, would anyone like to work with me on creating one. I imagine it could be very useful.
+## [9][Mimicking CodeIgniter's route on Rails](https://www.reddit.com/r/rails/comments/jrfq2q/mimicking_codeigniters_route_on_rails/)
+- url: https://www.reddit.com/r/rails/comments/jrfq2q/mimicking_codeigniters_route_on_rails/
 ---
-Hello Rails community!
+First post here, Rails was the first framework that got me started in web development back in a bootcamp 2 years ago. After that I found a job as a backend developer and had to use Codeigniter for most of the projects there.
 
-Just a quick question.
+After 2 years of working, I've slowly started using Rails for my side projects. But one thing that has been bugging me is the fact that I have to explicitly create routes to route each requests to a method.
 
-Creating a Rails app and serving data is pretty straight-forward for me. But I wanted to know how I could use data from my Rails app with another Python-based application.
-
-I was thinking of having a shared database and using it as a shared place where both applications can utilize each others data.
-
-I think I have an idea, but was wondering if I was on the right track.
-
-Thanks for any help!
-## [12][Bootstrap-table-rails](https://www.reddit.com/r/rails/comments/jpnu5h/bootstraptablerails/)
-- url: https://www.reddit.com/r/rails/comments/jpnu5h/bootstraptablerails/
+How can I setup Rails to detect site\_url/{controller\_name}/{controller\_method} and automatically route it to the said method like how Codeigniter does it?
+## [10][CSS &amp; HTML to mimic squarespace navbar in rails app?](https://www.reddit.com/r/rails/comments/jr9x6s/css_html_to_mimic_squarespace_navbar_in_rails_app/)
+- url: https://www.reddit.com/r/rails/comments/jr9x6s/css_html_to_mimic_squarespace_navbar_in_rails_app/
 ---
-hi, I'm trying to install this gem: https://github.com/bjevanchiu/bootstrap-table-rails in rails 6. The problem is that when I put it in the gemfile and run the bundle install command, it doesn't appear in node_modules. With linux find I looked for the bootstrap-table-rails directory but I can't find it anywhere. How can I integrate Bootstrap-table into rails? Thanks so much for the future help
+Hi All - was admiring how nice the collapsable navbar is for squarespace sites (especially on mobile) and was wondering if there was any documentation to mimic that activity with CSS/JS that you've come across.
+## [11][How to solve simultaneous database r/w race condition with postgres/sidekiq?](https://www.reddit.com/r/rails/comments/jr1l6h/how_to_solve_simultaneous_database_rw_race/)
+- url: https://www.reddit.com/r/rails/comments/jr1l6h/how_to_solve_simultaneous_database_rw_race/
+---
+I am running a service that creates 300 jobs at once (sidekiq and postgres). I have a workers pool of 20 and every job takes 4 seconds to complete.
+
+I am also polling with plain Ajax/Jquery and displaying a percentage completion on a page.
+
+I have an array type column on a table where I save the ids of the objects.
+
+The problem is that 20 jobs are accessing the database together and overwrite the array storing faulty results.
+
+I tried to solve this by using a pessimistic lock on the object but it failed. I tried also to add the action in a transaction and reload the object prior to writing.
+
+    @poller.with_lock do 
+      @poller.reload
+      @poller.clients_replied &lt;&lt; client.id.to_s 
+      @poller.save!
+    end
+
+So calling `poller.clients_replied` changes from `[1,2,3]` to `[4,5,8]` for example on two different concurrent writes.
+
+I am sure you have solved cases like this so If you have to suggest anything please advice.
+
+I don't want to use counter cache because I need the ids of the objects.
+## [12][Best Front-End Framework to use with Rails apps?](https://www.reddit.com/r/rails/comments/jr7dx8/best_frontend_framework_to_use_with_rails_apps/)
+- url: https://www.reddit.com/r/rails/comments/jr7dx8/best_frontend_framework_to_use_with_rails_apps/
+---
+I've used Bootstrap for front-end elements with my Bootstrap applications in the past, but wondering if using something like Vue is more advantageous. Any thoughts on this?

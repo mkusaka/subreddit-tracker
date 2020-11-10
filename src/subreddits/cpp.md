@@ -56,101 +56,59 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Structured Concurrency](https://www.reddit.com/r/cpp/comments/jqt4z2/structured_concurrency/)
-- url: https://ericniebler.com/2020/11/08/structured-concurrency/
+## [2][Asio C++ coroutines in Qt UI, communicating with Asio C++ coroutines in service thread, with deterministic cancellation. My October blog.](https://www.reddit.com/r/cpp/comments/jrg3gi/asio_c_coroutines_in_qt_ui_communicating_with/)
+- url: https://cppalliance.org/richard/2020/10/31/RichardsOctoberUpdate.html
 ---
 
-## [3][C++ code testing with GTEST for beginners](https://www.reddit.com/r/cpp/comments/jqh7nq/c_code_testing_with_gtest_for_beginners/)
-- url: https://youtu.be/XW64uWpkYfY
+## [3][GitHub API library for c++](https://www.reddit.com/r/cpp/comments/jr6xsn/github_api_library_for_c/)
+- url: https://www.reddit.com/r/cpp/comments/jr6xsn/github_api_library_for_c/
 ---
+Some time ago I was looking for a library which would let me use GitHub's API.  
+I could not find any so I wrote my own. Today I have decided to extract it from my project and make it easily reusable so here it is:
 
-## [4][[QUESTION] Any experience with making some money on the side on Fiverr (or other platforms)?](https://www.reddit.com/r/cpp/comments/jqww29/question_any_experience_with_making_some_money_on/)
-- url: https://www.reddit.com/r/cpp/comments/jqww29/question_any_experience_with_making_some_money_on/
+[https://github.com/Kicer86/github\_api](https://github.com/Kicer86/github_api)
+
+It's api is very limited. I have just covered my needs, but it can be easily extended.  
+I hope you find it useful.
+## [4][Butano: a modern C++ high level engine for the GBA](https://www.reddit.com/r/cpp/comments/jrjj2n/butano_a_modern_c_high_level_engine_for_the_gba/)
+- url: https://www.reddit.com/r/cpp/comments/jrjj2n/butano_a_modern_c_high_level_engine_for_the_gba/
 ---
-Hi everyone
+Hi!
 
-Due to corona i occasionally have some unemployment days which means i have some time left over. I want to do something with this time and i was looking for some side-hustle in the cpp area for example as a code reviewer/bug fixer on Fiverr.
+Lately, I have been working on [Butano](https://github.com/GValiente/butano), a C++20 engine for the Game Boy Advance.
 
-&amp;#x200B;
+It brings its own standard library, based on the awesome [ETL](https://www.etlcpp.com/). It differs from the standard library mostly in the usage of asserts instead of exceptions and in the usage of fixed size stack buffers instead of the heap.
 
-My profile:
+Since the GBA doesn't have a file system, all data has to be compiled into the ROM, which allows constexpr to be used with ease. Butano brings its own [asserts system](https://gvaliente.github.io/butano/group__assert.html) which can be used in constant-evaluated contexts too thanks to [std::is\_constant\_evaluated](https://en.cppreference.com/w/cpp/types/is_constant_evaluated).
 
-Graduated sept '19, masters degree in electronics/ICT engineering
+The engine provides detailed [documentation](https://gvaliente.github.io/butano/), multiple [examples](https://gvaliente.github.io/butano/examples.html) of most aspects of the engine an even the source code and assets of a full game: [Butano Fighter](https://gvaliente.itch.io/butano-fighter).
 
-Working fulltime as a c++ developer since sept '19
-
-&amp;#x200B;
-
-Would i be experienced enought to do something like this?
-
-Does anyone have experience with Fiverr (or other platforms)?
-
-If so, is it somewhat profitable? Getting rich fast isn't the goal, but i would like to spend my time useful by helping someone/gaining experience/making some extra money as a bonus.
-## [5][[C++ Web Game + Update] SFML Game Engine for Web (HTML), Android &amp; PC](https://www.reddit.com/r/cpp/comments/jqhqmx/c_web_game_update_sfml_game_engine_for_web_html/)
-- url: https://www.reddit.com/r/cpp/comments/jqhqmx/c_web_game_update_sfml_game_engine_for_web_html/
----
-Hi everyone, hope you are doing well!
-
-&amp;#x200B;
-
-A new update of **is::Engine** (SFML Game Engine) is available but this time it comes with a **web game** that was created with the engine.
-
-This is a special version of the game (Complete game overhaul) **I Can Transform** (released on Android) created to celebrate these 2 years.
-
-The game was created with **SFML** except the physics engine that I had coded myself.
-
-&amp;#x200B;
-
-Here are the new features of version 3.1.1:
-
-► **IS\_ENGINE\_RENDER**: allows you to optimize your games so that they can run on old computers (mine for example \^\^).
-
-► **Game Slider**: allows you to do sliding actions (like on Smartphones) to manipulate your menus.
-
-► **Transition Effect**: allows you to make Fade Out and Fade In type transition effects.
-
-► **Improved web support**: many bugs have been fixed.
-
-► **Support of Render Texture in web development.**
-
-&amp;#x200B;
-
-**Game Engine link**: [Here](https://github.com/Is-Daouda/is-Engine)
-
-&amp;#x200B;
-
-**Here is web game link**: [Here](http://is-daouda.github.io)
-
-(It's a web game so it's playable on PC and mobile)
-
-A tip to start the game well, note that the environment is your best ally in this game.
-
-&amp;#x200B;
-
-**Here is the Game trailer**: [Here](https://youtu.be/vETLpYMc2sA)
-
-&amp;#x200B;
-
-The development of the game and the engine update were done during this week (at my free time of course) so I didn’t have time to create many levels. But believe me, there’s enough for you to have a good time. :)
-
-&amp;#x200B;
-
-Your questions are welcome
-
-&amp;#x200B;
-
-Have a good day :)
-## [6][A good C++ IDE for Mac](https://www.reddit.com/r/cpp/comments/jqxfjr/a_good_c_ide_for_mac/)
-- url: https://www.reddit.com/r/cpp/comments/jqxfjr/a_good_c_ide_for_mac/
----
-I am in my first year of University, and I was wondering if there were any good IDEs for c++ in MacOS, since they use visual studio for windows in my classes and I only have a MacBook.
-
-Thank you in advance
-## [7][A libc written in C++](https://www.reddit.com/r/cpp/comments/jqxan9/a_libc_written_in_c/)
+If you have time please tell me what you think. Thanks!
+## [5][A libc written in C++](https://www.reddit.com/r/cpp/comments/jqxan9/a_libc_written_in_c/)
 - url: https://llvm.org/docs/Proposals/LLVMLibC.html
 ---
 
-## [8][Conservative instantiation in variadic templates](https://www.reddit.com/r/cpp/comments/jqx1oa/conservative_instantiation_in_variadic_templates/)
+## [6][braft: An industrial-grade C++ implementation of the RAFT consensus algorithm open sourced by Baidu](https://www.reddit.com/r/cpp/comments/jr6zxm/braft_an_industrialgrade_c_implementation_of_the/)
+- url: https://github.com/baidu/braft
+---
+
+## [7][rotor v0.10 release (new: timers, request cancellation facility)](https://www.reddit.com/r/cpp/comments/jr39db/rotor_v010_release_new_timers_request/)
+- url: https://github.com/basiliscos/cpp-rotor
+---
+
+## [8][Structured Concurrency](https://www.reddit.com/r/cpp/comments/jqt4z2/structured_concurrency/)
+- url: https://ericniebler.com/2020/11/08/structured-concurrency/
+---
+
+## [9][I tried to efficiently render text with SDL_ttf, let me know what you think](https://www.reddit.com/r/cpp/comments/jr8s11/i_tried_to_efficiently_render_text_with_sdl_ttf/)
+- url: /r/sdl/comments/jr8qdl/i_tried_to_efficiently_render_text_with_sdl_ttf/
+---
+
+## [10][Meaning of C++ Stanard Revisions](https://www.reddit.com/r/cpp/comments/jr0xsk/meaning_of_c_stanard_revisions/)
+- url: https://www.reddit.com/r/cpp/comments/jr0xsk/meaning_of_c_stanard_revisions/
+---
+Is there any meaning of the revisions of the C++ standard, likeN4661, N4668?
+## [11][Conservative instantiation in variadic templates](https://www.reddit.com/r/cpp/comments/jqx1oa/conservative_instantiation_in_variadic_templates/)
 - url: https://www.reddit.com/r/cpp/comments/jqx1oa/conservative_instantiation_in_variadic_templates/
 ---
 A use case of variadic templates that often arises in my libraries and applications is the following:
@@ -170,37 +128,3 @@ This, too, should just be an abbreviated function template but the deduced type 
 This proposed syntax may clash however with plain old C variadics (in the case that the argument pack isn't named) because they - for some reason - aren't required to be separated by a comma. A possible solution is requiring such typed parameter packs to always be named.
 
 Has anybody seen or written a proposal regarding this? If not, how can I write a proposal?
-## [9][Dashboard: Zero-Days in Desktop Web Browsers (heap corruption, use-after-free,...)](https://www.reddit.com/r/cpp/comments/jqwrf7/dashboard_zerodays_in_desktop_web_browsers_heap/)
-- url: https://www.radsix.com/dashboard1/
----
-
-## [10][Systems Of Units Library in C++](https://www.reddit.com/r/cpp/comments/jqo92n/systems_of_units_library_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/jqo92n/systems_of_units_library_in_c/
----
-  
-
-The following link is to a Systems Of Units (SOU) library which I created in C++. It does all type checks of units and conversions at compile time. Most of the work on the library was out of trying to learn new features and techniques with C++.  The Library includes a test suite written using the Google Test Framework.  See the Readme.md page for more details of use.
-
-[https://github.com/trailfrenzy/SIwithET](https://github.com/trailfrenzy/SIwithET)
-
-Currently the library is tested with the VS C++20 compiler and have not had an opportunity to test it against the GNU C++20 library. Older versions in GitHub are compliant with C++17.
-
-Let me know if you have any problems with the library or errors which you may find.
-## [11][Discoverable algorithms](https://www.reddit.com/r/cpp/comments/jqenk4/discoverable_algorithms/)
-- url: https://www.reddit.com/r/cpp/comments/jqenk4/discoverable_algorithms/
----
-[http://code-ballads.net/discoverable-algorithms/](http://code-ballads.net/discoverable-algorithms/)
-
-Searching  for algorithms based on the signatures of the transformations they can apply to data is invaluable.
-
-For example, [this link](https://hoogle.haskell.org/?hoogle=int-%3E[a]-%3E[a]) demonstrates a search engine used to discover all the available algorithms in Haskell for transformation given a signature "(int, \[a\]) -&gt; \[a\]".
-
-In C++, one library offers such a facility : [FunctionalPlus](https://github.com/Dobiasd/FunctionalPlus).  Access its [API search page](http://www.editgym.com/fplus-api-search/) and enter this in the search box:
-
-    (int, [a]) -&gt; [a]
-
-... and you will find many useful algorithms based on this signature (drop, repeat, stride, drop\_idx, take\_cyclic, partial\_sort, etc, etc.).
-
-I wish more libraries would follow this idea, since reasoning about values and their transformations is a powerful way to render the code more readable and correct at the same time.
-
-For those interested the linked article gives more detail as well as a [video](https://youtu.be/i5Xots8dtDU) that shows how such a search engine can be useful during the development.

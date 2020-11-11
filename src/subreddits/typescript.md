@@ -22,23 +22,165 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][10 Insights from Adopting TypeScript at Scale](https://www.reddit.com/r/typescript/comments/jrgi8z/10_insights_from_adopting_typescript_at_scale/)
+## [2][Does anyone know what target to use for Node 14?](https://www.reddit.com/r/typescript/comments/js2uh5/does_anyone_know_what_target_to_use_for_node_14/)
+- url: https://www.reddit.com/r/typescript/comments/js2uh5/does_anyone_know_what_target_to_use_for_node_14/
+---
+I found [this page](https://github.com/microsoft/TypeScript/wiki/Node-Target-Mapping) which lists node target mappings for TS, but it only goes up to Node 12. Since Node 14 is the current LTS, I was wondering if it supported `ES2020` or `ESNEXT` targets. 
+
+Really I'm asking because I want top-level-await support, but Node requires ES modules to do that, so I'd like to also know what `module` setting to use; `es2015`, `es2020`, or `esnext`?
+
+Thanks!
+## [3][How do I make this code behave synced?](https://www.reddit.com/r/typescript/comments/js4hqi/how_do_i_make_this_code_behave_synced/)
+- url: https://www.reddit.com/r/typescript/comments/js4hqi/how_do_i_make_this_code_behave_synced/
+---
+I've found some code to extract an archive file but it's async in all kinds of ways. I need to make it run synced. Its running inside VSCode as extension code and I need to do more code when the code is done. I've tried to apply awaits but no matter what I do my calling code will never wait for the extract function to finish.
+
+Code  references a Logger class that just writes to the console and Utils that will recursively will create target folder if not found.  
+
+
+    import * as path from 'path';
+    import * as fs from 'fs';
+    import { Logger } from './Logger';
+    import { Utils } from './Utils';
+    
+    export class Zip
+    {
+        public static async extract(zipFile:string, targetPath:string): Promise&lt;boolean&gt;
+        {
+            return new Promise((resolve, reject) =&gt;
+            {
+                try
+                {
+                    const JSZip = require('jszip');
+    
+                    fs.readFile(zipFile, async function(err, data) 
+                    {
+                        if (!err)
+                        {
+                            var zip = new JSZip();
+                            await zip.loadAsync(data).then(function(contents: any)
+                            {
+                                Object.keys(contents.files).forEach(async function(filename)
+                                {
+                                    await zip.file(filename).async('nodebuffer').then(function(content: any)
+                                    {
+                                        let dest = path.join(targetPath, filename);
+                                        let folderPath = path.dirname(dest);
+        
+                                        if (!fs.existsSync(folderPath))
+                                        {
+                                            Utils.makeDirectorySync(folderPath);
+                                        }
+    
+                                        Logger.console(dest);
+                                        fs.writeFileSync(dest, content);
+                                    });
+                                });
+    
+                                resolve(true);
+                            });
+                        }
+                    });
+                }
+                catch (err)
+                {
+                    Logger.console('Error: ' + err);
+                    reject(false);
+                }
+            });
+        }
+    }
+## [4][Help breaking down typescript code](https://www.reddit.com/r/typescript/comments/js5uy6/help_breaking_down_typescript_code/)
+- url: https://www.reddit.com/r/typescript/comments/js5uy6/help_breaking_down_typescript_code/
+---
+Hey all,
+
+Was looking at using io-ts ([https://blog.jiayihu.net/how-to-validate-express-requests-using-io-ts/](https://blog.jiayihu.net/how-to-validate-express-requests-using-io-ts/)) as middleware validation for my expressjs app (using typeORM). I'm new to typescript and was wondering if someone could give me a hand dissecting below. 
+
+What I understand so far:
+
+\- We are exporting a constant variable called `validator` which is called with with type &lt;T&gt; which takes a `Decoder` as a variable. From this point on I am not sure, there a so many `=&gt;` operators that is looses me?
+
+    import { RequestHandler } from 'express';
+    import { Decoder } from 'io-ts/lib/Decoder';
+    import { pipe } from 'fp-ts/lib/pipeable';
+    import { fold } from 'fp-ts/lib/Either';
+    
+    export const validator: &lt;T&gt;(decoder: Decoder&lt;T&gt;) =&gt; RequestHandler&lt;ParamsDictionary, any, T&gt; = decoder =&gt; (req, res, next) =&gt; {
+        return pipe(
+            decoder.decode(req.body),
+            fold(
+                errors =&gt; res.status(400).send({ status: 'error', error: errors }),
+                () =&gt; next(),
+            ),
+        );
+    };
+    
+
+Much appreciated !
+## [5][10 Insights from Adopting TypeScript at Scale](https://www.reddit.com/r/typescript/comments/jrgi8z/10_insights_from_adopting_typescript_at_scale/)
 - url: https://www.techatbloomberg.com/blog/10-insights-adopting-typescript-at-scale/
 ---
 
-## [3][Adding 3. party tools to VSCode extension](https://www.reddit.com/r/typescript/comments/jrhivw/adding_3_party_tools_to_vscode_extension/)
-- url: https://www.reddit.com/r/typescript/comments/jrhivw/adding_3_party_tools_to_vscode_extension/
+## [6][Convert to Typescript Syntax](https://www.reddit.com/r/typescript/comments/jrz3dq/convert_to_typescript_syntax/)
+- url: https://www.reddit.com/r/typescript/comments/jrz3dq/convert_to_typescript_syntax/
 ---
-This may not be the correct reddit but I feel like there are only users at /vscode so I'm hoping there are VSCode extension developers here who might have an answer to my question.
+I've done async script load calls from typescript files. Some were formerly embedded inline on the script tag on index.html.
 
-First I'm trying to find a library to extract a .app file. It's an archive file that can be extracted in windows no problem. But I've not be able to find any that can extract my files and I have no idea how to write my own extract code. Either they fail out with messages like archive is of an unsupported format or they just dont do anything.
+And then I came across this script tag which I believe initializes the fetched *some.resource.js.* Below is a simplified format:  
 
-Therefor I'm thinking I just write a .Net commandline tool that can extract the file and I'll call that from extension code with child\_process but then my second problem occurs. No matter where I place the exe tool in my project it is just never included into the vsix file.
-## [4][Terraform with TypeScript](https://www.reddit.com/r/typescript/comments/jqxmoq/terraform_with_typescript/)
+
+    &lt;script src="some.resource.js"&gt;&lt;/script&gt;
+    &lt;script type='text/javascript'&gt;
+        (function() {
+            var voIP = VOIP({
+                id: '189sfegz4',
+                onSubmit: ({ step, attempt, result }) =&gt; { 
+                    console.log('submit', { step, attempt, result });
+                },
+                init: {
+                    title: 'hello world',
+                    instruction: 'say hello'
+                }
+            });
+         
+           voIP.put("#voip-element");
+         })();
+    &lt;/script&gt;
+
+This loads as intended, and accessed as a global window variable. Using a single-page application however,
+
+  
+how can the encapsulated function object be converted and initialized from a specific component (if that's possible)?
+
+&amp;#x200B;
+
+using Angular btw.
+## [7][Could you peer review my PR? Specifically the types defined in the .d.ts file.](https://www.reddit.com/r/typescript/comments/jrytzc/could_you_peer_review_my_pr_specifically_the/)
+- url: https://www.reddit.com/r/typescript/comments/jrytzc/could_you_peer_review_my_pr_specifically_the/
+---
+Hey smart people. Just wondering if any of you are free and willing to peer review a PR I've made for the deepmerge library? The library is written in JS; my PR is about improving its type definitions that are defined in a .d.ts file.
+
+Here's the link: https://github.com/TehShrike/deepmerge/pull/211
+
+Note: TypeScript version 4.1.1-rc required.
+## [8][Can someone give me an example of constructor function in Typescript. I want to use `new` operator on function but everyone on the internet is using classes.](https://www.reddit.com/r/typescript/comments/jrl8wi/can_someone_give_me_an_example_of_constructor/)
+- url: https://www.reddit.com/r/typescript/comments/jrl8wi/can_someone_give_me_an_example_of_constructor/
+---
+For example this doesn't work in Typescript. I want someone to fix this code. 
+
+```ts
+function Square(width: number){
+  this.width = width;
+}
+
+var square = new Square(2);
+```
+## [9][Terraform with TypeScript](https://www.reddit.com/r/typescript/comments/jqxmoq/terraform_with_typescript/)
 - url: https://medium.com/francisvitullo/terraform-with-typescript-7643defb4eb1?source=friends_link&amp;sk=975dc30cd7d48d989f2d7f0c16882c2e
 ---
 
-## [5][Help pass - Quiz: "Parse nullable string"](https://www.reddit.com/r/typescript/comments/jrdaok/help_pass_quiz_parse_nullable_string/)
+## [10][Help pass - Quiz: "Parse nullable string"](https://www.reddit.com/r/typescript/comments/jrdaok/help_pass_quiz_parse_nullable_string/)
 - url: https://www.reddit.com/r/typescript/comments/jrdaok/help_pass_quiz_parse_nullable_string/
 ---
 Hi All, 
@@ -140,7 +282,7 @@ I have tried 1000 and 1 different ways and can't seem to crack the code.
 &amp;#x200B;
 
 Thanks!
-## [6][TypeORM: EntityMetadataNotFound: No metadata for "User" was found.](https://www.reddit.com/r/typescript/comments/jr65m4/typeorm_entitymetadatanotfound_no_metadata_for/)
+## [11][TypeORM: EntityMetadataNotFound: No metadata for "User" was found.](https://www.reddit.com/r/typescript/comments/jr65m4/typeorm_entitymetadatanotfound_no_metadata_for/)
 - url: https://www.reddit.com/r/typescript/comments/jr65m4/typeorm_entitymetadatanotfound_no_metadata_for/
 ---
 Hey all! 
@@ -193,66 +335,3 @@ Stacktrace:
           at next (node_modules/express/lib/router/route.js:137:13)
           at Route.dispatch (node_modules/express/lib/router/route.js:112:3)
           at Layer.handle [as handle_request] (node_modules/express/lib/router/layer.js:95:5)
-## [7][[Help] Interface with function which can accept classes instance as an argument.](https://www.reddit.com/r/typescript/comments/jr52n0/help_interface_with_function_which_can_accept/)
-- url: https://www.reddit.com/r/typescript/comments/jr52n0/help_interface_with_function_which_can_accept/
----
-I am new with Typescript and having some problems. I have a task where I need to create a base class. Then I need to inhered three classes. In those classes I have to use generic types, unions etc. Easy so far, but the problem is that after this I have to create an interface that has a function which can accept each of those four classes instance as an argument. And that function must only have one argument. Return type of function must be Boolean. Finally I have to create an instance of the interface and implement the function which should print the name of input class to console.
-
-Any help with interface and function appreciated!
-## [8][Are the socket.io and socket.io-redis @types files fundamentally broken or (much more likely) am I doing something silly?](https://www.reddit.com/r/typescript/comments/jr0mv8/are_the_socketio_and_socketioredis_types_files/)
-- url: https://www.reddit.com/r/typescript/comments/jr0mv8/are_the_socketio_and_socketioredis_types_files/
----
-I have an empty project into which I installed \`@types/socket.io\` and \`@types/socket.io-redis\` as dev dependencies. Add in a do-nothing index.ts file, try to compile and ...
-
-    error TS2694: Namespace '"/Users/[...]/node_modules/socket.io/dist/index"' has no exported member 'Adapter'.
-
-Now listen here you little shit, etc. SocketIO.Adapter looks to me as though it's exported on line 835 of said file.
-
-As I say, I certainly imagine it's me doing something daft here but given there are so few moving parts involved, what on earth is it?
-## [9][[Help] Parameter in function must be a key of a type](https://www.reddit.com/r/typescript/comments/jr38uu/help_parameter_in_function_must_be_a_key_of_a_type/)
-- url: https://www.reddit.com/r/typescript/comments/jr38uu/help_parameter_in_function_must_be_a_key_of_a_type/
----
-Let's say I have something like this:
-
-    type BookColor = {
-      red: string;
-      orange: string;
-      blue: string;
-      green: string;
-    }
-    
-    function newBook(color: BookColor[keyof BookColor]) {
-    
-    }
-    
-    newBook('pink'); // Should throw error
-    
-    newBook('orange'); // SHOULD BE GOOD
-
-I am trying to make it so the parameter in `newBook()` can only be the type of `BookColor` (as a `string`) but I don't think what i have is working.
-
-How can I fix this?
-## [10][Stator: A full-stack boilerplate – releases, deployments, enforced conventions](https://www.reddit.com/r/typescript/comments/jqpizp/stator_a_fullstack_boilerplate_releases/)
-- url: https://www.reddit.com/r/typescript/comments/jqpizp/stator_a_fullstack_boilerplate_releases/
----
-Have you ever started a new project by yourself?
-
-If so, you probably know that it is tedious to set up all the necessary tools. 
-
-Just like you, the part I enjoy the most is coding, not boilerplate.
-
-&amp;#x200B;
-
-Say hi to [stator](https://github.com/chocolat-chaud-io/stator), a full-stack TypeScript template that enforces conventions, handles releases, deployments and many more features!
-## [11][How to use Contact Picker API in typescript?](https://www.reddit.com/r/typescript/comments/jqu6yo/how_to_use_contact_picker_api_in_typescript/)
-- url: https://www.reddit.com/r/typescript/comments/jqu6yo/how_to_use_contact_picker_api_in_typescript/
----
-Hi.I need to use [Contact Picker API](https://wicg.github.io/contact-api/spec/) in my angular project. but it doesn't work because contacts and ContactsManager is not declared in Navigator in typescript dom library. and the error say "property contatcs does not exist on Navigator"
-
-here's some working examples in js:[https://whatwebcando.today/contacts.html](https://whatwebcando.today/contacts.html)[https://contact-picker.glitch.me](https://contact-picker.glitch.me/)
-
-here's my test angular app:  [https://codesandbox.io/s/angular-contacts-85x29-85x29](https://codesandbox.io/s/angular-contacts-85x29-85x29)
-
-I copied one of the examples and it doesn't work. I tried to add interface for contactManager and contact and merge it with Navigator in contacts.d.ts and added it in types in tsconfig, but I think it's not correct. I appreciate if you check my code or give me some hint on what to do to make it work.
-
-thanks in advance.

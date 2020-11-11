@@ -31,54 +31,82 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][I found this weird prototype Android tablet from 2010 at Goodwill today. I couldn't find much information on it besides that it is a Texas Instruments Blaze and used for Android development but never reached the consumer market. I was wondering if anyone knew more about these machines.](https://www.reddit.com/r/androiddev/comments/jrbnnh/i_found_this_weird_prototype_android_tablet_from/)
-- url: http://imgur.com/gallery/3A0POhz
+## [3][Google became a real pain](https://www.reddit.com/r/androiddev/comments/js4wdw/google_became_a_real_pain/)
+- url: https://www.reddit.com/r/androiddev/comments/js4wdw/google_became_a_real_pain/
 ---
+Normally I don't post stuff like this, but guys I can't help myself. 
 
-## [4][Android 11 device controls are not visible in emulator](https://www.reddit.com/r/androiddev/comments/jrj9en/android_11_device_controls_are_not_visible_in/)
-- url: https://www.reddit.com/r/androiddev/comments/jrj9en/android_11_device_controls_are_not_visible_in/
+For several months Google Play is removing apps and even developer accounts of myself and other Android developers which I am friends with and or who I work with.
+
+Often times Google employees (or their algrithm?!) suddenly come up with a ridiculous reason to suspend an app without any chance of recovery. For example what happened to me yesterday:
+
+" "After a recent review, we found that your app XYZ (xyz) is not compliant with one or more of our Developer Program Policies. See below for more information about your app’s status and how to correct the issue.
+
+About the Device and Network Abuse policy and sections 4.8 and 4.9 of the Developer Distribution Agreement​
+We don’t allow apps that interfere with, disrupt, damage, or access in an unauthorized manner the user’s device, other devices or computers, servers, networks, application programming interfaces (APIs), or services, including but not limited to other apps on the device, any Google service, or an authorized carrier’s network.
+
+App status: Suspended
+
+Your app has been suspended and removed due to this policy issue." 
+
+This app had more than 50k downloads.
+
+They literally suspended my app because of a hyperlink. Within my app I linked to a legit website and it says "you can find more information here".
+
+Google sent me a screenshot of the hyperlink within this email and named it as the reason. I am wondering how does this violate the above policy? It is not disruptive (the link was somewhere below), it is not damaging (just a website with text) and it is not unauthorized (users can press on the link if they want to).
+
+This kinda "bullying" with constant app removal for such reasons is happening all over the place. What is going on with this? Meanwhile, it seems some developers (not big companies) are untouchable even tho they are obviously breaking the policies. 
+
+Now you guys can say: Just send an appeal, but both of us know this isn't going to work out. 
+
+This makes it INCREDIBLY difficult for developers like me and you to have a workflow, staying motivated or to trust Google.
+## [4][Vlog: An in-display real-time logging library](https://www.reddit.com/r/androiddev/comments/js473c/vlog_an_indisplay_realtime_logging_library/)
+- url: https://www.reddit.com/r/androiddev/comments/js473c/vlog_an_indisplay_realtime_logging_library/
 ---
-Any other developers that would love to work with the new Android 11 Device Controls?
+Hi, I built an [Android library](https://github.com/girish3/Vlog) to display logs right on your phone. This can be useful in many scenarios. (screenshot below)
 
-But are hampered by the fact that they don't work on emulators??
+[Github Repo](https://github.com/girish3/Vlog)
+
+**Motivation**: All investigation starts from logs. Whether it's an app crash, server error, or login issue, we always check logs to understand the root cause. Quite often, we need to reproduce the issue ourselves and parallelly look for logs on our Mac or a PC. If only, there is a convenient way. Well, look no further, [Vlog](https://github.com/girish3/Vlog) makes it possible to display logs in real-time while you interact with your app. For more details, click on this [repo page link](https://github.com/girish3/Vlog). 
 
 &amp;#x200B;
 
- [https://issuetracker.google.com/issues/168973367](https://issuetracker.google.com/issues/168973367)   
-
-
-Or does anyone knows a workaround?
-## [5][Building Swipe View via MotionLayout](https://www.reddit.com/r/androiddev/comments/jresh0/building_swipe_view_via_motionlayout/)
-- url: https://www.reddit.com/r/androiddev/comments/jresh0/building_swipe_view_via_motionlayout/
----
-[Swipe view using MotionLayout](https://link.medium.com/cSBgLCs7hbb)
-## [6][Fragment and ViewModel responsibilities](https://www.reddit.com/r/androiddev/comments/jrktcx/fragment_and_viewmodel_responsibilities/)
-- url: https://www.reddit.com/r/androiddev/comments/jrktcx/fragment_and_viewmodel_responsibilities/
----
-Hello developers. I have a question for those using the MVVM architecture. When you read a file from storage and grab its uri, do you read the inputstream to get the file contents within the fragment or activity itself or you pass the uri to the viewmodel and do your other stuff from their?  Just curious.
-## [7][Sooner Home - democratising the Google Sooner experience](https://www.reddit.com/r/androiddev/comments/jrkshc/sooner_home_democratising_the_google_sooner/)
-- url: https://www.reddit.com/r/androiddev/comments/jrkshc/sooner_home_democratising_the_google_sooner/
----
-Good morning r/Android! I’ve been recently working on an app called Sooner Home. It is essentially a launcher that replicates the Google Sooner experience to every Android device out there (proof of concept: https://ibb.co/jWNzBVt - Sooner Home running on a Galaxy A320FL). What is Google Sooner? Well, it’s the first prototype hardware that Android was developed upon, back in 2006. Although it is very difficult to get hold of such a prototype, with my app, Sooner Home, you can get your own phone have a similar Home Screen layout. What are your thoughts on my project? Would you like to see it someday on PlayStore? If yes, would you install it? Let’s discuss in the comments. (reposted from r/Android)
-## [8][Difference in admob revenue of app is not on Play store](https://www.reddit.com/r/androiddev/comments/jrkfm5/difference_in_admob_revenue_of_app_is_not_on_play/)
-- url: https://www.reddit.com/r/androiddev/comments/jrkfm5/difference_in_admob_revenue_of_app_is_not_on_play/
+[Login Page Example](https://i.redd.it/rskicrjxfky51.gif)
+## [5][cashapp/exhaustive - An annotation and Kotlin compiler plugin for enforcing a when statement is exhaustive](https://www.reddit.com/r/androiddev/comments/jrq8le/cashappexhaustive_an_annotation_and_kotlin/)
+- url: https://github.com/cashapp/exhaustive
 ---
 
-## [9][How to store auth token](https://www.reddit.com/r/androiddev/comments/jrjzpv/how_to_store_auth_token/)
-- url: https://www.reddit.com/r/androiddev/comments/jrjzpv/how_to_store_auth_token/
+## [6][do lithium polymer battery require battery calibration?](https://www.reddit.com/r/androiddev/comments/js7bmt/do_lithium_polymer_battery_require_battery/)
+- url: https://www.reddit.com/r/androiddev/comments/js7bmt/do_lithium_polymer_battery_require_battery/
 ---
-I send a post request via volley and log in and as a response I get a token. Once I close the app i have to sing in again. How can i store the token ? and how do I send get request with it? 
+as the processors are developing at fast rate, is there any "smart" sense that drop the requirement of traditional battery calibration protocols?
+## [7][ARM-based Macs for Android Development?](https://www.reddit.com/r/androiddev/comments/jrt7ph/armbased_macs_for_android_development/)
+- url: https://www.reddit.com/r/androiddev/comments/jrt7ph/armbased_macs_for_android_development/
+---
+For the past several years the 13-inch MacBook Pro has been my go-to machine for Android development. I'm currently in the market for a new laptop, but since Apple has moved to ARM I'm wondering whether being an early adopter is such a good idea. Apple seem to be saying that Rosetta 2 will make the transition seamless, but I'm still wary about running into issues. Overall, there doesn't seem to be much information available at the moment. Does anyone have any thoughts, or is anyone else in a similar position?
 
-Thanks!
-## [10][Knowing your Data 1: LiveData](https://www.reddit.com/r/androiddev/comments/jrhc1w/knowing_your_data_1_livedata/)
-- url: https://www.youtube.com/watch?v=O3KrsoIoD9A
+TL;DR: Is Android Development likely to be a good experience on the new ARM Macs?
+## [8][Android Studio 4.1.1 available](https://www.reddit.com/r/androiddev/comments/jrq01u/android_studio_411_available/)
+- url: https://androidstudio.googleblog.com/2020/11/android-studio-411-available.html
 ---
 
-## [11][Max Persistent URI grants for Android 11 is 512 not 128](https://www.reddit.com/r/androiddev/comments/jr0t24/max_persistent_uri_grants_for_android_11_is_512/)
-- url: https://issuetracker.google.com/issues/149315521
+## [9][Chicago Roboto 2020 Talks](https://www.reddit.com/r/androiddev/comments/jrynl3/chicago_roboto_2020_talks/)
+- url: https://www.youtube.com/playlist?list=PLnD_TKDSaFyWU8PapWZ9rcKZ5vOXduX6d
 ---
 
-## [12][Should I learn Kotlin for Android and other FAQs](https://www.reddit.com/r/androiddev/comments/jrhxry/should_i_learn_kotlin_for_android_and_other_faqs/)
-- url: https://medium.com/androiddevelopers/should-i-learn-kotlin-for-android-and-other-faqs-88a2bb281a60
+## [10][How much hard drive space do I need when I build my own version of Android?](https://www.reddit.com/r/androiddev/comments/js812c/how_much_hard_drive_space_do_i_need_when_i_build/)
+- url: https://www.reddit.com/r/androiddev/comments/js812c/how_much_hard_drive_space_do_i_need_when_i_build/
+---
+Hi, I have got a teeny tiny 250GB hard drive in my laptop. I can't find any LineageOS ROM for my phone. Is that enough to compile a version of Android for my phone? Thank you.
+## [11][PSA: Androidx Transition requires update for API 29](https://www.reddit.com/r/androiddev/comments/jrw502/psa_androidx_transition_requires_update_for_api_29/)
+- url: https://www.reddit.com/r/androiddev/comments/jrw502/psa_androidx_transition_requires_update_for_api_29/
+---
+Just got burned by this today at work. We use the androidx.transition library to do some animations, but ran into some really weird bugs after we bumped to targetsdk 29 (which is now required for all apps). We hadn't messed with anything relating to transitions in a while, so it took a really long time to track it down.
+
+TLDR: Make sure you are on at least version 1.2.0 of androidx.transition when you target API level 29
+
+https://developer.android.com/jetpack/androidx/releases/transition
+## [12][Firebase Authentication With Provider State Management🔥](https://www.reddit.com/r/androiddev/comments/js7ro6/firebase_authentication_with_provider_state/)
+- url: https://youtu.be/hAi6XpdITzo
 ---
 

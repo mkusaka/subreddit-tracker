@@ -70,93 +70,60 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][Would anyone be interested in a guided project?](https://www.reddit.com/r/reactjs/comments/jrekra/would_anyone_be_interested_in_a_guided_project/)
-- url: https://www.reddit.com/r/reactjs/comments/jrekra/would_anyone_be_interested_in_a_guided_project/
+## [3][We are building a search engine for developers to make them more productive. What do you think?](https://www.reddit.com/r/reactjs/comments/jrt43i/we_are_building_a_search_engine_for_developers_to/)
+- url: https://www.reddit.com/r/reactjs/comments/jrt43i/we_are_building_a_search_engine_for_developers_to/
 ---
-Hello all!
+Hi folks!
 
-I have spent some time tutoring people recently, and it got me thinking about setting up a guided project program. My current thought is to create a project outline for students follow; a task list in a sense. Each week, students will have a list of tasks to attempt to get through (if they can't that's fine, I know life happens) and at the end of the week I would review their code and provide feedback to help them improve. I'd also be available to answer questions on slack throughout the week. The goal is to have the students do all of the actual programming, so the end result is something that they created entirely, I would only be acting as a guide. I'd hope for the project to last about 8-10 weeks.
+We all use web browsers extensively when developing. Aside from using it for the actual development, on average 15% of the whole development time is spent just looking for information on Google. We are building a better solution - a search engine for developers called Grob.
 
-I know how challenging it can be to find programming help, especially for those who are learning on their own. If this sounds interesting to you, or if you have any recommendations / concerns please let me know! I'm hoping to be able to give back to the community where possible :)
-## [4][Our project, Quarkly.io, hits open beta - you are welcome to try it!](https://www.reddit.com/r/reactjs/comments/jrjuk8/our_project_quarklyio_hits_open_beta_you_are/)
-- url: https://www.reddit.com/r/reactjs/comments/jrjuk8/our_project_quarklyio_hits_open_beta_you_are/
----
-Hi folks, our React-based project, [Quarkly.io](https://Quarkly.io), just hit Open Beta! It is a tool dedicated to ease the workflow of React web developers and designers. Wanna try it? We invite you all to participate!
-
-We already successfully launch on ProductHunt: [https://www.producthunt.com/posts/quarkly](https://www.producthunt.com/posts/quarkly)
-
-You can read more about us here:
-
-[https://dev.to/alex\_kols/introducing-quarkly-instrument-for-react-devs-and-designers-that-will-help-you-optimize-your-workflow-15i6](https://dev.to/alex_kols/introducing-quarkly-instrument-for-react-devs-and-designers-that-will-help-you-optimize-your-workflow-15i6)
-
-Or join our Discord or Spectrum community if you want to ask questions about it (the creators themselves will answer your question at this stage):
-
-[https://discord.gg/5K5mnckUsf](https://discord.gg/5K5mnckUsf)
-
-[https://spectrum.chat/quarkly](https://spectrum.chat/quarkly)
-
-Feel free to ask questions here as well :)
-## [5][I made a pokedex! | React + TypeScript + Tailwind CSS + redux-toolkit](https://www.reddit.com/r/reactjs/comments/jqsij9/i_made_a_pokedex_react_typescript_tailwind_css/)
-- url: https://v.redd.it/i4oj1n21r5y51
+With Grob, you can access codebases, infrastructure, and answers to development questions with a single shortcut.  
+Do you also feel that the way developers search could be way faster and be so much more? We just launched our [landing page](https://usegrob.com/) with an early access and any feedback will be really appreciated - we are still trying to identify how exactly developers search and what features to include.
+## [4][RRU 124: What's New in React with Shawn Wang - Devchat.tv](https://www.reddit.com/r/reactjs/comments/js3r2d/rru_124_whats_new_in_react_with_shawn_wang/)
+- url: https://devchat.tv/react-round-up/rru-124-whats-new-in-react-with-shawn-wang/
 ---
 
-## [6][How to wrap "Typography" in new line in Material UI?](https://www.reddit.com/r/reactjs/comments/jrjry9/how_to_wrap_typography_in_new_line_in_material_ui/)
-- url: https://www.reddit.com/r/reactjs/comments/jrjry9/how_to_wrap_typography_in_new_line_in_material_ui/
+## [5][What’s your code coverage at work like?](https://www.reddit.com/r/reactjs/comments/js68zw/whats_your_code_coverage_at_work_like/)
+- url: https://www.reddit.com/r/reactjs/comments/js68zw/whats_your_code_coverage_at_work_like/
 ---
-Currently I have this code:
-
-&gt;&lt;Typography variant="h3"&gt;&lt;/Typography&gt;
-
-However, it overflows when the screen size is small or medium.
-## [7][React Frontload v2.0.0 - Simple full-stack data loading for React](https://www.reddit.com/r/reactjs/comments/jrj5so/react_frontload_v200_simple_fullstack_data/)
-- url: https://davnicwil.com/react-frontload/
+Does your workplace promote TDD? Or do they require unit tests? Integration tests? None at all? Curious to know what other work places are like.
+## [6][Performance of expansion panels](https://www.reddit.com/r/reactjs/comments/js5b4c/performance_of_expansion_panels/)
+- url: https://www.reddit.com/r/reactjs/comments/js5b4c/performance_of_expansion_panels/
 ---
+Don't you guys think that [expansion panels](https://material.io/archive/guidelines/components/expansion-panels.html) are inherently ill-suited for the web considering they always cause layout shifts when expanding/collapsing and so one can't guarantee 60-fps if the page is relatively big?
 
-## [8][Server Rendering with React and React Router v5](https://www.reddit.com/r/reactjs/comments/jr185i/server_rendering_with_react_and_react_router_v5/)
-- url: https://ui.dev/react-router-v5-server-rendering/
+It doesn't matter how much I optimize any ExapnsionPanel component in React, I almost always see some 55fps or 56fps between the 60-65 fps. Or maybe the whole continuous 60 fps is a bit of a holy grail? Your thoughts?
+## [7][React Native Animation using Hooks: Tinder Cards](https://www.reddit.com/r/reactjs/comments/js7ji5/react_native_animation_using_hooks_tinder_cards/)
+- url: https://iamshadmirza.com/react-native-animation-using-hooks-tinder-cards
 ---
 
-## [9][React SimpleTable is a table component to show and select data with a special focus on productivity](https://www.reddit.com/r/reactjs/comments/jrg54n/react_simpletable_is_a_table_component_to_show/)
-- url: https://www.reddit.com/r/reactjs/comments/jrg54n/react_simpletable_is_a_table_component_to_show/
----
-SimpleTable works with local or remote data (with automated pagination) and have two built-in themes: material and flat.
-
-The library try to be simple enough to be used in cases where does not needed more complex features and the productivity is necessary. Simple CRUD's or website details list is common examples.
-
-See examples live: [https://hesenger.com/react-simpletable/](https://hesenger.com/react-simpletable/)
-
-The projected is MIT licensed on github and npm package is published
-
-- [https://github.com/hesenger/react-simpletable](https://github.com/hesenger/react-simpletable)
-- [https://www.npmjs.com/package/@hesenger/react-simpletable](https://www.npmjs.com/package/@hesenger/react-simpletable)
-
-Feel free to suggest features or to create PR on github.
-## [10][Rockpack](https://www.reddit.com/r/reactjs/comments/jrieuy/rockpack/)
-- url: https://www.reddit.com/r/reactjs/comments/jrieuy/rockpack/
----
-**Rockpack** is a simple solution for creating React Application with Server Side Rendering, bundling, linting, testing, logging, localizing.
-
-[https://github.com/AlexSergey/rockpack](https://github.com/AlexSergey/rockpack)
-
-There are several cases where **Rockpack** is useful:
-
-**Beginners** \- With the help of Rockpack, any newbie to React [can deploy a project of any complexity in a few minutes](https://www.rockpack.io/fast-setup). Applications can be either regular single page or with a project structure, [server-side rendering](https://www.rockpack.io/ssr-1-creating-simple-ssr-application/), etc.
-
-**Large projects from scratch** \- Rockpack supports most of the webpack best practices and scales to big projects.
-
-**Startup** \- If you need to quickly check an idea without wasting time on unfolding and setting up the project.
-
-**Library or React component** \- If you want to write a UMD library or React component, there's support for the ESM/CommonJS builds as well as the minifying.
-
-**Legacy projects or modular use**. - You can for example [migrate a legacy application to SSR using Rockpack](https://www.rockpack.io/ssr-2-migration-legacy-app-to-ssr/).
-## [11][Commons Mistakes with React useState hook and How to Prevent them.](https://www.reddit.com/r/reactjs/comments/jria6q/commons_mistakes_with_react_usestate_hook_and_how/)
-- url: https://medium.com/javascript-in-plain-english/commons-mistakes-with-react-usestate-hook-and-how-to-prevent-them-43c811ca7451?source=friends_link&amp;sk=efa94031ba9e2478f29f2b41092b1e9a
+## [8][Animated Progress Bar Indicator in React Native using Animated API and onLayout](https://www.reddit.com/r/reactjs/comments/js7cjq/animated_progress_bar_indicator_in_react_native/)
+- url: https://youtu.be/J95MC2Koymc
 ---
 
-## [12][Using finite state machines in React applications with XState](https://www.reddit.com/r/reactjs/comments/jr7x3z/using_finite_state_machines_in_react_applications/)
-- url: https://www.reddit.com/r/reactjs/comments/jr7x3z/using_finite_state_machines_in_react_applications/
+## [9][modern react course](https://www.reddit.com/r/reactjs/comments/js7b8l/modern_react_course/)
+- url: https://www.reddit.com/r/reactjs/comments/js7b8l/modern_react_course/
 ---
-I have made a course about creating state machines with XState and using it inside React apps.  
-State machines with XState is a fresh topic for Frontend development, which allows us to better manage applications state.
+hey!  
+i want to learn modern react - not class based course - but cant find any.  
+few days ago i bought Modern React with Redux \[2020 Update\] by Stephen Grider...  
+but found out EVERYTHING is class based... he does teach hooks and usecontext.. and then his back to using classes and redux...
 
-Check it out: [https://www.udemy.com/course/introduction-to-state-machines-with-xstate-and-react](https://www.udemy.com/course/introduction-to-state-machines-with-xstate-and-react/?referralCode=145403C5EBEB0D9633EC&amp;fbclid=IwAR1HTYFvf8KBw03FyomPmqAMTbuQ8r_XgjhrdFVhMYfoWfLwemrh3_jFnBE)
+im looking for a course that can teach me the basics without classes - or at least not 90% of the course is classes.   
+maybe a course that show how it began with classes but moves on to functional programming using hooks.
+## [10][How to test Compound Components](https://www.reddit.com/r/reactjs/comments/js4mms/how_to_test_compound_components/)
+- url: https://www.samdawson.dev/article/how-to-test-compound-components
+---
+
+## [11][Could someone share a resume template for a Lead React Engineer?](https://www.reddit.com/r/reactjs/comments/js2ysq/could_someone_share_a_resume_template_for_a_lead/)
+- url: https://www.reddit.com/r/reactjs/comments/js2ysq/could_someone_share_a_resume_template_for_a_lead/
+---
+Hey guys,
+
+Could someone share a resume template?
+
+Thanks
+## [12][react-from-scratch: How React works in 100 lines of code](https://www.reddit.com/r/reactjs/comments/jrs90e/reactfromscratch_how_react_works_in_100_lines_of/)
+- url: https://github.com/vberlier/react-from-scratch/blob/main/src/react.js
+---
+

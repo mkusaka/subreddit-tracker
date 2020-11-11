@@ -85,43 +85,43 @@ Show us here!
 
 
 &amp;nbsp;
-## [3][A search engine for JS operators](https://www.reddit.com/r/javascript/comments/jrdd7g/a_search_engine_for_js_operators/)
+## [3][Fake Discord NPM Package Malware](https://www.reddit.com/r/javascript/comments/jry768/fake_discord_npm_package_malware/)
+- url: https://www.zdnet.com/article/npm-package-caught-stealing-sensitive-discord-and-browser-files/
+---
+
+## [4][Lighting fast search with Elasticsearch](https://www.reddit.com/r/javascript/comments/js7o90/lighting_fast_search_with_elasticsearch/)
+- url: https://dev.to/webiny/lighting-fast-search-with-elasticsearch-n82
+---
+
+## [5][Redux in Rust: Re-Implementing one of GitHub's Most Popular JavaScript Libraries](https://www.reddit.com/r/javascript/comments/js0yys/redux_in_rust_reimplementing_one_of_githubs_most/)
+- url: https://rossketeer.medium.com/redux-in-rust-d622822085fe
+---
+
+## [6][Six of JavaScript's Biggest Design Flaws](https://www.reddit.com/r/javascript/comments/jrppes/six_of_javascripts_biggest_design_flaws/)
+- url: https://thecarrots.io/blog/javascript-wtf-six-of-the-languages-gravest-design-flaws
+---
+
+## [7][How Storybook built component search for speed](https://www.reddit.com/r/javascript/comments/jro49j/how_storybook_built_component_search_for_speed/)
+- url: https://storybook.js.org/blog/new-component-finder-and-sidebar/?ref=reddit
+---
+
+## [8][Build a full-stack app with RedwoodJS &amp; GraphQL](https://www.reddit.com/r/javascript/comments/jrng09/build_a_fullstack_app_with_redwoodjs_graphql/)
+- url: https://hasura.io/blog/redwoodjs-with-graphql-hasura/
+---
+
+## [9][Checking if a variable is one of a set of values: Array `includes(..)` idiom](https://www.reddit.com/r/javascript/comments/jrogic/checking_if_a_variable_is_one_of_a_set_of_values/)
+- url: https://blog.codota.com/array-includes-idiom-in-js/
+---
+
+## [10][Nightly build process universally available to any projects, awesome idea [not by me]](https://www.reddit.com/r/javascript/comments/js5ydg/nightly_build_process_universally_available_to/)
+- url: https://github.com/knightlyjs/knightly
+---
+
+## [11][Experimental acorn.js based typechecker (in very early and unstable state)](https://www.reddit.com/r/javascript/comments/js5ehz/experimental_acornjs_based_typechecker_in_very/)
+- url: https://github.com/stepanvanzuriak/tau
+---
+
+## [12][A search engine for JS operators](https://www.reddit.com/r/javascript/comments/jrdd7g/a_search_engine_for_js_operators/)
 - url: https://joshwcomeau.com/operator-lookup/
----
-
-## [4][I animated the Marching Squares Algorithm using p5.js. Working Demo and Tutorial](https://www.reddit.com/r/javascript/comments/jrb536/i_animated_the_marching_squares_algorithm_using/)
-- url: https://ckcollab.com/2020/11/08/Marching-Squares-Algorithm.html
----
-
-## [5][You're Probably Not Using Promise.All Enough](https://www.reddit.com/r/javascript/comments/jrdmej/youre_probably_not_using_promiseall_enough/)
-- url: https://www.samjarman.co.nz/blog/promisedotall
----
-
-## [6][10 Insights from Adopting TypeScript at Scale](https://www.reddit.com/r/javascript/comments/jrgozd/10_insights_from_adopting_typescript_at_scale/)
-- url: https://www.techatbloomberg.com/blog/10-insights-adopting-typescript-at-scale/
----
-
-## [7][[AskJS] Netflix's Interactive Witcher Map](https://www.reddit.com/r/javascript/comments/jrhnq5/askjs_netflixs_interactive_witcher_map/)
-- url: https://www.reddit.com/r/javascript/comments/jrhnq5/askjs_netflixs_interactive_witcher_map/
----
- I'm wondering if there's library that would make it easier to make map similiar to the linked one. I thought of leaflet.js but I think I    wouldn't be able to code it in the way the Netflix map is made there (I    never used it tho, might be wrong). I know that   "Anyone know a library that does \_\_\_?"  questions are forbidden but I know a lot of interactive map libraries and I don't think it's possible to achieve similiar result with them.
-## [8][[faker.js] No more free work from Marak - Pay Me or Fork This](https://www.reddit.com/r/javascript/comments/jquo97/fakerjs_no_more_free_work_from_marak_pay_me_or/)
-- url: https://github.com/Marak/faker.js/issues/1046
----
-
-## [9][The anti-pattern of front-end developers inferring design rules from mockups](https://www.reddit.com/r/javascript/comments/jrhzo8/the_antipattern_of_frontend_developers_inferring/)
-- url: https://write.as/persille/a-picture-is-worth-a-thousand-words
----
-
-## [10][Puppetaria: accessibility-first Puppeteer scripts | Web](https://www.reddit.com/r/javascript/comments/jrkno0/puppetaria_accessibilityfirst_puppeteer_scripts/)
-- url: https://developers.google.com/web/updates/2020/11/puppetaria
----
-
-## [11][The same app is 165mb in Electron and 6mb in Sciter](https://www.reddit.com/r/javascript/comments/jrdvtk/the_same_app_is_165mb_in_electron_and_6mb_in/)
-- url: https://github.com/GirkovArpa/clipper-sciter
----
-
-## [12][Vue/Svelte/React color pickers running on the same page with very little boilerplate](https://www.reddit.com/r/javascript/comments/jrjna1/vuesveltereact_color_pickers_running_on_the_same/)
-- url: https://ellx.io/matyunya/color-pickers
 ---
 

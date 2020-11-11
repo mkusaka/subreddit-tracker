@@ -23,11 +23,82 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://www.reddit.com/r/rust/comments/jqrmqn/whats_everyone_working_on_this_week_462020/
 ---
 New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-46-2020/51226?u=llogiq)!
-## [3][aarch64-unknown-linux-gnu is on track to become a Tier 1 target in Rust 1.49!](https://www.reddit.com/r/rust/comments/jr074o/aarch64unknownlinuxgnu_is_on_track_to_become_a/)
-- url: https://github.com/rust-lang/rust/pull/78228#event-3971582295
+## [3][I present you baru](https://www.reddit.com/r/rust/comments/js6ypa/i_present_you_baru/)
+- url: https://www.reddit.com/r/rust/comments/js6ypa/i_present_you_baru/
+---
+&amp;#x200B;
+
+[baru](https://preview.redd.it/su7j8m6gmly51.png?width=1470&amp;format=png&amp;auto=webp&amp;s=cb98832b6eba256ce2f3d5c2e1b285d7fed52cf8)
+
+Hi,
+
+[baru](https://github.com/doums/baru) is a system monitor that I wrote in Rust and C  with performance in mind. I create it to use it as a filler for my windows manager status bar. Since it's just plain text output you can use it for other purposes I think. For the past few months I have been using it on a daily basis.
+
+Text output is fully customizable. Label are dynamic. Currently it supports the following modules:
+
+* date and time
+* battery (level, status, design level based)
+* wireless (state, essid, signal strength)
+* wired (state)
+* audio sink and source (level, muted)
+* brightness
+* cpu usage and temperature
+* memory (percent or used/total in gigabyte/gibibyte)
+
+Its configuration is in yaml.
+
+If you are interested, you can install it just using the compiled [binary](https://github.com/doums/baru/releases). It is also present as an AUR [package](https://aur.archlinux.org/packages/baru-bin) for Arch Linux users.
+## [4][Announcing InfluxDB IOx - The Future Core of InfluxDB Built with Rust and Arrow | InfluxData](https://www.reddit.com/r/rust/comments/jrstbt/announcing_influxdb_iox_the_future_core_of/)
+- url: https://www.influxdata.com/blog/announcing-influxdb-iox/
 ---
 
-## [4][Q: Rust used to have a ton of pointer types; what were they and where did they go?](https://www.reddit.com/r/rust/comments/jrkiuw/q_rust_used_to_have_a_ton_of_pointer_types_what/)
+## [5][Announcing once_cell 1.5.0: no_std non-blocking initialization](https://www.reddit.com/r/rust/comments/jrz6xi/announcing_once_cell_150_no_std_nonblocking/)
+- url: https://docs.rs/once_cell/1.5.0/once_cell/race/index.html
+---
+
+## [6][Is there a list of Rust software that doesn't exist](https://www.reddit.com/r/rust/comments/js7g6v/is_there_a_list_of_rust_software_that_doesnt_exist/)
+- url: https://www.reddit.com/r/rust/comments/js7g6v/is_there_a_list_of_rust_software_that_doesnt_exist/
+---
+Fairly easy question, I'm sure it's been asked before but I can't find it:
+
+&amp;#x200B;
+
+Is there a list of software that, in principle, would benefit from being written using Rust but no implementation using rust exists yet, or the implementation that exists lacks active maintenance and is outdated?
+
+&amp;#x200B;
+
+By this I mean everything ranging from drivers for a specific piece of hardware to coreutils that are complex and somewhat slower and less feature-rich rich than they could be (e.g. ripgrep being a lot better than grep in many ways) to high level apps like email clients.
+
+&amp;#x200B;
+
+Obviously any such list would be subjective, but I still think it might serve as inspiration for starting projects. Provided that every entry has some info attached to it (e.g. what are the alternatives, what are they lacking)
+
+&amp;#x200B;
+
+I'm asking this question to some extent for myself, but more so because I keep recommending people to learn Rust (instead of C or C++) as a systems programming language, and I believe in a learning-via-doing style approach.
+## [7][the trait `std::convert::From&lt;i64&gt;` is not implemented for `f64`](https://www.reddit.com/r/rust/comments/js1avn/the_trait_stdconvertfromi64_is_not_implemented/)
+- url: https://www.reddit.com/r/rust/comments/js1avn/the_trait_stdconvertfromi64_is_not_implemented/
+---
+I have an `i64` where I know that only 37 bits are used. I also know that it's non-negative. I want to convert it into an `f64`. Surprisingly, I can't find any simple way to do that. Neither the `From` nor the `TryFrom` traits are implemented in this direction. Is there something I'm missing?
+
+I'd like to avoid an extra dependency for this, if at all possible.
+## [8][Rust as a productive high-level language](https://www.reddit.com/r/rust/comments/jrtlhy/rust_as_a_productive_highlevel_language/)
+- url: https://omarabid.com/rust-high-level-language
+---
+
+## [9][Tp-Note learns RestructuredText](https://www.reddit.com/r/rust/comments/js69fy/tpnote_learns_restructuredtext/)
+- url: https://blog.getreu.net/20201101-tp-note-news3/
+---
+
+## [10][LLVM Code Coverage Instrumentation PR merged!](https://www.reddit.com/r/rust/comments/jrlnfk/llvm_code_coverage_instrumentation_pr_merged/)
+- url: https://github.com/rust-lang/rust/issues/34701#issuecomment-723178087
+---
+
+## [11][Writing (Linux) BPF Code in Rust](https://www.reddit.com/r/rust/comments/jrukxs/writing_linux_bpf_code_in_rust/)
+- url: https://blog.redsift.com/labs/writing-bpf-code-in-rust/
+---
+
+## [12][Q: Rust used to have a ton of pointer types; what were they and where did they go?](https://www.reddit.com/r/rust/comments/jrkiuw/q_rust_used_to_have_a_ton_of_pointer_types_what/)
 - url: https://www.reddit.com/r/rust/comments/jrkiuw/q_rust_used_to_have_a_ton_of_pointer_types_what/
 ---
 Today's Rust is more streamlined, but you may know that Rust used to have a ton of pointer types:
@@ -41,53 +112,3 @@ I'm looking to understand the chronology of them to understand the language's ev
 Q1: What were the older pointer types? Ideally I'm looking for actual data from the Rust docs (and not specific memories people have), if possible. Are there previous versions of the Rust docs online that I can look at or do I have to recompile the old docs to do so?
 
 Q2: What became of each pointer type as the language evolved (e.g. became redundant, functionality merged someplace else, dropped as a feature, etc.)?
-## [5][My first impression and some questions regarding MVP Clean and Dependency Injection in Rust](https://www.reddit.com/r/rust/comments/jriowl/my_first_impression_and_some_questions_regarding/)
-- url: https://www.reddit.com/r/rust/comments/jriowl/my_first_impression_and_some_questions_regarding/
----
-I'm currently working on my first GTK application written in Rust and I am trying to figure out how to achieve a [Model-View-Presenter Clean Architecture](https://github.com/ImangazalievM/CleanArchitectureManifest).
-
-I used this pattern for years in Mobile application development and I managed to use it also in my previews GTK apps written in Python.
-
-But I'm frankly struggling to figure out how to implement this pattern in Rust. I'm sure it is mostly due to my lack of knowledge and experience with it (I literally started last week with Rust) but I'm suspecting that some patterns are not really common in this language.
-
-**Is Dependency Injection and Inversion of Control a common pattern in Rust?**
-
-I currently believe that is not, because I was not able to find any useful material about it and there are basically no stable, widely used and currently maintained DI/IOC libraries in [crates.io](https://crates.io/keywords/dependency-injection): most of the libraries are just unmaintained projects made by a single developer that most of the time didn't even reach version 1.0.0 and have, in the best case, a couple of thousands total downloads.
-
-[waiter\_di](https://crates.io/crates/waiter_di) seems a promising new library, but I am a little scared by the fact that almost nobody uses it (only 500 download in total from crates, 4 stars on GitHub and literally [1 single public project](https://github.com/search?l=Rust&amp;q=waiter_di&amp;type=Code) is using it, beside the owner himself) and that it has only a [single contributor](https://github.com/dmitryb-dev/waiter/graphs/contributors).
-
-In Java there is [Dagger](https://dagger.dev/), in Kotlin there are [Koin](https://doc.insert-koin.io/#/) and [Kodein](https://docs.kodein.org/kodein-di/7.1/index.html), in Python there is [Injector](https://injector.readthedocs.io/en/latest/). These are just some of the most popular libraries. Is it really possible that in Rust there is nothing comparable?
-
-I know that you can achieve DI/IOC without the need of any framework but, when applying the MVP Clean pattern, on a medium sized app, you have to create and provide dozens of different UseCases/Interactors. Having to provide these without a proper DI framework is a major annoyance, imho.
-
-Am I missing something? Has anyone here already successfully used MVP Clean with Rust? If yes, is the project public? Can I have a look at it? \^\^
-## [6][How to optimize your Rust development workflow on Kubernetes with Okteto](https://www.reddit.com/r/rust/comments/jrjmog/how_to_optimize_your_rust_development_workflow_on/)
-- url: https://www.reddit.com/r/rust/comments/jrjmog/how_to_optimize_your_rust_development_workflow_on/
----
-You write your code locally and okteto detects the changes and instantly updates your Kubernetes application.
-
-[https://okteto.com/blog/getting-started-with-okteto-and-rust/](https://okteto.com/blog/getting-started-with-okteto-and-rust/)
-## [7][Benchmark Godot &amp; Rust](https://www.reddit.com/r/rust/comments/jr5iww/benchmark_godot_rust/)
-- url: https://blog.extrawurst.org/general/gamedev/rust/2020/11/07/godot-rust-benchmark.html
----
-
-## [8][A Quick Tour of Tradeoffs Embedding Data in Rust](https://www.reddit.com/r/rust/comments/jrjzfa/a_quick_tour_of_tradeoffs_embedding_data_in_rust/)
-- url: https://nickb.dev/blog/a-quick-tour-of-trade-offs-embedding-data-in-rust
----
-
-## [9][Rust tool for highly parallel per-base depth analysis in BAM/CRAM files, with accompanying library for parallel genomic iteration.](https://www.reddit.com/r/rust/comments/jrbfh0/rust_tool_for_highly_parallel_perbase_depth/)
-- url: https://github.com/sstadick/perbase
----
-
-## [10][Why Rust is the Future of Game Development](https://www.reddit.com/r/rust/comments/jqux1s/why_rust_is_the_future_of_game_development/)
-- url: https://thefuntastic.com/blog/why-rust-is-the-future-game-dev
----
-
-## [11][This Month in Rust GameDev #15 - October 2020](https://www.reddit.com/r/rust/comments/jr2170/this_month_in_rust_gamedev_15_october_2020/)
-- url: https://rust-gamedev.github.io/posts/newsletter-015
----
-
-## [12][rust-analyzer changelog #50](https://www.reddit.com/r/rust/comments/jqwfoj/rustanalyzer_changelog_50/)
-- url: https://rust-analyzer.github.io/thisweek/2020/11/09/changelog-50.html
----
-

@@ -56,21 +56,29 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Asio C++ coroutines in Qt UI, communicating with Asio C++ coroutines in service thread, with deterministic cancellation. My October blog.](https://www.reddit.com/r/cpp/comments/jrg3gi/asio_c_coroutines_in_qt_ui_communicating_with/)
-- url: https://cppalliance.org/richard/2020/10/31/RichardsOctoberUpdate.html
+## [2][Gabriel Dos Reis Keynote will be a surprise](https://www.reddit.com/r/cpp/comments/js4f78/gabriel_dos_reis_keynote_will_be_a_surprise/)
+- url: https://meetingcpp.com/meetingcpp/news/items/Gabriel-Dos-Reis-Keynote-will-be-a-surprise.html
 ---
 
-## [3][GitHub API library for c++](https://www.reddit.com/r/cpp/comments/jr6xsn/github_api_library_for_c/)
-- url: https://www.reddit.com/r/cpp/comments/jr6xsn/github_api_library_for_c/
+## [3][Visual Studio 2019 v16.8 and v16.9 Preview 1 Release Today](https://www.reddit.com/r/cpp/comments/jrqv89/visual_studio_2019_v168_and_v169_preview_1/)
+- url: https://devblogs.microsoft.com/visualstudio/visual-studio-2019-v16-8/
 ---
-Some time ago I was looking for a library which would let me use GitHub's API.  
-I could not find any so I wrote my own. Today I have decided to extract it from my project and make it easily reusable so here it is:
 
-[https://github.com/Kicer86/github\_api](https://github.com/Kicer86/github_api)
+## [4][An Assembly interpreter written in C++](https://www.reddit.com/r/cpp/comments/jrq1jl/an_assembly_interpreter_written_in_c/)
+- url: https://www.reddit.com/r/cpp/comments/jrq1jl/an_assembly_interpreter_written_in_c/
+---
+Hey everyone!
 
-It's api is very limited. I have just covered my needs, but it can be easily extended.  
-I hope you find it useful.
-## [4][Butano: a modern C++ high level engine for the GBA](https://www.reddit.com/r/cpp/comments/jrjj2n/butano_a_modern_c_high_level_engine_for_the_gba/)
+Yesterday I made this little assembly interpreter. My reasoning for it was this: Assembly, while fun, is really annoying to setup! This interpreter aims to resolve this issue. All it needs is a C++ compiler, and it’s ready. 
+
+The main aim is for learners to get comfortable with assembly syntax, without having to go through the pain of setting up. This interpreter supports basic assembly commands, and after every command you get to see the bits and values of every “register”. 
+
+This interpreter is not: an emulator or an assembler. It is really just a way to practice some basic assembly syntax and see the results. 
+
+Hope this helps someone! I’d love to hear y’all’s thoughts! 
+
+https://github.com/yekyam/AsmInterpreter
+## [5][Butano: a modern C++ high level engine for the GBA](https://www.reddit.com/r/cpp/comments/jrjj2n/butano_a_modern_c_high_level_engine_for_the_gba/)
 - url: https://www.reddit.com/r/cpp/comments/jrjj2n/butano_a_modern_c_high_level_engine_for_the_gba/
 ---
 Hi!
@@ -84,47 +92,99 @@ Since the GBA doesn't have a file system, all data has to be compiled into the R
 The engine provides detailed [documentation](https://gvaliente.github.io/butano/), multiple [examples](https://gvaliente.github.io/butano/examples.html) of most aspects of the engine an even the source code and assets of a full game: [Butano Fighter](https://gvaliente.itch.io/butano-fighter).
 
 If you have time please tell me what you think. Thanks!
-## [5][A libc written in C++](https://www.reddit.com/r/cpp/comments/jqxan9/a_libc_written_in_c/)
-- url: https://llvm.org/docs/Proposals/LLVMLibC.html
+## [6][Is your if an object state?](https://www.reddit.com/r/cpp/comments/js54nl/is_your_if_an_object_state/)
+- url: https://meetingcpp.com/blog/items/Is-your-if-an-object-state-.html
 ---
 
-## [6][braft: An industrial-grade C++ implementation of the RAFT consensus algorithm open sourced by Baidu](https://www.reddit.com/r/cpp/comments/jr6zxm/braft_an_industrialgrade_c_implementation_of_the/)
-- url: https://github.com/baidu/braft
+## [7][Data Structure Project Ideas](https://www.reddit.com/r/cpp/comments/js1zxv/data_structure_project_ideas/)
+- url: https://www.reddit.com/r/cpp/comments/js1zxv/data_structure_project_ideas/
+---
+Hi ALL. The title says it. I am a student of data structures and now I am supposed to complete an end of semester project. I don't like the ideas our instructor has suggested and I'm looking for something which is a bit more 'real- world'. Can you suggest some intermediate projects which would be sensible for C++.
+## [8][Asio C++ coroutines in Qt UI, communicating with Asio C++ coroutines in service thread, with deterministic cancellation. My October blog.](https://www.reddit.com/r/cpp/comments/jrg3gi/asio_c_coroutines_in_qt_ui_communicating_with/)
+- url: https://cppalliance.org/richard/2020/10/31/RichardsOctoberUpdate.html
 ---
 
-## [7][rotor v0.10 release (new: timers, request cancellation facility)](https://www.reddit.com/r/cpp/comments/jr39db/rotor_v010_release_new_timers_request/)
-- url: https://github.com/basiliscos/cpp-rotor
+## [9][GitHub API library for c++](https://www.reddit.com/r/cpp/comments/jr6xsn/github_api_library_for_c/)
+- url: https://www.reddit.com/r/cpp/comments/jr6xsn/github_api_library_for_c/
 ---
+Some time ago I was looking for a library which would let me use GitHub's API.  
+I could not find any so I wrote my own. Today I have decided to extract it from my project and make it easily reusable so here it is:
 
-## [8][Structured Concurrency](https://www.reddit.com/r/cpp/comments/jqt4z2/structured_concurrency/)
-- url: https://ericniebler.com/2020/11/08/structured-concurrency/
+[https://github.com/Kicer86/github\_api](https://github.com/Kicer86/github_api)
+
+It's api is very limited. I have just covered my needs, but it can be easily extended.  
+I hope you find it useful.
+## [10][C++ tool chain on the new Apple Silicon](https://www.reddit.com/r/cpp/comments/jrr4pe/c_tool_chain_on_the_new_apple_silicon/)
+- url: https://www.reddit.com/r/cpp/comments/jrr4pe/c_tool_chain_on_the_new_apple_silicon/
 ---
+I am just posting this for discussion. I code in c++ using the llvm/clang + lldb for debugging with vscode as an editor. I am just wondering how soon the apps can run everything natively. 
 
-## [9][I tried to efficiently render text with SDL_ttf, let me know what you think](https://www.reddit.com/r/cpp/comments/jr8s11/i_tried_to_efficiently_render_text_with_sdl_ttf/)
-- url: /r/sdl/comments/jr8qdl/i_tried_to_efficiently_render_text_with_sdl_ttf/
+If I am not wrong, the electron framework has to first work on Apple Silicon and then vscode will be ported. 
+
+I think apple has already ported the llvm software to work on apple silicon.
+
+I am just wondering how command line apps like vim, emacs , and also package managers like home brew will work. Does the emulation layer (Rosetta) work for these apps too? 
+
+Just want to hear some of your thoughts and whether if anyone if planning to try the new ARM MacBooks.
+
+
+Edit: 
+
+Vscode beta is apparently coming for arm macs by November end https://twitter.com/code/status/1326237772860981249?s=21
+## [11][Yet another Json library [beginner friendly]](https://www.reddit.com/r/cpp/comments/jrr2lq/yet_another_json_library_beginner_friendly/)
+- url: https://www.reddit.com/r/cpp/comments/jrr2lq/yet_another_json_library_beginner_friendly/
 ---
+I always thought that, even with nlohmanns solution, working with Json in C++ is quite cumbersome.
 
-## [10][Meaning of C++ Stanard Revisions](https://www.reddit.com/r/cpp/comments/jr0xsk/meaning_of_c_stanard_revisions/)
-- url: https://www.reddit.com/r/cpp/comments/jr0xsk/meaning_of_c_stanard_revisions/
----
-Is there any meaning of the revisions of the C++ standard, likeN4661, N4668?
-## [11][Conservative instantiation in variadic templates](https://www.reddit.com/r/cpp/comments/jqx1oa/conservative_instantiation_in_variadic_templates/)
-- url: https://www.reddit.com/r/cpp/comments/jqx1oa/conservative_instantiation_in_variadic_templates/
----
-A use case of variadic templates that often arises in my libraries and applications is the following:
+So i made my own json library.  ~~With blackjack and hookers~~.
 
-    void f(std::convertible_to&lt;double&gt; auto const&amp;... x);
+It is beginner focused but don't mistake that for "not powerful" because it is. It can handle every type of json (with one exception\*)
 
-Or put into words: wanting to accept an arbitrary number of arguments that all have to be convertible to a certain type. The issue with the provided implementation is that it leads to an arbitrary number of template instantiations even in the case that they all have the same number of parameters:
+You can dirty-code something to work within 4 lines of code, or error-check the living hell out of it. Up to you!
 
-    f(1.0, 2.0), f(1.0, 2); // etc.
+I put a lot of time into an extensive [documentation](https://leonetienne.github.io/JasonPP/) with a lot of examples.
 
-More instantiations lead to bloated binaries and longer compile and link times, so it is self-explanatory that one wants to avoid instantiations wherever possible. I would propose using a syntax along the lines of this:
+Do note that performance and memory efficiency was not the design goal of this. The design goal was ease of use.
 
-    void f(double... x);
+Check it out here: [Github](https://github.com/Leonetienne/JasonPP)  
+And here: [Documentation](https://leonetienne.github.io/JasonPP/)  
+Download here: [Github/INCLUDE/Release](https://github.com/Leonetienne/JasonPP/tree/master/INCLUDE/release)
 
-This, too, should just be an abbreviated function template but the deduced type parameter pack `T` ought to satisfy the constraint `std::conjunction_v&lt;std::is_same&lt;T, double&gt;...&gt;`. In other words, only the number of types in the pack should vary between instantiations, not the types themselves.
+Since it is licensed under the MIT license you can use it in every project even commercially.
 
-This proposed syntax may clash however with plain old C variadics (in the case that the argument pack isn't named) because they - for some reason - aren't required to be separated by a comma. A possible solution is requiring such typed parameter packs to always be named.
+&amp;#x200B;
 
-Has anybody seen or written a proposal regarding this? If not, how can I write a proposal?
+# Easy to include
+
+It's one of these libraries that uses **ONE** .hpp and **ONE** .cpp file.
+
+So two files in total.
+
+No linking libraries because, duh, it is supposed to be beginner friendly. Linking (the right) libraries on Windows reeks. Especially for beginners.
+
+&amp;#x200B;
+
+# Quick example on how to read this json into a vector:
+
+    // json
+    [1,2,3,4,5,6,7,8,9,0]
+
+&amp;#x200B;
+
+    // C++
+    Json json;
+    json.Parse(myJsonString);
+    
+    std::vector&lt;int&gt; vec;
+    for (int i = 0; i &lt; json.AsArray.Size(); i++)
+       vec.push_back(json.AsArray[i]);
+    
+    // That's it
+
+All this simple syntax and yet it still supports UTF-16 ;)
+
+&amp;#x200B;
+
+This started more or less as a fun sideproject but it is in a quite useable state now so i thought i'd publish it. Why not. :)
+
+\*apparently json officially supports if-conditions and stuff. This sort of logic is not supported. Only data storage.

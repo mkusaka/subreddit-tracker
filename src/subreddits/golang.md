@@ -3,123 +3,91 @@
 - url: https://blog.golang.org/survey2020
 ---
 
-## [2][How Go helped save HealthCare.gov featuring Paul Smith, CTO of Ad Hoc (Go Time #154)](https://www.reddit.com/r/golang/comments/jr7fp0/how_go_helped_save_healthcaregov_featuring_paul/)
-- url: https://changelog.com/gotime/154
+## [2][Wombat: Cross Platform gRPC Client. Developed in Go.](https://www.reddit.com/r/golang/comments/jrudsh/wombat_cross_platform_grpc_client_developed_in_go/)
+- url: https://i.redd.it/w03bdqwnghy51.jpg
 ---
 
-## [3][I have rewritten "Spinning Donut" to Golang](https://www.reddit.com/r/golang/comments/jqxm6d/i_have_rewritten_spinning_donut_to_golang/)
-- url: https://www.reddit.com/r/golang/comments/jqxm6d/i_have_rewritten_spinning_donut_to_golang/
+## [3][galeone/tfgo: simplified TensorFlow's Go bindings with 2.3 support](https://www.reddit.com/r/golang/comments/js53od/galeonetfgo_simplified_tensorflows_go_bindings/)
+- url: https://github.com/galeone/tfgo
 ---
-Implementation of "Spinning Donut" on Golang, not much different but cool
 
-Left: Go  
-Right: C  
-Source: [https://github.com/Vlad-Shevliakov/ASCII-render](https://github.com/Vlad-Shevliakov/ASCII-render)
-
-https://reddit.com/link/jqxm6d/video/9m2dr0o5v7y51/player
-## [4][What is your success story converting your team/mates to code with Golang?](https://www.reddit.com/r/golang/comments/jrg9sa/what_is_your_success_story_converting_your/)
-- url: https://www.reddit.com/r/golang/comments/jrg9sa/what_is_your_success_story_converting_your/
+## [4][a simple question about file server's routing](https://www.reddit.com/r/golang/comments/js7vvr/a_simple_question_about_file_servers_routing/)
+- url: https://www.reddit.com/r/golang/comments/js7vvr/a_simple_question_about_file_servers_routing/
 ---
-Hi Gophers, I inspired by the post [here](https://www.reddit.com/r/golang/comments/jnhzm5/today_i_presented_go_to_my_team/) to share also my experience in evangelizing Go at my workplace.
+hello I'm learning net/http package by a book and there's some problem.
 
-I have created a narration of Go benefits, I POC-ing some compatibility with internal tech stack. I have created internal tools to do automation, I create an internal community to share Go news and meetup announcement. However, those efforts don't seem to be fruitful. I am in a level of Manager right now, but basically, it doesn't provide any influence to the adoption. Lol.
+I have this structure
 
-So, my fellow gophers in Reddit. What is your success story in influencing your team for the Go adoption? It could provide learnings and reflection to me so I could hustle in evangelizing Go more.
+    main.go
+    - images
+       - dog.png
 
-Thanks.
+and this code
+
+    func main() {
+    	http.Handle("/images", http.FileServer(http.Dir("./images")))
+    	http.ListenAndServe(":8080", nil)
+    }
+
+There's a page not found error when I go to "localhost:8080/images"
+
+what's the problem??
 ## [5][Happy Birthday Go!](https://www.reddit.com/r/golang/comments/jrkn2m/happy_birthday_go/)
 - url: https://www.reddit.com/r/golang/comments/jrkn2m/happy_birthday_go/
 ---
 Was going through tour of golang  [here](https://tour.golang.org/welcome/4) and found that it's Go's birthday today!
 
 Long live Go!
-## [6][Can Java microservices be as fast as Go?](https://www.reddit.com/r/golang/comments/jrhkkl/can_java_microservices_be_as_fast_as_go/)
-- url: https://www.reddit.com/r/golang/comments/jrhkkl/can_java_microservices_be_as_fast_as_go/
----
-https://medium.com/helidon/can-java-microservices-be-as-fast-as-go-5ceb9a45d673
 
-If I'm gonna leave my opinion on the article, take it with a pinch of salt because I dont know sometimes what I'm talking about, just a friendly opinion.
+Edit: A little more details - 
 
-To me at least, it seems like even though sometimes Java outperformed in response times for a small 5-10% margin, it's still not worth the cost of Java's x2-10 times more memory consumption which costs very much in the hosting market. Like, most of the tests have as big margins as Go=100mb Java=1.5GB memory, that's a huge difference. The cost is too big for the advantage, which is not even certain, in contrast with RAM cost which is very expensive.
+So [this page](https://tour.golang.org/welcome/4) in tour says:
 
-Other than that, it just seems to me that Golang's optimization is still maturing and has a long way to go. But good job at Java native images for succeeding outperforming it. It was honestly surprising to me.
-What's your thoughts?
-## [7][What Makes Go So Different? | Better Programming on Medium](https://www.reddit.com/r/golang/comments/jrdher/what_makes_go_so_different_better_programming_on/)
-- url: https://medium.com/better-programming/what-makes-go-so-different-eb0648498ce0
+&gt;In the playground the time begins at 2009-11-10 23:00:00 UTC  (determining the significance of this date is an exercise for the  reader).
+
+And a quick search for "2009-11-10" on internet tells that it's Go's birthday :)
+## [6][openacid/slim: Surprisingly space efficient trie in Golang(11 bits/key; 100 ns/get).](https://www.reddit.com/r/golang/comments/js5n9d/openacidslim_surprisingly_space_efficient_trie_in/)
+- url: https://github.com/openacid/slim
 ---
 
-## [8][Commercial applications with golang](https://www.reddit.com/r/golang/comments/jrj4zt/commercial_applications_with_golang/)
-- url: https://www.reddit.com/r/golang/comments/jrj4zt/commercial_applications_with_golang/
----
-What has been some of the compliance challenges of using golang for developing commercial applications.
-
-I am taking steps in this direction but I have to get the licenses reviewed by our lawyers. I am concerned about the modules I will be using and their licenses. 
-
-Community's insights and advice welcome.
-
-Thanks, srini
-## [9][Makeless - SaaS Framework just released](https://www.reddit.com/r/golang/comments/jr00ox/makeless_saas_framework_just_released/)
-- url: https://www.reddit.com/r/golang/comments/jr00ox/makeless_saas_framework_just_released/
----
-Hey guys,
-
-today we are released **the beta** of **Makeless - a SaaS Framework**:
-
-It's split up into a modular Golang backend and a Typescript + Vue.js frontend where everything is ready to go.
-
-https://preview.redd.it/wt1dn7urj8y51.png?width=2374&amp;format=png&amp;auto=webp&amp;s=66a8a290e62be6a23cdd47815c2b54585b2f72a0
-
-**Features:**
-
-* Based on Golang ([gin](https://github.com/gin-gonic/gin) &amp; [gorm](https://github.com/go-gorm/gorm))
-* Concurrency safe &amp; scalable
-* Super clean and small
-* Fully customizable and configurable
-* Multilingual
-* State of the art Authentication with JWT HttpOnly Cookies
-* User management
-* Team management
-* Token management for users and teams
-* Realtime events
-* Subscriptions and Per-Seat Payments out of the box (coming soon)
-
-**Setup:** 
-
-* Backend: [https://github.com/makeless/makeless-demo/blob/master/backend/main.go](https://github.com/makeless/makeless-demo/blob/master/backend/main.go)
-* Frontend: [https://github.com/makeless/makeless-demo/blob/master/frontend/src/main.ts](https://github.com/makeless/makeless-demo/blob/master/frontend/src/main.ts)
-* Config: [https://github.com/makeless/makeless-demo/blob/master/makeless.json](https://github.com/makeless/makeless-demo/blob/master/makeless.json)
-
-**Links:** 
-
-* Go Backend: [https://github.com/makeless/makeless-go](https://github.com/makeless/makeless-go)
-* Typescript + Vue.js Frontend: [https://github.com/makeless/makeless-ui](https://github.com/makeless/makeless-ui)
-* Production ready Docker Demo: [https://github.com/makeless/makeless-demo](https://github.com/makeless/makeless-demo)
-* Scalable redis event package: [https://github.com/makeless/makeless-go-event-redis](https://github.com/makeless/makeless-go-event-redis)
-* Scalable mailgun mailer package: [https://github.com/makeless/makeless-go-mailer-mailgun](https://github.com/makeless/makeless-go-mailer-mailgun)
-* In-Memory Authenticator: [https://github.com/makeless/makeless-go-authenticator-in-memory](https://github.com/makeless/makeless-go-authenticator-in-memory) 
-
-**Next steps:**  
-
-
-* Fair and usable License
-* Documentation
-
-**Would love to just get some feedback**
-
-Have a good day guys and stay safe!
-## [10][TinyGo, what’s your experience with it?](https://www.reddit.com/r/golang/comments/jr40ej/tinygo_whats_your_experience_with_it/)
-- url: https://www.reddit.com/r/golang/comments/jr40ej/tinygo_whats_your_experience_with_it/
----
-I’m interested in learning more about automation  digitally and physically. 
-
-Recently I’ve been researching arduinos and esp32. I came across tinygo and see that it works with microcontrollers.
-
-Would Go be a good language to learn for this use case. I’m interested in learning Go because I’m also into web development too. (so it might a two birds one stone situation 😅)
-
-It’s more hobby at the moment but don’t know if c &amp; c++ would be easier but since I’m only doing it for hobby would Go be more interesting. 
-
-What is your opinion?
-## [11][Flexible MQTT-telegram-bot for IoT](https://www.reddit.com/r/golang/comments/jr6fls/flexible_mqtttelegrambot_for_iot/)
-- url: https://xd-wart.medium.com/flexible-mqtt-telegram-bot-for-iot-70d567edfb2e
+## [7][Eleven Years of Go](https://www.reddit.com/r/golang/comments/jrrlk4/eleven_years_of_go/)
+- url: https://blog.golang.org/11years
 ---
 
+## [8][UNIX `touch` command in go](https://www.reddit.com/r/golang/comments/js45ea/unix_touch_command_in_go/)
+- url: https://www.reddit.com/r/golang/comments/js45ea/unix_touch_command_in_go/
+---
+UNIX type operating systems  have a terminal command called `touch` for creating a file or changing its modified time. Unfortunately Windows doesn't have such command.
+
+I needed to have `touch` command in Windows so I decided to build it. It's been 2 days  that I'm learning go, and it is awesome. The go is really good for building cli tools, so I decided to build the create the command in go. Here's the repo
+
+&gt;[https://github.com/spitfire-hash/go-touch](https://github.com/spitfire-hash/go-touch)
+
+I have also wrote the tests for the tool. All the instructions about how to install from release page or building from source is  in the README. I really appreciate anyone who gives feedback about the code, about the code style, or tests itself.
+
+I'm sorry if the showcasing in this subreddit is not allowed, I couldn't find anything about it in the rules section, so thought it's not a problem.
+## [9][Simple video streaming service in Golang?](https://www.reddit.com/r/golang/comments/js7tic/simple_video_streaming_service_in_golang/)
+- url: https://www.reddit.com/r/golang/comments/js7tic/simple_video_streaming_service_in_golang/
+---
+Hello, I am guite new in backend .. I do mostly frontend but for my sister I want to build a full stack webpage (react, golang, digital ocean - probably). One of the things she needs is to play a few hundreds of videos (downloaded twitch clips). At first I was thinking of using youtube or vimeo to host the files and provide player + stream service but now I wonder:  if it's just simpliest video streaming possible, could I implement it myself and host the files on my server? I would like to learn new things on this project.   
+
+
+So I am asking: is this doable for beginner in golang .. or is to too hard? I thought that Go should have some libraries for making these kind of things quite simple. Right? Wrong?
+## [10][Get key presses](https://www.reddit.com/r/golang/comments/js7nc6/get_key_presses/)
+- url: https://www.reddit.com/r/golang/comments/js7nc6/get_key_presses/
+---
+I'm looking for a way to get key presses for a program I'm working on. I don't want the user to have to type something then press enter with something like the scanln function. I want it to listen to key presses in the background then react when it sees that a certain key has been pressed.
+
+I found this library [https://github.com/eiannone/keyboard](https://github.com/eiannone/keyboard), but the listening functions it offers are blocking, and there isn't a function for detecting when a key isn't pressed.
+
+I need a non-blocking way of detecting key presses and key releases. Is there a library for doing this? Or a (relatively) simple way of doing it manually?
+## [11][Q/A: As a Go developer, would you switch to one of the new M1-based Macs this year?](https://www.reddit.com/r/golang/comments/js4cgg/qa_as_a_go_developer_would_you_switch_to_one_of/)
+- url: https://www.reddit.com/r/golang/comments/js4cgg/qa_as_a_go_developer_would_you_switch_to_one_of/
+---
+My  2015 MBP is showing sings of old age already, so if I am going to  switch, I don't see a reason to do with an Intel-based Mac anymore. My  two options are either M1, or moving to a Linux laptop. Main main  concern with M1 is the availability of developer tooling for ARM.
+
+This is a very good general "2 cents" write-up on yesterday's announcements: [https://sixcolors.com/post/2020/11/enter-the-m1-notes-on-tuesdays-big-event/](https://sixcolors.com/post/2020/11/enter-the-m1-notes-on-tuesdays-big-event/)
+
+What's your take?
+
+[View Poll](https://www.reddit.com/poll/js4cgg)

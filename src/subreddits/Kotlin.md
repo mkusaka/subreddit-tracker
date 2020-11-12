@@ -1,5 +1,17 @@
 # Kotlin
-## [1][Free Udavity Android Kotlin Developer Nanodegree Course material](https://www.reddit.com/r/Kotlin/comments/js3y3n/free_udavity_android_kotlin_developer_nanodegree/)
+## [1][Kotlin Compose + web](https://www.reddit.com/r/Kotlin/comments/jsiggw/kotlin_compose_web/)
+- url: https://www.reddit.com/r/Kotlin/comments/jsiggw/kotlin_compose_web/
+---
+Since Kotlin supports JS, is it possible for Kotlin Compose to be ported to web? (I was thinking whether is possible to match Flutter's platform set)
+## [2][The best books to learn Kotlin](https://www.reddit.com/r/Kotlin/comments/jskqd6/the_best_books_to_learn_kotlin/)
+- url: https://medium.com/p/the-best-books-to-learn-kotlin-894f9a83e64a
+---
+
+## [3][Announcing the http4k Toolbox: Guns for show, knives for a pro](https://www.reddit.com/r/Kotlin/comments/js8iiw/announcing_the_http4k_toolbox_guns_for_show/)
+- url: https://http4k.org/blog/toolbox/
+---
+
+## [4][Free Udavity Android Kotlin Developer Nanodegree Course material](https://www.reddit.com/r/Kotlin/comments/js3y3n/free_udavity_android_kotlin_developer_nanodegree/)
 - url: https://www.reddit.com/r/Kotlin/comments/js3y3n/free_udavity_android_kotlin_developer_nanodegree/
 ---
 Udacity Just lanched their Android Kotlin Developer Nanodegree program, So I thought of compiling all the free resources for interested devs who want to follow that same syllabus for free.
@@ -51,7 +63,7 @@ Syllabus ▶
 ## Link to Course 3 and Course 4 ▶
 
 [Course 3 and Course 4](https://www.udacity.com/course/advanced-android-with-kotlin--ud940)
-## [2][mltype - Typing practice for Kotlin and other languages](https://www.reddit.com/r/Kotlin/comments/js76mq/mltype_typing_practice_for_kotlin_and_other/)
+## [5][mltype - Typing practice for Kotlin and other languages](https://www.reddit.com/r/Kotlin/comments/js76mq/mltype_typing_practice_for_kotlin_and_other/)
 - url: https://www.reddit.com/r/Kotlin/comments/js76mq/mltype_typing_practice_for_kotlin_and_other/
 ---
 **What is it?**
@@ -74,45 +86,76 @@ I recently switched to touch typing and I realized that there is basically no wa
 **PS**
 
 I trained the Kotlin model on LeakCanary.
-## [3][Ktor 1.4.2 has been released](https://www.reddit.com/r/Kotlin/comments/jrn38o/ktor_142_has_been_released/)
+## [6][How can I create another smile in order to move the ball to the right?? PS:the smile's variables have to stay as vals, not vars](https://www.reddit.com/r/Kotlin/comments/jsahix/how_can_i_create_another_smile_in_order_to_move/)
+- url: https://www.reddit.com/r/Kotlin/comments/jsahix/how_can_i_create_another_smile_in_order_to_move/
+---
+ Teacher asked me to create a Smile in canvas and when I press right the smile moves right. He also told me to leave the smile's variables as vals not as vals, for me to move the ball I had to create a new smile with the old smile's values. How?? 
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+    data class Smile(val x: Int, val y: Int, val  radius: Int)
+    
+    fun drawSmile( smile: Smile, canvas: Canvas):Unit{
+        canvas.drawCircle(smile.x,smile.y, smile.radius, pt.isel.canvas.YELLOW)
+        canvas.drawCircle(smile.x, smile.y, smile.radius, 0, (0.07*smile.radius).toInt())
+        canvas.drawArc(smile.x,smile.y, (0.6*smile.radius).toInt(),200,340, 0, (0.07*smile.radius).toInt())
+        canvas.drawCircle(smile.x-(0.35*smile.radius).toInt(),smile.y-(0.35*smile.radius).toInt(),(0.125*smile.radius).toInt(), color= BLACK)
+        canvas.drawCircle(smile.x+(0.35*smile.radius).toInt(),smile.y-(0.35*smile.radius).toInt(),(0.125*smile.radius).toInt(), color= BLACK)
+    
+    fun move(smile: Smile, canvas: Canvas, ke: Int, increment: Int = 4): Unit {
+      canvas.erase()
+      val x: Int = smile.x
+      val y: Int = smile.y
+      val rad = smile.radius
+      val smile: Smile
+      when (ke) {
+        39 -&gt; smile = Smile(x + 4, y, rad)
+        else -&gt; smile = Smile(x, y, rad)
+      }
+      drawSmile(smile, canvas)
+    }
+    
+    fun main() {
+      println("Hi, Smile! :)")
+    
+      onStart {
+        val canvas = Canvas(600, 400, CYAN)
+        //FIRST SMILE
+        val xCenter = 600 / 2
+        val yCenter = 400 / 2
+        val radius = 50
+        var smile = Smile(xCenter, yCenter, radius)
+        println("Move the smile with the arrows or mouse")
+        println("Grow and shrink with + and -")
+        drawSmile(smile, canvas)
+        canvas.onKeyPressed { ke -&gt;
+          move(smile, canvas, ke.code)
+        }
+    
+        canvas.onMouseDown { MousePlacer -&gt;
+          placeSmile(smile, canvas, MousePlacer.x, MousePlacer.y)
+        }
+    
+        onFinish {
+          println("BYE")
+        }
+      }
+    }
+## [7][Ktor 1.4.2 has been released](https://www.reddit.com/r/Kotlin/comments/jrn38o/ktor_142_has_been_released/)
 - url: https://ktor.io/changelog/#version-1-4-2
 ---
 
-## [4][Kotlin Trivia Quiz App](https://www.reddit.com/r/Kotlin/comments/js33ly/kotlin_trivia_quiz_app/)
+## [8][Kotlin Trivia Quiz App](https://www.reddit.com/r/Kotlin/comments/js33ly/kotlin_trivia_quiz_app/)
 - url: https://youtu.be/uB4ePepyVBo
 ---
 
-## [5][Getting started with Kotlin Multiplatform: Working with Mobile Platforms](https://www.reddit.com/r/Kotlin/comments/js2nzu/getting_started_with_kotlin_multiplatform_working/)
+## [9][Getting started with Kotlin Multiplatform: Working with Mobile Platforms](https://www.reddit.com/r/Kotlin/comments/js2nzu/getting_started_with_kotlin_multiplatform_working/)
 - url: https://medium.com/mindful-engineering/getting-started-with-kotlin-multiplatform-part-1-working-with-mobile-platforms-1fd76ce2f055
 ---
 
-## [6][Yet another Unsplash Client with Kotlin Compose](https://www.reddit.com/r/Kotlin/comments/jr3p1v/yet_another_unsplash_client_with_kotlin_compose/)
+## [10][Yet another Unsplash Client with Kotlin Compose](https://www.reddit.com/r/Kotlin/comments/jr3p1v/yet_another_unsplash_client_with_kotlin_compose/)
 - url: https://i.redd.it/23trfqa2h9y51.png
----
-
-## [7][Is KMM ready for production technology?](https://www.reddit.com/r/Kotlin/comments/jrnasr/is_kmm_ready_for_production_technology/)
-- url: https://www.reddit.com/r/Kotlin/comments/jrnasr/is_kmm_ready_for_production_technology/
----
-Hi everyone!
-
-I’m a really big fan of Kotlin and I’m, fascinated by the idea of using [Kotlin Mobile Multiplatform aka KMM](https://kotlinlang.org/lp/mobile/) for sharing code between mobile platforms. Why do we keep on doing fully native applications while it is possible to share code and keep UI native (IMHO the only part that should remain native)?I was spreading this idea around Android and iOS teams. And it was quite contagious, not as coronavirus but still all of my Android teammates are ready to try KMM in our project and even some of the iOS mates want to try too.But here we come to the problem – our manager Rick. He is old school and does not trust new trends in development, he is the type of person who would start using KMM only after Facebook is rewritten to KMM. 
-
-As I understand from [Kotlin Multiplatform Mobile goes Alpha blog post](https://blog.jetbrains.com/kotlin/2020/08/kotlin-multiplatform-mobile-goes-alpha/?_ga=2.254447435.290197248.1604915804-1660784246.1601558560) and [Kotlin 1.4 online event](https://www.youtube.com/watch?v=PW-jkOLucjM) the Kotlin team is promoting KMM as a technology that is ready for production. They have got a [series of case studies about KMM used in production](https://kotlinlang.org/lp/mobile/case-studies/) on their KMM portal. All of these efforts should make developers and managers believe that KMM is ok ready to be used. But despite many advantages that it brings to a project many developers and managers (like our Rick) are still doubt its usage and wait some more time to understand if there are there any underwater rocks in these technologies.
-
-So may you answer a simple question: Is it ready for production or not?
-
-Feel free to share your experience and thoughts.
-## [8][Productive Server-Side Development With Kotlin: Stories From The Industry](https://www.reddit.com/r/Kotlin/comments/jr74xq/productive_serverside_development_with_kotlin/)
-- url: https://blog.jetbrains.com/kotlin/2020/11/productive-server-side-development-with-kotlin-stories/
----
-
-## [9][Kotlin Heroes 5: ICPC Round is Approaching!](https://www.reddit.com/r/Kotlin/comments/jr12im/kotlin_heroes_5_icpc_round_is_approaching/)
-- url: https://www.reddit.com/r/Kotlin/comments/jr12im/kotlin_heroes_5_icpc_round_is_approaching/
----
-[Kotlin Heroes](https://preview.redd.it/adjdgs9kt8y51.png?width=336&amp;format=png&amp;auto=webp&amp;s=a8286f0c02e464e3d545e8db4fc2f868a88ce027)
-
-Can you compete with the world’s top coders? Find out by joining this unique round of Kotlin Heroes hosted by JetBrains, Codeforces, and the ICPC. Prove your skills, practice Kotlin, have fun, and compete for the prizes! Learn more [https://jb.gg/zedpvb](https://jb.gg/zedpvb) and save the date: **November 12, 14:35 – 17:05 UTC**.
-## [10][Analyzing Kotlin sources just got simpler](https://www.reddit.com/r/Kotlin/comments/jqx96q/analyzing_kotlin_sources_just_got_simpler/)
-- url: https://medium.com/virtuslab/analyzing-kotlin-sources-just-got-simpler-48aa88e0cf0b
 ---
 

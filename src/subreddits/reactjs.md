@@ -70,60 +70,87 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][We are building a search engine for developers to make them more productive. What do you think?](https://www.reddit.com/r/reactjs/comments/jrt43i/we_are_building_a_search_engine_for_developers_to/)
-- url: https://www.reddit.com/r/reactjs/comments/jrt43i/we_are_building_a_search_engine_for_developers_to/
+## [3][I just made my first large react project using the MERN stack](https://www.reddit.com/r/reactjs/comments/jslheq/i_just_made_my_first_large_react_project_using/)
+- url: https://www.reddit.com/r/reactjs/comments/jslheq/i_just_made_my_first_large_react_project_using/
 ---
-Hi folks!
+[http://quadstr.com/](http://quadstr.com/)
 
-We all use web browsers extensively when developing. Aside from using it for the actual development, on average 15% of the whole development time is spent just looking for information on Google. We are building a better solution - a search engine for developers called Grob.
+Here is the url. It's an anonymous chat platform. I've created a chat for this sub on it if any of you want to test it out. If you do test it out, feel more than free to give me feedback. Thanks!
 
-With Grob, you can access codebases, infrastructure, and answers to development questions with a single shortcut.  
-Do you also feel that the way developers search could be way faster and be so much more? We just launched our [landing page](https://usegrob.com/) with an early access and any feedback will be really appreciated - we are still trying to identify how exactly developers search and what features to include.
-## [4][RRU 124: What's New in React with Shawn Wang - Devchat.tv](https://www.reddit.com/r/reactjs/comments/js3r2d/rru_124_whats_new_in_react_with_shawn_wang/)
-- url: https://devchat.tv/react-round-up/rru-124-whats-new-in-react-with-shawn-wang/
+The chat code is: wXviqcm
+
+the password is: reactreddit
+## [4][Having a hard time learning hooks](https://www.reddit.com/r/reactjs/comments/jsmve4/having_a_hard_time_learning_hooks/)
+- url: https://www.reddit.com/r/reactjs/comments/jsmve4/having_a_hard_time_learning_hooks/
 ---
+Its is just me? I cant seem to get on track on using hooks rather than class based components.
 
-## [5][What’s your code coverage at work like?](https://www.reddit.com/r/reactjs/comments/js68zw/whats_your_code_coverage_at_work_like/)
-- url: https://www.reddit.com/r/reactjs/comments/js68zw/whats_your_code_coverage_at_work_like/
----
-Does your workplace promote TDD? Or do they require unit tests? Integration tests? None at all? Curious to know what other work places are like.
-## [6][Performance of expansion panels](https://www.reddit.com/r/reactjs/comments/js5b4c/performance_of_expansion_panels/)
-- url: https://www.reddit.com/r/reactjs/comments/js5b4c/performance_of_expansion_panels/
----
-Don't you guys think that [expansion panels](https://material.io/archive/guidelines/components/expansion-panels.html) are inherently ill-suited for the web considering they always cause layout shifts when expanding/collapsing and so one can't guarantee 60-fps if the page is relatively big?
-
-It doesn't matter how much I optimize any ExapnsionPanel component in React, I almost always see some 55fps or 56fps between the 60-65 fps. Or maybe the whole continuous 60 fps is a bit of a holy grail? Your thoughts?
-## [7][React Native Animation using Hooks: Tinder Cards](https://www.reddit.com/r/reactjs/comments/js7ji5/react_native_animation_using_hooks_tinder_cards/)
-- url: https://iamshadmirza.com/react-native-animation-using-hooks-tinder-cards
+When Im using classes I can understand it more and Its much easier for me atleast.
+Everyones saying hooks are the future and its much more modern I don’t want to get left out thats why I’m learning it, but I’m having such a hard time.
+## [5][React context without context, using XState](https://www.reddit.com/r/reactjs/comments/js914u/react_context_without_context_using_xstate/)
+- url: https://swizec.com/blog/react-context-without-context-using-xstate-codewithswiz-14-15
 ---
 
-## [8][Animated Progress Bar Indicator in React Native using Animated API and onLayout](https://www.reddit.com/r/reactjs/comments/js7cjq/animated_progress_bar_indicator_in_react_native/)
-- url: https://youtu.be/J95MC2Koymc
+## [6][SpotCasts (podcasts player)](https://www.reddit.com/r/reactjs/comments/jsuah3/spotcasts_podcasts_player/)
+- url: https://v.redd.it/wazbr6a16ty51
 ---
 
-## [9][modern react course](https://www.reddit.com/r/reactjs/comments/js7b8l/modern_react_course/)
-- url: https://www.reddit.com/r/reactjs/comments/js7b8l/modern_react_course/
----
-hey!  
-i want to learn modern react - not class based course - but cant find any.  
-few days ago i bought Modern React with Redux \[2020 Update\] by Stephen Grider...  
-but found out EVERYTHING is class based... he does teach hooks and usecontext.. and then his back to using classes and redux...
-
-im looking for a course that can teach me the basics without classes - or at least not 90% of the course is classes.   
-maybe a course that show how it began with classes but moves on to functional programming using hooks.
-## [10][How to test Compound Components](https://www.reddit.com/r/reactjs/comments/js4mms/how_to_test_compound_components/)
-- url: https://www.samdawson.dev/article/how-to-test-compound-components
+## [7][Creating a Custom React Local Storage Hook](https://www.reddit.com/r/reactjs/comments/jsbij0/creating_a_custom_react_local_storage_hook/)
+- url: https://youtu.be/74ThcF5JqzU
 ---
 
-## [11][Could someone share a resume template for a Lead React Engineer?](https://www.reddit.com/r/reactjs/comments/js2ysq/could_someone_share_a_resume_template_for_a_lead/)
-- url: https://www.reddit.com/r/reactjs/comments/js2ysq/could_someone_share_a_resume_template_for_a_lead/
+## [8][error with materialtable](https://www.reddit.com/r/reactjs/comments/jstvlf/error_with_materialtable/)
+- url: https://www.reddit.com/r/reactjs/comments/jstvlf/error_with_materialtable/
 ---
-Hey guys,
+ Hi, I have a table with MateriaTable in react, and a route system in a route is the table, everything works fine until I navigate between the routes several times and the route from where I have the table freezes and gives me an error.
 
-Could someone share a resume template?
+&amp;#x200B;
+
+   
+any solution? And what other alternatives similar to MaterialTable do you recommend? 
+
+ [https://res.cloudinary.com/danielgeek/image/upload/v1605184579/Screenshot\_17\_tcifr3.png](https://res.cloudinary.com/danielgeek/image/upload/v1605184579/Screenshot_17_tcifr3.png) 
+
+[https://res.cloudinary.com/danielgeek/image/upload/v1605184570/Screenshot\_16\_ywm7kv.png](https://res.cloudinary.com/danielgeek/image/upload/v1605184570/Screenshot_16_ywm7kv.png)
+## [9][How to Become an Expert in Software Estimates: Practical Tips to Get a Realistic Project Estimation](https://www.reddit.com/r/reactjs/comments/jstj81/how_to_become_an_expert_in_software_estimates/)
+- url: https://celadonsoft.com/best-practices/how-to-become-an-expert-in-software-estimates
+---
+
+## [10][Calculate the TEM, TEA and CFT](https://www.reddit.com/r/reactjs/comments/jstalb/calculate_the_tem_tea_and_cft/)
+- url: https://www.reddit.com/r/reactjs/comments/jstalb/calculate_the_tem_tea_and_cft/
+---
+Good morning, I am trying to calculate the TEM, TEA and CFT, for the visualization of quotas of an app ... any lib that you recommend to perform this calculation? Or how can i calculate the rate?
+## [11][Jest &amp; React testing library. Test API hit](https://www.reddit.com/r/reactjs/comments/jst66e/jest_react_testing_library_test_api_hit/)
+- url: https://www.reddit.com/r/reactjs/comments/jst66e/jest_react_testing_library_test_api_hit/
+---
+Hello there, I'm new to react and react testing and I want to do the following test (maybe its a silly question):
+
+"When a button on the page is clicked, check whether the API is hit or not"
+
+I can do the button hit after render() using [fireEvent.click](https://fireEvent.click)(), but I don't know how can I ensure whether the API is hit after the button is clicked. (I only need to check whether the API is hit or not)
+
+Is there any traces or records kept of the api hit from where I can pick the latest hit api and compare with what is expected to hit? Or what else should I do?
+
+I searched on google but no help. Please guide me on how can I write test for the above mentioned case.
 
 Thanks
-## [12][react-from-scratch: How React works in 100 lines of code](https://www.reddit.com/r/reactjs/comments/jrs90e/reactfromscratch_how_react_works_in_100_lines_of/)
-- url: https://github.com/vberlier/react-from-scratch/blob/main/src/react.js
+## [12][Code review](https://www.reddit.com/r/reactjs/comments/jsmls2/code_review/)
+- url: https://www.reddit.com/r/reactjs/comments/jsmls2/code_review/
 ---
+     const [pizza, setPizza] = useState({ base: "", toppings: [] });
+    
+      const addBase = (base) =&gt; {
+        setPizza({ ...pizza, base })
+      }
+      
+      const addTopping = (topping) =&gt; {
+        let newToppings;
+        if(!pizza.toppings.includes(topping)){
+          newToppings = [...pizza.toppings, topping];
+        } else {
+          newToppings = pizza.toppings.filter(item =&gt; item !== topping);
+        }
+        setPizza({ ...pizza, toppings: newToppings });
+      }
 
+Can anyone explain this code to me. Thanks.

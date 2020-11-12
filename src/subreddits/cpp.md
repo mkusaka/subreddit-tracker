@@ -56,135 +56,108 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Gabriel Dos Reis Keynote will be a surprise](https://www.reddit.com/r/cpp/comments/js4f78/gabriel_dos_reis_keynote_will_be_a_surprise/)
+## [2][C++ boos for beginners?](https://www.reddit.com/r/cpp/comments/jstwp9/c_boos_for_beginners/)
+- url: https://www.reddit.com/r/cpp/comments/jstwp9/c_boos_for_beginners/
+---
+I'm a beginner in c++. I'm a high-schooler so I don't study computer science all day long, but I love coding and studying programming but I can't find a good c++ book which comprehends the basics (which I partially know) and some intermediary elements. On which books did you study on while being beginners?
+## [3][New boost additions for 1.75 looking great](https://www.reddit.com/r/cpp/comments/jsarkz/new_boost_additions_for_175_looking_great/)
+- url: https://www.reddit.com/r/cpp/comments/jsarkz/new_boost_additions_for_175_looking_great/
+---
+I just took a look at Boost and it has these 3 new libraries:
+
+- Json (parse json, etc.)
+- Leaf (lightweight error handling with try-catch like syntax)
+- PFR (basic serialization without macros)
+
+https://www.boost.org/users/history/in_progress.html
+
+What do you think?
+## [4][Using C++ as a scripting language, part 3](https://www.reddit.com/r/cpp/comments/jscnt7/using_c_as_a_scripting_language_part_3/)
+- url: https://fwsgonzo.medium.com/using-c-as-a-scripting-language-part-3-b8f92206ef94
+---
+
+## [5][Good Sources for Learning TUI](https://www.reddit.com/r/cpp/comments/jsr3te/good_sources_for_learning_tui/)
+- url: https://www.reddit.com/r/cpp/comments/jsr3te/good_sources_for_learning_tui/
+---
+Hello everyone, I'm trying to learn terminal UI and have found some interesting libraries like ncurses, ImTui, etc. But i want to know whether there are some good material to learn about these TUIs, like books, articles, etc.
+
+Any help would be appreciated.
+
+If you have some other framework in mind for creating TUIs then mention it
+## [6][The hidden callout: The destructor](https://www.reddit.com/r/cpp/comments/jsbxff/the_hidden_callout_the_destructor/)
+- url: https://devblogs.microsoft.com/oldnewthing/20201111-00/?p=104439
+---
+
+## [7][print all power sets in Lexico Graphic Order](https://www.reddit.com/r/cpp/comments/jsu38i/print_all_power_sets_in_lexico_graphic_order/)
+- url: https://www.reddit.com/r/cpp/comments/jsu38i/print_all_power_sets_in_lexico_graphic_order/
+---
+hi im trying to print all subset of an array using this code:
+
+&amp;#x200B;
+
+    void CoutSubsets(int *arr, int i, int n,int *subset, int j){
+        if(i==n){
+            int idx = 0;
+            cout&lt;&lt;"{";
+            while(idx &lt;j){
+                if (i == 0){
+                    cout &lt;&lt;subset[idx];
+                    ++idx;
+                }
+                else {
+                    cout &lt;&lt; ",";
+                    cout &lt;&lt; subset[idx];
+                    ++idx;
+                }
+            }
+            cout&lt;&lt;"},";
+            return;
+        }
+        if (i &gt;= n){return;}
+        CoutSubsets(arr,i+1,n,subset,j);
+        subset[j] = arr[i];
+        CoutSubsets(arr,i+1,n,subset,j+1);
+    
+    }
+
+
+for example the main is:
+
+        int arr[] = {1,2,3}; // input array
+        int subset[8];	   // temporary array to store subset
+        int setsize = 3;
+        CoutSubsets(arr,0,setsize,subset,0);
+
+the output now is:
+
+    {},{3},{2},{2,3},{1},{1,3},{1,2},{1,2,3}
+
+i want it to be printed in lexicographic Order meaning:
+
+    {},{1},{3},{2},{1,2},{1,3},{2,3},{1,2,3}
+
+any solution or idea how can i do that?
+## [8][Miniselect: Practical and Generic Selection Algorithms](https://www.reddit.com/r/cpp/comments/jsba2m/miniselect_practical_and_generic_selection/)
+- url: https://danlark.org/2020/11/11/miniselect-practical-and-generic-selection-algorithms/
+---
+
+## [9][Gabriel Dos Reis Keynote will be a surprise](https://www.reddit.com/r/cpp/comments/js4f78/gabriel_dos_reis_keynote_will_be_a_surprise/)
 - url: https://meetingcpp.com/meetingcpp/news/items/Gabriel-Dos-Reis-Keynote-will-be-a-surprise.html
 ---
 
-## [3][Visual Studio 2019 v16.8 and v16.9 Preview 1 Release Today](https://www.reddit.com/r/cpp/comments/jrqv89/visual_studio_2019_v168_and_v169_preview_1/)
+## [10][Should we make end() dereferenceable for std::string_view?](https://www.reddit.com/r/cpp/comments/jss61s/should_we_make_end_dereferenceable_for_stdstring/)
+- url: https://www.reddit.com/r/cpp/comments/jss61s/should_we_make_end_dereferenceable_for_stdstring/
+---
+I recently encountered the same problem as described here while writing a C++ wrapper for a C library: [https://www.reddit.com/r/cpp/comments/6idos6/c\_stdstring\_view\_not\_so\_useful\_when\_calling\_c/](https://www.reddit.com/r/cpp/comments/6idos6/c_stdstring_view_not_so_useful_when_calling_c/)
+
+the problem could be easily solved if we enforce that `end()` must be dereferenceable for `std::string_view`, any unnecessary copy of the underlying char array could be avoided by simply checking `if (*some_str_view.end() == 0)`, and I think this makes a lot of sense. a string\_view is often created from either a string literal or an std::string and in both cases, the underlying char array is guaranteed to be null terminated (`std::string::operator std::string_view()` constructs the string view using `data()`, so it is still null terminated).
+
+`std::span&lt;char&gt;` should be used if the user wishes to manipulate a more generalized char container that doesn't guarantee null termination.
+
+&amp;#x200B;
+
+**EDIT: a lot of people here seem to misinterpret my post as having a null terminated std::string\_view, no, I'm not saying that! please see** u/Supadoplex's comment down below which explains things a bit clearer.\*\*
+## [11][Visual Studio 2019 v16.8 and v16.9 Preview 1 Release Today](https://www.reddit.com/r/cpp/comments/jrqv89/visual_studio_2019_v168_and_v169_preview_1/)
 - url: https://devblogs.microsoft.com/visualstudio/visual-studio-2019-v16-8/
 ---
 
-## [4][An Assembly interpreter written in C++](https://www.reddit.com/r/cpp/comments/jrq1jl/an_assembly_interpreter_written_in_c/)
-- url: https://www.reddit.com/r/cpp/comments/jrq1jl/an_assembly_interpreter_written_in_c/
----
-Hey everyone!
-
-Yesterday I made this little assembly interpreter. My reasoning for it was this: Assembly, while fun, is really annoying to setup! This interpreter aims to resolve this issue. All it needs is a C++ compiler, and it’s ready. 
-
-The main aim is for learners to get comfortable with assembly syntax, without having to go through the pain of setting up. This interpreter supports basic assembly commands, and after every command you get to see the bits and values of every “register”. 
-
-This interpreter is not: an emulator or an assembler. It is really just a way to practice some basic assembly syntax and see the results. 
-
-Hope this helps someone! I’d love to hear y’all’s thoughts! 
-
-https://github.com/yekyam/AsmInterpreter
-## [5][Butano: a modern C++ high level engine for the GBA](https://www.reddit.com/r/cpp/comments/jrjj2n/butano_a_modern_c_high_level_engine_for_the_gba/)
-- url: https://www.reddit.com/r/cpp/comments/jrjj2n/butano_a_modern_c_high_level_engine_for_the_gba/
----
-Hi!
-
-Lately, I have been working on [Butano](https://github.com/GValiente/butano), a C++20 engine for the Game Boy Advance.
-
-It brings its own standard library, based on the awesome [ETL](https://www.etlcpp.com/). It differs from the standard library mostly in the usage of asserts instead of exceptions and in the usage of fixed size stack buffers instead of the heap.
-
-Since the GBA doesn't have a file system, all data has to be compiled into the ROM, which allows constexpr to be used with ease. Butano brings its own [asserts system](https://gvaliente.github.io/butano/group__assert.html) which can be used in constant-evaluated contexts too thanks to [std::is\_constant\_evaluated](https://en.cppreference.com/w/cpp/types/is_constant_evaluated).
-
-The engine provides detailed [documentation](https://gvaliente.github.io/butano/), multiple [examples](https://gvaliente.github.io/butano/examples.html) of most aspects of the engine an even the source code and assets of a full game: [Butano Fighter](https://gvaliente.itch.io/butano-fighter).
-
-If you have time please tell me what you think. Thanks!
-## [6][Is your if an object state?](https://www.reddit.com/r/cpp/comments/js54nl/is_your_if_an_object_state/)
-- url: https://meetingcpp.com/blog/items/Is-your-if-an-object-state-.html
----
-
-## [7][Data Structure Project Ideas](https://www.reddit.com/r/cpp/comments/js1zxv/data_structure_project_ideas/)
-- url: https://www.reddit.com/r/cpp/comments/js1zxv/data_structure_project_ideas/
----
-Hi ALL. The title says it. I am a student of data structures and now I am supposed to complete an end of semester project. I don't like the ideas our instructor has suggested and I'm looking for something which is a bit more 'real- world'. Can you suggest some intermediate projects which would be sensible for C++.
-## [8][Asio C++ coroutines in Qt UI, communicating with Asio C++ coroutines in service thread, with deterministic cancellation. My October blog.](https://www.reddit.com/r/cpp/comments/jrg3gi/asio_c_coroutines_in_qt_ui_communicating_with/)
-- url: https://cppalliance.org/richard/2020/10/31/RichardsOctoberUpdate.html
----
-
-## [9][GitHub API library for c++](https://www.reddit.com/r/cpp/comments/jr6xsn/github_api_library_for_c/)
-- url: https://www.reddit.com/r/cpp/comments/jr6xsn/github_api_library_for_c/
----
-Some time ago I was looking for a library which would let me use GitHub's API.  
-I could not find any so I wrote my own. Today I have decided to extract it from my project and make it easily reusable so here it is:
-
-[https://github.com/Kicer86/github\_api](https://github.com/Kicer86/github_api)
-
-It's api is very limited. I have just covered my needs, but it can be easily extended.  
-I hope you find it useful.
-## [10][C++ tool chain on the new Apple Silicon](https://www.reddit.com/r/cpp/comments/jrr4pe/c_tool_chain_on_the_new_apple_silicon/)
-- url: https://www.reddit.com/r/cpp/comments/jrr4pe/c_tool_chain_on_the_new_apple_silicon/
----
-I am just posting this for discussion. I code in c++ using the llvm/clang + lldb for debugging with vscode as an editor. I am just wondering how soon the apps can run everything natively. 
-
-If I am not wrong, the electron framework has to first work on Apple Silicon and then vscode will be ported. 
-
-I think apple has already ported the llvm software to work on apple silicon.
-
-I am just wondering how command line apps like vim, emacs , and also package managers like home brew will work. Does the emulation layer (Rosetta) work for these apps too? 
-
-Just want to hear some of your thoughts and whether if anyone if planning to try the new ARM MacBooks.
-
-
-Edit: 
-
-Vscode beta is apparently coming for arm macs by November end https://twitter.com/code/status/1326237772860981249?s=21
-## [11][Yet another Json library [beginner friendly]](https://www.reddit.com/r/cpp/comments/jrr2lq/yet_another_json_library_beginner_friendly/)
-- url: https://www.reddit.com/r/cpp/comments/jrr2lq/yet_another_json_library_beginner_friendly/
----
-I always thought that, even with nlohmanns solution, working with Json in C++ is quite cumbersome.
-
-So i made my own json library.  ~~With blackjack and hookers~~.
-
-It is beginner focused but don't mistake that for "not powerful" because it is. It can handle every type of json (with one exception\*)
-
-You can dirty-code something to work within 4 lines of code, or error-check the living hell out of it. Up to you!
-
-I put a lot of time into an extensive [documentation](https://leonetienne.github.io/JasonPP/) with a lot of examples.
-
-Do note that performance and memory efficiency was not the design goal of this. The design goal was ease of use.
-
-Check it out here: [Github](https://github.com/Leonetienne/JasonPP)  
-And here: [Documentation](https://leonetienne.github.io/JasonPP/)  
-Download here: [Github/INCLUDE/Release](https://github.com/Leonetienne/JasonPP/tree/master/INCLUDE/release)
-
-Since it is licensed under the MIT license you can use it in every project even commercially.
-
-&amp;#x200B;
-
-# Easy to include
-
-It's one of these libraries that uses **ONE** .hpp and **ONE** .cpp file.
-
-So two files in total.
-
-No linking libraries because, duh, it is supposed to be beginner friendly. Linking (the right) libraries on Windows reeks. Especially for beginners.
-
-&amp;#x200B;
-
-# Quick example on how to read this json into a vector:
-
-    // json
-    [1,2,3,4,5,6,7,8,9,0]
-
-&amp;#x200B;
-
-    // C++
-    Json json;
-    json.Parse(myJsonString);
-    
-    std::vector&lt;int&gt; vec;
-    for (int i = 0; i &lt; json.AsArray.Size(); i++)
-       vec.push_back(json.AsArray[i]);
-    
-    // That's it
-
-All this simple syntax and yet it still supports UTF-16 ;)
-
-&amp;#x200B;
-
-This started more or less as a fun sideproject but it is in a quite useable state now so i thought i'd publish it. Why not. :)
-
-\*apparently json officially supports if-conditions and stuff. This sort of logic is not supported. Only data storage.

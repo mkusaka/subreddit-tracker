@@ -56,11 +56,55 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][C++ boos for beginners?](https://www.reddit.com/r/cpp/comments/jstwp9/c_boos_for_beginners/)
-- url: https://www.reddit.com/r/cpp/comments/jstwp9/c_boos_for_beginners/
+## [2][Deprecating volatile - JF Bastien - CppCon 2019](https://www.reddit.com/r/cpp/comments/jtdk74/deprecating_volatile_jf_bastien_cppcon_2019/)
+- url: https://www.youtube.com/watch?v=KJW_DLaVXIY
 ---
-I'm a beginner in c++. I'm a high-schooler so I don't study computer science all day long, but I love coding and studying programming but I can't find a good c++ book which comprehends the basics (which I partially know) and some intermediary elements. On which books did you study on while being beginners?
-## [3][New boost additions for 1.75 looking great](https://www.reddit.com/r/cpp/comments/jsarkz/new_boost_additions_for_175_looking_great/)
+
+## [3][Compound assignment to volatile must be un-deprecated](https://www.reddit.com/r/cpp/comments/jswz3z/compound_assignment_to_volatile_must_be/)
+- url: https://www.reddit.com/r/cpp/comments/jswz3z/compound_assignment_to_volatile_must_be/
+---
+To my horror I discovered that C++20 has deprecated compound assignments to a volatile. For those who are at a loss what that might mean: a compound assignment is += and its family, and a volatile is generally used to prevent the compiler from optimizing away reads from and/or writes to an object.
+
+In close-to-the-metal programming volatile is the main mechanism to access memory-mapped peripheral registers. The manufacturer of the chip provides a C header file that contains things like
+
+    #define port_a (*((volatile uint32_t *)409990))
+    #define port_b (*((volatile uint32_t *)409994))
+
+This creates the ‘register’ port\_a: something that behaves very much like a global variable. It can be read from, written to, and it can be used in a compound assignment. A very common use-case is to set or clear one bit in such a register, using a compound or-assignment or and-assignment:
+
+    port_a |= (0x01 &lt;&lt; 3 ); // set bit 3
+    port_b &amp;= ~(0x01 &lt;&lt; 4 ); // clear bit 4
+
+In these cases the compound assignment makes the code a bit shorter, more readable, and less error-prone than the alterative with separate bit operator and assignment.  When instead of port\_a a more complex expression is used, like uart\[ 2 \].flags\[ 3 \].tx, the advantage of the compound expression is much larger.
+
+As said, manufacturers of chips provide C header files for their chips. C, because as far as they are concerned, their chips should be programmed in C (and with \*their\* C tool only). These header files provide the register definitions, and operations on these registers, often implemented as macros. For me as C++ user it is fortunate that I can use these C headers files in C++, otherwise I would have to create them myself, which I don’t look forward to.
+
+So far so good for me, until C++20 deprecated compound assignments to volatile. I can still use the register definitions, but my code gets a bit uglier. If need be, I can live with that. It is my code, so I can change it. But when I want to use operations that are provided as macros, or when I copy some complex manipulation of registers that is provided as an example (in C, of course), I am screwed.
+
+Strictly speaking I am not screwed immediately, after all deprecated features only produce a warning, but I want my code to be warning-free, and todays deprecation is tomorrows removal from the language.
+
+I can sympathise with the argument that some uses of volatile were ill-defined, but that should not result in removal from the language of a tool that is essential for small-system close-to-the-metal programming. The get a feeling for this: using a heap is generally not acceptable. Would you consider this a valid argument to deprecate the heap from C++23?
+
+As it is, C++ is not broadly accepted in this field. Unjustly, in my opinion, so I try to make my small efforts to change this. Don’t make my effort harder and alienate this field even more by deprecating established practice.
+
+So please, un-deprecate compound assignments to volatile.
+## [4][CppCast: Video Games, Robotics and Audio](https://www.reddit.com/r/cpp/comments/jtahbn/cppcast_video_games_robotics_and_audio/)
+- url: https://cppcast.com/joel-lamotte/
+---
+
+## [5][std::shared_mutex was broken in glibc&lt;2.30 distros like Ubuntu for two years](https://www.reddit.com/r/cpp/comments/jsynzn/stdshared_mutex_was_broken_in_glibc230_distros/)
+- url: https://github.com/bitcoin/bitcoin/issues/16684#issuecomment-726214696
+---
+
+## [6][Overload Journal 159 · October 2020](https://www.reddit.com/r/cpp/comments/jt84v4/overload_journal_159_october_2020/)
+- url: https://accu.org/journals/overload/overload159
+---
+
+## [7][Destructing outside the lock when removing items from C++ standard containers](https://www.reddit.com/r/cpp/comments/jswpfp/destructing_outside_the_lock_when_removing_items/)
+- url: https://devblogs.microsoft.com/oldnewthing/20201112-00/?p=104444
+---
+
+## [8][New boost additions for 1.75 looking great](https://www.reddit.com/r/cpp/comments/jsarkz/new_boost_additions_for_175_looking_great/)
 - url: https://www.reddit.com/r/cpp/comments/jsarkz/new_boost_additions_for_175_looking_great/
 ---
 I just took a look at Boost and it has these 3 new libraries:
@@ -72,92 +116,15 @@ I just took a look at Boost and it has these 3 new libraries:
 https://www.boost.org/users/history/in_progress.html
 
 What do you think?
-## [4][Using C++ as a scripting language, part 3](https://www.reddit.com/r/cpp/comments/jscnt7/using_c_as_a_scripting_language_part_3/)
+## [9][Using C++ as a scripting language, part 3](https://www.reddit.com/r/cpp/comments/jscnt7/using_c_as_a_scripting_language_part_3/)
 - url: https://fwsgonzo.medium.com/using-c-as-a-scripting-language-part-3-b8f92206ef94
 ---
 
-## [5][Good Sources for Learning TUI](https://www.reddit.com/r/cpp/comments/jsr3te/good_sources_for_learning_tui/)
-- url: https://www.reddit.com/r/cpp/comments/jsr3te/good_sources_for_learning_tui/
----
-Hello everyone, I'm trying to learn terminal UI and have found some interesting libraries like ncurses, ImTui, etc. But i want to know whether there are some good material to learn about these TUIs, like books, articles, etc.
-
-Any help would be appreciated.
-
-If you have some other framework in mind for creating TUIs then mention it
-## [6][The hidden callout: The destructor](https://www.reddit.com/r/cpp/comments/jsbxff/the_hidden_callout_the_destructor/)
+## [10][The hidden callout: The destructor](https://www.reddit.com/r/cpp/comments/jsbxff/the_hidden_callout_the_destructor/)
 - url: https://devblogs.microsoft.com/oldnewthing/20201111-00/?p=104439
 ---
 
-## [7][print all power sets in Lexico Graphic Order](https://www.reddit.com/r/cpp/comments/jsu38i/print_all_power_sets_in_lexico_graphic_order/)
-- url: https://www.reddit.com/r/cpp/comments/jsu38i/print_all_power_sets_in_lexico_graphic_order/
----
-hi im trying to print all subset of an array using this code:
-
-&amp;#x200B;
-
-    void CoutSubsets(int *arr, int i, int n,int *subset, int j){
-        if(i==n){
-            int idx = 0;
-            cout&lt;&lt;"{";
-            while(idx &lt;j){
-                if (i == 0){
-                    cout &lt;&lt;subset[idx];
-                    ++idx;
-                }
-                else {
-                    cout &lt;&lt; ",";
-                    cout &lt;&lt; subset[idx];
-                    ++idx;
-                }
-            }
-            cout&lt;&lt;"},";
-            return;
-        }
-        if (i &gt;= n){return;}
-        CoutSubsets(arr,i+1,n,subset,j);
-        subset[j] = arr[i];
-        CoutSubsets(arr,i+1,n,subset,j+1);
-    
-    }
-
-
-for example the main is:
-
-        int arr[] = {1,2,3}; // input array
-        int subset[8];	   // temporary array to store subset
-        int setsize = 3;
-        CoutSubsets(arr,0,setsize,subset,0);
-
-the output now is:
-
-    {},{3},{2},{2,3},{1},{1,3},{1,2},{1,2,3}
-
-i want it to be printed in lexicographic Order meaning:
-
-    {},{1},{3},{2},{1,2},{1,3},{2,3},{1,2,3}
-
-any solution or idea how can i do that?
-## [8][Miniselect: Practical and Generic Selection Algorithms](https://www.reddit.com/r/cpp/comments/jsba2m/miniselect_practical_and_generic_selection/)
+## [11][Miniselect: Practical and Generic Selection Algorithms](https://www.reddit.com/r/cpp/comments/jsba2m/miniselect_practical_and_generic_selection/)
 - url: https://danlark.org/2020/11/11/miniselect-practical-and-generic-selection-algorithms/
----
-
-## [9][Gabriel Dos Reis Keynote will be a surprise](https://www.reddit.com/r/cpp/comments/js4f78/gabriel_dos_reis_keynote_will_be_a_surprise/)
-- url: https://meetingcpp.com/meetingcpp/news/items/Gabriel-Dos-Reis-Keynote-will-be-a-surprise.html
----
-
-## [10][Should we make end() dereferenceable for std::string_view?](https://www.reddit.com/r/cpp/comments/jss61s/should_we_make_end_dereferenceable_for_stdstring/)
-- url: https://www.reddit.com/r/cpp/comments/jss61s/should_we_make_end_dereferenceable_for_stdstring/
----
-I recently encountered the same problem as described here while writing a C++ wrapper for a C library: [https://www.reddit.com/r/cpp/comments/6idos6/c\_stdstring\_view\_not\_so\_useful\_when\_calling\_c/](https://www.reddit.com/r/cpp/comments/6idos6/c_stdstring_view_not_so_useful_when_calling_c/)
-
-the problem could be easily solved if we enforce that `end()` must be dereferenceable for `std::string_view`, any unnecessary copy of the underlying char array could be avoided by simply checking `if (*some_str_view.end() == 0)`, and I think this makes a lot of sense. a string\_view is often created from either a string literal or an std::string and in both cases, the underlying char array is guaranteed to be null terminated (`std::string::operator std::string_view()` constructs the string view using `data()`, so it is still null terminated).
-
-`std::span&lt;char&gt;` should be used if the user wishes to manipulate a more generalized char container that doesn't guarantee null termination.
-
-&amp;#x200B;
-
-**EDIT: a lot of people here seem to misinterpret my post as having a null terminated std::string\_view, no, I'm not saying that! please see** u/Supadoplex's comment down below which explains things a bit clearer.\*\*
-## [11][Visual Studio 2019 v16.8 and v16.9 Preview 1 Release Today](https://www.reddit.com/r/cpp/comments/jrqv89/visual_studio_2019_v168_and_v169_preview_1/)
-- url: https://devblogs.microsoft.com/visualstudio/visual-studio-2019-v16-8/
 ---
 

@@ -1,18 +1,12 @@
 # androiddev
-## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/jqwydo/weekly_whos_hiring_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/jqwydo/weekly_whos_hiring_thread/
+## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/jtg9hc/weekly_anything_goes_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/jtg9hc/weekly_anything_goes_thread/
 ---
-Looking for Android developers? Heard about a cool job posting? Let people know!
+Here's your chance to talk about whatever!
 
-Here is a suggested posting template:
+Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
 
-&gt; Company: &lt;Best Company Ever&gt;  
-&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
-&gt; Location: &lt;City, State, Country&gt;  
-&gt; Allows remote: &lt;Yes/No&gt;  
-&gt; Visa: &lt;Yes/No&gt;  
-
-Feel free to include any other information about the job.
+Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
 ## [2][Weekly Questions Thread - November 09, 2020](https://www.reddit.com/r/androiddev/comments/jqvlp4/weekly_questions_thread_november_09_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/jqvlp4/weekly_questions_thread_november_09_2020/
 ---
@@ -31,94 +25,111 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][My first-ish serious app](https://www.reddit.com/r/androiddev/comments/jsph07/my_firstish_serious_app/)
-- url: https://www.reddit.com/r/androiddev/comments/jsph07/my_firstish_serious_app/
+## [3][Has anyone updated to MacOS Big Sur and is Android Studio working fine with it?](https://www.reddit.com/r/androiddev/comments/jtbl4m/has_anyone_updated_to_macos_big_sur_and_is/)
+- url: https://www.reddit.com/r/androiddev/comments/jtbl4m/has_anyone_updated_to_macos_big_sur_and_is/
 ---
-Hi everyone, I just made an app about anime-manga track down. It is kinda my first real app. I would love to hear your feedback. 
-
-Thanks a lot!
-
-[AlbedoApp](https://github.com/etasdemir/AlbedoApp)
-## [4][Is genymotion mining cryptocurrency on my computer or just a bug?](https://www.reddit.com/r/androiddev/comments/jsqov2/is_genymotion_mining_cryptocurrency_on_my/)
-- url: https://www.reddit.com/r/androiddev/comments/jsqov2/is_genymotion_mining_cryptocurrency_on_my/
----
-I tried to contact them here: [https://www.genymotion.com/contact/](https://www.genymotion.com/contact/)
-
-but when I submit there is an error message: We can not send your message right now. Please try again later.
-
-Anybody knows what's going on here?
-
-https://preview.redd.it/zgsmt36gkry51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=747b1452bd720566ea226f0c1bc26e41d1805fdc
-
-https://preview.redd.it/owgsguk9kry51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=33bbad5ebf120556d2c3c4960e04852e12659748
-
-https://preview.redd.it/hguabrk9kry51.png?width=1920&amp;format=png&amp;auto=webp&amp;s=29d179120a1e8d22f204f67b1dde4f55d371978c
-## [5][Speeding Up Builds with Dagger Reflect](https://www.reddit.com/r/androiddev/comments/jsufu8/speeding_up_builds_with_dagger_reflect/)
-- url: https://developers.soundcloud.com/blog/dagger-reflect
+Since a lot has changed in Big Sur and Macbook being my development machine, I just want to make sure before upgrading that Android Studio works fine or not otherwise will have to take leave from work.
+## [4][More WindowInsetsController APIs backported!](https://www.reddit.com/r/androiddev/comments/jt77s6/more_windowinsetscontroller_apis_backported/)
+- url: https://i.redd.it/8uw29rn1nwy51.png
 ---
 
-## [6][Proposals for selling apps](https://www.reddit.com/r/androiddev/comments/jssjqt/proposals_for_selling_apps/)
-- url: https://www.reddit.com/r/androiddev/comments/jssjqt/proposals_for_selling_apps/
----
-Hello, I have some apps on the play store. I often receive emails from people saying they are interested in buying the app. Is it scam ? what about [flippa.com](https://flippa.com) ? How can they make money by buying apps ? Here is the mail I got today :  
-
-```
-Dear Google Commerce Ltd
-
-We are interested in buying your application MYAPPNAME
-https://play.google.com/store/apps/details?id=xxxxx
-
-Let us introduce ourselves - we are android developer company, who are experts in app development, monetizing via ads, subscriptions and in-apps. Now we are focused on expanding the list of our applications by purchasing existing ones.
-
-We want to offer you to sell your application MYAPPNAME
-
-We can contact with you and make a buying deal. Money transfer and app transfer will be done via https://www.flippa.com/ to make sure everything goes honestly. Our fippa's account has near 200 000$ of finished transactions (purchases) - we can confirm it to prove that we are not scammers. 
-
-So if you are interested, please, write to email of our manager info@tgp-group.top - he will ask you some statistical data regarding your app - it will take just a few minutes of your time.
-Than we will offer our price. You can offer any other price as well, and we can negotiate.
-```
-
-Should I report them ?
-## [7][Android 11: accessing the microphone from a foreground Service started from the background](https://www.reddit.com/r/androiddev/comments/jss2fb/android_11_accessing_the_microphone_from_a/)
-- url: https://www.reddit.com/r/androiddev/comments/jss2fb/android_11_accessing_the_microphone_from_a/
----
-The official docs state this:
-
-# While-in-use restrictions
-
-On Android 11 (API level 30) and higher, if your app starts a foreground service while [running in the background](https://developer.android.com/guide/background#definition), the service has the following access restrictions:
-
-* Unless the user has granted the [ACCESS\_BACKGROUND\_LOCATION](https://developer.android.com/reference/android/Manifest.permission#ACCESS_BACKGROUND_LOCATION) permission to your app, the service cannot access location.
-* **The service cannot access the microphone or camera.**
-
-&amp;#x200B;
-
-Is there a way to overcome this restriction (accessing the microphone from a foreground Service started from the background)? Of course with the necessary user permissions?
-
-I think this is a very penalizing restriction that limits developers' options.
-
-I don't like Google's recent Android development at all! They are copying the worst from iOS and limiting all possibilities!
-## [8][Data classes — the classy way to hold data](https://www.reddit.com/r/androiddev/comments/jstg2p/data_classes_the_classy_way_to_hold_data/)
-- url: https://medium.com/androiddevelopers/data-classes-the-classy-way-to-hold-data-ab3b11ea4939
+## [5][AOSP is migrating from its current build systems to Bazel](https://www.reddit.com/r/androiddev/comments/jsztsc/aosp_is_migrating_from_its_current_build_systems/)
+- url: https://blog.bazel.build/2020/11/12/aosp_migrating_to_bazel.html
 ---
 
-## [9][How to run Android Studio on ANY device with JetBrains Projector](https://www.reddit.com/r/androiddev/comments/jscz0m/how_to_run_android_studio_on_any_device_with/)
-- url: https://joenrv.medium.com/how-to-run-android-studio-on-any-device-with-jetbrains-projector-3d9d23a8c179
+## [6][AdMob users. What do you think about keeping test devices in your production builds? Would you risk getting your devices spoofed and getting banned from AdMob? Or would you rather risk getting banned from invalid traffic due to forgetfulness?](https://www.reddit.com/r/androiddev/comments/jtfvsl/admob_users_what_do_you_think_about_keeping_test/)
+- url: https://www.reddit.com/r/androiddev/comments/jtfvsl/admob_users_what_do_you_think_about_keeping_test/
+---
+I can't figure out which is riskier. The choice is binary and either choices could result in getting banned. My test devices are usually removed from my official release APKs. I recently decided to resume work on one of my AdMob apps, so I played around with the release from the Play Store and forgot that my devices were no longer interpreted as test devices. I panicked and rushed to run the the dev build on all my devices.
+
+I thought about just keeping the test device IDs in my future releases, but I googled to make sure if I should do it. And people said someone can then decompile the APK and extract the device IDs, then spoof my devices. I believe malicious actors can then generate invalid traffic with my spoofed device IDs.
+
+On the other hand people have said they were suspended or demonetized because they didn't use test IDs on their official releases.
+
+It seems like both choices are bad. And hearing about how Google treats Android devs here, I feel hopeless! What do you guys usually do with your test device IDs? Keep or remove?
+## [7][Modern approach to list and details screens](https://www.reddit.com/r/androiddev/comments/jtcht4/modern_approach_to_list_and_details_screens/)
+- url: https://www.reddit.com/r/androiddev/comments/jtcht4/modern_approach_to_list_and_details_screens/
+---
+I created a sample project here
+https://github.com/lawloretienne/CryptoCoins
+
+It's a really basic app but i just wanted to showcase an approach to building a list screen and details screen.
+
+Let me know what you think.
+## [8][Kotlin Linters: which should I choose?](https://www.reddit.com/r/androiddev/comments/jtervp/kotlin_linters_which_should_i_choose/)
+- url: https://akuleshov7.com/2020-11-10-kotlin-static-analyzers.html
 ---
 
-## [10][Android Studio 4.1.1 fixed my editor lagging issue](https://www.reddit.com/r/androiddev/comments/jsbid9/android_studio_411_fixed_my_editor_lagging_issue/)
-- url: https://www.reddit.com/r/androiddev/comments/jsbid9/android_studio_411_fixed_my_editor_lagging_issue/
+## [9][Monetisation strategy: nsfw game on patreon, sfw on Google Play](https://www.reddit.com/r/androiddev/comments/jtcswd/monetisation_strategy_nsfw_game_on_patreon_sfw_on/)
+- url: https://www.reddit.com/r/androiddev/comments/jtcswd/monetisation_strategy_nsfw_game_on_patreon_sfw_on/
 ---
-I just updated Android Studio to version 4.1.1 and my editor lagging issue is gone.
+Will Google play allow such thing?
 
-My issue was that when I typed in a new "if..." clause in my Java code, then the editor has been lagging for up to 30 seconds. This is gone now.
-
-I am so thankful, because now I can work like normal again.
-## [11][Trello Android's Git Branching Strategy](https://www.reddit.com/r/androiddev/comments/jsfr09/trello_androids_git_branching_strategy/)
-- url: https://blog.danlew.net/2020/11/11/trello-androids-git-branching-strategy/
+On Google there will be a sfw version of the game with link to patreon where user can subscribe to get the nsfw version.
+## [10][Hi can anyone help me how to implement this project I have no idea on tasks...etc I know how to design front end](https://www.reddit.com/r/androiddev/comments/jtfw5f/hi_can_anyone_help_me_how_to_implement_this/)
+- url: https://i.redd.it/by1mzhfh00z51.png
 ---
 
-## [12][97 Things Every [Java] Programmer Should Know](https://www.reddit.com/r/androiddev/comments/jsun59/97_things_every_java_programmer_should_know/)
-- url: https://youtu.be/T47k2tHXmOA?list=PLEx5khR4g7PJbSLmADahf0LOpTLifiCra
+## [11][whats the best approach to making an iso of my android tv ?](https://www.reddit.com/r/androiddev/comments/jtfq4m/whats_the_best_approach_to_making_an_iso_of_my/)
+- url: https://www.reddit.com/r/androidhacking/comments/jtfohe/dumping_my_androids_tv_install/?utm_source=share&amp;utm_medium=ios_app&amp;utm_name=iossmf
 ---
 
+## [12][Mockito unit test strange behaviour for custom class](https://www.reddit.com/r/androiddev/comments/jtffkf/mockito_unit_test_strange_behaviour_for_custom/)
+- url: https://www.reddit.com/r/androiddev/comments/jtffkf/mockito_unit_test_strange_behaviour_for_custom/
+---
+ I have a custom class:
+
+    data class ContainerModel(   
+      ...   
+      val data: List&lt;MainModel&gt;? 
+    ) {    
+      fun get(id: String) = data?.firstOrNull { it.id == id } }   
+    
+    
+    data class MainModel(   
+      val id: String?,   
+      val documentGroups: List&lt;DocumentGroup&gt;?,   
+      .... 
+    ) {   
+      fun hasAnyDocument() = documentGroups != null 
+    } 
+
+In my unit tests, I setup up like this:
+
+    import org.mockito.Mockito.`when` as mwhen     
+    
+    private lateinit var containerModel: ContainerModel    
+    
+    @Mock lateinit var m1: MainModel    
+    
+    @Mock lateinit var documentGroup: DocumentGroup    
+    
+    @Before fun setup() {     
+      m1.apply {       
+        mwhen(id).thenReturn("m1")  
+        mwhen(documentGroups).thenReturn(listOf(documentGroup))     
+      }      
+    
+      containerModel = Mockito.spy(ContainerModel(data = arrayListOf(m1)))   
+    } 
+
+This test is successful
+
+    @Test 
+    fun get() {     
+      Truth.assertThat(containerModel.get("m0")).isNull() // successful  
+      Truth.assertThat(containerModel.get("m1")).isEqualTo(m1) // successful   
+    } 
+
+But this is strange
+
+    @Test fun checkDocuments() {    
+      Truth.assertThat(containerModel.get("m1")!!.documentGroups).isNotNull() // successful       
+      Truth.assertThat(containerModel.get("m1")!!.documentGroups?.size).isEqualTo(1) // successful     
+      Truth.assertThat(containerModel.get("m1")!!.hasAnyDocument()).isTrue() // FAILS  
+    } 
+
+It's super strange to me as if I check on documentGroups  
+ it's clearly not null and has one item, but calling a function that uses it fails? what could be the issue?
+
+Thanks!

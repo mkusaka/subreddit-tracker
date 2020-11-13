@@ -70,87 +70,163 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][I just made my first large react project using the MERN stack](https://www.reddit.com/r/reactjs/comments/jslheq/i_just_made_my_first_large_react_project_using/)
-- url: https://www.reddit.com/r/reactjs/comments/jslheq/i_just_made_my_first_large_react_project_using/
----
-[http://quadstr.com/](http://quadstr.com/)
-
-Here is the url. It's an anonymous chat platform. I've created a chat for this sub on it if any of you want to test it out. If you do test it out, feel more than free to give me feedback. Thanks!
-
-The chat code is: wXviqcm
-
-the password is: reactreddit
-## [4][Having a hard time learning hooks](https://www.reddit.com/r/reactjs/comments/jsmve4/having_a_hard_time_learning_hooks/)
-- url: https://www.reddit.com/r/reactjs/comments/jsmve4/having_a_hard_time_learning_hooks/
----
-Its is just me? I cant seem to get on track on using hooks rather than class based components.
-
-When Im using classes I can understand it more and Its much easier for me atleast.
-Everyones saying hooks are the future and its much more modern I don’t want to get left out thats why I’m learning it, but I’m having such a hard time.
-## [5][React context without context, using XState](https://www.reddit.com/r/reactjs/comments/js914u/react_context_without_context_using_xstate/)
-- url: https://swizec.com/blog/react-context-without-context-using-xstate-codewithswiz-14-15
+## [3][Hi Everyone, I need a recommendation for open-source flow builder boilerplates or toolkits that helps you build flows in React/Vanilla JS as fast as possible, like the one shown in the link. Thanks so much!](https://www.reddit.com/r/reactjs/comments/jtd4l9/hi_everyone_i_need_a_recommendation_for/)
+- url: https://kapost-files-prod.s3.amazonaws.com/kapost/52f934574e14d3eb0c000856/studio/content/5b5caacdd3c8610027000015/html_bodies/1536711714-5173cfd8-dcc0-4313-8899-41eb366b046f/DF18%20Money%20Slide.png
 ---
 
-## [6][SpotCasts (podcasts player)](https://www.reddit.com/r/reactjs/comments/jsuah3/spotcasts_podcasts_player/)
-- url: https://v.redd.it/wazbr6a16ty51
+## [4][The Best Icon Library I have Used So Far For React, Vue &amp; Plain HTML/CSS](https://www.reddit.com/r/reactjs/comments/jsw9d9/the_best_icon_library_i_have_used_so_far_for/)
+- url: https://medium.com/@fletcherrippon/the-best-icon-library-i-have-used-so-far-for-react-vue-plain-html-css-450ac0ae508c
 ---
 
-## [7][Creating a Custom React Local Storage Hook](https://www.reddit.com/r/reactjs/comments/jsbij0/creating_a_custom_react_local_storage_hook/)
-- url: https://youtu.be/74ThcF5JqzU
+## [5][(Noob Question) I have a functional component which I import, how do i then use a function that I have written within the imported component?](https://www.reddit.com/r/reactjs/comments/jtgiex/noob_question_i_have_a_functional_component_which/)
+- url: https://www.reddit.com/r/reactjs/comments/jtgiex/noob_question_i_have_a_functional_component_which/
 ---
+Hi, I have 3 files:
 
-## [8][error with materialtable](https://www.reddit.com/r/reactjs/comments/jstvlf/error_with_materialtable/)
-- url: https://www.reddit.com/r/reactjs/comments/jstvlf/error_with_materialtable/
----
- Hi, I have a table with MateriaTable in react, and a route system in a route is the table, everything works fine until I navigate between the routes several times and the route from where I have the table freezes and gives me an error.
+    import React from 'react';
+    import './App.css';
+    import MovieList from './MovieList';
+    
+    function App() {
+      return (
+        &lt;div className="App"&gt;
+          &lt;MovieList /&gt;
+        &lt;/div&gt;
+      );
+    }
+    
+    export default App;
+    
+
+\--
+
+    import React from 'react';
+    
+    const Movie = ({name, price}) =&gt; {
+        return (
+            &lt;div&gt;
+                &lt;h3&gt;{name}&lt;/h3&gt;
+                &lt;li&gt;{price}&lt;/li&gt;
+            &lt;/div&gt;
+        );
+    };
+    
+    export default Movie;
+
+\--
+
+    import React, { useState } from 'react';
+    import Movie from './Movie';
+    
+    const MovieList = () =&gt; {
+    
+        const [movies, setMovies] = useState([
+            {
+                name: 'Harry Potter',
+                price: '£10',
+                id: 23125
+            },
+            {
+                name: 'Little Man',
+                price: '£10.99',
+                id: 16252
+            },
+            {
+                name: 'Batman: Arkham Knight',
+                price: '£5',
+                id: 15632
+            }
+        ]);
+    
+        function addMovie() {
+            setMovies(movies.concat({
+                name: 'New Film', price: 'Free', id: 99999
+            }));
+        };
+    
+    
+        return (
+            &lt;div&gt;
+                {movies.map(movie =&gt; (
+                    &lt;Movie name={movie.name}
+                        price={movie.price}
+                        key={movie.id} /&gt;
+                ))}
+            &lt;/div&gt;
+        );
+    };
+    
+    export default MovieList;
+
+How can I call the addMovie() function from inside App file please?
 
 &amp;#x200B;
 
-   
-any solution? And what other alternatives similar to MaterialTable do you recommend? 
+1. I tried adding form with button below the &lt;div&gt; in MovieList, this worked but would re-render the component so it would work for 0.2seconds before it re-rendered
+2. I tried using dot notation from within App() - nothing.
+3. I tried doing 'import MovieList, {addMovie} from './MovieList' - but it still wouldn't recognise it.
 
- [https://res.cloudinary.com/danielgeek/image/upload/v1605184579/Screenshot\_17\_tcifr3.png](https://res.cloudinary.com/danielgeek/image/upload/v1605184579/Screenshot_17_tcifr3.png) 
+Any help please?
+## [6][Looking for a mentor](https://www.reddit.com/r/reactjs/comments/jteoqx/looking_for_a_mentor/)
+- url: https://www.reddit.com/r/reactjs/comments/jteoqx/looking_for_a_mentor/
+---
+TL;DR - I'm an entry-level programmer looking for a React mentor. Have some experience with Angular and now looking for someone to help me understand how React works.
 
-[https://res.cloudinary.com/danielgeek/image/upload/v1605184570/Screenshot\_16\_ywm7kv.png](https://res.cloudinary.com/danielgeek/image/upload/v1605184570/Screenshot_16_ywm7kv.png)
-## [9][How to Become an Expert in Software Estimates: Practical Tips to Get a Realistic Project Estimation](https://www.reddit.com/r/reactjs/comments/jstj81/how_to_become_an_expert_in_software_estimates/)
-- url: https://celadonsoft.com/best-practices/how-to-become-an-expert-in-software-estimates
+F/26 from Europe here - as the title says, I am looking for someone to help me understanding the basics of React. It would be great if the person knows Angular too because I am already familiar with this framework, but it's not a must.
+
+I've been stuck in the tutorials loop for some time, currently watching an Udemy course from Maximilian Sw*something* and I would like to start building real things now.
+
+What I am looking for is someone to create a board with tickets maybe and then check my PR-s/projects from time to time. The reason why I am looking for this specific thing is that I want to learn the whole process of building an app in React, instead of doing the same things from tutorials over and over again.
+I want to understand what I am writing.
+I don't need babysitting, I love challenges and searching for solutions, I also respect everyone's time, so I won't be bothering potential mentor every single day.
+
+I know that time is money, I am apologizing in advance if anyone gets offended by this - I honestly feel stupid for asking here for someone to help me without any wage, but I am broke AF and desperate for a job. This is a career change for me, not because of money and fancy title, but because I enjoy programming and the whole process of creating something from nothing makes me happy. Moving tickets from TO-DO to DONE is also fun :)
+
+If there is anyone interested, please contact me in PM or chat.
+Thank you.
+## [7][Best way to host super-low-traffic nextjs site with a persistent backend storage?](https://www.reddit.com/r/reactjs/comments/jte4xi/best_way_to_host_superlowtraffic_nextjs_site_with/)
+- url: https://www.reddit.com/r/reactjs/comments/jte4xi/best_way_to_host_superlowtraffic_nextjs_site_with/
+---
+Hey! I'm a teacher and I'm looking for the best way to share my materials with my students. I've got a static nextjs site in place, but I'd like to add some personalisation into it.
+
+## Specifications and requirements
+
+- the site is using react+nextjs
+- under 50 unique monthly users, all of them in the same region (EU)
+- most of them visit the site at most thrice a day
+- most of the content is static
+- I'd like to add the ability to log in and manually mark some articles as read (which should be persisted on the backend somehow), as well se view your profile and all your read articles
+- I don't care much for the backend language, but Haskell, Node.js or Python would be preferable
+- I want to pay as little as possible
+
+## My ideas
+
+I think for a site with such a low traffic, the nextjs' incremental rendering + some serverless functions could be all I need; if only I knew how to cheaply connect the serverless functions to a cheap SQLite instance or some similar persistent storage. 
+
+But maybe I'm thinking wrong; I just discovered this whole "serveless" bussiness yesterday. That's why I'm asking for help.
+## [8][How I learned reactive programming by re-building RxJs from scratch](https://www.reddit.com/r/reactjs/comments/jt407o/how_i_learned_reactive_programming_by_rebuilding/)
+- url: https://blog.bitsrc.io/how-i-learned-reactive-programming-by-re-building-rxjs-from-scratch-975d12e4dde4
 ---
 
-## [10][Calculate the TEM, TEA and CFT](https://www.reddit.com/r/reactjs/comments/jstalb/calculate_the_tem_tea_and_cft/)
-- url: https://www.reddit.com/r/reactjs/comments/jstalb/calculate_the_tem_tea_and_cft/
+## [9][Will react-native work with OpenJDK 11 as of november 2020?](https://www.reddit.com/r/reactjs/comments/jtb6xx/will_reactnative_work_with_openjdk_11_as_of/)
+- url: https://www.reddit.com/r/reactjs/comments/jtb6xx/will_reactnative_work_with_openjdk_11_as_of/
 ---
-Good morning, I am trying to calculate the TEM, TEA and CFT, for the visualization of quotas of an app ... any lib that you recommend to perform this calculation? Or how can i calculate the rate?
-## [11][Jest &amp; React testing library. Test API hit](https://www.reddit.com/r/reactjs/comments/jst66e/jest_react_testing_library_test_api_hit/)
-- url: https://www.reddit.com/r/reactjs/comments/jst66e/jest_react_testing_library_test_api_hit/
+This is my first post here on Reddit. I want to ask if 
+OpenJDK 11 would work with react-native or do I need to use 
+Version 8?
+## [10][Extreme Noob in React and programming in general](https://www.reddit.com/r/reactjs/comments/jswi1p/extreme_noob_in_react_and_programming_in_general/)
+- url: https://www.reddit.com/r/reactjs/comments/jswi1p/extreme_noob_in_react_and_programming_in_general/
 ---
-Hello there, I'm new to react and react testing and I want to do the following test (maybe its a silly question):
+I made my first app, and I am super proud of it. A search image app that spits out images consuming Unsplash API.
 
-"When a button on the page is clicked, check whether the API is hit or not"
+link: [https://gauravm-bit.github.io/image-search/](https://gauravm-bit.github.io/image-search/)
 
-I can do the button hit after render() using [fireEvent.click](https://fireEvent.click)(), but I don't know how can I ensure whether the API is hit after the button is clicked. (I only need to check whether the API is hit or not)
-
-Is there any traces or records kept of the api hit from where I can pick the latest hit api and compare with what is expected to hit? Or what else should I do?
-
-I searched on google but no help. Please guide me on how can I write test for the above mentioned case.
-
-Thanks
-## [12][Code review](https://www.reddit.com/r/reactjs/comments/jsmls2/code_review/)
-- url: https://www.reddit.com/r/reactjs/comments/jsmls2/code_review/
+Github : [https://github.com/gauravm-bit/image-search](https://github.com/gauravm-bit/image-search)
+## [11][The What, Why, and How of Using a Skeleton Loading Screen](https://www.reddit.com/r/reactjs/comments/jt05tc/the_what_why_and_how_of_using_a_skeleton_loading/)
+- url: https://medium.com/better-programming/the-what-why-and-how-of-using-a-skeleton-loading-screen-e68809d7f702
 ---
-     const [pizza, setPizza] = useState({ base: "", toppings: [] });
-    
-      const addBase = (base) =&gt; {
-        setPizza({ ...pizza, base })
-      }
-      
-      const addTopping = (topping) =&gt; {
-        let newToppings;
-        if(!pizza.toppings.includes(topping)){
-          newToppings = [...pizza.toppings, topping];
-        } else {
-          newToppings = pizza.toppings.filter(item =&gt; item !== topping);
-        }
-        setPizza({ ...pizza, toppings: newToppings });
-      }
 
-Can anyone explain this code to me. Thanks.
+## [12][What open-source library/tool/component do you wish existed for React?](https://www.reddit.com/r/reactjs/comments/jtfept/what_opensource_librarytoolcomponent_do_you_wish/)
+- url: https://www.reddit.com/r/reactjs/comments/jtfept/what_opensource_librarytoolcomponent_do_you_wish/
+---
+Have you had a very special need that a library could handle but it did not exist? or just simply something that would be nice that we could have it on React? Or something that is already available for Vue or Angular, and you wish it was also available for React?

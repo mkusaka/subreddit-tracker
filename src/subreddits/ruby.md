@@ -1,21 +1,54 @@
 # ruby
-## [1][How To Integrate Video Conferencing API to Your Application](https://www.reddit.com/r/ruby/comments/jsstuu/how_to_integrate_video_conferencing_api_to_your/)
-- url: http://integratevideoconferencing.space/
+## [1][Why the Release of Ruby 3 Will Be Monumental](https://www.reddit.com/r/ruby/comments/jtfzdp/why_the_release_of_ruby_3_will_be_monumental/)
+- url: https://www.ruby3.dev/the-art-of-code/2020/11/12/ruby-3-monumental/
 ---
 
-## [2][Most Popular Backend Frameworks (2012/2020)](https://www.reddit.com/r/ruby/comments/jsru4g/most_popular_backend_frameworks_20122020/)
-- url: https://youtu.be/94LokRYL5n0
+## [2][DragonRuby Game Toolkit Sound Synthesis in Pure Ruby ^_^](https://www.reddit.com/r/ruby/comments/jtbtkb/dragonruby_game_toolkit_sound_synthesis_in_pure/)
+- url: https://www.youtube.com/watch?v=zEzovM5jT-k&amp;feature=youtu.be&amp;ab_channel=AmirRajan
 ---
 
-## [3][Creating a Weekly iOS Release Train](https://www.reddit.com/r/ruby/comments/jsukp6/creating_a_weekly_ios_release_train/)
+## [3][Deep Dive: Moving ruby projects from Travis to Github Actions for CI](https://www.reddit.com/r/ruby/comments/jt2uub/deep_dive_moving_ruby_projects_from_travis_to/)
+- url: https://bibwild.wordpress.com/2020/11/12/deep-dive-moving-ruby-projects-from-travis-to-github-actions-for-ci/
+---
+
+## [4][footballdata-12xpert gem - download, convert &amp; import 22+ top football leagues from 25 seasons back to 1993/94 from Joseph Buchdahl (12Xpert)'s Football Data website](https://www.reddit.com/r/ruby/comments/jtee59/footballdata12xpert_gem_download_convert_import/)
+- url: https://github.com/sportdb/sport.db.sources/tree/master/footballdata-12xpert
+---
+
+## [5][Custom exception on mailers deliver_later - question](https://www.reddit.com/r/ruby/comments/jtebo4/custom_exception_on_mailers_deliver_later_question/)
+- url: https://www.reddit.com/r/ruby/comments/jtebo4/custom_exception_on_mailers_deliver_later_question/
+---
+Let's say we have a simple Mailer as:
+
+    class PostmanMailer &lt; ApplicationMailer   
+        rescue_from CustomError do |exception|
+        ... do something ...
+        end
+         def invitation(user)
+            mail(to: user.email,subject: user)
+        end 
+    end
+
+And invoke that mailer with the line:
+
+    PostmanMailer.invitation(user).deliver_later
+
+ActionMailer is using delivery jobs and enqueues email delivery as a job through Active Job, so I can't wrap this with being/rescue to insert custom exception.
+
+How would you handle this? Is there any way for not monkey patching?
+## [6][Ruby refinements have ONE good use case](https://www.reddit.com/r/ruby/comments/jsur5u/ruby_refinements_have_one_good_use_case/)
+- url: http://www.soulcutter.com/articles/ruby-refinements-have-one-good-use-case.html
+---
+
+## [7][lazaronixon/react-native-turbolinks](https://www.reddit.com/r/ruby/comments/jt0cd9/lazaronixonreactnativeturbolinks/)
+- url: https://github.com/lazaronixon/react-native-turbolinks
+---
+
+## [8][Creating a Weekly iOS Release Train](https://www.reddit.com/r/ruby/comments/jsukp6/creating_a_weekly_ios_release_train/)
 - url: https://medium.com/pipedrive-engineering/welcome-aboard-the-pipedrive-ios-release-train-40fd9123ceac?source=friends_link&amp;sk=9c1d9183fb49b1648ccefe44deb233e3
 ---
 
-## [4][I have to create a custom linter for an assignment using Ruby. After a lot of research, I have come across the gem called Parser. Since I am a beginner, I am afraid I don't completely understand it.](https://www.reddit.com/r/ruby/comments/jsr9v1/i_have_to_create_a_custom_linter_for_an/)
-- url: https://www.reddit.com/r/ruby/comments/jsr9v1/i_have_to_create_a_custom_linter_for_an/
----
-I have to build a very basic linter that checks for whitespaces, indentations, naming conventions and other styling issues. I want to do it the right way and use a parser as linters use parsers. I am excited to learn it but I just am not able to wrap my head around it. Can someone please explain to me how parser gem works and how can I use it to create linting methods?
-## [5][Ruby pdf-forms gem and upload images to file field.](https://www.reddit.com/r/ruby/comments/js93sw/ruby_pdfforms_gem_and_upload_images_to_file_field/)
+## [9][Ruby pdf-forms gem and upload images to file field.](https://www.reddit.com/r/ruby/comments/js93sw/ruby_pdfforms_gem_and_upload_images_to_file_field/)
 - url: https://www.reddit.com/r/ruby/comments/js93sw/ruby_pdfforms_gem_and_upload_images_to_file_field/
 ---
 Hi,
@@ -36,22 +69,7 @@ I have to write some ruby code to fill the pdf form. I found this gem [https://g
     =&gt; nil
 
 Can anyone share some ideas if you worked on this?
-## [6][Copy config.yml (bundled in .gem) to home directory after installation](https://www.reddit.com/r/ruby/comments/js6obr/copy_configyml_bundled_in_gem_to_home_directory/)
-- url: https://www.reddit.com/r/ruby/comments/js6obr/copy_configyml_bundled_in_gem_to_home_directory/
----
-Hey there, ruby community!       
-
-I'd like to include a config.yml file with my gem, which should get copied to the users home directory, either before running the gem or on  the first gem run.
-
-I have thought of the following options:
-
-* Create a default config hash in ruby and write that to a file on the first run of the program. Drawbacks: No comments in yaml
-* Fetch the config from a public repo. Drawbacks: Online only
-
-Is there a way to bundle the gem with the config file included, and reference that file from within the code after the gem has been installed with gem install?
-
-Thanks! :)
-## [7][Ruby :: How to add a try/catch clause to a TCP Socket? (to catch timeouts)](https://www.reddit.com/r/ruby/comments/jsemk2/ruby_how_to_add_a_trycatch_clause_to_a_tcp_socket/)
+## [10][Ruby :: How to add a try/catch clause to a TCP Socket? (to catch timeouts)](https://www.reddit.com/r/ruby/comments/jsemk2/ruby_how_to_add_a_trycatch_clause_to_a_tcp_socket/)
 - url: https://www.reddit.com/r/ruby/comments/jsemk2/ruby_how_to_add_a_trycatch_clause_to_a_tcp_socket/
 ---
   
@@ -109,45 +127,3 @@ As you can probably tell, I don’t really know what I’m doing. Trouble is, th
 Another question I have is… how long is the socket timeout here? I assume it is the default value. Is there a way to set that?
 
 Thank you!
-## [8][Rebuilding Redis in Ruby - New chapters available](https://www.reddit.com/r/ruby/comments/jrt2up/rebuilding_redis_in_ruby_new_chapters_available/)
-- url: https://www.reddit.com/r/ruby/comments/jrt2up/rebuilding_redis_in_ruby_new_chapters_available/
----
-About four months ago I [posted about a project](https://www.reddit.com/r/ruby/comments/hmxcgv/redis_in_ruby_a_work_in_progress_online_book/) I've been working on, [Rebuilding Redis in Ruby](https://redis.pjam.me). There are six more chapters available now, so I figured I would post an update. Especially since the first three chapters were pretty short, and the later ones contain way more information:
-
-1. [Chapter 4](https://redis.pjam.me/post/chapter-4-adding-missing-options-to-set/): Completing the SET command, that includes handling expiration and all the good stuff
-2. [Chapter 5](https://redis.pjam.me/post/chapter-5-redis-protocol-compatibility/): Making the server RESP (Redis Protocol) compatible
-3. [Chapter 6](https://redis.pjam.me/post/chapter-6-building-a-hash-table/): Building a Hash replacement, from scratch (including replicating the hashing algorithm used in Redis, SipHash)
-4. [Chapter 7](https://redis.pjam.me/post/chapter-7-adding-list-commands/): Adding all List commands
-5. [Chapter 8](https://redis.pjam.me/post/chapter-8-adding-hash-commands/): Adding all hash commands\* (\*except HSCAN)
-6. [Chapter 9](https://redis.pjam.me/post/chapter-9-adding-set-commands/): Adding all set commands\* (\*except SSCAN)
-
-If you have any feedback, please feel free to share it here or anywhere else (twitter, mail, etc ...), and if you're interested you can check what the future chapters will be [on the site](https://redis.pjam.me/chapters/):
-
-1. Chapter 10: Sorted Sets
-2. Chapter 11: Bitmaps:
-3. Chapter 12: HyperLogLogs
-4. Chapter 13: Geo Commands
-5. Chapter 14: Pub/Sub
-6. Chapter 15: Redis as an LRU cache
-7. Chapter 16: Transactions
-
-Hope you'll enjoy it!
-
-PS: I definitely don't want to spam this sub, I'm only really on posting one more time about this, when all sixteen chapters will be completed.
-## [9][What other things equals nil](https://www.reddit.com/r/ruby/comments/js2nel/what_other_things_equals_nil/)
-- url: https://www.reddit.com/r/ruby/comments/js2nel/what_other_things_equals_nil/
----
-I'm checking for equality between two variables, first and second. The first variable can be nil.   
-I wanted to be sure other than second being nil also is there any cases where first == second would be true when first is nil?
-
-i.e. first, second = nil, nil
-
-first == second # true 
-
-Is there another other cases for first being nil and second being anything else that can make first == second true? 
-
-As far as I know, it can't be, but I'm not 100 % sure.
-## [10][The art of errors in Ruby](https://www.reddit.com/r/ruby/comments/jrnk8v/the_art_of_errors_in_ruby/)
-- url: https://longliveruby.com/articles/art-of-errors-in-ruby
----
-

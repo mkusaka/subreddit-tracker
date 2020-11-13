@@ -1,17 +1,70 @@
 # Kotlin
-## [1][Kotlin Compose + web](https://www.reddit.com/r/Kotlin/comments/jsiggw/kotlin_compose_web/)
+## [1][I want to develop a custom app for my DJI Drone. DJI SDK is in Java. However, i'm attracted to learning Kotlin rather than Java as it seems the future (for Android). So will i be able to develop an app for my drone in Kotlin?](https://www.reddit.com/r/Kotlin/comments/jtdvp7/i_want_to_develop_a_custom_app_for_my_dji_drone/)
+- url: https://www.reddit.com/r/Kotlin/comments/jtdvp7/i_want_to_develop_a_custom_app_for_my_dji_drone/
+---
+Hi guys, I'm an absolute beginner Android dev, with an end goal to develop a custom app for my DJI drone. I know very little Java &amp; none of Kotlin. The [DJI SDK](https://github.com/dji-sdk/Mobile-SDK-Android) is written in Java.
+
+With my end goal in mind, will it be possible to make a custom app for my drone in Kotlin? Or do I need to stick to Java since the DJI SDK itself is in Java?
+
+Basis the answer to the above question I intend to start learning Android Studio tutorials either specifically for Java or Kotlin. Any guidance would be appreciated, thank you!
+## [2][Is there a way to do nested destructuring?](https://www.reddit.com/r/Kotlin/comments/jt37lg/is_there_a_way_to_do_nested_destructuring/)
+- url: https://www.reddit.com/r/Kotlin/comments/jt37lg/is_there_a_way_to_do_nested_destructuring/
+---
+There are two places where it comes up quasi-frequently for me: lambda arguments, and unwrapping data classes.
+
+Example 1:
+
+    data class Foo (val s: String, val i: Int)
+    data class Bar (val f: Foo)
+    
+    fun doStuff () {
+        val (f) = makeBar()
+        val (_, i) = f
+        useI(i)
+    }
+    
+    fun useI(i: Int) {
+        TODO()
+    }
+    
+    fun makeBar(): Bar {
+        TODO()
+    }
+
+I'd like it if I could've written `val ((_, i)) = makeBar()` instead of having `f` as an intermediate.
+
+Example 2:
+
+    data class Foo (val s: String, val i: Int)
+    
+    fun doStuff () {
+        val sum = makeListOfFoo().fold(0) { acc, foo -&gt;
+            acc + foo.i
+        }
+        
+        println(sum)
+    }
+    
+    fun makeListOfFoo(): List&lt;Foo&gt; {
+        TODO()
+    }
+
+I'd like it if I could write my lambda args like `fold(acc) { acc, (_, i) -&gt; `
+
+None of that is possible, right?
+## [3][Kotlin Compose + web](https://www.reddit.com/r/Kotlin/comments/jsiggw/kotlin_compose_web/)
 - url: https://www.reddit.com/r/Kotlin/comments/jsiggw/kotlin_compose_web/
 ---
 Since Kotlin supports JS, is it possible for Kotlin Compose to be ported to web? (I was thinking whether is possible to match Flutter's platform set)
-## [2][The best books to learn Kotlin](https://www.reddit.com/r/Kotlin/comments/jskqd6/the_best_books_to_learn_kotlin/)
+## [4][The best books to learn Kotlin](https://www.reddit.com/r/Kotlin/comments/jskqd6/the_best_books_to_learn_kotlin/)
 - url: https://medium.com/p/the-best-books-to-learn-kotlin-894f9a83e64a
 ---
 
-## [3][Announcing the http4k Toolbox: Guns for show, knives for a pro](https://www.reddit.com/r/Kotlin/comments/js8iiw/announcing_the_http4k_toolbox_guns_for_show/)
+## [5][Announcing the http4k Toolbox: Guns for show, knives for a pro](https://www.reddit.com/r/Kotlin/comments/js8iiw/announcing_the_http4k_toolbox_guns_for_show/)
 - url: https://http4k.org/blog/toolbox/
 ---
 
-## [4][Free Udavity Android Kotlin Developer Nanodegree Course material](https://www.reddit.com/r/Kotlin/comments/js3y3n/free_udavity_android_kotlin_developer_nanodegree/)
+## [6][Free Udavity Android Kotlin Developer Nanodegree Course material](https://www.reddit.com/r/Kotlin/comments/js3y3n/free_udavity_android_kotlin_developer_nanodegree/)
 - url: https://www.reddit.com/r/Kotlin/comments/js3y3n/free_udavity_android_kotlin_developer_nanodegree/
 ---
 Udacity Just lanched their Android Kotlin Developer Nanodegree program, So I thought of compiling all the free resources for interested devs who want to follow that same syllabus for free.
@@ -63,7 +116,7 @@ Syllabus ▶
 ## Link to Course 3 and Course 4 ▶
 
 [Course 3 and Course 4](https://www.udacity.com/course/advanced-android-with-kotlin--ud940)
-## [5][mltype - Typing practice for Kotlin and other languages](https://www.reddit.com/r/Kotlin/comments/js76mq/mltype_typing_practice_for_kotlin_and_other/)
+## [7][mltype - Typing practice for Kotlin and other languages](https://www.reddit.com/r/Kotlin/comments/js76mq/mltype_typing_practice_for_kotlin_and_other/)
 - url: https://www.reddit.com/r/Kotlin/comments/js76mq/mltype_typing_practice_for_kotlin_and_other/
 ---
 **What is it?**
@@ -86,7 +139,7 @@ I recently switched to touch typing and I realized that there is basically no wa
 **PS**
 
 I trained the Kotlin model on LeakCanary.
-## [6][How can I create another smile in order to move the ball to the right?? PS:the smile's variables have to stay as vals, not vars](https://www.reddit.com/r/Kotlin/comments/jsahix/how_can_i_create_another_smile_in_order_to_move/)
+## [8][How can I create another smile in order to move the ball to the right?? PS:the smile's variables have to stay as vals, not vars](https://www.reddit.com/r/Kotlin/comments/jsahix/how_can_i_create_another_smile_in_order_to_move/)
 - url: https://www.reddit.com/r/Kotlin/comments/jsahix/how_can_i_create_another_smile_in_order_to_move/
 ---
  Teacher asked me to create a Smile in canvas and when I press right the smile moves right. He also told me to leave the smile's variables as vals not as vals, for me to move the ball I had to create a new smile with the old smile's values. How?? 
@@ -143,19 +196,11 @@ I trained the Kotlin model on LeakCanary.
         }
       }
     }
-## [7][Ktor 1.4.2 has been released](https://www.reddit.com/r/Kotlin/comments/jrn38o/ktor_142_has_been_released/)
+## [9][Ktor 1.4.2 has been released](https://www.reddit.com/r/Kotlin/comments/jrn38o/ktor_142_has_been_released/)
 - url: https://ktor.io/changelog/#version-1-4-2
 ---
 
-## [8][Kotlin Trivia Quiz App](https://www.reddit.com/r/Kotlin/comments/js33ly/kotlin_trivia_quiz_app/)
+## [10][Kotlin Trivia Quiz App](https://www.reddit.com/r/Kotlin/comments/js33ly/kotlin_trivia_quiz_app/)
 - url: https://youtu.be/uB4ePepyVBo
----
-
-## [9][Getting started with Kotlin Multiplatform: Working with Mobile Platforms](https://www.reddit.com/r/Kotlin/comments/js2nzu/getting_started_with_kotlin_multiplatform_working/)
-- url: https://medium.com/mindful-engineering/getting-started-with-kotlin-multiplatform-part-1-working-with-mobile-platforms-1fd76ce2f055
----
-
-## [10][Yet another Unsplash Client with Kotlin Compose](https://www.reddit.com/r/Kotlin/comments/jr3p1v/yet_another_unsplash_client_with_kotlin_compose/)
-- url: https://i.redd.it/23trfqa2h9y51.png
 ---
 

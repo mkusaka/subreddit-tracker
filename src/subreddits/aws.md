@@ -3,137 +3,118 @@
 - url: https://register.virtual.awsevents.com/
 ---
 
-## [2][Announcing AWS Glue DataBrew – A Visual Data Preparation Tool That Helps You Clean and Normalize Data Faster](https://www.reddit.com/r/aws/comments/jsgtxo/announcing_aws_glue_databrew_a_visual_data/)
-- url: https://aws.amazon.com/blogs/aws/announcing-aws-glue-databrew-a-visual-data-preparation-tool-that-helps-you-clean-and-normalize-data-faster/
+## [2][Meet the newest AWS Heroes including the first DevTools Heroes!](https://www.reddit.com/r/aws/comments/jt1o78/meet_the_newest_aws_heroes_including_the_first/)
+- url: https://aws.amazon.com/blogs/aws/meet-the-newest-aws-heroes-including-the-first-devtools-heroes/
 ---
 
-## [3][Accessing AWS Hong Kong region from Mainland China](https://www.reddit.com/r/aws/comments/jssxy3/accessing_aws_hong_kong_region_from_mainland_china/)
-- url: https://www.reddit.com/r/aws/comments/jssxy3/accessing_aws_hong_kong_region_from_mainland_china/
+## [3][Improving amazon athena performance](https://www.reddit.com/r/aws/comments/jtg5gk/improving_amazon_athena_performance/)
+- url: https://www.reddit.com/r/aws/comments/jtg5gk/improving_amazon_athena_performance/
 ---
-I need a company website to be accessible from Mainland China with good performance. At the moment the version hosted in the eu-central region has latency and bandwidth problems with Mainland China. We have an ICP license and an AWS China account, but we would like to avoid using a different domain and dealing with separated infrastructure, so I was thinking about using the region in Honk Kong for traffic coming from China, but someone told me that performance might be poor anyway because of China's GFW (Hong Kong is outside of it). Does anyone has info on this? Thanks
-## [4][AWS Glacier Restores not working - new web UI](https://www.reddit.com/r/aws/comments/jsszb0/aws_glacier_restores_not_working_new_web_ui/)
-- url: https://www.reddit.com/r/aws/comments/jsszb0/aws_glacier_restores_not_working_new_web_ui/
+How would you improve your athena queries? I have a 10GB of raw data that will be fed to aws athena and I've noticed that the queries have been taking too long. To the point where I've experienced it timing out after 30 mins. Is there any way around this?
+## [4][How to paginate Aws s3 list object?](https://www.reddit.com/r/aws/comments/jtd7jn/how_to_paginate_aws_s3_list_object/)
+- url: https://www.reddit.com/r/aws/comments/jtd7jn/how_to_paginate_aws_s3_list_object/
 ---
-Ever since the UI change recently I am having random restore problems. Restoring singular files from Glacier via the web-UI goes through the steps to 'initiate restore' but it doesn't seem to actually work.
+I have over 20000 images in s3 and I want to paginate the first 100 after clicking on pagination 2nd link it should load the second 100 images and so on.
 
-Some files are fine to restore though. Same bucket? Anyone else?
-## [5][Athena Engine v2](https://www.reddit.com/r/aws/comments/jslqhs/athena_engine_v2/)
-- url: https://docs.aws.amazon.com/athena/latest/ug/engine-versions-reference.html#engine-versions-reference-0002
----
+  
 
-## [6][Which of the new interfaces is the worst?](https://www.reddit.com/r/aws/comments/jsgvwm/which_of_the_new_interfaces_is_the_worst/)
-- url: https://www.reddit.com/r/aws/comments/jsgvwm/which_of_the_new_interfaces_is_the_worst/
----
-I have been using AWS for the past 10+ years, and mostly championing it the entire time. Most of my work is CLI/API based, but I do use the console for various activities, like spot checking data in DynamoDB. The new Route53 UI is terrible, I think it is probably the worst of them. I ended up on the new S3 page today,  I am still digesting it to figure out if it is just a change, or really bad. I took a peek at the new DynamoDB page, it is really bad, basically unusable. What are your thoughts?
-## [7][Want to Implement approval process for IAM users](https://www.reddit.com/r/aws/comments/jstaxb/want_to_implement_approval_process_for_iam_users/)
-- url: https://www.reddit.com/r/aws/comments/jstaxb/want_to_implement_approval_process_for_iam_users/
----
- 
+`const params = { Bucket: "test-bucket", Delimiter: '/', MaxKeys: 100, Prefix: "thumbnail_images/Q" };`
 
-Good Day!!!
+`async function* listAllKeys(params) {`  
+  `try {`  
+    `do {`  
+      `const data = await s3.listObjectsV2(params).promise();`  
+      `params.ContinuationToken = data.NextContinuationToken;`  
+      `yield data;`  
+    `} while (params.ContinuationToken);`  
+  `} catch (err) {`  
+    `return err;`  
+  `}`  
+`};`
 
-i want to implement that all developer(IAM users) in AWS are undergone through approval process and get there account up by using active directory .
-
-Can anyone suggest , how it would be implement. Which service i need to use here.
-
-Regards Pratap
-## [8][SSL certificate](https://www.reddit.com/r/aws/comments/jsseiv/ssl_certificate/)
-- url: https://www.reddit.com/r/aws/comments/jsseiv/ssl_certificate/
----
-Do we set up  separate SSL certificates and sticky sessions for the EC2 instance when  is to be accessed from different platform types (Windows, macOS, IOS, and Android)?
-## [9][What on earth has happened to the spot instance console?](https://www.reddit.com/r/aws/comments/jsrzoa/what_on_earth_has_happened_to_the_spot_instance/)
-- url: https://www.reddit.com/r/aws/comments/jsrzoa/what_on_earth_has_happened_to_the_spot_instance/
----
-It used to be check the price, add an instance, choose the type and done. Now it's asking me what type of workload I want... I just want a single instance so I went for "Flexible" and removed all the instances except the m3.medium which is the one I want
-
-I don't see anywhere to add my pricings anymore, went ahead anyway and it just terminates immediately. I just run a few things that I don't particularly care if they go down as they're personal projects...
-
-Tried it in terraform and it's fine, so what *on earth* have they done to the really simple console? and *why*? More of a gripe since I'll just use terraform from now on but why have they made this way more complicated than it needs to be?
-## [10][check_nt: Could not parse arguments || Windows Server 2016 Host Error](https://www.reddit.com/r/aws/comments/jsr8lp/check_nt_could_not_parse_arguments_windows_server/)
-- url: https://www.reddit.com/r/aws/comments/jsr8lp/check_nt_could_not_parse_arguments_windows_server/
+I am using **aws-sdk** node package.
+## [5][Greengrass Stream Manager &amp; Kinesis Data Stream cooperation](https://www.reddit.com/r/aws/comments/jte569/greengrass_stream_manager_kinesis_data_stream/)
+- url: https://www.reddit.com/r/aws/comments/jte569/greengrass_stream_manager_kinesis_data_stream/
 ---
 Hi,
 
-I have Nagios Linux Server, I have added this Windows host to Nagios Server but I am getting below error
+I've been working with Stream Manager synchronising my local streams to Kinesis for a while.  
+There's one thing that bothers me a lot..
 
-https://preview.redd.it/5dykvlb3rry51.png?width=1147&amp;format=png&amp;auto=webp&amp;s=f860218bd7410158d06bbe4e1cafd13252983fba
+Well, let me use an example.  
+Let's say my local stream batch size is 100 and each message has 100kB. When local message buffer reaches 100, data gets synchronised with remote Kinesis stream by Stream Manager. 
 
-Nagios Server Configuration as below:
+1) Do all 100 messages get added to the Kinesis Data Stream at same time? So it gives 100\*100kB = 10MB? 
 
-====================================================================================
+2) How is data being read by shards? If I put those 10MB at once, does it mean it will take 10 seconds to read for 1 shard or 1 second to read for 10 shards?
 
-**Windows.cfg  File**
+3) I also faced RateExceeded exception (found in SM logs on the device). However, I can't understand how did it happen. My Data Stream is tied to Delivery Stream which puts data to S3. And.. I found some duplicated data there once and metrics for the Data Stream went crazy - they almost lined up with limits, even though I was sending much less than 1MB/sec (with 1 shard). Well, much less when we calculate this over time, but more than 1MB at one write... So here we kinda switch back to the 2nd question.   
 
-&amp;#x200B;
+ I'd like to estimate shards amount using calculator. I set "Average record size (in KiB)" to 100kB (I believe it's about a single message out of those 100, isn't it?). But I'm not sure what to set for "Maximum records written per second" - would it be always same as batch size, so 100? (assuming this is the only data source for Kinesis Data Stream).
 
-define host {
-
-use                     windows-server          
-
-host\_name               [ec2-35-154-15-163.ap-south-1.compute.amazonaws.com](https://ec2-35-154-15-163.ap-south-1.compute.amazonaws.com)
-
-alias                   My Windows Server       
-
-address                 [35.154.15.163](https://35.154.15.163)
-
-}
-
-# Few Services Format as below:
-
-&amp;#x200B;
-
-define service {
-
-use                     generic-service
-
-host\_name               [ec2-35-154-15-163.ap-south-1.compute.amazonaws.com](https://ec2-35-154-15-163.ap-south-1.compute.amazonaws.com)
-
-service\_description     NSClient++ Version
-
-check\_command           check\_nt!nagios@2020sg!CLIENTVERSION
-
-}
-
-&amp;#x200B;
-
-define service {
-
-use                     generic-service
-
-host\_name               [ec2-35-154-15-163.ap-south-1.compute.amazonaws.com](https://ec2-35-154-15-163.ap-south-1.compute.amazonaws.com)
-
-service\_description     CPU Load
-
-check\_command           check\_nt!nagios@2020sg!CPULOAD!20,40,60
-
-}
-
-&amp;#x200B;
-
-====================================================================================
-
-**commands.cfg File**
-
-define command {
-
-   command\_name    check\_nt
-
-command\_line    $USER1$/check\_nt -H $HOSTADDRESS$ -p 12489 -v  $ARG1$ $ARG2$
-
-}
-
-=================================================================================
-
-I am using this on AWS EC2 instances. Please help me to understand the cause of problem.
-## [11][Real-world AWS Timestream ingest performance numbers?](https://www.reddit.com/r/aws/comments/jsgn9x/realworld_aws_timestream_ingest_performance/)
-- url: https://www.reddit.com/r/aws/comments/jsgn9x/realworld_aws_timestream_ingest_performance/
+Thanks in advance!
+## [6][Can we connect to AWS RDS Standby DB when Primary is Active and running ?](https://www.reddit.com/r/aws/comments/jtdwqx/can_we_connect_to_aws_rds_standby_db_when_primary/)
+- url: https://www.reddit.com/r/aws/comments/jtdwqx/can_we_connect_to_aws_rds_standby_db_when_primary/
 ---
-I've been working for the last week to test AWS Timestream using some of their [supplied sample code for continuous data ingestion](https://github.com/awslabs/amazon-timestream-tools/tree/master/tools/continuous-ingestor) (Python/boto3) and the [Time-Series Benchmark Suite](https://github.com/timescale/tsbs) provided by Timescale (which uses the Timestream Go SDK).
+Can we connect to RDS Standby DB when Primary is Active and running ?
+## [7][How do I create the user authentication ( sign in )using Cognito which will give access to existing users in RDS database?](https://www.reddit.com/r/aws/comments/jtb11t/how_do_i_create_the_user_authentication_sign_in/)
+- url: https://www.reddit.com/r/aws/comments/jtb11t/how_do_i_create_the_user_authentication_sign_in/
+---
+I have imported data in MySQL DB, it has thousands of entries for users. I need to give authentication to the users present in the MySQL db table using AWS Cognito. Can anyone please explain to me is it possible, if so how to implement the solution?
+## [8][Using AWS Lambda extensions to send logs to custom destinations | Amazon Web Services](https://www.reddit.com/r/aws/comments/jt00uu/using_aws_lambda_extensions_to_send_logs_to/)
+- url: https://aws.amazon.com/blogs/compute/using-aws-lambda-extensions-to-send-logs-to-custom-destinations/
+---
 
-No matter what combination of settings and VMs I use (lots of smaller clients w/fewer threads, limited XL clients w/lots of threads, short memory tier window, large memory tier window), I'm rarely seeing more than \~500 metrics/second from any instance (and sometimes worse). These same tests have performed significantly better on any mix of the databases that TSBS can be used with (TimescaleDB, Influx, Mongo, etc.). Obviously I can't compare the AWS ingestor on anything other than Timestream.
+## [9][Majority of Alexa Now Running on Faster, More Cost-Effective Amazon EC2 Inf1 Instances](https://www.reddit.com/r/aws/comments/jszq36/majority_of_alexa_now_running_on_faster_more/)
+- url: https://aws.amazon.com/blogs/aws/majority-of-alexa-now-running-on-faster-more-cost-effective-amazon-ec2-inf1-instances/
+---
 
-It seems I'm not the only one [seeing similar performance](https://crate.io/a/amazon-timestream-first-impressions/), but this just feels so impossibly poor that I want to ensure things are setup correctly.
+## [10][How to implement multiple Lambda REST APIs with single code base](https://www.reddit.com/r/aws/comments/jtbi7p/how_to_implement_multiple_lambda_rest_apis_with/)
+- url: https://www.reddit.com/r/aws/comments/jtbi7p/how_to_implement_multiple_lambda_rest_apis_with/
+---
+Hello! I’m trying to find the best way implement multiple instances of the same REST API code (C#) via Lambda, in which each API would connect to a different database.  Being completely new to AWS, I could see the scalability could easily get out of control and Im really open to any guidance or recommendations regarding this.
 
-Does anybody have any better experience or tips on what might be the issue here? What are some real-world performance metrics others could share?
 
-(full disclosure, I work at Timescale and we're trying to honestly evaluate Timestream based on client questions)
+The idea is that each customer (company) would have their own respective API that’s locked down that only their users can access and is accessed via mobile and desktop clients. The API would then connect to its own individual RDS database. The API code can either connect to its respective database by a stored connection file, or I’ve experimented with using Lambda variables that could be set per Lambda function to manage the database connection.
+
+
+I’ve seen from uploading via Visual Studio (C# / AWS Plugins) that it automatically creates a Cloud Formation stack that seems to contain the following:
+-ServerlessRestApi
+-AspNetCoreFunction
+
+
+Ive also noticed it creates an S3 bucket where it stores the code in a zip file within an AwsApi/ subfolder along with a template file
+
+
+Optimally I’m wondering if it’s a matter of making multiple lambda functions reference the same S3 bucket (and not sure how Id do that), so we just update code deployments in that one location? Or is there a way to have a single REST API (In Lambda or otherwise) point to a different database per connection request using their keys, stages, or other variables somehow?
+
+
+Thank you!
+## [11][Running Postgres raw query with Glue Connection](https://www.reddit.com/r/aws/comments/jta0xf/running_postgres_raw_query_with_glue_connection/)
+- url: https://www.reddit.com/r/aws/comments/jta0xf/running_postgres_raw_query_with_glue_connection/
+---
+I want to run query over a Postgres db from my glue job and fetch the results into a dataframe. I'm able to connect to the database, even able to extract a db table into dataframe. But, when I try to run a raw query by passing &lt;query&gt; parameter in the connection\_options, I am receiving this error:
+
+{..........An error occurred while calling o71.getDynamicFrame. : java.util.NoSuchElementException: key not found: location at scala.collection.MapLike$class.default(MapLike.scala:228).........}
+
+I am able to achieve similar thing with redshift, I just pass &lt;query&gt; in my connection\_options and it fetched the results into the DF, but same thing is not working with Postgres, even though the documentation seems to be show no difference. The piece of code that I'm using to achieve this:
+
+query = "SELECT \* FROM schema.table\_name where &lt;condition&gt; limit X"
+
+connection\_options = {  
+"url": "jdbc:postgresql://xxxxxx.yyyyy.rds.amazonaws.com:&lt;port&gt;/dbname", "query": query, "user": &lt;username&gt;, "password": &lt;password&gt; }
+
+df1 = glueContext.create\_dynamic\_frame.from\_options(connection\_type="postgresql",connection\_options=connection\_options)
+
+df1.show()
+
+However, the following works fine:
+
+connection\_options = {  
+"url": "jdbc:postgresql://xxxxxx.yyyyy.rds.amazonaws.com:&lt;port&gt;/dbname", "dbtable": schema.table, "user": &lt;username&gt;, "password": &lt;password&gt;
+
+}
+
+df1 = glueContext.create\_dynamic\_frame.from\_options(connection\_type="postgresql",connection\_options=connection\_options)
+
+df1.show()

@@ -23,117 +23,119 @@ Also if you want to be mentored by experienced Rustaceans, tell us the area of e
 - url: https://this-week-in-rust.org/blog/2020/11/11/this-week-in-rust-364/
 ---
 
-## [3][[Inside Rust] Source-based code coverage in nightly](https://www.reddit.com/r/rust/comments/jt45jt/inside_rust_sourcebased_code_coverage_in_nightly/)
-- url: https://blog.rust-lang.org/inside-rust/2020/11/12/source-based-code-coverage.html
+## [3][Starship - The minimal, blazing-fast, and infinitely customizable prompt for any shell!](https://www.reddit.com/r/rust/comments/jtq2x8/starship_the_minimal_blazingfast_and_infinitely/)
+- url: https://starship.rs/
 ---
 
-## [4][SQLite Parser Pt. 2 The Header... continues](https://www.reddit.com/r/rust/comments/jt9s2v/sqlite_parser_pt_2_the_header_continues/)
-- url: https://freemasen.com/blog/sqlite-parser-pt-2/index.html
+## [4][mockalloc - a crate to test for leaks and other allocation bugs](https://www.reddit.com/r/rust/comments/jttpie/mockalloc_a_crate_to_test_for_leaks_and_other/)
+- url: https://www.reddit.com/r/rust/comments/jttpie/mockalloc_a_crate_to_test_for_leaks_and_other/
+---
+Just published this tiny crate: https://docs.rs/mockalloc/0.1.0/mockalloc/
+
+One of my projects involves implementing some custom container types (vec and map-like containers) and as well as testing that they function as expected, I wanted a simple way to detect bugs in the way they allocate and free memory.
+
+Enter the `#[mockalloc::test]` attribute.
+
+Simply replace `#[test]` with `#[mockalloc::test]`, set `Mockalloc` as your global allocator during `#[cfg(test)]` and common allocation bugs will be detected automatically.
+## [5][Tide v0.15.0 has been released!](https://www.reddit.com/r/rust/comments/jtqep1/tide_v0150_has_been_released/)
+- url: https://github.com/http-rs/tide/releases/tag/v0.15.0
 ---
 
-## [5][Learn Assembly by Writing Entirely Too Many Brainfuck Compilers in Rust](https://www.reddit.com/r/rust/comments/jsvdsy/learn_assembly_by_writing_entirely_too_many/)
-- url: https://github.com/pretzelhammer/rust-blog/blob/master/posts/too-many-brainfuck-compilers.md
+## [6][Users of SQLx, we're looking for your opinions on the future of the crate!](https://www.reddit.com/r/rust/comments/jtjffr/users_of_sqlx_were_looking_for_your_opinions_on/)
+- url: https://www.reddit.com/r/rust/comments/jtjffr/users_of_sqlx_were_looking_for_your_opinions_on/
+---
+For those unaware, [SQLx](https://github.com/launchbadge/sqlx) is an async-first SQL client library conceived, developed and maintained by my boss, a couple coworkers, and myself, at [Launchbadge, LLC](https://launchbadge.com/), a development services company, primarily for use in our own web development stack utilizing Postgres and Actix-web.
+
+We finally kicked out our 0.4 release yesterday after many months in beta. 
+
+We're sorry that it took so long, one of the main reasons being that we had a new project come up with some tight deadlines that we've been working nonstop to deliver on, and haven't had much time or energy to spare for SQLx besides commenting on issues and merging PRs.
+
+Also, since the beginning of the shelter-in-place order for COVID in California (where we're based) we've all been working from home. At the office, SQLx was a nice side-project to work on as a break from our primary tasks but at home there's a lot more distractions to deal with and it's a lot harder (for me, personally) to stay in the working mindset for a solid eight hours a day. There's also much fewer opportunities for collaboration as we'd often sit down to chat about SQLx at lunch and during breaks, which we simply can't do anymore.
+
+Additionally, we're concerned about being able to maintain the quality of the MySQL and SQLite drivers in SQLx, compared to the Postgres driver which we're using all the time. We're very grateful for all the outside contributions but still it's pretty painfully obvious that the former databases don't get quite as much TLC as Postgres does.
+
+And so, we're considering spinning off SQLx into its own entity with one or more full-time developers who will be dedicated to developing and maintaining it. It would most likely be a 501(c) non-profit corporation with public reporting for costs and revenue. To do this, though, it needs to be capable of supporting itself. 
+
+The idea is that, like [jOOQ](http://www.jooq.org/download/) which is a database library for Java that we've used quite a bit in the past, we would charge a yearly license fee to use SQLx with various proprietary databases such as MSSQL, OracleDB and IBM's DB2, as well as provide fee-based consulting and support for enterprises using SQLx. 
+
+SQLx would of course remain free to use for Postgres, MySQL and SQLite but the company would be capable of accepting tax-deductible donations as well for those who wish to support development.
+
+To have some data to inform our decision, we've created a very short survey that we'd like anyone currently using or would be interested in using SQLx to fill out. If you have any feedback that isn't covered by the survey, please also feel free to share it below, or [on our Discord server](https://discord.gg/narftnn7).
+
+https://forms.gle/M1Us31brnveUFAnX9
+## [7][gping: ping, but with a graph](https://www.reddit.com/r/rust/comments/jthdba/gping_ping_but_with_a_graph/)
+- url: https://github.com/orf/gping
 ---
 
-## [6][rkyv: a zero-copy deserialization framework for Rust](https://www.reddit.com/r/rust/comments/jss6h4/rkyv_a_zerocopy_deserialization_framework_for_rust/)
-- url: https://www.reddit.com/r/rust/comments/jss6h4/rkyv_a_zerocopy_deserialization_framework_for_rust/
----
-Hi everyone! I'm a long-time lurker and first poster so please be gentle. :)
-
-I just released the first version of rkyv (*archive*), a zero-copy deserialization framework for Rust:
-
-Source code: [https://github.com/djkoloski/rkyv](https://github.com/djkoloski/rkyv)  
-Docs: [https://docs.rs/rkyv](https://docs.rs/rkyv), [https://docs.rs/rkyv\_dyn](https://docs.rs/rkyv_dyn), [https://docs.rs/rkyv\_typename](https://docs.rs/rkyv_typename)
-
-rkyv is similar to other zero-copy deserialization frameworks like Cap'n Proto and FlatBuffers, but it's 100% pure rust and uses macro magic to build its serialization functions like serde does. The main feature is that it's zero-copy, meaning that all you have to do to "deserialize" your data is just cast a pointer. All of the data is serialized in a way that makes its in-memory representation the same as its archived representation.
-
-rkyv sports a couple of neat features:
-
-* Derive macros, even for complex and generic types
-* \#\[no\_std\] support
-* Hashmap support through a custom implementation based off of hashbrown
-* Trait object serialization through the accompanying rkyv\_dyn crate. You can serialize out a trait object then use it with just a pointer cast!
-* Plenty of examples and tests to make sure everything's working right.
-
-rkyv was primarily made with an eye toward game development, where lots of static data needs to be read in and load times negatively impact player experience. Speaking from experience, deserialization takes up a big chunk of load times so a world without deserialization is a faster one!
-
-I've been writing rust for a while but this is my first contribution to the community. If you're interested, take a look and leave me some feedback if you're interested. For example, I've only tested on Windows due to hardware constraints but if some tests are failing on other toolchains I'll find a way to get them fixed.
-
-Thanks for taking a look!
-## [7][Poi - a pragmatic point-free theorem prover assistant written in Rust - just multiplied matrices for the first time!](https://www.reddit.com/r/rust/comments/jt7xte/poi_a_pragmatic_pointfree_theorem_prover/)
-- url: https://twitter.com/PistonDeveloper/status/1327061178951077890
+## [8][RestQ - a simpler alternative to graphQL suited for database specific operation on a rest api.](https://www.reddit.com/r/rust/comments/jtxxkj/restq_a_simpler_alternative_to_graphql_suited_for/)
+- url: https://github.com/ivanceras/restq
 ---
 
-## [8][Current state of Rust support for writing Linux kernel space code (drivers)?](https://www.reddit.com/r/rust/comments/jsxgp6/current_state_of_rust_support_for_writing_linux/)
-- url: https://www.reddit.com/r/rust/comments/jsxgp6/current_state_of_rust_support_for_writing_linux/
+## [9][speed issue with rust backend](https://www.reddit.com/r/rust/comments/ju1g94/speed_issue_with_rust_backend/)
+- url: https://www.reddit.com/r/rust/comments/ju1g94/speed_issue_with_rust_backend/
 ---
-I do a ton of work with the linux kernel for my dayjob, which is currently only C due to the Linux tooling supporting only C. I also do a decent bit of C++ for userspace tools, and while I would love support for a higher level language for kernel space code, I can see why them written in C++ would be an utter disaster.
+when running this code should give me a performance boost in existing lib which is purely in python
 
-Seeing Linus and the kernel mailing list giving support to rust (example [one](https://www.reddit.com/r/rust/comments/hplaz4/lkml_linus_torvalds_re_linux_kernel_intree_rust/) and [two](https://www.reddit.com/r/rust/comments/ik42b4/supporting_linux_kernel_development_in_rust/)) makes me extremely happy. But I do not see much new activity in the past two months since these announcements, so I figured I would ask, how are these efforts going? Have they stalled? Is there a place I could look to follow this closer (somewhere in the LKML?)? Closest I found is the example rust Linux kernel driver [link](https://github.com/fishinabarrel/linux-kernel-module-rust/blob/master/hello-world/src/lib.rs), but honestly, it does not look as ergonomic as a functionally equivalent C module.
+but now the performance is worst
 
-Or maybe, am I just over-hyping myself?
-## [9][Unexpected borrow checker behavior](https://www.reddit.com/r/rust/comments/jt1s5q/unexpected_borrow_checker_behavior/)
-- url: https://www.reddit.com/r/rust/comments/jt1s5q/unexpected_borrow_checker_behavior/
+Something I am doing wrong
+
+&amp;#x200B;
+
+https://preview.redd.it/ye3ef7m5c7z51.png?width=1112&amp;format=png&amp;auto=webp&amp;s=c5cc928a2c15468761b5d18566207c3db850a27c
+
+    #[pyfunction]
+    pub fn match_string_percentage_list_fn(py: Python, source: &amp;PyString, target: Vec&lt;String&gt;) -&gt; PyResult&lt;HashMap&lt;String, f64&gt;&gt; {
+        let s = source.extract().unwrap();
+        let obj = StringProcessing::new();
+        let s_p = obj.replace_non_letters_non_numbers_with_whitespace(s);
+    
+        let mut temp_vec: Vec&lt;String&gt; = target.par_iter().map(|i| {
+            obj.replace_non_letters_non_numbers_with_whitespace(i.to_string())
+        }).collect();
+        let mut rez_vec: HashMap&lt;String, f64&gt; = HashMap::new();
+    
+        for i in temp_vec.iter() {
+            let z = normalized_levenshtein(s_p.trim(), i.as_str().trim());
+            rez_vec.insert(i.clone(), z);
+        }
+        Ok(rez_vec)
+    }
+    
+    #[pyfunction]
+    pub fn match_string_percentage_fn(py: Python,source: &amp;PyString, target: &amp;PyString) -&gt; f64 {
+        let s = source.to_string_lossy().to_string();
+        let t = target.to_string_lossy().to_string();
+        let obj = StringProcessing::new();
+        // let s_p = obj.replace_non_letters_non_numbers_with_whitespace(s);
+        // let t_p = obj.replace_non_letters_non_numbers_with_whitespace(t);
+        normalized_levenshtein(s.trim(), t.trim())
+    }
+## [10][Make a Language in Rust, Part Ten: Starting Again](https://www.reddit.com/r/rust/comments/ju1vhl/make_a_language_in_rust_part_ten_starting_again/)
+- url: https://arzg.github.io/lang/10/
 ---
-I was hacking around on some code and came across a weird thing that rustc complains about. If you have an async function that takes a static reference and at least 2 other references, those other references must have the same lifetime.  As an example this code fails to compile with the following error:
 
-```rust
-async fn test(test: &amp;String, test2: &amp;String, test3: &amp;'static String) {}
-```
-
-```text
-error[E0700]: hidden type for `impl Trait` captures lifetime that does not appear in bounds
-  --&gt; src/cgi.rs:31:71
-   |
-31 | async fn test(test: &amp; String, test2: &amp;String, test3: &amp;'static String) {}
-   |                                                                       ^
-   |
-note: hidden type `impl futures_lite::Future` captures lifetime smaller than the function body
-  --&gt; src/cgi.rs:31:71
-   |
-31 | async fn test(test: &amp; String, test2: &amp;String, test3: &amp;'static String) {}
-   |   
-```
-
-However adding an explicit lifetime fixes the problem:
-
-```rust
-async fn test&lt;'a&gt;(test: &amp; String, test2: &amp;'a String, test3: &amp;'static String) {}
-```
-
-This behavior is a bit unexpected and the error message it returned was not helpful.  Any ides if this a bug or just a non-helpful error message?
-## [10][terender: command-line tool for rendering tera templates](https://www.reddit.com/r/rust/comments/jsxb0w/terender_commandline_tool_for_rendering_tera/)
-- url: https://www.reddit.com/r/rust/comments/jsxb0w/terender_commandline_tool_for_rendering_tera/
+## [11][Knurling-rs changelog #6: the defmt logging framework is now on crates.io 🎉](https://www.reddit.com/r/rust/comments/jtk2g0/knurlingrs_changelog_6_the_defmt_logging/)
+- url: https://ferrous-systems.com/blog/knurling-changelog-6/
 ---
-I recently had several occasions where I wanted to generate source code or documentation from structured data that is available to me in JSON format. In order to facilitate that, it took me just a bit of plumbing to build a command-line tool that allows me to do that based on tera templates. I thought it might be useful to others as well, so I published it to [https://crates.io/crates/terender](https://crates.io/crates/terender). As said, I just did some plumbing, the main credits for the work go to the authors of tera, serde and serde\_json, structopt and anyhow.
 
-I intend to add support for other file formats as well in the future, please let me know if you have a need for some specific format so I can prioritize it.
-
-If you like the tool or if you would like me to add functionality, please let me know (either directly, or submit an issue).
-## [11][How iterate a sub value in a json hashmap?](https://www.reddit.com/r/rust/comments/jsz0c5/how_iterate_a_sub_value_in_a_json_hashmap/)
-- url: https://www.reddit.com/r/rust/comments/jsz0c5/how_iterate_a_sub_value_in_a_json_hashmap/
+## [12][High school student using rust, looking for help (code review)](https://www.reddit.com/r/rust/comments/jtl9tk/high_school_student_using_rust_looking_for_help/)
+- url: https://www.reddit.com/r/rust/comments/jtl9tk/high_school_student_using_rust_looking_for_help/
 ---
-This is what I am using to iterate through the root level of a json:
+Hi all! 
 
+I'm a high school student using Rust for my school's [Computer Graphics course](https://stuycs.org/courses/graphics/). My teacher provides template code for C and Python, which are all taught in my school. Rust is obviously not, but I'm not the first person to use it for this class, and I believe I won't be the last.
 
+So after finishing the course, I thought it would nice to write templates for Rust so people who are not so familiar with this can do it without setting up everything themselves.
 
-https://pastebin.com/DwHyUDmG
+I've finished the first template by adding parts from my own work, and then refactoring, and then heavily documenting. But I don't know if I'm doing things in the "Rust" way, or if I'm writing clear and concise docs. I would like some feedback on this (or anything). I'll be working to finish the rest of the templates soon.
 
+Links:
 
-it returns me with:
+\- [My work on the course](https://github.com/ruoshui-git/stuy-graphics)
 
+\- [Templates in C and Python, which I'll be referencing](https://github.com/mks66/66source)
 
-    keys "phones"
-    keys "name"
-    keys "contact"
-    keys "age"
+\- [My first Rust template](https://github.com/ruoshui-git/stuygfx-rust-src-1), for which I really need feedback
 
-
-How can I iterate the content of the "contact" key
-(as per commented out code)
-## [12][In actix-web, how to maintain a shopping cart counter in a middleware(?) that is accessible in (near) all responses?](https://www.reddit.com/r/rust/comments/jsxlct/in_actixweb_how_to_maintain_a_shopping_cart/)
-- url: https://www.reddit.com/r/rust/comments/jsxlct/in_actixweb_how_to_maintain_a_shopping_cart/
----
-Building an eCommerce site, I need to display the shopping cart counter icon nearly everywhere. Now I repeat the code to get this in each response, but wonder how abstract this away, probably in a middleware?
-
-But in a few places need to know in the response this count, so how ALSO get it from inside them?
+Thanks in advance!

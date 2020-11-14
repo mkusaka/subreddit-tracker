@@ -56,11 +56,112 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Deprecating volatile - JF Bastien - CppCon 2019](https://www.reddit.com/r/cpp/comments/jtdk74/deprecating_volatile_jf_bastien_cppcon_2019/)
+## [2][Herb Sutter Trip report: Autumn ISO C++ standards meeting](https://www.reddit.com/r/cpp/comments/jtt9cb/herb_sutter_trip_report_autumn_iso_c_standards/)
+- url: https://herbsutter.com/2020/11/13/trip-report-autumn-iso-c-standards-meeting-virtual/
+---
+
+## [3][Stop learning C++ or keep going?](https://www.reddit.com/r/cpp/comments/ju1ikd/stop_learning_c_or_keep_going/)
+- url: https://www.reddit.com/r/cpp/comments/ju1ikd/stop_learning_c_or_keep_going/
+---
+I picked C++ as my first language because I want to get into a video game company. It was difficult at first, but it gets easier over time, but still, hard nonetheless.
+
+But then, something happened that force me to stay in my hometown until I die probably. 
+
+So, the ways for me to earn money from programming now are: create my own software/app/game, freelancing, or remote job. 
+
+Everybody wants to have a successful software that they can sell it for a stockpile of $$, but I'm going to go with the realistic view here and aim for the freelancing and remote job.
+
+My question is, is C++ is a great language for me if I'm going to be a freelance and remote job? Or should I focus on another language? I'm still going to learn C++ though. I fell in love with it. I just going to assign more of my time to the new language and make C++ become my second language. 
+
+Now, a little background of me. I'm 20 years old boy from a third world country living in a very very small city that I think about 50% still using a non-smartphone as their phone and there's absolutely no company that engaged in technology. Most people either work as a farmer, livestock breeder, and things like that. 
+
+Don't get me wrong, I love my hometown. It is so peaceful here. I always said that my hometown is a perfect city for retirement. 
+
+But, that's the thing. I'm not planning for retirement, I'm still trying to get some money.
+
+Also, I will not attend college. Well, "can't" is the more proper word here.
+
+So yeah, any advice would be appreciated. Thank you so much
+## [4][With the new module system in C++20 will there be centralized repositories for modules?](https://www.reddit.com/r/cpp/comments/ju1h1e/with_the_new_module_system_in_c20_will_there_be/)
+- url: https://www.reddit.com/r/cpp/comments/ju1h1e/with_the_new_module_system_in_c20_will_there_be/
+---
+Like nuget's, npm's or crates?
+
+Examples:
+
+* Rust Crates [https://crates.io/](https://crates.io/)
+* Node NPM's [https://www.npmjs.com/](https://www.npmjs.com/) 
+* .NET Nuget's [https://www.nuget.org/](https://www.nuget.org/)
+* Java [https://mvnrepository.com/](https://mvnrepository.com/)
+## [5][It Is Time for Compiler Developers to Step In](https://www.reddit.com/r/cpp/comments/jts223/it_is_time_for_compiler_developers_to_step_in/)
+- url: https://www.reddit.com/r/cpp/comments/jts223/it_is_time_for_compiler_developers_to_step_in/
+---
+Warning: this is not a strictly-technical post. More like a rant.
+
+TL;DR: actual implementors of C++ should be the ones responding to C++ developers' needs and pushing C++ forward according to them, not some committee authority. Things to be standardized should be battle-tested first.
+
+Firstly, I want to express a great admiration and respect for men and women behind C++ implementations and tools as well as towards those who participate in various working groups and do the hard work of keeping the language both modern and standardized, the language I, among the plethora of others, use daily or from time to time, to make a living or to enjoy a little hobby or a pet project, big or small. I do not find myself in a position to make demands on them.
+
+What was a tipping point for me to write this post was recent discussion ([this](https://www.reddit.com/r/cpp/comments/jtdk74/deprecating_volatile_jf_bastien_cppcon_2019/), [this](https://www.reddit.com/r/cpp/comments/jswz3z/compound_assignment_to_volatile_must_be/) and [this](https://www.reddit.com/r/cpp/comments/dk542b/cppcon_2019_jf_bastien_deprecating_volatile/)) about [deprecation](https://wg21.link/p1152r0) of some uses of `volatile` in C++20. Numerous embedded developers say that this strives to solve a language-lawyer-world problem of "ambiguous semantics" at the cost of real world usage and public image of C++. Meanwhile, C++ standard fails to address important real-world issues due to obvious time limitations and complexities of designing single universal solution to *hard problems*. The most prominent latest example is C++20 modules. They are standardized, but there are both a split between implementations with respect to strong/weak ownership model and [feeling](https://www.reddit.com/r/cpp/comments/akihlv/c_modules_might_be_deadonarrival/) that C++20 modules just failed to deliver. Oh, and do you remember `std::error_code` or `std::regex`?  
+
+
+I think that the general mindset of "1. we need X in the Standard 2. only Standard-compliant code is OK" is wrong. Look at `__restrict` \- all major compilers support some form of it, yet it is non-standard. The fact that it is non-standard has not harmed anyone! Would anyone be harmed if major compiler's team explicitly says "we do not agree with Standard here and there and will not comply with it" about some controversial part of the C++ Standard? In fact, we do program real hardware, not C++ Abstract Machine. That's why `std::vector` \- like class can be implemented in C++ as understood by every compiler in the world despite all the [UB](https://wg21.link/p0593).
+
+However, optimizing compilers can do all sorts of weird stuff and we want them to do this weird stuff to make our code fast. But we also want our code to be expressive. Would it matter that `std::start_lifetime_as` has not made it into C++20 Standard if every major compiler supported it? No. Would it allow us to write code which is more clear to both humans and optimizers? Yes.
+
+Now is the time C++ must be up to the challenges because of increasing competition. Do not let authorities prevent you from using language extensions and non-standard features, we need them for  the language to evolve and find its way forward. It is better to standardize things when there is a clear path proven by a group of pioneers to be successful, than when we don't have *anything* but find ourselves in need of having *something*. It is better to have things in compilers than not have them just because of working group meetings schedule.
+## [6][An industrial-grade RPC framework used throughout Baidu](https://www.reddit.com/r/cpp/comments/jtlebx/an_industrialgrade_rpc_framework_used_throughout/)
+- url: https://github.com/apache/incubator-brpc
+---
+
+## [7][Deprecating volatile - JF Bastien - CppCon 2019](https://www.reddit.com/r/cpp/comments/jtdk74/deprecating_volatile_jf_bastien_cppcon_2019/)
 - url: https://www.youtube.com/watch?v=KJW_DLaVXIY
 ---
 
-## [3][Compound assignment to volatile must be un-deprecated](https://www.reddit.com/r/cpp/comments/jswz3z/compound_assignment_to_volatile_must_be/)
+## [8][Having a bit of trouble with inputs. not sure how I can put the two inputs together to create a line.](https://www.reddit.com/r/cpp/comments/ju0bl9/having_a_bit_of_trouble_with_inputs_not_sure_how/)
+- url: https://www.reddit.com/r/cpp/comments/ju0bl9/having_a_bit_of_trouble_with_inputs_not_sure_how/
+---
+    #include &lt;iostream&gt;
+    using namespace std;
+    int main() {
+         string name;
+         int age;
+         cout &lt;&lt; "Enter your name"&lt;&lt;endl;
+         cout &lt;&lt; "Enter your age"&lt;&lt;endl;
+         cin &gt;&gt; age;
+    
+         getline(cin,name);
+         cout &lt;&lt; name &lt;&lt; " is " &lt;&lt; age &lt;&lt; endl;
+        return 0;
+    }
+    
+    This is the output 
+    
+    Enter your name
+    Enter your age
+     davaughn  23
+     is 0
+## [9][Tiny build tool : µmake (quick makefile alternative)](https://www.reddit.com/r/cpp/comments/jtlalr/tiny_build_tool_µmake_quick_makefile_alternative/)
+- url: https://www.reddit.com/r/cpp/comments/jtlalr/tiny_build_tool_µmake_quick_makefile_alternative/
+---
+I used to make compile my projects from makefiles (had a template that was quiet flexible) but grew tired of the syntax and issues.
+
+I can't get myself to like autoconf nor cmake (I quiet hate the second as a user, even if not as bad as bazel).
+
+Lately because I have to code a lot in python, I realize this could be just right for the job. I heard of scons, it looks great but it feels an overkill for most of my projects.
+
+So after using a small python script for months now in different projects I refactored it for easy git submodule usage and publish it.
+
+µmake ([https://gitlab.com/corentin-pro/umake](https://gitlab.com/corentin-pro/umake)) is ~150 lines of python to compile easily and quickly. A caveat I forgot to write in the README is that it is mainly made for UNIX system.
+
+I share this in case it would be inspirational for your own small build script or even better if you find any improvement/feedback to be made.
+
+Also I put a BSD 3-clause in there, I am not sure what is the best to make it easy to use (creative-common? I want to avoid users to even have to credit it). My understanding is that if you add as submodule the license is also there so it can be used/modified/anything.
+## [10][CppCast: Video Games, Robotics and Audio](https://www.reddit.com/r/cpp/comments/jtahbn/cppcast_video_games_robotics_and_audio/)
+- url: https://cppcast.com/joel-lamotte/
+---
+
+## [11][Compound assignment to volatile must be un-deprecated](https://www.reddit.com/r/cpp/comments/jswz3z/compound_assignment_to_volatile_must_be/)
 - url: https://www.reddit.com/r/cpp/comments/jswz3z/compound_assignment_to_volatile_must_be/
 ---
 To my horror I discovered that C++20 has deprecated compound assignments to a volatile. For those who are at a loss what that might mean: a compound assignment is += and its family, and a volatile is generally used to prevent the compiler from optimizing away reads from and/or writes to an object.
@@ -88,43 +189,3 @@ I can sympathise with the argument that some uses of volatile were ill-defined, 
 As it is, C++ is not broadly accepted in this field. Unjustly, in my opinion, so I try to make my small efforts to change this. Don’t make my effort harder and alienate this field even more by deprecating established practice.
 
 So please, un-deprecate compound assignments to volatile.
-## [4][CppCast: Video Games, Robotics and Audio](https://www.reddit.com/r/cpp/comments/jtahbn/cppcast_video_games_robotics_and_audio/)
-- url: https://cppcast.com/joel-lamotte/
----
-
-## [5][std::shared_mutex was broken in glibc&lt;2.30 distros like Ubuntu for two years](https://www.reddit.com/r/cpp/comments/jsynzn/stdshared_mutex_was_broken_in_glibc230_distros/)
-- url: https://github.com/bitcoin/bitcoin/issues/16684#issuecomment-726214696
----
-
-## [6][Overload Journal 159 · October 2020](https://www.reddit.com/r/cpp/comments/jt84v4/overload_journal_159_october_2020/)
-- url: https://accu.org/journals/overload/overload159
----
-
-## [7][Destructing outside the lock when removing items from C++ standard containers](https://www.reddit.com/r/cpp/comments/jswpfp/destructing_outside_the_lock_when_removing_items/)
-- url: https://devblogs.microsoft.com/oldnewthing/20201112-00/?p=104444
----
-
-## [8][New boost additions for 1.75 looking great](https://www.reddit.com/r/cpp/comments/jsarkz/new_boost_additions_for_175_looking_great/)
-- url: https://www.reddit.com/r/cpp/comments/jsarkz/new_boost_additions_for_175_looking_great/
----
-I just took a look at Boost and it has these 3 new libraries:
-
-- Json (parse json, etc.)
-- Leaf (lightweight error handling with try-catch like syntax)
-- PFR (basic serialization without macros)
-
-https://www.boost.org/users/history/in_progress.html
-
-What do you think?
-## [9][Using C++ as a scripting language, part 3](https://www.reddit.com/r/cpp/comments/jscnt7/using_c_as_a_scripting_language_part_3/)
-- url: https://fwsgonzo.medium.com/using-c-as-a-scripting-language-part-3-b8f92206ef94
----
-
-## [10][The hidden callout: The destructor](https://www.reddit.com/r/cpp/comments/jsbxff/the_hidden_callout_the_destructor/)
-- url: https://devblogs.microsoft.com/oldnewthing/20201111-00/?p=104439
----
-
-## [11][Miniselect: Practical and Generic Selection Algorithms](https://www.reddit.com/r/cpp/comments/jsba2m/miniselect_practical_and_generic_selection/)
-- url: https://danlark.org/2020/11/11/miniselect-practical-and-generic-selection-algorithms/
----
-

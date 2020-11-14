@@ -3,127 +3,101 @@
 - url: https://blog.golang.org/survey2020
 ---
 
-## [2][Dotfile - Version Control System for Single Files](https://www.reddit.com/r/golang/comments/jt9yp7/dotfile_version_control_system_for_single_files/)
-- url: https://github.com/knoebber/dotfile
+## [2][Go's Recurring Security Problem](https://www.reddit.com/r/golang/comments/jtmlve/gos_recurring_security_problem/)
+- url: https://medium.com/tempus-ex/gos-recurring-security-problem-2b5339f19216
 ---
 
-## [3][Abstracting dependencies.. where do you draw the line?](https://www.reddit.com/r/golang/comments/jtevfj/abstracting_dependencies_where_do_you_draw_the/)
-- url: https://www.reddit.com/r/golang/comments/jtevfj/abstracting_dependencies_where_do_you_draw_the/
+## [3][Golang 1.15.5 released](https://www.reddit.com/r/golang/comments/jtk7t7/golang_1155_released/)
+- url: https://www.reddit.com/r/golang/comments/jtk7t7/golang_1155_released/
 ---
-Hey,
+[https://golang.org/doc/devel/release.html#go1.15.minor](https://golang.org/doc/devel/release.html#go1.15.minor)
 
-I'm not a real software engineer. Officially I'm a "senior product manager" of antispam for a freemail service with millions of daily active users (biggest in my country). I have scientific background in physics and during good days spend more time programming than doing manager stuff (delegating stuff and sitting on my ass waiting is not my style) so I dabble in programming a little bit.. (mostly in python + some C++ if need be).
-
-&amp;#x200B;
-
-I and my team learned go and trying to rewrite in it some critical parts of our architecture at work (not for fun, it has real benefits for us).
-
-&amp;#x200B;
-
-Also after a six years of fighthing an uphil battle agains the bad guys while being understafed and not exactly a company priority, I'm getting disenchanted and tired of working for someone else..
-
-&amp;#x200B;
-
-During those years my job title changed a bit, but I'm still doing basically the same thing since I started working there after college.
-
-&amp;#x200B;
-
-So during the little bit of time I have left at home (not easy with one year old son), I'm trying to expand my horizons on side projects and going from backend to full stack (learning JS without the framework mess and using golang for backend).
-
-&amp;#x200B;
-
-I have a project in my head, that I thing is missing on the web and people would apreciate.. But there is an overwhelming amount of work and studing I have to do in order to create it, so I'm kinda procrastinating (hello reddit).
-
-&amp;#x200B;
-
-The stuff I procrastinate at the moment is creating a backend server template (personal "framework"), that I could use in the future to quickly start making servers and not have to bootstap things over and over.
-
-`----------------------------------------------------------------------------------`
-
-Ok, enough of the rant.. **The real question starts here:**
-
-&amp;#x200B;
-
-Abstracting and isolating dependencies is considered good practice (for example [https://research.swtch.com/deps](https://research.swtch.com/deps) by Rob Pike), but I wonder where to draw the line of hiding dependencies with wrapper packages?
-
-&amp;#x200B;
-
-Like having conf package that allows populating arbitrary config structure from specified conf file or env variables - internally I'm using viper and the package exposes only the following so I could reimplement it at any time.
-
-&amp;#x200B;
-
-    func ReadFlagsHelper() (confFile, envPrefix string)
-    func LoadYAML(file string, config interface{}) error
-    func LoadENV(envPrefix string, config interface{}) error
-
-&amp;#x200B;
-
-Config is easy, how about logger? I'm using zerolog simply embedded inside my own structure so I can call zerolog methods, but also hopefully reimplement them over my Logger struct (in an unlikely scenario in which I would need to replace zerolog by something else, without the need to change logging all over the app).
-
-    type Logger struct {
-        zerolog.Logger
-        file   *os.File
-        mask   string
-    }
-
-Database, message broker are another candidates for wrapping.. How about router? Would you wrap something like [https://github.com/go-chi/chi](https://github.com/go-chi/chi) ?
-
-Does anyone in the real world actually bothers with isolating and abstracting third party dependencies? Or do I just waste time on it?  
-
-
-Thanks for your thoughts.
-## [4][Vuejs frontend + golang gcp functions API + firebase db =&gt; viable or overkilled stack?](https://www.reddit.com/r/golang/comments/jtg9xk/vuejs_frontend_golang_gcp_functions_api_firebase/)
-- url: https://www.reddit.com/r/golang/comments/jtg9xk/vuejs_frontend_golang_gcp_functions_api_firebase/
+[https://github.com/golang/go/issues?q=milestone%3AGo1.15.5+label%3ACherryPickApproved](https://github.com/golang/go/issues?q=milestone%3AGo1.15.5+label%3ACherryPickApproved)
+## [4][Not related to Go. But I used go to develop this chat server. I know someone here can help me.](https://www.reddit.com/r/golang/comments/jtyb84/not_related_to_go_but_i_used_go_to_develop_this/)
+- url: https://www.reddit.com/r/golang/comments/jtyb84/not_related_to_go_but_i_used_go_to_develop_this/
 ---
-Hello all!
+Hi peeps , I built a chat-room server. 
 
-Mostly for the sake of learning new languages and tools, I want to build a classic blog website. It will handle authenticated users, articles and an access system based on users' roles. 
+Imagine I've a table/map  ( not database table )  with three columns (group-id |  user-id | socket connection ). Since this application is like whatsapp I can create groups and add members to the group that I'm storing it in a postgres database. 
 
-I would like to build the front end with vuejs (or elm, if I have enough spare time), the back end would be composed of a REST API made in Golang functions (FaaS), stored in GCP. And for the database and the auth, I would use Firebase.
+And when I receive a message from a connection, the message contains the group-id and user-id. Based on the group-id I'll fetch the members in that group which I stored (imagine )  it in the map/table and then I'll emit messages to the sockets in that group. 
 
-But as I understand things, I could very well use Firebase directly with my frontend and bypass completely a homebrew backend.
+Question is how to maintain a sync  list between a database a table and golang server map/table. 
 
-Have you been in a similar situation? Would you use golang FaaS for an API? Should I use it only for some "complex" computing and use Firebase API for all the simple stuff?
-Again, this is a basic project mostly for learning go, FaaS system and Firebase. But if it's viable, I might use it for a personal project.
-## [5][Announcing the Ardan Labs Podcast with Bill Kennedy!! Say hello to our first guest &amp; security nerd, Andy Walker!](https://www.reddit.com/r/golang/comments/jswlix/announcing_the_ardan_labs_podcast_with_bill/)
-- url: https://youtu.be/mQidWZbc8JM
+Because , you know when is message is received we need send the message only to the people in that private  group. 
+
+thanks.
+## [5][go-p5: a port of Processing/p5js to Go, with Gonum and Gio](https://www.reddit.com/r/golang/comments/jtnmd5/gop5_a_port_of_processingp5js_to_go_with_gonum/)
+- url: https://www.reddit.com/r/golang/comments/jtnmd5/gop5_a_port_of_processingp5js_to_go_with_gonum/
+---
+hi,
+
+I am happy to announce the first vaguely usable version of `go-p5/p5`, a port of [Processing](https://processing.org)/[p5js](https://p5js.org) to Go.
+
+* [https://github.com/go-p5/p5](https://github.com/go-p5/p5)
+* [https://pkg.go.dev/github.com/go-p5/p5](https://pkg.go.dev/github.com/go-p5/p5)
+
+`p5` can be seen like a toolkit to learn programming, but instead of "just" seeing text and numbers being manipulated in a terminal, you get to see geometrical shapes, colors and stuff bein manipulated in a graphical window. (also via some interactions with the mouse/keyboard.)
+
+There are already a couple of "nice" examples:
+
+* `hello world`
+
+https://preview.redd.it/qh9xv02hh2z51.png?width=400&amp;format=png&amp;auto=webp&amp;s=4e0bf333e960705b65b60c8576182f7cf4e836d1
+
+* `bouncing balls`
+
+https://i.redd.it/k56qxkcih2z51.gif
+
+* `mouse-pressed`
+* `snake`
+* `solar-system`
+
+https://i.redd.it/ufel7ptjh2z51.gif
+
+`go-p5/p5` is based on [Gio](https://gioui.org) for the graphics+key/mouse-events and on [Gonum](https://gonum.org) for the physics stuff.
+
+The `Processing/p5js` API isn't completely available. So there is still a lot of things to do. Patches welcome :)
+## [6][Intersted contributors (beginners welcome)](https://www.reddit.com/r/golang/comments/jtzdsl/intersted_contributors_beginners_welcome/)
+- url: https://www.reddit.com/r/golang/comments/jtzdsl/intersted_contributors_beginners_welcome/
+---
+Hello all.
+I hope everybody's doing alright :)
+I have been working with Python from backend side over little less than 2 years by now
+Recently I started learning go for working on one of the organisation's project.
+So, I have done a basic course in it and was thinking to make a fun little project in Go using Buffalo.
+I have some expertise in frontend as well from React.
+
+Would love if anybody was available for some hours every week to a side fun project. I dont have anything specific in mind as of now, but we can discuss it later.
+Please respond to this thread if you're interested
+
+My github profile, for my past/ongoing works:
+[Aman Jaiswal](http://www.github.com/amanjaiswalofficial)
+## [7][mtojek/gdriver : Download large files from Google Drive (API v3)](https://www.reddit.com/r/golang/comments/ju1brr/mtojekgdriver_download_large_files_from_google/)
+- url: https://github.com/mtojek/gdriver
 ---
 
-## [6][teler: Real-time HTTP Intrusion Detection](https://www.reddit.com/r/golang/comments/jszbf3/teler_realtime_http_intrusion_detection/)
-- url: https://github.com/kitabisa/teler
+## [8][how to install dependencies in project folder with go get and go.mod](https://www.reddit.com/r/golang/comments/ju16ql/how_to_install_dependencies_in_project_folder/)
+- url: https://www.reddit.com/r/golang/comments/ju16ql/how_to_install_dependencies_in_project_folder/
+---
+I'm trying to install some dependencies with `go get` command. I also have created a go.mod file with `go mod init
+
+Whenever I try to `get` the dependencies they get downloaded into my `$GOPATH/pkg`. I tried to remove `$GOPATH` variable but it has some default value, probably `~/go`. Now all dependencies are going into `~/go/pkg`. Is this how it is supposed to work? Can't I keep dependencies in my project folder? Is changing `$GOPATH` to my project folder the only way?
+## [9][Go graphic library help](https://www.reddit.com/r/golang/comments/ju13mr/go_graphic_library_help/)
+- url: https://www.reddit.com/r/golang/comments/ju13mr/go_graphic_library_help/
+---
+Hello everyone. I currently working on a API for traversing or searching tree or graph data structures. I also wanted to visualize the data, but I didn't found any library written in Go to accomplish my needs. I found many libraries (e.g. [https://graph-tool.skewed.de/static/doc/quickstart.html](https://graph-tool.skewed.de/static/doc/quickstart.html) [https://igraph.org/python/doc/tutorial/tutorial.html](https://igraph.org/python/doc/tutorial/tutorial.html)), but written in another languages.
+
+&amp;#x200B;
+
+I just wanted to ask if you know a similar library that can fulfil my needs.
+
+Thank you
+## [10][Vanity URL for Go mod with zero infrastructure](https://www.reddit.com/r/golang/comments/jtku8u/vanity_url_for_go_mod_with_zero_infrastructure/)
+- url: https://gianarb.it/blog/go-mod-vanity-url
 ---
 
-## [7][Building a WebRTC video and audio Broadcaster in Golang using ion-sfu and media devices](https://www.reddit.com/r/golang/comments/jszgcn/building_a_webrtc_video_and_audio_broadcaster_in/)
-- url: https://gabrieltanner.org/blog/broadcasting-ion-sfu
----
-
-## [8][A fast thread-safe in-memory cache server that supports a big number of entries in Go](https://www.reddit.com/r/golang/comments/jt13nd/a_fast_threadsafe_inmemory_cache_server_that/)
-- url: https://github.com/ziyasal/distrox
----
-
-## [9][Efficient struct packing guided pass for Go](https://www.reddit.com/r/golang/comments/jtgehp/efficient_struct_packing_guided_pass_for_go/)
+## [11][Efficient struct packing guided pass for Go](https://www.reddit.com/r/golang/comments/jtgehp/efficient_struct_packing_guided_pass_for_go/)
 - url: https://medium.com/orijtech-developers/efficient-struct-packing-guided-pass-for-go-92255872ec72
 ---
 
-## [10][syscall package deprecated - question](https://www.reddit.com/r/golang/comments/jt1qfm/syscall_package_deprecated_question/)
-- url: https://www.reddit.com/r/golang/comments/jt1qfm/syscall_package_deprecated_question/
----
-While working on a lib using syscall package, I've stumbled upon a [deprecation notice](https://golang.org/pkg/syscall/).  It seems syscall is frozen [since go 1.4 release](https://golang.org/doc/go1.4#major_library_changes). The authors recommend using `golang.org/x/sys` instead.
-
-So why `x/sys` is not part of the standard library yet? Are there plans to include it there?
-
-(technically, /x/ packages *are* part of standard library, however I have to `go get` them instead of them being readily available in the distribution).
-## [11][k6 v0.29.0 is out! 🎊🎉🥳](https://www.reddit.com/r/golang/comments/jssvos/k6_v0290_is_out/)
-- url: https://www.reddit.com/r/golang/comments/jssvos/k6_v0290_is_out/
----
-We are happy and excited to announce that k6 v0.29.0 is released with new features and improvements. k6 is a modern open-source performance and load-testing tool, written in Go and scriptable in JavaScript. 🎊🎉🥳 This release contains the work of over 10 contributors split over more than 100 commits.
-
-- Initial support for gRPC
-- New options for configuring DNS resolution
-- Support for Go extensions
-- Support for setting local IPs, potentially from multiple NICs
-- New option for blocking hostnames
-- UX improvements
-- Lots of bugfixes
-
-This You can read more about it in the [release notes](https://github.com/loadimpact/k6/blob/master/release%20notes/v0.29.0.md). We'd be happy to hear your feedback about it.

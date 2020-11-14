@@ -1,12 +1,27 @@
 # androiddev
-## [1][Weekly "anything goes" thread!](https://www.reddit.com/r/androiddev/comments/jtg9hc/weekly_anything_goes_thread/)
-- url: https://www.reddit.com/r/androiddev/comments/jtg9hc/weekly_anything_goes_thread/
+## [1][App Feedback Thread - November 14, 2020](https://www.reddit.com/r/androiddev/comments/ju180o/app_feedback_thread_november_14_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/ju180o/app_feedback_thread_november_14_2020/
 ---
-Here's your chance to talk about whatever!
+This thread is for getting feedback on your own apps.
 
-Although if you're thinking about getting feedback on an app, you should wait until tomorrow's App Feedback thread.
+####Developers:
 
-Remember that while you can talk about any topic, being a jerk is [still not allowed](https://www.reddit.com/r/androiddev/wiki/rules#wiki_rules_for_comments).
+- must **provide feedback** for others
+- must include **Play Store**, **GitHub**, or **BitBucket** link
+- must make top level comment
+- must make effort to respond to questions and feedback from commenters
+- may be open or closed source
+
+####Commenters:
+
+- must give **constructive feedback** in replies to top level comments
+- must not include links to other apps
+
+To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
+
+As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
+
+\- Da Mods
 ## [2][Weekly Questions Thread - November 09, 2020](https://www.reddit.com/r/androiddev/comments/jqvlp4/weekly_questions_thread_november_09_2020/)
 - url: https://www.reddit.com/r/androiddev/comments/jqvlp4/weekly_questions_thread_november_09_2020/
 ---
@@ -25,111 +40,52 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Has anyone updated to MacOS Big Sur and is Android Studio working fine with it?](https://www.reddit.com/r/androiddev/comments/jtbl4m/has_anyone_updated_to_macos_big_sur_and_is/)
+## [3][Any way to flag this review for removal? It's dramatically affecting the rating of my app and is obviously comple unrelated](https://www.reddit.com/r/androiddev/comments/jtj2o5/any_way_to_flag_this_review_for_removal_its/)
+- url: https://i.redd.it/p3fqdx5wc1z51.png
+---
+
+## [4][A pragmatic guide to Hilt with Kotlin](https://www.reddit.com/r/androiddev/comments/jtwd8i/a_pragmatic_guide_to_hilt_with_kotlin/)
+- url: https://medium.com/androiddevelopers/a-pragmatic-guide-to-hilt-with-kotlin-a76859c324a1
+---
+
+## [5][Disable Touch](https://www.reddit.com/r/androiddev/comments/ju1wc2/disable_touch/)
+- url: https://www.reddit.com/r/androiddev/comments/ju1wc2/disable_touch/
+---
+ Hello ! I have launched " Disable Touch" a simple app which allows you to listen to movies or even the online classes when your phone is in your pocket without the worry of accidental touches by disabling the touch using our touch-control-panel .It can be also used over popular apps like YouTube,Amazon Prime Videos and even over Netflix to 'binge-listen' 🤪 movies. Would love to hear what you people think about it !!!
+
+[https://play.google.com/store/apps/details?id=com.tsj.disabletouch](https://play.google.com/store/apps/details?id=com.tsj.disabletouch)
+## [6][Simplified Android development using Simple-Stack](https://www.reddit.com/r/androiddev/comments/jtv118/simplified_android_development_using_simplestack/)
+- url: https://medium.com/@Zhuinden/simplified-android-development-using-simple-stack-6e44ce808c35
+---
+
+## [7][Unit Testing objects with Android API references](https://www.reddit.com/r/androiddev/comments/ju1itb/unit_testing_objects_with_android_api_references/)
+- url: https://androidexplained.github.io/android/testing/2020/10/21/android-methods-testing.html
+---
+
+## [8][Android Emulator Error](https://www.reddit.com/r/androiddev/comments/jtywq0/android_emulator_error/)
+- url: https://www.reddit.com/r/androiddev/comments/jtywq0/android_emulator_error/
+---
+This is what I get when trying to start my android emulator. Im using the latest version of Visual Studio
+
+Device error: WARNING: unexpected '-prop' value ('monodroid.avdname=pixel_2_pie_9_0_-_api_28'), only 'qemu.' properties are supported WARNING: unexpected '-prop' value ('emu.uuid=4b63b139-cc77-4b66-9200-0d25f8fc545e'), only 'qemu.' properties are supported.
+
+I have been googling this all day and nothing resolves the issue.. Yes, my system is compatible, I have HAXM installed, everything is up to date, ive followed every step ive found on google and other threads but even those people are still experiencing the issue. Its extremely frustrating as I cannot work on anything.
+## [9][Do you think Google Map SDK will ever get features available on default Google Map app as a ready to use Fragment or something?](https://www.reddit.com/r/androiddev/comments/jtsgrv/do_you_think_google_map_sdk_will_ever_get/)
+- url: https://www.reddit.com/r/androiddev/comments/jtsgrv/do_you_think_google_map_sdk_will_ever_get/
+---
+google map sdk for android has a lot of good things, but it is still lacking far behind in features compared to map app you have on your phone. At the moment people have to roll out these features in their app, which could spell trouble with Google's "No Competing Product" clause ( I wonder how taxi apps like Uber get away with it). Or you can kick of Intent to fire up the map app which is a separate app.  
+
+
+How do people deal with it?
+## [10][Playing around with StateFlow/SharedFlow and some meme templates](https://www.reddit.com/r/androiddev/comments/jtmr60/playing_around_with_stateflowsharedflow_and_some/)
+- url: https://levelup.gitconnected.com/stateflow-sharedflow-and-the-secret-bus-ba9978ad8453?sk=d539a6e1f112f13268fa5ac54dc65658
+---
+
+## [11][Has anyone updated to MacOS Big Sur and is Android Studio working fine with it?](https://www.reddit.com/r/androiddev/comments/jtbl4m/has_anyone_updated_to_macos_big_sur_and_is/)
 - url: https://www.reddit.com/r/androiddev/comments/jtbl4m/has_anyone_updated_to_macos_big_sur_and_is/
 ---
 Since a lot has changed in Big Sur and Macbook being my development machine, I just want to make sure before upgrading that Android Studio works fine or not otherwise will have to take leave from work.
-## [4][More WindowInsetsController APIs backported!](https://www.reddit.com/r/androiddev/comments/jt77s6/more_windowinsetscontroller_apis_backported/)
-- url: https://i.redd.it/8uw29rn1nwy51.png
+## [12][How to Disable the Notification/Status Bar??](https://www.reddit.com/r/androiddev/comments/jtuai8/how_to_disable_the_notificationstatus_bar/)
+- url: https://www.reddit.com/r/androiddev/comments/jtuai8/how_to_disable_the_notificationstatus_bar/
 ---
-
-## [5][AOSP is migrating from its current build systems to Bazel](https://www.reddit.com/r/androiddev/comments/jsztsc/aosp_is_migrating_from_its_current_build_systems/)
-- url: https://blog.bazel.build/2020/11/12/aosp_migrating_to_bazel.html
----
-
-## [6][AdMob users. What do you think about keeping test devices in your production builds? Would you risk getting your devices spoofed and getting banned from AdMob? Or would you rather risk getting banned from invalid traffic due to forgetfulness?](https://www.reddit.com/r/androiddev/comments/jtfvsl/admob_users_what_do_you_think_about_keeping_test/)
-- url: https://www.reddit.com/r/androiddev/comments/jtfvsl/admob_users_what_do_you_think_about_keeping_test/
----
-I can't figure out which is riskier. The choice is binary and either choices could result in getting banned. My test devices are usually removed from my official release APKs. I recently decided to resume work on one of my AdMob apps, so I played around with the release from the Play Store and forgot that my devices were no longer interpreted as test devices. I panicked and rushed to run the the dev build on all my devices.
-
-I thought about just keeping the test device IDs in my future releases, but I googled to make sure if I should do it. And people said someone can then decompile the APK and extract the device IDs, then spoof my devices. I believe malicious actors can then generate invalid traffic with my spoofed device IDs.
-
-On the other hand people have said they were suspended or demonetized because they didn't use test IDs on their official releases.
-
-It seems like both choices are bad. And hearing about how Google treats Android devs here, I feel hopeless! What do you guys usually do with your test device IDs? Keep or remove?
-## [7][Modern approach to list and details screens](https://www.reddit.com/r/androiddev/comments/jtcht4/modern_approach_to_list_and_details_screens/)
-- url: https://www.reddit.com/r/androiddev/comments/jtcht4/modern_approach_to_list_and_details_screens/
----
-I created a sample project here
-https://github.com/lawloretienne/CryptoCoins
-
-It's a really basic app but i just wanted to showcase an approach to building a list screen and details screen.
-
-Let me know what you think.
-## [8][Kotlin Linters: which should I choose?](https://www.reddit.com/r/androiddev/comments/jtervp/kotlin_linters_which_should_i_choose/)
-- url: https://akuleshov7.com/2020-11-10-kotlin-static-analyzers.html
----
-
-## [9][Monetisation strategy: nsfw game on patreon, sfw on Google Play](https://www.reddit.com/r/androiddev/comments/jtcswd/monetisation_strategy_nsfw_game_on_patreon_sfw_on/)
-- url: https://www.reddit.com/r/androiddev/comments/jtcswd/monetisation_strategy_nsfw_game_on_patreon_sfw_on/
----
-Will Google play allow such thing?
-
-On Google there will be a sfw version of the game with link to patreon where user can subscribe to get the nsfw version.
-## [10][Hi can anyone help me how to implement this project I have no idea on tasks...etc I know how to design front end](https://www.reddit.com/r/androiddev/comments/jtfw5f/hi_can_anyone_help_me_how_to_implement_this/)
-- url: https://i.redd.it/by1mzhfh00z51.png
----
-
-## [11][whats the best approach to making an iso of my android tv ?](https://www.reddit.com/r/androiddev/comments/jtfq4m/whats_the_best_approach_to_making_an_iso_of_my/)
-- url: https://www.reddit.com/r/androidhacking/comments/jtfohe/dumping_my_androids_tv_install/?utm_source=share&amp;utm_medium=ios_app&amp;utm_name=iossmf
----
-
-## [12][Mockito unit test strange behaviour for custom class](https://www.reddit.com/r/androiddev/comments/jtffkf/mockito_unit_test_strange_behaviour_for_custom/)
-- url: https://www.reddit.com/r/androiddev/comments/jtffkf/mockito_unit_test_strange_behaviour_for_custom/
----
- I have a custom class:
-
-    data class ContainerModel(   
-      ...   
-      val data: List&lt;MainModel&gt;? 
-    ) {    
-      fun get(id: String) = data?.firstOrNull { it.id == id } }   
-    
-    
-    data class MainModel(   
-      val id: String?,   
-      val documentGroups: List&lt;DocumentGroup&gt;?,   
-      .... 
-    ) {   
-      fun hasAnyDocument() = documentGroups != null 
-    } 
-
-In my unit tests, I setup up like this:
-
-    import org.mockito.Mockito.`when` as mwhen     
-    
-    private lateinit var containerModel: ContainerModel    
-    
-    @Mock lateinit var m1: MainModel    
-    
-    @Mock lateinit var documentGroup: DocumentGroup    
-    
-    @Before fun setup() {     
-      m1.apply {       
-        mwhen(id).thenReturn("m1")  
-        mwhen(documentGroups).thenReturn(listOf(documentGroup))     
-      }      
-    
-      containerModel = Mockito.spy(ContainerModel(data = arrayListOf(m1)))   
-    } 
-
-This test is successful
-
-    @Test 
-    fun get() {     
-      Truth.assertThat(containerModel.get("m0")).isNull() // successful  
-      Truth.assertThat(containerModel.get("m1")).isEqualTo(m1) // successful   
-    } 
-
-But this is strange
-
-    @Test fun checkDocuments() {    
-      Truth.assertThat(containerModel.get("m1")!!.documentGroups).isNotNull() // successful       
-      Truth.assertThat(containerModel.get("m1")!!.documentGroups?.size).isEqualTo(1) // successful     
-      Truth.assertThat(containerModel.get("m1")!!.hasAnyDocument()).isTrue() // FAILS  
-    } 
-
-It's super strange to me as if I check on documentGroups  
- it's clearly not null and has one item, but calling a function that uses it fails? what could be the issue?
-
-Thanks!
+I am using miui-ify to have my notification/status bar at the bottom. I managed to hide the notification bar at the top, but i can still drag it down. Is there a way to completely disable the notification/status bar?

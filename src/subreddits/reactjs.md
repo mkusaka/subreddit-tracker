@@ -70,69 +70,199 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][Upgraded a react app to webpack 5](https://www.reddit.com/r/reactjs/comments/jtzt84/upgraded_a_react_app_to_webpack_5/)
+## [3][The most recent iteration of my personal website](https://www.reddit.com/r/reactjs/comments/jufspn/the_most_recent_iteration_of_my_personal_website/)
+- url: https://v.redd.it/39j6lqzxwbz51
+---
+
+## [4][Optimize React Apps PageSpeed Insights Score - thetuteur](https://www.reddit.com/r/reactjs/comments/juh1bf/optimize_react_apps_pagespeed_insights_score/)
+- url: https://thetuteur.com/optimize-react-apps-pagespeed-insights-score/
+---
+
+## [5][How I built my portfolio using DEV.to and NextJS](https://www.reddit.com/r/reactjs/comments/ju6lto/how_i_built_my_portfolio_using_devto_and_nextjs/)
+- url: https://dev.to/sidthesloth92/story-of-how-i-built-my-portfolio-and-blog-using-dev-to-and-nextjs-3j85
+---
+
+## [6][A library to build React Diagrams with ease 💎](https://www.reddit.com/r/reactjs/comments/jul46j/a_library_to_build_react_diagrams_with_ease/)
+- url: https://github.com/antonioru/beautiful-react-diagrams
+---
+
+## [7][I made the first version of my portfolio](https://www.reddit.com/r/reactjs/comments/juilw9/i_made_the_first_version_of_my_portfolio/)
+- url: https://www.reddit.com/r/reactjs/comments/juilw9/i_made_the_first_version_of_my_portfolio/
+---
+Check it out at : http://apoorv.web.app/
+
+I'm currently hosting the website using Firebase. I plan to change the portfolio in the next version. Any ideas are welcome.
+
+Almost all the things I've used is mentioned in the github Readme.
+
+Checkout the github Repo : https://github.com/uragirii/the-website
+## [8][Ordinary Puzzles: A Progressive Web App puzzle game built with React-Native](https://www.reddit.com/r/reactjs/comments/juljmz/ordinary_puzzles_a_progressive_web_app_puzzle/)
+- url: https://www.ordinarypuzzles.com/
+---
+
+## [9][Upgraded a react app to webpack 5](https://www.reddit.com/r/reactjs/comments/jtzt84/upgraded_a_react_app_to_webpack_5/)
 - url: https://www.reddit.com/r/reactjs/comments/jtzt84/upgraded_a_react_app_to_webpack_5/
 ---
 I just did that and it seems to be very similar to webpack 4.  Bundle size decreased by 0.5%, build time remains similar.  Besides module federation which I don't use, and opt-in persistent caching that seem to bebetter left off, what's the biggest feature I can tell my boss/coworker? I went through the changelog and couldn't fully appreciate the technical changes that are being made.
 
 If you are planning to migrate, be prepared to deal with a bunch of config migrations, adding node polyfills, getting a lot more webpack api warnings and dealing with some incompatible webpack plugins :)
-## [4][Moving OkCupid from REST to GraphQL](https://www.reddit.com/r/reactjs/comments/jthwdz/moving_okcupid_from_rest_to_graphql/)
-- url: https://tech.okcupid.com/moving-okcupid-from-rest-to-graphql/
+## [10][Hi. How to build beautiful User interfaces](https://www.reddit.com/r/reactjs/comments/jujn6e/hi_how_to_build_beautiful_user_interfaces/)
+- url: https://www.reddit.com/r/reactjs/comments/jujn6e/hi_how_to_build_beautiful_user_interfaces/
 ---
-
-## [5][Chakra UI v1 just released!](https://www.reddit.com/r/reactjs/comments/jthcmu/chakra_ui_v1_just_released/)
-- url: https://chakra-ui.com
+I'm new to React and maybe to Web development,
+But I'm struggling to make a beautiful website or maybe just a landing page.
+Which is the best way to do that ?
+Material- Ui ?
+## [11][CSS for my search bar in app appears top right of screen?](https://www.reddit.com/r/reactjs/comments/jujh14/css_for_my_search_bar_in_app_appears_top_right_of/)
+- url: https://www.reddit.com/r/reactjs/comments/jujh14/css_for_my_search_bar_in_app_appears_top_right_of/
 ---
+I am currently developing a weather app, when the page loads the CSS is different from when you have searched a location, it appears on the top left. Here is a gif showing this.. 
 
-## [6][How to test React Hooks - Part 1](https://www.reddit.com/r/reactjs/comments/jtwev6/how_to_test_react_hooks_part_1/)
-- url: https://www.samdawson.dev/article/how-to-test-react-hooks-2
+also, can anyone tell me why the image jumps when first searched but is transitioning smoothly after a couple of searches?
+
+https://imgur.com/aX2nbyy
+
+
+My code:
+
+**CSS**
+
+    html, body, #root {
+    font: 0.9rem sans-serif;
+    background: #0a1f44;
+    color: #1e2432;
+    height: 100%;
+    margin: 0;
+    width: auto;
+    }
+
+    .app.cold {
+    background-image: url('./images/cold.jpg');
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s ease-in;
+    }
+
+    .app.warm{
+    background-image: url('./images/warm.jpg');
+    background-size: cover;
+    background-position: center;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s ease-in;
+    }
+
+
+    .search {
+    outline: none;
+    padding: 20px 7%;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 5%;
+    background: rgba(250, 250, 250, 0.85);
+    }
+
+    .city {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 40px 8%;
+    border-radius: 20px;
+    background: rgba(250, 250, 250, 0.85);
+    box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
+    }
+
+
+**APP.JS**
+
+      import React, { useState } from 'react';
+
+    import { fetchWeather } from './api/fetchWeather';
+    import './App.css';
+
+    const App = () =&gt; {
+    const [query, setQuery] = useState('');
+    const [weather, setWeather] = useState({});
+
+    const dateBuilder = (d) =&gt; {
+        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+     let day = days[d.getDay()];
+     let date = d.getDate();
+     let month = months[d.getMonth()];
+     let year = d.getFullYear();
+
+    return `${day} ${date} ${month} ${year}`
+
+
+    }
+
+    const search = async (e) =&gt; {
+        if(e.key === 'Enter') {
+            const data = await fetchWeather(query)
+            
+
+            setWeather(data);
+            setQuery('');
+
+             
+        }
+     }
+
+    return (
+        &lt;div className ={
+            (typeof weather.main != "undefined") 
+            ? ((weather.main.temp &gt; 18) 
+            ? 'app warm' : 
+            'app cold') 
+            : 'app'}&gt;
+        
+            &lt;input
+            type="text"
+            className="search"
+            placeholder="Search... "
+            value ={query}
+            onChange={(e) =&gt; setQuery(e.target.value)}
+            onKeyPress={search}
+            /&gt;
+
+            {weather.main &amp;&amp; (
+                &lt;div className="city"&gt;
+                    &lt;h2 className="city-name"&gt;
+                        &lt;span&gt;{weather.name}&lt;/span&gt;
+                        &lt;sup&gt;{weather.sys.country}&lt;/sup&gt;
+                    &lt;/h2&gt;
+                    &lt;div className ="city-temp"&gt;
+                        {Math.round(weather.main.temp)}
+                        &lt;sup&gt;&amp;deg;C&lt;/sup&gt;
+                        &lt;/div&gt;
+                        &lt;div className="info"&gt;
+                        &lt;img className="city-icon" src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt= 
+    {weather.weather[0].description} /&gt;
+                        &lt;p&gt;{weather.weather[0].description}&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            )}
+        &lt;/div&gt;
+    );
+    }
+
+    export default App;
+## [12][Responsive NavBar component](https://www.reddit.com/r/reactjs/comments/juiuti/responsive_navbar_component/)
+- url: https://www.reddit.com/r/reactjs/comments/juiuti/responsive_navbar_component/
 ---
-
-## [7][Hi Everyone, I need a recommendation for open-source flow builder boilerplates or toolkits that helps you build flows in React/Vanilla JS as fast as possible, like the one shown in the link. Thanks so much!](https://www.reddit.com/r/reactjs/comments/jtd4l9/hi_everyone_i_need_a_recommendation_for/)
-- url: https://kapost-files-prod.s3.amazonaws.com/kapost/52f934574e14d3eb0c000856/studio/content/5b5caacdd3c8610027000015/html_bodies/1536711714-5173cfd8-dcc0-4313-8899-41eb366b046f/DF18%20Money%20Slide.png
----
-
-## [8][Displaying Data Analysis and Visualization in ReactJS](https://www.reddit.com/r/reactjs/comments/jtzp8u/displaying_data_analysis_and_visualization_in/)
-- url: https://www.reddit.com/r/reactjs/comments/jtzp8u/displaying_data_analysis_and_visualization_in/
----
- 
-
-Hi,
-
-I have a form in ReactJS, after submit, form data is posted to django backend.
-
-My requirement is, I need to run data analysis and visualization on submitted form data with data already exists from  previous submitted data.
-
-can I build data visualization in Django Rest Framework?. or can I do data analysis and visualization in Pandas library?. But not sure how to build an API so that I can show up these data visualization to ReactJS ui after form submit.
-
-Please let me know , if any sample or reference to github project, will be helpful.
-
-Thanks,
-## [9][React Native Zoom Video Call App](https://www.reddit.com/r/reactjs/comments/ju1zk1/react_native_zoom_video_call_app/)
-- url: https://www.youtube.com/watch?v=6soHPnHxHxI&amp;feature=emb_logo
----
-
-## [10][My first React Component - Week Time slots selector](https://www.reddit.com/r/reactjs/comments/ju1rnp/my_first_react_component_week_time_slots_selector/)
-- url: https://www.reddit.com/r/reactjs/comments/ju1rnp/my_first_react_component_week_time_slots_selector/
----
-Hi I'm a month in learning react and this is my first attempt at a fully working component
-
-&amp;#x200B;
-
-It's an input element that lets you select time slots along the week days
-
-&amp;#x200B;
-
-[Demo](https://wts-example.surge.sh)
-
-&amp;#x200B;
-
-[Public repository](https://github.com/claudiobonifazi/reactweektimeselector)
-## [11][Social Assistant for Twitter - get insights on your unfollowers](https://www.reddit.com/r/reactjs/comments/ju1iy6/social_assistant_for_twitter_get_insights_on_your/)
-- url: https://socialassist.ml/
----
-
-## [12][JSX Lite - write components that compile to React, Vue, Svelte, and more](https://www.reddit.com/r/reactjs/comments/jti1x9/jsx_lite_write_components_that_compile_to_react/)
-- url: https://github.com/builderio/jsx-lite
----
-
+Can someone suggest me a good tutorial? I'm lost in there. Bootstrap, Material UI

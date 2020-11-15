@@ -40,52 +40,140 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Any way to flag this review for removal? It's dramatically affecting the rating of my app and is obviously comple unrelated](https://www.reddit.com/r/androiddev/comments/jtj2o5/any_way_to_flag_this_review_for_removal_its/)
-- url: https://i.redd.it/p3fqdx5wc1z51.png
+## [3][Vigilante - iOS 14 alike privacy features in Android](https://www.reddit.com/r/androiddev/comments/jude8s/vigilante_ios_14_alike_privacy_features_in_android/)
+- url: https://www.reddit.com/r/androiddev/comments/jude8s/vigilante_ios_14_alike_privacy_features_in_android/
+---
+Hello folks,
+
+I've recently built an app that mimics the iOS 14's privacy feature that sends an alert as a dot on your screen when your microphone/camera is being used.
+
+You can download it directly from [GitHub](https://github.com/CraZyLegenD/Vigilante/releases/tag/1.0.0)
+
+As you can see, it's an open source project that showcases some of the latest Android development's goodies as you can see on the [GitHub](https://github.com/CraZyLegenD/Vigilante) page.
+
+It's open source since it's security based app, your data is yours and there are no trackers or libraries that talk to Google, feel free to contribute to the app especially if you can do a translation to your language.
+
+If you have any suggestions or you've found an bugs in the app feel free to open an issue in the repo or the comments of this post.
+
+Once again a link to the repo [https://github.com/CraZyLegenD/Vigilante](https://github.com/CraZyLegenD/Vigilante)
+## [4][Jintin/FancyLocationProvider Wrapper of FusedLocationProviderClient for Android to support modern usage like LiveData or Flow.](https://www.reddit.com/r/androiddev/comments/jujqay/jintinfancylocationprovider_wrapper_of/)
+- url: https://github.com/Jintin/FancyLocationProvider
 ---
 
-## [4][A pragmatic guide to Hilt with Kotlin](https://www.reddit.com/r/androiddev/comments/jtwd8i/a_pragmatic_guide_to_hilt_with_kotlin/)
-- url: https://medium.com/androiddevelopers/a-pragmatic-guide-to-hilt-with-kotlin-a76859c324a1
+## [5][Escape your Full Text Search Queries](https://www.reddit.com/r/androiddev/comments/jujq52/escape_your_full_text_search_queries/)
+- url: https://blog.haroldadmin.com/escape-fts-queries/
 ---
 
-## [5][Disable Touch](https://www.reddit.com/r/androiddev/comments/ju1wc2/disable_touch/)
-- url: https://www.reddit.com/r/androiddev/comments/ju1wc2/disable_touch/
+## [6][How to avoid passing objects between activities](https://www.reddit.com/r/androiddev/comments/juj6su/how_to_avoid_passing_objects_between_activities/)
+- url: https://www.reddit.com/r/androiddev/comments/juj6su/how_to_avoid_passing_objects_between_activities/
 ---
- Hello ! I have launched " Disable Touch" a simple app which allows you to listen to movies or even the online classes when your phone is in your pocket without the worry of accidental touches by disabling the touch using our touch-control-panel .It can be also used over popular apps like YouTube,Amazon Prime Videos and even over Netflix to 'binge-listen' 🤪 movies. Would love to hear what you people think about it !!!
+I don't know if this counts as "help me" or as "general discussion about [...] design"
 
-[https://play.google.com/store/apps/details?id=com.tsj.disabletouch](https://play.google.com/store/apps/details?id=com.tsj.disabletouch)
-## [6][Simplified Android development using Simple-Stack](https://www.reddit.com/r/androiddev/comments/jtv118/simplified_android_development_using_simplestack/)
-- url: https://medium.com/@Zhuinden/simplified-android-development-using-simple-stack-6e44ce808c35
----
+I suspect that I am using the wrong code design for my app. I am making a note taking app where each note is an object. In the main activity I create an empty `Notebook` object. In the `Notebook` is an empty mutableListOf of `Notes`s. Each `Note` has the context of the note. (text, date created, date updated ...). When the user clicks on the "Add a note" button it jumps to the CreateNote activity. 
 
-## [7][Unit Testing objects with Android API references](https://www.reddit.com/r/androiddev/comments/ju1itb/unit_testing_objects_with_android_api_references/)
-- url: https://androidexplained.github.io/android/testing/2020/10/21/android-methods-testing.html
----
+I can think of two ways of adding that note. Either, 
+ 1. Serialize the `Notebook` object
+ 2. Send the `Notebook` by using 
+```
+// In main activity
+intent.putExtra(NOTEBOOK, notebook)
+// In CreateNote activity
+val notebook = intent.getSerializableExtra(NOTEBOOK) as? Notebook
+```
+ 3. Add a newly created note to the notebook
+ 4. Send back the updated notebook
+ 5. Update the notebook in main activity.
 
-## [8][Android Emulator Error](https://www.reddit.com/r/androiddev/comments/jtywq0/android_emulator_error/)
-- url: https://www.reddit.com/r/androiddev/comments/jtywq0/android_emulator_error/
----
-This is what I get when trying to start my android emulator. Im using the latest version of Visual Studio
-
-Device error: WARNING: unexpected '-prop' value ('monodroid.avdname=pixel_2_pie_9_0_-_api_28'), only 'qemu.' properties are supported WARNING: unexpected '-prop' value ('emu.uuid=4b63b139-cc77-4b66-9200-0d25f8fc545e'), only 'qemu.' properties are supported.
-
-I have been googling this all day and nothing resolves the issue.. Yes, my system is compatible, I have HAXM installed, everything is up to date, ive followed every step ive found on google and other threads but even those people are still experiencing the issue. Its extremely frustrating as I cannot work on anything.
-## [9][Do you think Google Map SDK will ever get features available on default Google Map app as a ready to use Fragment or something?](https://www.reddit.com/r/androiddev/comments/jtsgrv/do_you_think_google_map_sdk_will_ever_get/)
-- url: https://www.reddit.com/r/androiddev/comments/jtsgrv/do_you_think_google_map_sdk_will_ever_get/
----
-google map sdk for android has a lot of good things, but it is still lacking far behind in features compared to map app you have on your phone. At the moment people have to roll out these features in their app, which could spell trouble with Google's "No Competing Product" clause ( I wonder how taxi apps like Uber get away with it). Or you can kick of Intent to fire up the map app which is a separate app.  
+Alternatively, I can create a new `Note`, serialize it, and send it back. 
 
 
-How do people deal with it?
-## [10][Playing around with StateFlow/SharedFlow and some meme templates](https://www.reddit.com/r/androiddev/comments/jtmr60/playing_around_with_stateflowsharedflow_and_some/)
-- url: https://levelup.gitconnected.com/stateflow-sharedflow-and-the-secret-bus-ba9978ad8453?sk=d539a6e1f112f13268fa5ac54dc65658
+Is that the best coding design? If there was a way of storing the `Notebook` object as a shared object between activities I think that would be the best. I could then simply access that object (and potentially send an index if I want to edit a specific note). Is there a way to do that?
+
+I am writing in Kotlin, if that matters.
+## [7][8 — 14 November Android Newsletter](https://www.reddit.com/r/androiddev/comments/jujnmb/8_14_november_android_newsletter/)
+- url: https://www.reddit.com/r/androiddev/comments/jujnmb/8_14_november_android_newsletter/
+---
+Stay up to date with Android development, in this week's edition:  
+🤓 Android Coroutine Scopes   
+🤩 Run Android Studio on any device   
+🧪 Experiment with a new framework Simple-Stack   
+💭 Master the Bubbles API  
+and much more!
+
+Read it here 👉 [https://vladsonkin.com/android-newsletter-20/](https://vladsonkin.com/android-newsletter-20/)  
+What's your favorite one?
+
+🔥Featuring [@joenrv](https://twitter.com/joenrv) [@FilipStanis](https://twitter.com/FilipStanis) [@Zhuinden](https://twitter.com/Zhuinden) [@filipebatista](https://twitter.com/filipebatista) [@balarka](https://twitter.com/balarka) [@SG5202](https://twitter.com/SG5202) [@rockandnull](https://twitter.com/rockandnull) [@iabhishek1041](https://twitter.com/iabhishek1041) [@gokhanalicciii](https://twitter.com/gokhanalicciii) and many other great authors!
+
+💚 Subscribe and receive new editions directly to your email. Weekly, no spam, unsub anytime.  
+Here is an example: [https://mailchi.mp/46c5d65d2315/android-newsletter-20](https://mailchi.mp/46c5d65d2315/android-newsletter-20)
+## [8][Jetpack Compose or Flutter... which is the safest bet?](https://www.reddit.com/r/androiddev/comments/judj8o/jetpack_compose_or_flutter_which_is_the_safest_bet/)
+- url: https://www.reddit.com/r/androiddev/comments/judj8o/jetpack_compose_or_flutter_which_is_the_safest_bet/
+---
+I know this sub will mostly pick native, but just assume you can only pick a cross-platform solution. Here's what I've gathered so far. Please correct me if I'm wrong.
+
+
+Flutter pros:
+
+* Easy to learn
+
+* Used by Google themselves in Google Pay, Google Assistant, Google Ads, etc.
+* Used by Ebay, Alibaba, Baidu, Square, Tencent
+* Used by popular apps like Insight Timer and Reflectly
+* Will work on Fuschia OS
+
+Flutter cons: 
+
+* Devs seem to prefer Kotlin over Dart
+
+* If Google drops Flutter, your investment in learning Dart will be for nothing
+* iOS animation bugs 
+
+* Not many first party plug-ins, and some of the few that exist have issues
+
+Jetpack Compose pros:
+
+* Similar to SwiftUI, so easier to get into for new iOS devs and  current Android devs 
+
+* Built by Google *and* Jetbrains, who have a track record of excellent products, and they created Kotlin
+
+* devs who prefer native android won't have much of a problem with this 
+
+Compose cons: 
+
+* Younger project, currently in Alpha, so who knows if it'll catch up to Flutter by the time it's mature
+* If Flutter continues to grow, it'll be harder to convince Flutter devs to switch 
+
+* With so many companies (including Google) already invested in Flutter, what reason do they have to even consider Compose? 
+
+* If Fuchsia turns out to be a success and not a toy project, Flutter will be ahead in this new OS. Doesn't mean Android will just disappear though 
+
+What do you think? I'm still in university so I don't have to worry as much about the current cross-platform job market. I wanna use the cross-platform framework that will be more likely to stay relevant or at least alive by 2022. Not sure if I should dive into Flutter now or just work on other stuff while I wait for Compose to become production ready
+## [9][Jetpack Compose: intro &amp; basic layouts](https://www.reddit.com/r/androiddev/comments/juc0n0/jetpack_compose_intro_basic_layouts/)
+- url: https://www.rockandnull.com/jetpack-compose/
 ---
 
-## [11][Has anyone updated to MacOS Big Sur and is Android Studio working fine with it?](https://www.reddit.com/r/androiddev/comments/jtbl4m/has_anyone_updated_to_macos_big_sur_and_is/)
-- url: https://www.reddit.com/r/androiddev/comments/jtbl4m/has_anyone_updated_to_macos_big_sur_and_is/
+## [10][Enabling databinding issue](https://www.reddit.com/r/androiddev/comments/julgc8/enabling_databinding_issue/)
+- url: https://www.reddit.com/r/androiddev/comments/julgc8/enabling_databinding_issue/
 ---
-Since a lot has changed in Big Sur and Macbook being my development machine, I just want to make sure before upgrading that Android Studio works fine or not otherwise will have to take leave from work.
-## [12][How to Disable the Notification/Status Bar??](https://www.reddit.com/r/androiddev/comments/jtuai8/how_to_disable_the_notificationstatus_bar/)
-- url: https://www.reddit.com/r/androiddev/comments/jtuai8/how_to_disable_the_notificationstatus_bar/
+Good day everyone,
+
+I have this issue on a kotlin dsl Gradle multi module project I have been practicing with.
+
+It prompts me to upgrade Gradle plugin from 4.0.2 to 4.1.0.
+
+After updating I noticed the buildFeatures has no databinding option.
+
+So I have no idea how to enable databinding on it .
+## [11][How to change the Floating label(Hint) background in material design?](https://www.reddit.com/r/androiddev/comments/ju2b2r/how_to_change_the_floating_labelhint_background/)
+- url: https://i.redd.it/yit485ypo7z51.png
 ---
-I am using miui-ify to have my notification/status bar at the bottom. I managed to hide the notification bar at the top, but i can still drag it down. Is there a way to completely disable the notification/status bar?
+
+## [12][Graph (network) library for Android app](https://www.reddit.com/r/androiddev/comments/jufh33/graph_network_library_for_android_app/)
+- url: https://www.reddit.com/r/androiddev/comments/jufh33/graph_network_library_for_android_app/
+---
+Graph as in nodes/ edges graph (i.e. graph theory)
+
+I'm a newbie Android Java developer, and I'm looking for Graph library for Android (one that has some good contributers or still active in maintaining it). I've googled and used some but they are either not maintained (e.g. have low committs) or no longer used by the committee.
+
+Any suggestion is welcome!

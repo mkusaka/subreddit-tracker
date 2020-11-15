@@ -1,95 +1,74 @@
 # aws
-## [1][Amazon Athena adds support for running SQL queries across relational, non-relational, object, and custom data sources.](https://www.reddit.com/r/aws/comments/jtxnwl/amazon_athena_adds_support_for_running_sql/)
+## [1][Moving AWS S3 objects to an Infrequent Access storage class without going bankrupt](https://www.reddit.com/r/aws/comments/juhz2m/moving_aws_s3_objects_to_an_infrequent_access/)
+- url: https://blog.doit-intl.com/moving-aws-s3-objects-to-an-infrequent-access-storage-class-without-going-bankrupt-e4de168cd05c
+---
+
+## [2][AWS Network Load Balancer now supports IPv6](https://www.reddit.com/r/aws/comments/ju10mh/aws_network_load_balancer_now_supports_ipv6/)
+- url: https://aws.amazon.com/about-aws/whats-new/2020/11/network-load-balancer-supports-ipv6/
+---
+
+## [3][Name a security challenge you want to see automation for](https://www.reddit.com/r/aws/comments/jugyc9/name_a_security_challenge_you_want_to_see/)
+- url: https://www.reddit.com/r/aws/comments/jugyc9/name_a_security_challenge_you_want_to_see/
+---
+Wondering what security challenges you guys have encountered, that you wish automation already existed.
+
+In short, interested in understanding any security tasks you have to do manually because there is no current automation within the AWS platform.
+
+Thanks a lot in advance!
+## [4][Would Cassandra be a better option than Aurora for daily bulk inserts and frequent API calls?](https://www.reddit.com/r/aws/comments/juh3gd/would_cassandra_be_a_better_option_than_aurora/)
+- url: https://www.reddit.com/r/aws/comments/juh3gd/would_cassandra_be_a_better_option_than_aurora/
+---
+I have Spark running on AWS EMR, and I probably insert 10k+ new and upsert entries in Aurora right now. The problem is Spark takes around 10% of the time for the transformations, around 90% goes on with the insertion in Aurora. This happens once every day, rest there are regular API calls going on with Aurora to fetch data. Would Cassandra be a quicker and feasible option, performance-wise?   
+
+
+PS: I cannot overspend. Have to work on the budget around what is being costed for Aurora
+## [5][I assume there is no way for an AWS to see what process/services you're running on your outside AWS PC?](https://www.reddit.com/r/aws/comments/juj2sp/i_assume_there_is_no_way_for_an_aws_to_see_what/)
+- url: https://www.reddit.com/r/aws/comments/juj2sp/i_assume_there_is_no_way_for_an_aws_to_see_what/
+---
+Or is there?
+
+&amp;#x200B;
+
+I.e, if you're running AWS on a desktop, your own one
+## [6][Amazon Athena adds support for running SQL queries across relational, non-relational, object, and custom data sources.](https://www.reddit.com/r/aws/comments/jtxnwl/amazon_athena_adds_support_for_running_sql/)
 - url: https://aws.amazon.com/about-aws/whats-new/2020/11/aws-what-s-new-for-athena-federated-query/
 ---
 
-## [2][Lightsail Containers: An Easy Way to Run your Containers in the Cloud](https://www.reddit.com/r/aws/comments/jtk41e/lightsail_containers_an_easy_way_to_run_your/)
-- url: https://aws.amazon.com/blogs/aws/lightsail-containers-an-easy-way-to-run-your-containers-in-the-cloud/
+## [7][AWS master account](https://www.reddit.com/r/aws/comments/juhyft/aws_master_account/)
+- url: https://www.reddit.com/r/aws/comments/juhyft/aws_master_account/
+---
+Recently I've seen the AWS master account is shifting to the AWS management account. 
+
+Is it going to bring any changes to the functionalities? or they are just changing the names or everything will be the same as before?
+## [8][Build a Serverless GraphQL API on AWS [Tutorial]](https://www.reddit.com/r/aws/comments/ju33fe/build_a_serverless_graphql_api_on_aws_tutorial/)
+- url: https://lucas-le-ray.com/blog/build-serverless-graphql-api
 ---
 
-## [3][Amazon Textract now supports handwriting.](https://www.reddit.com/r/aws/comments/jtn8xf/amazon_textract_now_supports_handwriting/)
-- url: https://aws.amazon.com/blogs/machine-learning/amazon-textract-recognizes-handwriting-and-adds-five-new-languages/
+## [9][Is there a way for my Lambda function to hit an external API as well as my Redis ElastiCache?](https://www.reddit.com/r/aws/comments/jubgju/is_there_a_way_for_my_lambda_function_to_hit_an/)
+- url: https://www.reddit.com/r/aws/comments/jubgju/is_there_a_way_for_my_lambda_function_to_hit_an/
 ---
+Hi,
 
-## [4][How to implement a system that process files in order of arrival with AWS services?](https://www.reddit.com/r/aws/comments/ju148z/how_to_implement_a_system_that_process_files_in/)
-- url: https://www.reddit.com/r/aws/comments/ju148z/how_to_implement_a_system_that_process_files_in/
+I want my site to hit an API, providing an ID. I want to check my ElastiCache, which lives in a VPC, for that ID. If it exists, return the value associated with the key; if not, hit an external API and put the result in the cache. 
+
+My understanding is that a Lambda function needs to live in a VPC to access the cache, since that also lives in a VPC. And a Lambda in a VPC does not have Internet access, so it can't hit the external API.
+
+Are there any workarounds? Is there anything I can use other than a Lambda function that allows me to achieve this functionality?
+## [10][Using AWS S3 to download files from same origin](https://www.reddit.com/r/aws/comments/judckz/using_aws_s3_to_download_files_from_same_origin/)
+- url: https://www.reddit.com/r/aws/comments/judckz/using_aws_s3_to_download_files_from_same_origin/
 ---
-I have files incoming in several S3 buckets.
+I have an S3 bucket that backs a website where videos are uploaded.
 
-Files in different buckets can be process in parallel, they are independent.
+The bucket is configured properly, objects can be uploaded and accessed, etc.
 
-However files in the same bucket must be processed in strict order of arrival and CANNOT be processed in parallel.
+The issue I'm running into is how to download these files from S3. When I expose the link to the S3 object in an HTML a ref download, it doesn't prompt a download in Firefox but instead just opens the file in the browser.
 
-For processing, lambda functions could be used.
+Some troubleshooting tells me this is because Firefox does not allow cross origin downloading, e.g. from an `amazonaws` domain on my domain.
 
-I'm not sure however on how to orchestrate the whole thing.
+I added the following convention to my S3 bucket: `media.&lt;mydomain&gt;.com` which points to `s3.amazonaws.com` which works but because it's simply a redirect to something in the effect of [`media.mydomain.com.s3-us-west-1.amazonaws.com`](https://media.mydomain.com.s3-us-west-1.amazonaws.com), it's still considered cross origin.
 
-The ordering of processing is key.
-
-I was thinking on something like SQS, that preserve orders but I'm not sure how to avoid parallel processing in the same bucket.
-
-Maybe also step functions?
-
-I also would like a solution as serverless as possible, as I expect the system to be able to scale automatically.
-
-Files are coming in every 2-3 minutes in each bucket, and processing it's usually faster than that, and mostly under 5 minutes. Files are not big, max 5-10MB.
-## [5][Session Revoke after Completing the Exam](https://www.reddit.com/r/aws/comments/jtwz1b/session_revoke_after_completing_the_exam/)
-- url: https://www.reddit.com/r/aws/comments/jtwz1b/session_revoke_after_completing_the_exam/
----
- So I just finished taking the AWS SAA Exam with Pearson VUE and PASSED. But I needed to pee during the exam. I told the examiners bf he said I wasn’t allowed to leave. I held it for about an hour then I finished the exam. Couldn’t hold it in any longer and didn’t bother to review my flagged questions. Clicked next next next and what do I know? Freaking survey questions. I was so annoyed and couldn’t hold it in anymore and half way through answering the survey questions I told the examiner I’m going to pee and left. When I got back he told me he was revoking my session. I clicked end exam and saw that I passed. What’s gonna happen to me now?
-## [6][AWS Glue to RDS help](https://www.reddit.com/r/aws/comments/jtzn9x/aws_glue_to_rds_help/)
-- url: https://www.reddit.com/r/aws/comments/jtzn9x/aws_glue_to_rds_help/
----
-I have created an AWS Glue connection to my RDS database from my S3 bucket, but every time I run it, it gives the same error: Check that your connection definition references your JDBC database with correct URL syntax, username, and password. Unknown database '**DB identifier**'
-
-I think my problem is that I don't know what my Database name is. All I have done in RDS so far is created my database, and I have my database and my database instance. Is the database name something that I create in Glue or is it something else?
-## [7][Best practice when making a lambda function (with Gateway) to read and update a dynamodb table?](https://www.reddit.com/r/aws/comments/jtwyr2/best_practice_when_making_a_lambda_function_with/)
-- url: https://www.reddit.com/r/aws/comments/jtwyr2/best_practice_when_making_a_lambda_function_with/
----
-So, basically, I am doing a very simple project to learn lambda/gateway/dynamodb.
-
-Basically, I will have one single item in the dynamodb table. The item in the table is a number. Whenever the lambda function is triggered by the gateway, I want to update the count by 1 and then get that data and send it back via the gateway.
-
-I have been reading up up lambda and built a simple function that can get_item from the table successfully, built it using python.
-
-Next, I plan on writing code to simply update that item by the count of one.
-
-My thought process to do this is to simply (in the lambda_handler function), first put the code that updates the count in the table. Then, right after that code, put the code that gets the count.
-
-I want to make sure though that the get is getting the NEW count after the first part of the function is ran. 
-
-Would doing the above be the best practice for this? Or would some weird async stuff be going on where, even though the update part of the code is ran first, the function would still get the old data? I guess this would also be potentially an issue with dynamodb because it is "eventually" consistent I heard?
-
-Just curious on what the best practice is with the above? Thanks for any help.
-## [8][SES - sends from me to me on a gmail business account flagged as possible fishing](https://www.reddit.com/r/aws/comments/jtv9ae/ses_sends_from_me_to_me_on_a_gmail_business/)
-- url: https://www.reddit.com/r/aws/comments/jtv9ae/ses_sends_from_me_to_me_on_a_gmail_business/
----
-I have been replacing all of our metric-alert endpoints to be a lambda as terraform does not support email b/c the ARN is generated at the time of sending.  I don't thinks to relevant.  Not so important, but each of these emails gets that big yellow bar, and i click "Looks Safe".  My email is verified, every security measure is passing except for DMARC at the moment, but i think this is more about the text, which is formatted json wrapped in a &lt;pre&gt; tag.  Is there a setting, or 8, that i can do to get gmail to believe it.  
-
-
-TBH- Sorry this is really not completely an SES question, but i feel like people may have ran into this here.  If its a gmail switch, i can have my boss change it monday.   
-
-
-Thanks
-## [9][Improving amazon athena performance](https://www.reddit.com/r/aws/comments/jtg5gk/improving_amazon_athena_performance/)
-- url: https://www.reddit.com/r/aws/comments/jtg5gk/improving_amazon_athena_performance/
----
-How would you improve your athena queries? I have a 10GB of raw data that will be fed to aws athena and I've noticed that the queries have been taking too long. To the point where I've experienced it timing out after 30 mins. Is there any way around this?
-## [10][Securely accessing RDS database from desktop GUI: any pitfalls?](https://www.reddit.com/r/aws/comments/jtjlo9/securely_accessing_rds_database_from_desktop_gui/)
-- url: https://www.reddit.com/r/aws/comments/jtjlo9/securely_accessing_rds_database_from_desktop_gui/
----
-Hi folks,
-
-hopefully I dont ask something something that has been asked (I tried finding a clear answer, but maybe my search skills are rusty). 
+I've looked for solutions to this but can't seem to find any. I know obviously this is done frequently, as I've personally seen lots of downloads coming from AWS services but I'm not sure what to use at this point to make this work.
 
 &amp;#x200B;
 
-I am migrating my database (one previously hosted at Digital Ocean) to a Postgres database at RDS, one which occasionally I need to manually access (in case some migrations fail). I personally use TablePlus to do some easy operations.
-
-&amp;#x200B;
-
-Now I am aware that to achieve this, I would have to enable that my database can be accessed "Publically". I am a bit wary of doing so, as I worry that I do not fully comprehend whether this may expose me to any potential dangers. 
-
-&amp;#x200B;
-
-I assume that I would want to create a "whitelist" in my VPC, which allow only specific IPs to access this "public Database"? Or are there better, more secure ways of doing so? Any particular pitfalls one needs to way off when doing so?
+Solved Update: If you set `content-dispostion` in the `metadata` as `attachment`, it will prompt the download. 

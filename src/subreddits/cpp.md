@@ -56,8 +56,8 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][Herb Sutter Trip report: Autumn ISO C++ standards meeting](https://www.reddit.com/r/cpp/comments/jtt9cb/herb_sutter_trip_report_autumn_iso_c_standards/)
-- url: https://herbsutter.com/2020/11/13/trip-report-autumn-iso-c-standards-meeting-virtual/
+## [2][How C++ Programming Language Became the Invisible Foundation For Everything, and What's Next](https://www.reddit.com/r/cpp/comments/jug7ni/how_c_programming_language_became_the_invisible/)
+- url: https://www.techrepublic.com/article/c-programming-language-how-it-became-the-invisible-foundation-for-everything-and-whats-next/
 ---
 
 ## [3][Stop learning C++ or keep going?](https://www.reddit.com/r/cpp/comments/ju1ikd/stop_learning_c_or_keep_going/)
@@ -65,24 +65,70 @@ Previous Post
 ---
 I picked C++ as my first language because I want to get into a video game company. It was difficult at first, but it gets easier over time, but still, hard nonetheless.
 
-But then, something happened that force me to stay in my hometown until I die probably. 
+But then, something happened that force me to stay in my hometown until I die probably.
 
-So, the ways for me to earn money from programming now are: create my own software/app/game, freelancing, or remote job. 
+So, the ways for me to earn money from programming now are: create my own software/app/game, freelancing, or remote job.
 
 Everybody wants to have a successful software that they can sell it for a stockpile of $$, but I'm going to go with the realistic view here and aim for the freelancing and remote job.
 
-My question is, is C++ is a great language for me if I'm going to be a freelance and remote job? Or should I focus on another language? I'm still going to learn C++ though. I fell in love with it. I just going to assign more of my time to the new language and make C++ become my second language. 
+My question is, is C++ is a great language for me if I'm going to be a freelance and remote job? Or should I focus on another language? I'm still going to learn C++ though. I fell in love with it. I just going to assign more of my time to the new language and make C++ become my second language.
 
-Now, a little background of me. I'm 20 years old boy from a third world country living in a very very small city that I think about 50% still using a non-smartphone as their phone and there's absolutely no company that engaged in technology. Most people either work as a farmer, livestock breeder, and things like that. 
+Now, a little background of me. I'm 20 years old boy from a third world country living in a very very small city that I think about 50% still using a non-smartphone as their phone and there's absolutely no company that engaged in technology. Most people either work as a farmer, livestock breeder, and things like that.
 
-Don't get me wrong, I love my hometown. It is so peaceful here. I always said that my hometown is a perfect city for retirement. 
+Don't get me wrong, I love my hometown. It is so peaceful here. I always said that my hometown is a perfect city for retirement.
 
 But, that's the thing. I'm not planning for retirement, I'm still trying to get some money.
 
 Also, I will not attend college. Well, "can't" is the more proper word here.
 
 So yeah, any advice would be appreciated. Thank you so much
-## [4][With the new module system in C++20 will there be centralized repositories for modules?](https://www.reddit.com/r/cpp/comments/ju1h1e/with_the_new_module_system_in_c20_will_there_be/)
+
+EDIT: I forgot to tell you that it's been only 2 months since I learn C++. I could make a number guess, tic tac toe, and dungeon crawler with object-oriented programming.
+
+Also, I'm not asking for a way to earn fast money. I don't mind just keep learning for a year, or two, or three, or four. I just need to know is C++ is a good language for me in the long run
+## [4][Meeting C++ 2020 Trip Report](https://www.reddit.com/r/cpp/comments/juald6/meeting_c_2020_trip_report/)
+- url: https://codereport.github.io/MeetingCpp2020TripReport/
+---
+
+## [5][Some Shocking Facts You Probably Didn't Want to Know about U++ Framework...](https://www.reddit.com/r/cpp/comments/juiudg/some_shocking_facts_you_probably_didnt_want_to/)
+- url: https://www.reddit.com/r/cpp/comments/juiudg/some_shocking_facts_you_probably_didnt_want_to/
+---
+...but I will tell you anyway.
+
+Maybe somebody might find this something I have wrote over the last month interesting:
+
+[https://www.codeproject.com/Articles/5280535/Some-Shocking-Facts-You-Probably-Didnt-Want-to-Kno](https://www.codeproject.com/Articles/5280535/Some-Shocking-Facts-You-Probably-Didnt-Want-to-Kno)
+## [6][Literal suffix for std::integral_constant](https://www.reddit.com/r/cpp/comments/ju3poj/literal_suffix_for_stdintegral_constant/)
+- url: https://www.reddit.com/r/cpp/comments/ju3poj/literal_suffix_for_stdintegral_constant/
+---
+What do you think about a Standard proposal for a new literal suffix of a std::integral\_constant instance?
+
+    constexpr auto x=123ic; // same as `constexpr std::integral_constant&lt;int, 123&gt; x`;
+    // maybe:
+    constexpr auto str="some character literal"ic;
+
+[View Poll](https://www.reddit.com/poll/ju3poj)
+## [7][To join, or not to join](https://www.reddit.com/r/cpp/comments/ju6zwe/to_join_or_not_to_join/)
+- url: https://www.reddit.com/r/cpp/comments/ju6zwe/to_join_or_not_to_join/
+---
+[P1293](https://wg21.link/p1293) ostream_joiner paper will not be further pursued.  
+https://github.com/cplusplus/papers/issues/64  
+  
+The paper proposes to add the ostream_joiner.  
+Which would make the following possible  
+`vector&lt;int&gt; v = {1, 4, 6};`  
+`copy(v.begin(), v.end(), ostream_joiner(cout, ", "));`  
+Which prints "1, 4, 6"  
+Without trailing comma, as ostream_iterator would do.  
+  
+I still think this would be a nice addition to the language.  
+What do you think? Should it be further pursued?  
+  
+LEWG had asked to look at how concepts/ranges would impact the design.  
+Ideas how concepts/ranges could impact or improve the design?  
+  
+Or could a format addition be used to achieve a similar result?
+## [8][With the new module system in C++20 will there be centralized repositories for modules?](https://www.reddit.com/r/cpp/comments/ju1h1e/with_the_new_module_system_in_c20_will_there_be/)
 - url: https://www.reddit.com/r/cpp/comments/ju1h1e/with_the_new_module_system_in_c20_will_there_be/
 ---
 Like nuget's, npm's or crates?
@@ -93,7 +139,57 @@ Examples:
 * Node NPM's [https://www.npmjs.com/](https://www.npmjs.com/) 
 * .NET Nuget's [https://www.nuget.org/](https://www.nuget.org/)
 * Java [https://mvnrepository.com/](https://mvnrepository.com/)
-## [5][It Is Time for Compiler Developers to Step In](https://www.reddit.com/r/cpp/comments/jts223/it_is_time_for_compiler_developers_to_step_in/)
+## [9][Herb Sutter Trip report: Autumn ISO C++ standards meeting](https://www.reddit.com/r/cpp/comments/jtt9cb/herb_sutter_trip_report_autumn_iso_c_standards/)
+- url: https://herbsutter.com/2020/11/13/trip-report-autumn-iso-c-standards-meeting-virtual/
+---
+
+## [10][Your opinion on 'for ... else' constructs](https://www.reddit.com/r/cpp/comments/ju6cag/your_opinion_on_for_else_constructs/)
+- url: https://www.reddit.com/r/cpp/comments/ju6cag/your_opinion_on_for_else_constructs/
+---
+In Python the following construct is valid and quite helpful:
+
+    for x in whatever:
+        if condition(x):
+            break
+    else:
+        print("for loop did not exit early")
+
+In C++ the equivalent would be
+
+    bool break_taken = false;
+    for (auto x : whatever)
+    {
+        if (condition(x)) 
+        {
+            break_taken = true;
+            break;
+        }
+    }
+    if (!break_taken)
+    {
+        std::cout &lt;&lt; "for loop did not exit early\n";
+    }
+
+Simply said, you can add an `else` branch to a for loop, which gets taken if the `for` loop did not exit early because of a `break` statement. In other words, you can use this on `for` loops which you expect to break out of at some point to catch if this case did not occur.
+
+Sure, you can do this by introducing an additional bool variable, but I still think that this would be a nice native addition to the language. Actually, since I learned about this in Python, I miss it quite often in C++.
+
+What is your opinion on this? Note that this is less a discussion about the `else` keyword, than about the usefullness of the feature as a whole.
+
+Has there maybe already been a paper proposol which was discussed/rejected for standardization?
+
+Edit: added C++ equivalent example  
+Edit: added conclusion
+
+**My Conclusion:**   
+Alright, this gained quite a lot of attention for what I expected.I don't quite get why this has \~40% downvotes, as I think the constructive discussion benefits every reader, but on the other hand a few comments really did not add much to the discussion.
+
+Anyway: While I tried to keep you unbiased in my original question, it seems that everyone agrees that `else` is just a horrible keyword choice in this place and I am 100% with you. However, regarding the general functionality, I am surprised that some of you claim that they do not see any use case (not to confuse with people who dislike `for else` but acknowledge the use case).
+
+To me, modern C++ is a lot about writing expressive code. Surprisingly only two answers mentioned `std::none_of`|`any_of`|`find_if`, which I think are the currently best suited tools to implement the given functionality at maximum expressiveness while at the same time being the easiest to comprehend for unfamiliar programmers.
+
+Thanks to everyone who participated, I loved getting your input on this!
+## [11][It Is Time for Compiler Developers to Step In](https://www.reddit.com/r/cpp/comments/jts223/it_is_time_for_compiler_developers_to_step_in/)
 - url: https://www.reddit.com/r/cpp/comments/jts223/it_is_time_for_compiler_developers_to_step_in/
 ---
 Warning: this is not a strictly-technical post. More like a rant.
@@ -110,82 +206,3 @@ I think that the general mindset of "1. we need X in the Standard 2. only Standa
 However, optimizing compilers can do all sorts of weird stuff and we want them to do this weird stuff to make our code fast. But we also want our code to be expressive. Would it matter that `std::start_lifetime_as` has not made it into C++20 Standard if every major compiler supported it? No. Would it allow us to write code which is more clear to both humans and optimizers? Yes.
 
 Now is the time C++ must be up to the challenges because of increasing competition. Do not let authorities prevent you from using language extensions and non-standard features, we need them for  the language to evolve and find its way forward. It is better to standardize things when there is a clear path proven by a group of pioneers to be successful, than when we don't have *anything* but find ourselves in need of having *something*. It is better to have things in compilers than not have them just because of working group meetings schedule.
-## [6][An industrial-grade RPC framework used throughout Baidu](https://www.reddit.com/r/cpp/comments/jtlebx/an_industrialgrade_rpc_framework_used_throughout/)
-- url: https://github.com/apache/incubator-brpc
----
-
-## [7][Deprecating volatile - JF Bastien - CppCon 2019](https://www.reddit.com/r/cpp/comments/jtdk74/deprecating_volatile_jf_bastien_cppcon_2019/)
-- url: https://www.youtube.com/watch?v=KJW_DLaVXIY
----
-
-## [8][Having a bit of trouble with inputs. not sure how I can put the two inputs together to create a line.](https://www.reddit.com/r/cpp/comments/ju0bl9/having_a_bit_of_trouble_with_inputs_not_sure_how/)
-- url: https://www.reddit.com/r/cpp/comments/ju0bl9/having_a_bit_of_trouble_with_inputs_not_sure_how/
----
-    #include &lt;iostream&gt;
-    using namespace std;
-    int main() {
-         string name;
-         int age;
-         cout &lt;&lt; "Enter your name"&lt;&lt;endl;
-         cout &lt;&lt; "Enter your age"&lt;&lt;endl;
-         cin &gt;&gt; age;
-    
-         getline(cin,name);
-         cout &lt;&lt; name &lt;&lt; " is " &lt;&lt; age &lt;&lt; endl;
-        return 0;
-    }
-    
-    This is the output 
-    
-    Enter your name
-    Enter your age
-     davaughn  23
-     is 0
-## [9][Tiny build tool : µmake (quick makefile alternative)](https://www.reddit.com/r/cpp/comments/jtlalr/tiny_build_tool_µmake_quick_makefile_alternative/)
-- url: https://www.reddit.com/r/cpp/comments/jtlalr/tiny_build_tool_µmake_quick_makefile_alternative/
----
-I used to make compile my projects from makefiles (had a template that was quiet flexible) but grew tired of the syntax and issues.
-
-I can't get myself to like autoconf nor cmake (I quiet hate the second as a user, even if not as bad as bazel).
-
-Lately because I have to code a lot in python, I realize this could be just right for the job. I heard of scons, it looks great but it feels an overkill for most of my projects.
-
-So after using a small python script for months now in different projects I refactored it for easy git submodule usage and publish it.
-
-µmake ([https://gitlab.com/corentin-pro/umake](https://gitlab.com/corentin-pro/umake)) is ~150 lines of python to compile easily and quickly. A caveat I forgot to write in the README is that it is mainly made for UNIX system.
-
-I share this in case it would be inspirational for your own small build script or even better if you find any improvement/feedback to be made.
-
-Also I put a BSD 3-clause in there, I am not sure what is the best to make it easy to use (creative-common? I want to avoid users to even have to credit it). My understanding is that if you add as submodule the license is also there so it can be used/modified/anything.
-## [10][CppCast: Video Games, Robotics and Audio](https://www.reddit.com/r/cpp/comments/jtahbn/cppcast_video_games_robotics_and_audio/)
-- url: https://cppcast.com/joel-lamotte/
----
-
-## [11][Compound assignment to volatile must be un-deprecated](https://www.reddit.com/r/cpp/comments/jswz3z/compound_assignment_to_volatile_must_be/)
-- url: https://www.reddit.com/r/cpp/comments/jswz3z/compound_assignment_to_volatile_must_be/
----
-To my horror I discovered that C++20 has deprecated compound assignments to a volatile. For those who are at a loss what that might mean: a compound assignment is += and its family, and a volatile is generally used to prevent the compiler from optimizing away reads from and/or writes to an object.
-
-In close-to-the-metal programming volatile is the main mechanism to access memory-mapped peripheral registers. The manufacturer of the chip provides a C header file that contains things like
-
-    #define port_a (*((volatile uint32_t *)409990))
-    #define port_b (*((volatile uint32_t *)409994))
-
-This creates the ‘register’ port\_a: something that behaves very much like a global variable. It can be read from, written to, and it can be used in a compound assignment. A very common use-case is to set or clear one bit in such a register, using a compound or-assignment or and-assignment:
-
-    port_a |= (0x01 &lt;&lt; 3 ); // set bit 3
-    port_b &amp;= ~(0x01 &lt;&lt; 4 ); // clear bit 4
-
-In these cases the compound assignment makes the code a bit shorter, more readable, and less error-prone than the alterative with separate bit operator and assignment.  When instead of port\_a a more complex expression is used, like uart\[ 2 \].flags\[ 3 \].tx, the advantage of the compound expression is much larger.
-
-As said, manufacturers of chips provide C header files for their chips. C, because as far as they are concerned, their chips should be programmed in C (and with \*their\* C tool only). These header files provide the register definitions, and operations on these registers, often implemented as macros. For me as C++ user it is fortunate that I can use these C headers files in C++, otherwise I would have to create them myself, which I don’t look forward to.
-
-So far so good for me, until C++20 deprecated compound assignments to volatile. I can still use the register definitions, but my code gets a bit uglier. If need be, I can live with that. It is my code, so I can change it. But when I want to use operations that are provided as macros, or when I copy some complex manipulation of registers that is provided as an example (in C, of course), I am screwed.
-
-Strictly speaking I am not screwed immediately, after all deprecated features only produce a warning, but I want my code to be warning-free, and todays deprecation is tomorrows removal from the language.
-
-I can sympathise with the argument that some uses of volatile were ill-defined, but that should not result in removal from the language of a tool that is essential for small-system close-to-the-metal programming. The get a feeling for this: using a heap is generally not acceptable. Would you consider this a valid argument to deprecate the heap from C++23?
-
-As it is, C++ is not broadly accepted in this field. Unjustly, in my opinion, so I try to make my small efforts to change this. Don’t make my effort harder and alienate this field even more by deprecating established practice.
-
-So please, un-deprecate compound assignments to volatile.

@@ -3,101 +3,159 @@
 - url: https://blog.golang.org/survey2020
 ---
 
-## [2][Go's Recurring Security Problem](https://www.reddit.com/r/golang/comments/jtmlve/gos_recurring_security_problem/)
-- url: https://medium.com/tempus-ex/gos-recurring-security-problem-2b5339f19216
+## [2][Oh my `gotch` - Most comprehensive Pytorch C++ API Go binding for deep learning in Go](https://www.reddit.com/r/golang/comments/judpna/oh_my_gotch_most_comprehensive_pytorch_c_api_go/)
+- url: https://www.reddit.com/r/golang/comments/judpna/oh_my_gotch_most_comprehensive_pytorch_c_api_go/
+---
+[https://github.com/sugarme/gotch](https://github.com/sugarme/gotch)
+
+We are happy to share a new toolkit for developing deep learning in Go - [gotch](https://github.com/sugarme/gotch). `gotch` is a Pytorch C++ API Go binding featuring with:
+
+* Comprehensive Pytorch tensor APIs (\~ 1404)
+* Fully featured Pytorch dynamic graph computation
+* JIT interface to run model trained/saved using PyTorch Python API
+* Load pretrained Pytorch models and run inference
+* Pure Go APIs to build and train neural network models with both CPU and GPU support
+* Most recent image models
+* NLP Language models - [Transformer](https://github.com/sugarme/transformer) in separate package built with GoTch and [pure Go Tokenizer](https://github.com/sugarme/tokenizer).
+## [3][Featherweight (Generic) Go @ OOPSLA 2020 by Robert Griesemer, Philip Wadler et. al.](https://www.reddit.com/r/golang/comments/ju82tt/featherweight_generic_go_oopsla_2020_by_robert/)
+- url: https://www.youtube.com/watch?v=62xlcsJ0AUs
 ---
 
-## [3][Golang 1.15.5 released](https://www.reddit.com/r/golang/comments/jtk7t7/golang_1155_released/)
-- url: https://www.reddit.com/r/golang/comments/jtk7t7/golang_1155_released/
+## [4][What is the current (1.15) best practice to work on interdependent modules?](https://www.reddit.com/r/golang/comments/juizr6/what_is_the_current_115_best_practice_to_work_on/)
+- url: https://www.reddit.com/r/golang/comments/juizr6/what_is_the_current_115_best_practice_to_work_on/
 ---
-[https://golang.org/doc/devel/release.html#go1.15.minor](https://golang.org/doc/devel/release.html#go1.15.minor)
+With `GOPATH` on its way out, what is the current best practice when working on multiple modules that form a dependency tree?
 
-[https://github.com/golang/go/issues?q=milestone%3AGo1.15.5+label%3ACherryPickApproved](https://github.com/golang/go/issues?q=milestone%3AGo1.15.5+label%3ACherryPickApproved)
-## [4][Not related to Go. But I used go to develop this chat server. I know someone here can help me.](https://www.reddit.com/r/golang/comments/jtyb84/not_related_to_go_but_i_used_go_to_develop_this/)
-- url: https://www.reddit.com/r/golang/comments/jtyb84/not_related_to_go_but_i_used_go_to_develop_this/
+For simplicity, let's assume two modules:
+
+example.com/library/go.mod:
+
+    module example.com/library
+    
+    go 1.15
+
+example.com/project/go.mod:
+
+    module example.com/project
+    
+    go 1.15
+    
+    require (
+        example.com/library v0.0.1
+    )
+
+When working on these two modules concurrently, is there a way to have changes in library show up in project **without**
+
+* adding and removing `replace` directives to `project/go.mod` all the time
+* having to commit and update the library project on single-line changes
+* crazy symlink hackery with vendoring
+* falling back to `GOPATH` mode
+* putting everything in one monorepo-like monster module
+
+?
+
+I'm pretty sure I read the relevant articles and blogs, and maybe I'm missing something very obvious. But I just cannot find a way to make this dev process work properly.
+
+Any hints?
+## [5][GORM - grandchild foreign key](https://www.reddit.com/r/golang/comments/jukcqg/gorm_grandchild_foreign_key/)
+- url: https://www.reddit.com/r/golang/comments/jukcqg/gorm_grandchild_foreign_key/
 ---
-Hi peeps , I built a chat-room server. 
+Hello fellow go developers,
 
-Imagine I've a table/map  ( not database table )  with three columns (group-id |  user-id | socket connection ). Since this application is like whatsapp I can create groups and add members to the group that I'm storing it in a postgres database. 
+I'm currently creating a rest application in golang, and am using GORM for my orm. So far i successfully have everything implemented however i'm now wanting to add some stuff in order to make further queries easier.
 
-And when I receive a message from a connection, the message contains the group-id and user-id. Based on the group-id I'll fetch the members in that group which I stored (imagine )  it in the map/table and then I'll emit messages to the sockets in that group. 
+This will be adding "grandchildren" foreign keys. I can't see anything in the documentation about this but effectivly what i'm wanting is the following: 
 
-Question is how to maintain a sync  list between a database a table and golang server map/table. 
+    type Map struct{
+    	Id int `gorm:"primaryKey"`
+    	Buildings []Building `gorm:"references:Id"`
+    }
+    
+    type Building struct{
+    	Id int	`gorm:"primaryKey"`
+    	MapId int
+    	Floors []Floor `gorm:"references:Id"`
+    }
+    
+    type Floor struct{
+    	Id              int `gorm:"primaryKey"`
+    	BuildingId      int
+            MapId           int
+    }
 
-Because , you know when is message is received we need send the message only to the people in that private  group. 
-
-thanks.
-## [5][go-p5: a port of Processing/p5js to Go, with Gonum and Gio](https://www.reddit.com/r/golang/comments/jtnmd5/gop5_a_port_of_processingp5js_to_go_with_gonum/)
-- url: https://www.reddit.com/r/golang/comments/jtnmd5/gop5_a_port_of_processingp5js_to_go_with_gonum/
----
-hi,
-
-I am happy to announce the first vaguely usable version of `go-p5/p5`, a port of [Processing](https://processing.org)/[p5js](https://p5js.org) to Go.
-
-* [https://github.com/go-p5/p5](https://github.com/go-p5/p5)
-* [https://pkg.go.dev/github.com/go-p5/p5](https://pkg.go.dev/github.com/go-p5/p5)
-
-`p5` can be seen like a toolkit to learn programming, but instead of "just" seeing text and numbers being manipulated in a terminal, you get to see geometrical shapes, colors and stuff bein manipulated in a graphical window. (also via some interactions with the mouse/keyboard.)
-
-There are already a couple of "nice" examples:
-
-* `hello world`
-
-https://preview.redd.it/qh9xv02hh2z51.png?width=400&amp;format=png&amp;auto=webp&amp;s=4e0bf333e960705b65b60c8576182f7cf4e836d1
-
-* `bouncing balls`
-
-https://i.redd.it/k56qxkcih2z51.gif
-
-* `mouse-pressed`
-* `snake`
-* `solar-system`
-
-https://i.redd.it/ufel7ptjh2z51.gif
-
-`go-p5/p5` is based on [Gio](https://gioui.org) for the graphics+key/mouse-events and on [Gonum](https://gonum.org) for the physics stuff.
-
-The `Processing/p5js` API isn't completely available. So there is still a lot of things to do. Patches welcome :)
-## [6][Intersted contributors (beginners welcome)](https://www.reddit.com/r/golang/comments/jtzdsl/intersted_contributors_beginners_welcome/)
-- url: https://www.reddit.com/r/golang/comments/jtzdsl/intersted_contributors_beginners_welcome/
----
-Hello all.
-I hope everybody's doing alright :)
-I have been working with Python from backend side over little less than 2 years by now
-Recently I started learning go for working on one of the organisation's project.
-So, I have done a basic course in it and was thinking to make a fun little project in Go using Buffalo.
-I have some expertise in frontend as well from React.
-
-Would love if anybody was available for some hours every week to a side fun project. I dont have anything specific in mind as of now, but we can discuss it later.
-Please respond to this thread if you're interested
-
-My github profile, for my past/ongoing works:
-[Aman Jaiswal](http://www.github.com/amanjaiswalofficial)
-## [7][mtojek/gdriver : Download large files from Google Drive (API v3)](https://www.reddit.com/r/golang/comments/ju1brr/mtojekgdriver_download_large_files_from_google/)
-- url: https://github.com/mtojek/gdriver
----
-
-## [8][how to install dependencies in project folder with go get and go.mod](https://www.reddit.com/r/golang/comments/ju16ql/how_to_install_dependencies_in_project_folder/)
-- url: https://www.reddit.com/r/golang/comments/ju16ql/how_to_install_dependencies_in_project_folder/
----
-I'm trying to install some dependencies with `go get` command. I also have created a go.mod file with `go mod init
-
-Whenever I try to `get` the dependencies they get downloaded into my `$GOPATH/pkg`. I tried to remove `$GOPATH` variable but it has some default value, probably `~/go`. Now all dependencies are going into `~/go/pkg`. Is this how it is supposed to work? Can't I keep dependencies in my project folder? Is changing `$GOPATH` to my project folder the only way?
-## [9][Go graphic library help](https://www.reddit.com/r/golang/comments/ju13mr/go_graphic_library_help/)
-- url: https://www.reddit.com/r/golang/comments/ju13mr/go_graphic_library_help/
----
-Hello everyone. I currently working on a API for traversing or searching tree or graph data structures. I also wanted to visualize the data, but I didn't found any library written in Go to accomplish my needs. I found many libraries (e.g. [https://graph-tool.skewed.de/static/doc/quickstart.html](https://graph-tool.skewed.de/static/doc/quickstart.html) [https://igraph.org/python/doc/tutorial/tutorial.html](https://igraph.org/python/doc/tutorial/tutorial.html)), but written in another languages.
+From reading documentation I can't seem to find a sane way of doing this, if anyone can link to some documentation or an example that would be great, please note: I don't want to hold an instance of the map within the floor just the ID.
 
 &amp;#x200B;
 
-I just wanted to ask if you know a similar library that can fulfil my needs.
+Thanks for your help.
 
-Thank you
-## [10][Vanity URL for Go mod with zero infrastructure](https://www.reddit.com/r/golang/comments/jtku8u/vanity_url_for_go_mod_with_zero_infrastructure/)
-- url: https://gianarb.it/blog/go-mod-vanity-url
+Coffee-to-code
+## [6][mtojek/gdriver : Download large files from Google Drive (API v3)](https://www.reddit.com/r/golang/comments/ju1brr/mtojekgdriver_download_large_files_from_google/)
+- url: https://github.com/mtojek/gdriver
 ---
 
-## [11][Efficient struct packing guided pass for Go](https://www.reddit.com/r/golang/comments/jtgehp/efficient_struct_packing_guided_pass_for_go/)
-- url: https://medium.com/orijtech-developers/efficient-struct-packing-guided-pass-for-go-92255872ec72
+## [7][ANN: Apache H2 Database pure-go SQL Driver](https://www.reddit.com/r/golang/comments/jukaeq/ann_apache_h2_database_purego_sql_driver/)
+- url: https://github.com/jmrobles/h2go
+---
+
+## [8][Article on how bad practices can be good with example from Go's standard library](https://www.reddit.com/r/golang/comments/ju4u87/article_on_how_bad_practices_can_be_good_with/)
+- url: https://pmihaylov.com/good-and-bad-practices/
+---
+
+## [9][v1.4 of sessionup - HTTP sessions now with dynamic metadata support](https://www.reddit.com/r/golang/comments/ju8f78/v14_of_sessionup_http_sessions_now_with_dynamic/)
+- url: https://github.com/swithek/sessionup
+---
+
+## [10][What's "wrong" with my Go code?](https://www.reddit.com/r/golang/comments/juexn6/whats_wrong_with_my_go_code/)
+- url: https://www.reddit.com/r/golang/comments/juexn6/whats_wrong_with_my_go_code/
+---
+Hello!
+
+I'm teaching myself Go and I don't know anyone else who knows Go. So far I like the language. The concurrency is great.
+
+I've written a simple program called `mx-counter` that takes in a list of email addresses and outputs the count of each mail server.
+
+https://github.com/tom-on-the-internet/mx-counter
+
+Example:
+
+Given
+
+```
+tom@tomontheinternet.com
+jane@yahoo.ca
+joe@gmail.com
+fred@youtube.com
+ingrid@slack.com
+rory@microsoft.com
+```
+
+Outputs
+
+```
+google.com 4
+yahoodns.net 1
+outlook.com 1
+```
+
+It would mean the world to me if you could **point out some things I'm doing wrong, or places I could improve**. If I get enough feedback, I'll turn it into a blog post and/or video.
+
+I also have a few questions. It would be incredible is you could answer any or all of them.
+
+1. I wrote a function to get the unique values from a slice. Is this really something I should write? Should I be importing it from another package? In the JavaScript world, I would probably import a package for this. Not because I can't write this myself, but because it's not core to my project.
+
+2. How should I test this? I've read that I should only test my public functions. But that would mean testing a single function that makes network requests. And if a domain changed their MX records, my tests would fail.
+
+3. Should any one my functions be public? They aren't consumed by another package.
+
+4. Should I split this into multiple files?
+
+5. Am I approaching any of this in the way a seasoned Go developer would?
+
+Thanks so much!
+
+Tom
+## [11][Go's Recurring Security Problem](https://www.reddit.com/r/golang/comments/jtmlve/gos_recurring_security_problem/)
+- url: https://medium.com/tempus-ex/gos-recurring-security-problem-2b5339f19216
 ---
 

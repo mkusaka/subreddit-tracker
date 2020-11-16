@@ -1,5 +1,52 @@
 # Kotlin
-## [1][How to avoid passing objects between activities](https://www.reddit.com/r/Kotlin/comments/juiyk4/how_to_avoid_passing_objects_between_activities/)
+## [1][Doodle Tutorials released](https://www.reddit.com/r/Kotlin/comments/juu69x/doodle_tutorials_released/)
+- url: https://www.reddit.com/r/Kotlin/comments/juu69x/doodle_tutorials_released/
+---
+You can now see example apps and get more in-depth explanation of Doodle's concepts at the  [tutorials](https://nacular.github.io/doodle-tutorials) site. The first example walks through building a simple calculator app.
+
+[Doodle](https://github.com/nacular/doodle) is a pure Kotlin UI framework for the Web, that lets you create rich applications without worrying about Javascript, HTML or CSS. Check out the [documentation](https://nacular.github.io/doodle) to learn more.
+
+Feedback is always appreciated.
+## [2][Shared flows, broadcast channels](https://www.reddit.com/r/Kotlin/comments/jv6o4e/shared_flows_broadcast_channels/)
+- url: https://medium.com/@elizarov/shared-flows-broadcast-channels-899b675e805c
+---
+
+## [3][From Spring Boot to Quarkus](https://www.reddit.com/r/Kotlin/comments/juoaz6/from_spring_boot_to_quarkus/)
+- url: https://blog.frankel.ch/spring-to-quarkus/
+---
+
+## [4][Is there a stdlib functionality to "add" to an immutable list, so that a new list is returned?](https://www.reddit.com/r/Kotlin/comments/juqktq/is_there_a_stdlib_functionality_to_add_to_an/)
+- url: https://www.reddit.com/r/Kotlin/comments/juqktq/is_there_a_stdlib_functionality_to_add_to_an/
+---
+Really quick question, is it possible to do something like
+
+    val list1 = listOf(1, 2)
+    val list2 = list1.someKindOfAdd(5)
+
+Inside the stdlib, so that list1 remains unchanged and list2 has the elements 1, 2, 5? I mean it would be quite simple to implement it on my own, but I wanna know if there's some standard way for this.
+## [5][Started learning Kotlin, but build time is really stressing me out.](https://www.reddit.com/r/Kotlin/comments/jusy5a/started_learning_kotlin_but_build_time_is_really/)
+- url: https://www.reddit.com/r/Kotlin/comments/jusy5a/started_learning_kotlin_but_build_time_is_really/
+---
+So I decided to start learning Kotlin. This is my first experience with coding. I'm using some Google resources taking things slow step by step learning the basics and I've downloaded Android Studio.
+
+My problem is that when I want to test what I've learned to follow the examples and run the code on my Galaxy S9 it takes like 11 minutes just to build a single page app that has two strings of text and a single image.
+
+I'm not sure if it's because of my laptop which is pretty old because laptops in the country I'm in are expensive. I'm using an HP Elitebook 8570 with i5 processor and 4 gb of RAM so I know it's far from the best and I can't run the emulator which is why I plug my S9 in to run the program.
+
+Any advice? Are there any options I can disable to make the grade build time faster? Once it finishes it installs onto my phone in seconds its everything in between that takes 10 to 15 minutes. Should I buy another stick of 4gb RAM? Or is this just how it is?
+
+I'm really enthusiastic about learning Kotlin but these past two days the build time has really but a damper on it.
+
+Edit: 
+
+I seemed to have solved the problem, I did two things so I'm not sure which did the trick perhaps you'll know.
+
+First I went to File&gt;Power Save Mode and enabled that, which from my understanding disables a few background operations.
+
+Second, I went to Tools&gt;Kotlin&gt;Enable migrations detection (experimental) and Disabled that. (Not sure why it was automatically enabled if it's experimental). 
+
+Anyways I tried running the app to my S9 and in 30 seconds it was done. I'll repeat with and without said options disabled/enabled to see if its a fluke or if it actually is the solution I require.
+## [6][How to avoid passing objects between activities](https://www.reddit.com/r/Kotlin/comments/juiyk4/how_to_avoid_passing_objects_between_activities/)
 - url: https://www.reddit.com/r/Kotlin/comments/juiyk4/how_to_avoid_passing_objects_between_activities/
 ---
 I suspect that I am using the wrong code design for my app. I am making a note taking app where each note is an object. In the main activity I create an empty `Notebook` object. In the `Notebook` is an empty mutableListOf of `Notes`s. Each `Note` has the context of the note. (text, date created, date updated ...). When the user clicks on the "Add a note" button it jumps to the CreateNote activity. 
@@ -21,7 +68,7 @@ Alternatively, I can create a new `Note`, serialize it, and send it back.
 
 
 Is that the best coding style? If there was a way of storing the `Notebook` object as a shared object between activities I think that would be the best. I could then simply access that object (and potentially send an index if I want to edit a specific note). Is there a way to do that?
-## [2][Any doc/article/reference for the new Kotlin's IR (intermediate representation)?](https://www.reddit.com/r/Kotlin/comments/ju1ixb/any_docarticlereference_for_the_new_kotlins_ir/)
+## [7][Any doc/article/reference for the new Kotlin's IR (intermediate representation)?](https://www.reddit.com/r/Kotlin/comments/ju1ixb/any_docarticlereference_for_the_new_kotlins_ir/)
 - url: https://www.reddit.com/r/Kotlin/comments/ju1ixb/any_docarticlereference_for_the_new_kotlins_ir/
 ---
 My mind was blown after seeing the [kotlin-power-assert](https://github.com/bnorm/kotlin-power-assert), and I'm eager to know about this (IR).
@@ -31,11 +78,11 @@ The [sources](https://github.com/JetBrains/kotlin/tree/master/compiler/ir) are s
 I was trying to find a way to write a compiler plugin which can modify the intermediate code, so that it will easily target multiplatform, but not able to find any quick-start or something for where to start or start looking at the sources.
 
 If anybody know already about this, he/she can share his experience and help for how to get started (basically I want to know how to traverse all the function/classes and then some way to find linked/called functions, etc).
-## [3][Kotlin Coroutines in Spring Webflux](https://www.reddit.com/r/Kotlin/comments/ju7td5/kotlin_coroutines_in_spring_webflux/)
+## [8][Kotlin Coroutines in Spring Webflux](https://www.reddit.com/r/Kotlin/comments/ju7td5/kotlin_coroutines_in_spring_webflux/)
 - url: https://medium.com/@tien.donam/asynchronous-spring-using-kotlin-coroutines-and-r2dbc-93b3a079ac22
 ---
 
-## [4][Help, Why isnt my smile moving? I made the mouse event and the key event but nothing happens](https://www.reddit.com/r/Kotlin/comments/juet5m/help_why_isnt_my_smile_moving_i_made_the_mouse/)
+## [9][Help, Why isnt my smile moving? I made the mouse event and the key event but nothing happens](https://www.reddit.com/r/Kotlin/comments/juet5m/help_why_isnt_my_smile_moving_i_made_the_mouse/)
 - url: https://www.reddit.com/r/Kotlin/comments/juet5m/help_why_isnt_my_smile_moving_i_made_the_mouse/
 ---
 import pt.isel.canvas.\*  
@@ -112,7 +159,7 @@ else -&gt; when (ke.char) {
  *onFinish* **{**  
 **}**  
  }
-## [5][Plan from a theoretical point of view and implement in Kotlin the solution to the following problem:](https://www.reddit.com/r/Kotlin/comments/juboc8/plan_from_a_theoretical_point_of_view_and/)
+## [10][Plan from a theoretical point of view and implement in Kotlin the solution to the following problem:](https://www.reddit.com/r/Kotlin/comments/juboc8/plan_from_a_theoretical_point_of_view_and/)
 - url: https://www.reddit.com/r/Kotlin/comments/juboc8/plan_from_a_theoretical_point_of_view_and/
 ---
 Plan from a theoretical point of view and implement in Java the solution to the following problem:
@@ -150,180 +197,3 @@ In the first case (3), there is no way to get 3 from 1 and 2 without using opera
 The objective is to create the most efficient algorithm able to perform this calculation
 
 Any tips )
-## [6][Hey #Kotliners💡, ever wondered how #Coroutines work under the hood?🤔 Cool! This November, Mohit Sarveiya (Android GDE) will dissect 🗡️ coroutines and take us through some of the lesser known and advanced features of #Kotlin coroutines! RSVP](https://www.reddit.com/r/Kotlin/comments/jtkdnq/hey_kotliners_ever_wondered_how_coroutines_work/)
-- url: https://www.meetup.com/Kotlin-Mumbai/events/274576859/
----
-
-## [7][Sonarnet : Android library for seamless awareness of true Internet access and captive portals. [Feedback are welcome for improvement]](https://www.reddit.com/r/Kotlin/comments/jtkn5c/sonarnet_android_library_for_seamless_awareness/)
-- url: https://github.com/fabricethilaw/sonarnet
----
-
-## [8][hello, I need a bit of help with threads and handling serial data](https://www.reddit.com/r/Kotlin/comments/jts3ey/hello_i_need_a_bit_of_help_with_threads_and/)
-- url: https://www.reddit.com/r/Kotlin/comments/jts3ey/hello_i_need_a_bit_of_help_with_threads_and/
----
- Hello! I am currently working on acheiving certain tasks depending on the data received from a Bluetooth module using the input buffer. Currently I am trying to play a sound depending on the input using MediaPlayer.Create, but only seems to work when I have the device plugged in and hit "Apply Changes and Restart Activity." It does not seem to work if I were to just open the app and test, only after going through the process stated before. Is there a better way of reading the inputstream and handling that data? Is there also a better way to go about how I am playing a sound in the run() function of the ConnectedThread thread? This is my current code. I am also thinking of switching from MediaPlayer to SoundPool because I would like to play multiple sounds simultaneously, would that also be a good option?   
-
-
-    class ControlActivity: AppCompatActivity() {
-     
-       companion object {
-           var m_myUUID: UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB")
-           var m_bluetoothSocket: BluetoothSocket? = null
-           lateinit var m_progress: ProgressDialog
-           lateinit var m_bluetoothAdapater: BluetoothAdapter
-           var m_isConnected: Boolean = false
-           lateinit var  m_address: String
-           private const val TAG = "MY_APP_DEBUG_TAG"
-           private lateinit var handler: Handler
-       }
-       var mMediaPlayer: MediaPlayer? = null
-       override fun onCreate(savedInstanceState: Bundle?) {
-     
-           super.onCreate(savedInstanceState)
-           setContentView(R.layout.control_layout)
-           m_address = intent.getStringExtra(SettingsActivity.EXTRA_ADDRESS)!!
-           ConnectToDevice(this).execute()
-     
-           control_led_on.setOnClickListener { sendCommand("1") }
-           control_led_off.setOnClickListener { sendCommand("0") }
-           control_led_disconnect.setOnClickListener { disconnect() }
-       }
-     
-       private fun sendCommand(input: String){
-           if (m_bluetoothSocket != null){
-               try {
-                   m_bluetoothSocket!!.outputStream.write(input.toByteArray())
-                   Log.i("data", "sending..")
-               } catch (e: IOException) {
-                   e.printStackTrace()
-                   Log.i("data", "couldn't send")
-                   }
-                   return
-     
-               }
-     
-       }
-       private fun disconnect(){
-           if (m_bluetoothSocket != null){
-               try {
-                   m_bluetoothSocket!!.close()
-                   m_bluetoothSocket = null
-                   m_isConnected = false
-               } catch (e: IOException) {
-                   e.printStackTrace()
-               }
-           }
-           finish()
-       }
-     
-       private class ConnectedThread(private val mmSocket: BluetoothSocket?, c : Context) : Thread() {
-           private val mmBuffer: ByteArray = ByteArray(10) // mmBuffer store for the stream
-           var mMediaPlayer: MediaPlayer? = null
-           var context: Context
-           init{
-               this.context = c
-           }
-           override fun run() {
-               var numBytes: Int = 0// bytes returned from read()
-               //var begin: Int = 0
-               // Keep listening to the InputStream until an exception occurs.
-               while (true) {
-                   // Read from the InputStream.
-                   try {
-                       numBytes =
-                           mmSocket!!.inputStream.read(mmBuffer, numBytes, mmBuffer.size - numBytes)
-     
-     
-                   } catch (e: IOException) {
-                       Log.d(TAG, "Input stream was disconnected", e)
-                       break
-                   }
-     
-                   playNote(context)
-     
-                   println(numBytes)
-                   println(String(mmBuffer))
-     
-     
-     
-     
-     
-               }
-           }
-           fun playNote(c: Context) {
-               if (mMediaPlayer == null) {
-                   mMediaPlayer = MediaPlayer.create(c, R.raw.c3)
-                   mMediaPlayer!!.start()
-               } else if (mMediaPlayer != null) {
-                   mMediaPlayer!!.stop()
-                   mMediaPlayer!!.release()
-                   mMediaPlayer = null
-               } else mMediaPlayer!!.start()
-           }
-     
-       }
-     
-     
-     
-     
-       private class ConnectToDevice(c: Context) : AsyncTask&lt;Void, Void, String&gt;(){
-           private var connectSuccess: Boolean = true
-           private val context: Context
-     
-           init {
-               this.context = c
-           }
-           override fun onPreExecute() {
-               super.onPreExecute()
-               m_progress = ProgressDialog.show(context, "Connecting...", "please wait")
-           }
-           override fun doInBackground(vararg p0: Void?) : String? {
-               try {
-                   if (m_bluetoothSocket == null || !m_isConnected){
-                       m_bluetoothAdapater = BluetoothAdapter.getDefaultAdapter()
-                       val device: BluetoothDevice = m_bluetoothAdapater.getRemoteDevice(m_address)
-                       m_bluetoothSocket = device.createInsecureRfcommSocketToServiceRecord(m_myUUID)
-                       BluetoothAdapter.getDefaultAdapter().cancelDiscovery()
-                       m_bluetoothSocket!!.connect()
-     
-                   }
-               } catch (e: IOException){
-                   connectSuccess = false
-                   e.printStackTrace()
-               }
-               return null
-           }
-           override fun onPostExecute(result: String?) {
-               super.onPostExecute(result)
-               if(!connectSuccess){
-                   Log.i("data", "couldn't connect")
-               } else {
-                   m_isConnected = true
-                   var connectedthread= ConnectedThread(m_bluetoothSocket, context)
-                   connectedthread.start()
-                   Log.i("data", "connected")
-               }
-               m_progress.dismiss()
-     
-     
-           }
-     
-       }
-    }
-
- I feel like the problem I have might be the way I am passing the context to the MediaPlayer in the ConnectedThread thread, but I'm honestly not too sure because i just started learning kotlin. What other options do I have for evaluating the bytearray being sent from the Bluetooth?
-## [9][I want to develop a custom app for my DJI Drone. DJI SDK is in Java. However, i'm attracted to learning Kotlin rather than Java as it seems the future (for Android). So will i be able to develop an app for my drone in Kotlin?](https://www.reddit.com/r/Kotlin/comments/jtdvp7/i_want_to_develop_a_custom_app_for_my_dji_drone/)
-- url: https://www.reddit.com/r/Kotlin/comments/jtdvp7/i_want_to_develop_a_custom_app_for_my_dji_drone/
----
-Hi guys, I'm an absolute beginner Android dev, with an end goal to develop a custom app for my DJI drone. I know very little Java &amp; none of Kotlin. The [DJI SDK](https://github.com/dji-sdk/Mobile-SDK-Android) is written in Java.
-
-With my end goal in mind, will it be possible to make a custom app for my drone in Kotlin? Or do I need to stick to Java since the DJI SDK itself is in Java?
-
-Basis the answer to the above question I intend to start learning Android Studio tutorials either specifically for Java or Kotlin. Any guidance would be appreciated, thank you!
-
-EDIT - THANKS A LOT guys, appreciate all the answers, look forward to coding in Kotlin!
-## [10][New kotlin newsletter - kotlin.news](https://www.reddit.com/r/Kotlin/comments/jtkmu9/new_kotlin_newsletter_kotlinnews/)
-- url: https://www.reddit.com/r/Kotlin/comments/jtkmu9/new_kotlin_newsletter_kotlinnews/
----
-Hi I am Android Developer and huge Kotlin enthiusiast (before I start any pet project I am checking if it is possible to be done in Kotlin). I am trying a lot kotlin frameworks, so I thought that I could share my experiences with them. Currently I am trying Compose framework for web development in kotlin - Wanna learn about it? Join at [https://kotlin.news](https://kotlin.news)  
-If it does not convince You - I am also creating Intellij Plugins (recently created project wizard for kVision framework) so maybe some of newly released plugins will convince You? Anyway, it is Your choice, You know where to find me - [https://kotlin.news](https://kotlin.news)

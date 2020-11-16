@@ -1,6 +1,6 @@
 # rust
-## [1][Hey Rustaceans! Got an easy question? Ask here (46/2020)!](https://www.reddit.com/r/rust/comments/jqrkpa/hey_rustaceans_got_an_easy_question_ask_here/)
-- url: https://www.reddit.com/r/rust/comments/jqrkpa/hey_rustaceans_got_an_easy_question_ask_here/
+## [1][Hey Rustaceans! Got an easy question? Ask here (47/2020)!](https://www.reddit.com/r/rust/comments/juwjxb/hey_rustaceans_got_an_easy_question_ask_here/)
+- url: https://www.reddit.com/r/rust/comments/juwjxb/hey_rustaceans_got_an_easy_question_ask_here/
 ---
 Mystified about strings? Borrow checker have you in a headlock? Seek help here! There are no stupid questions, only docs that haven't been written yet.
 
@@ -16,72 +16,147 @@ The official Rust Programming Language Discord: [https://discord.gg/rust-lang](h
 
 The unofficial Rust community Discord: [https://bit.ly/rust-community](https://bit.ly/rust-community)
 
-Also check out [last weeks' thread](https://reddit.com/r/rust/comments/jmijzu/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
+Also check out [last weeks' thread](https://reddit.com/r/rust/comments/jqrkpa/hey_rustaceans_got_an_easy_question_ask_here/) with many good questions and answers. And if you believe your question to be either very complex or worthy of larger dissemination, feel free to create a text post.
 
 Also if you want to be mentored by experienced Rustaceans, tell us the area of expertise that you seek.
-## [2][This Week in Rust 364](https://www.reddit.com/r/rust/comments/jslo80/this_week_in_rust_364/)
-- url: https://this-week-in-rust.org/blog/2020/11/11/this-week-in-rust-364/
+## [2][What's everyone working on this week (47/2020)?](https://www.reddit.com/r/rust/comments/juwkx4/whats_everyone_working_on_this_week_472020/)
+- url: https://www.reddit.com/r/rust/comments/juwkx4/whats_everyone_working_on_this_week_472020/
+---
+New week, new Rust! What are you folks up to? Answer here or over at [rust-users](https://users.rust-lang.org/t/whats-everyone-working-on-this-week-47-2020/51526?u=llogiq)!
+## [3][tiny-skia - a new, pure Rust 2D rendering library based on a Skia subset](https://www.reddit.com/r/rust/comments/juy6x7/tinyskia_a_new_pure_rust_2d_rendering_library/)
+- url: https://www.reddit.com/r/rust/comments/juy6x7/tinyskia_a_new_pure_rust_2d_rendering_library/
+---
+https://github.com/RazrFalcon/tiny-skia
+
+For a long time, I was looking for a great 2D rendering library to use in [resvg](https://github.com/RazrFalcon/resvg), but there was not much choice. You can either use [raqote](https://github.com/jrmuizel/raqote), which is a pure Rust library, but very slow and not actively maintained. Or use [Skia](https://skia.org/), which is probably the best 2D rendering library, but it's absurdly heavy and very hard to compile and distribute.
+
+So the obvious solution was to write your own. But since I have (or at least had) zero knowledge about how 2D libraries work, I couldn't work on raqote myself, so I've decided to port Skia parts that I've need, mainly the CPU rendering pipeline.
+
+After three months of work, I've ended up with tiny-skia, which does all I need (shapes, gradients, patterns, quality, performance), passes all resvg tests and not more than 2x slower than Skia (which is already blazingly fast).
+
+So in the end, tiny-skia is the new 2D rendering library for the Rust ecosystem, which provides better quality than raqote (mainly hairline stroking, gradients and bicubic scaling) and still 5-7x faster.
+
+The main missing feature is the text rendering, which is absurdly complex and will [take a while](https://github.com/RazrFalcon/tiny-skia/issues/1) to implement. And there is not much we can port from Skia, since it uses native libraries.
+
+I still consider it a beta quality, so testing is welcome. There are also some small missing features and performance optimizations.
+## [4][Feroxbuster - A simple, fast, recursive content discovery tool written in Rust](https://www.reddit.com/r/rust/comments/jv0xaw/feroxbuster_a_simple_fast_recursive_content/)
+- url: https://i.redd.it/sfxkz1p8ajz51.gif
 ---
 
-## [3][Crust of Rust: Sorting Algorithms [video]](https://www.reddit.com/r/rust/comments/jua24q/crust_of_rust_sorting_algorithms_video/)
-- url: https://youtu.be/h4RkCyJyXmM
+## [5][shotgun - Minimal screenshot tool written in Rust](https://www.reddit.com/r/rust/comments/jv0v32/shotgun_minimal_screenshot_tool_written_in_rust/)
+- url: https://github.com/neXromancers/shotgun
 ---
 
-## [4][ECS scheduler thoughts, part 1](https://www.reddit.com/r/rust/comments/jujamr/ecs_scheduler_thoughts_part_1/)
-- url: https://ratysz.github.io/article/scheduling-1/
+## [6][drop-bin: Defer running expensive destructors](https://www.reddit.com/r/rust/comments/juqi8m/dropbin_defer_running_expensive_destructors/)
+- url: https://www.reddit.com/r/rust/comments/juqi8m/dropbin_defer_running_expensive_destructors/
+---
+One of the major advantages that garbage-collected languages have is that memory freeing doesn't happen in the fast path. Smart GCs will often wait until memory usage is low or nothing needs to be processed to clear up all the garbage. To bring this same performance to Rust, I created [drop-bin](https://docs.rs/drop-bin); instead of leaving your values to be implicitly dropped, put them in the bin, and then you can clear them all out at the same time whenever you like.
+
+To test its performance, I benchmarked dropping a `HashMap` of 1000 vectors of 500 number each. Simply dropping each value took 240us/iteration, using [defer-drop](https://docs.rs/defer-drop) took 1342ns/iteration and drop-bin took 450ns/iteration. This is cheating somewhat as the drop-bin benchmark didn't clear the bin and so the values were never actually dropped, but it is more representative of the performance you care about in many cases.
+## [7][Cn v2.0.0 Released](https://www.reddit.com/r/rust/comments/jv270t/cn_v200_released/)
+- url: https://gitlab.com/arijit79/cn/-/releases/v2.0.0
 ---
 
-## [5][Render a terminal as HTML with `to-html`](https://www.reddit.com/r/rust/comments/juhbo3/render_a_terminal_as_html_with_tohtml/)
-- url: https://www.reddit.com/r/rust/comments/juhbo3/render_a_terminal_as_html_with_tohtml/
----
-I made a [program](https://github.com/Aloso/to-html) that can render a terminal on a webpage, including ANSI colors. Demonstration:
-
-https://preview.redd.it/js3aibzsybz51.png?width=1280&amp;format=png&amp;auto=webp&amp;s=e73f3ece6114aca1bd69633cc977cd584e3191eb
-
-As you can see, running `to-html 'your bash command'` will execute the command(s) and print a terminal with the output as HTML. All you need to do is copy+paste it on your website :)
-
-You can see it in action here: [https://aloso.github.io/colo/](https://aloso.github.io/colo/)
-
-**How it works**
-
-to-html consumes 1 or more commands and executes them with [script](https://man7.org/linux/man-pages/man1/script.1.html). This program runs the commands with bash in a pseudoterminal (pty), so the commands emit colors normally. This is necessary because most programs disable colors when they detect that they're not running in a tty.
-
-to-html then parses the ANSI escape codes in the output and converts them to HTML. It also parses the bash commands and applies some syntax highlighting (using [logos](https://github.com/maciejhirsz/logos)). Finally, the bash commands and the output are printed.
-
-I hope some of you will find this useful!
-## [6][pacaptr: Pacman-like Syntax Wrapper for Package Managers, Now Reaches v0.8.0](https://www.reddit.com/r/rust/comments/juk5xp/pacaptr_pacmanlike_syntax_wrapper_for_package/)
-- url: https://github.com/rami3l/pacaptr
+## [8][rust-analyzer changelog #51](https://www.reddit.com/r/rust/comments/jv6nof/rustanalyzer_changelog_51/)
+- url: https://rust-analyzer.github.io/thisweek/2020/11/16/changelog-51.html
 ---
 
-## [7][Error handling Isn't All About Errors by Jane Lusby](https://www.reddit.com/r/rust/comments/juc8l0/error_handling_isnt_all_about_errors_by_jane_lusby/)
-- url: https://www.youtube.com/watch?v=rAF8mLI0naQ
+## [9][Production-Grade Logging in Rust Applications](https://www.reddit.com/r/rust/comments/jv6a5j/productiongrade_logging_in_rust_applications/)
+- url: https://medium.com/better-programming/production-grade-logging-in-rust-applications-2c7fffd108a6
 ---
 
-## [8][Benchmarks of Ryzen 5 series CPUs](https://www.reddit.com/r/rust/comments/juetus/benchmarks_of_ryzen_5_series_cpus/)
-- url: https://www.reddit.com/r/rust/comments/juetus/benchmarks_of_ryzen_5_series_cpus/
+## [10][How to select between reading from a file and stdin](https://www.reddit.com/r/rust/comments/jv3q3e/how_to_select_between_reading_from_a_file_and/)
+- url: https://www.reddit.com/r/rust/comments/jv3q3e/how_to_select_between_reading_from_a_file_and/
 ---
-Has anyone run the [rustc-perf](https://github.com/rust-lang/rustc-perf/tree/master/collector) benchmark suite on a new (or last gen) Ryzen CPU?
+I'm trying to write a simple base64 encoder/decoder in Rust to learn the language, really like it so far but I have some problems when it comes to IO.
 
-It would be quite useful if there was a comparison of how rustc performed across the 5600x/5800x/5900x/5950x.
-## [9][How to work with binary protocols?](https://www.reddit.com/r/rust/comments/jukzbp/how_to_work_with_binary_protocols/)
-- url: https://www.reddit.com/r/rust/comments/jukzbp/how_to_work_with_binary_protocols/
+I want the option to read from either a local file or from stdin and I have been able to make some example code for both cases. The code looks almost the same and coming from a C background I try to assign a "file descriptor" using the following method:
+
+        let mut data_src_fd;
+        if data_src.eq("-") {
+    	let stdin = io::stdin();
+    	let handler = stdin.lock();
+    	data_src_fd = handler.by_ref();
+        } else {
+    	let mut handler2 = match File::open(&amp;data_src) {
+                Ok(file) =&gt; file,
+                Err(error_description) =&gt; {
+    		eprintln!(
+                        "Unable to open file {} ({})",
+                        data_src,
+                        error_description.to_string()
+    		);
+    		process::exit(-1);
+                }
+    	};
+    	data_src_fd = handler2.by_ref();
+        }
+
+This does not work whoever and gives me the following error:
+
+    error[E0308]: mismatched types
+      --&gt; src/main.rs:60:16
+       |
+    60 |     data_src_fd = handler2.by_ref();
+       |                   ^^^^^^^^^^^^^^^^^ expected struct `std::io::StdinLock`, found struct `std::fs::File`
+       |
+       = note: expected mutable reference `&amp;mut std::io::StdinLock&lt;'_&gt;`
+                  found mutable reference `&amp;mut std::fs::File`
+    
+    error: aborting due to previous error
+    
+    For more information about this error, try `rustc --explain E0308`.
+
+Which make sense, but since I'm a C person I want to make something like this:
+
+      FILE *file_fd;
+      if (strncmp(file, "-", 1) == 0)
+          file_fd = stdin;
+      else
+          file_fd = fopen(file, "r");
+
+The Rust reading loop further down looks exactly the same in the example code that I have from reading from a file and reading from stdin:
+
+    let mut buffer_vec = Vec::with_capacity(buffer_size);
+    loop {
+        match data_src_fd
+            .by_ref()
+            .take(buffer_size as u64)
+            .read_to_end(&amp;mut buffer_vec)
+        {
+            Ok(chunk_size) =&gt; {
+                if chunk_size == 0 {
+                    break;
+                }
+    
+                operation(&amp;buffer_vec);
+    
+                if chunk_size &lt; buffer_size {
+                    break;
+                }
+    
+                buffer_vec.clear();
+            }
+            Err(error_description) =&gt; panic!("{}", error_description),
+        }
+    }
+
+It's very frustrating to have two identical loops for handling both cases so I'm wondering how I can attractive the same result as in the C code (if its possible?). I'm very new to Rust so I'm much open for suggestions for how I should be handling this and to rewrite/redesign the code if necessary.
+## [11][t-rec-rs — Blazingly fast terminal recorder that generates animated gif images for the web](https://www.reddit.com/r/rust/comments/jv0r22/trecrs_blazingly_fast_terminal_recorder_that/)
+- url: https://github.com/sassman/t-rec-rs
 ---
-I am learning network programming (self-taught). I was looking at how binary protocols work and wanted to implement one. I looked at Go's [encoding/binary](https://golang.org/pkg/encoding/binary/) and Rust's [byteorder](https://docs.rs/byteorder/1.3.4/byteorder/) crate. They both provide methods to encode only  numbers. I can't understand how would one encode other data types like strings etc. Am I missing something? Also any resources to learn about binary protocols would be very helpful.
 
-Thanks a lot!
-## [10][Make a Language in Rust, Part Ten: Starting Again](https://www.reddit.com/r/rust/comments/ju1vhl/make_a_language_in_rust_part_ten_starting_again/)
-- url: https://arzg.github.io/lang/10/
+## [12][What are your rules of thumb around when to panic and when to return an error?](https://www.reddit.com/r/rust/comments/jv6khs/what_are_your_rules_of_thumb_around_when_to_panic/)
+- url: https://www.reddit.com/r/rust/comments/jv6khs/what_are_your_rules_of_thumb_around_when_to_panic/
 ---
+This isn't even necessarily Rust specific. So as you discuss, feel free to mention other languages or different domains, etc as you see fit.
 
-## [11][Design Pattern: Scoped Trait Implementations](https://www.reddit.com/r/rust/comments/ju6x5i/design_pattern_scoped_trait_implementations/)
-- url: https://jack.wrenn.fyi/blog/private-trait-impls/
----
+It's easy to find hand-wavy advice along the lines of "panic is okay when the caller can't reasonably recover from it." But what does that **mean** to you? And doesn't it sound kind of presumptuous to assume what the caller may or may not want to recover from? Maybe if the file isn't found, they want to turn around and order a pizza and a margarita while submitting their resumé to the animal shelter to be a dog catcher and get the hell out of tech. How you can you predict that as library author?
 
-## [12][Sapling Livestream #3: Building a better code editor in Rust](https://www.reddit.com/r/rust/comments/ju71ty/sapling_livestream_3_building_a_better_code/)
-- url: https://www.reddit.com/r/rust/comments/ju71ty/sapling_livestream_3_building_a_better_code/
----
-Hi Rustaceans,
+On the other hand, pretty much nobody tries to do anything about memory allocation failures.
 
-I'm streaming some Rust development [here](https://youtu.be/o8IiQPlY-GQ) on my YouTube channel.  I'm building an experimental text editor called [Sapling](https://github.com/kneasle/sapling), which aims to help programmers edit *code* faster rather than just *text*.  I'm still pretty new to streaming, but if you're welcome to come along and chill out whilst we build some Rust code.  Stream starts at 2pm EST every Saturday!
+I like to refer to OCaml's docs sometimes: https://dev.realworldocaml.org/error-handling.html#scrollNav-3
 
-Cheers, and happy coding!
+Personally, I take a more "philosophical" and decidedly less pragmatic approach to errors (in all languages with which I work). I return a Result if the function can fail due to the inputs or due to the state of the world. Always. If the function does IO, I return a Result if the database is missing, the network request failed, etc. The **only** time I panic is if 100% of the reason lies within the function itself. For example, if my function is processing some data and I create a temporary array/vector/list and I *know* it's at least length 3, then I'm perfectly happy to index it directly at `list[2]` and if it crashes, it's because I wrote the function wrong.
+
+I was thinking about this because I was reading some people criticisms of Java's checked exceptions and about IOException in particular. The argument was that IOException should be unchecked, so that Java IO functions in the standard library just bubble up IO failures transparently to the top. I'm not comfortable with that idea...

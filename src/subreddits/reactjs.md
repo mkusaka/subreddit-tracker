@@ -70,199 +70,62 @@ If you are looking for jobs, send a PM to the poster or post in our [Who's Avail
 
 [hiring:most recent]: https://www.reddit.com/r/reactjs/comments/j32odm/whos_hiring_and_rreactjs_moderator_applications/
 [available:most recent]: https://www.reddit.com/r/reactjs/comments/itrbgt/whos_available_september_2020/
-## [3][The most recent iteration of my personal website](https://www.reddit.com/r/reactjs/comments/jufspn/the_most_recent_iteration_of_my_personal_website/)
-- url: https://v.redd.it/39j6lqzxwbz51
+## [3][Lets Partner up and build something!!!!](https://www.reddit.com/r/reactjs/comments/jv1oy3/lets_partner_up_and_build_something/)
+- url: https://www.reddit.com/r/reactjs/comments/jv1oy3/lets_partner_up_and_build_something/
+---
+Hey Guys, I am looking partner up with someone to create some cool React projects. Something that can be used to showcase on a portfolio and teach us a new skill. 
+
+About me: I have a Front End developer with 6 months of experience. Pretty good in React, Firebase, Router, JavaScript and Algorithms. 
+
+If you are interested, shoot me a message.
+## [4][Build your own stickers component with react-konva](https://www.reddit.com/r/reactjs/comments/jv59rl/build_your_own_stickers_component_with_reactkonva/)
+- url: https://blog.theodo.com/2020/11/react-konva-stickers/
 ---
 
-## [4][Optimize React Apps PageSpeed Insights Score - thetuteur](https://www.reddit.com/r/reactjs/comments/juh1bf/optimize_react_apps_pagespeed_insights_score/)
-- url: https://thetuteur.com/optimize-react-apps-pagespeed-insights-score/
+## [5][Another Covid Tracker - Built using React.](https://www.reddit.com/r/reactjs/comments/jv32p3/another_covid_tracker_built_using_react/)
+- url: https://www.reddit.com/r/reactjs/comments/jv32p3/another_covid_tracker_built_using_react/
 ---
+&amp;#x200B;
 
-## [5][How I built my portfolio using DEV.to and NextJS](https://www.reddit.com/r/reactjs/comments/ju6lto/how_i_built_my_portfolio_using_devto_and_nextjs/)
-- url: https://dev.to/sidthesloth92/story-of-how-i-built-my-portfolio-and-blog-using-dev-to-and-nextjs-3j85
----
-
+https://reddit.com/link/jv32p3/video/nhngnqap6kz51/player
 ## [6][A library to build React Diagrams with ease 💎](https://www.reddit.com/r/reactjs/comments/jul46j/a_library_to_build_react_diagrams_with_ease/)
 - url: https://github.com/antonioru/beautiful-react-diagrams
 ---
 
-## [7][I made the first version of my portfolio](https://www.reddit.com/r/reactjs/comments/juilw9/i_made_the_first_version_of_my_portfolio/)
-- url: https://www.reddit.com/r/reactjs/comments/juilw9/i_made_the_first_version_of_my_portfolio/
----
-Check it out at : http://apoorv.web.app/
-
-I'm currently hosting the website using Firebase. I plan to change the portfolio in the next version. Any ideas are welcome.
-
-Almost all the things I've used is mentioned in the github Readme.
-
-Checkout the github Repo : https://github.com/uragirii/the-website
-## [8][Ordinary Puzzles: A Progressive Web App puzzle game built with React-Native](https://www.reddit.com/r/reactjs/comments/juljmz/ordinary_puzzles_a_progressive_web_app_puzzle/)
-- url: https://www.ordinarypuzzles.com/
+## [7][I created a social platform for animals. https://petmatcher.app](https://www.reddit.com/r/reactjs/comments/jutahw/i_created_a_social_platform_for_animals/)
+- url: https://v.redd.it/dgqor3icvgz51
 ---
 
-## [9][Upgraded a react app to webpack 5](https://www.reddit.com/r/reactjs/comments/jtzt84/upgraded_a_react_app_to_webpack_5/)
-- url: https://www.reddit.com/r/reactjs/comments/jtzt84/upgraded_a_react_app_to_webpack_5/
+## [8][10 React security best practices](https://www.reddit.com/r/reactjs/comments/jv3a6l/10_react_security_best_practices/)
+- url: https://snyk.io/blog/10-react-security-best-practices/
 ---
-I just did that and it seems to be very similar to webpack 4.  Bundle size decreased by 0.5%, build time remains similar.  Besides module federation which I don't use, and opt-in persistent caching that seem to bebetter left off, what's the biggest feature I can tell my boss/coworker? I went through the changelog and couldn't fully appreciate the technical changes that are being made.
 
-If you are planning to migrate, be prepared to deal with a bunch of config migrations, adding node polyfills, getting a lot more webpack api warnings and dealing with some incompatible webpack plugins :)
-## [10][Hi. How to build beautiful User interfaces](https://www.reddit.com/r/reactjs/comments/jujn6e/hi_how_to_build_beautiful_user_interfaces/)
-- url: https://www.reddit.com/r/reactjs/comments/jujn6e/hi_how_to_build_beautiful_user_interfaces/
+## [9][Looking for opinions on react-intl workflow](https://www.reddit.com/r/reactjs/comments/jv43g1/looking_for_opinions_on_reactintl_workflow/)
+- url: https://www.reddit.com/r/reactjs/comments/jv43g1/looking_for_opinions_on_reactintl_workflow/
 ---
-I'm new to React and maybe to Web development,
-But I'm struggling to make a beautiful website or maybe just a landing page.
-Which is the best way to do that ?
-Material- Ui ?
-## [11][CSS for my search bar in app appears top right of screen?](https://www.reddit.com/r/reactjs/comments/jujh14/css_for_my_search_bar_in_app_appears_top_right_of/)
-- url: https://www.reddit.com/r/reactjs/comments/jujh14/css_for_my_search_bar_in_app_appears_top_right_of/
+I've had some concerns about my project's localization workflow and am wondering what the biggest things worth changing would be in your opinion?
+
+- react-intl
+
+- we have an `en` localization as default, and no default messages inline in the code (because it seemed verbose). This means that we don't get automatic fallback for missing translations, and instead need to temporarily copy English strings to other locales while they're being translated. 
+
+- All locale JSON data is imported into the bundle, no async lazy-loading. Size-wise it's not a big deal in our case, but it sure feels wrong.
+
+- While we can send arguments, there's no _nice_ way to include some formatting and/or links without splitting texts into multiple parts. It might be nice to add markdown support to the app, but I've yet to explore it and its consequences.
+## [10][Looking for Reactjs and Typescript guys in Canada](https://www.reddit.com/r/reactjs/comments/jv6cux/looking_for_reactjs_and_typescript_guys_in_canada/)
+- url: https://www.reddit.com/r/reactjs/comments/jv6cux/looking_for_reactjs_and_typescript_guys_in_canada/
 ---
-I am currently developing a weather app, when the page loads the CSS is different from when you have searched a location, it appears on the top left. Here is a gif showing this.. 
-
-also, can anyone tell me why the image jumps when first searched but is transitioning smoothly after a couple of searches?
-
-https://imgur.com/aX2nbyy
-
-
-My code:
-
-**CSS**
-
-    html, body, #root {
-    font: 0.9rem sans-serif;
-    background: #0a1f44;
-    color: #1e2432;
-    height: 100%;
-    margin: 0;
-    width: auto;
-    }
-
-    .app.cold {
-    background-image: url('./images/cold.jpg');
-    background-size: cover;
-    background-position: center;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: 0.3s ease-in;
-    }
-
-    .app.warm{
-    background-image: url('./images/warm.jpg');
-    background-size: cover;
-    background-position: center;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    transition: 0.3s ease-in;
-    }
-
-
-    .search {
-    outline: none;
-    padding: 20px 7%;
-    border-radius: 20px;
-    border: none;
-    margin-bottom: 5%;
-    background: rgba(250, 250, 250, 0.85);
-    }
-
-    .city {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 40px 8%;
-    border-radius: 20px;
-    background: rgba(250, 250, 250, 0.85);
-    box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
-    }
-
-
-**APP.JS**
-
-      import React, { useState } from 'react';
-
-    import { fetchWeather } from './api/fetchWeather';
-    import './App.css';
-
-    const App = () =&gt; {
-    const [query, setQuery] = useState('');
-    const [weather, setWeather] = useState({});
-
-    const dateBuilder = (d) =&gt; {
-        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-     let day = days[d.getDay()];
-     let date = d.getDate();
-     let month = months[d.getMonth()];
-     let year = d.getFullYear();
-
-    return `${day} ${date} ${month} ${year}`
-
-
-    }
-
-    const search = async (e) =&gt; {
-        if(e.key === 'Enter') {
-            const data = await fetchWeather(query)
-            
-
-            setWeather(data);
-            setQuery('');
-
-             
-        }
-     }
-
-    return (
-        &lt;div className ={
-            (typeof weather.main != "undefined") 
-            ? ((weather.main.temp &gt; 18) 
-            ? 'app warm' : 
-            'app cold') 
-            : 'app'}&gt;
-        
-            &lt;input
-            type="text"
-            className="search"
-            placeholder="Search... "
-            value ={query}
-            onChange={(e) =&gt; setQuery(e.target.value)}
-            onKeyPress={search}
-            /&gt;
-
-            {weather.main &amp;&amp; (
-                &lt;div className="city"&gt;
-                    &lt;h2 className="city-name"&gt;
-                        &lt;span&gt;{weather.name}&lt;/span&gt;
-                        &lt;sup&gt;{weather.sys.country}&lt;/sup&gt;
-                    &lt;/h2&gt;
-                    &lt;div className ="city-temp"&gt;
-                        {Math.round(weather.main.temp)}
-                        &lt;sup&gt;&amp;deg;C&lt;/sup&gt;
-                        &lt;/div&gt;
-                        &lt;div className="info"&gt;
-                        &lt;img className="city-icon" src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt= 
-    {weather.weather[0].description} /&gt;
-                        &lt;p&gt;{weather.weather[0].description}&lt;/p&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-            )}
-        &lt;/div&gt;
-    );
-    }
-
-    export default App;
-## [12][Responsive NavBar component](https://www.reddit.com/r/reactjs/comments/juiuti/responsive_navbar_component/)
-- url: https://www.reddit.com/r/reactjs/comments/juiuti/responsive_navbar_component/
+Salary: 100000 - 150000 CAD  
+DM for more details
+## [11][How do i create a link with a thumbnail that I can share on social media for my react app?](https://www.reddit.com/r/reactjs/comments/jv52da/how_do_i_create_a_link_with_a_thumbnail_that_i/)
+- url: https://www.reddit.com/r/reactjs/comments/jv52da/how_do_i_create_a_link_with_a_thumbnail_that_i/
 ---
-Can someone suggest me a good tutorial? I'm lost in there. Bootstrap, Material UI
+I have created a react.js app and built and published it to github pages.
+
+When i share my react.js app link on linkedin, There isn't a thumbnail that goes along with the app.
+
+How do i create a link with a thumbnail that I can share on social media for my react app?
+## [12][Protected routes + redux + firebase - I did this video tutorial for you](https://www.reddit.com/r/reactjs/comments/jv01uz/protected_routes_redux_firebase_i_did_this_video/)
+- url: https://www.reddit.com/r/reactjs/comments/jv01uz/protected_routes_redux_firebase_i_did_this_video/
+---
+Hello, community, I just recently joined here, and I'm creating this post as my first collaboration. I just hope it doesn't go against the rules but I'm really excited to help a lot of people with my videos. My last react video was about implementing firebase authentication with redux and react-router-dom. I know you guys are going to like it and I'm hopping to get questions that you may have, I'll be happy to answer them all. Check it out here: [https://youtu.be/fPDVn4UX6GI](https://youtu.be/fPDVn4UX6GI)

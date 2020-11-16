@@ -1,29 +1,20 @@
 # androiddev
-## [1][App Feedback Thread - November 14, 2020](https://www.reddit.com/r/androiddev/comments/ju180o/app_feedback_thread_november_14_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/ju180o/app_feedback_thread_november_14_2020/
+## [1][Weekly "who's hiring" thread!](https://www.reddit.com/r/androiddev/comments/jv65in/weekly_whos_hiring_thread/)
+- url: https://www.reddit.com/r/androiddev/comments/jv65in/weekly_whos_hiring_thread/
 ---
-This thread is for getting feedback on your own apps.
+Looking for Android developers? Heard about a cool job posting? Let people know!
 
-####Developers:
+Here is a suggested posting template:
 
-- must **provide feedback** for others
-- must include **Play Store**, **GitHub**, or **BitBucket** link
-- must make top level comment
-- must make effort to respond to questions and feedback from commenters
-- may be open or closed source
+&gt; Company: &lt;Best Company Ever&gt;  
+&gt; Job: [&lt;Title&gt;]\(https://example.com/job)  
+&gt; Location: &lt;City, State, Country&gt;  
+&gt; Allows remote: &lt;Yes/No&gt;  
+&gt; Visa: &lt;Yes/No&gt;  
 
-####Commenters:
-
-- must give **constructive feedback** in replies to top level comments
-- must not include links to other apps
-
-To cut down on spam, accounts who are too young or do not have enough karma to post will be removed. Please make an effort to contribute to the community before asking for feedback.
-
-As always, the mod team is only a small group of people, and we rely on the readers to help us maintain this subreddit. Please report any rule breakers. Thank you.
-
-\- Da Mods
-## [2][Weekly Questions Thread - November 09, 2020](https://www.reddit.com/r/androiddev/comments/jqvlp4/weekly_questions_thread_november_09_2020/)
-- url: https://www.reddit.com/r/androiddev/comments/jqvlp4/weekly_questions_thread_november_09_2020/
+Feel free to include any other information about the job.
+## [2][Weekly Questions Thread - November 16, 2020](https://www.reddit.com/r/androiddev/comments/jv4wg8/weekly_questions_thread_november_16_2020/)
+- url: https://www.reddit.com/r/androiddev/comments/jv4wg8/weekly_questions_thread_november_16_2020/
 ---
 This thread is for simple questions that don't warrant their own thread (although we suggest checking the sidebar, [the wiki](http://www.reddit.com/r/androiddev/wiki/), [our Discord](https://discord.gg/D2cNrqX), or [Stack Overflow](http://stackoverflow.com) before posting). Examples of questions:
 
@@ -40,140 +31,87 @@ Have a question about the subreddit or otherwise for /r/androiddev mods? [We wel
 Also, please don't link to Play Store pages or ask for feedback on this thread. Save those for the App Feedback threads we host on Saturdays.
 
 Looking for all the Questions threads? Want an easy way to locate this week's thread? Click [this link](https://www.reddit.com/r/androiddev/search?q=title%3A%22questions+thread%22+author%3A%22AutoModerator%22&amp;restrict_sr=on&amp;sort=new&amp;t=all)!
-## [3][Vigilante - iOS 14 alike privacy features in Android](https://www.reddit.com/r/androiddev/comments/jude8s/vigilante_ios_14_alike_privacy_features_in_android/)
-- url: https://www.reddit.com/r/androiddev/comments/jude8s/vigilante_ios_14_alike_privacy_features_in_android/
----
-Hello folks,
-
-I've recently built an app that mimics the iOS 14's privacy feature that sends an alert as a dot on your screen when your microphone/camera is being used.
-
-You can download it directly from [GitHub](https://github.com/CraZyLegenD/Vigilante/releases/tag/1.0.0)
-
-As you can see, it's an open source project that showcases some of the latest Android development's goodies as you can see on the [GitHub](https://github.com/CraZyLegenD/Vigilante) page.
-
-It's open source since it's security based app, your data is yours and there are no trackers or libraries that talk to Google, feel free to contribute to the app especially if you can do a translation to your language.
-
-If you have any suggestions or you've found an bugs in the app feel free to open an issue in the repo or the comments of this post.
-
-Once again a link to the repo [https://github.com/CraZyLegenD/Vigilante](https://github.com/CraZyLegenD/Vigilante)
-## [4][Jintin/FancyLocationProvider Wrapper of FusedLocationProviderClient for Android to support modern usage like LiveData or Flow.](https://www.reddit.com/r/androiddev/comments/jujqay/jintinfancylocationprovider_wrapper_of/)
-- url: https://github.com/Jintin/FancyLocationProvider
+## [3][Detect Screenshots in Android](https://www.reddit.com/r/androiddev/comments/jv4rzh/detect_screenshots_in_android/)
+- url: https://proandroiddev.com/detect-screenshots-in-android-7bc4343ddce1
 ---
 
-## [5][Escape your Full Text Search Queries](https://www.reddit.com/r/androiddev/comments/jujq52/escape_your_full_text_search_queries/)
-- url: https://blog.haroldadmin.com/escape-fts-queries/
+## [4][Introducing Laboratory – a library for feature flags management with great QA capabilities](https://www.reddit.com/r/androiddev/comments/juxm13/introducing_laboratory_a_library_for_feature/)
+- url: https://github.com/MiSikora/laboratory
 ---
 
-## [6][How to avoid passing objects between activities](https://www.reddit.com/r/androiddev/comments/juj6su/how_to_avoid_passing_objects_between_activities/)
-- url: https://www.reddit.com/r/androiddev/comments/juj6su/how_to_avoid_passing_objects_between_activities/
+## [5][I got email with p[romotion offer from MyAppFree.com - are they legit or is it scam? Anybody has any experiences?](https://www.reddit.com/r/androiddev/comments/jv46s3/i_got_email_with_promotion_offer_from/)
+- url: https://www.reddit.com/r/androiddev/comments/jv46s3/i_got_email_with_promotion_offer_from/
 ---
-I don't know if this counts as "help me" or as "general discussion about [...] design"
+Title says it all. They basically said if I offer my app temporarirly for free (make a promotion) for just couple days, they can promote my app and I could get many downloads.
 
-I suspect that I am using the wrong code design for my app. I am making a note taking app where each note is an object. In the main activity I create an empty `Notebook` object. In the `Notebook` is an empty mutableListOf of `Notes`s. Each `Note` has the context of the note. (text, date created, date updated ...). When the user clicks on the "Add a note" button it jumps to the CreateNote activity. 
+I received email form them, and after discussing details they send me [detailed instructions like this](https://imgur.com/C5H2sEl)
 
-I can think of two ways of adding that note. Either, 
- 1. Serialize the `Notebook` object
- 2. Send the `Notebook` by using 
-```
-// In main activity
-intent.putExtra(NOTEBOOK, notebook)
-// In CreateNote activity
-val notebook = intent.getSerializableExtra(NOTEBOOK) as? Notebook
-```
- 3. Add a newly created note to the notebook
- 4. Send back the updated notebook
- 5. Update the notebook in main activity.
+I have several questions:
 
-Alternatively, I can create a new `Note`, serialize it, and send it back. 
+1) is it compliant with Google Play rules, if 3rd party server promotes my app? 
 
+2) is it compliant with Google Play rules to alter my app description  (see email) with link to their website?
 
-Is that the best coding design? If there was a way of storing the `Notebook` object as a shared object between activities I think that would be the best. I could then simply access that object (and potentially send an index if I want to edit a specific note). Is there a way to do that?
+3) are they legit? Anybody has experiences if it is actually worth it? Do you get any significant downloads?
 
-I am writing in Kotlin, if that matters.
-## [7][8 — 14 November Android Newsletter](https://www.reddit.com/r/androiddev/comments/jujnmb/8_14_november_android_newsletter/)
-- url: https://www.reddit.com/r/androiddev/comments/jujnmb/8_14_november_android_newsletter/
+Thanks a lot :)
+## [6][Can anyone help me to write cases for repository and ViewModel .](https://www.reddit.com/r/androiddev/comments/jv4nd0/can_anyone_help_me_to_write_cases_for_repository/)
+- url: https://www.reddit.com/r/androiddev/comments/jv4nd0/can_anyone_help_me_to_write_cases_for_repository/
 ---
-Stay up to date with Android development, in this week's edition:  
-🤓 Android Coroutine Scopes   
-🤩 Run Android Studio on any device   
-🧪 Experiment with a new framework Simple-Stack   
-💭 Master the Bubbles API  
-and much more!
-
-Read it here 👉 [https://vladsonkin.com/android-newsletter-20/](https://vladsonkin.com/android-newsletter-20/)  
-What's your favorite one?
-
-🔥Featuring [@joenrv](https://twitter.com/joenrv) [@FilipStanis](https://twitter.com/FilipStanis) [@Zhuinden](https://twitter.com/Zhuinden) [@filipebatista](https://twitter.com/filipebatista) [@balarka](https://twitter.com/balarka) [@SG5202](https://twitter.com/SG5202) [@rockandnull](https://twitter.com/rockandnull) [@iabhishek1041](https://twitter.com/iabhishek1041) [@gokhanalicciii](https://twitter.com/gokhanalicciii) and many other great authors!
-
-💚 Subscribe and receive new editions directly to your email. Weekly, no spam, unsub anytime.  
-Here is an example: [https://mailchi.mp/46c5d65d2315/android-newsletter-20](https://mailchi.mp/46c5d65d2315/android-newsletter-20)
-## [8][Jetpack Compose or Flutter... which is the safest bet?](https://www.reddit.com/r/androiddev/comments/judj8o/jetpack_compose_or_flutter_which_is_the_safest_bet/)
-- url: https://www.reddit.com/r/androiddev/comments/judj8o/jetpack_compose_or_flutter_which_is_the_safest_bet/
+I am making a simple app, in which I want to write test cases, I am fetching data from the server.
+## [7][what kind of source is included when publishing Android AAR to Maven Central](https://www.reddit.com/r/androiddev/comments/jv14d7/what_kind_of_source_is_included_when_publishing/)
+- url: https://www.reddit.com/r/androiddev/comments/jv14d7/what_kind_of_source_is_included_when_publishing/
 ---
-I know this sub will mostly pick native, but just assume you can only pick a cross-platform solution. Here's what I've gathered so far. Please correct me if I'm wrong.
+Let say I want to publish an open-source Android library (i.e. AAR) to Maven Central. This means we need to have a JAR contains source code of the library (i.e. \*-sources.jar). So what do you put into the source JAR?
 
+\- Of course, we need to put Java/Kotlin sources (and maybe C code if we have)
 
-Flutter pros:
+\- How about the java/kotlin resources?
 
-* Easy to learn
+\- How about Android resources like layouts, manifests, images, and other assets?
+## [8][Question about changing MinSDKVersion for my app](https://www.reddit.com/r/androiddev/comments/juzuof/question_about_changing_minsdkversion_for_my_app/)
+- url: https://www.reddit.com/r/androiddev/comments/juzuof/question_about_changing_minsdkversion_for_my_app/
+---
+I'm trying to figure out what happens in the Google play store when I change the MinSDKVersion for my app and I'm hoping someone can help me out.
 
-* Used by Google themselves in Google Pay, Google Assistant, Google Ads, etc.
-* Used by Ebay, Alibaba, Baidu, Square, Tencent
-* Used by popular apps like Insight Timer and Reflectly
-* Will work on Fuschia OS
+For example, let's say App v1.0.0 is currently in the Google Play store with a MinSDKVersion of OS 7 and all my users have that version installed on their phones. Next week, I plan to release App v1.1.0 with a couple important bug fixes, and it will have the same MinSDKVersion (OS 7). In 2 months, I plan to release App v2.0.0, and I'm going to increase the MinSDKVersion from OS 7 to OS 9.
 
-Flutter cons: 
+Here's what I'm trying to figure out:
 
-* Devs seem to prefer Kotlin over Dart
+If one of my users has a phone running OS 7, and they choose not to update their app to v1.1.0, what will they see in the Google Play store after I release App V2.0.0? I can think of 2 possible scenarios:
 
-* If Google drops Flutter, your investment in learning Dart will be for nothing
-* iOS animation bugs 
+A. The user on OS 7 will always be able to see and download the most recent version of the app that is compatible with the OS version they are running (in this case, App v1.2.0).
 
-* Not many first party plug-ins, and some of the few that exist have issues
+B. The user will not see any updated app versions available to them and they will be "stuck" on the app version they currently have installed (App, v1.0.0).
 
-Jetpack Compose pros:
-
-* Similar to SwiftUI, so easier to get into for new iOS devs and  current Android devs 
-
-* Built by Google *and* Jetbrains, who have a track record of excellent products, and they created Kotlin
-
-* devs who prefer native android won't have much of a problem with this 
-
-Compose cons: 
-
-* Younger project, currently in Alpha, so who knows if it'll catch up to Flutter by the time it's mature
-* If Flutter continues to grow, it'll be harder to convince Flutter devs to switch 
-
-* With so many companies (including Google) already invested in Flutter, what reason do they have to even consider Compose? 
-
-* If Fuchsia turns out to be a success and not a toy project, Flutter will be ahead in this new OS. Doesn't mean Android will just disappear though 
-
-What do you think? I'm still in university so I don't have to worry as much about the current cross-platform job market. I wanna use the cross-platform framework that will be more likely to stay relevant or at least alive by 2022. Not sure if I should dive into Flutter now or just work on other stuff while I wait for Compose to become production ready
-## [9][Jetpack Compose: intro &amp; basic layouts](https://www.reddit.com/r/androiddev/comments/juc0n0/jetpack_compose_intro_basic_layouts/)
-- url: https://www.rockandnull.com/jetpack-compose/
+Thanks in advance for any help with this!!
+## [9][Shared flows, broadcast channels](https://www.reddit.com/r/androiddev/comments/jv6nwj/shared_flows_broadcast_channels/)
+- url: https://medium.com/@elizarov/shared-flows-broadcast-channels-899b675e805c
 ---
 
-## [10][Enabling databinding issue](https://www.reddit.com/r/androiddev/comments/julgc8/enabling_databinding_issue/)
-- url: https://www.reddit.com/r/androiddev/comments/julgc8/enabling_databinding_issue/
+## [10][Best practice for in-app subscription discounts - when you make a special limited-time discount for a yearly subscription, do you tend to allow that discount for all future years or only the first year?](https://www.reddit.com/r/androiddev/comments/jv6g9i/best_practice_for_inapp_subscription_discounts/)
+- url: https://www.reddit.com/r/androiddev/comments/jv6g9i/best_practice_for_inapp_subscription_discounts/
 ---
-Good day everyone,
+I'm trying to work out what's best-practice here.  On the one hand it seems like it would be a lot simpler to offer the discount for all future years, and less chance of consumers complaining about missing the "first year only" text on the purchase page.  On the other hand, Google seem to have set up discounts to be mainly for first year only - unless I'm mistaken (that could actually be Apple I'm thinking of).
 
-I have this issue on a kotlin dsl Gradle multi module project I have been practicing with.
-
-It prompts me to upgrade Gradle plugin from 4.0.2 to 4.1.0.
-
-After updating I noticed the buildFeatures has no databinding option.
-
-So I have no idea how to enable databinding on it .
-## [11][How to change the Floating label(Hint) background in material design?](https://www.reddit.com/r/androiddev/comments/ju2b2r/how_to_change_the_floating_labelhint_background/)
-- url: https://i.redd.it/yit485ypo7z51.png
+Thanks
+## [11][Android Emulator Issue](https://www.reddit.com/r/androiddev/comments/juydsu/android_emulator_issue/)
+- url: https://i.redd.it/fmwna7bxeiz51.jpg
 ---
 
-## [12][Graph (network) library for Android app](https://www.reddit.com/r/androiddev/comments/jufh33/graph_network_library_for_android_app/)
-- url: https://www.reddit.com/r/androiddev/comments/jufh33/graph_network_library_for_android_app/
+## [12][Advice on Room + Firebase RTDB](https://www.reddit.com/r/androiddev/comments/jv22p0/advice_on_room_firebase_rtdb/)
+- url: https://www.reddit.com/r/androiddev/comments/jv22p0/advice_on_room_firebase_rtdb/
 ---
-Graph as in nodes/ edges graph (i.e. graph theory)
+I'm trying to build a cloud backup and syncing mechanism for my offline app. The idea is to save my Room data into Firebase Real-Time Database (instead of some web server supported cloud RDBMS). I am new to Firebase Real-Time Database and see that it's a NoSQL database with JSON format data saved as key-value pairs.
 
-I'm a newbie Android Java developer, and I'm looking for Graph library for Android (one that has some good contributers or still active in maintaining it). I've googled and used some but they are either not maintained (e.g. have low committs) or no longer used by the committee.
+I need to have my SQL querying and other advanced search and sorting features provided from Room. This means I'd have to write some sort of syncing mechanism between the Firebase RTDB and Room to sync my Room with the freshest dataset.
 
-Any suggestion is welcome!
+Is there an existing library that can help me with it or do I need to roll out my own syncing service between the two? Any help or ideas are appreciated. Thanks.
+
+Edit:
+
+Room                  &lt;-*syncs with\**\-&gt;             Firebase RTDB/Any on device Cloud Storage DB
+
+Room:: Does local queries for app 
+
+Firebase RTDB/ Etc :: Just saves a copy on cloud and syncs on changes

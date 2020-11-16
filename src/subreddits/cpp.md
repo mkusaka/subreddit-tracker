@@ -56,11 +56,33 @@ Previous Post
 --------------
 
 * [C++ Jobs - Q3 2020](https://www.reddit.com/r/cpp/comments/hjnaf2/c_jobs_q3_2020/)
-## [2][How C++ Programming Language Became the Invisible Foundation For Everything, and What's Next](https://www.reddit.com/r/cpp/comments/jug7ni/how_c_programming_language_became_the_invisible/)
+## [2][How to Share Code with Const and Non-Const Functions in C++](https://www.reddit.com/r/cpp/comments/jv34e7/how_to_share_code_with_const_and_nonconst/)
+- url: https://www.cppstories.com/2020/11/share-code-const-nonconst.html/
+---
+
+## [3][A string_view that can tell if it is a c string](https://www.reddit.com/r/cpp/comments/jv4o85/a_string_view_that_can_tell_if_it_is_a_c_string/)
+- url: https://github.com/lava/string_view
+---
+
+## [4]["force consteval" in C++17](https://www.reddit.com/r/cpp/comments/jum09p/force_consteval_in_c17/)
+- url: https://artificial-mind.net/blog/2020/11/14/cpp17-consteval
+---
+
+## [5][CliWidgets 0.2.0: now the library works on Windows platforms!](https://www.reddit.com/r/cpp/comments/juq0it/cliwidgets_020_now_the_library_works_on_windows/)
+- url: https://www.reddit.com/r/cpp/comments/juq0it/cliwidgets_020_now_the_library_works_on_windows/
+---
+CliWidget is a library written in C++ with the idea of help programmers to build "user interfaces" in the terminal, with the use of simple Widgets.
+
+The Github of the project is in this repository: [https://github.com/lazaro92/CliWidget](https://github.com/lazaro92/CliWidget)
+
+This is the second version of the library, the first one was the release under Linux systems and now I have released for Windows systems, using CMake and compiling parts of the source code depending on the OS (using preprocessor directives like [these](https://stackoverflow.com/questions/142508/how-do-i-check-os-with-a-preprocessor-directive)).
+
+What do you think about the library?
+## [6][How C++ Programming Language Became the Invisible Foundation For Everything, and What's Next](https://www.reddit.com/r/cpp/comments/jug7ni/how_c_programming_language_became_the_invisible/)
 - url: https://www.techrepublic.com/article/c-programming-language-how-it-became-the-invisible-foundation-for-everything-and-whats-next/
 ---
 
-## [3][Stop learning C++ or keep going?](https://www.reddit.com/r/cpp/comments/ju1ikd/stop_learning_c_or_keep_going/)
+## [7][Stop learning C++ or keep going?](https://www.reddit.com/r/cpp/comments/ju1ikd/stop_learning_c_or_keep_going/)
 - url: https://www.reddit.com/r/cpp/comments/ju1ikd/stop_learning_c_or_keep_going/
 ---
 I picked C++ as my first language because I want to get into a video game company. It was difficult at first, but it gets easier over time, but still, hard nonetheless.
@@ -86,29 +108,11 @@ So yeah, any advice would be appreciated. Thank you so much
 EDIT: I forgot to tell you that it's been only 2 months since I learn C++. I could make a number guess, tic tac toe, and dungeon crawler with object-oriented programming.
 
 Also, I'm not asking for a way to earn fast money. I don't mind just keep learning for a year, or two, or three, or four. I just need to know is C++ is a good language for me in the long run
-## [4][Meeting C++ 2020 Trip Report](https://www.reddit.com/r/cpp/comments/juald6/meeting_c_2020_trip_report/)
+## [8][Meeting C++ 2020 Trip Report](https://www.reddit.com/r/cpp/comments/juald6/meeting_c_2020_trip_report/)
 - url: https://codereport.github.io/MeetingCpp2020TripReport/
 ---
 
-## [5][Some Shocking Facts You Probably Didn't Want to Know about U++ Framework...](https://www.reddit.com/r/cpp/comments/juiudg/some_shocking_facts_you_probably_didnt_want_to/)
-- url: https://www.reddit.com/r/cpp/comments/juiudg/some_shocking_facts_you_probably_didnt_want_to/
----
-...but I will tell you anyway.
-
-Maybe somebody might find this something I have wrote over the last month interesting:
-
-[https://www.codeproject.com/Articles/5280535/Some-Shocking-Facts-You-Probably-Didnt-Want-to-Kno](https://www.codeproject.com/Articles/5280535/Some-Shocking-Facts-You-Probably-Didnt-Want-to-Kno)
-## [6][Literal suffix for std::integral_constant](https://www.reddit.com/r/cpp/comments/ju3poj/literal_suffix_for_stdintegral_constant/)
-- url: https://www.reddit.com/r/cpp/comments/ju3poj/literal_suffix_for_stdintegral_constant/
----
-What do you think about a Standard proposal for a new literal suffix of a std::integral\_constant instance?
-
-    constexpr auto x=123ic; // same as `constexpr std::integral_constant&lt;int, 123&gt; x`;
-    // maybe:
-    constexpr auto str="some character literal"ic;
-
-[View Poll](https://www.reddit.com/poll/ju3poj)
-## [7][To join, or not to join](https://www.reddit.com/r/cpp/comments/ju6zwe/to_join_or_not_to_join/)
+## [9][To join, or not to join](https://www.reddit.com/r/cpp/comments/ju6zwe/to_join_or_not_to_join/)
 - url: https://www.reddit.com/r/cpp/comments/ju6zwe/to_join_or_not_to_join/
 ---
 [P1293](https://wg21.link/p1293) ostream_joiner paper will not be further pursued.  
@@ -128,7 +132,17 @@ LEWG had asked to look at how concepts/ranges would impact the design.
 Ideas how concepts/ranges could impact or improve the design?  
   
 Or could a format addition be used to achieve a similar result?
-## [8][With the new module system in C++20 will there be centralized repositories for modules?](https://www.reddit.com/r/cpp/comments/ju1h1e/with_the_new_module_system_in_c20_will_there_be/)
+## [10][Literal suffix for std::integral_constant](https://www.reddit.com/r/cpp/comments/ju3poj/literal_suffix_for_stdintegral_constant/)
+- url: https://www.reddit.com/r/cpp/comments/ju3poj/literal_suffix_for_stdintegral_constant/
+---
+What do you think about a Standard proposal for a new literal suffix of a std::integral\_constant instance?
+
+    constexpr auto x=123ic; // same as `constexpr std::integral_constant&lt;int, 123&gt; x`;
+    // maybe:
+    constexpr auto str="some character literal"ic;
+
+[View Poll](https://www.reddit.com/poll/ju3poj)
+## [11][With the new module system in C++20 will there be centralized repositories for modules?](https://www.reddit.com/r/cpp/comments/ju1h1e/with_the_new_module_system_in_c20_will_there_be/)
 - url: https://www.reddit.com/r/cpp/comments/ju1h1e/with_the_new_module_system_in_c20_will_there_be/
 ---
 Like nuget's, npm's or crates?
@@ -139,70 +153,3 @@ Examples:
 * Node NPM's [https://www.npmjs.com/](https://www.npmjs.com/) 
 * .NET Nuget's [https://www.nuget.org/](https://www.nuget.org/)
 * Java [https://mvnrepository.com/](https://mvnrepository.com/)
-## [9][Herb Sutter Trip report: Autumn ISO C++ standards meeting](https://www.reddit.com/r/cpp/comments/jtt9cb/herb_sutter_trip_report_autumn_iso_c_standards/)
-- url: https://herbsutter.com/2020/11/13/trip-report-autumn-iso-c-standards-meeting-virtual/
----
-
-## [10][Your opinion on 'for ... else' constructs](https://www.reddit.com/r/cpp/comments/ju6cag/your_opinion_on_for_else_constructs/)
-- url: https://www.reddit.com/r/cpp/comments/ju6cag/your_opinion_on_for_else_constructs/
----
-In Python the following construct is valid and quite helpful:
-
-    for x in whatever:
-        if condition(x):
-            break
-    else:
-        print("for loop did not exit early")
-
-In C++ the equivalent would be
-
-    bool break_taken = false;
-    for (auto x : whatever)
-    {
-        if (condition(x)) 
-        {
-            break_taken = true;
-            break;
-        }
-    }
-    if (!break_taken)
-    {
-        std::cout &lt;&lt; "for loop did not exit early\n";
-    }
-
-Simply said, you can add an `else` branch to a for loop, which gets taken if the `for` loop did not exit early because of a `break` statement. In other words, you can use this on `for` loops which you expect to break out of at some point to catch if this case did not occur.
-
-Sure, you can do this by introducing an additional bool variable, but I still think that this would be a nice native addition to the language. Actually, since I learned about this in Python, I miss it quite often in C++.
-
-What is your opinion on this? Note that this is less a discussion about the `else` keyword, than about the usefullness of the feature as a whole.
-
-Has there maybe already been a paper proposol which was discussed/rejected for standardization?
-
-Edit: added C++ equivalent example  
-Edit: added conclusion
-
-**My Conclusion:**   
-Alright, this gained quite a lot of attention for what I expected.I don't quite get why this has \~40% downvotes, as I think the constructive discussion benefits every reader, but on the other hand a few comments really did not add much to the discussion.
-
-Anyway: While I tried to keep you unbiased in my original question, it seems that everyone agrees that `else` is just a horrible keyword choice in this place and I am 100% with you. However, regarding the general functionality, I am surprised that some of you claim that they do not see any use case (not to confuse with people who dislike `for else` but acknowledge the use case).
-
-To me, modern C++ is a lot about writing expressive code. Surprisingly only two answers mentioned `std::none_of`|`any_of`|`find_if`, which I think are the currently best suited tools to implement the given functionality at maximum expressiveness while at the same time being the easiest to comprehend for unfamiliar programmers.
-
-Thanks to everyone who participated, I loved getting your input on this!
-## [11][It Is Time for Compiler Developers to Step In](https://www.reddit.com/r/cpp/comments/jts223/it_is_time_for_compiler_developers_to_step_in/)
-- url: https://www.reddit.com/r/cpp/comments/jts223/it_is_time_for_compiler_developers_to_step_in/
----
-Warning: this is not a strictly-technical post. More like a rant.
-
-TL;DR: actual implementors of C++ should be the ones responding to C++ developers' needs and pushing C++ forward according to them, not some committee authority. Things to be standardized should be battle-tested first.
-
-Firstly, I want to express a great admiration and respect for men and women behind C++ implementations and tools as well as towards those who participate in various working groups and do the hard work of keeping the language both modern and standardized, the language I, among the plethora of others, use daily or from time to time, to make a living or to enjoy a little hobby or a pet project, big or small. I do not find myself in a position to make demands on them.
-
-What was a tipping point for me to write this post was recent discussion ([this](https://www.reddit.com/r/cpp/comments/jtdk74/deprecating_volatile_jf_bastien_cppcon_2019/), [this](https://www.reddit.com/r/cpp/comments/jswz3z/compound_assignment_to_volatile_must_be/) and [this](https://www.reddit.com/r/cpp/comments/dk542b/cppcon_2019_jf_bastien_deprecating_volatile/)) about [deprecation](https://wg21.link/p1152r0) of some uses of `volatile` in C++20. Numerous embedded developers say that this strives to solve a language-lawyer-world problem of "ambiguous semantics" at the cost of real world usage and public image of C++. Meanwhile, C++ standard fails to address important real-world issues due to obvious time limitations and complexities of designing single universal solution to *hard problems*. The most prominent latest example is C++20 modules. They are standardized, but there are both a split between implementations with respect to strong/weak ownership model and [feeling](https://www.reddit.com/r/cpp/comments/akihlv/c_modules_might_be_deadonarrival/) that C++20 modules just failed to deliver. Oh, and do you remember `std::error_code` or `std::regex`?  
-
-
-I think that the general mindset of "1. we need X in the Standard 2. only Standard-compliant code is OK" is wrong. Look at `__restrict` \- all major compilers support some form of it, yet it is non-standard. The fact that it is non-standard has not harmed anyone! Would anyone be harmed if major compiler's team explicitly says "we do not agree with Standard here and there and will not comply with it" about some controversial part of the C++ Standard? In fact, we do program real hardware, not C++ Abstract Machine. That's why `std::vector` \- like class can be implemented in C++ as understood by every compiler in the world despite all the [UB](https://wg21.link/p0593).
-
-However, optimizing compilers can do all sorts of weird stuff and we want them to do this weird stuff to make our code fast. But we also want our code to be expressive. Would it matter that `std::start_lifetime_as` has not made it into C++20 Standard if every major compiler supported it? No. Would it allow us to write code which is more clear to both humans and optimizers? Yes.
-
-Now is the time C++ must be up to the challenges because of increasing competition. Do not let authorities prevent you from using language extensions and non-standard features, we need them for  the language to evolve and find its way forward. It is better to standardize things when there is a clear path proven by a group of pioneers to be successful, than when we don't have *anything* but find ourselves in need of having *something*. It is better to have things in compilers than not have them just because of working group meetings schedule.

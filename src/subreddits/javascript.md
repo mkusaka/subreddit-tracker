@@ -5,7 +5,31 @@
 Did you find or create something cool this week in javascript? 
 
 Show us here!
-## [2][[AskJS] How to write a clean code](https://www.reddit.com/r/javascript/comments/jujhlf/askjs_how_to_write_a_clean_code/)
+## [2][unpack: Create web apps without a bundler](https://www.reddit.com/r/javascript/comments/jv2w3d/unpack_create_web_apps_without_a_bundler/)
+- url: https://github.com/rajasegar/unpack
+---
+
+## [3][[AskJS] 2020: Is there still anyone who likes Javascript over Typescript?](https://www.reddit.com/r/javascript/comments/jv487x/askjs_2020_is_there_still_anyone_who_likes/)
+- url: https://www.reddit.com/r/javascript/comments/jv487x/askjs_2020_is_there_still_anyone_who_likes/
+---
+I was curious if anyone actually liked Javascript over Typescript, but the threads I found tended to be from 2 years ago and codebases change very quickly, so I'm asking this again to see if there's an update.
+
+I can't imagine writing anything remotely complex without types. Even small, independent projects feel like a hassle (the only place where pure js seems to shine for me), since writing code on my own feels like writing with a team of past and future versions of myself, all of whom still suck.
+
+Anyway, is there still anyone who likes Javascript over Typescript in 2020, if so, why, and otherwise, why hasn't typescript become the norm already?
+## [4][How Web Apps Work: JavaScript and the DOM](https://www.reddit.com/r/javascript/comments/jutqen/how_web_apps_work_javascript_and_the_dom/)
+- url: https://blog.isquaredsoftware.com/2020/11/how-web-apps-work-javascript-dom/
+---
+
+## [5][A React library to build Diagrams with ease](https://www.reddit.com/r/javascript/comments/junq7w/a_react_library_to_build_diagrams_with_ease/)
+- url: https://github.com/antonioru/beautiful-react-diagrams
+---
+
+## [6][A fast short video processing library based on node.js](https://www.reddit.com/r/javascript/comments/jv3duu/a_fast_short_video_processing_library_based_on/)
+- url: https://github.com/tnfe/FFCreator
+---
+
+## [7][[AskJS] How to write a clean code](https://www.reddit.com/r/javascript/comments/jujhlf/askjs_how_to_write_a_clean_code/)
 - url: https://www.reddit.com/r/javascript/comments/jujhlf/askjs_how_to_write_a_clean_code/
 ---
 I'm trying to improve my coding skills. Messiness is one of my main problems (in real life and while coding). These are some articles that helped me shift to writing clean code. I'm looking for more great resources, tips, articles, or books that would help even more. Does anyone know more resources I could add to my list? If so, please mention it in the comments, and I will add it to to the list.
@@ -17,60 +41,27 @@ I'm trying to improve my coding skills. Messiness is one of my main problems (in
 - [Clean Code concepts adapted for TypeScript](https://github.com/labs42io/clean-code-typescript)
 - [23 guidelines for writing readable code](https://alemil.com/guidelines-for-writing-readable-code)
 - [Goodbye, Clean Code ](https://overreacted.io/goodbye-clean-code/)(opinion article that made me feel alright with my messy code problem
-## [3][Meet Harold — CLI tool for comparing bundles in size (and feeling the pain)](https://www.reddit.com/r/javascript/comments/ju2g0g/meet_harold_cli_tool_for_comparing_bundles_in/)
-- url: https://dev.to/igoradamenko/meet-harold-cli-tool-for-comparing-bundles-in-size-and-feeling-the-pain-23nn
+## [8][Good and Bad Practices - a Limiting Perspective](https://www.reddit.com/r/javascript/comments/juoj09/good_and_bad_practices_a_limiting_perspective/)
+- url: https://pmihaylov.com/good-and-bad-practices/
 ---
 
-## [4][Optimize React Apps PageSpeed Insights Score - thetuteur](https://www.reddit.com/r/javascript/comments/jugril/optimize_react_apps_pagespeed_insights_score/)
-- url: https://thetuteur.com/optimize-react-apps-pagespeed-insights-score/
+## [9][JavaScript meetup videos from October 2020](https://www.reddit.com/r/javascript/comments/juwuos/javascript_meetup_videos_from_october_2020/)
+- url: https://blog.meetupfeed.io/javascript-meetup-videos-october-2020/
 ---
 
-## [5][[AskJS] what’s the best way to handle a single js file for multiple pages?](https://www.reddit.com/r/javascript/comments/jull58/askjs_whats_the_best_way_to_handle_a_single_js/)
-- url: https://www.reddit.com/r/javascript/comments/jull58/askjs_whats_the_best_way_to_handle_a_single_js/
+## [10][[AskJS] JavaScript in Russia](https://www.reddit.com/r/javascript/comments/juzh6k/askjs_javascript_in_russia/)
+- url: https://www.reddit.com/r/javascript/comments/juzh6k/askjs_javascript_in_russia/
 ---
-If a multi page project has a single JS file, what’s the best way to handle your code?
+ 
 
-Let’s assume vanilla js. 
-For a dead easy example...
+Can you suggest a platform or marketplace useful to find developers in Russia (Saint Petersburg)? 
 
-Let’s say I have a project with two pages. Each page needs some JavaScript to do something. For this example let’s say we need to hide and show a div on one page by clicking a button and on the second page we want to expand/collapse some divs. 
+I'm looking for a full stack developer to work on completing a web app - music sketchpad for musicians.
 
-If the project is sharing a single js file, what’s the best way to handle the code? Do you test to see if the element you want to apply the code to exists and then write the code if it does? Is there another/better way?
-## [6][Stampede - 🦕 Deno Rest API framework/eco-system](https://www.reddit.com/r/javascript/comments/ju5eiq/stampede_deno_rest_api_frameworkecosystem/)
-- url: http://github.com/bashovski/stampede
----
+Thanks for your help.
 
-## [7][[AskJS] What database connector do you use?](https://www.reddit.com/r/javascript/comments/jucme3/askjs_what_database_connector_do_you_use/)
-- url: https://www.reddit.com/r/javascript/comments/jucme3/askjs_what_database_connector_do_you_use/
----
-Hi, I'm about to start a project for a service that I'd like to optimise for heavy traffic and database queries, while still running in NodeJS (TypeScript + Fastify) as it is high performance and easier to find contributors.
-
-I usually work on serverless environments so DynamoDB and Athena are my choices when it comes to persistent data. However, for this project I will need Postgresql as the project should not depend on AWS.
-
-I am looking at sql builders or other libraries helping with sql. My preference would be to write statements myself but I don't want to write raw sqls because of sql injections.
-
-I've looked into TypeORM, Klex and Sequelize.  I have to say I'm not impressed by any of them. The first is too magic, the second and the third are somewhat lacking in TypeScript support.
-
-What do you use for sql in your backend projects?
-
-Cheers!
-## [8][Searchkit: Search UI with GraphQL, React and Elasticsearch](https://www.reddit.com/r/javascript/comments/juaouj/searchkit_search_ui_with_graphql_react_and/)
-- url: https://github.com/searchkit/searchkit
+[L.b@aicy-create.com](mailto:L.b@aicy-create.com)
+## [11][Browser extension that measures time spent on websites](https://www.reddit.com/r/javascript/comments/jumllq/browser_extension_that_measures_time_spent_on/)
+- url: https://github.com/pvpscript/page-stat
 ---
 
-## [9][jumprco.com - An easy to use tool to create beautiful resumes.](https://www.reddit.com/r/javascript/comments/jufdu2/jumprcocom_an_easy_to_use_tool_to_create/)
-- url: https://jumprco.com/
----
-
-## [10][Ajv validator: time to migrate to version 7 - lots of new features there!](https://www.reddit.com/r/javascript/comments/jtzk94/ajv_validator_time_to_migrate_to_version_7_lots/)
-- url: https://www.poberezkin.com/posts/2020-11-14-ajv-time-to-migrate-to-version-7.html
----
-
-## [11][[AskJS] Does anyone know a library/framework whose main object/function looks like `_()` ?](https://www.reddit.com/r/javascript/comments/jubwcg/askjs_does_anyone_know_a_libraryframework_whose/)
-- url: https://www.reddit.com/r/javascript/comments/jubwcg/askjs_does_anyone_know_a_libraryframework_whose/
----
-I don't think it's [underscore.js](https://underscorejs.org/), although that seems like the obvious answer.
-
-This framework has a kind of meta-object/function broadly equivalent to the $() thing in jQuery and it's `_()`.
-
-Is that a feature of any library you know, or maybe a compiler/transpiler from another language?

@@ -1,13 +1,25 @@
 # ruby
-## [1][HexaPDF 0.13.0 released - Cross-reference Table Reconstruction](https://www.reddit.com/r/ruby/comments/jui5et/hexapdf_0130_released_crossreference_table/)
+## [1][Ruby 3 adds new method Hash#except](https://www.reddit.com/r/ruby/comments/jv10iy/ruby_3_adds_new_method_hashexcept/)
+- url: https://blog.bigbinary.com/2020/11/11/ruby-3-adds-new-method-hash-except.html
+---
+
+## [2][Rails 6.1 allows attribute's default to be configured but keeping its type](https://www.reddit.com/r/ruby/comments/jv3k30/rails_61_allows_attributes_default_to_be/)
+- url: https://blog.saeloun.com/2020/11/15/rails-6-1-allows-attribute-default-to-be-configured-but-keeping-its-type
+---
+
+## [3][Bootstrap + Rails via webpack](https://www.reddit.com/r/ruby/comments/juol1p/bootstrap_rails_via_webpack/)
+- url: https://www.boringgenerators.com/blog/2020-11-15-install-bootstrap/
+---
+
+## [4][HexaPDF 0.13.0 released - Cross-reference Table Reconstruction](https://www.reddit.com/r/ruby/comments/jui5et/hexapdf_0130_released_crossreference_table/)
 - url: https://hexapdf.gettalong.org/news/2020/hexapdf-0-13-0.html
 ---
 
-## [2][football-cat gem - concatenate football.csv datafiles - make out of many, one (for easy (re)use or imports)](https://www.reddit.com/r/ruby/comments/jujvc5/footballcat_gem_concatenate_footballcsv_datafiles/)
+## [5][football-cat gem - concatenate football.csv datafiles - make out of many, one (for easy (re)use or imports)](https://www.reddit.com/r/ruby/comments/jujvc5/footballcat_gem_concatenate_footballcsv_datafiles/)
 - url: https://github.com/sportdb/football.db/tree/master/football-cat
 ---
 
-## [3][Beginner's Guide to Rails Testing (PDF)](https://www.reddit.com/r/ruby/comments/ju2kw4/beginners_guide_to_rails_testing_pdf/)
+## [6][Beginner's Guide to Rails Testing (PDF)](https://www.reddit.com/r/ruby/comments/ju2kw4/beginners_guide_to_rails_testing_pdf/)
 - url: https://www.reddit.com/r/ruby/comments/ju2kw4/beginners_guide_to_rails_testing_pdf/
 ---
 I want to share something with you guys that I've been working on for the last few weeks.
@@ -32,18 +44,18 @@ Recently I aggregated all my answers into a small "e-book", a 45-page PDF. I fig
 If you're someone who's new to testing (or trying to get better at testing), I hope it helps you.
 
 And if there are any questions my guide does NOT answer for you, please feel free to ask your question in a comment and I'll do my best to answer.
-## [4][SuperDiff for RSpec: Intelligently Display the Diff of Two Data Structures of Any Type.](https://www.reddit.com/r/ruby/comments/jtsz6u/superdiff_for_rspec_intelligently_display_the/)
+## [7][SuperDiff for RSpec: Intelligently Display the Diff of Two Data Structures of Any Type.](https://www.reddit.com/r/ruby/comments/jtsz6u/superdiff_for_rspec_intelligently_display_the/)
 - url: https://github.com/mcmire/super_diff
 ---
 
-## [5][What is the best way to inherit the variables of other classes in Ruby? Rubocop complains on using a class var and I am wondering if there is another better way to do it?](https://www.reddit.com/r/ruby/comments/jtzab7/what_is_the_best_way_to_inherit_the_variables_of/)
+## [8][What is the best way to inherit the variables of other classes in Ruby? Rubocop complains on using a class var and I am wondering if there is another better way to do it?](https://www.reddit.com/r/ruby/comments/jtzab7/what_is_the_best_way_to_inherit_the_variables_of/)
 - url: https://www.reddit.com/r/ruby/comments/jtzab7/what_is_the_best_way_to_inherit_the_variables_of/
 ---
 For instance, I have a class named `base` and it contains all the basic information about superheroes. Now, I want to create subclasses that represent different type of superheroes and what they do. So, I have stored the basic information in `@@class variables` of the base class, so that I can inherit all of that information and create different kinds of superheroes using that info. 
 
   
 Rubocop is complaining about using class vars, so how am I supposed to implement the above solution without using class vars? Any help is really appreciated.
-## [6][How to test asyncronous methods, in Rspec?](https://www.reddit.com/r/ruby/comments/jtzpk5/how_to_test_asyncronous_methods_in_rspec/)
+## [9][How to test asyncronous methods, in Rspec?](https://www.reddit.com/r/ruby/comments/jtzpk5/how_to_test_asyncronous_methods_in_rspec/)
 - url: https://www.reddit.com/r/ruby/comments/jtzpk5/how_to_test_asyncronous_methods_in_rspec/
 ---
 I have several Ruby methods that call methods from a library written in C++, via \`FFI\` gem. Some of the C++ methods involve spawning new threads inside a native library, others not.
@@ -112,7 +124,7 @@ And  a test isn't supposed to take a long, undetermenistic time to test a method
 &amp;#x200B;
 
 What's the approach in such a case?
-## [7][Drifting Ruby vs GoRails](https://www.reddit.com/r/ruby/comments/jttb9k/drifting_ruby_vs_gorails/)
+## [10][Drifting Ruby vs GoRails](https://www.reddit.com/r/ruby/comments/jttb9k/drifting_ruby_vs_gorails/)
 - url: https://www.reddit.com/r/ruby/comments/jttb9k/drifting_ruby_vs_gorails/
 ---
 Both of them are great, but I need to pick one. Given a limited budget, which one you'd choose between those two? 
@@ -120,15 +132,3 @@ Both of them are great, but I need to pick one. Given a limited budget, which on
 I have experience in Ruby/Rails but I'm always keen to learn stuff that is not related to my daily work but scoped to the Ruby/Rails ecosystem.
 
 Thanks in advance
-## [8][Why the Release of Ruby 3 Will Be Monumental](https://www.reddit.com/r/ruby/comments/jtfzdp/why_the_release_of_ruby_3_will_be_monumental/)
-- url: https://www.ruby3.dev/the-art-of-code/2020/11/12/ruby-3-monumental/
----
-
-## [9][6 Things to Do When Inheriting Legacy Rails Apps](https://www.reddit.com/r/ruby/comments/jthvt3/6_things_to_do_when_inheriting_legacy_rails_apps/)
-- url: /r/rails/comments/jtgjla/6_things_to_do_when_inheriting_legacy_rails_apps/
----
-
-## [10][DragonRuby Game Toolkit Sound Synthesis in Pure Ruby ^_^](https://www.reddit.com/r/ruby/comments/jtbtkb/dragonruby_game_toolkit_sound_synthesis_in_pure/)
-- url: https://www.youtube.com/watch?v=zEzovM5jT-k&amp;feature=youtu.be&amp;ab_channel=AmirRajan
----
-

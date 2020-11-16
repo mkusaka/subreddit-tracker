@@ -22,13 +22,103 @@ Readers: please only email if you are personally interested in the job.
 Posting top level comments that aren't job postings, [that's a paddlin](https://i.imgur.com/FxMKfnY.jpg)
 
 [Previous Hiring Threads](https://www.reddit.com/r/typescript/search?sort=new&amp;restrict_sr=on&amp;q=flair%3AMonthly%2BHiring%2BThread)
-## [2][Any reason not to use ts-node for local utility scripts?](https://www.reddit.com/r/typescript/comments/ju90sy/any_reason_not_to_use_tsnode_for_local_utility/)
-- url: https://www.reddit.com/r/typescript/comments/ju90sy/any_reason_not_to_use_tsnode_for_local_utility/
+## [2][Looking for TypeScript guys in Canada](https://www.reddit.com/r/typescript/comments/jv6b8k/looking_for_typescript_guys_in_canada/)
+- url: https://www.reddit.com/r/typescript/comments/jv6b8k/looking_for_typescript_guys_in_canada/
 ---
-A service that is supposed to deliver a list of data somewhat lazily crunches an important field into an array of results. I'm writing a utility script to more properly create multiple rows with one property per row, for that particular field.
+Salary: 100000 - 150000 CAD  
+DM for more details.
+## [3][function overloads doesn't work with generics](https://www.reddit.com/r/typescript/comments/juu488/function_overloads_doesnt_work_with_generics/)
+- url: https://www.reddit.com/r/typescript/comments/juu488/function_overloads_doesnt_work_with_generics/
+---
+I am trying to get function overloads working with a function that takes a generic type param.
 
-For little scripts like this do you guys feel content to use ts-node to skip the compile step or do you prefer compiling for everything? I lean towards ts-node being fine but wanted to ask.
-## [3][Is there a way to type a function so that it returns different types of results dynamically according to it params?](https://www.reddit.com/r/typescript/comments/juegyk/is_there_a_way_to_type_a_function_so_that_it/)
+Originally I have a function `foo` 
+```ts 
+interface Props&lt;T, S&gt; {
+  fn?: (response: S) =&gt; T[];
+  enable?: boolean;
+}
+
+type Result = {
+  irrelevant?: any;
+};
+
+function foo&lt;T, S&gt;(props: Props&lt;T, S&gt;): Result {
+  
+}
+```
+
+I omit the implementation details of this function because it is not relevant to this question.
+
+Now I want this function to return two different types according to whether `enable` in `Props` is `true` or `false` / `undefined`
+
+The idea is that, if the param the user gives to the function has `enable: true` in it, then the returned value from `foo` should have a property called `update`, and the user can safely descructure that from the returned value. 
+
+My attempt for that is to use function overload, 
+```ts
+export interface Updater {
+  updater: () =&gt; void;
+}
+
+export type Result = {
+  irrelevant?: any;
+};
+
+export type CombinedResult = Result &amp; Updater;
+
+export function foo&lt;T, S, U extends Props&lt;T, S&gt;&gt;(
+  props: U
+): U extends { enable: true } ? CombinedResult : Result;
+
+export function foo&lt;T, S&gt;(props: Props&lt;T, S&gt;): CombinedResult | Result {
+  if (props.enable === true) {
+    return {
+      updater: () =&gt; {
+        console.log("updater!");
+      }
+    };
+  }
+
+  return {};
+}
+``` 
+
+**Now the problem is,** with this function overload, `foo` will ask for a third generic argument `U` in addition to `T` and `S`. So I will have this error 
+&gt; Expected 3 type arguments, but got 2.ts(2558)
+
+```ts
+const { updater } = foo&lt;string, string[]&gt;({ // 🚨 Expected 3 type arguments, but got 2.ts(2558)
+  fn: (strings) =&gt; strings, 
+  enable: true
+});
+
+```
+Here is a live demo you can play with https://codesandbox.io/s/overload-with-generics-gbsok?file=/src/index.ts
+
+Also please feel free to suggestion any other approach that you think can achieve the goal here
+## [4][Is there a way to type imports?](https://www.reddit.com/r/typescript/comments/juhwkv/is_there_a_way_to_type_imports/)
+- url: https://www.reddit.com/r/typescript/comments/juhwkv/is_there_a_way_to_type_imports/
+---
+Right now I'm doing this and it feels redundant. The import is from a .js file.
+
+    import { theme } from '../path/to/themes/index.js';
+    
+    const Theme: Record&lt;string, any&gt; = theme;
+    
+    const App = () =&gt; {
+        const themeName = useSelector(state =&gt; state.Theme.themeName)
+    
+        console.log(Theme[themeName].color.red);
+    
+        return null;
+    }
+
+if I don't declare `Theme` with `Record&lt;string, any&gt;`, it will give me an error
+
+    Element implicitly has an 'any' type because expression of type 'string' can't be used to index type
+
+It's not a big deal, but was wondering that extra declaration is mandatory.
+## [5][Is there a way to type a function so that it returns different types of results dynamically according to it params?](https://www.reddit.com/r/typescript/comments/juegyk/is_there_a_way_to_type_a_function_so_that_it/)
 - url: https://www.reddit.com/r/typescript/comments/juegyk/is_there_a_way_to_type_a_function_so_that_it/
 ---
 This is a very contrived example so please bear with me:
@@ -104,29 +194,13 @@ function foo({bar, baz, enabled = false}: Foo): ResultWithIsEqualEnabled {
 }
 
 ```
-## [4][Is there a way to type imports?](https://www.reddit.com/r/typescript/comments/juhwkv/is_there_a_way_to_type_imports/)
-- url: https://www.reddit.com/r/typescript/comments/juhwkv/is_there_a_way_to_type_imports/
+## [6][Any reason not to use ts-node for local utility scripts?](https://www.reddit.com/r/typescript/comments/ju90sy/any_reason_not_to_use_tsnode_for_local_utility/)
+- url: https://www.reddit.com/r/typescript/comments/ju90sy/any_reason_not_to_use_tsnode_for_local_utility/
 ---
-Right now I'm doing this and it feels redundant. The import is from a .js file.
+A service that is supposed to deliver a list of data somewhat lazily crunches an important field into an array of results. I'm writing a utility script to more properly create multiple rows with one property per row, for that particular field.
 
-    import { theme } from '../path/to/themes/index.js';
-    
-    const Theme: Record&lt;string, any&gt; = theme;
-    
-    const App = () =&gt; {
-        const themeName = useSelector(state =&gt; state.Theme.themeName)
-    
-        console.log(Theme[themeName].color.red);
-    
-        return null;
-    }
-
-if I don't declare `Theme` with `Record&lt;string, any&gt;`, it will give me an error
-
-    Element implicitly has an 'any' type because expression of type 'string' can't be used to index type
-
-It's not a big deal, but was wondering that extra declaration is mandatory.
-## [5][Database connector](https://www.reddit.com/r/typescript/comments/juc9o9/database_connector/)
+For little scripts like this do you guys feel content to use ts-node to skip the compile step or do you prefer compiling for everything? I lean towards ts-node being fine but wanted to ask.
+## [7][Database connector](https://www.reddit.com/r/typescript/comments/juc9o9/database_connector/)
 - url: https://www.reddit.com/r/typescript/comments/juc9o9/database_connector/
 ---
 Hi, I'm about to start a project for a service that I'd like to optimise for heavy traffic and database queries, while still running in NodeJS (TypeScript + Fastify) as it is high performance and easier to find contributors.
@@ -140,11 +214,11 @@ I've looked into TypeORM, Klex and Sequelize.  I have to say I'm not impressed b
 What do you use for sql in your backend projects?
 
 Cheers!
-## [6][Why do I get "Object is possibly 'undefined'"?](https://www.reddit.com/r/typescript/comments/jtznnp/why_do_i_get_object_is_possibly_undefined/)
+## [8][Why do I get "Object is possibly 'undefined'"?](https://www.reddit.com/r/typescript/comments/jtznnp/why_do_i_get_object_is_possibly_undefined/)
 - url: https://i.redd.it/40hy3jwyg6z51.png
 ---
 
-## [7][Parsing JSON to typescript interface?](https://www.reddit.com/r/typescript/comments/ju5zlr/parsing_json_to_typescript_interface/)
+## [9][Parsing JSON to typescript interface?](https://www.reddit.com/r/typescript/comments/ju5zlr/parsing_json_to_typescript_interface/)
 - url: https://www.reddit.com/r/typescript/comments/ju5zlr/parsing_json_to_typescript_interface/
 ---
 Which one is better? Mapping each individually, checking for undefined on optional properties and parsing it like:
@@ -160,7 +234,7 @@ Const user = JSON.parse(req.body.user) as User
 
 
 0r am I doing this entirely wrong lol
-## [8][Why do I got "Type 'string | number' is not assignable to type 'never'. Type 'string' is not assignable to type 'never'. " it's make me misleading](https://www.reddit.com/r/typescript/comments/ju34f0/why_do_i_got_type_string_number_is_not_assignable/)
+## [10][Why do I got "Type 'string | number' is not assignable to type 'never'. Type 'string' is not assignable to type 'never'. " it's make me misleading](https://www.reddit.com/r/typescript/comments/ju34f0/why_do_i_got_type_string_number_is_not_assignable/)
 - url: https://www.reddit.com/r/typescript/comments/ju34f0/why_do_i_got_type_string_number_is_not_assignable/
 ---
 &amp;#x200B;
@@ -168,7 +242,7 @@ Const user = JSON.parse(req.body.user) as User
 https://preview.redd.it/qkatakpqy7z51.png?width=832&amp;format=png&amp;auto=webp&amp;s=ae59555d1985b09c3405790e4bfd4c0891db1772
 
 the object data only have two fields but typescript report this error is "data\[k\]" never?
-## [9][Is it possible to recursively traverse the type of an object and match it against another type](https://www.reddit.com/r/typescript/comments/jttj2s/is_it_possible_to_recursively_traverse_the_type/)
+## [11][Is it possible to recursively traverse the type of an object and match it against another type](https://www.reddit.com/r/typescript/comments/jttj2s/is_it_possible_to_recursively_traverse_the_type/)
 - url: https://www.reddit.com/r/typescript/comments/jttj2s/is_it_possible_to_recursively_traverse_the_type/
 ---
 Guys. I have a tricky TS question. I tried to distill it as much as possible...
@@ -235,55 +309,3 @@ foo&lt;Obj, Name&gt;(obj, {
 https://codesandbox.io/s/ts-recursive-function-tmo11?file=/src/index.ts
 
 This is a live demo you can play with
-## [10][Dev Experience: Is it possible to create a type that accepts any string but also provides autocompletion for specific strings?](https://www.reddit.com/r/typescript/comments/jtg7kt/dev_experience_is_it_possible_to_create_a_type/)
-- url: https://www.reddit.com/r/typescript/comments/jtg7kt/dev_experience_is_it_possible_to_create_a_type/
----
-I have a data object that contains certain keys but it can also contain random keys, for the keys I know about I want to return their type, for not known keys I want to return `unknown`.
-
-Like this:  
-
-
-    interface IData {
-        a: string[];
-        b: boolean;
-    }
-    
-    function lookup&lt;K extends string&gt;(key: K): K extends keyof IData ? IData[K] : unknown {
-        //do lookup
-    }
-    
-    let a = lookup("a"); //infers string[]
-    let b = lookup("b"); //infers boolean
-    let c = lookup("c"); //infers unknown
-
-If the argument for the `lookup` function matches a key from `IData` it will set the return type accordingly, else it will return `unknown`.
-
-This works, however I don't get any autocomplete in the IDE for the known keys in `IData`. But for improved DX I would like to while still being able to enter any string as an argument, is there a way to do this currently?
-## [11][How to type function arguments when return type is not known ahead of time](https://www.reddit.com/r/typescript/comments/jtotih/how_to_type_function_arguments_when_return_type/)
-- url: https://www.reddit.com/r/typescript/comments/jtotih/how_to_type_function_arguments_when_return_type/
----
-`function AFunction&lt;T, L&gt;(`  
- `arg: L,`  
- `callback: (x: T) =&gt; void,`  
-  `{`  
- `mapArg = () =&gt; {`  
- `return {} as T;`  
-`}`  
-  `}: { mapArg: (x: L) =&gt; T }`  
-`) {`  
- `callback(mapArg(arg));`  
-`}`  
-`AFunction(`  
- `45,`  
- `incorrectlyTypedArg =&gt; {`  
- `type Incorrect = typeof incorrectlyTypedArg;`  
-  `},`  
-  `{`  
- `mapArg(y) {`  
- `return \`${y}\`;`  
-`}`  
-  `}`  
-`);`  
-
-
-[Typescript Playground Link](https://www.typescriptlang.org/play?#code/GYVwdgxgLglg9mABAQQGLmvMAeAKgGkQBkA+ACgChFEBDAJwHMAuY-KxCGgGy4CMaIAaxZkAHi1wBKRAF4SiAG5wYAEzbUA3u2oBbGgAdkjWYjLS5iLdWuI6AUygg6SDQF9aAZ0S4A3NsSu7K4sGoh6howi4sTm8rgBFNJWHNx8AoJk4UYMZPQMkpJ+gRRoGLAIlNQALACs6ogwkHB09tBcAJ647fp2Ktmy8snUUN12iACSTS120F09JiM9cMANU61QHXO92X42APR7E2szUFsNXsuI4IJgcADuSIt2QfVDYQbZZO1J-tT2js5EAADAAkGnariBu2sgWogUKFCAA) I'm pretty new to typescript and I can't figure out how to type this function. The first parameter is some argument that can optionally be transformed by the third parameter \`mapArg\` otherwise it just is an empty object. This intermediate value is then passed into callback as it's only parameter.

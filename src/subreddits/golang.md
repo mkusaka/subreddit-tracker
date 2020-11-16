@@ -3,159 +3,185 @@
 - url: https://blog.golang.org/survey2020
 ---
 
-## [2][Oh my `gotch` - Most comprehensive Pytorch C++ API Go binding for deep learning in Go](https://www.reddit.com/r/golang/comments/judpna/oh_my_gotch_most_comprehensive_pytorch_c_api_go/)
-- url: https://www.reddit.com/r/golang/comments/judpna/oh_my_gotch_most_comprehensive_pytorch_c_api_go/
+## [2][Are there any advance programming tutorials or guides where someone guide you to build say a network protocal from sctach.](https://www.reddit.com/r/golang/comments/jv5sbp/are_there_any_advance_programming_tutorials_or/)
+- url: https://www.reddit.com/r/golang/comments/jv5sbp/are_there_any_advance_programming_tutorials_or/
 ---
-[https://github.com/sugarme/gotch](https://github.com/sugarme/gotch)
-
-We are happy to share a new toolkit for developing deep learning in Go - [gotch](https://github.com/sugarme/gotch). `gotch` is a Pytorch C++ API Go binding featuring with:
-
-* Comprehensive Pytorch tensor APIs (\~ 1404)
-* Fully featured Pytorch dynamic graph computation
-* JIT interface to run model trained/saved using PyTorch Python API
-* Load pretrained Pytorch models and run inference
-* Pure Go APIs to build and train neural network models with both CPU and GPU support
-* Most recent image models
-* NLP Language models - [Transformer](https://github.com/sugarme/transformer) in separate package built with GoTch and [pure Go Tokenizer](https://github.com/sugarme/tokenizer).
-## [3][Featherweight (Generic) Go @ OOPSLA 2020 by Robert Griesemer, Philip Wadler et. al.](https://www.reddit.com/r/golang/comments/ju82tt/featherweight_generic_go_oopsla_2020_by_robert/)
-- url: https://www.youtube.com/watch?v=62xlcsJ0AUs
+Not just networks but any lower level system stuff that is generally abstracted away.
+Like a framework or something
+## [3][Turns out my mom is pretty talented](https://www.reddit.com/r/golang/comments/jv6e1j/turns_out_my_mom_is_pretty_talented/)
+- url: https://i.redd.it/x892hdevolz51.jpg
 ---
 
-## [4][What is the current (1.15) best practice to work on interdependent modules?](https://www.reddit.com/r/golang/comments/juizr6/what_is_the_current_115_best_practice_to_work_on/)
-- url: https://www.reddit.com/r/golang/comments/juizr6/what_is_the_current_115_best_practice_to_work_on/
+## [4][Conquering the Cache Stampede](https://www.reddit.com/r/golang/comments/jv3ifq/conquering_the_cache_stampede/)
+- url: https://medium.com/sidneywijngaarde/conquering-the-cache-stampede-3a4c9feb691c?source=friends_link&amp;sk=ed94d5ac9af040e296e8f667c0d6867f
 ---
-With `GOPATH` on its way out, what is the current best practice when working on multiple modules that form a dependency tree?
 
-For simplicity, let's assume two modules:
-
-example.com/library/go.mod:
-
-    module example.com/library
-    
-    go 1.15
-
-example.com/project/go.mod:
-
-    module example.com/project
-    
-    go 1.15
-    
-    require (
-        example.com/library v0.0.1
-    )
-
-When working on these two modules concurrently, is there a way to have changes in library show up in project **without**
-
-* adding and removing `replace` directives to `project/go.mod` all the time
-* having to commit and update the library project on single-line changes
-* crazy symlink hackery with vendoring
-* falling back to `GOPATH` mode
-* putting everything in one monorepo-like monster module
-
-?
-
-I'm pretty sure I read the relevant articles and blogs, and maybe I'm missing something very obvious. But I just cannot find a way to make this dev process work properly.
-
-Any hints?
-## [5][GORM - grandchild foreign key](https://www.reddit.com/r/golang/comments/jukcqg/gorm_grandchild_foreign_key/)
-- url: https://www.reddit.com/r/golang/comments/jukcqg/gorm_grandchild_foreign_key/
+## [5][Casbin： The authority management system with the most complete language types](https://www.reddit.com/r/golang/comments/jv3lqw/casbin_the_authority_management_system_with_the/)
+- url: https://www.reddit.com/r/golang/comments/jv3lqw/casbin_the_authority_management_system_with_the/
 ---
-Hello fellow go developers,
-
-I'm currently creating a rest application in golang, and am using GORM for my orm. So far i successfully have everything implemented however i'm now wanting to add some stuff in order to make further queries easier.
-
-This will be adding "grandchildren" foreign keys. I can't see anything in the documentation about this but effectivly what i'm wanting is the following: 
-
-    type Map struct{
-    	Id int `gorm:"primaryKey"`
-    	Buildings []Building `gorm:"references:Id"`
-    }
-    
-    type Building struct{
-    	Id int	`gorm:"primaryKey"`
-    	MapId int
-    	Floors []Floor `gorm:"references:Id"`
-    }
-    
-    type Floor struct{
-    	Id              int `gorm:"primaryKey"`
-    	BuildingId      int
-            MapId           int
-    }
-
-From reading documentation I can't seem to find a sane way of doing this, if anyone can link to some documentation or an example that would be great, please note: I don't want to hold an instance of the map within the floor just the ID.
-
 &amp;#x200B;
 
-Thanks for your help.
+https://preview.redd.it/i5d019fd8kz51.png?width=323&amp;format=png&amp;auto=webp&amp;s=5796057e3b9b0236f13ceef13854b156ff2879fe
 
-Coffee-to-code
-## [6][mtojek/gdriver : Download large files from Google Drive (API v3)](https://www.reddit.com/r/golang/comments/ju1brr/mtojekgdriver_download_large_files_from_google/)
-- url: https://github.com/mtojek/gdriver
+ Casbin is an open source library of access control designed to help complex systems solve access management problems.Casbin adopts the design idea of metamodel, which not only supports classic access control models such as ACL (access control list), RBAC (role-based access control) and ABAC (attribution-based access control), but also supports users to define permissions flexibly according to their own requirements.Casbin has been used open source by Intel, IBM, Tencent Cloud, VMware, RedHat, T-Mobile, etc., and closed source by Cisco, Verizon, etc.See the Casbin home page (https://casbin.org/) for details.
+
+Casbin was originally an open source lightweight unified access control framework built in the Go language.The development, has gradually extended to the Go, Java, Node. Js, Javascript, P你们，ython, PHP, (React). The.net, Delphi, Rust and other languages, in making open source (https://github.com/casbin/casbin), the main project 7000 stars + on the lot.The project now has a stable maintenance team of about 10 people, and is in continuous development.
+
+[Casbin's official website](https://casbin.org/)
+## [6][what's the difference of []int() and []int{}](https://www.reddit.com/r/golang/comments/jv4fx4/whats_the_difference_of_int_and_int/)
+- url: https://www.reddit.com/r/golang/comments/jv4fx4/whats_the_difference_of_int_and_int/
 ---
 
-## [7][ANN: Apache H2 Database pure-go SQL Driver](https://www.reddit.com/r/golang/comments/jukaeq/ann_apache_h2_database_purego_sql_driver/)
-- url: https://github.com/jmrobles/h2go
+## [7][🚀 A real-time Golang runtime stats visualization profiler](https://www.reddit.com/r/golang/comments/jur6ms/a_realtime_golang_runtime_stats_visualization/)
+- url: https://www.reddit.com/r/golang/comments/jur6ms/a_realtime_golang_runtime_stats_visualization/
 ---
+Hey, gophers! I bring you guys a cool project again.
 
-## [8][Article on how bad practices can be good with example from Go's standard library](https://www.reddit.com/r/golang/comments/ju4u87/article_on_how_bad_practices_can_be_good_with/)
-- url: https://pmihaylov.com/good-and-bad-practices/
----
+project link: https://github.com/go-echarts/statsview
 
-## [9][v1.4 of sessionup - HTTP sessions now with dynamic metadata support](https://www.reddit.com/r/golang/comments/ju8f78/v14_of_sessionup_http_sessions_now_with_dynamic/)
-- url: https://github.com/swithek/sessionup
----
+[**Statsview**](https://github.com/go-echarts/statsview) is a real-time Golang runtime stats visualization profiler. It is built top on another open-source project, [go-echarts](https://github.com/go-echarts/go-echarts), which helps statsview to show its graphs on the browser.
 
-## [10][What's "wrong" with my Go code?](https://www.reddit.com/r/golang/comments/juexn6/whats_wrong_with_my_go_code/)
-- url: https://www.reddit.com/r/golang/comments/juexn6/whats_wrong_with_my_go_code/
----
-Hello!
+## Installation
 
-I'm teaching myself Go and I don't know anyone else who knows Go. So far I like the language. The concurrency is great.
-
-I've written a simple program called `mx-counter` that takes in a list of email addresses and outputs the count of each mail server.
-
-https://github.com/tom-on-the-internet/mx-counter
-
-Example:
-
-Given
-
-```
-tom@tomontheinternet.com
-jane@yahoo.ca
-joe@gmail.com
-fred@youtube.com
-ingrid@slack.com
-rory@microsoft.com
+```shell
+$ go get -u github.com/go-echarts/statsview/...
 ```
 
-Outputs
+## Usage
 
+Statsview is quite simple to use.
+
+```golang
+import (
+    "time"
+
+    "github.com/go-echarts/statsview"
+)
+
+func main() {
+    go func() {
+        mgr := statsview.New()
+
+        // Start() runs a HTTP server at `localhost:18066` by default.
+        mgr.Start()
+
+        // Stop() will shutdown the http server gracefully
+        // mgr.Stop()
+    }()
+
+    // busy working....
+    time.Sleep(time.Minute)
+}
+
+// Visit your browser at http://localhost:18066/statsview/debug
 ```
-google.com 4
-yahoodns.net 1
-outlook.com 1
+
+## Configuration
+
+Statsview gets a variety of configurations for the users. Everyone could customize their favorite charts style.
+
+```golang
+// WithInterval sets the interval(in millisecond) of collecting and pulling metrics
+// default -&gt; 1500
+WithInterval(interval int)
+
+// WithMaxPoints sets the maximum points of each chart series
+// default -&gt; 40
+WithMaxPoints(n int)
+
+// WithTemplate sets the rendered template which fetching stats from the server and
+// handling the metrics data
+WithTemplate(t string)
+
+// WithAddr sets the listen address
+// default -&gt; "localhost:18066"
+WithAddr(addr string)
+
+// WithTimeFormat sets the time format for the line-chart Y-axis label
+// default -&gt; "15:04:05"
+WithTimeFormat(s string)
+
+// WithTheme sets the theme of the charts
+// default -&gt; Macarons
+//
+// Optional:
+// * ThemeWesteros
+// * ThemeWalden
+// * ThemeMacarons
+WithTheme(theme Theme)
 ```
 
-It would mean the world to me if you could **point out some things I'm doing wrong, or places I could improve**. If I get enough feedback, I'll turn it into a blog post and/or video.
+#### Set the options
 
-I also have a few questions. It would be incredible is you could answer any or all of them.
+```golang
+import (
+    "github.com/go-echarts/statsview/viewer"
+)
 
-1. I wrote a function to get the unique values from a slice. Is this really something I should write? Should I be importing it from another package? In the JavaScript world, I would probably import a package for this. Not because I can't write this myself, but because it's not core to my project.
+// set configurations before calling the `Start()` method
+viewer.SetConfiguration(viewer.WithTheme(viewer.ThemeWalden), view.WithAddr("localhost:8087"))
+```
 
-2. How should I test this? I've read that I should only test my public functions. But that would mean testing a single function that makes network requests. And if a domain changed their MX records, my tests would fail.
+## Viewers
 
-3. Should any one my functions be public? They aren't consumed by another package.
+Viewer is the abstraction of a Graph which in charge of collecting metrics from somewhere. Statsview provides some default viewers as below.
 
-4. Should I split this into multiple files?
+* `GCCPUFractionViewer`
+* `GCNumViewer`
+* `GCSizeViewer`
+* `GoroutinesViewer`
+* `HeapViewer`
+* `StackViewer`
 
-5. Am I approaching any of this in the way a seasoned Go developer would?
+Viewer wraps a go-echarts [Line instance](https://github.com/go-echarts/go-echarts/blob/master/charts/line.go) which means you can use all of the options/features on it. To be honest, I think that is the most charming thing about this project.
 
-Thanks so much!
+## Snapshot
 
-Tom
-## [11][Go's Recurring Security Problem](https://www.reddit.com/r/golang/comments/jtmlve/gos_recurring_security_problem/)
-- url: https://medium.com/tempus-ex/gos-recurring-security-problem-2b5339f19216
+[Macarons](https://user-images.githubusercontent.com/19553554/99192859-45943400-27b0-11eb-8096-8a9e76fba3a1.png)
+
+[Westeros](https://user-images.githubusercontent.com/19553554/99193211-78d7c280-27b2-11eb-96c8-cbcb6792e68a.png)
+
+🐶 PR are always welcome :)
+## [8][Golang web service framework with DI, Telemetry and more](https://www.reddit.com/r/golang/comments/juvfaf/golang_web_service_framework_with_di_telemetry/)
+- url: https://github.com/go-masonry/mortar
 ---
 
+## [9][A Distributed Background Task Runner based on RabbitMQ and Redis](https://www.reddit.com/r/golang/comments/jv37d7/a_distributed_background_task_runner_based_on/)
+- url: https://www.reddit.com/r/golang/comments/jv37d7/a_distributed_background_task_runner_based_on/
+---
+I have worked on this amazing job processing service based on [\#rabbitmq](https://twitter.com/hashtag/rabbitmq?src=hashtag_click) and [\#redis](https://twitter.com/hashtag/redis?src=hashtag_click) in the last job which was open source but never promoted. I forked it and made some improvements and now open sourced it. Use it [\#golang](https://twitter.com/hashtag/golang?src=hashtag_click) people. PRs and contributions welcome.  Please create issues if you find any. Also, comment if you need help with the documentation or using the project.
+
+[https://github.com/joker666/cogman](https://github.com/joker666/cogman)
+
+https://preview.redd.it/cqgqc3qe9kz51.png?width=1640&amp;format=png&amp;auto=webp&amp;s=37231c6fe07e88dc15b33d61518a23d812c92e81
+## [10][Should You Commit the Vendor Folder in Go? - Qvault](https://www.reddit.com/r/golang/comments/jv6p8e/should_you_commit_the_vendor_folder_in_go_qvault/)
+- url: https://qvault.io/2020/11/16/should-you-commit-the-vendor-folder-in-go/
+---
+
+## [11][If Go could turn off its GC optionally like Nim/Crystal, what benefits would you expect? Would it be viable like C/Rust performance for systems dev? Would a company like Discord not have swtiched to Rust from Go if it had this? What are your thoughts?](https://www.reddit.com/r/golang/comments/junupo/if_go_could_turn_off_its_gc_optionally_like/)
+- url: https://www.reddit.com/r/golang/comments/junupo/if_go_could_turn_off_its_gc_optionally_like/
+---
+I'm interested in seeing what other's ideas on this are. 
+Go certainly does its job and does it well....but Discord's issue with Go was its latency spikes that they were unable to deal with satisfactorily at their scale due to the GC and changed their stack from Elixir+Go to Elixir+Rust in serving 20 million concurrent users. 
+
+Hearing that Nim and Crystal have features where one can turn off the GC and also write unsafe code as well...if optional GC was implemented in Go, do you think this will benefit Go in any way or would it actually go against the philosophy of being simple/productive?
+
+[Link to explanation behind Discord's decision and their attempts](https://blog.discord.com/why-discord-is-switching-from-go-to-rust-a190bbca2b1f)&lt;--(Link leaves Reddit) 
+
+Current verdict:
+
+- One can turn off the Go GC to gain further low latency benefits, linking the github issue in the comment [refer to comment by u/pxrage](https://www.reddit.com/r/golang/comments/junupo/if_go_could_turn_off_its_gc_optionally_like/gcelmcb?utm_medium=android_app&amp;utm_source=share&amp;context=3) and his experience with facing and solving a similar problem to Discord. &lt;--(I recommend following this comment thread, healthy discussion, decent links) 
+
+- We can already make the cache impervious to the GC by C allocation. (link leaves Reddit) --&gt; [Link to its implementation ](https://dgraph.io/blog/post/manual-memory-management-golang-jemalloc/)
+
+- [u/0xnml mentioned that turning off GC is possible with Go including link](https://www.reddit.com/r/golang/comments/junupo/if_go_could_turn_off_its_gc_optionally_like/gcel6ms?utm_medium=android_app&amp;utm_source=share&amp;context=3) 
+
+- So why rewrite the entire Go service in Rust instead of only using Rust where required?..we're not certain. However, [u/slantview mentions that Discord is now moving all new projects to Rust](https://www.reddit.com/r/golang/comments/junupo/if_go_could_turn_off_its_gc_optionally_like/gceqrkk?utm_medium=android_app&amp;utm_source=share&amp;context=3) and could possibly be why they made this decision, who knows?
+
+- [u/painya comment links to Twitch's approach to GC management ](https://www.reddit.com/r/golang/comments/junupo/if_go_could_turn_off_its_gc_optionally_like/gcesw4h?utm_medium=android_app&amp;utm_source=share&amp;context=3)
+
+- [u/doomfrog666 linking and mentioning that the Go team is aware of GC issues and are working on tuning it](https://www.reddit.com/r/golang/comments/junupo/if_go_could_turn_off_its_gc_optionally_like/gcfq4ud?utm_medium=android_app&amp;utm_source=share&amp;context=3)
+
+- Note: Go is awesome, some of us even learned today that we can even turn off the GC to accomplish some things we'd might need to otherwise code in Rust/C and yes, they are better than Go at certain things. This post was to discuss benefits of Go having an optional GC and its application/implementation and not for language wars. The philosophy of Go is its simplicity and productivity (along with using a GC) which might be the reason why this won't necessarily catch on; and by using Go, you might not ever need this option, but it is here and you can use it. The language you choose and whether you decide to keep the complexity up the stack or down the stack is up to you. Languages are tools yes, but developer skills/proficiency/productivity and maintenance of code are very important as well.
+
+- Also: do keep in mind, we are looking at the scale of Discord. They currently use Elixir+Go+Rust (with Rust instead of Go for new projects) to scale 20 million concurrent users. Using Rust, Elixir NIFs and a tuned/turned off Go GC would be overkill for most of our cases. However, if we do reach that scale, we know that we have options to deal with this✌️
